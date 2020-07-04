@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  */
@@ -5,8 +7,8 @@ import java.util.Vector;
 
 public class ad {
     public static z var_z_b;
-    public static final boolean[] var_boolean_arr_b;
-    public static final boolean[] c;
+    public static final boolean[] var_boolean_arr_b = new boolean[]{false, false, false, false, false, false, false, true, true, true, true, true, true, true, true, true, true, true, false, false, false, false, true, true};
+    public static final boolean[] c = new boolean[]{false, false, false, false, false, false, false, true, false, true, false, false, true, true, true, true, true, false, false, false, false, false, false, false};
     public byte f;
     public byte g;
     public char[] var_char_arr_a;
@@ -220,7 +222,7 @@ public class ad {
         if (ad4 != null) {
             ++by2;
         }
-        byte[] arrby = ce.a("/itm/mixtbl");
+        byte[] arrby = ce.getResourceByName("/itm/mixtbl");
         int n2 = 0;
         while (n2 < arrby.length) {
             byte by3;
@@ -252,9 +254,9 @@ public class ad {
         return null;
     }
 
-    public static {
-        var_boolean_arr_b = new boolean[]{false, false, false, false, false, false, false, true, true, true, true, true, true, true, true, true, true, true, false, false, false, false, true, true};
-        c = new boolean[]{false, false, false, false, false, false, false, true, false, true, false, false, true, true, true, true, true, false, false, false, false, false, false, false};
-    }
+//    public static {
+//        var_boolean_arr_b = new boolean[]{false, false, false, false, false, false, false, true, true, true, true, true, true, true, true, true, true, true, false, false, false, false, true, true};
+//        c = new boolean[]{false, false, false, false, false, false, false, true, false, true, false, false, true, true, true, true, true, false, false, false, false, false, false, false};
+//    }
 }
 

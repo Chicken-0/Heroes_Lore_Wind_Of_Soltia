@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -58,7 +60,7 @@ extends cb {
                     Object[] arrobject3 = new Object[]{ax.var_z_a.a(24)};
                     this.a(arrobject3);
                 } else {
-                    this.var_cb_b = new bo(this, ax.var_z_a.a(25), arrobject, ax.var_z_a.a(26), 500, 20);
+                    this.var_cb_b = new bo(this, ax.var_z_a.a(25), arrobject, ax.var_z_a.a(26), 500, (byte)20);
                 }
             }
             return true;
@@ -84,7 +86,7 @@ extends cb {
                 }
                 if (ao2.var_g_a.a(ad2, 1)) {
                     byte[] arrby = new byte[]{ao2.var_g_a.byte_a(ad2.f, ad2.g)};
-                    this.var_cb_b = new m(this, arrby, 10, ax.var_z_a.a(27));
+                    this.var_cb_b = new m(this, arrby, (byte)10, ax.var_z_a.a(27));
                     this.a[0] = null;
                     this.a[1] = null;
                     this.a[2] = null;

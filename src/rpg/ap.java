@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -65,7 +67,7 @@ extends cb {
             ao2.var_g_a.var_int_a -= 500;
             ao2.var_g_a.void_a(this.var_ad_a, (byte)1);
             byte[] arrby = new byte[]{ao2.byte_a(this.var_t_a)};
-            this.var_cb_b = new m(this, arrby, 10, ax.var_z_a.a(10));
+            this.var_cb_b = new m(this, arrby, (byte)10, ax.var_z_a.a(10));
             this.var_t_a = null;
             this.var_ad_a = null;
             return;

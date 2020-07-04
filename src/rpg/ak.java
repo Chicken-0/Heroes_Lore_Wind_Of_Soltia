@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -25,8 +27,8 @@ extends av {
         if (this.v > 100) {
             this.var_j_a.h = 0;
         }
-        if (this.h == 3) {
-            byte[] arrby = (byte[])ce.var_java_lang_Object_arr_h[this.n * 16 + 12 + (this.j - 1)];
+        if (this.byte_h == 3) {
+            byte[] arrby = (byte[])ce.var_java_lang_Object_arr_h[this.byte_n * 16 + 12 + (this.byte_j - 1)];
             if (this.k >= arrby[0]) {
                 this.a(false);
                 this.i();
@@ -34,7 +36,7 @@ extends av {
         } else {
             this.n();
         }
-        if (this.h == 2) {
+        if (this.byte_h == 2) {
             switch (this.i) {
                 case 1: {
                     this.var_short_d = (short)(this.var_short_d - 8);
@@ -50,12 +52,12 @@ extends av {
     }
 
     public final void a(Graphics graphics, int n2, int n3) {
-        byte by2 = this.j;
-        if (this.h != 3) {
-            this.j = 1;
+        byte by2 = this.byte_j;
+        if (this.byte_h != 3) {
+            this.byte_j = 1;
         }
         super.a(graphics, n2, n3 -= 64);
-        this.j = by2;
+        this.byte_j = by2;
     }
 
     public final void i() {
@@ -63,7 +65,7 @@ extends av {
         int n2 = ao2.var_byte_b - (this.var_byte_b - 4 + 2);
         if (this.p == 0 && n2 >= -1 && n2 <= 2 && ao2.var_byte_a >= this.var_byte_a - 7) {
             this.q();
-            this.w = u.g[this.w];
+            this.w = u.array_byte_g[this.w];
             this.b(this.w);
             return;
         }

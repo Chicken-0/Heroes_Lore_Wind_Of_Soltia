@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -23,12 +25,12 @@ extends cb {
             if (n.boolean_b(1 + n4 * 3 + 1)) continue;
             if (n.boolean_b(1 + n4 * 3 + 2)) {
                 if (!n.boolean_b(1 + n4 * 3) || ce.var_z_f.a(n4 * 7 + 2).length <= 0) continue;
-                this.h[n3++] = n4;
+                this.h[n3++] = (byte)n4;
                 this.h[n3++] = 2;
                 continue;
             }
             if (!n.boolean_b(1 + n4 * 3) || ce.var_z_f.a(n4 * 7).length <= 0) continue;
-            this.h[n3++] = n4;
+            this.h[n3++] = (byte)n4;
             this.h[n3++] = 0;
         }
         this.var_byte_a = (byte)(n3 / 2);
@@ -46,7 +48,7 @@ extends cb {
         }
         if (n3 == 53 || n2 == 8) {
             if (this.var_byte_a > 0) {
-                this.var_cb_b = new am(this, this.a, this.b, 0);
+                this.var_cb_b = new am(this, this.a, this.b, (byte)0);
             }
             return true;
         }
@@ -56,7 +58,7 @@ extends cb {
     public final void a(byte by2, byte by3) {
         super.a(by2, by3);
         if (by2 == 0 && by3 == 1) {
-            this.var_cb_b = new am(this, ai.var_z_a.a(54), ce.var_z_f.a(this.c * 7 + 6), 1);
+            this.var_cb_b = new am(this, ai.var_z_a.a(54), ce.var_z_f.a(this.c * 7 + 6), (byte)1);
         }
     }
 

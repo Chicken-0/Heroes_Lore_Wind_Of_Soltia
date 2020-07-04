@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -8,29 +10,30 @@ import javax.microedition.lcdui.Graphics;
 
 public final class ah
 implements u {
-    private static byte var_byte_a;
-    private static int var_int_a;
-    private static int var_int_b;
-    private static boolean var_boolean_b;
-    private static char[] var_char_arr_a;
-    private static int var_int_c;
-    private static int var_int_d;
-    private static int var_int_e;
-    private static int var_int_f;
-    private static boolean var_boolean_c;
-    private static boolean var_boolean_d;
+    String[] arrstring = new String[]{"CMD_IDLE", "TALKTEXT", "YES/NO  ", "MV_H_MOV", "MV_DELAY", "MV_H_STP", "MV_H_DIR", "MAP_CHNG", "MAP_HERO", "SWI_DEF ", "MONEY   ", "ITEM    ", "EXP     ", "HP      ", "SP      ", "MV_N_MOV", "MV_N_STP", "MV_N_DIR", "GUARDIAN", "COMBO   ", "GAMEOVER", "ITEM_NUM", "SCR_DEL ", "SCR_SHOW", "SCR_FLAS", "SCR_SHAK", "BGM_PLAY", "BGM_STOP", "SYSBGM  ", "SOUND   ", "SWI_QUE ", "GOTO_FOR", "GOTO_BAK", "SWI_MAP ", "MV_FO_HE", "MV_FO_NO", "MV_FO_NP", "MV_CA_MV", "MV_CA_ST", "MV_CA_XY", "CHG_OBJ ", "CHG_NPC ", "CHGTL_XY", "CHGTL_VA", "OPN_BLAK", "OPEN_SHP", "HIDE_NPC", "SHOW_NPC", "OPN_REFI", "EMO_HERO", "EMO_NPC ", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "END_EVNT"};
+    private static byte var_byte_a = 0;
+    private static int var_int_a = 0;
+    private static int var_int_b = 0;
+    private static boolean var_boolean_b = false;
+    private static char[] var_char_arr_a = null;
+    private static int var_int_c = 0;
+    private static int var_int_d = 0;
+    private static int var_int_e = 0;
+    private static int var_int_f = 0;
+    private static boolean var_boolean_c = true;
+    private static boolean var_boolean_d = false;
     private static byte[][] var_byte_arr_arr_b;
-    private static boolean var_boolean_e;
-    private static byte var_byte_b;
-    private static byte var_byte_c;
-    private static byte var_byte_d;
-    private static byte[] h;
+    private static boolean var_boolean_e = true;
+    private static byte var_byte_b = (byte)-1;
+    private static byte var_byte_c = 0;
+    private static byte var_byte_d = 0;
+    private static byte[] array_byte_h;
     private static byte var_byte_e;
-    private static byte var_byte_f;
+    private static byte var_byte_f = 0;
     private static char[] var_char_arr_b;
     private static char[] var_char_arr_c;
     private static boolean var_boolean_f;
-    public static boolean var_boolean_a;
+    public static boolean var_boolean_a = false;
     private static boolean g;
 
     private ah() {
@@ -56,7 +59,7 @@ implements u {
         if ((by2 = (byte)Math.abs(by2)) >= 1 && by2 <= 127 && ah.a((byte)1, by2)) {
             return true;
         }
-        by2 = n.var_ae_a.var_byte_arr_arr_c[ao2.var_byte_b + u.b[((o)ao2).i]][ao2.var_byte_a + u.var_byte_arr_a[((o)ao2).i]];
+        by2 = n.var_ae_a.var_byte_arr_arr_c[ao2.var_byte_b + u.array_byte_b[((o)ao2).i]][ao2.var_byte_a + u.var_byte_arr_a[((o)ao2).i]];
         return (by2 = (byte)Math.abs(by2)) >= 1 && by2 <= 127 && ah.a((byte)2, by2);
     }
 
@@ -66,7 +69,7 @@ implements u {
             return false;
         }
         byte by2 = 0;
-        by2 = n.var_ae_a.var_byte_arr_arr_c[ao2.var_byte_b + u.b[((o)ao2).i]][ao2.var_byte_a + u.var_byte_arr_a[((o)ao2).i]];
+        by2 = n.var_ae_a.var_byte_arr_arr_c[ao2.var_byte_b + u.array_byte_b[((o)ao2).i]][ao2.var_byte_a + u.var_byte_arr_a[((o)ao2).i]];
         if ((by2 = (byte)Math.abs(by2)) < 1 || by2 > 127) {
             return false;
         }
@@ -184,7 +187,7 @@ implements u {
         }
     }
 
-    public static final void void_a() {
+    public static final void void_a() throws Throwable {
         if (var_byte_a != 3 && var_boolean_a) {
             var_boolean_b = true;
             var_boolean_f = true;
@@ -329,7 +332,7 @@ implements u {
                     byte by2 = var_byte_arr_arr_b[var_int_a][1];
                     ao2.void_c();
                     if (by2 != 0) {
-                        ao2.a(new aw(10, -1, (short)(by2 - 1)));
+                        ao2.a(new aw((byte)10, (byte)-1, (short)(by2 - 1)));
                     }
                     ++var_int_a;
                     break;
@@ -339,7 +342,7 @@ implements u {
                     byte by3 = var_byte_arr_arr_b[var_int_a][2];
                     ac4.void_c();
                     if (by3 != 0) {
-                        ac4.a(new aw(10, -1, (short)(by3 - 1)));
+                        ac4.a(new aw((byte)10, (byte)-1, (short)(by3 - 1)));
                     }
                     ++var_int_a;
                     break;
@@ -355,9 +358,9 @@ implements u {
                     break;
                 }
                 case 25: {
-                    h = new byte[6];
+                    array_byte_h = new byte[6];
                     for (int n2 = 0; n2 < 6; n2 = (int)((byte)(n2 + 1))) {
-                        ah.h[n2] = (byte)h.a(-5, 5);
+                        ah.array_byte_h[n2] = (byte)h.a(-5, 5);
                     }
                     ah.b((byte)5);
                     break;
@@ -523,7 +526,7 @@ implements u {
         var_boolean_b = false;
     }
 
-    private static final void f() {
+    private static final void f() throws Throwable {
         if (g) {
             if (var_boolean_d) {
                 if (var_boolean_c) {
@@ -565,12 +568,12 @@ implements u {
     private static final void h() {
         switch (var_byte_arr_arr_b[var_int_a][0]) {
             case 25: {
-                if (h != null && h.length > 0) {
-                    n.var_ae_a.var_int_e = h[0];
-                    n.var_ae_a.f = h[1];
-                    byte[] arrby = new byte[h.length - 2];
-                    System.arraycopy(h, 2, arrby, 0, arrby.length);
-                    h = arrby;
+                if (array_byte_h != null && array_byte_h.length > 0) {
+                    n.var_ae_a.var_int_e = array_byte_h[0];
+                    n.var_ae_a.f = array_byte_h[1];
+                    byte[] arrby = new byte[array_byte_h.length - 2];
+                    System.arraycopy(array_byte_h, 2, arrby, 0, arrby.length);
+                    array_byte_h = arrby;
                     return;
                 }
                 ah.b((byte)0);
@@ -685,17 +688,17 @@ implements u {
                 ((e)ad2).b = true;
             }
             if (!ao2.var_g_a.a(ad2, (int)by4)) {
-                ah.a(cj.var_cj_a.a(3938).toCharArray(), "".toCharArray());
+                ah.a(BabbleText.instance.getTextById(3938).toCharArray(), "".toCharArray());
             }
             return;
         }
         if (by4 < 0) {
-            by4 = -by4;
+            by4 = (byte)(-by4);
             if (ao2.var_g_a.int_a(by2, by3) >= by4) {
                 ao2.var_g_a.void_a(by2, by3, by4);
                 return;
             }
-            ah.a(cj.var_cj_a.a(3939).toCharArray(), "".toCharArray());
+            ah.a(BabbleText.instance.getTextById(3939).toCharArray(), "".toCharArray());
         }
     }
 
@@ -833,8 +836,8 @@ implements u {
 
     private static final void c(Graphics graphics) {
         try {
-            char[] arrc = g ? cj.var_cj_a.a(3940).toCharArray() : (char[])n.var_ae_a.var_java_lang_Object_arr_c[var_byte_arr_arr_b[var_int_a][1]];
-            Object[] arrobject = new Object[]{arrc, cj.var_cj_a.a(3915).toCharArray(), cj.var_cj_a.a(3916).toCharArray()};
+            char[] arrc = g ? BabbleText.instance.getTextById(3940).toCharArray() : (char[])n.var_ae_a.var_java_lang_Object_arr_c[var_byte_arr_arr_b[var_int_a][1]];
+            Object[] arrobject = new Object[]{arrc, BabbleText.instance.getTextById(3915).toCharArray(), BabbleText.instance.getTextById(3916).toCharArray()};
             int n2 = bh.a(r.g, 70);
             ah.a(graphics, r.i - (n2 >> 1), r.j - 30, n2, 60, arrobject, 6, 1, var_boolean_c ? 1 : 2);
             return;
@@ -892,29 +895,29 @@ implements u {
         }
         if (!var_boolean_e && var_byte_b == -1 && var_byte_c != 0) {
             n.var_int_a -= var_byte_d * u.var_byte_arr_a[var_byte_c];
-            n.var_int_b -= var_byte_d * u.b[var_byte_c];
+            n.var_int_b -= var_byte_d * u.array_byte_b[var_byte_c];
         }
     }
 
-    public static {
-        String[] arrstring = new String[]{"CMD_IDLE", "TALKTEXT", "YES/NO  ", "MV_H_MOV", "MV_DELAY", "MV_H_STP", "MV_H_DIR", "MAP_CHNG", "MAP_HERO", "SWI_DEF ", "MONEY   ", "ITEM    ", "EXP     ", "HP      ", "SP      ", "MV_N_MOV", "MV_N_STP", "MV_N_DIR", "GUARDIAN", "COMBO   ", "GAMEOVER", "ITEM_NUM", "SCR_DEL ", "SCR_SHOW", "SCR_FLAS", "SCR_SHAK", "BGM_PLAY", "BGM_STOP", "SYSBGM  ", "SOUND   ", "SWI_QUE ", "GOTO_FOR", "GOTO_BAK", "SWI_MAP ", "MV_FO_HE", "MV_FO_NO", "MV_FO_NP", "MV_CA_MV", "MV_CA_ST", "MV_CA_XY", "CHG_OBJ ", "CHG_NPC ", "CHGTL_XY", "CHGTL_VA", "OPN_BLAK", "OPEN_SHP", "HIDE_NPC", "SHOW_NPC", "OPN_REFI", "EMO_HERO", "EMO_NPC ", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "END_EVNT"};
-        var_byte_a = 0;
-        var_int_a = 0;
-        var_int_b = 0;
-        var_boolean_b = false;
-        var_char_arr_a = null;
-        var_int_c = 0;
-        var_int_d = 0;
-        var_int_e = 0;
-        var_int_f = 0;
-        var_boolean_c = true;
-        var_boolean_d = false;
-        var_boolean_e = true;
-        var_byte_b = (byte)-1;
-        var_byte_c = 0;
-        var_byte_d = 0;
-        var_byte_f = 0;
-        var_boolean_a = false;
-    }
+//    public static {
+//        String[] arrstring = new String[]{"CMD_IDLE", "TALKTEXT", "YES/NO  ", "MV_H_MOV", "MV_DELAY", "MV_H_STP", "MV_H_DIR", "MAP_CHNG", "MAP_HERO", "SWI_DEF ", "MONEY   ", "ITEM    ", "EXP     ", "HP      ", "SP      ", "MV_N_MOV", "MV_N_STP", "MV_N_DIR", "GUARDIAN", "COMBO   ", "GAMEOVER", "ITEM_NUM", "SCR_DEL ", "SCR_SHOW", "SCR_FLAS", "SCR_SHAK", "BGM_PLAY", "BGM_STOP", "SYSBGM  ", "SOUND   ", "SWI_QUE ", "GOTO_FOR", "GOTO_BAK", "SWI_MAP ", "MV_FO_HE", "MV_FO_NO", "MV_FO_NP", "MV_CA_MV", "MV_CA_ST", "MV_CA_XY", "CHG_OBJ ", "CHG_NPC ", "CHGTL_XY", "CHGTL_VA", "OPN_BLAK", "OPEN_SHP", "HIDE_NPC", "SHOW_NPC", "OPN_REFI", "EMO_HERO", "EMO_NPC ", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "END_EVNT"};
+//        var_byte_a = 0;
+//        var_int_a = 0;
+//        var_int_b = 0;
+//        var_boolean_b = false;
+//        var_char_arr_a = null;
+//        var_int_c = 0;
+//        var_int_d = 0;
+//        var_int_e = 0;
+//        var_int_f = 0;
+//        var_boolean_c = true;
+//        var_boolean_d = false;
+//        var_boolean_e = true;
+//        var_byte_b = (byte)-1;
+//        var_byte_c = 0;
+//        var_byte_d = 0;
+//        var_byte_f = 0;
+//        var_boolean_a = false;
+//    }
 }
 

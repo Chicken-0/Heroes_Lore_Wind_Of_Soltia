@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -61,11 +63,11 @@ extends cb {
                 if (arrby.length > 0) {
                     this.var_cb_b = new m(this, arrby, this.var_byte_b, ai.var_z_a.a(16));
                 } else {
-                    Object[] arrobject = new Object[]{cj.var_cj_a.a(3937).toCharArray()};
+                    Object[] arrobject = new Object[]{BabbleText.instance.getTextById(3937).toCharArray()};
                     this.a(arrobject);
                 }
             } else {
-                Object[] arrobject = new Object[]{cj.var_cj_a.a(3937).toCharArray()};
+                Object[] arrobject = new Object[]{BabbleText.instance.getTextById(3937).toCharArray()};
                 this.a(arrobject);
             }
             return true;

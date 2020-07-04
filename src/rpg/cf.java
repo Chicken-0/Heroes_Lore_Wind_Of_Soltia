@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -9,7 +11,7 @@ import javax.microedition.lcdui.Graphics;
 public final class cf
 extends f {
     public byte var_byte_a;
-    private static final short[] var_short_arr_a;
+    private static final short[] var_short_arr_a = new short[]{40, 40, 40, 40, 40, 140, 160, 80};
 
     public cf(byte by2) {
         super(var_short_arr_a[by2]);
@@ -40,8 +42,8 @@ extends f {
         return this.b;
     }
 
-    public static {
-        var_short_arr_a = new short[]{40, 40, 40, 40, 40, 140, 160, 80};
-    }
+//    public static {
+//        var_short_arr_a = new short[]{40, 40, 40, 40, 40, 140, 160, 80};
+//    }
 }
 

@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -18,7 +20,7 @@ implements u {
     public byte var_byte_c;
     public byte var_byte_d;
     public byte e = 1;
-    public static Random var_java_util_Random_a;
+    public static Random var_java_util_Random_a = new Random();
     public ck var_ck_a;
     public ck var_ck_b;
     public boolean var_boolean_c = false;
@@ -75,8 +77,8 @@ implements u {
 
     public abstract void a(Graphics var1, int var2, int var3);
 
-    public static {
-        var_java_util_Random_a = new Random();
-    }
+//    public static {
+//        var_java_util_Random_a = new Random();
+//    }
 }
 

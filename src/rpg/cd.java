@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  */
@@ -37,15 +39,15 @@ extends av {
 
     public final void j() {
         if (this.k == 5) {
-            if (this.var_ag_a.h != 6 && this.var_ag_a.h != 5 && this.var_ag_a.var_short_a < this.var_ag_a.var_j_a.var_short_a / 2) {
+            if (this.var_ag_a.byte_h != 6 && this.var_ag_a.byte_h != 5 && this.var_ag_a.var_short_a < this.var_ag_a.var_j_a.var_short_a / 2) {
                 this.a(this.var_ag_a);
                 return;
             }
-            if (this.var_bd_a.h != 6 && this.var_bd_a.h != 5 && this.var_bd_a.var_short_a < this.var_bd_a.var_j_a.var_short_a / 2) {
+            if (this.var_bd_a.byte_h != 6 && this.var_bd_a.byte_h != 5 && this.var_bd_a.var_short_a < this.var_bd_a.var_j_a.var_short_a / 2) {
                 this.a(this.var_bd_a);
                 return;
             }
-            if (this.h != 6 && this.h != 5 && this.var_short_a < this.var_j_a.var_short_a / 2) {
+            if (this.byte_h != 6 && this.byte_h != 5 && this.var_short_a < this.var_j_a.var_short_a / 2) {
                 this.a(this);
                 return;
             }
@@ -75,9 +77,9 @@ extends av {
     }
 
     private void a(al al2) {
-        al2.a(new aw(9, -1, this.n));
+        al2.a(new aw((byte)9, (byte)-1, this.byte_n));
         al2.c(this.var_ag_a.var_j_a.var_short_a / 10);
-        al2.a(new aw(7, 4, (short)(-(this.var_ag_a.var_j_a.var_short_a / 10))));
+        al2.a(new aw((byte)7, (byte)4, (short)(-(this.var_ag_a.var_j_a.var_short_a / 10))));
     }
 
     public final void m() {

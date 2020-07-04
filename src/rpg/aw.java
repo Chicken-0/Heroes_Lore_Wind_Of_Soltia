@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -17,7 +19,7 @@ extends f {
     private short c;
 
     public aw(byte by2) {
-        this(by2, h[by2], 0);
+        this(by2, h[by2], (short)0);
     }
 
     public aw(byte by2, short s2, short s3) {

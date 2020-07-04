@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -32,7 +34,7 @@ extends cb {
                 if (arrby.length > 0) {
                     this.var_cb_b = new m(this, arrby, this.var_byte_b, aa.var_z_a.a(3));
                 } else {
-                    this.a(new Object[]{cj.var_cj_a.a(3936).toCharArray()});
+                    this.a(new Object[]{BabbleText.instance.getTextById(3936).toCharArray()});
                 }
             } else if (this.var_byte_b == 1) {
                 int n4 = ao2.var_g_a.int_a((byte)11, (byte)0);
@@ -86,7 +88,7 @@ extends cb {
     }
 
     public final void a(Graphics graphics, int n2, int n3) {
-        Object[] arrobject;
+//        Object[] arrobject;
         ao ao2 = n.ao_a();
         graphics.setColor(0x3F1F3F);
         graphics.fillRect(n2, n3, 155, 170);
@@ -102,7 +104,7 @@ extends cb {
         bh.int_a(graphics, n2 + 8, n3 + 80, aa.var_z_a.a(16), 1);
         if (this.var_e_a != null) {
             cb.a(graphics, n2 + 155 - 8, n3 + 80, this.var_int_a);
-            arrobject = h.a(aa.var_z_a.a(17), (" : " + this.var_byte_c + "\uac1c").toCharArray());
+            char[] arrobject = h.a(aa.var_z_a.a(17), (" : " + this.var_byte_c + "\uac1c").toCharArray());
             bh.int_a(graphics, n2 + 8, n3 + 93, arrobject, 1);
         }
         if (this.d == 2) {
@@ -121,8 +123,8 @@ extends cb {
                 if (this.var_boolean_c) {
                     Thread.sleep(1000L);
                     this.var_e_a.e = (byte)(this.var_e_a.e + 1);
-                    arrobject = new byte[]{ao2.byte_a(this.var_e_a)};
-                    this.var_cb_b = new m(this, (byte[])arrobject, 10, aa.var_z_a.a(10));
+                    byte[] arrobject = new byte[]{ao2.byte_a(this.var_e_a)};
+                    this.var_cb_b = new m(this, (byte[])arrobject, (byte)10, aa.var_z_a.a(10));
                     this.var_int_a = this.var_e_a.e * 100;
                     this.var_byte_c = (byte)(this.var_e_a.e + 1);
                 } else {
@@ -132,7 +134,9 @@ extends cb {
                     this.a(new Object[]{aa.var_z_a.a(26), aa.var_z_a.a(29)});
                 }
             }
-            catch (Exception exception) {}
+            catch (Exception exception) {} catch (Throwable ex) {
+                ex.printStackTrace();
+            }
         }
         int n6 = bh.a(155, 80);
         cb.a(graphics, n2 + (155 - n6 >> 1), n3 + 138, n6, aa.var_z_a.a(18), this.var_byte_b == 1);

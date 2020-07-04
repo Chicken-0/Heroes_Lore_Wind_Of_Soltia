@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -33,25 +35,25 @@ extends al {
         int n4 = n2 + this.var_short_c + this.var_byte_c + (((ck)this).e - 1) * 8;
         int n5 = n3 + this.var_short_d + this.var_byte_d;
         int n6 = 0;
-        switch (this.h) {
+        switch (this.byte_h) {
             case 2: {
-                n6 = this.n * 16 + 4 + (this.j - 1);
+                n6 = this.byte_n * 16 + 4 + (this.byte_j - 1);
                 break;
             }
             case 3: {
-                n6 = this.n * 16 + 12 + (this.j - 1);
+                n6 = this.byte_n * 16 + 12 + (this.byte_j - 1);
                 break;
             }
             case 5: {
-                n6 = this.n * 16 + 8 + (this.j - 1);
+                n6 = this.byte_n * 16 + 8 + (this.byte_j - 1);
                 break;
             }
             default: {
-                n6 = this.n * 16 + 0 + (this.j - 1);
+                n6 = this.byte_n * 16 + 0 + (this.byte_j - 1);
             }
         }
         if (ce.var_java_lang_Object_arr_h[n6] == null) {
-            n6 = this.n * 16 + 0 + (this.j - 1);
+            n6 = this.byte_n * 16 + 0 + (this.byte_j - 1);
         }
         as.b(graphics, (byte[])ce.var_java_lang_Object_arr_h[n6], this.k, n4, n5);
         this.c(graphics, n4, n5 - this.var_j_a.var_byte_a * 3);
@@ -59,7 +61,7 @@ extends al {
     }
 
     public final void a(int n2, byte by2) {
-        if (this.h == 6 || this.h == 5) {
+        if (this.byte_h == 6 || this.byte_h == 5) {
             return;
         }
         if (n2 < 0) {
@@ -67,8 +69,8 @@ extends al {
         }
         n2 = n2 * u.var_byte_arr_arr_a[by2][this.var_j_a.var_byte_c] / 10;
         this.var_short_a = (short)(this.var_short_a - n2);
-        ((o)this).a.addElement(new aw(7, 4, (short)n2));
-        ((o)this).a.addElement(new aw(1));
+        ((o)this).a.addElement(new aw((byte)7, (short)4, (short)n2));
+        ((o)this).a.addElement(new aw((byte)1));
         if (this.var_short_a <= 0) {
             this.void_a((byte)5);
             this.k = 0;
@@ -78,7 +80,7 @@ extends al {
 
     public final void a(int n2, boolean bl2, byte by2, boolean bl3, byte by3, byte by4, ao ao2) {
         boolean bl4;
-        if (this.h == 6 || this.h == 5) {
+        if (this.byte_h == 6 || this.byte_h == 5) {
             return;
         }
         bs.var_as_a.a(this, false);
@@ -111,7 +113,7 @@ extends al {
                 this.m();
             }
         } else {
-            ((o)this).a.addElement(new aw(2));
+            ((o)this).a.addElement(new aw((byte)2));
         }
         if (bl4) {
             bw.a((byte)14, false);

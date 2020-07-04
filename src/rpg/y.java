@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -10,8 +12,8 @@ import javax.microedition.lcdui.Image;
 
 public class y
 extends ck {
-    private static final short[] var_short_arr_a;
-    private static final byte[] i;
+    private static final short[] var_short_arr_a = new short[]{-1, 4, 8, 6, 10, 11, 7, 9, 6, 4, 3};
+    private static final byte[] i = new byte[]{-1, 0, -1, -1, 0, 0, 1, 0, 1, 1, -1};
     public short var_short_a;
     public short b;
     private byte f;
@@ -143,9 +145,9 @@ extends ck {
         }
     }
 
-    public static {
-        var_short_arr_a = new short[]{-1, 4, 8, 6, 10, 11, 7, 9, 6, 4, 3};
-        i = new byte[]{-1, 0, -1, -1, 0, 0, 1, 0, 1, 1, -1};
-    }
+//    public static {
+//        var_short_arr_a = new short[]{-1, 4, 8, 6, 10, 11, 7, 9, 6, 4, 3};
+//        i = new byte[]{-1, 0, -1, -1, 0, 0, 1, 0, 1, 1, -1};
+//    }
 }
 

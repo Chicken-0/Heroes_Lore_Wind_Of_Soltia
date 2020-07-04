@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -11,11 +13,11 @@ import javax.microedition.lcdui.Image;
 public final class p
 extends ck
 implements u {
-    public static final short[] var_short_arr_a;
-    public static final byte[] var_byte_arr_h;
-    public static final short[] var_short_arr_b;
-    private static final byte[] var_byte_arr_i;
-    private static final short[] var_short_arr_d;
+    public static final short[] var_short_arr_a = new short[]{1, 1, 1, 1, 10, 20};
+    public static final byte[] var_byte_arr_h = new byte[]{1, 9, 20, 30};
+    public static final short[] var_short_arr_b = new short[]{56, 280, 280, 220, 160, 270, 56, 270, 220, 80, 270, 270, 80, 270, 220, 80, 270, 270};
+    private static final byte[] var_byte_arr_i = new byte[]{0, 0, 10, 4, 4, 10, 0, 4, 0, 4, 10, 8, 0, 6, 6, 0, 10, 8};
+    private static final short[] var_short_arr_d = new short[]{16, 9, 161, 9, 10, 81, 16, 9, 13, 25, 81, 8, 31, 81, 16, 31, 87, 8};
     private byte[] var_byte_arr_j = new byte[4];
     public byte f;
     public byte g;
@@ -134,7 +136,7 @@ implements u {
         this.var_short_b = (short)-1;
         this.l = this.k = var_byte_arr_i[this.f * 3 + this.m];
         this.var_boolean_d = false;
-        this.a((short)((n2 + u.var_byte_arr_a[by2]) * 16), (short)((n3 + u.b[by2]) * 16));
+        this.a((short)((n2 + u.var_byte_arr_a[by2]) * 16), (short)((n3 + u.array_byte_b[by2]) * 16));
         this.var_byte_j = by2;
         this.var_byte_b = (byte)(this.var_short_d >> 4);
         this.var_byte_a = (byte)(this.var_short_c >> 4);
@@ -210,7 +212,7 @@ implements u {
                     }
                     case 1: {
                         if (this.e == 0) {
-                            ao2.a(new bj(0, 8, by2, by3));
+                            ao2.a(new bj((short)0, (short)8, by2, by3));
                             ao2.boolean_a((byte)5);
                             ao2.var_boolean_d = true;
                             bw.a((byte)21, false);
@@ -220,7 +222,7 @@ implements u {
                     }
                     case 2: {
                         if (this.e == 0) {
-                            ao2.a(new bj(0, 160, by2, by3));
+                            ao2.a(new bj((short)0, (short)160, by2, by3));
                             ao2.var_boolean_g = true;
                             bw.a((byte)21, false);
                         }
@@ -237,7 +239,7 @@ implements u {
                 switch (by3) {
                     case 0: {
                         if (this.e == 0) {
-                            ao2.a(new bj(0, 8, by2, by3));
+                            ao2.a(new bj((short)0, (short)8, by2, by3));
                             ao2.c(30);
                             bw.a((byte)20, false);
                             break;
@@ -246,7 +248,7 @@ implements u {
                     }
                     case 1: {
                         if (this.e == 0) {
-                            ao2.a(new bj(0, 9, by2, by3));
+                            ao2.a(new bj((short)0, (short)9, by2, by3));
                             ao2.e(20);
                             bw.a((byte)20, false);
                             break;
@@ -255,10 +257,10 @@ implements u {
                     }
                     case 2: {
                         if (this.e == 0) {
-                            ao2.a(new bj(0, 80, by2, by3));
-                            ao2.a(new bj(4, 8, by2, 0));
-                            ao2.a(new bj(24, 8, by2, 0));
-                            ao2.a(new bj(44, 8, by2, 0));
+                            ao2.a(new bj((short)0, (short)80, by2, by3));
+                            ao2.a(new bj((short)4, (short)8, by2, (byte)0));
+                            ao2.a(new bj((short)24, (short)8, by2, (byte)0));
+                            ao2.a(new bj((short)44, (short)8, by2, (byte)0));
                             ao2.var_boolean_h = true;
                             bw.a((byte)20, false);
                         }
@@ -280,7 +282,7 @@ implements u {
                     }
                     case 1: {
                         if (this.e == 0) {
-                            ao2.a(new bj(0, 8, by2, by3));
+                            ao2.a(new bj((short)0, (short)8, by2, by3));
                             ao2.boolean_a((byte)6);
                             ao2.var_boolean_e = true;
                             bw.a((byte)21, false);
@@ -290,7 +292,7 @@ implements u {
                     }
                     case 2: {
                         if (this.e == 0) {
-                            ao2.a(new bj(0, 12, by2, by3));
+                            ao2.a(new bj((short)0, (short)12, by2, by3));
                             ((o)ao2).b.removeAllElements();
                             ao2.var_boolean_d = false;
                             ao2.var_boolean_e = false;
@@ -369,7 +371,7 @@ implements u {
                     }
                     case 2: {
                         if (this.e == 0) {
-                            ao2.a(new bj(0, 15, by2, by3));
+                            ao2.a(new bj((short)0, (short)15, by2, by3));
                             ao2.c(20);
                             ao2.e(20);
                             bw.a((byte)20, false);
@@ -433,10 +435,10 @@ implements u {
         }
         if (this.e == 8 || this.e == 12) {
             ck ck3;
-            int n3 = this.var_byte_a + u.var_byte_arr_a[this.var_byte_j] * 3 + u.var_byte_arr_a[u.e[this.var_byte_j]];
-            int n4 = this.var_byte_b + u.b[this.var_byte_j] * 3 + u.b[u.e[this.var_byte_j]];
+            int n3 = this.var_byte_a + u.var_byte_arr_a[this.var_byte_j] * 3 + u.var_byte_arr_a[u.arr_byte_e[this.var_byte_j]];
+            int n4 = this.var_byte_b + u.array_byte_b[this.var_byte_j] * 3 + u.array_byte_b[u.arr_byte_e[this.var_byte_j]];
             int n5 = this.var_byte_a + u.var_byte_arr_a[this.var_byte_j] * 3 + u.var_byte_arr_a[u.f[this.var_byte_j]];
-            int n6 = this.var_byte_b + u.b[this.var_byte_j] * 3 + u.b[u.f[this.var_byte_j]];
+            int n6 = this.var_byte_b + u.array_byte_b[this.var_byte_j] * 3 + u.array_byte_b[u.f[this.var_byte_j]];
             if (n3 > 0 && n3 < n.var_ae_a.var_int_a - 1 && n4 > 0 && n4 < n.var_ae_a.var_int_b - 1 && (ck3 = n.var_ae_a.var_ck_arr_arr_a[n4][n3]) != null && ck3 instanceof al) {
                 ((al)ck3).a(n2, this.byte_a());
             }
@@ -689,20 +691,20 @@ implements u {
             }
             case 1: 
             case 6: {
-                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 16), (short)(this.var_short_d + u.b[this.var_byte_j] * 16), (byte)1);
+                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 16), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 16), (byte)1);
                 return;
             }
             case 2: 
             case 7: {
-                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 32), (short)(this.var_short_d + u.b[this.var_byte_j] * 32), (byte)1);
+                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 32), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 32), (byte)1);
                 return;
             }
             case 4: 
             case 8: {
                 bw.a((byte)16, false);
-                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 48), (short)(this.var_short_d + u.b[this.var_byte_j] * 48), (byte)2);
-                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 48 + u.var_byte_arr_a[u.e[this.var_byte_j]] * 16), (short)(this.var_short_d + u.b[this.var_byte_j] * 48 + u.b[u.e[this.var_byte_j]] * 16), (byte)2);
-                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 48 + u.var_byte_arr_a[u.f[this.var_byte_j]] * 16), (short)(this.var_short_d + u.b[this.var_byte_j] * 48 + u.b[u.f[this.var_byte_j]] * 16), (byte)2);
+                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 48), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 48), (byte)2);
+                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 48 + u.var_byte_arr_a[u.arr_byte_e[this.var_byte_j]] * 16), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 48 + u.array_byte_b[u.arr_byte_e[this.var_byte_j]] * 16), (byte)2);
+                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 48 + u.var_byte_arr_a[u.f[this.var_byte_j]] * 16), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 48 + u.array_byte_b[u.f[this.var_byte_j]] * 16), (byte)2);
             }
         }
     }
@@ -722,18 +724,18 @@ implements u {
             }
             case 1: 
             case 5: {
-                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 16), (short)(this.var_short_d + u.b[this.var_byte_j] * 16), (byte)4);
+                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 16), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 16), (byte)4);
                 return;
             }
             case 2: 
             case 6: {
-                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 32), (short)(this.var_short_d + u.b[this.var_byte_j] * 32), (byte)4);
+                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 32), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 32), (byte)4);
                 return;
             }
             case 3: 
             case 7: {
                 bw.a((byte)17, false);
-                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 48), (short)(this.var_short_d + u.b[this.var_byte_j] * 48), (byte)4);
+                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 48), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 48), (byte)4);
             }
         }
     }
@@ -795,10 +797,10 @@ implements u {
             for (int i2 = 1; i2 <= 3; ++i2) {
                 ck ck2 = this.ck_a(this.var_byte_j, (byte)i2);
                 if (ck2 != null && ck2 instanceof al && !(ck2 instanceof av) && ((al)ck2).var_j_a.var_byte_c == this.byte_a()) {
-                    ((al)ck2).a(new bj(0, s2, this.f, this.m));
+                    ((al)ck2).a(new bj((short)0, s2, this.f, this.m));
                     continue;
                 }
-                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 16 * i2), (short)(this.var_short_d + u.b[this.var_byte_j] * 16 * i2), (byte)10);
+                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 16 * i2), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 16 * i2), (byte)10);
             }
         }
     }
@@ -814,12 +816,12 @@ implements u {
         this.var_byte_arr_j[3] = (byte)(ck.var_java_util_Random_a.nextInt() % (n2 - Math.abs(this.var_byte_arr_j[2]) + 1));
     }
 
-    public static {
-        var_short_arr_a = new short[]{1, 1, 1, 1, 10, 20};
-        var_byte_arr_h = new byte[]{1, 9, 20, 30};
-        var_short_arr_b = new short[]{56, 280, 280, 220, 160, 270, 56, 270, 220, 80, 270, 270, 80, 270, 220, 80, 270, 270};
-        var_byte_arr_i = new byte[]{0, 0, 10, 4, 4, 10, 0, 4, 0, 4, 10, 8, 0, 6, 6, 0, 10, 8};
-        var_short_arr_d = new short[]{16, 9, 161, 9, 10, 81, 16, 9, 13, 25, 81, 8, 31, 81, 16, 31, 87, 8};
-    }
+//    public static {
+//        var_short_arr_a = new short[]{1, 1, 1, 1, 10, 20};
+//        var_byte_arr_h = new byte[]{1, 9, 20, 30};
+//        var_short_arr_b = new short[]{56, 280, 280, 220, 160, 270, 56, 270, 220, 80, 270, 270, 80, 270, 220, 80, 270, 270};
+//        var_byte_arr_i = new byte[]{0, 0, 10, 4, 4, 10, 0, 4, 0, 4, 10, 8, 0, 6, 6, 0, 10, 8};
+//        var_short_arr_d = new short[]{16, 9, 161, 9, 10, 81, 16, 9, 13, 25, 81, 8, 31, 81, 16, 31, 87, 8};
+//    }
 }
 

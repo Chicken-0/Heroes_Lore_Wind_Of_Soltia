@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -12,9 +14,9 @@ extends ck
 implements u {
     public Vector a;
     public Vector b;
-    public byte h;
+    public byte byte_h;
     public byte i;
-    public byte j;
+    public byte byte_j;
     public byte k;
     public byte l = 0;
 
@@ -30,9 +32,9 @@ implements u {
         if (this.b == null) {
             this.b = new Vector(3);
         }
-        this.h = 1;
+        this.byte_h = 1;
         this.i = (byte)2;
-        this.j = (byte)2;
+        this.byte_j = (byte)2;
         this.k = (byte)-1;
     }
 
@@ -42,12 +44,12 @@ implements u {
 
     public void void_a(byte by2) {
         this.k = (byte)-1;
-        this.h = by2;
+        this.byte_h = by2;
     }
 
     public final void b(byte by2) {
         this.i = by2;
-        this.j = by2;
+        this.byte_j = by2;
     }
 
     public void void_d() {
@@ -55,10 +57,10 @@ implements u {
     }
 
     public final void void_e() {
-        if (this.h == 2 || this.h == 4) {
+        if (this.byte_h == 2 || this.byte_h == 4) {
             this.boolean_a();
         }
-        if (this.h == 2 || this.h == 4) {
+        if (this.byte_h == 2 || this.byte_h == 4) {
             this.void_a(8);
         }
     }
@@ -171,7 +173,7 @@ implements u {
         int n4 = Math.abs(n3);
         int n5 = Math.abs(n2);
         int n6 = ck.var_java_util_Random_a.nextInt();
-        if (n4 + n5 <= by2 && n4 * n5 == 0 || ck2 == this.a(this.j, ck2)) {
+        if (n4 + n5 <= by2 && n4 * n5 == 0 || ck2 == this.a(this.byte_j, ck2)) {
             byte by8 = n2 != 0 ? (n2 < 0 ? (byte)1 : 2) : (n3 < 0 ? (byte)3 : 4);
             this.b(by8);
             return;
@@ -221,8 +223,8 @@ implements u {
                 } else if (by4 != 0 && ae2.a(this, u.f[by9])) {
                     by3 = u.f[by9];
                     by5 = 1;
-                } else if (by4 == 0 && ae2.a(this, u.e[by9])) {
-                    by3 = u.e[by9];
+                } else if (by4 == 0 && ae2.a(this, u.arr_byte_e[by9])) {
+                    by3 = u.arr_byte_e[by9];
                     by5 = 1;
                 }
             }
@@ -239,7 +241,7 @@ implements u {
         byte[] arrby2;
         ae ae2 = n.var_ae_a;
         if (!bl2) {
-            arrby2 = u.e;
+            arrby2 = u.arr_byte_e;
             arrby = u.c;
         } else {
             arrby2 = u.f;
@@ -247,7 +249,7 @@ implements u {
         }
         byte by3 = by2 == 1 || by2 == 2 ? this.e : (byte)1;
         for (int i2 = -by3 + 1; i2 < by3; ++i2) {
-            if (!ae2.a(this, this.var_byte_a + i2 + u.var_byte_arr_a[arrby2[by2]], this.var_byte_b + u.b[arrby2[by2]]) || !ae2.a(this, this.var_byte_a + i2 + u.var_byte_arr_a[arrby[by2]], this.var_byte_b + u.b[arrby[by2]]) && ck2 != ae2.var_ck_arr_arr_a[this.var_byte_b + u.b[arrby[by2]]][this.var_byte_a + i2 + u.var_byte_arr_a[arrby[by2]]]) continue;
+            if (!ae2.a(this, this.var_byte_a + i2 + u.var_byte_arr_a[arrby2[by2]], this.var_byte_b + u.array_byte_b[arrby2[by2]]) || !ae2.a(this, this.var_byte_a + i2 + u.var_byte_arr_a[arrby[by2]], this.var_byte_b + u.array_byte_b[arrby[by2]]) && ck2 != ae2.var_ck_arr_arr_a[this.var_byte_b + u.array_byte_b[arrby[by2]]][this.var_byte_a + i2 + u.var_byte_arr_a[arrby[by2]]]) continue;
             return arrby2[by2];
         }
         return 0;
@@ -274,7 +276,7 @@ implements u {
         ck ck3 = null;
         for (int i2 = 0; i2 < this.e; ++i2) {
             int n2 = this.var_byte_a + u.var_byte_arr_a[by2] + i2;
-            int n3 = this.var_byte_b + u.b[by2];
+            int n3 = this.var_byte_b + u.array_byte_b[by2];
             x.a(n2 >= 0);
             x.a(n2 < ae2.var_int_a);
             x.a(n3 >= 0);

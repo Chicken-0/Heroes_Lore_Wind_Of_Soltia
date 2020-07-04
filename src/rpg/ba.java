@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -25,7 +27,7 @@ extends av {
             this.var_j_a.h = 0;
         }
         this.n();
-        if (this.h == 2) {
+        if (this.byte_h == 2) {
             switch (this.i) {
                 case 1: {
                     this.var_short_d = (short)(this.var_short_d - 8);
@@ -41,10 +43,10 @@ extends av {
     }
 
     public final void a(Graphics graphics, int n2, int n3) {
-        byte by2 = this.j;
-        this.j = 1;
+        byte by2 = this.byte_j;
+        this.byte_j = 1;
         super.a(graphics, n2, n3 -= 80);
-        this.j = by2;
+        this.byte_j = by2;
     }
 
     public final void i() {

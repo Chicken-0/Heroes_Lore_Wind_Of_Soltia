@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -115,6 +117,8 @@ extends cb {
             }
             catch (Exception exception) {
                 this.a(new Object[]{ai.var_z_a.a(47), ai.var_z_a.a(48)});
+            } catch (Throwable ex) {
+                ex.printStackTrace();
             }
         }
     }

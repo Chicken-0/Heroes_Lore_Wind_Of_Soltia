@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -12,10 +14,11 @@ import javax.microedition.lcdui.Image;
 
 public final class ae
 implements u {
-    private static final int[] var_int_arr_a;
-    private static byte var_byte_c;
-    private static final byte[] h;
-    private static byte var_byte_d;
+    private static final int[] var_int_arr_a = new int[]{0xFFDF3F, 0x3F1F3F, 0xFFDF3F, 0x3F1F3F, 0xFFDFBF, 0x7F3F3F, 0xBFFF3F, 0x1F3F3F, 0, 0, 0xBFFF3F, 0x1F3F3F, 0x3FBFFF, 0x1F3F3F, 0xBFFF3F, 0x1F3F3F, 0xBFFF3F, 0x1F3F3F, 0xBFFF3F, 0x1F3F3F, 0, 0, 0xFFDFBF, 0x7F3F3F, 0xDFFFFF, 2047871, 0xDFFFFF, 2047871, 0xFFDFBF, 0x7F3F3F};
+    private static byte var_byte_c = (byte)2;
+    private static final byte[] byte_arr_h = new byte[]{28, 0, 27, 29, -1, 1, 26, 31, 31, 2, -1, 25, 24, 24, 30, 3, -1, -1, -1, -1};
+    String[] arrstring = new String[]{"SET_TILE", "SET_COLI", "OBJ_XY  ", "OBJ_DEL ", "NPC_XY  ", "NPC_DEL ", "ENM_XY  ", "ENM_DEL ", "END     ", "OBJ_NUM ", "NPC_NUM ", "EMO_HERO", "EMO_NPC "};
+    private static byte var_byte_d = (byte)-1;
     public byte var_byte_a;
     public byte var_byte_b;
     public boolean var_boolean_a;
@@ -80,7 +83,7 @@ implements u {
             bw.b((byte)n2);
         }
         r.k();
-        this.i = ce.a("/m/" + (n.f < 10 ? "0" : "") + n.f + ".map");
+        this.i = ce.getResourceByName("/m/" + (n.f < 10 ? "0" : "") + n.f + ".map");
         r.k();
         this.var_byte_b = this.i[0];
         this.var_int_a = this.i[1];
@@ -99,7 +102,7 @@ implements u {
             ce.b();
         }
         System.gc();
-        this.i = ce.a("/m/" + n.var_byte_a + "/" + (n.f < 10 ? "0" : "") + n.f + ".evt");
+        this.i = ce.getResourceByName("/m/" + n.var_byte_a + "/" + (n.f < 10 ? "0" : "") + n.f + ".evt");
         r.k();
         r.k();
         this.void_b(this.i, 0);
@@ -157,9 +160,9 @@ implements u {
             if (this.var_byte_b == 1 || this.var_byte_b == 5 || this.var_byte_b == 9 || this.var_byte_b == 15) {
                 bw.a((byte)8);
             }
-            if (h[this.var_byte_b] != -1) {
-                bw.a(h[this.var_byte_b]);
-                bw.b((int)h[this.var_byte_b]);
+            if (byte_arr_h[this.var_byte_b] != -1) {
+                bw.a(byte_arr_h[this.var_byte_b]);
+                bw.b((int)byte_arr_h[this.var_byte_b]);
             }
         }
         n.ao_a().void_c();
@@ -193,7 +196,7 @@ implements u {
             Object object;
             try {
                 object = new br("/m/t/o" + (this.var_byte_b < 10 ? "0" : "") + this.var_byte_b);
-                new br("/m/t/o" + (this.var_byte_b < 10 ? "0" : "") + this.var_byte_b).var_boolean_a = true;
+                new br("/m/t/o" + (this.var_byte_b < 10 ? "0" : "") + this.var_byte_b).isInitResource = true;
                 r.k();
                 arrimage = ce.var_javax_microedition_lcdui_Image_arr_f = new Image[((br)object).int_a()];
                 r.k();
@@ -245,7 +248,7 @@ implements u {
         }
         try {
             object = new br("/npc/all");
-            new br("/npc/all").var_boolean_a = true;
+            new br("/npc/all").isInitResource = true;
             r.k();
             arrimage = ce.var_javax_microedition_lcdui_Image_arr_g = new Image[((br)object).int_a()];
             n4 = 0;
@@ -312,7 +315,7 @@ implements u {
 
     private final int int_c(byte[] arrby, int n2) {
         int n3;
-        byte by2;
+        byte by2 = 0;
         int by3;
         int n4;
         for (n4 = 0; n4 < 5; n4 = (byte)(n4 + 1)) {
@@ -329,21 +332,21 @@ implements u {
         byte[] arrby2 = null;
         if (by3 != 0) {
             j.a(5);
-            arrby2 = ce.a("/enm/data" + (n.g >= 2 ? 2 : (int)n.g));
+            arrby2 = ce.getResourceByName("/enm/data" + (n.g >= 2 ? 2 : (int)n.g));
             r.k();
         }
         boolean by22 = false;
         while (by2 < by3) {
             n3 = arrby[n2++] & 0xFF;
             ++n4;
-            ce.var_byte_arr_k[by2] = n3;
+            ce.var_byte_arr_k[by2] = (byte)n3;
             j.a(arrby2, (byte)n3, by2);
             r.k();
             ce.a((short)n3, by2, false);
             j.a(by2);
             r.k();
             String cfr_ignored_0 = "Enemy Loaded - " + n3;
-            by2 = (byte)(by2 + true);
+            by2 = (byte)(by2 + 1);
         }
         r.k();
         int n5 = arrby[n2++] & 0xFF;
@@ -363,7 +366,7 @@ implements u {
         int n3 = arrby[n2++];
         try {
             br br2 = new br("/m/face");
-            new br("/m/face").var_boolean_a = true;
+            new br("/m/face").isInitResource = true;
             ce.var_javax_microedition_lcdui_Image_arr_h = new Image[br2.int_a()];
             for (int i2 = 0; i2 < n3; ++i2) {
                 byte by2 = arrby[n2++];
@@ -519,14 +522,14 @@ implements u {
                 ao ao2 = n.ao_a();
                 ao2.void_c();
                 if (by3 == 0) break;
-                ao2.a(new aw(10, -1, (short)(by3 - 1)));
+                ao2.a(new aw((byte)10, (byte)-1, (short)(by3 - 1)));
                 return;
             }
             case 112: {
                 ac ac5 = this.var_ac_arr_a[by3];
                 ac5.void_c();
                 if (by4 == 0) break;
-                ac5.a(new aw(10, -1, (short)(by4 - 1)));
+                ac5.a(new aw((byte)10, (byte)-1, (short)(by4 - 1)));
             }
         }
     }
@@ -773,7 +776,7 @@ implements u {
                 al2.void_d();
                 ck2 = ck2.var_ck_a;
                 this.var_aq_a.c(al2);
-                if (al2.h != 6) continue;
+                if (al2.byte_h != 6) continue;
                 this.a(al2);
                 continue;
             }
@@ -851,7 +854,7 @@ implements u {
     }
 
     public final boolean a(o o2, byte by2) {
-        return this.a(o2, o2.var_byte_a + u.var_byte_arr_a[by2], o2.var_byte_b + u.b[by2]);
+        return this.a(o2, o2.var_byte_a + u.var_byte_arr_a[by2], o2.var_byte_b + u.array_byte_b[by2]);
     }
 
     public final void a(ck ck2) {
@@ -930,7 +933,7 @@ implements u {
 
     public static final void e() {
         j.a(5);
-        byte[] arrby = ce.a("/enm/data" + (n.g >= 2 ? 2 : (int)n.g));
+        byte[] arrby = ce.getResourceByName("/enm/data" + (n.g >= 2 ? 2 : (int)n.g));
         ce.var_byte_arr_k[0] = 32;
         j.a(arrby, (byte)32, (byte)0);
         ce.e((byte)1);
@@ -938,7 +941,7 @@ implements u {
     }
 
     public final void f() {
-        cc cc2 = new cc(10, 9, 32, 0);
+        cc cc2 = new cc((byte)10, (byte)9, (byte)32, (byte)0);
         this.b(cc2);
         cc2.void_a((byte)1);
         cc2.b((byte)2);
@@ -946,7 +949,7 @@ implements u {
 
     public static final void g() {
         j.a(5);
-        byte[] arrby = ce.a("/enm/data" + (n.g >= 2 ? 2 : (int)n.g));
+        byte[] arrby = ce.getResourceByName("/enm/data" + (n.g >= 2 ? 2 : (int)n.g));
         ce.var_byte_arr_k[0] = 35;
         ce.var_byte_arr_k[1] = 36;
         ce.var_byte_arr_k[2] = 37;
@@ -968,21 +971,21 @@ implements u {
 
     public final void a(boolean bl2) {
         if (bl2) {
-            ar ar2 = new ar(9, 5, 35, 0);
+            ar ar2 = new ar((byte)9, (byte)5, (byte)35, (byte)0);
             this.b(ar2);
             ar2.void_a((byte)1);
             ar2.b((byte)2);
             return;
         }
-        ag ag2 = new ag(9, 5, 36, 1);
+        ag ag2 = new ag((byte)9, (byte)5, (byte)36, (byte)1);
         this.b(ag2);
         ag2.void_a((byte)2);
         ag2.b((byte)2);
-        bd bd2 = new bd(6, 5, 37, 2);
+        bd bd2 = new bd((byte)6, (byte)5, (byte)37, (byte)2);
         this.b(bd2);
         bd2.void_a((byte)2);
         bd2.b((byte)2);
-        cd cd2 = new cd(13, 5, 38, 3);
+        cd cd2 = new cd((byte)13, (byte)5, (byte)38, (byte)3);
         this.b(cd2);
         cd2.void_a((byte)2);
         cd2.b((byte)2);
@@ -992,7 +995,7 @@ implements u {
 
     public static final void h() {
         j.a(5);
-        byte[] arrby = ce.a("/enm/data" + (n.g >= 2 ? 2 : (int)n.g));
+        byte[] arrby = ce.getResourceByName("/enm/data" + (n.g >= 2 ? 2 : (int)n.g));
         ce.var_byte_arr_k[0] = 39;
         ce.var_byte_arr_k[1] = 40;
         ce.var_byte_arr_k[2] = 41;
@@ -1006,22 +1009,22 @@ implements u {
     }
 
     public final void i() {
-        ba ba2 = new ba(this, 0, 7, 40, 1);
+        ba ba2 = new ba(this, (byte)0, (byte)7, (byte)40, (byte)1);
         this.b(ba2);
         ba2.void_a((byte)1);
         ba2.b((byte)1);
-        ak ak2 = new ak(this, 13, 7, 41, 2);
+        ak ak2 = new ak(this, (byte)13, (byte)7, (byte)41, (byte)2);
         this.b(ak2);
         ak2.void_a((byte)1);
         ak2.b((byte)1);
-        cg cg2 = new cg(7, 7, 39, 0, ba2, ak2);
+        cg cg2 = new cg((byte)7, (byte)7, (byte)39, (byte)0, ba2, ak2);
         this.b(cg2);
         cg2.void_a((byte)2);
         cg2.b((byte)1);
     }
 
     public static final void j() {
-        byte[] arrby = ce.a("/enm/data" + (n.g >= 2 ? 2 : (int)n.g));
+        byte[] arrby = ce.getResourceByName("/enm/data" + (n.g >= 2 ? 2 : (int)n.g));
         ce.var_byte_arr_k[1] = 42;
         j.a(arrby, (byte)42, (byte)1);
         ce.e((byte)4);
@@ -1029,18 +1032,18 @@ implements u {
     }
 
     public final void k() {
-        bv bv2 = new bv(this, 7, 10, 42, 1);
+        bv bv2 = new bv(this, (byte)7, (byte)10, (byte)42, (byte)1);
         this.b(bv2);
         bv2.void_a((byte)1);
         bv2.b((byte)2);
     }
 
-    public static {
-        var_int_arr_a = new int[]{0xFFDF3F, 0x3F1F3F, 0xFFDF3F, 0x3F1F3F, 0xFFDFBF, 0x7F3F3F, 0xBFFF3F, 0x1F3F3F, 0, 0, 0xBFFF3F, 0x1F3F3F, 0x3FBFFF, 0x1F3F3F, 0xBFFF3F, 0x1F3F3F, 0xBFFF3F, 0x1F3F3F, 0xBFFF3F, 0x1F3F3F, 0, 0, 0xFFDFBF, 0x7F3F3F, 0xDFFFFF, 2047871, 0xDFFFFF, 2047871, 0xFFDFBF, 0x7F3F3F};
-        var_byte_c = (byte)2;
-        h = new byte[]{28, 0, 27, 29, -1, 1, 26, 31, 31, 2, -1, 25, 24, 24, 30, 3, -1, -1, -1, -1};
-        String[] arrstring = new String[]{"SET_TILE", "SET_COLI", "OBJ_XY  ", "OBJ_DEL ", "NPC_XY  ", "NPC_DEL ", "ENM_XY  ", "ENM_DEL ", "END     ", "OBJ_NUM ", "NPC_NUM ", "EMO_HERO", "EMO_NPC "};
-        var_byte_d = (byte)-1;
-    }
+//    public static {
+//        var_int_arr_a = new int[]{0xFFDF3F, 0x3F1F3F, 0xFFDF3F, 0x3F1F3F, 0xFFDFBF, 0x7F3F3F, 0xBFFF3F, 0x1F3F3F, 0, 0, 0xBFFF3F, 0x1F3F3F, 0x3FBFFF, 0x1F3F3F, 0xBFFF3F, 0x1F3F3F, 0xBFFF3F, 0x1F3F3F, 0xBFFF3F, 0x1F3F3F, 0, 0, 0xFFDFBF, 0x7F3F3F, 0xDFFFFF, 2047871, 0xDFFFFF, 2047871, 0xFFDFBF, 0x7F3F3F};
+//        var_byte_c = (byte)2;
+//        h = new byte[]{28, 0, 27, 29, -1, 1, 26, 31, 31, 2, -1, 25, 24, 24, 30, 3, -1, -1, -1, -1};
+//        String[] arrstring = new String[]{"SET_TILE", "SET_COLI", "OBJ_XY  ", "OBJ_DEL ", "NPC_XY  ", "NPC_DEL ", "ENM_XY  ", "ENM_DEL ", "END     ", "OBJ_NUM ", "NPC_NUM ", "EMO_HERO", "EMO_NPC "};
+//        var_byte_d = (byte)-1;
+//    }
 }
 

@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -72,7 +74,7 @@ extends cb {
                     break;
                 }
                 case 1: {
-                    n4 += ao2.var_short_e + ao2.n;
+                    n4 += ao2.var_short_e + ao2.byte_n;
                     break;
                 }
                 case 2: {

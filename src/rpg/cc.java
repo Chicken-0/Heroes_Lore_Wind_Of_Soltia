@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  */
@@ -24,7 +26,7 @@ extends av {
     }
 
     public final void n() {
-        switch (((o)this).h) {
+        switch (((o)this).byte_h) {
             case 2: {
                 if (this.k < this.var_j_a.k) break;
                 this.a(false);
@@ -107,7 +109,7 @@ extends av {
     }
 
     public final void o() {
-        switch (((o)this).h) {
+        switch (((o)this).byte_h) {
             case 2: {
                 int n2;
                 if (this.k != 5) break;
@@ -116,8 +118,8 @@ extends av {
                 int n3 = -1;
                 int n4 = -1;
                 for (n2 = 3; n2 > 0 && !ae2.a(n3, n4); n2 = (int)((byte)(n2 - 1))) {
-                    n3 = ao2.var_byte_a > this.var_byte_a ? (int)((byte)h.a(this.var_byte_a, ao2.var_byte_a + 1)) : (int)((byte)h.a(ao2.var_byte_a - 1, (int)this.var_byte_a));
-                    n4 = ao2.var_byte_b > this.var_byte_b ? (int)((byte)h.a(this.var_byte_b, ao2.var_byte_b + 1)) : (int)((byte)h.a(ao2.var_byte_b - 1, (int)this.var_byte_b));
+                    n3 = ao2.var_byte_a > this.var_byte_a ? (int)((byte)rpg.h.a(this.var_byte_a, ao2.var_byte_a + 1)) : (int)((byte)rpg.h.a(ao2.var_byte_a - 1, (int)this.var_byte_a));
+                    n4 = ao2.var_byte_b > this.var_byte_b ? (int)((byte)rpg.h.a(this.var_byte_b, ao2.var_byte_b + 1)) : (int)((byte)rpg.h.a(ao2.var_byte_b - 1, (int)this.var_byte_b));
                 }
                 if (n2 > 0) {
                     this.a((short)(n3 << 4), (short)(n4 << 4));
@@ -152,8 +154,8 @@ extends av {
                 if (this.k == 7) {
                     ae ae2 = n.var_ae_a;
                     for (int n2 = 1; n2 <= 4; n2 = (int)((byte)(n2 + 1))) {
-                        if (!ae2.a(this, ao2.var_byte_a + u.var_byte_arr_a[n2], ao2.var_byte_b + u.b[n2])) continue;
-                        this.a((short)(ao2.var_byte_a + u.var_byte_arr_a[n2] << 4), (short)(ao2.var_byte_b + u.b[n2] << 4));
+                        if (!ae2.a(this, ao2.var_byte_a + u.var_byte_arr_a[n2], ao2.var_byte_b + u.array_byte_b[n2])) continue;
+                        this.a((short)(ao2.var_byte_a + u.var_byte_arr_a[n2] << 4), (short)(ao2.var_byte_b + u.array_byte_b[n2] << 4));
                         break;
                     }
                 }
@@ -164,7 +166,7 @@ extends av {
             case 2: {
                 if (this.k != 7) break;
                 for (byte by2 = 1; by2 <= 4; by2 = (byte)(by2 + 1)) {
-                    n.var_ae_a.b(new i((byte)(this.var_byte_a + u.var_byte_arr_a[by2]), (byte)(this.var_byte_b + u.b[by2]), (byte[])ce.var_java_lang_Object_arr_f[this.n], this, by2, 3, 2));
+                    n.var_ae_a.b(new i((byte)(this.var_byte_a + u.var_byte_arr_a[by2]), (byte)(this.var_byte_b + u.array_byte_b[by2]), (byte[])ce.var_java_lang_Object_arr_f[this.byte_n], this, by2, (byte)3, (byte)2));
                 }
                 return;
             }
@@ -177,7 +179,7 @@ extends av {
 
     public final void k() {
         if (this.q > 8) {
-            n.var_ae_a.b(new y((byte)(this.var_byte_a + h.a(-1, 1)), (byte)(this.var_byte_b + h.a(0, 3)), (byte[])ce.var_java_lang_Object_arr_f[this.n]));
+            n.var_ae_a.b(new y((byte)(this.var_byte_a + rpg.h.a(-1, 1)), (byte)(this.var_byte_b + rpg.h.a(0, 3)), (byte[])ce.var_java_lang_Object_arr_f[this.byte_n]));
         }
     }
 
@@ -185,9 +187,9 @@ extends av {
         this.w = by2;
         int n2 = (by2 - 1) * 4;
         for (int i2 = 0; i2 < 4; ++i2) {
-            ce.var_java_lang_Object_arr_h[this.n * 16 + 12 + i2] = ce.var_java_lang_Object_arr_i[n2 + i2];
+            ce.var_java_lang_Object_arr_h[this.byte_n * 16 + 12 + i2] = ce.var_java_lang_Object_arr_i[n2 + i2];
         }
-        byte[] arrby = (byte[])ce.var_java_lang_Object_arr_h[this.n * 16 + 12];
+        byte[] arrby = (byte[])ce.var_java_lang_Object_arr_h[this.byte_n * 16 + 12];
         this.x = arrby[0];
     }
 

@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  */
@@ -6,14 +8,15 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-public final class cj {
-    public static cj var_cj_a;
+public final class BabbleText {
+    String[] arrstring = new String[]{"English", "Fran\u00c7ais", "Deutsch", "Italiano", "Espa\u00d1ol"};
+    public static BabbleText instance = new BabbleText();
     public byte[] var_byte_arr_a;
     public byte var_byte_a = 0;
     public DataInputStream var_java_io_DataInputStream_a;
     public final String[] var_java_lang_String_arr_a = new String[]{"en-GB", "fr-FR", "de-DE", "it-IT", "es-ES"};
 
-    public cj() {
+    public BabbleText() {
         String[] arrstring = new String[]{"Select", "S\u00e9lection.", "W\u00e4hlen", "Selez.", "Elegir"};
         String[] arrstring2 = new String[]{"Exit", "Quitter", "Beenden", "Esci", "Salir"};
     }
@@ -67,24 +70,24 @@ public final class cj {
         this.var_java_io_DataInputStream_a = new DataInputStream(new ByteArrayInputStream(this.var_byte_arr_a));
     }
 
-    public final String a(int n2) {
+    public final String getTextById(int textId) {
         try {
             boolean bl2 = false;
             this.var_java_io_DataInputStream_a.reset();
-            this.var_java_io_DataInputStream_a.skip((n2 -= 0) << 2);
+            this.var_java_io_DataInputStream_a.skip(textId << 2);
             this.var_java_io_DataInputStream_a.skip(this.var_java_io_DataInputStream_a.readInt());
             this.var_java_io_DataInputStream_a.skip(2L);
             String string = this.var_java_io_DataInputStream_a.readUTF();
             return string;
         }
         catch (Exception exception) {
-            return n2 + "." + exception.toString();
+            return textId + "." + exception.toString();
         }
     }
 
-    public static {
-        var_cj_a = new cj();
-        String[] arrstring = new String[]{"English", "Fran\u00c7ais", "Deutsch", "Italiano", "Espa\u00d1ol"};
-    }
+//    public static {
+//        var_cj_a = new cj();
+//        String[] arrstring = new String[]{"English", "Fran\u00c7ais", "Deutsch", "Italiano", "Espa\u00d1ol"};
+//    }
 }
 

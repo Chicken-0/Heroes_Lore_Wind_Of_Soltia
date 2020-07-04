@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  */
@@ -37,18 +39,18 @@ extends av {
 
     public final void j() {
         if (this.k == 2) {
-            n.var_ae_a.b(new i((byte)(this.var_byte_a - 1), (byte)(this.var_byte_b - 1), (byte[])ce.var_java_lang_Object_arr_f[this.n], this, this.i, 13, 2));
-            n.var_ae_a.b(new i((byte)(this.var_byte_a + 3), (byte)(this.var_byte_b - 1), (byte[])ce.var_java_lang_Object_arr_f[this.n], this, this.i, 13, 2));
-            n.var_ae_a.b(new i(this.var_byte_a, this.var_byte_b, (byte[])ce.var_java_lang_Object_arr_f[this.n], this, this.i, 13, 2));
-            n.var_ae_a.b(new i((byte)(this.var_byte_a + 2), this.var_byte_b, (byte[])ce.var_java_lang_Object_arr_f[this.n], this, this.i, 13, 2));
-            n.var_ae_a.b(new i((byte)(this.var_byte_a + 1), (byte)(this.var_byte_b + 1), (byte[])ce.var_java_lang_Object_arr_f[this.n], this, this.i, 13, 2));
+            n.var_ae_a.b(new i((byte)(this.var_byte_a - 1), (byte)(this.var_byte_b - 1), (byte[])ce.var_java_lang_Object_arr_f[this.byte_n], this, this.i, (byte)13, (byte)2));
+            n.var_ae_a.b(new i((byte)(this.var_byte_a + 3), (byte)(this.var_byte_b - 1), (byte[])ce.var_java_lang_Object_arr_f[this.byte_n], this, this.i, (byte)13, (byte)2));
+            n.var_ae_a.b(new i(this.var_byte_a, this.var_byte_b, (byte[])ce.var_java_lang_Object_arr_f[this.byte_n], this, this.i, (byte)13, (byte)2));
+            n.var_ae_a.b(new i((byte)(this.var_byte_a + 2), this.var_byte_b, (byte[])ce.var_java_lang_Object_arr_f[this.byte_n], this, this.i, (byte)13, (byte)2));
+            n.var_ae_a.b(new i((byte)(this.var_byte_a + 1), (byte)(this.var_byte_b + 1), (byte[])ce.var_java_lang_Object_arr_f[this.byte_n], this, this.i, (byte)13, (byte)2));
         }
     }
 
     public final void k() {
         if (this.q > 8) {
-            n.var_ae_a.b(new y((byte)(this.var_byte_a + h.a(-2, 2)), (byte)(this.var_byte_b + h.a(-2, 2)), (byte[])ce.var_java_lang_Object_arr_f[this.var_cd_a.n]));
-            n.var_ae_a.b(new y((byte)(this.var_byte_a + h.a(-2, 2)), (byte)(this.var_byte_b + h.a(-2, 2)), (byte[])ce.var_java_lang_Object_arr_f[this.var_cd_a.n]));
+            n.var_ae_a.b(new y((byte)(this.var_byte_a + h.a(-2, 2)), (byte)(this.var_byte_b + h.a(-2, 2)), (byte[])ce.var_java_lang_Object_arr_f[this.var_cd_a.byte_n]));
+            n.var_ae_a.b(new y((byte)(this.var_byte_a + h.a(-2, 2)), (byte)(this.var_byte_b + h.a(-2, 2)), (byte[])ce.var_java_lang_Object_arr_f[this.var_cd_a.byte_n]));
         }
     }
 

@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -6,7 +8,7 @@
  */
 import java.io.IOException;
 import javax.microedition.lcdui.Graphics;
-import rpg.GameMIDlet;
+import main.GameMIDlet;
 
 public final class bg
 extends r
@@ -107,7 +109,11 @@ implements Runnable {
                     case 2: {
                         bu.e();
                         ce.A();
+                    try {
                         bs.var_bs_a.d();
+                    } catch (Throwable ex) {
+                        ex.printStackTrace();
+                    }
                         this.var_byte_a = (byte)-1;
                         this.var_byte_b = 0;
                     }
@@ -169,9 +175,9 @@ implements Runnable {
                 graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_k[this.var_byte_c < 4 ? this.var_byte_c : 8 - this.var_byte_c], (int)this.var_short_a, (int)this.var_short_b, 33);
                 graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_k[(this.var_byte_d < 4 ? this.var_byte_d : 8 - this.var_byte_d) + 5], (int)this.var_short_c, (int)this.var_short_d, 33);
                 this.var_short_a = (short)(this.var_short_a + 10 * (this.var_byte_c < 4 ? 1 : -1));
-                this.var_short_b = (short)(this.var_short_b + h.a(-1, 4));
+                this.var_short_b = (short)(this.var_short_b + rpg.h.a(-1, 4));
                 this.var_short_c = (short)(this.var_short_c + 10 * (this.var_byte_d < 4 ? -1 : 1));
-                this.var_short_d = (short)(this.var_short_d + h.a(-1, 4));
+                this.var_short_d = (short)(this.var_short_d + rpg.h.a(-1, 4));
                 this.var_byte_c = (byte)(this.var_byte_c + 1);
                 this.var_byte_d = (byte)(this.var_byte_d + 1);
                 if (this.var_byte_c > 7) {
@@ -181,14 +187,14 @@ implements Runnable {
                     this.var_byte_d = 0;
                 }
                 if (this.var_short_b > r.h + 10) {
-                    this.var_short_a = (short)h.a(10, r.g / 2 - 10);
-                    this.var_short_b = (short)(-10 * h.a(0, 4));
-                    this.var_byte_c = (byte)h.a(0, 7);
+                    this.var_short_a = (short)rpg.h.a(10, r.g / 2 - 10);
+                    this.var_short_b = (short)(-10 * rpg.h.a(0, 4));
+                    this.var_byte_c = (byte)rpg.h.a(0, 7);
                 }
                 if (this.var_short_d > r.h + 10) {
-                    this.var_short_c = (short)h.a(r.g / 2 + 10, r.g - 10);
-                    this.var_short_d = (short)(-10 * h.a(3, 7));
-                    this.var_byte_d = (byte)h.a(0, 7);
+                    this.var_short_c = (short)rpg.h.a(r.g / 2 + 10, r.g - 10);
+                    this.var_short_d = (short)(-10 * rpg.h.a(3, 7));
+                    this.var_byte_d = (byte)rpg.h.a(0, 7);
                 }
                 if (this.var_int_a % 4 < 2) {
                     graphics.setColor(0);
@@ -222,8 +228,8 @@ implements Runnable {
     }
 
     private void b(int n2) {
-        cj.var_cj_a.a("/lang/language", "", n2);
-        bh.a(cj.var_cj_a);
+        BabbleText.instance.a("/lang/language", "", n2);
+        bh.a(BabbleText.instance);
         w.void_a();
         try {
             ce.var_z_g = new z("/sgui/com");
@@ -258,12 +264,12 @@ implements Runnable {
         bs.var_bs_a.a(15);
         this.var_int_a = 0;
         this.var_byte_a = 1;
-        this.var_short_a = (short)h.a(0, r.g / 2 - 10);
-        this.var_short_b = (short)(10 * h.a(0, 4));
-        this.var_byte_c = (byte)h.a(0, 7);
-        this.var_short_c = (short)h.a(r.g / 2, r.g - 10);
-        this.var_short_d = (short)(10 * h.a(3, 7));
-        this.var_byte_d = (byte)h.a(0, 7);
+        this.var_short_a = (short)rpg.h.a(0, r.g / 2 - 10);
+        this.var_short_b = (short)(10 * rpg.h.a(0, 4));
+        this.var_byte_c = (byte)rpg.h.a(0, 7);
+        this.var_short_c = (short)rpg.h.a(r.g / 2, r.g - 10);
+        this.var_short_d = (short)(10 * rpg.h.a(3, 7));
+        this.var_byte_d = (byte)rpg.h.a(0, 7);
         bw.b(22);
     }
 
@@ -283,8 +289,8 @@ implements Runnable {
         new Thread(this).start();
     }
 
-    public static {
-        "*:MAP UPDATE".toCharArray();
-    }
+//    public static {
+//        "*:MAP UPDATE".toCharArray();
+//    }
 }
 

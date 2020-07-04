@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -41,10 +43,10 @@ extends cb {
             char[] arrc = ce.var_z_e.a(by2);
             if (this.var_byte_b == this.var_byte_a - 1) {
                 if (w.boolean_a()) {
-                    String string = cj.var_cj_a.a(3930);
+                    String string = BabbleText.instance.getTextById(3930);
                     arrc = string.toCharArray();
                 } else if (w.boolean_b()) {
-                    String string = cj.var_cj_a.a(3934);
+                    String string = BabbleText.instance.getTextById(3934);
                     string = bh.a(string, "XXX", new String(w.java_lang_String_a()));
                     arrc = string.toCharArray();
                 }

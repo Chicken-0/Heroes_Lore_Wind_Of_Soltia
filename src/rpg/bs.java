@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -10,7 +12,7 @@ import javax.microedition.lcdui.Displayable;
 
 public final class bs
 implements Runnable {
-    public static final int[] var_int_arr_a;
+    public static final int[] var_int_arr_a = new int[]{8, 10, 14, 18};
     private Display var_javax_microedition_lcdui_Display_a;
     private r var_r_a;
     public static as var_as_a;
@@ -27,7 +29,7 @@ implements Runnable {
     private long var_long_a;
     public boolean e;
     private boolean f = true;
-    public static Object var_java_lang_Object_a;
+    public static Object var_java_lang_Object_a = new Object();
     public static bs var_bs_a;
 
     public static final void a(Display display) {
@@ -95,7 +97,7 @@ implements Runnable {
         new Thread(this).start();
     }
 
-    public final void d() {
+    public final void d() throws Throwable {
         this.var_r_a = new as();
         var_as_a = (as)this.var_r_a;
         this.var_javax_microedition_lcdui_Display_a.setCurrent((Displayable)this.var_r_a);
@@ -184,9 +186,9 @@ implements Runnable {
         this.a(arrby);
     }
 
-    public static {
-        var_int_arr_a = new int[]{8, 10, 14, 18};
-        var_java_lang_Object_a = new Object();
-    }
+//    public static {
+//        var_int_arr_a = new int[]{8, 10, 14, 18};
+//        var_java_lang_Object_a = new Object();
+//    }
 }
 

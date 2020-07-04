@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -26,7 +28,7 @@ extends cb {
             if (this.var_byte_b == 0) {
                 byte[] arrby = ao2.a(false, (byte)-1);
                 if (arrby.length == 0) {
-                    this.a(new Object[]{cj.var_cj_a.a(3935).toCharArray()});
+                    this.a(new Object[]{BabbleText.instance.getTextById(3935).toCharArray()});
                 } else {
                     this.var_cb_b = new m(this, arrby, this.var_byte_b, aa.var_z_a.a(3));
                 }
@@ -52,7 +54,7 @@ extends cb {
             this.a.b = true;
             ao2.var_g_a.var_int_a -= 100;
             byte[] arrby = new byte[]{ao2.byte_a(this.a)};
-            this.var_cb_b = new m(this, arrby, 10, aa.var_z_a.a(20));
+            this.var_cb_b = new m(this, arrby, (byte)10, aa.var_z_a.a(20));
             this.a = null;
             return;
         }

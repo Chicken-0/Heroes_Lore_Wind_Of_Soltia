@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -5,11 +7,11 @@
  *  javax.microedition.midlet.MIDlet
  */
 import javax.microedition.midlet.MIDlet;
-import rpg.GameMIDlet;
+import main.GameMIDlet;
 
 public final class w {
     public static MIDlet var_javax_microedition_midlet_MIDlet_a;
-    public static String[] var_java_lang_String_arr_a;
+    public static String[] var_java_lang_String_arr_a = BabbleText.instance.var_java_lang_String_arr_a;
     public static String var_java_lang_String_a;
     public static boolean var_boolean_a;
     public static boolean b;
@@ -18,7 +20,7 @@ public final class w {
 
     public static final void a(MIDlet mIDlet) {
         var_javax_microedition_midlet_MIDlet_a = mIDlet;
-        x.a = c = w.c();
+        x.a = c = w.isDemoVersion();
     }
 
     public static final void void_a() {
@@ -45,9 +47,12 @@ public final class w {
         }
     }
 
-    private static boolean c() {
+    // Check demo key in manifest
+    private static boolean isDemoVersion() {
         String string = var_javax_microedition_midlet_MIDlet_a.getAppProperty("HO-Demo");
-        boolean bl2 = true;
+//        boolean bl2 = true;
+        boolean bl2 = false;
+
         if (string != null && string.trim().equals("BEJ8K52N7A")) {
             bl2 = false;
         }
@@ -91,13 +96,13 @@ public final class w {
 
     public static final String java_lang_String_a() {
         String string;
-        String string2 = "HO-Label-" + var_java_lang_String_arr_a[cj.var_cj_a.var_byte_a];
+        String string2 = "HO-Label-" + var_java_lang_String_arr_a[BabbleText.instance.var_byte_a];
         String string3 = var_javax_microedition_midlet_MIDlet_a.getAppProperty(string2);
         if (string3 == null || string3.length() == 0) {
             if (c) {
-                return cj.var_cj_a.a(3931);
+                return BabbleText.instance.getTextById(3931);
             }
-            return cj.var_cj_a.a(3925);
+            return BabbleText.instance.getTextById(3925);
         }
         if (string3.indexOf("\\u") >= 0) {
             String string4;
@@ -118,7 +123,7 @@ public final class w {
     }
 
     private static String java_lang_String_b() {
-        String string = "HO-URL-" + var_java_lang_String_arr_a[cj.var_cj_a.var_byte_a];
+        String string = "HO-URL-" + var_java_lang_String_arr_a[BabbleText.instance.var_byte_a];
         String string2 = var_javax_microedition_midlet_MIDlet_a.getAppProperty(string);
         if (string2 == null || string2.length() == 0) {
             return null;
@@ -128,7 +133,7 @@ public final class w {
 
     private static boolean a(boolean bl2) {
         String string = var_javax_microedition_midlet_MIDlet_a.getAppProperty("HO-BuySetup");
-        String string2 = "HO-URL-" + var_java_lang_String_arr_a[cj.var_cj_a.var_byte_a];
+        String string2 = "HO-URL-" + var_java_lang_String_arr_a[BabbleText.instance.var_byte_a];
         String string3 = var_javax_microedition_midlet_MIDlet_a.getAppProperty(string2);
         if (string == null || string.length() == 0) {
             return false;
@@ -142,8 +147,8 @@ public final class w {
         return string.indexOf("exit") > -1;
     }
 
-    public static {
-        var_java_lang_String_arr_a = cj.var_cj_a.var_java_lang_String_arr_a;
-    }
+//    public static {
+//        var_java_lang_String_arr_a = cj.var_cj_a.var_java_lang_String_arr_a;
+//    }
 }
 

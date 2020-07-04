@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -82,7 +84,7 @@ extends cb {
                     bh.int_a(graphics, n2 + 38, n3 + 21 + i2 * 15, ce.var_z_a.a(9 + i2), 1);
                 }
                 r.c(graphics, ao2.var_short_b + ao2.m, n2 + 100, n3 + 22, 8);
-                r.c(graphics, ao2.var_short_e + ao2.n, n2 + 100, n3 + 22 + 15, 8);
+                r.c(graphics, ao2.var_short_e + ao2.byte_n, n2 + 100, n3 + 22 + 15, 8);
                 r.c(graphics, ao2.var_short_f + ao2.o, n2 + 100, n3 + 22 + 30, 8);
                 r.c(graphics, ao2.var_short_g + ao2.p, n2 + 100, n3 + 22 + 45, 8);
                 r.c(graphics, ao2.var_short_h, n2 + 100, n3 + 22 + 60, 8);

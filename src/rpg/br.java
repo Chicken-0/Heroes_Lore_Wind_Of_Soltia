@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -8,9 +10,9 @@ import java.io.IOException;
 import javax.microedition.lcdui.Image;
 
 public final class br {
-    private static final String[] var_java_lang_String_arr_a;
-    private static final byte[] var_byte_arr_a;
-    private static final byte[] var_byte_arr_b;
+    private static final String[] var_java_lang_String_arr_a = new String[]{"IHDR", "cHRM", "gAMA", "iCCP", "sBIT", "sRGB", "tEXt", "zTXt", "iTXt", "pHYs", "sPLT", "tIME", "PLTE", "tRNS", "hIST", "bKGD", "IDAT", "IEND"};
+    private static final byte[] var_byte_arr_a = new byte[]{-119, 80, 78, 71, 13, 10, 26, 10};
+    private static final byte[] var_byte_arr_b = new byte[]{0, 0, 0, 0, 73, 69, 78, 68, -82, 66, 96, -126};
     private String var_java_lang_String_a;
     private boolean var_boolean_b;
     private boolean var_boolean_c;
@@ -21,9 +23,9 @@ public final class br {
     private char[] var_char_arr_a;
     private int var_int_b;
     private int var_int_c;
-    public boolean var_boolean_a = false;
-    private static ca var_ca_a;
-    private static an var_an_a;
+    public boolean isInitResource = true; //fix to true, default = false
+    private static ca var_ca_a = new ca();
+    private static an var_an_a = new an();
 
     public br() {
     }
@@ -42,12 +44,12 @@ public final class br {
     }
 
     private void b() throws IOException {
-        this.var_byte_arr_c = ce.a(this.var_java_lang_String_a + ".mph");
+        this.var_byte_arr_c = ce.getResourceByName(this.var_java_lang_String_a + ".mph");
         this.c();
     }
 
     public final void void_a(int n2) throws IOException {
-        this.var_java_lang_Object_arr_a[n2] = ce.a(this.var_java_lang_String_a + "_" + n2 + ".mpd");
+        this.var_java_lang_Object_arr_a[n2] = ce.getResourceByName(this.var_java_lang_String_a + "_" + n2 + ".mpd");
     }
 
     public final void void_b(int n2) {
@@ -97,7 +99,7 @@ public final class br {
     }
 
     public final Image[] javax_microedition_lcdui_Image_arr_a() {
-        this.var_boolean_a = true;
+        this.isInitResource = true;
         int n2 = this.int_a();
         Image[] arrimage = new Image[n2];
         for (int i2 = 0; i2 < n2; ++i2) {
@@ -132,7 +134,7 @@ public final class br {
 
     private byte[] byte_arr_a(int n2) {
         int n3 = this.int_a(n2);
-        if (this.var_boolean_a && this.var_java_lang_Object_arr_a[n3] == null) {
+        if (this.isInitResource && this.var_java_lang_Object_arr_a[n3] == null) {
             this.void_a();
             try {
                 this.void_a(n3);
@@ -429,9 +431,9 @@ public final class br {
             }
             case 3: {
                 for (n6 = 0; n6 < n7 / 3; ++n6) {
-                    arrby[n8 + n6 * 3] = ~arrby[n8 + n6 * 3];
-                    arrby[n8 + n6 * 3 + 1] = ~arrby[n8 + n6 * 3 + 1];
-                    arrby[n8 + n6 * 3 + 2] = ~arrby[n8 + n6 * 3 + 2];
+                    arrby[n8 + n6 * 3] = (byte)(~arrby[n8 + n6 * 3]);
+                    arrby[n8 + n6 * 3 + 1] = (byte)~arrby[n8 + n6 * 3 + 1];
+                    arrby[n8 + n6 * 3 + 2] = (byte)~arrby[n8 + n6 * 3 + 2];
                 }
                 break;
             }
@@ -467,12 +469,12 @@ public final class br {
         return arrby2;
     }
 
-    public static {
-        var_java_lang_String_arr_a = new String[]{"IHDR", "cHRM", "gAMA", "iCCP", "sBIT", "sRGB", "tEXt", "zTXt", "iTXt", "pHYs", "sPLT", "tIME", "PLTE", "tRNS", "hIST", "bKGD", "IDAT", "IEND"};
-        var_byte_arr_a = new byte[]{-119, 80, 78, 71, 13, 10, 26, 10};
-        var_byte_arr_b = new byte[]{0, 0, 0, 0, 73, 69, 78, 68, -82, 66, 96, -126};
-        var_ca_a = new ca();
-        var_an_a = new an();
-    }
+//    public static {
+//        var_java_lang_String_arr_a = new String[]{"IHDR", "cHRM", "gAMA", "iCCP", "sBIT", "sRGB", "tEXt", "zTXt", "iTXt", "pHYs", "sPLT", "tIME", "PLTE", "tRNS", "hIST", "bKGD", "IDAT", "IEND"};
+//        var_byte_arr_a = new byte[]{-119, 80, 78, 71, 13, 10, 26, 10};
+//        var_byte_arr_b = new byte[]{0, 0, 0, 0, 73, 69, 78, 68, -82, 66, 96, -126};
+//        var_ca_a = new ca();
+//        var_an_a = new an();
+//    }
 }
 

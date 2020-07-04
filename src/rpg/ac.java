@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -23,7 +25,7 @@ extends o {
         this.f();
         super.a(s2, s3);
         this.void_b();
-        if (this.h == 1) {
+        if (this.byte_h == 1) {
             this.g();
         }
     }
@@ -31,9 +33,9 @@ extends o {
     public final void void_a(int n2) {
         this.f();
         this.var_short_c = (short)(this.var_short_c + n2 * u.var_byte_arr_a[this.i]);
-        this.var_short_d = (short)(this.var_short_d + n2 * u.b[this.i]);
+        this.var_short_d = (short)(this.var_short_d + n2 * u.array_byte_b[this.i]);
         this.void_b();
-        if (this.h == 1) {
+        if (this.byte_h == 1) {
             this.g();
         }
     }
@@ -59,12 +61,12 @@ extends o {
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_g[this.f - 18], n4, n5, 33);
         } else {
             int n6 = 0;
-            n6 = this.h == 2 ? this.g * 12 + 4 + (this.j - 1) : this.g * 12 + 0 + (this.j - 1);
+            n6 = this.byte_h == 2 ? this.g * 12 + 4 + (this.byte_j - 1) : this.g * 12 + 0 + (this.byte_j - 1);
             as.b(graphics, (byte[])ce.var_java_lang_Object_arr_j[n6], this.k, n4, n5);
             this.k = (byte)(this.k + 1);
-            if (this.h == 1 && ce.var_byte_arr_i[this.g] <= this.k) {
+            if (this.byte_h == 1 && ce.var_byte_arr_i[this.g] <= this.k) {
                 this.k = 0;
-            } else if (this.h == 2 && ce.var_byte_arr_j[this.g] <= this.k) {
+            } else if (this.byte_h == 2 && ce.var_byte_arr_j[this.g] <= this.k) {
                 this.k = 0;
             }
         }

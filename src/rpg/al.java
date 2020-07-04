@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -9,7 +11,7 @@ import javax.microedition.lcdui.Graphics;
 public class al
 extends o {
     public byte m;
-    public byte n;
+    public byte byte_n;
     private int var_int_a = this.var_byte_a;
     private int var_int_b = this.var_byte_b;
     public j var_j_a;
@@ -19,23 +21,23 @@ extends o {
     public byte p = 0;
     public byte q = 0;
     private byte s = 0;
-    private byte t = 0;
+    private byte byte_t = 0;
     private boolean d;
     private boolean e;
     private boolean[] var_boolean_arr_b;
     private ck c;
-    private byte u;
+    private byte byte_u;
     private boolean f;
 
     public al(short s2, short s3, byte by2, byte by3) {
         super(s2, s3, (byte)8, (byte)8);
         this.m = by2;
-        this.n = by3;
+        this.byte_n = by3;
         this.var_j_a = j.var_j_arr_a[by3];
         this.var_short_a = this.var_j_a.var_short_a;
         this.o = this.var_j_a.h;
         this.p = this.var_j_a.i;
-        this.u = (byte)-10;
+        this.byte_u = (byte)-10;
         this.var_boolean_arr_b = new boolean[5];
         this.d = false;
         if (this.var_j_a.var_boolean_d) {
@@ -68,8 +70,8 @@ extends o {
         int n6 = n4;
         int n7 = n5;
         if (this.s == 3 || this.s == 1) {
-            n7 += u.b[this.t] * 3;
-            n6 += u.var_byte_arr_a[this.t] * 3;
+            n7 += u.array_byte_b[this.byte_t] * 3;
+            n6 += u.var_byte_arr_a[this.byte_t] * 3;
         }
         if (this.m != 22 && this.m != 16 && !(this instanceof av) || this instanceof cc) {
             if (((ck)this).e == 1) {
@@ -80,17 +82,17 @@ extends o {
             }
         }
         int n8 = 0;
-        switch (this.h) {
+        switch (this.byte_h) {
             case 2: {
-                n8 = this.n * 12 + 4 + (this.j - 1);
+                n8 = this.byte_n * 12 + 4 + (this.byte_j - 1);
                 break;
             }
             case 3: {
-                n8 = this.n * 12 + 8 + (this.j - 1);
+                n8 = this.byte_n * 12 + 8 + (this.byte_j - 1);
                 break;
             }
             default: {
-                n8 = this.n * 12 + 0 + (this.j - 1);
+                n8 = this.byte_n * 12 + 0 + (this.byte_j - 1);
             }
         }
         as.b(graphics, (byte[])ce.var_java_lang_Object_arr_e[n8], this.k, n6, n7);
@@ -99,7 +101,7 @@ extends o {
     }
 
     public final void void_a(byte by2) {
-        this.h = by2;
+        this.byte_h = by2;
     }
 
     public void void_d() {
@@ -137,7 +139,7 @@ extends o {
     public void n() {
         boolean bl2;
         boolean bl3 = bl2 = !this.var_boolean_a && !this.var_boolean_b;
-        if (this.h == 5) {
+        if (this.byte_h == 5) {
             if (this.q < 1) {
                 this.l();
                 return;
@@ -149,7 +151,7 @@ extends o {
             this.a(false);
             return;
         }
-        switch (this.h) {
+        switch (this.byte_h) {
             case 2: {
                 if (!bl2) break;
                 this.h();
@@ -228,15 +230,15 @@ extends o {
 
     public void o() {
         if (this.var_j_a.var_boolean_c && this.d) {
-            if (this.u > 0) {
-                this.u = (byte)(this.u - 1);
+            if (this.byte_u > 0) {
+                this.byte_u = (byte)(this.byte_u - 1);
             }
-            if (this.u == 0) {
-                n.var_ae_a.a(this.var_byte_a, this.var_byte_b, this.m, this.n, true, (byte)1, (byte)5);
-                this.u = (byte)-10;
+            if (this.byte_u == 0) {
+                n.var_ae_a.a(this.var_byte_a, this.var_byte_b, this.m, this.byte_n, true, (byte)1, (byte)5);
+                this.byte_u = (byte)-10;
             }
         }
-        switch (this.h) {
+        switch (this.byte_h) {
             case 2: {
                 if (this.k < this.var_j_a.k) break;
                 this.k = 0;
@@ -274,7 +276,7 @@ extends o {
             if (this.var_j_a.var_byte_d == 2) {
                 for (byte by2 = 1; by2 <= 3; by2 = (byte)(by2 + 1)) {
                     if (this.ck_a(this.i, by2) != ao2) continue;
-                    ao2.a(new aw(9, -1, this.n));
+                    ao2.a(new aw((byte)9, (byte)-1, this.byte_n));
                     ao2.a(this, this.i);
                     break;
                 }
@@ -283,7 +285,7 @@ extends o {
             if (this.var_j_a.var_byte_d == 3) {
                 for (byte by3 = 1; by3 <= 3; by3 = (byte)(by3 + 1)) {
                     if (this.ck_a(this.i, by3) != ao2) continue;
-                    n.var_ae_a.b(new i((byte)(this.var_byte_a + u.var_byte_arr_a[this.j]), (byte)(this.var_byte_b + u.b[this.j]), (byte[])ce.var_java_lang_Object_arr_f[this.n], this, this.j, 3, 2));
+                    n.var_ae_a.b(new i((byte)(this.var_byte_a + u.var_byte_arr_a[this.byte_j]), (byte)(this.var_byte_b + u.array_byte_b[this.byte_j]), (byte[])ce.var_java_lang_Object_arr_f[this.byte_n], this, this.byte_j, (byte)3, (byte)2));
                     return;
                 }
             }
@@ -297,7 +299,7 @@ extends o {
     }
 
     public final void void_a(byte by2, byte by3) {
-        n.var_ae_a.b(new y(by2, by3, (byte[])ce.var_java_lang_Object_arr_f[this.n]));
+        n.var_ae_a.b(new y(by2, by3, (byte[])ce.var_java_lang_Object_arr_f[this.byte_n]));
     }
 
     public final void p() {
@@ -392,7 +394,7 @@ extends o {
     }
 
     public void a(int n2, byte by2) {
-        if (this.h == 6 || this.h == 5) {
+        if (this.byte_h == 6 || this.byte_h == 5) {
             return;
         }
         this.t();
@@ -403,10 +405,10 @@ extends o {
         }
         n2 = n2 * u.var_byte_arr_arr_a[by2][this.var_j_a.var_byte_c] / 10;
         this.var_short_a = (short)(this.var_short_a - n2);
-        ((o)this).a.addElement(new aw(7, 4, (short)n2));
-        ((o)this).a.addElement(new aw(1));
+        ((o)this).a.addElement(new aw((byte)7, (short)4, (short)n2));
+        ((o)this).a.addElement(new aw((byte)1));
         this.s = (byte)4;
-        this.t = (byte)4;
+        this.byte_t = (byte)4;
         if (this.var_short_a <= 0) {
             this.void_a((byte)5);
             this.k = 0;
@@ -417,14 +419,14 @@ extends o {
     public void a(int n2, boolean bl2, byte by2, boolean bl3, byte by3, byte by4, ao ao2) {
         byte by5;
         int n3;
-        if (this.h == 6 || this.h == 5) {
+        if (this.byte_h == 6 || this.byte_h == 5) {
             return;
         }
         bs.var_as_a.a(this, false);
         l l2 = (l)ao2.ad_a(0);
         byte by6 = ao2.p_a().byte_a();
         if (!this.d && this.var_j_a.var_boolean_c && by6 != this.var_j_a.var_byte_e) {
-            this.u = (byte)40;
+            this.byte_u = (byte)40;
         }
         this.t();
         this.d = true;
@@ -472,10 +474,10 @@ extends o {
                 this.i = by2;
             }
             this.s = (byte)4;
-            this.t = by2;
+            this.byte_t = by2;
             this.b(n2);
         } else {
-            ((o)this).a.addElement(new aw(2));
+            ((o)this).a.addElement(new aw((byte)2));
         }
         if (bl4) {
             bw.a((byte)14, false);
@@ -502,7 +504,7 @@ extends o {
 
     public final void b(int n2) {
         this.var_short_a = (short)(this.var_short_a - n2);
-        ((o)this).a.addElement(new aw(7, 4, (short)n2));
+        ((o)this).a.addElement(new aw((byte)7, (short)4, (short)n2));
         if (this.var_short_a <= 0) {
             this.void_a((byte)5);
             this.k = (byte)-1;
@@ -519,7 +521,7 @@ extends o {
 
     public final void c(byte by2) {
         this.e = false;
-        if (this.h == 6 || this.h == 5) {
+        if (this.byte_h == 6 || this.byte_h == 5) {
             return;
         }
         this.b(this.var_j_a.var_short_a);
@@ -540,4 +542,3 @@ extends o {
         return null;
     }
 }
-

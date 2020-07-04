@@ -1,14 +1,16 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  */
 public final class bw {
-    public static int var_int_a;
-    private static int var_int_b;
+    public static int var_int_a = 10;
+    private static int var_int_b = 0;
     private static ci var_ci_a;
     private static ci var_ci_b;
     private static ci c;
-    private static ci[] var_ci_arr_a;
-    private static final String[] var_java_lang_String_arr_a;
+    private static ci[] var_ci_arr_a = new ci[32];;
+    private static final String[] var_java_lang_String_arr_a = new String[]{"00.mid", "01.mid", "02.mid", "03.mid", "04.mid", "05.mid", "06.mid", "07.mid", "08.wav", "def.mid", "def.mid", "def.mid", "12.mid", "13.wav", "14.wav", "15.wav", "16.wav", "17.wav", "18.wav", "def.mid", "20.wav", "21.wav", "22.mid", "23.mid", "24.mid", "25.mid", "26.mid", "27.mid", "28.mid", "29.mid", "30.mid", "31.mid"};
 
     public static final void a() {
         if (var_ci_a != null) {
@@ -130,11 +132,11 @@ public final class bw {
         }
     }
 
-    public static {
-        var_int_a = 10;
-        var_int_b = 0;
-        var_ci_arr_a = new ci[32];
-        var_java_lang_String_arr_a = new String[]{"00.mid", "01.mid", "02.mid", "03.mid", "04.mid", "05.mid", "06.mid", "07.mid", "08.wav", "def.mid", "def.mid", "def.mid", "12.mid", "13.wav", "14.wav", "15.wav", "16.wav", "17.wav", "18.wav", "def.mid", "20.wav", "21.wav", "22.mid", "23.mid", "24.mid", "25.mid", "26.mid", "27.mid", "28.mid", "29.mid", "30.mid", "31.mid"};
-    }
+//    public static {
+//        var_int_a = 10;
+//        var_int_b = 0;
+//        var_ci_arr_a = new ci[32];
+//        var_java_lang_String_arr_a = new String[]{"00.mid", "01.mid", "02.mid", "03.mid", "04.mid", "05.mid", "06.mid", "07.mid", "08.wav", "def.mid", "def.mid", "def.mid", "12.mid", "13.wav", "14.wav", "15.wav", "16.wav", "17.wav", "18.wav", "def.mid", "20.wav", "21.wav", "22.mid", "23.mid", "24.mid", "25.mid", "26.mid", "27.mid", "28.mid", "29.mid", "30.mid", "31.mid"};
+//    }
 }
 

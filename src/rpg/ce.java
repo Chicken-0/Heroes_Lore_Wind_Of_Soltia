@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -14,19 +16,19 @@ implements u {
     public static Object[] var_java_lang_Object_arr_a;
     public static Object[] var_java_lang_Object_arr_b;
     public static Object[] var_java_lang_Object_arr_c;
-    public static Object[] var_java_lang_Object_arr_d;
+    public static Object[] var_java_lang_Object_arr_d = new Object[3];
     public static byte[] var_byte_arr_h;
-    public static Object[] var_java_lang_Object_arr_e;
-    public static Object[] var_java_lang_Object_arr_f;
-    public static Object[] var_java_lang_Object_arr_g;
-    public static Object[] var_java_lang_Object_arr_h;
-    public static Object[] var_java_lang_Object_arr_i;
-    public static Object[] var_java_lang_Object_arr_j;
-    public static byte[] var_byte_arr_i;
-    public static byte[] var_byte_arr_j;
-    public static byte[] var_byte_arr_k;
-    public static byte[] var_byte_arr_l;
-    public static Image[][] var_javax_microedition_lcdui_Image_arr_arr_a;
+    public static Object[] var_java_lang_Object_arr_e = new Object[60];
+    public static Object[] var_java_lang_Object_arr_f = new Object[5];
+    public static Object[] var_java_lang_Object_arr_g = new Object[3];
+    public static Object[] var_java_lang_Object_arr_h = new Object[80];
+    public static Object[] var_java_lang_Object_arr_i = new Object[12];
+    public static Object[] var_java_lang_Object_arr_j = new Object[60];
+    public static byte[] var_byte_arr_i = new byte[5];
+    public static byte[] var_byte_arr_j = new byte[5];
+    public static byte[] var_byte_arr_k = new byte[5];
+    public static byte[] var_byte_arr_l = new byte[5];
+    public static Image[][] var_javax_microedition_lcdui_Image_arr_arr_a = new Image[38][];
     public static z var_z_a;
     public static Image[] var_javax_microedition_lcdui_Image_arr_a;
     public static Image[] var_javax_microedition_lcdui_Image_arr_b;
@@ -89,7 +91,7 @@ implements u {
     public static Image[] var_javax_microedition_lcdui_Image_arr_v;
     public static Image[] var_javax_microedition_lcdui_Image_arr_w;
     public static z var_z_g;
-    public static byte[] var_byte_arr_n;
+    public static byte[] var_byte_arr_n = new byte[512];
 
     private ce() {
     }
@@ -97,7 +99,7 @@ implements u {
     public static final void void_a(byte by2) {
         try {
             br br2 = new br("/img/atteff1");
-            new br("/img/atteff1").var_boolean_a = true;
+            br2.isInitResource = true;
             ce.a(br2, by2);
             var_javax_microedition_lcdui_Image_arr_s = new Image[3];
             ce.var_javax_microedition_lcdui_Image_arr_s[0] = br2.javax_microedition_lcdui_Image_a(0);
@@ -171,13 +173,13 @@ implements u {
 
     public static final void void_a(byte by2, byte by3) {
         if (by2 == 0 && by3 == 0) {
-            ce.var_java_lang_Object_arr_d[by3] = ce.a("/grd/spr/0_01.eif");
+            ce.var_java_lang_Object_arr_d[by3] = ce.getResourceByName("/grd/spr/0_01.eif");
             ce.a(true, (byte[])var_java_lang_Object_arr_d[by3], 0, (byte)12, (byte)-1, null);
-            var_byte_arr_m = ce.a("/grd/spr/0_02.eif");
+            var_byte_arr_m = ce.getResourceByName("/grd/spr/0_02.eif");
             ce.a(true, var_byte_arr_m, 0, (byte)12, (byte)-1, null);
         } else {
             String string = "/grd/spr/" + by2 + "_" + by3 + ".eif";
-            ce.var_java_lang_Object_arr_d[by3] = ce.a(string);
+            ce.var_java_lang_Object_arr_d[by3] = ce.getResourceByName(string);
             ce.a(true, (byte[])var_java_lang_Object_arr_d[by3], 0, (byte)12, (byte)-1, null);
         }
         String cfr_ignored_0 = "GuardianSprite : " + by2 + ", " + by3;
@@ -191,7 +193,7 @@ implements u {
     public static final void a(boolean bl2, byte[] arrby, int n2, byte by2, byte by3, br br2) {
         int n3 = arrby[n2++];
         if (br2 != null) {
-            br2.var_boolean_a = true;
+            br2.isInitResource = true;
             if (var_javax_microedition_lcdui_Image_arr_arr_a[by2] == null) {
                 ce.var_javax_microedition_lcdui_Image_arr_arr_a[by2] = new Image[br2.int_a()];
             }
@@ -211,7 +213,7 @@ implements u {
                 byte by4 = arrby[n2++];
                 byte by5 = bl3 ? by3 : by2;
                 arrby[n2 - 2] = by5;
-                x.a(by5 > 0);
+                rpg.x.a(by5 > 0);
                 if (br2 == null || (arrimage = var_javax_microedition_lcdui_Image_arr_arr_a[by5])[by4] != null) continue;
                 arrimage[by4] = bl3 ? br2.javax_microedition_lcdui_Image_b(by4) : br2.javax_microedition_lcdui_Image_a(by4);
                 r.k();
@@ -223,7 +225,7 @@ implements u {
         br br2 = null;
         try {
             br2 = new br("/img/uifrm");
-            new br("/img/uifrm").var_boolean_a = true;
+            br2.isInitResource = true;
             var_javax_microedition_lcdui_Image_arr_q = new Image[7];
             for (int i2 = 0; i2 < 7; ++i2) {
                 ce.var_javax_microedition_lcdui_Image_arr_q[i2] = br2.javax_microedition_lcdui_Image_a(i2);
@@ -237,7 +239,7 @@ implements u {
             ce.var_javax_microedition_lcdui_Image_arr_r[3] = br2.javax_microedition_lcdui_Image_b(8);
             r.k();
             br2 = new br("/img/etcui");
-            new br("/img/etcui").var_boolean_a = true;
+            br2.isInitResource = true;
             var_javax_microedition_lcdui_Image_s = bh.javax_microedition_lcdui_Image_a("_img_etcui__0.png");
             var_javax_microedition_lcdui_Image_t = bh.javax_microedition_lcdui_Image_a("_img_etcui__1.png");
             br2.javax_microedition_lcdui_Image_a(2);
@@ -254,7 +256,7 @@ implements u {
             C = br2.javax_microedition_lcdui_Image_a(11);
             r.k();
             br2 = new br("/char/lvup");
-            var_byte_arr_h = ce.a("/char/lvup.eif");
+            var_byte_arr_h = ce.getResourceByName("/char/lvup.eif");
             r.k();
             ce.a(true, var_byte_arr_h, 0, (byte)13, (byte)-1, br2);
             return;
@@ -287,7 +289,7 @@ implements u {
         br br2 = null;
         try {
             br2 = new br("/img/keepst");
-            new br("/img/keepst").var_boolean_a = true;
+            br2.isInitResource = true;
             D = br2.javax_microedition_lcdui_Image_a(0);
             r.k();
             var_javax_microedition_lcdui_Image_arr_v = new Image[8];
@@ -334,7 +336,7 @@ implements u {
             }
             ce.var_javax_microedition_lcdui_Image_arr_arr_a[12] = br2.javax_microedition_lcdui_Image_arr_a();
             br2 = new br("/grd/" + by2);
-            new br("/grd/" + by2).var_boolean_a = true;
+            br2.isInitResource = true;
             ce.var_javax_microedition_lcdui_Image_arr_a[0] = br2.javax_microedition_lcdui_Image_a(0);
             ce.var_javax_microedition_lcdui_Image_arr_a[1] = br2.javax_microedition_lcdui_Image_a(1);
             return;
@@ -355,9 +357,9 @@ implements u {
         try {
             byte by3;
             br br2 = new br("/enm/" + (s2 < 10 ? "0" : "") + s2);
-            new br("/enm/" + (s2 < 10 ? "0" : "") + s2).var_boolean_a = true;
+            br2.isInitResource = true;
             r.k();
-            byte[] arrby = ce.a("/enm/spr/" + (s2 < 10 ? "0" : "") + s2);
+            byte[] arrby = ce.getResourceByName("/enm/spr/" + (s2 < 10 ? "0" : "") + s2);
             r.k();
             for (int i2 = 0; i2 < arrby.length; i2 += by3) {
                 byte by4 = arrby[i2++];
@@ -380,7 +382,7 @@ implements u {
                 r.k();
             }
             if (!bl2 && j.var_j_arr_a[by2].var_byte_d >= 2) {
-                arrby = ce.a("/enm/atef/" + (s2 < 10 ? "0" : "") + s2);
+                arrby = ce.getResourceByName("/enm/atef/" + (s2 < 10 ? "0" : "") + s2);
                 ce.a(true, arrby, 0, (byte)(15 + by2), (byte)(15 + by2 + 5), br2);
                 ce.var_java_lang_Object_arr_f[by2] = arrby;
             }
@@ -405,9 +407,9 @@ implements u {
     public static final void l() {
         try {
             br br2 = new br("/enm/die/bang");
-            new br("/enm/die/bang").var_boolean_a = true;
+            br2.isInitResource = true;
             for (int i2 = 0; i2 < 3; ++i2) {
-                byte[] arrby = ce.a("/enm/die/" + i2);
+                byte[] arrby = ce.getResourceByName("/enm/die/" + i2);
                 ce.a(true, arrby, 0, (byte)37, (byte)-1, br2);
                 ce.var_java_lang_Object_arr_g[i2] = arrby;
             }
@@ -422,9 +424,9 @@ implements u {
         try {
             byte by4;
             br br2 = new br("/npc/" + (by2 < 10 ? "0" : "") + by2);
-            new br("/npc/" + (by2 < 10 ? "0" : "") + by2).var_boolean_a = true;
+            br2.isInitResource = true;
             r.k();
-            byte[] arrby = ce.a("/npc/spr/" + (by2 < 10 ? "0" : "") + by2);
+            byte[] arrby = ce.getResourceByName("/npc/spr/" + (by2 < 10 ? "0" : "") + by2);
             r.k();
             for (int i2 = 0; i2 < arrby.length; i2 += by4) {
                 byte by5 = arrby[i2++];
@@ -460,37 +462,38 @@ implements u {
     public static final void e(byte by2) {
         try {
             int n2;
+            byte by3 = 0;
             br br2 = new br("/boss/" + by2);
-            new br("/boss/" + by2).var_boolean_a = true;
+            br2.isInitResource = true;
             switch (by2) {
                 case 1: {
-                    byte by3 = 32;
+                    by3 = 32;
                     n2 = 32;
                     break;
                 }
                 case 2: {
-                    byte by3 = 35;
+                    by3 = 35;
                     n2 = 38;
                     break;
                 }
                 case 3: {
-                    byte by3 = 39;
+                    by3 = 39;
                     n2 = 41;
                     break;
                 }
                 case 4: {
-                    byte by3 = 42;
+                    by3 = 42;
                     n2 = 42;
                     break;
                 }
                 default: {
-                    x.a(false);
-                    byte by3 = -1;
+                    rpg.x.a(false);
+                    by3 = -1;
                     n2 = -1;
                 }
             }
             for (byte by4 = by3; by4 <= n2; by4 = (byte)(by4 + 1)) {
-                byte[] arrby = ce.a("/boss/spr/" + by2 + "_" + by4);
+                byte[] arrby = ce.getResourceByName("/boss/spr/" + by2 + "_" + by4);
                 int n3 = 0;
                 while (n3 < arrby.length) {
                     byte by5 = ce.byte_a(by4);
@@ -507,7 +510,7 @@ implements u {
                     if (by2 != 1 || by6 < 3) continue;
                     ce.var_java_lang_Object_arr_i[(by6 - 3) * 4 + by7] = arrby2;
                 }
-                arrby = ce.a("/boss/atef/" + (by4 < 10 ? "0" : "") + by4);
+                arrby = ce.getResourceByName("/boss/atef/" + (by4 < 10 ? "0" : "") + by4);
                 if (arrby == null) continue;
                 ce.a(true, arrby, 0, (byte)25, (byte)26, br2);
                 ce.var_java_lang_Object_arr_f[ce.byte_a((byte)by4)] = arrby;
@@ -534,7 +537,7 @@ implements u {
         try {
             int n2;
             br2 = new br("/sgui/gmico");
-            new br("/sgui/gmico").var_boolean_a = true;
+            br2.isInitResource = true;
             for (n2 = 0; n2 < 6; n2 = (int)((byte)(n2 + 1))) {
                 ce.var_javax_microedition_lcdui_Image_arr_n[n2] = br2.javax_microedition_lcdui_Image_a(n2 == 5 ? 6 : n2);
             }
@@ -553,7 +556,7 @@ implements u {
         br br2 = null;
         try {
             br2 = new br("/img/glb");
-            new br("/img/glb").var_boolean_a = true;
+            br2.isInitResource = true;
             var_javax_microedition_lcdui_Image_k = br2.javax_microedition_lcdui_Image_a(0);
             var_javax_microedition_lcdui_Image_n = br2.javax_microedition_lcdui_Image_a(1);
             var_javax_microedition_lcdui_Image_o = br2.javax_microedition_lcdui_Image_a(2);
@@ -602,7 +605,7 @@ implements u {
         br br2 = null;
         try {
             br2 = new br("/sgui/shop");
-            new br("/sgui/shop").var_boolean_a = true;
+            br2.isInitResource = true;
             r.k();
             for (int n2 = 0; n2 < 6; n2 = (int)((byte)(n2 + 1))) {
                 ce.var_javax_microedition_lcdui_Image_arr_p[n2] = br2.javax_microedition_lcdui_Image_a(n2);
@@ -634,7 +637,7 @@ implements u {
         br br2 = null;
         try {
             br2 = new br("/grd/grdico");
-            new br("/grd/grdico").var_boolean_a = true;
+            br2.isInitResource = true;
             for (int n2 = 0; n2 < 6; n2 = (int)((byte)(n2 + 1))) {
                 ce.var_javax_microedition_lcdui_Image_arr_b[n2] = br2.javax_microedition_lcdui_Image_a(n2);
                 for (int n3 = 0; n3 < 4; n3 = (int)((byte)(n3 + 1))) {
@@ -682,7 +685,7 @@ implements u {
     }
 
     public static final byte[] byte_arr_a() {
-        return ce.a("/itm/forshop");
+        return ce.getResourceByName("/itm/forshop");
     }
 
     public static final void f(byte by2) {
@@ -736,7 +739,7 @@ implements u {
             var_javax_microedition_lcdui_Image_arr_j = br2.javax_microedition_lcdui_Image_arr_a();
             r.k();
             br2 = new br("/img/title2");
-            new br("/img/title2").var_boolean_a = true;
+            br2.isInitResource = true;
             var_javax_microedition_lcdui_Image_arr_k = new Image[10];
             for (int i2 = 0; i2 < 5; ++i2) {
                 ce.var_javax_microedition_lcdui_Image_arr_k[i2] = br2.javax_microedition_lcdui_Image_a(i2);
@@ -763,7 +766,7 @@ implements u {
     public static final void A() {
         try {
             br br2 = new br("/sgui/mm/face");
-            new br("/sgui/mm/face").var_boolean_a = true;
+            br2.isInitResource = true;
             var_javax_microedition_lcdui_Image_arr_m = new Image[6];
             ce.var_javax_microedition_lcdui_Image_arr_m[0] = br2.javax_microedition_lcdui_Image_a(0);
             ce.var_javax_microedition_lcdui_Image_arr_m[1] = br2.javax_microedition_lcdui_Image_a(1);
@@ -778,7 +781,7 @@ implements u {
             var_javax_microedition_lcdui_Image_arr_arr_b = new Image[3][2];
             for (int i2 = 0; i2 < 3; ++i2) {
                 br2 = new br("/grd/" + i2);
-                new br("/grd/" + i2).var_boolean_a = true;
+                br2.isInitResource = true;
                 ce.var_javax_microedition_lcdui_Image_arr_arr_b[i2][0] = br2.javax_microedition_lcdui_Image_a(0);
                 ce.var_javax_microedition_lcdui_Image_arr_arr_b[i2][1] = br2.javax_microedition_lcdui_Image_a(1);
                 r.k();
@@ -798,7 +801,7 @@ implements u {
         var_javax_microedition_lcdui_Image_arr_arr_b = null;
     }
 
-    public static final byte[] a(String string) {
+    public static final byte[] getResourceByName(String string) {
         Object object;
         System.gc();
         String string2 = string;
@@ -841,20 +844,20 @@ implements u {
         return -1;
     }
 
-    public static {
-        var_java_lang_Object_arr_d = new Object[3];
-        var_java_lang_Object_arr_e = new Object[60];
-        var_java_lang_Object_arr_f = new Object[5];
-        var_java_lang_Object_arr_g = new Object[3];
-        var_java_lang_Object_arr_h = new Object[80];
-        var_java_lang_Object_arr_i = new Object[12];
-        var_java_lang_Object_arr_j = new Object[60];
-        var_byte_arr_i = new byte[5];
-        var_byte_arr_j = new byte[5];
-        var_byte_arr_k = new byte[5];
-        var_byte_arr_l = new byte[5];
-        var_javax_microedition_lcdui_Image_arr_arr_a = new Image[38][];
-        var_byte_arr_n = new byte[512];
-    }
+//    public static {
+//        var_java_lang_Object_arr_d = new Object[3];
+//        var_java_lang_Object_arr_e = new Object[60];
+//        var_java_lang_Object_arr_f = new Object[5];
+//        var_java_lang_Object_arr_g = new Object[3];
+//        var_java_lang_Object_arr_h = new Object[80];
+//        var_java_lang_Object_arr_i = new Object[12];
+//        var_java_lang_Object_arr_j = new Object[60];
+//        var_byte_arr_i = new byte[5];
+//        var_byte_arr_j = new byte[5];
+//        var_byte_arr_k = new byte[5];
+//        var_byte_arr_l = new byte[5];
+//        var_javax_microedition_lcdui_Image_arr_arr_a = new Image[38][];
+//        var_byte_arr_n = new byte[512];
+//    }
 }
 

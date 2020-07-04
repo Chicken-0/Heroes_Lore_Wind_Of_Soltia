@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -44,7 +46,7 @@ extends y {
         if (this.b == this.h && this.g > 0 && (this.d || !this.e)) {
             u2 = n.var_ae_a;
             byte by2 = (byte)(this.var_byte_a + u.var_byte_arr_a[this.var_byte_f]);
-            byte by3 = (byte)(this.var_byte_b + u.b[this.var_byte_f]);
+            byte by3 = (byte)(this.var_byte_b + u.array_byte_b[this.var_byte_f]);
             if (by2 >= 0 && by2 < ((ae)u2).var_int_a && by3 >= 0 && by3 < ((ae)u2).var_int_b) {
                 if (this.var_o_a instanceof al) {
                     ((ae)u2).b(new i(by2, by3, ((y)this).h, this.var_o_a, this.var_byte_f, this.g, this.h));
@@ -77,7 +79,7 @@ extends y {
         int n5 = n3 + this.var_short_d + this.var_byte_d;
         if (this.var_short_a == 2 && this.b == 1) {
             n4 += u.var_byte_arr_a[this.var_byte_f] * 8;
-            n5 += u.b[this.var_byte_f] * 8;
+            n5 += u.array_byte_b[this.var_byte_f] * 8;
         }
         this.b(graphics, n4, n5);
         this.b = (short)(this.b + 1);

@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -33,7 +35,6 @@ extends cb {
             var_z_a = new z("/sgui/refi");
         }
         catch (IOException arrobject2) {
-            arrobject = arrobject2;
             arrobject2.printStackTrace();
         }
         arrobject = new Object[]{var_z_a.a(0), var_z_a.a(1), var_z_a.a(2)};

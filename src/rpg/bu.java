@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -11,19 +13,19 @@ import javax.microedition.lcdui.Image;
 
 public final class bu
 implements Runnable {
-    private static byte var_byte_a;
-    private static final String[] g;
-    public static final String[] var_java_lang_String_arr_a;
-    public static final String[] var_java_lang_String_arr_b;
-    public static final String[] c;
-    public static final String[] d;
-    public static final String[] e;
-    public static final String[] f;
-    public static final byte[][] var_byte_arr_arr_a;
-    public static final byte[][] var_byte_arr_arr_b;
-    public static final byte[] var_byte_arr_a;
-    public static final byte[] var_byte_arr_b;
-    private static boolean var_boolean_a;
+    private static byte var_byte_a = 0;
+    private static final String[] g = new String[]{"a", "b", "e", "hA", "hB", "w", "s"};
+    public static final String[] var_java_lang_String_arr_a = new String[]{"/c1/s/", "/c2/s/", "/c3/s/"};
+    public static final String[] var_java_lang_String_arr_b = new String[]{"/c1/i/", "/c2/i/", "/c3/i/"};
+    public static final String[] c = new String[]{"a1", "a2", "a3", "a4", "a5", "a6"};
+    public static final String[] d = new String[]{"h1", "h2", "h3", "h4", "h5", "h6", "h7"};
+    public static final String[] e = new String[]{"w1", "w2", "w3", "w4", "w5"};
+    public static final String[] f = new String[]{"s1", "s2", "s3", "s4", "s5"};
+    public static final byte[][] var_byte_arr_arr_a = new byte[][]{{0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 0, 3, 3, 4, 1, 2, 3}, {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 0, 1, 2, 4, 3, 4, 1}, {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 0, 2, 4, 1, 2, 4, -1}};
+    public static final byte[][] var_byte_arr_arr_b = new byte[][]{{-1, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 2, 0, 4, 5, 4, 3}, {-1, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 2, 0, 4, 5, 4, 3}, {0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 2, 0, 4, 5, 4, 3}};
+    public static final byte[] var_byte_arr_a = new byte[]{0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6};
+    public static final byte[] var_byte_arr_b = new byte[]{0, 0, 0, 1, 1, 1, 2, 2, 2, 4, 4, 4, 2, 0, 4};
+    private static boolean var_boolean_a = false;
 
     public static final void void_a() {
         var_byte_a = 1;
@@ -94,10 +96,14 @@ implements Runnable {
                 return;
             }
             case 5: {
+            try {
                 bu.g();
                 bu.h();
                 ce.A();
                 n.p();
+            } catch (Throwable ex) {
+                ex.printStackTrace();
+            }
             }
         }
     }
@@ -411,8 +417,8 @@ implements Runnable {
                 }
             }
             r.k();
-            br2.var_boolean_a = true;
-            byte[] arrby = ce.a(var_java_lang_String_arr_a[by6] + g[by3]);
+            br2.isInitResource = true;
+            byte[] arrby = ce.getResourceByName(var_java_lang_String_arr_a[by6] + g[by3]);
             r.k();
             int n3 = 0;
             while (n3 < arrby.length) {
@@ -429,12 +435,12 @@ implements Runnable {
                     arrby2 = new byte[1 + n6 * 4];
                     n5 = 0;
                     ++n5;
-                    arrby2[0] = n6;
+                    arrby2[0] = (byte)n6;
                     for (n4 = 0; n4 < n6; ++n4) {
                         arrby2[n5++] = arrby[n3++];
                         arrby2[n5++] = arrby[n3++];
                         bl3 = arrby[n3++] != 0;
-                        arrby2[n5++] = bl3 ? (int)(n2 + 6) : n2;
+                        arrby2[n5++] = bl3 ? (byte)(n2 + 6) : (byte)n2;
                         int n7 = n5++;
                         byte by11 = arrby[n3++];
                         arrby2[n7] = by11;
@@ -464,17 +470,17 @@ implements Runnable {
                     arrby2 = new byte[1 + (n5 - n3)];
                     n5 = 0;
                     ++n5;
-                    arrby2[0] = n6;
+                    arrby2[0] = (byte)n6;
                     for (n4 = 0; n4 < n6; ++n4) {
                         int n9 = n5++;
                         int n10 = arrby[n3++];
-                        arrby2[n9] = n10;
+                        arrby2[n9] = (byte)n10;
                         n8 = n10;
                         for (int i3 = 0; i3 < n8; ++i3) {
                             arrby2[n5++] = arrby[n3++];
                             arrby2[n5++] = arrby[n3++];
                             bl3 = arrby[n3++] != 0;
-                            arrby2[n5++] = bl3 ? (int)(n2 + 6) : n2;
+                            arrby2[n5++] = bl3 ? (byte)(n2 + 6) : (byte)n2;
                             int n11 = n5++;
                             byte by12 = arrby[n3++];
                             arrby2[n11] = by12;
@@ -542,15 +548,15 @@ implements Runnable {
     }
 
     public static final void a(br br2, byte by2, byte by3) {
-        br2.var_boolean_a = true;
+        br2.isInitResource = true;
         ce.var_java_lang_Object_arr_b = new Object[3];
-        byte[] arrby = ce.a(var_java_lang_String_arr_a[2] + "ea2");
+        byte[] arrby = ce.getResourceByName(var_java_lang_String_arr_a[2] + "ea2");
         ce.var_java_lang_Object_arr_b[0] = arrby;
         ce.a(true, arrby, 0, by2, by3, br2);
-        arrby = ce.a(var_java_lang_String_arr_a[2] + "ea3");
+        arrby = ce.getResourceByName(var_java_lang_String_arr_a[2] + "ea3");
         ce.var_java_lang_Object_arr_b[1] = arrby;
         ce.a(true, arrby, 0, by2, by3, br2);
-        arrby = ce.a(var_java_lang_String_arr_a[2] + "ea4");
+        arrby = ce.getResourceByName(var_java_lang_String_arr_a[2] + "ea4");
         ce.var_java_lang_Object_arr_b[2] = arrby;
         ce.a(true, arrby, 0, by2, by3, br2);
     }
@@ -568,20 +574,20 @@ implements Runnable {
         }
     }
 
-    public static {
-        var_byte_a = 0;
-        g = new String[]{"a", "b", "e", "hA", "hB", "w", "s"};
-        var_java_lang_String_arr_a = new String[]{"/c1/s/", "/c2/s/", "/c3/s/"};
-        var_java_lang_String_arr_b = new String[]{"/c1/i/", "/c2/i/", "/c3/i/"};
-        c = new String[]{"a1", "a2", "a3", "a4", "a5", "a6"};
-        d = new String[]{"h1", "h2", "h3", "h4", "h5", "h6", "h7"};
-        e = new String[]{"w1", "w2", "w3", "w4", "w5"};
-        f = new String[]{"s1", "s2", "s3", "s4", "s5"};
-        var_byte_arr_arr_a = new byte[][]{{0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 0, 3, 3, 4, 1, 2, 3}, {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 0, 1, 2, 4, 3, 4, 1}, {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 0, 2, 4, 1, 2, 4, -1}};
-        var_byte_arr_arr_b = new byte[][]{{-1, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 2, 0, 4, 5, 4, 3}, {-1, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 2, 0, 4, 5, 4, 3}, {0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 2, 0, 4, 5, 4, 3}};
-        var_byte_arr_a = new byte[]{0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6};
-        var_byte_arr_b = new byte[]{0, 0, 0, 1, 1, 1, 2, 2, 2, 4, 4, 4, 2, 0, 4};
-        var_boolean_a = false;
-    }
+//    public static {
+//        var_byte_a = 0;
+//        g = new String[]{"a", "b", "e", "hA", "hB", "w", "s"};
+//        var_java_lang_String_arr_a = new String[]{"/c1/s/", "/c2/s/", "/c3/s/"};
+//        var_java_lang_String_arr_b = new String[]{"/c1/i/", "/c2/i/", "/c3/i/"};
+//        c = new String[]{"a1", "a2", "a3", "a4", "a5", "a6"};
+//        d = new String[]{"h1", "h2", "h3", "h4", "h5", "h6", "h7"};
+//        e = new String[]{"w1", "w2", "w3", "w4", "w5"};
+//        f = new String[]{"s1", "s2", "s3", "s4", "s5"};
+//        var_byte_arr_arr_a = new byte[][]{{0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 0, 3, 3, 4, 1, 2, 3}, {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 0, 1, 2, 4, 3, 4, 1}, {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 0, 2, 4, 1, 2, 4, -1}};
+//        var_byte_arr_arr_b = new byte[][]{{-1, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 2, 0, 4, 5, 4, 3}, {-1, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 2, 0, 4, 5, 4, 3}, {0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 2, 0, 4, 5, 4, 3}};
+//        var_byte_arr_a = new byte[]{0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6};
+//        var_byte_arr_b = new byte[]{0, 0, 0, 1, 1, 1, 2, 2, 2, 4, 4, 4, 2, 0, 4};
+//        var_boolean_a = false;
+//    }
 }
 

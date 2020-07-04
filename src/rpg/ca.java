@@ -1,8 +1,10 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  */
 public final class ca {
-    private static final int[] var_int_arr_a;
+    private static final int[] var_int_arr_a = new int[256];
     private int var_int_a = -1;
 
     public final void void_a() {
@@ -19,8 +21,8 @@ public final class ca {
         return ~this.var_int_a;
     }
 
-    public static {
-        var_int_arr_a = new int[256];
+    public ca() {
+//        var_int_arr_a = new int[256];
         for (int n2 = 0; n2 < 256; n2 = (int)((short)(n2 + 1))) {
             int n3 = n2;
             for (int n4 = 1; n4 < 9; n4 = (int)((byte)(n4 + 1))) {

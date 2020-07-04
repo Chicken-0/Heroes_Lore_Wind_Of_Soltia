@@ -1,14 +1,8 @@
-/*
- * Decompiled with CFR 0.150.
- * 
- * Could not load the following classes:
- *  javax.microedition.lcdui.Display
- *  javax.microedition.midlet.MIDlet
- */
-package rpg;
+package main;
 
 import javax.microedition.lcdui.Display;
-import javax.microedition.midlet.MIDlet;
+import javax.microedition.midlet.*;
+import rpg.bs;
 
 public class GameMIDlet
 extends MIDlet {
@@ -42,4 +36,3 @@ extends MIDlet {
         this.notifyDestroyed();
     }
 }
-

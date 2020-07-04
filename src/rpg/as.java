@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -25,7 +27,7 @@ extends r {
     private boolean f;
     private boolean g;
     private int q;
-    private int r;
+    private int int_r;
     private boolean h;
     private int s;
     private al var_al_a;
@@ -49,7 +51,7 @@ extends r {
         p = r.g - 6;
         this.var_boolean_d = true;
         this.q = 0;
-        this.r = 0;
+        this.int_r = 0;
         this.s = 0;
     }
 
@@ -59,29 +61,33 @@ extends r {
     public final void paint(Graphics graphics) {
         Object object = bs.var_java_lang_Object_a;
         synchronized (object) {
-            n.e();
-            switch (n.var_int_e) {
+            try {
+                rpg.n.e();
+            } catch (Throwable ex) {
+                ex.printStackTrace();
+            }
+            switch (rpg.n.var_int_e) {
                 case 2: {
                     if (bs.var_bs_a.var_boolean_d) {
-                        n.g();
-                        n.i();
+                        rpg.n.g();
+                        rpg.n.i();
                     } else {
-                        n.i();
-                        n.g();
+                        rpg.n.i();
+                        rpg.n.g();
                     }
-                    if (n.var_int_e != 2) break;
-                    if (!n.var_ae_a.var_boolean_b && bs.var_bs_a.var_boolean_d) {
-                        n.a(true, true);
+                    if (rpg.n.var_int_e != 2) break;
+                    if (!rpg.n.var_ae_a.var_boolean_b && bs.var_bs_a.var_boolean_d) {
+                        rpg.n.a(true, true);
                     }
-                    n.var_ae_a.a(graphics);
+                    rpg.n.var_ae_a.a(graphics);
                     this.a(graphics);
-                    if (!x.a || bs.var_bs_a.var_boolean_a || n.ao_a().var_byte_g < 8) break;
-                    n.a((byte)13, (byte)1);
+                    if (!x.a || bs.var_bs_a.var_boolean_a || rpg.n.ao_a().var_byte_g < 8) break;
+                    rpg.n.a((byte)13, (byte)1);
                     return;
                 }
                 case 4: {
-                    n.j();
-                    if (n.var_int_e != 4) break;
+                    rpg.n.j();
+                    if (rpg.n.var_int_e != 4) break;
                     ah.void_b();
                     ah.a(graphics);
                     break;
@@ -130,14 +136,14 @@ extends r {
                         // empty if block
                     }
                     if (--var_int_e != 0) break;
-                    n.void_a(1);
+                    rpg.n.void_a(1);
                     bu.d();
                     bw.b((byte)12);
                     break;
                 }
                 case 11: {
                     this.a(graphics, null);
-                    n.var_ae_a.b(graphics);
+                    rpg.n.var_ae_a.b(graphics);
                     break;
                 }
                 case 12: {
@@ -160,7 +166,7 @@ extends r {
 
     private final void a(Graphics graphics, cb cb2) {
         if (this.var_boolean_c) {
-            n.var_ae_a.a(graphics);
+            rpg.n.var_ae_a.a(graphics);
             this.a(graphics);
             if (cb2 != null) {
                 cb2.void_c();
@@ -175,11 +181,11 @@ extends r {
         bw.a();
         Object object = bs.var_java_lang_Object_a;
         synchronized (object) {
-            if (n.var_int_e == 2) {
+            if (rpg.n.var_int_e == 2) {
                 this.keyReleased(-8);
-                n.void_a((byte)13);
-            } else if (n.var_int_e == 1) {
-                n.void_a(15);
+                rpg.n.void_a((byte)13);
+            } else if (rpg.n.var_int_e == 1) {
+                rpg.n.void_a(15);
             }
             return;
         }
@@ -192,8 +198,8 @@ extends r {
         bw.b();
         Object object = bs.var_java_lang_Object_a;
         synchronized (object) {
-            if (n.var_int_e == 2) {
-                n.void_a((byte)13);
+            if (rpg.n.var_int_e == 2) {
+                rpg.n.void_a((byte)13);
             }
             return;
         }
@@ -216,7 +222,7 @@ extends r {
             }
             ((r)this).a = true;
             int n3 = this.getGameAction(n2);
-            switch (n.var_int_e) {
+            switch (rpg.n.var_int_e) {
                 case 2: {
                     this.a(n3, n2);
                     break;
@@ -231,7 +237,7 @@ extends r {
                 }
                 case 15: {
                     if (n2 != 53) break;
-                    n.void_a(1);
+                    rpg.n.void_a(1);
                     break;
                 }
                 case 6: {
@@ -251,7 +257,7 @@ extends r {
                     break;
                 }
                 case 11: {
-                    n.a((byte)2, (byte)2, (byte)1);
+                    rpg.n.a((byte)2, (byte)2, (byte)1);
                     bs.var_as_a.b();
                     break;
                 }
@@ -261,7 +267,7 @@ extends r {
                 }
                 case 14: {
                     if (n3 != 8 && n2 != 53) break;
-                    n.a((byte)21, (byte)2);
+                    rpg.n.a((byte)21, (byte)2);
                 }
             }
             return;
@@ -280,16 +286,16 @@ extends r {
             if (n2 == -7) {
                 n2 = -8;
             }
-            if (n.var_int_e != 2) {
+            if (rpg.n.var_int_e != 2) {
                 return;
             }
             if (((r)this).a) {
                 ((r)this).f = n2;
                 return;
             }
-            switch (n.byte_a()) {
+            switch (rpg.n.byte_a()) {
                 case 2: {
-                    n.h();
+                    rpg.n.h();
                 }
             }
             return;
@@ -299,89 +305,89 @@ extends r {
     private final void a(int n2, int n3) {
         switch (n3) {
             case 50: {
-                n.b((byte)1);
+                rpg.n.b((byte)1);
                 return;
             }
             case 56: {
-                n.b((byte)2);
+                rpg.n.b((byte)2);
                 return;
             }
             case 35: {
-                n.ao_a().var_g_a.void_b();
+                rpg.n.ao_a().var_g_a.void_b();
                 this.b();
                 return;
             }
             case 52: {
-                n.b((byte)3);
+                rpg.n.b((byte)3);
                 return;
             }
             case 54: {
-                n.b((byte)4);
+                rpg.n.b((byte)4);
                 return;
             }
             case 53: {
-                if (n.boolean_a()) {
+                if (rpg.n.boolean_a()) {
                     return;
                 }
                 if (ah.boolean_a()) {
                     return;
                 }
-                n.a(false);
+                rpg.n.a(false);
                 return;
             }
             case -8: {
-                if (((o)n.ao_a()).h != 1) break;
-                n.void_a((byte)13);
+                if (((o)rpg.n.ao_a()).byte_h != 1) break;
+                rpg.n.void_a((byte)13);
                 return;
             }
             case 55: {
-                n.a(true);
+                rpg.n.a(true);
                 return;
             }
             case 57: {
-                n.ao_a().k();
+                rpg.n.ao_a().k();
                 return;
             }
             case 49: {
-                n.ao_a().void_a(true);
+                rpg.n.ao_a().void_a(true);
                 return;
             }
             case 51: {
-                n.ao_a().void_a(false);
+                rpg.n.ao_a().void_a(false);
                 return;
             }
             case 48: {
-                if (((o)n.ao_a()).h != 1 || n.var_ae_a.var_byte_b > 14) break;
-                n.a((byte)2, (byte)11, (byte)3);
+                if (((o)rpg.n.ao_a()).byte_h != 1 || rpg.n.var_ae_a.var_byte_b > 14) break;
+                rpg.n.a((byte)2, (byte)11, (byte)3);
                 return;
             }
             default: {
                 switch (n2) {
                     case 1: {
-                        n.b((byte)1);
+                        rpg.n.b((byte)1);
                         return;
                     }
                     case 6: {
-                        n.b((byte)2);
+                        rpg.n.b((byte)2);
                         return;
                     }
                     case 2: {
-                        n.b((byte)3);
+                        rpg.n.b((byte)3);
                         return;
                     }
                     case 5: {
-                        n.b((byte)4);
+                        rpg.n.b((byte)4);
                         return;
                     }
                     case 8: {
-                        if (n.boolean_a()) {
+                        if (rpg.n.boolean_a()) {
                             this.b();
                             return;
                         }
                         if (ah.boolean_a()) {
                             return;
                         }
-                        n.a(false);
+                        rpg.n.a(false);
                     }
                 }
             }
@@ -417,7 +423,7 @@ extends r {
     }
 
     public final void f() {
-        this.r = 0;
+        this.int_r = 0;
         this.h = false;
         this.s = 0;
         this.var_al_a = null;
@@ -432,14 +438,14 @@ extends r {
         this.t = 0;
         this.u = -1;
         try {
-            this.var_z_a = new z("/sgui/ed" + n.var_byte_a);
+            this.var_z_a = new z("/sgui/ed" + rpg.n.var_byte_a);
             bw.a((byte)23);
             bw.b(23);
-            switch (n.var_byte_a) {
+            switch (rpg.n.var_byte_a) {
                 case 6: {
                     try {
                         br br2 = new br("/m/face");
-                        new br("/m/face").var_boolean_a = true;
+                        new br("/m/face").isInitResource = true;
                         this.var_javax_microedition_lcdui_Image_arr_a = new Image[2];
                         this.var_javax_microedition_lcdui_Image_arr_a[0] = br2.javax_microedition_lcdui_Image_c(0);
                         this.var_javax_microedition_lcdui_Image_arr_a[1] = br2.javax_microedition_lcdui_Image_c(8);
@@ -453,7 +459,7 @@ extends r {
                 case 8: {
                     try {
                         br br3 = new br("/m/face");
-                        new br("/m/face").var_boolean_a = true;
+                        new br("/m/face").isInitResource = true;
                         this.var_javax_microedition_lcdui_Image_arr_a = new Image[1];
                         this.var_javax_microedition_lcdui_Image_arr_a[0] = br3.javax_microedition_lcdui_Image_a(17);
                         break;
@@ -481,9 +487,9 @@ extends r {
         try {
             this.var_z_a = new z("/sgui/edsr");
             br br2 = new br("/img/end");
-            new br("/img/end").var_boolean_a = true;
+            new br("/img/end").isInitResource = true;
             this.var_javax_microedition_lcdui_Image_arr_a = new Image[1];
-            this.var_javax_microedition_lcdui_Image_arr_a[0] = br2.javax_microedition_lcdui_Image_a(n.var_byte_a - 6);
+            this.var_javax_microedition_lcdui_Image_arr_a[0] = br2.javax_microedition_lcdui_Image_a(rpg.n.var_byte_a - 6);
             return;
         }
         catch (IOException iOException) {
@@ -494,10 +500,10 @@ extends r {
     }
 
     public final void a(char[] arrc, int n2) {
-        if (this.r > 0) {
+        if (this.int_r > 0) {
             this.h = true;
         }
-        this.r = n2;
+        this.int_r = n2;
         this.var_char_arr_a = arrc;
     }
 
@@ -513,7 +519,7 @@ extends r {
     }
 
     public final void a(Graphics graphics) {
-        ao ao2 = n.ao_a();
+        ao ao2 = rpg.n.ao_a();
         p p2 = ao2.p_a();
         boolean bl2 = false;
         int n2 = r.h - 31 - 5;
@@ -549,7 +555,7 @@ extends r {
                 graphics.setColor(12525375);
                 graphics.drawRect(7, n2 + 15, 14, 14);
             }
-            graphics.setClip(8, n2 + 16, 13, 13 * p2.c[p2.g] / p.var_short_arr_b[p2.f * 3 + p2.g]);
+            graphics.setClip(8, n2 + 16, 13, 13 * p2.c[p2.g] / rpg.p.var_short_arr_b[p2.f * 3 + p2.g]);
             graphics.drawImage(ce.C, 7, n2 + 15, 20);
         }
         if (p2.var_byte_h != -1) {
@@ -561,7 +567,7 @@ extends r {
                 graphics.setColor(12525375);
                 graphics.drawRect(29, n2 + 15, 14, 14);
             }
-            graphics.setClip(30, n2 + 16, 13, 13 * p2.c[p2.var_byte_h] / p.var_short_arr_b[p2.f * 3 + p2.var_byte_h]);
+            graphics.setClip(30, n2 + 16, 13, 13 * p2.c[p2.var_byte_h] / rpg.p.var_short_arr_b[p2.f * 3 + p2.var_byte_h]);
             graphics.drawImage(ce.C, 29, n2 + 15, 20);
         }
         graphics.setClip(0, 0, r.g, r.h);
@@ -597,7 +603,7 @@ extends r {
             graphics.drawLine(3, n2 + 33, 3 + n6 - 1, n2 + 33);
             this.g = false;
         }
-        if (this.s > 0 && this.var_al_a != null && this.var_al_a.h != 6) {
+        if (this.s > 0 && this.var_al_a != null && this.var_al_a.byte_h != 6) {
             int n7 = r.g - 105;
             n3 = 2;
             if (p2 != null && p2.var_byte_i == 2) {
@@ -632,13 +638,13 @@ extends r {
             this.h = false;
             return;
         }
-        if (this.r > 0) {
+        if (this.int_r > 0) {
             int n10 = r.i - 50;
             n3 = r.h - 46;
             cb.a(graphics, n10, n3, 100, 23, false);
             graphics.setClip(0, 0, r.g, r.h);
             cb.a(graphics, n10 + 2, n3 + 2, 96, 19, this.var_char_arr_a, 0, 1, 6233919, 0xFFFFFF);
-            --this.r;
+            --this.int_r;
         }
     }
 
@@ -703,7 +709,7 @@ extends r {
     public static final void b(Graphics graphics) {
         graphics.setColor(0);
         graphics.fillRect(0, 0, r.g, r.h);
-        n.ao_a().d(graphics, r.i, r.j + 20);
+        rpg.n.ao_a().d(graphics, r.i, r.j + 20);
         char[] arrc = ce.var_z_g.a(32);
         int n2 = bh.int_a(arrc);
         System.out.println(bh.java_lang_String_a(arrc));
@@ -727,7 +733,7 @@ extends r {
             this.i = false;
             ++this.u;
             this.t = this.u;
-            while (this.u < this.var_z_a.var_short_a) {
+            while (this.u < this.var_z_a.numberEntry) {
                 char[] arrc = this.var_z_a.a(this.u);
                 if (arrc[0] == '_') {
                     var_int_e = Integer.parseInt(new String(arrc, 1, arrc.length - 1));
@@ -736,15 +742,15 @@ extends r {
                 ++this.u;
             }
         }
-        if (this.u >= this.var_z_a.var_short_a) {
+        if (this.u >= this.var_z_a.numberEntry) {
             this.var_z_a = null;
             this.var_javax_microedition_lcdui_Image_arr_a = null;
             this.h();
-            n.a((byte)2, (byte)13, (byte)1);
+            rpg.n.a((byte)2, (byte)13, (byte)1);
             return;
         }
         int n3 = r.j - (this.u - this.t + 1) * 15 / 2;
-        switch (n.var_byte_a) {
+        switch (rpg.n.var_byte_a) {
             case 6: {
                 if (this.t != 2 && this.t != 6 && this.t != 9 && this.t != 13) break;
                 graphics.setColor(0xBFBFBF);
@@ -774,12 +780,12 @@ extends r {
     }
 
     private final void e(Graphics graphics) {
-        Object object;
+//        Object object;
         graphics.setColor(0);
         graphics.fillRect(0, 0, r.g, r.h);
         graphics.drawImage(this.var_javax_microedition_lcdui_Image_arr_a[0], 0, r.h / 2, 6);
-        if (var_int_e == 0 && this.t < this.var_z_a.var_short_a) {
-            object = this.var_z_a.a(this.t);
+        if (var_int_e == 0 && this.t < this.var_z_a.numberEntry) {
+            char[] object = this.var_z_a.a(this.t);
             if (object[0] == '-') {
                 var_int_e = 4;
             } else if (object[0] == '=') {
@@ -796,20 +802,20 @@ extends r {
             }
             ++this.t;
         }
-        if (this.t >= this.var_z_a.var_short_a && this.var_java_util_Vector_a.size() == 0) {
+        if (this.t >= this.var_z_a.numberEntry && this.var_java_util_Vector_a.size() == 0) {
             this.var_java_util_Vector_a = null;
             this.var_z_a = null;
             this.var_javax_microedition_lcdui_Image_arr_a = null;
             bw.f();
             bw.b((byte)23);
-            n.a((byte)21, (byte)2);
+            rpg.n.a((byte)21, (byte)2);
             return;
         }
         if (var_int_e > 0) {
             --var_int_e;
         }
         for (int i2 = this.var_java_util_Vector_a.size() - 1; i2 >= 0; --i2) {
-            object = (bc)this.var_java_util_Vector_a.elementAt(i2);
+            bc object = (bc)this.var_java_util_Vector_a.elementAt(i2);
             graphics.drawImage(object.var_javax_microedition_lcdui_Image_a, r.i, object.var_int_a, 17);
             object.var_int_a -= 2;
             if (object.var_int_a >= -8) continue;

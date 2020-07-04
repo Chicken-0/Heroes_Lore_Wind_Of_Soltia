@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -112,9 +114,9 @@ extends cb {
         bh.int_a(graphics, n2, n6, ce.var_z_g.a(18), 1);
         graphics.setColor(n5);
         if (this.a.var_int_a == 0) {
-            bh.void_a(graphics, n2 + 70, n6, cj.var_cj_a.a(3945).toCharArray(), 0);
+            bh.void_a(graphics, n2 + 70, n6, BabbleText.instance.getTextById(3945).toCharArray(), 0);
         } else {
-            bh.void_a(graphics, n2 + 70, n6, cj.var_cj_a.a(3944).toCharArray(), 0);
+            bh.void_a(graphics, n2 + 70, n6, BabbleText.instance.getTextById(3944).toCharArray(), 0);
         }
         graphics.setColor(by2 == 1 ? 0xFFFFFF : n4);
         bh.int_a(graphics, n2, n6 += 20, ce.var_z_g.a(19), 1);
@@ -124,11 +126,11 @@ extends cb {
         graphics.setColor(by2 == 2 ? 0xFFFFFF : n4);
         bh.int_a(graphics, n2, n6 += 20, ce.var_z_g.a(20), 1);
         graphics.setColor(n5);
-        bh.void_a(graphics, n2 + 70, n6, (this.a.var_boolean_c ? cj.var_cj_a.a(3942) : cj.var_cj_a.a(3943)).toCharArray(), 0);
+        bh.void_a(graphics, n2 + 70, n6, (this.a.var_boolean_c ? BabbleText.instance.getTextById(3942) : BabbleText.instance.getTextById(3943)).toCharArray(), 0);
         graphics.setColor(by2 == 3 ? 0xFFFFFF : n4);
         bh.int_a(graphics, n2, n6 += 20, ce.var_z_g.a(21), 1);
         graphics.setColor(n5);
-        bh.void_a(graphics, n2 + 70, n6, (this.a.var_boolean_d ? cj.var_cj_a.a(3944) : cj.var_cj_a.a(3945)).toCharArray(), 0);
+        bh.void_a(graphics, n2 + 70, n6, (this.a.var_boolean_d ? BabbleText.instance.getTextById(3944) : BabbleText.instance.getTextById(3945)).toCharArray(), 0);
         for (byte by3 = 0; by3 < this.var_byte_a; by3 = (byte)(by3 + 1)) {
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_o, n2 + 42, n3 + by3 * 20, 20);
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_d, n2 + 92, n3 + by3 * 20, 20);

@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -41,7 +43,7 @@ extends cb {
             switch (by3) {
                 case 0: {
                     if (ao2.a(ao2.var_p_arr_a[this.var_byte_b])) {
-                        char[] arrc = (cj.var_cj_a.a(3933) + " " + new String(ce.var_z_b.a(ao2.var_p_arr_a[this.var_byte_b].f))).toCharArray();
+                        char[] arrc = (BabbleText.instance.getTextById(3933) + " " + new String(ce.var_z_b.a(ao2.var_p_arr_a[this.var_byte_b].f))).toCharArray();
                         Object[] arrobject = new Object[]{arrc};
                         this.a(arrobject);
                         return;

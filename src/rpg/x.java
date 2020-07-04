@@ -1,7 +1,10 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  */
 public final class x {
+    byte[] arrby = new byte[]{7, 9, 13, 16, 19};
     public static boolean a = false;
 
     public static final void a(boolean bl2) throws RuntimeException {
@@ -10,9 +13,9 @@ public final class x {
         }
     }
 
-    public static {
-        byte[] arrby = new byte[]{7, 9, 13, 16, 19};
-        System.currentTimeMillis();
-    }
+//    public static {
+//        byte[] arrby = new byte[]{7, 9, 13, 16, 19};
+//        System.currentTimeMillis();
+//    }
 }
 

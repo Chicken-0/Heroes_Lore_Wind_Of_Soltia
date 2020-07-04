@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -5,7 +7,7 @@
  *  javax.microedition.lcdui.Graphics
  */
 import javax.microedition.lcdui.Graphics;
-import rpg.GameMIDlet;
+import main.GameMIDlet;
 
 public final class bl
 extends cb {

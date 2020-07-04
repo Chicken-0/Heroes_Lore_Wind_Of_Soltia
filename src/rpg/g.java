@@ -1,18 +1,21 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  */
+//import <any?>;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
-import java.io.FilterInputStream;
-import java.io.FilterOutputStream;
+//import java.io.FilterInputStream;
+//import java.io.FilterOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Vector;
 
 public final class g {
-    private static final byte[] var_byte_arr_a;
+    private static final byte[] var_byte_arr_a = new byte[]{7, 8, 9, 10};
     private ad[] var_ad_arr_a;
     private byte var_byte_a;
     private byte b;
@@ -43,7 +46,7 @@ public final class g {
         int n4 = 0;
         for (int n5 = 0; n5 < this.var_ad_arr_a.length; n5 = (int)((byte)(n5 + 1))) {
             if (this.var_ad_arr_a[n5] == null) continue;
-            arrby[n4++] = n5;
+            arrby[n4++] = (byte)n5;
         }
         return arrby;
     }
@@ -58,7 +61,7 @@ public final class g {
         int n4 = 0;
         for (int n5 = 0; n5 < this.var_ad_arr_a.length; n5 = (int)((byte)(n5 + 1))) {
             if (this.var_ad_arr_a[n5] == null || !(this.var_ad_arr_a[n5] instanceof e) || bl2 && !(this.var_ad_arr_a[n5] instanceof t) || by2 == 1 && !((e)this.var_ad_arr_a[n5]).b || by2 == -1 && ((e)this.var_ad_arr_a[n5]).b) continue;
-            arrby[n4++] = n5;
+            arrby[n4++] = (byte)n5;
         }
         return arrby;
     }
@@ -73,7 +76,7 @@ public final class g {
         int n4 = 0;
         for (int n5 = 0; n5 < this.var_ad_arr_a.length; n5 = (int)((byte)(n5 + 1))) {
             if (this.var_ad_arr_a[n5] == null || this.var_ad_arr_a[n5].f != by2) continue;
-            arrby[n4++] = n5;
+            arrby[n4++] = (byte)n5;
         }
         return arrby;
     }
@@ -88,7 +91,7 @@ public final class g {
         int n4 = 0;
         for (int n5 = 0; n5 < this.var_ad_arr_a.length; n5 = (int)((byte)(n5 + 1))) {
             if (this.var_ad_arr_a[n5] == null || !ad.c[this.var_ad_arr_a[n5].f]) continue;
-            arrby[n4++] = n5;
+            arrby[n4++] = (byte)n5;
         }
         return arrby;
     }
@@ -213,7 +216,8 @@ public final class g {
     public final void d() {
         for (int i2 = 0; i2 < this.var_ad_arr_a.length; ++i2) {
             if (this.var_ad_arr_a[i2] != null) continue;
-            for (int i3 = i2; i3 < this.var_ad_arr_a.length - 1; ++i3) {
+            int i3;
+            for (i3 = i2; i3 < this.var_ad_arr_a.length - 1; ++i3) {
                 this.var_ad_arr_a[i3] = this.var_ad_arr_a[i3 + 1];
             }
             this.var_ad_arr_a[i3] = null;
@@ -230,15 +234,26 @@ public final class g {
     }
 
     public final ad[] ad_arr_a(byte by2, byte by3) {
-        Vector<ad> vector = new Vector<ad>(2);
+//        Vector<ad> vector = new Vector<ad>(2);
+        ad[] array_ad = new ad[this.var_ad_arr_a.length];
+        int idx = 0;
+        
         for (int i2 = 0; i2 < this.var_ad_arr_a.length; ++i2) {
             if (this.var_ad_arr_a[i2] == null || this.var_ad_arr_a[i2].f != by2 || this.var_ad_arr_a[i2].g != by3) continue;
-            vector.addElement(this.var_ad_arr_a[i2]);
+//            vector.addElement(this.var_ad_arr_a[i2]);
+            array_ad[idx] = this.var_ad_arr_a[i2];
+            idx += 1;
         }
-        ad[] arrad = new ad[vector.size()];
-        for (int i3 = 0; i3 < vector.size(); ++i3) {
-            arrad[i3] = (ad)vector.elementAt(i3);
+//        ad[] arrad = new ad[vector.size()];
+//        for (int i3 = 0; i3 < vector.size(); ++i3) {
+//            arrad[i3] = (ad)vector.elementAt(i3);
+//        }
+        
+        ad[] arrad = new ad[idx];
+        for (int i3 = 0; i3 < idx; ++i3) {
+            arrad[i3] = array_ad[i3];
         }
+        
         return arrad;
     }
 
@@ -332,9 +347,9 @@ public final class g {
      * Enabled aggressive exception aggregation
      * Lifted jumps to return sites
      */
-    public final byte[] byte_arr_c() {
+    public final byte[] byte_arr_c() throws IOException, Throwable {
         ByteArrayOutputStream byteArrayOutputStream = null;
-        FilterOutputStream filterOutputStream = null;
+        DataOutputStream filterOutputStream = null;
         byteArrayOutputStream = new ByteArrayOutputStream();
         filterOutputStream = new DataOutputStream(byteArrayOutputStream);
         ((DataOutputStream)filterOutputStream).writeInt(this.var_int_a);
@@ -352,8 +367,8 @@ public final class g {
             byteArrayOutputStream.close();
             return arrby;
         }
-        catch (IOException iOException) {}
-        return arrby;
+//        catch (IOException iOException) {}
+//        return arrby;
         catch (IOException iOException) {
             try {
                 IOException iOException2 = iOException;
@@ -393,10 +408,10 @@ public final class g {
      * Enabled aggressive exception aggregation
      * Lifted jumps to return sites
      */
-    public final void a(byte[] arrby) {
+    public final void a(byte[] arrby) throws IOException, Throwable {
         block14: {
             ByteArrayInputStream byteArrayInputStream = null;
-            FilterInputStream filterInputStream = null;
+            DataInputStream filterInputStream = null;
             byteArrayInputStream = new ByteArrayInputStream(arrby);
             filterInputStream = new DataInputStream(byteArrayInputStream);
             this.var_int_a = ((DataInputStream)filterInputStream).readInt();
@@ -412,8 +427,8 @@ public final class g {
                 filterInputStream.close();
                 byteArrayInputStream.close();
             }
-            catch (IOException iOException) {}
-            break block14;
+//            catch (IOException iOException) {}
+//            break block14;
             catch (IOException iOException) {
                 try {
                     IOException iOException2 = iOException;
@@ -445,8 +460,8 @@ public final class g {
         this.void_a();
     }
 
-    public static {
-        var_byte_arr_a = new byte[]{7, 8, 9, 10};
-    }
+//    public static {
+//        var_byte_arr_a = new byte[]{7, 8, 9, 10};
+//    }
 }
 

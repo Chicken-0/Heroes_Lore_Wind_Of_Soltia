@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -24,9 +26,18 @@ public class az {
     private int f;
     private short[] var_short_arr_a;
     private boolean var_boolean_c = true;
-    private static final int[] var_int_arr_a;
+    private static final int[] var_int_arr_a = new int[256];
 
     public az(String string, int n2, int n3, boolean bl2) {
+        
+        for (int i2 = 0; i2 < 256; ++i2) {
+            int n22 = i2;
+            for (int i3 = 0; i3 < 8; ++i3) {
+                n22 = (n22 & 1) != 0 ? 0xEDB88320 ^ n22 >>> 1 : (n22 >>>= 1);
+                az.var_int_arr_a[i2] = n22;
+            }
+        }
+        
         this.var_boolean_a = bl2;
         InputStream inputStream = this.getClass().getResourceAsStream("/" + string + ".mf");
         this.a(inputStream, n2, n3);
@@ -589,15 +600,15 @@ public class az {
         return ~n4;
     }
 
-    public static {
-        var_int_arr_a = new int[256];
-        for (int i2 = 0; i2 < 256; ++i2) {
-            int n2 = i2;
-            for (int i3 = 0; i3 < 8; ++i3) {
-                n2 = (n2 & 1) != 0 ? 0xEDB88320 ^ n2 >>> 1 : (n2 >>>= 1);
-                az.var_int_arr_a[i2] = n2;
-            }
-        }
-    }
+//    public static {
+//        var_int_arr_a = new int[256];
+//        for (int i2 = 0; i2 < 256; ++i2) {
+//            int n2 = i2;
+//            for (int i3 = 0; i3 < 8; ++i3) {
+//                n2 = (n2 & 1) != 0 ? 0xEDB88320 ^ n2 >>> 1 : (n2 >>>= 1);
+//                az.var_int_arr_a[i2] = n2;
+//            }
+//        }
+//    }
 }
 

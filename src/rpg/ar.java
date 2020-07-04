@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  */
@@ -39,9 +41,9 @@ extends av {
 
     public final void j() {
         if (this.k == 2) {
-            n.var_ae_a.b(new i((byte)(this.var_byte_a - 1), this.var_byte_b, (byte[])ce.var_java_lang_Object_arr_f[this.n], this, this.i, 13, 2));
-            n.var_ae_a.b(new i((byte)(this.var_byte_a + 1), this.var_byte_b, (byte[])ce.var_java_lang_Object_arr_f[this.n], this, this.i, 13, 2));
-            n.var_ae_a.b(new i(this.var_byte_a, (byte)(this.var_byte_b + 1), (byte[])ce.var_java_lang_Object_arr_f[this.n], this, this.i, 13, 2));
+            n.var_ae_a.b(new i((byte)(this.var_byte_a - 1), this.var_byte_b, (byte[])ce.var_java_lang_Object_arr_f[this.byte_n], this, this.i, (byte)13, (byte)2));
+            n.var_ae_a.b(new i((byte)(this.var_byte_a + 1), this.var_byte_b, (byte[])ce.var_java_lang_Object_arr_f[this.byte_n], this, this.i, (byte)13, (byte)2));
+            n.var_ae_a.b(new i(this.var_byte_a, (byte)(this.var_byte_b + 1), (byte[])ce.var_java_lang_Object_arr_f[this.byte_n], this, this.i, (byte)13, (byte)2));
         }
     }
 

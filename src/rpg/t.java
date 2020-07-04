@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  */
@@ -6,7 +8,7 @@ extends e
 implements u {
     public static final byte[] h = new byte[]{0, 1, -1, -1, -1, 4, 3, 2, -1};
     public static z a;
-    public static final byte[] i;
+    public static final byte[] i = new byte[]{20, 16, 6, 13, 13, 10, 10, 10, 10};
     public byte c;
 
     public t(byte by2, byte by3) {
@@ -26,8 +28,8 @@ implements u {
         return arrby2;
     }
 
-    public static {
-        i = new byte[]{20, 16, 6, 13, 13, 10, 10, 10, 10};
-    }
+//    public static {
+//        i = new byte[]{20, 16, 6, 13, 13, 10, 10, 10, 10};
+//    }
 }
 

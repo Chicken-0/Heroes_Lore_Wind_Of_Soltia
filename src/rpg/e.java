@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  */
@@ -53,9 +55,9 @@ extends ad {
     public final void a(byte n2, byte[] arrby, byte[] arrby2, byte by2) {
         for (int i2 = 0; i2 < n2; ++i2) {
             int n3;
-            while (this.j[n3 = h.a(0, 3)] != 0 || arrby[n3] == 0 && arrby2[n3] == 0) {
+            while (this.j[n3 = rpg.h.a(0, 3)] != 0 || arrby[n3] == 0 && arrby2[n3] == 0) {
             }
-            this.j[n3] = (byte)h.a(arrby[n3], (int)arrby2[n3]);
+            this.j[n3] = (byte)rpg.h.a(arrby[n3], (int)arrby2[n3]);
         }
         this.e = by2;
     }

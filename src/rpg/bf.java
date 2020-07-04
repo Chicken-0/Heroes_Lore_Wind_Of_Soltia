@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -5,7 +7,7 @@
  *  javax.microedition.lcdui.Graphics
  */
 import javax.microedition.lcdui.Graphics;
-import rpg.GameMIDlet;
+import main.GameMIDlet;
 
 public final class bf
 extends cb {
@@ -16,8 +18,8 @@ extends cb {
     private byte var_byte_c;
     private byte var_byte_d;
     private long var_long_a;
-    private static int var_int_c;
-    private static int var_int_d;
+    private static int var_int_c = 5;
+    private static int var_int_d = 5;
     private static bf var_bf_a;
     public static boolean var_boolean_c;
     public static boolean var_boolean_d;
@@ -181,7 +183,7 @@ extends cb {
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_i[4], r.i, as.var_int_d, 3);
             graphics.setColor(0);
             bh.void_a(graphics, r.g >> 1, r.h - 23, bh.var_char_arr_b, 1);
-            bh.void_a(graphics, r.g >> 1, 10, cj.var_cj_a.a(3941).toCharArray(), 1);
+            bh.void_a(graphics, r.g >> 1, 10, BabbleText.instance.getTextById(3941).toCharArray(), 1);
             if (!w.c && w.b) {
                 bh.a(graphics, w.java_lang_String_a().toCharArray(), bh.var_char_arr_c);
             }
@@ -273,9 +275,9 @@ extends cb {
         graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_l[13], n7 += 32, n3 + 36 + 24 * n4, 20);
     }
 
-    public static {
-        var_int_c = 5;
-        var_int_d = 5;
-    }
+//    public static {
+//        var_int_c = 5;
+//        var_int_d = 5;
+//    }
 }
 

@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -163,7 +165,7 @@ implements u {
     }
 
     public final void a(Object[] arrobject) {
-        this.var_cb_b = new af(this, 1, 0, arrobject, null, null);
+        this.var_cb_b = new af(this, (byte)1, (byte)0, arrobject, null, null);
     }
 
     public final void void_b() {
@@ -202,7 +204,7 @@ implements u {
 
     public final void a(Graphics graphics, int n2, int n3, boolean bl2) {
         byte by2 = (byte)(this.var_byte_b % 5);
-        byte by3 = this.var_byte_a - (this.int_a() - 1) * 5;
+        byte by3 = (byte)(this.var_byte_a - (this.int_a() - 1) * 5);
         if (by3 > 5) {
             by3 = 5;
         }

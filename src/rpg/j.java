@@ -1,9 +1,11 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  */
 public final class j {
     public static j[] var_j_arr_a;
-    public static final byte[] var_byte_arr_a;
+    public static final byte[] var_byte_arr_a = new byte[]{3, 2, 6, 2, 2, 1, 3, 4, 3, 2, 3, 4, 2, 3, 2, 2, 2, 3, 3, 3, 3, 3, 6, 3, 3, 3, 2, 2, 2, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
     public char[] var_char_arr_a;
     public byte var_byte_a;
     public byte var_byte_b;
@@ -36,7 +38,7 @@ public final class j {
     public static final void a(byte[] arrby, byte n2, byte by2) {
         int n3 = 1;
         for (int i2 = 0; i2 < n2; ++i2) {
-            short s2 = h.short_a(arrby, n3);
+            short s2 = rpg.h.short_a(arrby, n3);
             n3 += 2 + s2;
         }
         n3 += 2;
@@ -58,20 +60,20 @@ public final class j {
             j2.var_byte_e = (byte)(by3 >> 6 & 3);
         }
         j2.f = arrby[n3++];
-        j2.var_short_a = h.short_a(arrby, n3);
-        j2.var_short_b = h.short_a(arrby, n3 += 2);
-        j2.var_short_c = h.short_a(arrby, n3 += 2);
-        j2.var_short_d = h.short_a(arrby, n3 += 2);
+        j2.var_short_a = rpg.h.short_a(arrby, n3);
+        j2.var_short_b = rpg.h.short_a(arrby, n3 += 2);
+        j2.var_short_c = rpg.h.short_a(arrby, n3 += 2);
+        j2.var_short_d = rpg.h.short_a(arrby, n3 += 2);
         n3 += 2;
         j2.g = arrby[n3++];
         j2.h = arrby[n3++];
         j2.i = arrby[n3++];
-        j2.var_short_e = h.short_a(arrby, n3);
+        j2.var_short_e = rpg.h.short_a(arrby, n3);
         n3 += 2;
         by3 = arrby[n3++];
         j2.var_byte_arr_b = new byte[3 * by3];
         System.arraycopy(arrby, n3, j2.var_byte_arr_b, 0, j2.var_byte_arr_b.length);
-        j.var_j_arr_a[by2] = j2;
+        rpg.j.var_j_arr_a[by2] = j2;
     }
 
     public static final void a(byte by2) {
@@ -104,8 +106,8 @@ public final class j {
         j2.m = (byte)-1;
     }
 
-    public static {
-        var_byte_arr_a = new byte[]{3, 2, 6, 2, 2, 1, 3, 4, 3, 2, 3, 4, 2, 3, 2, 2, 2, 3, 3, 3, 3, 3, 6, 3, 3, 3, 2, 2, 2, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
-    }
+//    public static {
+//        var_byte_arr_a = new byte[]{3, 2, 6, 2, 2, 1, 3, 4, 3, 2, 3, 4, 2, 3, 2, 2, 2, 3, 3, 3, 3, 3, 6, 3, 3, 3, 2, 2, 2, 3, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+//    }
 }
 

@@ -1,3 +1,5 @@
+package rpg;
+
 /*
  * Decompiled with CFR 0.150.
  * 
@@ -12,16 +14,18 @@ import javax.microedition.lcdui.Image;
 
 public abstract class r
 extends Canvas {
+    int[] arrn = new int[]{5, 5, 5, 5, 5, 5, 5, 5, 3, 4, 5, 5, 7, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7, 5, 5, 5};
+    int[] arrn2 = new int[]{0, 4, 8, 12, 16, 20, 24, 28, 32, 34, 37, 41, 45, 51, 55, 59, 63, 67, 71, 75, 79, 83, 87, 93, 97, 101};
     public boolean a = false;
     public int f = 0;
     public static int g;
     public static int h;
     public static int i;
     public static int j;
-    public static boolean b;
-    public static int k;
-    public static int l;
-    public static int m;
+    public static boolean b = false;
+    public static int k = 0;
+    public static int l = 100;
+    public static int m = 0;
 
     public r() {
         System.out.println("MyGameCanvas");
@@ -209,13 +213,13 @@ extends Canvas {
         }
     }
 
-    public static {
-        int[] arrn = new int[]{5, 5, 5, 5, 5, 5, 5, 5, 3, 4, 5, 5, 7, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7, 5, 5, 5};
-        int[] arrn2 = new int[]{0, 4, 8, 12, 16, 20, 24, 28, 32, 34, 37, 41, 45, 51, 55, 59, 63, 67, 71, 75, 79, 83, 87, 93, 97, 101};
-        b = false;
-        k = 0;
-        l = 100;
-        m = 0;
-    }
+//    public static {
+//        int[] arrn = new int[]{5, 5, 5, 5, 5, 5, 5, 5, 3, 4, 5, 5, 7, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7, 5, 5, 5};
+//        int[] arrn2 = new int[]{0, 4, 8, 12, 16, 20, 24, 28, 32, 34, 37, 41, 45, 51, 55, 59, 63, 67, 71, 75, 79, 83, 87, 93, 97, 101};
+//        b = false;
+//        k = 0;
+//        l = 100;
+//        m = 0;
+//    }
 }
 

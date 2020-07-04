@@ -81,21 +81,21 @@ implements Runnable {
                         ce.w();
                         ce.y();
                         try {
-                            if (au.boolean_a("/c")) {
+                            if (RecordStoreData.boolean_a("/c")) {
                                 bs.var_bs_a.j();
                             } else {
-                                if (!au.boolean_a("/c")) {
-                                    if (au.boolean_a(n.var_java_lang_String_arr_a[0])) {
-                                        au.void_a(n.var_java_lang_String_arr_a[0]);
+                                if (!RecordStoreData.boolean_a("/c")) {
+                                    if (RecordStoreData.boolean_a(n.var_java_lang_String_arr_a[0])) {
+                                        RecordStoreData.void_a(n.var_java_lang_String_arr_a[0]);
                                     }
-                                    if (au.boolean_a(n.var_java_lang_String_arr_a[1])) {
-                                        au.void_a(n.var_java_lang_String_arr_a[1]);
+                                    if (RecordStoreData.boolean_a(n.var_java_lang_String_arr_a[1])) {
+                                        RecordStoreData.void_a(n.var_java_lang_String_arr_a[1]);
                                     }
-                                    if (au.boolean_a(n.var_java_lang_String_arr_a[2])) {
-                                        au.void_a(n.var_java_lang_String_arr_a[2]);
+                                    if (RecordStoreData.boolean_a(n.var_java_lang_String_arr_a[2])) {
+                                        RecordStoreData.void_a(n.var_java_lang_String_arr_a[2]);
                                     }
-                                    if (au.boolean_a("/o")) {
-                                        au.void_a("/o");
+                                    if (RecordStoreData.boolean_a("/o")) {
+                                        RecordStoreData.void_a("/o");
                                     }
                                 }
                                 bs.var_bs_a.i();

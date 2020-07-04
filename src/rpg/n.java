@@ -47,13 +47,13 @@ implements u {
         var_ao_a.c(var_byte_a);
         try {
             byte[] arrby = new byte[2];
-            au au2 = new au("/o", 1);
+            RecordStoreData au2 = new RecordStoreData("/o", 1);
             au2.b(arrby, 0, arrby.length);
             byte[] arrby2 = new byte[(arrby[0] & 0xFF) << 8 | arrby[1] & 0xFF];
             au2.b(arrby2, 0, arrby2.length);
             arrby2 = bq.b(arrby2, var_byte_arr_i);
             n.var_ao_a.var_g_b.a(arrby2);
-            au2.void_a();
+            au2.commitDataStore();
         }
         catch (Exception exception) {}
         n.l();
@@ -641,22 +641,22 @@ implements u {
         arrby6[n2++] = (byte)((arrby4.length & 0xFF00) >> 8);
         arrby6[n2++] = (byte)(arrby4.length & 0xFF);
         System.arraycopy(arrby4, 0, arrby6, n2, arrby4.length);
-        Object object = new au(var_java_lang_String_arr_a[var_byte_a - 6], 0);
-        ((au)object).a(arrby6, 0, arrby6.length);
-        ((au)object).void_a();
+        Object object = new RecordStoreData(var_java_lang_String_arr_a[var_byte_a - 6], 0);
+        ((RecordStoreData)object).writeRecordToStream(arrby6, 0, arrby6.length);
+        ((RecordStoreData)object).commitDataStore();
         byte[] arrby7 = ao2.var_g_b.byte_arr_c();
-        object = arrby7;
+//        object = arrby7;
         byte[] arr_cv = bq.a(arrby7, var_byte_arr_i);
-        au au2 = new au("/o", 0);
+        RecordStoreData au2 = new RecordStoreData("/o", 0);
         arrby6 = new byte[]{(byte)((arr_cv.length & 0xFF00) >> 8), (byte)(arr_cv.length & 0xFF)};
-        au2.a(arrby6, 0, arrby6.length);
-        au2.a((byte[])object, 0, (arr_cv.length));
-        au2.void_a();
+        au2.writeRecordToStream(arrby6, 0, arrby6.length);
+        au2.writeRecordToStream(arr_cv, 0, (arr_cv.length));
+        au2.commitDataStore();
     }
 
     private static final void r() throws Exception, Throwable {
         byte[] arrby = new byte[2];
-        au au2 = new au(var_java_lang_String_arr_a[var_byte_a - 6], 1);
+        RecordStoreData au2 = new RecordStoreData(var_java_lang_String_arr_a[var_byte_a - 6], 1);
         au2.b(arrby, 0, arrby.length);
         byte[] arrby2 = new byte[(arrby[0] & 0xFF) << 8 | arrby[1] & 0xFF];
         au2.b(arrby2, 0, arrby2.length);
@@ -679,26 +679,26 @@ implements u {
         f = arrby2[0];
         var_byte_c = arrby2[1];
         var_byte_d = arrby2[2];
-        au2.void_a();
-        au2 = new au("/o", 1);
+        au2.commitDataStore();
+        au2 = new RecordStoreData("/o", 1);
         au2.b(arrby, 0, arrby.length);
         arrby2 = new byte[(arrby[0] & 0xFF) << 8 | arrby[1] & 0xFF];
         au2.b(arrby2, 0, arrby2.length);
         arrby2 = bq.b(arrby2, var_byte_arr_i);
         n.var_ao_a.var_g_b.a(arrby2);
-        au2.void_a();
+        au2.commitDataStore();
     }
 
     private static final byte[] byte_arr_a(byte by2) {
         System.out.println("getSavedDataFor");
         byte[] arrby = null;
         try {
-            if (au.boolean_a(var_java_lang_String_arr_a[by2 - 6])) {
-                au au2 = new au(var_java_lang_String_arr_a[by2 - 6], 1);
+            if (RecordStoreData.boolean_a(var_java_lang_String_arr_a[by2 - 6])) {
+                RecordStoreData au2 = new RecordStoreData(var_java_lang_String_arr_a[by2 - 6], 1);
                 arrby = new byte[au2.int_a()];
                 System.out.println("::::" + au2.int_a());
                 au2.b(arrby, 0, arrby.length);
-                au2.void_a();
+                au2.commitDataStore();
             }
         }
         catch (Exception exception) {}

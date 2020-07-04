@@ -173,16 +173,16 @@ implements Runnable {
 
     public final void i() throws Exception {
         byte[] arrby = this.byte_arr_a();
-        au au2 = new au("/c", 0);
-        au2.a(arrby, 0, arrby.length);
-        au2.void_a();
+        RecordStoreData au2 = new RecordStoreData("/c", 0);
+        au2.writeRecordToStream(arrby, 0, arrby.length);
+        au2.commitDataStore();
     }
 
     public final void j() throws Exception {
         byte[] arrby = new byte[6];
-        au au2 = new au("/c", 1);
+        RecordStoreData au2 = new RecordStoreData("/c", 1);
         au2.b(arrby, 0, arrby.length);
-        au2.void_a();
+        au2.commitDataStore();
         this.a(arrby);
     }
 

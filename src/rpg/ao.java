@@ -1221,7 +1221,7 @@ implements u {
             for (n2 = 0; n2 < this.var_p_arr_a.length; ++n2) {
                 if (((DataInputStream)filterInputStream).readByte() == 0) continue;
                 p p2 = this.p_a(((DataInputStream)filterInputStream).readByte());
-                this.p_a(((DataInputStream)filterInputStream).readByte()).var_short_a = ((DataInputStream)filterInputStream).readShort();
+                p2.var_short_a = ((DataInputStream)filterInputStream).readShort();
                 ((DataInputStream)filterInputStream).readInt();
                 ((DataInputStream)filterInputStream).readInt();
                 p2.var_int_a = ((DataInputStream)filterInputStream).readInt();

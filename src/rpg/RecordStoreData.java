@@ -10,14 +10,14 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import javax.microedition.rms.RecordStore;
 
-public final class au {
+public final class RecordStoreData {
     public RecordStore var_javax_microedition_rms_RecordStore_a = null;
     public boolean var_boolean_a = true;
     public String var_java_lang_String_a;
     public ByteArrayInputStream var_java_io_ByteArrayInputStream_a = null;
     public ByteArrayOutputStream var_java_io_ByteArrayOutputStream_a = null;
 
-    public au(String string, int n2) throws Exception {
+    public RecordStoreData(String string, int n2) throws Exception {
         this.var_java_lang_String_a = string = string.replace('/', '_');
         try {
             System.out.println("XFile " + string);
@@ -36,7 +36,7 @@ public final class au {
         }
     }
 
-    public final void void_a() {
+    public final void commitDataStore() {
         if (this.var_java_io_ByteArrayOutputStream_a != null) {
             try {
                 if (this.var_javax_microedition_rms_RecordStore_a.getNumRecords() > 0) {
@@ -59,12 +59,12 @@ public final class au {
         }
     }
 
-    public final void a(byte[] arrby, int n2, int n3) throws Exception {
+    public final void writeRecordToStream(byte[] arrby, int offset, int size) throws Exception {
         System.out.println("write " + this.var_java_lang_String_a);
         if (this.var_java_io_ByteArrayOutputStream_a == null) {
             this.var_java_io_ByteArrayOutputStream_a = new ByteArrayOutputStream();
         }
-        this.var_java_io_ByteArrayOutputStream_a.write(arrby, n2, n3);
+        this.var_java_io_ByteArrayOutputStream_a.write(arrby, offset, size);
     }
 
     public final void b(byte[] arrby, int n2, int n3) throws Exception {

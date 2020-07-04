@@ -15,14 +15,14 @@ extends cb {
     private Vector[] var_java_util_Vector_arr_a = ad.java_util_Vector_arr_a();
     public static int var_int_a;
     public static int b;
-    public static z var_z_a;
+    public static TableDefineTextFile var_z_a;
     private static bp var_bp_a;
 
     public static final bp bp_a() {
         if (var_bp_a == null) {
             var_bp_a = new bp();
-            var_int_a = r.i - 77;
-            b = r.j - 85;
+            var_int_a = MyGameCanvas.i - 77;
+            b = MyGameCanvas.j - 85;
         }
         return var_bp_a;
     }
@@ -34,7 +34,7 @@ extends cb {
 
     public final void void_d() {
         try {
-            var_z_a = new z("/sgui/shop");
+            var_z_a = new TableDefineTextFile("/sgui/shop");
             return;
         }
         catch (IOException iOException) {
@@ -79,7 +79,7 @@ extends cb {
 
     public final void a(Graphics graphics, int n2, int n3) {
         bh.a(graphics);
-        bh.a(graphics, bh.var_char_arr_d, bh.var_char_arr_e);
+        bh.a(graphics, bh.labelTextOk, bh.labelTextBack);
         graphics.setColor(0x3F1F3F);
         graphics.fillRect(n2, n3, 155, 170);
         cb.c(graphics, n2 + 2, n3 + 15, 151, 155);
@@ -93,7 +93,7 @@ extends cb {
         for (int i2 = 0; i2 < 6; ++i2) {
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_p[i2], n2 + 13 + i2 * 16, n3 + 1, 20);
         }
-        r.a(graphics, var_z_a.a(this.var_byte_b + 1), n2 + 3, n3 + 15);
+        MyGameCanvas.a(graphics, var_z_a.loadByIndex(this.var_byte_b + 1), n2 + 3, n3 + 15);
         graphics.drawImage(ce.var_javax_microedition_lcdui_Image_o, n2 + 4, n3 + 4, 20);
         graphics.drawImage(ce.var_javax_microedition_lcdui_Image_d, n2 + 109, n3 + 4, 20);
     }

@@ -12,7 +12,7 @@ import javax.microedition.lcdui.Canvas;
 import javax.microedition.lcdui.Graphics;
 import javax.microedition.lcdui.Image;
 
-public abstract class r
+public abstract class MyGameCanvas
 extends Canvas {
     int[] arrn = new int[]{5, 5, 5, 5, 5, 5, 5, 5, 3, 4, 5, 5, 7, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7, 5, 5, 5};
     int[] arrn2 = new int[]{0, 4, 8, 12, 16, 20, 24, 28, 32, 34, 37, 41, 45, 51, 55, 59, 63, 67, 71, 75, 79, 83, 87, 93, 97, 101};
@@ -27,7 +27,7 @@ extends Canvas {
     public static int l = 100;
     public static int m = 0;
 
-    public r() {
+    public MyGameCanvas() {
         System.out.println("MyGameCanvas");
         this.setFullScreenMode(true);
         g = this.getWidth();
@@ -43,7 +43,7 @@ extends Canvas {
     }
 
     public static final void c(Graphics graphics, int n2, int n3, int n4, int n5) {
-        r.a(graphics, n2, n3, n4, n5, 0);
+        MyGameCanvas.a(graphics, n2, n3, n4, n5, 0);
     }
 
     public static final void a(Graphics graphics, int n2, int n3, int n4, int n5, int n6) {
@@ -117,10 +117,10 @@ extends Canvas {
     }
 
     public static final void d(Graphics graphics, int n2, int n3, int n4, int n5) {
-        r.c(graphics, n5, n2, n3, 8);
-        int n6 = r.int_a(n5);
+        MyGameCanvas.c(graphics, n5, n2, n3, 8);
+        int n6 = MyGameCanvas.int_a(n5);
         graphics.drawImage(ce.var_javax_microedition_lcdui_Image_i, n2 - n6, n3, 24);
-        r.c(graphics, n4, n2 - n6 - 9, n3, 8);
+        MyGameCanvas.c(graphics, n4, n2 - n6 - 9, n3, 8);
     }
 
     public static final int int_a(int n2) {
@@ -132,11 +132,11 @@ extends Canvas {
     }
 
     public static final int a(Graphics graphics, String string, int n2, int n3) {
-        return r.a(graphics, string.toCharArray(), n2, n3);
+        return MyGameCanvas.a(graphics, string.toCharArray(), n2, n3);
     }
 
     public static final int a(Graphics graphics, char[] arrc, int n2, int n3) {
-        int n4 = bh.int_a(arrc) + 2;
+        int n4 = bh.getTextWidth(arrc) + 2;
         int n5 = bh.int_a() + 2;
         graphics.setColor(0);
         graphics.fillRect(n2 - 1, n3 - 1, n4, n5);
@@ -150,7 +150,7 @@ extends Canvas {
             graphics.setColor(0);
             graphics.fillRect(0, 0, g, h);
             graphics.setColor(14663551);
-            bh.int_a(graphics, i - 48, j - 12, bh.p, 0);
+            bh.int_a(graphics, i - 48, j - 12, bh.labelTextNowLoading, 0);
             graphics.drawLine(i - 50, j, i + 48, j);
             graphics.fillRect(i - 51, j + 1, 2, 2);
             graphics.fillRect(i + 48, j + 1, 2, 2);
@@ -158,8 +158,8 @@ extends Canvas {
             graphics.drawLine(i - 50, j + 5, i + 48, j + 5);
             graphics.fillRect(i - 51, j + 3, 2, 2);
             graphics.fillRect(i + 48, j + 3, 2, 2);
-            char[] arrc = bh.o;
-            bh.int_a(graphics, i - bh.int_a(arrc) / 2, j + 50, arrc, 0);
+            char[] arrc = bh.labelTextHandsOnMobile;
+            bh.int_a(graphics, i - bh.getTextWidth(arrc) / 2, j + 50, arrc, 0);
         }
         if (m > 3) {
             graphics.setColor(0);
@@ -181,6 +181,7 @@ extends Canvas {
     }
 
     public static final void a(String string, int n2) {
+        System.out.println(string);
         bs.var_bs_a.g();
         if (b) {
             if (m < 3) {

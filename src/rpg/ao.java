@@ -858,7 +858,7 @@ implements u {
         }
         this.c(100);
         this.e(100);
-        if (w.c && this.var_byte_g >= 8) {
+        if (MIDletConfig.isDemoVersion && this.var_byte_g >= 8) {
             n.void_a((byte)13);
         }
     }

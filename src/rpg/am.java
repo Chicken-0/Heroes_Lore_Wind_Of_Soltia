@@ -42,8 +42,8 @@ extends cb {
 
     public final void a(Graphics graphics, int n2, int n3) {
         int n4 = this.d * 15 + 10;
-        n2 = r.i - 72;
-        n3 = r.j - n4 / 2;
+        n2 = MyGameCanvas.i - 72;
+        n3 = MyGameCanvas.j - n4 / 2;
         cb.a(graphics, n2, n3, 145, n4);
         cb.b(graphics, n2, n3, 145, n4);
         int n5 = n3 + 5;

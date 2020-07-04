@@ -6,20 +6,20 @@ import rpg.bs;
 
 public class GameMIDlet
 extends MIDlet {
-    public static GameMIDlet var_rpg_GameMIDlet_a;
-    private Display var_javax_microedition_lcdui_Display_a;
-    public boolean var_boolean_a = false;
+    public static GameMIDlet instance;
+    private Display appDisplay;
+    public boolean isRunning = false;
 
     public GameMIDlet() {
-        var_rpg_GameMIDlet_a = this;
+        instance = this;
     }
 
     public final void startApp() {
         System.out.println("startApp");
-        if (!this.var_boolean_a) {
-            this.var_boolean_a = true;
-            this.var_javax_microedition_lcdui_Display_a = Display.getDisplay((MIDlet)this);
-            bs.a(this.var_javax_microedition_lcdui_Display_a);
+        if (!this.isRunning) {
+            this.isRunning = true;
+            this.appDisplay = Display.getDisplay((MIDlet)this);
+            bs.a(this.appDisplay);
             bs.var_bs_a.c();
         }
     }
@@ -28,11 +28,11 @@ extends MIDlet {
         System.out.println("pauseApp");
     }
 
-    public final void destroyApp(boolean bl2) {
-        this.a();
+    public final void destroyApp(boolean flag) {
+        this.endApp();
     }
 
-    public final void a() {
+    public final void endApp() {
         this.notifyDestroyed();
     }
 }

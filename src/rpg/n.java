@@ -188,7 +188,7 @@ implements u {
             case 13: {
                 n.void_a(5);
                 ai.ai_a().void_d();
-                if ((!x.a || var_byte_c != 1) && (!w.c || n.var_ao_a.var_byte_g < 8)) break;
+                if ((!x.activeDemoVersion || var_byte_c != 1) && (!MIDletConfig.isDemoVersion || n.var_ao_a.var_byte_g < 8)) break;
                 ai.ai_a().e();
                 return;
             }
@@ -380,10 +380,10 @@ implements u {
                     n2 *= 9;
                 }
                 var_ao_a.g(n2);
-                bs.var_as_a.a((bh.var_java_lang_String_a + n2 + bh.var_java_lang_String_d).toCharArray(), 16);
+                bs.var_as_a.a((bh.labelTextGain + n2 + bh.labelTextG).toCharArray(), 16);
             } else if (arrby[2] == 22) {
                 n.var_ao_a.var_g_b.a(ad.a(arrby[2], arrby[3], true, true), (int)arrby[4]);
-                char[] arrc = h.a(bh.var_java_lang_String_a.toCharArray(), ad.var_z_b.a(arrby[2]));
+                char[] arrc = h.a(bh.labelTextGain.toCharArray(), ad.var_z_b.loadByIndex(arrby[2]));
                 bs.var_as_a.a(arrc, 16);
             } else {
                 ad ad2 = ad.a(arrby[2], arrby[3], true, true);
@@ -391,13 +391,13 @@ implements u {
                     ((e)ad2).b = true;
                 }
                 n.var_ao_a.var_g_a.a(ad2, (int)arrby[4]);
-                char[] arrc = h.a(bh.var_java_lang_String_a.toCharArray(), ad.var_z_b.a(arrby[2]));
+                char[] arrc = h.a(bh.labelTextGain.toCharArray(), ad.var_z_b.loadByIndex(arrby[2]));
                 bs.var_as_a.a(arrc, 16);
             }
             return true;
         }
         if (var_ae_a.boolean_a(n.var_ao_a.var_byte_a, n.var_ao_a.var_byte_b)) {
-            bs.var_as_a.a(bh.t, 16);
+            bs.var_as_a.a(bh.labelTextNoSpace, 16);
         }
         return false;
     }
@@ -693,10 +693,10 @@ implements u {
         System.out.println("getSavedDataFor");
         byte[] arrby = null;
         try {
-            if (RecordStoreData.boolean_a(var_java_lang_String_arr_a[by2 - 6])) {
+            if (RecordStoreData.isRecordExists(var_java_lang_String_arr_a[by2 - 6])) {
                 RecordStoreData au2 = new RecordStoreData(var_java_lang_String_arr_a[by2 - 6], 1);
-                arrby = new byte[au2.int_a()];
-                System.out.println("::::" + au2.int_a());
+                arrby = new byte[au2.getRecordSize()];
+                System.out.println("::::" + au2.getRecordSize());
                 au2.b(arrby, 0, arrby.length);
                 au2.commitDataStore();
             }

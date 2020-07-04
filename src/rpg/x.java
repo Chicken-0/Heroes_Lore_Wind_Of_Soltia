@@ -5,7 +5,7 @@ package rpg;
  */
 public final class x {
     byte[] arrby = new byte[]{7, 9, 13, 16, 19};
-    public static boolean a = false;
+    public static boolean activeDemoVersion = false;
 
     public static final void a(boolean bl2) throws RuntimeException {
         if (!bl2) {

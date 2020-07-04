@@ -40,7 +40,7 @@ extends cb {
             if (arrby.length > 0) {
                 this.var_cb_b = new bb((cb)this, arrby);
             } else {
-                this.a((byte)1, (byte)0, new Object[]{bp.var_z_a.a(16), bp.var_z_a.a(17)});
+                this.a((byte)1, (byte)0, new Object[]{bp.var_z_a.loadByIndex(16), bp.var_z_a.loadByIndex(17)});
             }
             return true;
         }
@@ -49,7 +49,7 @@ extends cb {
 
     public final void a(Graphics graphics, int n2, int n3) {
         ad ad2;
-        bh.a(graphics, bh.i, bh.var_char_arr_e);
+        bh.a(graphics, bh.labelTextSelect, bh.labelTextBack);
         this.a(graphics, n2 += 2, n3 += 15, true);
         short s2 = -1;
         ao ao2 = n.ao_a();

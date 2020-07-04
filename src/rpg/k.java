@@ -31,10 +31,10 @@ extends cb {
             if (this.var_byte_b < 3) {
                 byte[] arrby = ao2.var_g_a.byte_arr_b();
                 if (arrby.length < 1) {
-                    Object[] arrobject = new Object[]{ax.var_z_a.a(20)};
+                    Object[] arrobject = new Object[]{ax.var_z_a.loadByIndex(20)};
                     this.a(arrobject);
                 } else {
-                    this.var_cb_b = new m(this, arrby, this.var_byte_b, ax.var_z_a.a(21));
+                    this.var_cb_b = new m(this, arrby, this.var_byte_b, ax.var_z_a.loadByIndex(21));
                 }
             } else {
                 int n4 = 0;
@@ -54,13 +54,13 @@ extends cb {
                     arrobject[n6] = this.a[2].var_char_arr_a;
                 }
                 if (n4 < 2) {
-                    Object[] arrobject2 = new Object[]{ax.var_z_a.a(22), ax.var_z_a.a(23)};
+                    Object[] arrobject2 = new Object[]{ax.var_z_a.loadByIndex(22), ax.var_z_a.loadByIndex(23)};
                     this.a(arrobject2);
                 } else if (500 > ao2.var_g_a.var_int_a) {
-                    Object[] arrobject3 = new Object[]{ax.var_z_a.a(24)};
+                    Object[] arrobject3 = new Object[]{ax.var_z_a.loadByIndex(24)};
                     this.a(arrobject3);
                 } else {
-                    this.var_cb_b = new bo(this, ax.var_z_a.a(25), arrobject, ax.var_z_a.a(26), 500, (byte)20);
+                    this.var_cb_b = new bo(this, ax.var_z_a.loadByIndex(25), arrobject, ax.var_z_a.loadByIndex(26), 500, (byte)20);
                 }
             }
             return true;
@@ -86,7 +86,7 @@ extends cb {
                 }
                 if (ao2.var_g_a.a(ad2, 1)) {
                     byte[] arrby = new byte[]{ao2.var_g_a.byte_a(ad2.f, ad2.g)};
-                    this.var_cb_b = new m(this, arrby, (byte)10, ax.var_z_a.a(27));
+                    this.var_cb_b = new m(this, arrby, (byte)10, ax.var_z_a.loadByIndex(27));
                     this.a[0] = null;
                     this.a[1] = null;
                     this.a[2] = null;
@@ -100,7 +100,7 @@ extends cb {
                     if (this.a[2] != null) {
                         ao2.var_g_a.a(this.a[2], 1);
                     }
-                    Object[] arrobject = new Object[]{ax.var_z_a.a(28), ax.var_z_a.a(29)};
+                    Object[] arrobject = new Object[]{ax.var_z_a.loadByIndex(28), ax.var_z_a.loadByIndex(29)};
                     this.a(arrobject);
                 }
             } else {
@@ -116,7 +116,7 @@ extends cb {
                 this.a[0] = null;
                 this.a[1] = null;
                 this.a[2] = null;
-                Object[] arrobject = new Object[]{ax.var_z_a.a(30)};
+                Object[] arrobject = new Object[]{ax.var_z_a.loadByIndex(30)};
                 this.a(arrobject);
             }
             return;
@@ -131,7 +131,7 @@ extends cb {
                 ++n3;
             }
             if (ao3.var_g_a.int_a(ad3.f, ad3.g) <= n3) {
-                Object[] arrobject = new Object[]{ax.var_z_a.a(31)};
+                Object[] arrobject = new Object[]{ax.var_z_a.loadByIndex(31)};
                 this.a(arrobject);
             } else {
                 this.a[n2] = ad3;
@@ -139,7 +139,7 @@ extends cb {
             return;
         }
         if (cb2 instanceof bo && n2 == 20) {
-            Object[] arrobject = new Object[]{ax.var_z_a.a(32)};
+            Object[] arrobject = new Object[]{ax.var_z_a.loadByIndex(32)};
             this.a((byte)2, (byte)2, arrobject);
         }
     }
@@ -148,12 +148,12 @@ extends cb {
         graphics.setColor(0x3F1F3F);
         graphics.fillRect(n2, n3, 155, 170);
         cb.c(graphics, n2 + 2, n3 + 4, 151, 162);
-        r.a(graphics, ax.var_z_a.a(14), n2 + 3, n3 - 2);
-        cb.a(graphics, n2 + 4, n3 + 9, this.a[0], (byte)1, ax.var_z_a.a(33), this.var_byte_b == 0);
-        cb.a(graphics, n2 + 4, n3 + 9 + 36, this.a[1], (byte)2, ax.var_z_a.a(33), this.var_byte_b == 1);
-        cb.a(graphics, n2 + 4, n3 + 9 + 72, this.a[2], (byte)3, ax.var_z_a.a(33), this.var_byte_b == 2);
+        MyGameCanvas.a(graphics, ax.var_z_a.loadByIndex(14), n2 + 3, n3 - 2);
+        cb.a(graphics, n2 + 4, n3 + 9, this.a[0], (byte)1, ax.var_z_a.loadByIndex(33), this.var_byte_b == 0);
+        cb.a(graphics, n2 + 4, n3 + 9 + 36, this.a[1], (byte)2, ax.var_z_a.loadByIndex(33), this.var_byte_b == 1);
+        cb.a(graphics, n2 + 4, n3 + 9 + 72, this.a[2], (byte)3, ax.var_z_a.loadByIndex(33), this.var_byte_b == 2);
         int n4 = bh.a(155, 80);
-        cb.a(graphics, n2 + (155 - n4 >> 1), n3 + 138, n4, ax.var_z_a.a(25), this.var_byte_b == 3);
+        cb.a(graphics, n2 + (155 - n4 >> 1), n3 + 138, n4, ax.var_z_a.loadByIndex(25), this.var_byte_b == 3);
     }
 }
 

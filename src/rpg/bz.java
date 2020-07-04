@@ -61,7 +61,7 @@ extends cb {
             if (by2 != -1) {
                 byte[] arrby = n.ao_a().var_g_a.a(by2);
                 if (arrby.length > 0) {
-                    this.var_cb_b = new m(this, arrby, this.var_byte_b, ai.var_z_a.a(16));
+                    this.var_cb_b = new m(this, arrby, this.var_byte_b, ai.var_z_a.loadByIndex(16));
                 } else {
                     Object[] arrobject = new Object[]{BabbleText.instance.getTextById(3937).toCharArray()};
                     this.a(arrobject);
@@ -82,7 +82,7 @@ extends cb {
             ao ao2 = n.ao_a();
             e e2 = (e)ao2.var_g_a.a((int)by3);
             if (!e2.b) {
-                Object[] arrobject = new Object[]{ai.var_z_a.a(18), ai.var_z_a.a(19)};
+                Object[] arrobject = new Object[]{ai.var_z_a.loadByIndex(18), ai.var_z_a.loadByIndex(19)};
                 this.a(arrobject);
                 return;
             }
@@ -93,7 +93,7 @@ extends cb {
     public final void a(Graphics graphics, int n2, int n3) {
         ad ad2;
         ao ao2 = n.ao_a();
-        r.a(graphics, ai.var_z_a.a(20), (n2 += 2) + 5, n3 += 15);
+        MyGameCanvas.a(graphics, ai.var_z_a.loadByIndex(20), (n2 += 2) + 5, n3 += 15);
         this.a(graphics, n2, n3, false);
         for (int i2 = this.int_c(); i2 <= this.int_d(); ++i2) {
             ad2 = ao2.ad_a(i2);
@@ -110,10 +110,10 @@ extends cb {
         }
         graphics.setColor(0xFFFFFF);
         if (this.var_byte_b == 1 && n.var_byte_a != 8) {
-            bh.int_a(graphics, n2 + 30, n3 + 14, ai.var_z_a.a(49), 1);
+            bh.int_a(graphics, n2 + 30, n3 + 14, ai.var_z_a.loadByIndex(49), 1);
             return;
         }
-        bh.int_a(graphics, n2 + 33, n3 + 14, ai.var_z_a.a(21), 1);
+        bh.int_a(graphics, n2 + 33, n3 + 14, ai.var_z_a.loadByIndex(21), 1);
     }
 }
 

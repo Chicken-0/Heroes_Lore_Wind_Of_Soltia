@@ -42,9 +42,9 @@ extends cb {
     public final void a(Graphics graphics, int n2, int n3) {
         byte by2;
         graphics.setColor(0x3F1F3F);
-        graphics.fillRect(0, 0, r.g, r.h);
+        graphics.fillRect(0, 0, MyGameCanvas.g, MyGameCanvas.h);
         bf.c(graphics, n2, n3);
-        bh.a(graphics, 3, r.g >> 1, n3 + 5);
+        bh.a(graphics, 3, MyGameCanvas.g >> 1, n3 + 5);
         bf.b(graphics, n2, n3 + 24, 3);
         n3 += 5;
         n2 += 10;
@@ -74,18 +74,18 @@ extends cb {
             } else {
                 graphics.setColor(0x9F7F7F);
             }
-            bh.int_a(graphics, n2 + 21, n3 + 36 + by2 * 16, ce.var_z_a.a(this.h[by2 * 4] - 6), 1);
+            bh.int_a(graphics, n2 + 21, n3 + 36 + by2 * 16, ce.var_z_a.loadByIndex(this.h[by2 * 4] - 6), 1);
         }
         graphics.drawImage(ce.var_javax_microedition_lcdui_Image_g, n2 + 15, n3 + 104, 20);
-        r.c(graphics, this.h[this.var_byte_b * 4 + 1], n2 + 30, n3 + 104, 4);
+        MyGameCanvas.c(graphics, this.h[this.var_byte_b * 4 + 1], n2 + 30, n3 + 104, 4);
         graphics.setColor(0x7F5F5F);
-        bh.int_a(graphics, n2 + 15, n3 + 117, (bh.var_java_lang_String_b + this.h[this.var_byte_b * 4 + 2] + "%").toCharArray(), 1);
-        if (r.g > 128) {
+        bh.int_a(graphics, n2 + 15, n3 + 117, (bh.labelTextProgress + this.h[this.var_byte_b * 4 + 2] + "%").toCharArray(), 1);
+        if (MyGameCanvas.g > 128) {
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_m[this.h[this.var_byte_b * 4] - 6], n2 + 61 + 22, n3 + 74 + 15, 20);
         } else {
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_m[this.h[this.var_byte_b * 4] - 6], n2 + 61, n3 + 74, 20);
         }
-        bh.a(graphics, bh.var_char_arr_d, bh.var_char_arr_e);
+        bh.a(graphics, bh.labelTextOk, bh.labelTextBack);
     }
 }
 

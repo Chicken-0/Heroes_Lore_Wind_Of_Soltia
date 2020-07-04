@@ -30,39 +30,39 @@ extends cb {
                     if (e2.b) {
                         if (e2 instanceof l) {
                             if (n.var_byte_a == 6 && e2.f == 0 || n.var_byte_a == 7 && e2.f == 2 || n.var_byte_a == 8 && e2.f == 1) {
-                                Object[] arrobject = new Object[]{ai.var_z_a.a(11), ai.var_z_a.a(10)};
+                                Object[] arrobject = new Object[]{ai.var_z_a.loadByIndex(11), ai.var_z_a.loadByIndex(10)};
                                 this.a((byte)4, (byte)2, arrobject);
                             } else {
                                 Object[] arrobject = new Object[2];
                                 if (e2.f == 0) {
-                                    arrobject[0] = ai.var_z_a.a(8);
+                                    arrobject[0] = ai.var_z_a.loadByIndex(8);
                                 } else if (e2.f == 2) {
-                                    arrobject[0] = ai.var_z_a.a(9);
+                                    arrobject[0] = ai.var_z_a.loadByIndex(9);
                                 } else if (e2.f == 1) {
-                                    arrobject[0] = ai.var_z_a.a(50);
+                                    arrobject[0] = ai.var_z_a.loadByIndex(50);
                                 }
-                                arrobject[1] = ai.var_z_a.a(12);
+                                arrobject[1] = ai.var_z_a.loadByIndex(12);
                                 this.a((byte)6, (byte)2, arrobject);
                             }
                         } else if (e2.f == 3 && n.var_byte_a != 8) {
-                            Object[] arrobject = new Object[]{ai.var_z_a.a(12)};
+                            Object[] arrobject = new Object[]{ai.var_z_a.loadByIndex(12)};
                             this.a((byte)6, (byte)2, arrobject);
                         } else {
-                            Object[] arrobject = new Object[]{ai.var_z_a.a(11), ai.var_z_a.a(10)};
+                            Object[] arrobject = new Object[]{ai.var_z_a.loadByIndex(11), ai.var_z_a.loadByIndex(10)};
                             this.a((byte)4, (byte)2, arrobject);
                         }
                     } else {
-                        Object[] arrobject = new Object[]{ai.var_z_a.a(12)};
+                        Object[] arrobject = new Object[]{ai.var_z_a.loadByIndex(12)};
                         this.a((byte)6, (byte)2, arrobject);
                     }
                 } else if (ad2.boolean_a()) {
-                    Object[] arrobject = new Object[]{ai.var_z_a.a(13), ai.var_z_a.a(10)};
+                    Object[] arrobject = new Object[]{ai.var_z_a.loadByIndex(13), ai.var_z_a.loadByIndex(10)};
                     this.a((byte)5, (byte)2, arrobject);
                 } else if (ad2.b()) {
-                    Object[] arrobject = new Object[]{ai.var_z_a.a(14)};
+                    Object[] arrobject = new Object[]{ai.var_z_a.loadByIndex(14)};
                     this.a(arrobject);
                 } else {
-                    Object[] arrobject = new Object[]{ai.var_z_a.a(12)};
+                    Object[] arrobject = new Object[]{ai.var_z_a.loadByIndex(12)};
                     this.a((byte)6, (byte)2, arrobject);
                 }
             }
@@ -107,7 +107,7 @@ extends cb {
             return;
         }
         if (by2 == 4 && by3 == 1 || by2 == 5 && by3 == 1) {
-            Object[] arrobject = new Object[]{ai.var_z_a.a(12)};
+            Object[] arrobject = new Object[]{ai.var_z_a.loadByIndex(12)};
             this.a((byte)6, (byte)2, arrobject);
             return;
         }
@@ -119,7 +119,7 @@ extends cb {
     public final void a(Graphics graphics, int n2, int n3) {
         ad ad2;
         g g2 = n.ao_a().var_g_a;
-        r.a(graphics, ce.var_z_g.a(2), (n2 += 2) + 5, n3 += 15);
+        MyGameCanvas.a(graphics, ce.var_z_g.loadByIndex(2), (n2 += 2) + 5, n3 += 15);
         this.a(graphics, n2, n3, true);
         for (int i2 = this.int_c(); i2 <= this.int_d(); ++i2) {
             ad2 = g2.a(i2);
@@ -132,7 +132,7 @@ extends cb {
             return;
         }
         graphics.setColor(0xFFFFFF);
-        bh.int_a(graphics, n2 + 33, n3 + 14, ai.var_z_a.a(15), 1);
+        bh.int_a(graphics, n2 + 33, n3 + 14, ai.var_z_a.loadByIndex(15), 1);
     }
 }
 

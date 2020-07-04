@@ -42,8 +42,8 @@ extends cb {
 
     public final void a(Graphics graphics, int n2, int n3) {
         boolean bl2 = false;
-        n2 = r.i - 67;
-        n3 = r.j - 60;
+        n2 = MyGameCanvas.i - 67;
+        n3 = MyGameCanvas.j - 60;
         ao ao2 = n.ao_a();
         cb.c(graphics, n2, n3, 135, 120);
         cb.b(graphics, n2 + 3, n3 + 3, 129, 17, 0x9F7F7F);

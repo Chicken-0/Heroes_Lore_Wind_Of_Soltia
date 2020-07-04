@@ -6,9 +6,9 @@ package rpg;
 import java.util.Vector;
 
 public final class b
-extends az {
-    private b(String string, int n2, int n3, boolean bl2) {
-        super(string, n2, n3, bl2);
+extends MFont {
+    private b(String fontPath, int color, int n3, boolean isBigFont) {
+        super(fontPath, color, n3, isBigFont);
     }
 
     public final int a(String string, int n2, int n3) {
@@ -17,7 +17,7 @@ extends az {
             return 0;
         }
         char[] arrc = string.toCharArray();
-        if (n4 < 64 && string.indexOf(10) == -1 && this.a(arrc, 0, n4) <= n2) {
+        if (n4 < 64 && string.indexOf(10) == -1 && this.calTextWidth(arrc, 0, n4) <= n2) {
             return string.length();
         }
         int n5 = 0;
@@ -32,7 +32,7 @@ extends az {
                     return n6 + 1;
                 }
                 char c2 = arrc[n6];
-                n8 += this.int_a(c2);
+                n8 += this.getCharWidth(c2);
                 if (c2 == '\n') {
                     for (n5 = n6 + 1; n5 < n4 && arrc[n5] == ' '; ++n5) {
                     }
@@ -66,7 +66,7 @@ extends az {
             return vector;
         }
         char[] arrc = string.toCharArray();
-        if (n3 < 64 && string.indexOf(10) == -1 && this.a(arrc, 0, n3) <= n2) {
+        if (n3 < 64 && string.indexOf(10) == -1 && this.calTextWidth(arrc, 0, n3) <= n2) {
             vector.addElement(string);
             return vector;
         }
@@ -84,7 +84,7 @@ extends az {
                     return vector;
                 }
                 char c2 = arrc[n5];
-                n7 += this.int_a(c2);
+                n7 += this.getCharWidth(c2);
                 if (c2 == '\n') {
                     for (n4 = n5 + 1; n4 < n3 && arrc[n4] == ' '; ++n4) {
                     }
@@ -107,12 +107,12 @@ extends az {
         }
     }
 
-    public static final az a(String string, int n2, int n3, boolean bl2) {
-        return new b(string, n2, n3, bl2);
+    public static final MFont createMFont(String fontPath, int color, int borderColor, boolean isBigFont) {
+        return new b(fontPath, color, borderColor, isBigFont);
     }
 
-    public static final az a(String string, int n2, boolean bl2) {
-        return b.a(string, n2, -1, bl2);
+    public static final MFont createMFont(String fontPath, int color, boolean isBigFont) {
+        return b.createMFont(fontPath, color, -1, isBigFont);
     }
 }
 

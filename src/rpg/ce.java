@@ -29,18 +29,18 @@ implements u {
     public static byte[] var_byte_arr_k = new byte[5];
     public static byte[] var_byte_arr_l = new byte[5];
     public static Image[][] var_javax_microedition_lcdui_Image_arr_arr_a = new Image[38][];
-    public static z var_z_a;
+    public static TableDefineTextFile var_z_a;
     public static Image[] var_javax_microedition_lcdui_Image_arr_a;
     public static Image[] var_javax_microedition_lcdui_Image_arr_b;
     public static Image[] var_javax_microedition_lcdui_Image_arr_c;
-    public static z var_z_b;
-    public static z var_z_c;
+    public static TableDefineTextFile var_z_b;
+    public static TableDefineTextFile var_z_c;
     public static Image[] var_javax_microedition_lcdui_Image_arr_d;
     public static Image[] var_javax_microedition_lcdui_Image_arr_e;
     public static Image[] var_javax_microedition_lcdui_Image_arr_f;
     public static Image[] var_javax_microedition_lcdui_Image_arr_g;
     public static Image[] var_javax_microedition_lcdui_Image_arr_h;
-    public static z var_z_d;
+    public static TableDefineTextFile var_z_d;
     public static Image[] var_javax_microedition_lcdui_Image_arr_i;
     public static Image[] var_javax_microedition_lcdui_Image_arr_j;
     public static Image[] var_javax_microedition_lcdui_Image_arr_k;
@@ -67,11 +67,11 @@ implements u {
     public static Image[] var_javax_microedition_lcdui_Image_arr_p;
     public static Image var_javax_microedition_lcdui_Image_p;
     public static Image var_javax_microedition_lcdui_Image_q;
-    public static z var_z_e;
+    public static TableDefineTextFile var_z_e;
     public static Image[] var_javax_microedition_lcdui_Image_arr_q;
     public static Image var_javax_microedition_lcdui_Image_r;
     public static Image[] var_javax_microedition_lcdui_Image_arr_r;
-    public static z var_z_f;
+    public static TableDefineTextFile var_z_f;
     public static byte[] var_byte_arr_m;
     public static Image[] var_javax_microedition_lcdui_Image_arr_s;
     public static Image[] var_javax_microedition_lcdui_Image_arr_t;
@@ -90,7 +90,7 @@ implements u {
     public static Image D;
     public static Image[] var_javax_microedition_lcdui_Image_arr_v;
     public static Image[] var_javax_microedition_lcdui_Image_arr_w;
-    public static z var_z_g;
+    public static TableDefineTextFile var_z_g;
     public static byte[] var_byte_arr_n = new byte[512];
 
     private ce() {
@@ -98,27 +98,27 @@ implements u {
 
     public static final void void_a(byte by2) {
         try {
-            br br2 = new br("/img/atteff1");
-            br2.isInitResource = true;
+            PNGMerger br2 = new PNGMerger("/img/atteff1");
+            br2.enableLoad = true;
             ce.a(br2, by2);
             var_javax_microedition_lcdui_Image_arr_s = new Image[3];
             ce.var_javax_microedition_lcdui_Image_arr_s[0] = br2.javax_microedition_lcdui_Image_a(0);
             ce.var_javax_microedition_lcdui_Image_arr_s[1] = br2.javax_microedition_lcdui_Image_a(1);
             ce.var_javax_microedition_lcdui_Image_arr_s[2] = br2.javax_microedition_lcdui_Image_a(2);
-            r.k();
+            MyGameCanvas.k();
             br2.a("/img/atteff2");
             ce.a(br2, by2);
             var_javax_microedition_lcdui_Image_arr_t = new Image[3];
             ce.var_javax_microedition_lcdui_Image_arr_t[0] = br2.javax_microedition_lcdui_Image_a(0);
             ce.var_javax_microedition_lcdui_Image_arr_t[1] = br2.javax_microedition_lcdui_Image_a(1);
             ce.var_javax_microedition_lcdui_Image_arr_t[2] = br2.javax_microedition_lcdui_Image_a(2);
-            r.k();
+            MyGameCanvas.k();
             br2.a("/img/atteff3");
             var_javax_microedition_lcdui_Image_arr_u = new Image[3];
             ce.var_javax_microedition_lcdui_Image_arr_u[0] = br2.javax_microedition_lcdui_Image_a(0);
             ce.var_javax_microedition_lcdui_Image_arr_u[1] = br2.javax_microedition_lcdui_Image_a(1);
             ce.var_javax_microedition_lcdui_Image_arr_u[2] = br2.javax_microedition_lcdui_Image_a(2);
-            r.k();
+            MyGameCanvas.k();
             return;
         }
         catch (IOException iOException) {
@@ -134,7 +134,7 @@ implements u {
         var_javax_microedition_lcdui_Image_arr_u = null;
     }
 
-    private static final void a(br br2, byte by2) {
+    private static final void a(PNGMerger br2, byte by2) {
         switch (by2) {
             case 1: {
                 br2.void_a(0xBFDFFF, 0xFFFFC0);
@@ -190,10 +190,10 @@ implements u {
         var_byte_arr_m = null;
     }
 
-    public static final void a(boolean bl2, byte[] arrby, int n2, byte by2, byte by3, br br2) {
+    public static final void a(boolean bl2, byte[] arrby, int n2, byte by2, byte by3, PNGMerger br2) {
         int n3 = arrby[n2++];
         if (br2 != null) {
-            br2.isInitResource = true;
+            br2.enableLoad = true;
             if (var_javax_microedition_lcdui_Image_arr_arr_a[by2] == null) {
                 ce.var_javax_microedition_lcdui_Image_arr_arr_a[by2] = new Image[br2.int_a()];
             }
@@ -201,7 +201,7 @@ implements u {
                 ce.var_javax_microedition_lcdui_Image_arr_arr_a[by3] = new Image[br2.int_a()];
             }
         }
-        r.k();
+        MyGameCanvas.k();
         for (int i2 = 0; i2 < n3; ++i2) {
             int n4 = bl2 ? arrby[n2++] : 1;
             for (int i3 = 0; i3 < n4; ++i3) {
@@ -216,48 +216,48 @@ implements u {
                 rpg.x.a(by5 > 0);
                 if (br2 == null || (arrimage = var_javax_microedition_lcdui_Image_arr_arr_a[by5])[by4] != null) continue;
                 arrimage[by4] = bl3 ? br2.javax_microedition_lcdui_Image_b(by4) : br2.javax_microedition_lcdui_Image_a(by4);
-                r.k();
+                MyGameCanvas.k();
             }
         }
     }
 
     public static final void g() {
-        br br2 = null;
+        PNGMerger br2 = null;
         try {
-            br2 = new br("/img/uifrm");
-            br2.isInitResource = true;
+            br2 = new PNGMerger("/img/uifrm");
+            br2.enableLoad = true;
             var_javax_microedition_lcdui_Image_arr_q = new Image[7];
             for (int i2 = 0; i2 < 7; ++i2) {
                 ce.var_javax_microedition_lcdui_Image_arr_q[i2] = br2.javax_microedition_lcdui_Image_a(i2);
-                r.k();
+                MyGameCanvas.k();
             }
             var_javax_microedition_lcdui_Image_arr_r = new Image[4];
             ce.var_javax_microedition_lcdui_Image_arr_r[0] = br2.javax_microedition_lcdui_Image_a(7);
             ce.var_javax_microedition_lcdui_Image_arr_r[1] = br2.javax_microedition_lcdui_Image_b(7);
-            r.k();
+            MyGameCanvas.k();
             ce.var_javax_microedition_lcdui_Image_arr_r[2] = br2.javax_microedition_lcdui_Image_a(8);
             ce.var_javax_microedition_lcdui_Image_arr_r[3] = br2.javax_microedition_lcdui_Image_b(8);
-            r.k();
-            br2 = new br("/img/etcui");
-            br2.isInitResource = true;
+            MyGameCanvas.k();
+            br2 = new PNGMerger("/img/etcui");
+            br2.enableLoad = true;
             var_javax_microedition_lcdui_Image_s = bh.javax_microedition_lcdui_Image_a("_img_etcui__0.png");
             var_javax_microedition_lcdui_Image_t = bh.javax_microedition_lcdui_Image_a("_img_etcui__1.png");
             br2.javax_microedition_lcdui_Image_a(2);
-            r.k();
+            MyGameCanvas.k();
             var_javax_microedition_lcdui_Image_u = br2.javax_microedition_lcdui_Image_a(3);
             var_javax_microedition_lcdui_Image_v = bh.javax_microedition_lcdui_Image_a("_img_etcui__4.png");
             var_javax_microedition_lcdui_Image_w = br2.javax_microedition_lcdui_Image_a(5);
             x = br2.javax_microedition_lcdui_Image_a(6);
-            r.k();
+            MyGameCanvas.k();
             y = br2.javax_microedition_lcdui_Image_a(7);
             z = br2.javax_microedition_lcdui_Image_a(8);
             A = br2.javax_microedition_lcdui_Image_a(9);
             B = br2.javax_microedition_lcdui_Image_a(10);
             C = br2.javax_microedition_lcdui_Image_a(11);
-            r.k();
-            br2 = new br("/char/lvup");
+            MyGameCanvas.k();
+            br2 = new PNGMerger("/char/lvup");
             var_byte_arr_h = ce.getResourceByName("/char/lvup.eif");
-            r.k();
+            MyGameCanvas.k();
             ce.a(true, var_byte_arr_h, 0, (byte)13, (byte)-1, br2);
             return;
         }
@@ -286,20 +286,20 @@ implements u {
     }
 
     public static final void i() {
-        br br2 = null;
+        PNGMerger br2 = null;
         try {
-            br2 = new br("/img/keepst");
-            br2.isInitResource = true;
+            br2 = new PNGMerger("/img/keepst");
+            br2.enableLoad = true;
             D = br2.javax_microedition_lcdui_Image_a(0);
-            r.k();
+            MyGameCanvas.k();
             var_javax_microedition_lcdui_Image_arr_v = new Image[8];
             for (int i2 = 0; i2 < 8; ++i2) {
                 ce.var_javax_microedition_lcdui_Image_arr_v[i2] = br2.javax_microedition_lcdui_Image_a(i2 + 1);
             }
-            r.k();
-            br2 = new br("/img/emoti");
+            MyGameCanvas.k();
+            br2 = new PNGMerger("/img/emoti");
             var_javax_microedition_lcdui_Image_arr_w = br2.javax_microedition_lcdui_Image_arr_a();
-            r.k();
+            MyGameCanvas.k();
             return;
         }
         catch (Exception exception) {
@@ -316,27 +316,27 @@ implements u {
 
     public static final void b(byte by2) {
         var_javax_microedition_lcdui_Image_arr_a = new Image[2];
-        br br2 = null;
+        PNGMerger br2 = null;
         try {
             switch (by2) {
                 case 0: 
                 case 3: {
-                    br2 = new br("/grd/fi");
+                    br2 = new PNGMerger("/grd/fi");
                     break;
                 }
                 case 1: 
                 case 4: {
-                    br2 = new br("/grd/wa");
+                    br2 = new PNGMerger("/grd/wa");
                     break;
                 }
                 case 2: 
                 case 5: {
-                    br2 = new br("/grd/gr");
+                    br2 = new PNGMerger("/grd/gr");
                 }
             }
             ce.var_javax_microedition_lcdui_Image_arr_arr_a[12] = br2.javax_microedition_lcdui_Image_arr_a();
-            br2 = new br("/grd/" + by2);
-            br2.isInitResource = true;
+            br2 = new PNGMerger("/grd/" + by2);
+            br2.enableLoad = true;
             ce.var_javax_microedition_lcdui_Image_arr_a[0] = br2.javax_microedition_lcdui_Image_a(0);
             ce.var_javax_microedition_lcdui_Image_arr_a[1] = br2.javax_microedition_lcdui_Image_a(1);
             return;
@@ -356,11 +356,11 @@ implements u {
     public static final void a(short s2, byte by2, boolean bl2) {
         try {
             byte by3;
-            br br2 = new br("/enm/" + (s2 < 10 ? "0" : "") + s2);
-            br2.isInitResource = true;
-            r.k();
+            PNGMerger br2 = new PNGMerger("/enm/" + (s2 < 10 ? "0" : "") + s2);
+            br2.enableLoad = true;
+            MyGameCanvas.k();
             byte[] arrby = ce.getResourceByName("/enm/spr/" + (s2 < 10 ? "0" : "") + s2);
-            r.k();
+            MyGameCanvas.k();
             for (int i2 = 0; i2 < arrby.length; i2 += by3) {
                 byte by4 = arrby[i2++];
                 byte by5 = arrby[i2++];
@@ -379,14 +379,14 @@ implements u {
                     ce.a(true, arrby, i2, (byte)(15 + by2), (byte)(15 + by2 + 5), br2);
                     System.arraycopy(arrby, i2, var_java_lang_Object_arr_e[by2 * 12 + by4 * 4 + by5], 0, by3);
                 }
-                r.k();
+                MyGameCanvas.k();
             }
             if (!bl2 && j.var_j_arr_a[by2].var_byte_d >= 2) {
                 arrby = ce.getResourceByName("/enm/atef/" + (s2 < 10 ? "0" : "") + s2);
                 ce.a(true, arrby, 0, (byte)(15 + by2), (byte)(15 + by2 + 5), br2);
                 ce.var_java_lang_Object_arr_f[by2] = arrby;
             }
-            r.k();
+            MyGameCanvas.k();
             return;
         }
         catch (IOException iOException) {
@@ -406,8 +406,8 @@ implements u {
 
     public static final void l() {
         try {
-            br br2 = new br("/enm/die/bang");
-            br2.isInitResource = true;
+            PNGMerger br2 = new PNGMerger("/enm/die/bang");
+            br2.enableLoad = true;
             for (int i2 = 0; i2 < 3; ++i2) {
                 byte[] arrby = ce.getResourceByName("/enm/die/" + i2);
                 ce.a(true, arrby, 0, (byte)37, (byte)-1, br2);
@@ -423,11 +423,11 @@ implements u {
     public static final void b(byte by2, byte by3) {
         try {
             byte by4;
-            br br2 = new br("/npc/" + (by2 < 10 ? "0" : "") + by2);
-            br2.isInitResource = true;
-            r.k();
+            PNGMerger br2 = new PNGMerger("/npc/" + (by2 < 10 ? "0" : "") + by2);
+            br2.enableLoad = true;
+            MyGameCanvas.k();
             byte[] arrby = ce.getResourceByName("/npc/spr/" + (by2 < 10 ? "0" : "") + by2);
-            r.k();
+            MyGameCanvas.k();
             for (int i2 = 0; i2 < arrby.length; i2 += by4) {
                 byte by5 = arrby[i2++];
                 byte by6 = arrby[i2++];
@@ -440,7 +440,7 @@ implements u {
                 }
                 ce.a(true, arrby, i2, (byte)(27 + by3), (byte)(27 + by3 + 5), br2);
                 System.arraycopy(arrby, i2, var_java_lang_Object_arr_j[by3 * 12 + by5 * 4 + by6], 0, by4);
-                r.k();
+                MyGameCanvas.k();
             }
             return;
         }
@@ -463,8 +463,8 @@ implements u {
         try {
             int n2;
             byte by3 = 0;
-            br br2 = new br("/boss/" + by2);
-            br2.isInitResource = true;
+            PNGMerger br2 = new PNGMerger("/boss/" + by2);
+            br2.enableLoad = true;
             switch (by2) {
                 case 1: {
                     by3 = 32;
@@ -531,13 +531,13 @@ implements u {
     }
 
     public static final void n() {
-        br br2 = null;
+        PNGMerger br2 = null;
         var_javax_microedition_lcdui_Image_arr_n = new Image[6];
         var_javax_microedition_lcdui_Image_arr_o = new Image[5];
         try {
             int n2;
-            br2 = new br("/sgui/gmico");
-            br2.isInitResource = true;
+            br2 = new PNGMerger("/sgui/gmico");
+            br2.enableLoad = true;
             for (n2 = 0; n2 < 6; n2 = (int)((byte)(n2 + 1))) {
                 ce.var_javax_microedition_lcdui_Image_arr_n[n2] = br2.javax_microedition_lcdui_Image_a(n2 == 5 ? 6 : n2);
             }
@@ -552,11 +552,11 @@ implements u {
         }
     }
 
-    public static final void o() {
-        br br2 = null;
+    public static final void loadGlobalImage() {
+        PNGMerger br2 = null;
         try {
-            br2 = new br("/img/glb");
-            br2.isInitResource = true;
+            br2 = new PNGMerger("/img/glb");
+            br2.enableLoad = true;
             var_javax_microedition_lcdui_Image_k = br2.javax_microedition_lcdui_Image_a(0);
             var_javax_microedition_lcdui_Image_n = br2.javax_microedition_lcdui_Image_a(1);
             var_javax_microedition_lcdui_Image_o = br2.javax_microedition_lcdui_Image_a(2);
@@ -573,7 +573,7 @@ implements u {
             var_javax_microedition_lcdui_Image_i = br2.javax_microedition_lcdui_Image_a(14);
             var_javax_microedition_lcdui_Image_j = bh.javax_microedition_lcdui_Image_a("_img_glb__15.png");
             br2.javax_microedition_lcdui_Image_a(16);
-            var_z_e = new z("/sgui/help");
+            var_z_e = new TableDefineTextFile("/sgui/help");
             return;
         }
         catch (Exception exception) {
@@ -584,7 +584,7 @@ implements u {
 
     public static final void p() {
         try {
-            br br2 = new br("/img/icoitm");
+            PNGMerger br2 = new PNGMerger("/img/icoitm");
             var_javax_microedition_lcdui_Image_arr_d = br2.javax_microedition_lcdui_Image_arr_a();
             return;
         }
@@ -600,19 +600,19 @@ implements u {
     }
 
     public static final void r() {
-        r.k();
+        MyGameCanvas.k();
         var_javax_microedition_lcdui_Image_arr_p = new Image[6];
-        br br2 = null;
+        PNGMerger br2 = null;
         try {
-            br2 = new br("/sgui/shop");
-            br2.isInitResource = true;
-            r.k();
+            br2 = new PNGMerger("/sgui/shop");
+            br2.enableLoad = true;
+            MyGameCanvas.k();
             for (int n2 = 0; n2 < 6; n2 = (int)((byte)(n2 + 1))) {
                 ce.var_javax_microedition_lcdui_Image_arr_p[n2] = br2.javax_microedition_lcdui_Image_a(n2);
             }
             var_javax_microedition_lcdui_Image_q = br2.javax_microedition_lcdui_Image_a(6);
             var_javax_microedition_lcdui_Image_p = br2.javax_microedition_lcdui_Image_a(7);
-            r.k();
+            MyGameCanvas.k();
             var_javax_microedition_lcdui_Image_b = bh.javax_microedition_lcdui_Image_a("_sgui_shop__8.png");
             var_javax_microedition_lcdui_Image_c = bh.javax_microedition_lcdui_Image_a("_sgui_shop__9.png");
             return;
@@ -634,16 +634,16 @@ implements u {
     public static final void t() {
         var_javax_microedition_lcdui_Image_arr_b = new Image[6];
         var_javax_microedition_lcdui_Image_arr_c = new Image[24];
-        br br2 = null;
+        PNGMerger br2 = null;
         try {
-            br2 = new br("/grd/grdico");
-            br2.isInitResource = true;
+            br2 = new PNGMerger("/grd/grdico");
+            br2.enableLoad = true;
             for (int n2 = 0; n2 < 6; n2 = (int)((byte)(n2 + 1))) {
                 ce.var_javax_microedition_lcdui_Image_arr_b[n2] = br2.javax_microedition_lcdui_Image_a(n2);
                 for (int n3 = 0; n3 < 4; n3 = (int)((byte)(n3 + 1))) {
                     ce.var_javax_microedition_lcdui_Image_arr_c[n2 * 4 + n3] = br2.javax_microedition_lcdui_Image_a(6 + n2 * 4 + n3);
                 }
-                r.k();
+                MyGameCanvas.k();
             }
             return;
         }
@@ -689,7 +689,7 @@ implements u {
     }
 
     public static final void f(byte by2) {
-        r.k();
+        MyGameCanvas.k();
         ce.b(by2);
         switch (by2) {
             case 0: {
@@ -720,7 +720,7 @@ implements u {
 
     public static final void w() {
         try {
-            br br2 = new br("/img/logo");
+            PNGMerger br2 = new PNGMerger("/img/logo");
             var_javax_microedition_lcdui_Image_arr_i = br2.javax_microedition_lcdui_Image_arr_a();
             return;
         }
@@ -735,18 +735,18 @@ implements u {
 
     public static final void y() {
         try {
-            br br2 = new br("/img/title1");
+            PNGMerger br2 = new PNGMerger("/img/title1");
             var_javax_microedition_lcdui_Image_arr_j = br2.javax_microedition_lcdui_Image_arr_a();
-            r.k();
-            br2 = new br("/img/title2");
-            br2.isInitResource = true;
+            MyGameCanvas.k();
+            br2 = new PNGMerger("/img/title2");
+            br2.enableLoad = true;
             var_javax_microedition_lcdui_Image_arr_k = new Image[10];
             for (int i2 = 0; i2 < 5; ++i2) {
                 ce.var_javax_microedition_lcdui_Image_arr_k[i2] = br2.javax_microedition_lcdui_Image_a(i2);
                 ce.var_javax_microedition_lcdui_Image_arr_k[i2 + 5] = br2.javax_microedition_lcdui_Image_b(i2);
-                r.k();
+                MyGameCanvas.k();
             }
-            r.k();
+            MyGameCanvas.k();
             bw.a((byte)22);
             return;
         }
@@ -765,26 +765,26 @@ implements u {
 
     public static final void A() {
         try {
-            br br2 = new br("/sgui/mm/face");
-            br2.isInitResource = true;
+            PNGMerger br2 = new PNGMerger("/sgui/mm/face");
+            br2.enableLoad = true;
             var_javax_microedition_lcdui_Image_arr_m = new Image[6];
             ce.var_javax_microedition_lcdui_Image_arr_m[0] = br2.javax_microedition_lcdui_Image_a(0);
             ce.var_javax_microedition_lcdui_Image_arr_m[1] = br2.javax_microedition_lcdui_Image_a(1);
             ce.var_javax_microedition_lcdui_Image_arr_m[2] = br2.javax_microedition_lcdui_Image_a(2);
-            r.k();
+            MyGameCanvas.k();
             ce.var_javax_microedition_lcdui_Image_arr_m[3] = br2.javax_microedition_lcdui_Image_c(0);
             ce.var_javax_microedition_lcdui_Image_arr_m[4] = br2.javax_microedition_lcdui_Image_c(1);
             ce.var_javax_microedition_lcdui_Image_arr_m[5] = br2.javax_microedition_lcdui_Image_c(2);
-            r.k();
-            br2 = new br("/sgui/mm/etc");
+            MyGameCanvas.k();
+            br2 = new PNGMerger("/sgui/mm/etc");
             var_javax_microedition_lcdui_Image_arr_l = br2.javax_microedition_lcdui_Image_arr_a();
             var_javax_microedition_lcdui_Image_arr_arr_b = new Image[3][2];
             for (int i2 = 0; i2 < 3; ++i2) {
-                br2 = new br("/grd/" + i2);
-                br2.isInitResource = true;
+                br2 = new PNGMerger("/grd/" + i2);
+                br2.enableLoad = true;
                 ce.var_javax_microedition_lcdui_Image_arr_arr_b[i2][0] = br2.javax_microedition_lcdui_Image_a(0);
                 ce.var_javax_microedition_lcdui_Image_arr_arr_b[i2][1] = br2.javax_microedition_lcdui_Image_a(1);
-                r.k();
+                MyGameCanvas.k();
             }
             return;
         }

@@ -292,15 +292,15 @@ implements u {
     }
 
     public static final void a(Graphics graphics, int n2, int n3, int n4) {
-        r.c(graphics, n4, n2, n3, 8);
-        int n5 = r.int_a(n4);
+        MyGameCanvas.c(graphics, n4, n2, n3, 8);
+        int n5 = MyGameCanvas.int_a(n4);
         graphics.drawImage(ce.var_javax_microedition_lcdui_Image_m, n2 - n5, n3, 24);
     }
 
     public static final void a(Graphics graphics, int n2, int n3, ad ad2, boolean bl2) {
         graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_d[ad2.f], n2, n3 + 1, 3);
         if (bl2 && ad2.h > 1) {
-            r.c(graphics, ad2.h, n2 + 11, n3 + 2, 8);
+            MyGameCanvas.c(graphics, ad2.h, n2 + 11, n3 + 2, 8);
         }
     }
 
@@ -312,34 +312,34 @@ implements u {
                 graphics.setColor(14663551);
                 n3 += bh.a(graphics, n2, n3, 115, 1, e2.char_arr_a());
                 graphics.setColor(0xFFFFFF);
-                bh.a(graphics, n2, (n3 -= bh.int_a() + 2) + 16, 115, 1, ce.var_z_g.a(5));
+                bh.a(graphics, n2, (n3 -= bh.int_a() + 2) + 16, 115, 1, ce.var_z_g.loadByIndex(5));
             } else {
                 Object object;
                 graphics.setColor(0xFFFFFF);
                 n3 += bh.a(graphics, n2, n3, 115, 1, e2.var_char_arr_a);
                 graphics.setColor(14663551);
-                bh.int_a(graphics, n2, (n3 -= bh.int_a() + 2) + 25, ce.var_z_g.a(e2 instanceof l ? 4 : 46), 1);
-                r.c(graphics, e2.var_short_a, n2 + 155 - 47, n3 + 25, 8);
+                bh.int_a(graphics, n2, (n3 -= bh.int_a() + 2) + 25, ce.var_z_g.loadByIndex(e2 instanceof l ? 4 : 46), 1);
+                MyGameCanvas.c(graphics, e2.var_short_a, n2 + 155 - 47, n3 + 25, 8);
                 if (ad2 instanceof t) {
                     object = (t)ad2;
                     if (((t)object).c != -1) {
                         graphics.setColor(0xFF0000);
-                        n3 += bh.a(graphics, n2 + 55, n3 + 10, 115, 1, t.a.a(((t)object).c));
+                        n3 += bh.a(graphics, n2 + 55, n3 + 10, 115, 1, t.a.loadByIndex(((t)object).c));
                         n3 -= bh.int_a() + 2;
                     }
                 }
                 graphics.setColor(14663551);
-                bh.int_a(graphics, n2, n3 + 40, ce.var_z_g.a(3), 1);
-                r.d(graphics, n2 + 155 - 47, n3 + 40, e2.e, e2.d);
+                bh.int_a(graphics, n2, n3 + 40, ce.var_z_g.loadByIndex(3), 1);
+                MyGameCanvas.d(graphics, n2 + 155 - 47, n3 + 40, e2.e, e2.d);
                 object = new StringBuffer();
                 for (int i2 = 0; i2 < e2.j.length; ++i2) {
                     if (e2.j[i2] <= 0) continue;
-                    ((StringBuffer)object).append(bh.java_lang_String_a(ce.var_z_a.a(9 + i2))).append("+").append(e2.j[i2]).append("  ");
+                    ((StringBuffer)object).append(bh.toString(ce.var_z_a.loadByIndex(9 + i2))).append("+").append(e2.j[i2]).append("  ");
                 }
-                ((StringBuffer)object).append(bh.java_lang_String_a(e2.var_char_arr_b));
+                ((StringBuffer)object).append(bh.toString(e2.var_char_arr_b));
                 char[] arrc = null;
                 arrc = ((StringBuffer)object).toString().toCharArray();
-                if (r.g > 128) {
+                if (MyGameCanvas.g > 128) {
                     bh.a(graphics, n2, n3 + 55, 110, 1, arrc);
                 } else {
                     bh.a(graphics, n2, n3 + 55, 75, 1, arrc);
@@ -351,7 +351,7 @@ implements u {
         n3 += bh.a(graphics, n2, n3, 115, 1, ad2.var_char_arr_a);
         n3 -= bh.int_a() + 2;
         graphics.setColor(14663551);
-        if (r.g > 128) {
+        if (MyGameCanvas.g > 128) {
             bh.a(graphics, n2, n3 + 15, 110, 1, ad2.var_char_arr_b);
             return;
         }
@@ -360,8 +360,8 @@ implements u {
 
     public static final void a(Graphics graphics, int n2, int n3, ad ad2, byte by2, char[] arrc, boolean bl2) {
         cb.b(graphics, n2, n3 + 1, 28, 31, 12558207);
-        int n4 = r.a(graphics, ce.var_z_g.a(2), n2 + 2, n3 + 1);
-        r.c(graphics, by2, n4 + 2, n3 + 1, 4);
+        int n4 = MyGameCanvas.a(graphics, ce.var_z_g.loadByIndex(2), n2 + 2, n3 + 1);
+        MyGameCanvas.c(graphics, by2, n4 + 2, n3 + 1, 4);
         graphics.setColor(0xFFFFFF);
         bh.void_a(graphics, n2 + 90, n3 + 2, arrc, 1);
         boolean bl3 = false;
@@ -393,7 +393,7 @@ implements u {
         }
         if (arrc != null) {
             graphics.setColor(0xFFFFFF);
-            bh.int_a(graphics, n2 + n4 / 2 - bh.int_a(arrc) / 2, n3 + 5, arrc, 1);
+            bh.int_a(graphics, n2 + n4 / 2 - bh.getTextWidth(arrc) / 2, n3 + 5, arrc, 1);
         }
     }
 

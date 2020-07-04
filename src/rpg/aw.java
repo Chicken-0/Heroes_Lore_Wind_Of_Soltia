@@ -76,7 +76,7 @@ extends f {
             }
             case 7: {
                 int n4 = this.b < 2 ? (this.c < 0 ? 4 : 3) : (this.c < 0 ? 2 : 1);
-                r.a(graphics, this.c < 0 ? -this.c : this.c, n2 + 1, n3 - 30 - this.b * 4, 1, n4);
+                MyGameCanvas.a(graphics, this.c < 0 ? -this.c : this.c, n2 + 1, n3 - 30 - this.b * 4, 1, n4);
                 break;
             }
             case 1: {

@@ -6,7 +6,7 @@ package rpg;
 import java.util.Vector;
 
 public class ad {
-    public static z var_z_b;
+    public static TableDefineTextFile var_z_b;
     public static final boolean[] var_boolean_arr_b = new boolean[]{false, false, false, false, false, false, false, true, true, true, true, true, true, true, true, true, true, true, false, false, false, false, true, true};
     public static final boolean[] c = new boolean[]{false, false, false, false, false, false, false, true, false, true, false, false, true, true, true, true, true, false, false, false, false, false, false, false};
     public byte f;
@@ -73,7 +73,7 @@ public class ad {
     }
 
     public final char[] char_arr_a() {
-        return var_z_b.a(this.f);
+        return var_z_b.loadByIndex(this.f);
     }
 
     public final boolean boolean_a() {

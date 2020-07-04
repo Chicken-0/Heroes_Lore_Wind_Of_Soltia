@@ -13,7 +13,7 @@ import javax.microedition.lcdui.Graphics;
 import javax.microedition.lcdui.Image;
 
 public final class as
-extends r {
+extends MyGameCanvas {
     public static int var_int_a;
     public static int b;
     public static int var_int_c;
@@ -32,7 +32,7 @@ extends r {
     private int s;
     private al var_al_a;
     public static int var_int_e;
-    private z var_z_a;
+    private TableDefineTextFile var_z_a;
     private int t;
     private int u;
     private Image[] var_javax_microedition_lcdui_Image_arr_a;
@@ -42,13 +42,13 @@ extends r {
 
     public as() {
         System.out.println("MyGameCanvas");
-        var_int_a = r.g;
-        b = r.h - 21;
+        var_int_a = MyGameCanvas.g;
+        b = MyGameCanvas.h - 21;
         var_int_c = var_int_a / 2 - 8;
         var_int_d = b / 2;
-        n = (r.g - 74) / 6;
-        o = r.g - 67;
-        p = r.g - 6;
+        n = (MyGameCanvas.g - 74) / 6;
+        o = MyGameCanvas.g - 67;
+        p = MyGameCanvas.g - 6;
         this.var_boolean_d = true;
         this.q = 0;
         this.int_r = 0;
@@ -81,7 +81,7 @@ extends r {
                     }
                     rpg.n.var_ae_a.a(graphics);
                     this.a(graphics);
-                    if (!x.a || bs.var_bs_a.var_boolean_a || rpg.n.ao_a().var_byte_g < 8) break;
+                    if (!x.activeDemoVersion || bs.var_bs_a.var_boolean_a || rpg.n.ao_a().var_byte_g < 8) break;
                     rpg.n.a((byte)13, (byte)1);
                     return;
                 }
@@ -97,11 +97,11 @@ extends r {
                     break;
                 }
                 case 15: {
-                    char[] arrc = bh.n;
+                    char[] arrc = bh.labelTextPaused;
                     bh.a(graphics);
                     graphics.setColor(0xFFFFFF);
-                    bh.void_a(graphics, r.i, r.j - 15, arrc, 1);
-                    bh.a(graphics, bh.var_char_arr_d, null);
+                    bh.void_a(graphics, MyGameCanvas.i, MyGameCanvas.j - 15, arrc, 1);
+                    bh.a(graphics, bh.labelTextOk, null);
                     break;
                 }
                 case 5: {
@@ -220,7 +220,7 @@ extends r {
             if (bs.var_bs_a == null || bs.var_bs_a.e) {
                 return;
             }
-            ((r)this).a = true;
+            ((MyGameCanvas)this).a = true;
             int n3 = this.getGameAction(n2);
             switch (rpg.n.var_int_e) {
                 case 2: {
@@ -289,8 +289,8 @@ extends r {
             if (rpg.n.var_int_e != 2) {
                 return;
             }
-            if (((r)this).a) {
-                ((r)this).f = n2;
+            if (((MyGameCanvas)this).a) {
+                ((MyGameCanvas)this).f = n2;
                 return;
             }
             switch (rpg.n.byte_a()) {
@@ -438,14 +438,14 @@ extends r {
         this.t = 0;
         this.u = -1;
         try {
-            this.var_z_a = new z("/sgui/ed" + rpg.n.var_byte_a);
+            this.var_z_a = new TableDefineTextFile("/sgui/ed" + rpg.n.var_byte_a);
             bw.a((byte)23);
             bw.b(23);
             switch (rpg.n.var_byte_a) {
                 case 6: {
                     try {
-                        br br2 = new br("/m/face");
-                        new br("/m/face").isInitResource = true;
+                        PNGMerger br2 = new PNGMerger("/m/face");
+                        br2.enableLoad = true;
                         this.var_javax_microedition_lcdui_Image_arr_a = new Image[2];
                         this.var_javax_microedition_lcdui_Image_arr_a[0] = br2.javax_microedition_lcdui_Image_c(0);
                         this.var_javax_microedition_lcdui_Image_arr_a[1] = br2.javax_microedition_lcdui_Image_c(8);
@@ -458,8 +458,8 @@ extends r {
                 }
                 case 8: {
                     try {
-                        br br3 = new br("/m/face");
-                        new br("/m/face").isInitResource = true;
+                        PNGMerger br3 = new PNGMerger("/m/face");
+                        br3.enableLoad = true;
                         this.var_javax_microedition_lcdui_Image_arr_a = new Image[1];
                         this.var_javax_microedition_lcdui_Image_arr_a[0] = br3.javax_microedition_lcdui_Image_a(17);
                         break;
@@ -485,9 +485,9 @@ extends r {
         this.u = -1;
         this.var_java_util_Vector_a = new Vector();
         try {
-            this.var_z_a = new z("/sgui/edsr");
-            br br2 = new br("/img/end");
-            new br("/img/end").isInitResource = true;
+            this.var_z_a = new TableDefineTextFile("/sgui/edsr");
+            PNGMerger br2 = new PNGMerger("/img/end");
+            br2.enableLoad = true;
             this.var_javax_microedition_lcdui_Image_arr_a = new Image[1];
             this.var_javax_microedition_lcdui_Image_arr_a[0] = br2.javax_microedition_lcdui_Image_a(rpg.n.var_byte_a - 6);
             return;
@@ -522,7 +522,7 @@ extends r {
         ao ao2 = rpg.n.ao_a();
         p p2 = ao2.p_a();
         boolean bl2 = false;
-        int n2 = r.h - 31 - 5;
+        int n2 = MyGameCanvas.h - 31 - 5;
         if (ao2.var_short_a > 0) {
             ++this.q;
             if (this.q < 5) {
@@ -533,21 +533,21 @@ extends r {
             }
         }
         if (this.var_boolean_d) {
-            graphics.setClip(0, 0, r.g, r.h);
+            graphics.setClip(0, 0, MyGameCanvas.g, MyGameCanvas.h);
         } else {
-            graphics.setClip(0, n2, r.g, 15);
+            graphics.setClip(0, n2, MyGameCanvas.g, 15);
         }
         as.a(graphics, 0, n2);
         ad ad2 = ao2.var_g_a.ad_a();
         int n3 = ao2.var_g_a.byte_a();
-        graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_d[n3], r.g - 10, n2 + 19, 3);
+        graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_d[n3], MyGameCanvas.g - 10, n2 + 19, 3);
         if (ad2 != null) {
-            r.c(graphics, ad2.h, r.g - 4, n2 + 22, 24);
+            MyGameCanvas.c(graphics, ad2.h, MyGameCanvas.g - 4, n2 + 22, 24);
         } else {
-            r.c(graphics, 0, r.g - 4, n2 + 22, 24);
+            MyGameCanvas.c(graphics, 0, MyGameCanvas.g - 4, n2 + 22, 24);
         }
         if (p2.g != -1) {
-            graphics.setClip(0, 0, r.g, r.h);
+            graphics.setClip(0, 0, MyGameCanvas.g, MyGameCanvas.h);
             graphics.setColor(0);
             graphics.drawRect(7, n2 + 15, 14, 14);
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_c[p2.f * 4 + p2.g], 7, n2 + 15, 20);
@@ -559,7 +559,7 @@ extends r {
             graphics.drawImage(ce.C, 7, n2 + 15, 20);
         }
         if (p2.var_byte_h != -1) {
-            graphics.setClip(0, 0, r.g, r.h);
+            graphics.setClip(0, 0, MyGameCanvas.g, MyGameCanvas.h);
             graphics.setColor(0);
             graphics.drawRect(29, n2 + 15, 14, 14);
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_c[p2.f * 4 + p2.var_byte_h], 29, n2 + 15, 20);
@@ -570,7 +570,7 @@ extends r {
             graphics.setClip(30, n2 + 16, 13, 13 * p2.c[p2.var_byte_h] / rpg.p.var_short_arr_b[p2.f * 3 + p2.var_byte_h]);
             graphics.drawImage(ce.C, 29, n2 + 15, 20);
         }
-        graphics.setClip(0, 0, r.g, r.h);
+        graphics.setClip(0, 0, MyGameCanvas.g, MyGameCanvas.h);
         if (this.var_boolean_d || this.var_boolean_e) {
             int n4 = ao2.var_int_a * o / ao2.var_int_d;
             graphics.setClip(47, n2 + 18, o, 7);
@@ -581,9 +581,9 @@ extends r {
                 graphics.setColor(0xFF9F3F);
                 graphics.fillRect(47, n2 + 21, n4, 2);
             }
-            r.c(graphics, ao2.var_int_a, 46 + o - 2, n2 + 18, 8);
+            MyGameCanvas.c(graphics, ao2.var_int_a, 46 + o - 2, n2 + 18, 8);
             this.var_boolean_e = false;
-            graphics.setClip(0, 0, r.g, r.h);
+            graphics.setClip(0, 0, MyGameCanvas.g, MyGameCanvas.h);
         }
         if (this.var_boolean_d || this.f) {
             int n5 = ao2.var_int_b * o / ao2.var_int_e;
@@ -596,15 +596,15 @@ extends r {
         if (this.var_boolean_d || this.g) {
             int n6 = ao2.var_int_c * p / ao2.var_int_f;
             graphics.setColor(0x9F9F7F);
-            graphics.fillRect(0, n2 + 31, r.g, 5);
+            graphics.fillRect(0, n2 + 31, MyGameCanvas.g, 5);
             graphics.setColor(0x3F3F3F);
-            graphics.fillRect(2, n2 + 32, r.g - 4, 3);
+            graphics.fillRect(2, n2 + 32, MyGameCanvas.g - 4, 3);
             graphics.setColor(0xBFBF7F);
             graphics.drawLine(3, n2 + 33, 3 + n6 - 1, n2 + 33);
             this.g = false;
         }
         if (this.s > 0 && this.var_al_a != null && this.var_al_a.byte_h != 6) {
-            int n7 = r.g - 105;
+            int n7 = MyGameCanvas.g - 105;
             n3 = 2;
             if (p2 != null && p2.var_byte_i == 2) {
                 n3 += 20;
@@ -619,8 +619,8 @@ extends r {
             }
             cb.a(graphics, 0, 0, 101, 23, this.var_al_a.var_j_a.var_char_arr_a, 0, 1, 6233919, n8);
             int n9 = 0;
-            n9 = r.a(graphics, bh.var_java_lang_String_c, 1, 16);
-            r.c(graphics, this.var_al_a.var_j_a.f, n9, 16, 4);
+            n9 = MyGameCanvas.a(graphics, bh.labelTextLV, 1, 16);
+            MyGameCanvas.c(graphics, this.var_al_a.var_j_a.f, n9, 16, 4);
             graphics.translate(-(n7 + 2), -(n3 + 2));
             graphics.setColor(0xFF3F2F);
             if (this.var_al_a.var_short_a > 0) {
@@ -633,16 +633,16 @@ extends r {
         if (p2 != null && p2.var_byte_i == 2) {
             p2.a(graphics);
         }
-        graphics.setClip(0, 0, r.g, r.h);
+        graphics.setClip(0, 0, MyGameCanvas.g, MyGameCanvas.h);
         if (this.h) {
             this.h = false;
             return;
         }
         if (this.int_r > 0) {
-            int n10 = r.i - 50;
-            n3 = r.h - 46;
+            int n10 = MyGameCanvas.i - 50;
+            n3 = MyGameCanvas.h - 46;
             cb.a(graphics, n10, n3, 100, 23, false);
-            graphics.setClip(0, 0, r.g, r.h);
+            graphics.setClip(0, 0, MyGameCanvas.g, MyGameCanvas.h);
             cb.a(graphics, n10 + 2, n3 + 2, 96, 19, this.var_char_arr_a, 0, 1, 6233919, 0xFFFFFF);
             --this.int_r;
         }
@@ -657,8 +657,8 @@ extends r {
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_q[4], n2 + 49 + i2 * 6, n3 + 14, 20);
         }
         graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_q[0], n2, n3 + 9, 20);
-        graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_q[6], r.g - 26, n3, 20);
-        graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_q[5], r.g - 30, n3 + 11, 20);
+        graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_q[6], MyGameCanvas.g - 26, n3, 20);
+        graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_q[5], MyGameCanvas.g - 30, n3 + 11, 20);
     }
 
     public static final void a(Graphics graphics, byte[] arrby, byte by2, int n2, int n3) {
@@ -700,41 +700,41 @@ extends r {
         cb.a(graphics, n2, n3, n4, n5);
         cb.b(graphics, n2, n3, n4, n5);
         graphics.setColor(0xFFFFFF);
-        bh.int_a(graphics, (n2 += 4) + 5, n3 += 6, ce.var_z_g.a(31), 1);
+        bh.int_a(graphics, (n2 += 4) + 5, n3 += 6, ce.var_z_g.loadByIndex(31), 1);
         graphics.setColor(0xFF2F2F);
-        graphics.drawLine(n2, n3 + 17 + 0, n2 + (n4 -= 8) * r.k / r.l, n3 + 17 + 0);
-        graphics.drawLine(n2, n3 + 17 + 1, n2 + n4 * r.k / r.l, n3 + 17 + 1);
+        graphics.drawLine(n2, n3 + 17 + 0, n2 + (n4 -= 8) * MyGameCanvas.k / MyGameCanvas.l, n3 + 17 + 0);
+        graphics.drawLine(n2, n3 + 17 + 1, n2 + n4 * MyGameCanvas.k / MyGameCanvas.l, n3 + 17 + 1);
     }
 
     public static final void b(Graphics graphics) {
         graphics.setColor(0);
-        graphics.fillRect(0, 0, r.g, r.h);
-        rpg.n.ao_a().d(graphics, r.i, r.j + 20);
-        char[] arrc = ce.var_z_g.a(32);
-        int n2 = bh.int_a(arrc);
-        System.out.println(bh.java_lang_String_a(arrc));
+        graphics.fillRect(0, 0, MyGameCanvas.g, MyGameCanvas.h);
+        rpg.n.ao_a().d(graphics, MyGameCanvas.i, MyGameCanvas.j + 20);
+        char[] arrc = ce.var_z_g.loadByIndex(32);
+        int n2 = bh.getTextWidth(arrc);
+        System.out.println(bh.toString(arrc));
         graphics.setColor(0x7F7F7F);
-        bh.a(graphics, r.i - n2 / 2 + 1, r.j - 20 + 1, 200, 1, arrc, 0, 0, (17 - var_int_e) * 2);
+        bh.a(graphics, MyGameCanvas.i - n2 / 2 + 1, MyGameCanvas.j - 20 + 1, 200, 1, arrc, 0, 0, (17 - var_int_e) * 2);
         graphics.setColor(0xFFFFFF);
-        bh.a(graphics, r.i - n2 / 2, r.j - 20, 200, 1, arrc, 0, 0, (17 - var_int_e) * 2);
+        bh.a(graphics, MyGameCanvas.i - n2 / 2, MyGameCanvas.j - 20, 200, 1, arrc, 0, 0, (17 - var_int_e) * 2);
     }
 
     private final void d(Graphics graphics) {
         if (var_int_e < 0) {
             int n2 = 255 * -var_int_e / 16;
             graphics.setColor(n2, n2, n2);
-            graphics.fillRect(0, 0, r.g, r.h);
+            graphics.fillRect(0, 0, MyGameCanvas.g, MyGameCanvas.h);
             ++var_int_e;
             return;
         }
         graphics.setColor(0);
-        graphics.fillRect(0, 0, r.g, r.h);
+        graphics.fillRect(0, 0, MyGameCanvas.g, MyGameCanvas.h);
         if (this.i || this.u == -1) {
             this.i = false;
             ++this.u;
             this.t = this.u;
             while (this.u < this.var_z_a.numberEntry) {
-                char[] arrc = this.var_z_a.a(this.u);
+                char[] arrc = this.var_z_a.loadByIndex(this.u);
                 if (arrc[0] == '_') {
                     var_int_e = Integer.parseInt(new String(arrc, 1, arrc.length - 1));
                     break;
@@ -749,29 +749,29 @@ extends r {
             rpg.n.a((byte)2, (byte)13, (byte)1);
             return;
         }
-        int n3 = r.j - (this.u - this.t + 1) * 15 / 2;
+        int n3 = MyGameCanvas.j - (this.u - this.t + 1) * 15 / 2;
         switch (rpg.n.var_byte_a) {
             case 6: {
                 if (this.t != 2 && this.t != 6 && this.t != 9 && this.t != 13) break;
                 graphics.setColor(0xBFBFBF);
-                graphics.fillRect(0, 15, r.g, 40);
-                graphics.setClip(0, 15, r.g, 40);
-                graphics.drawImage(this.var_javax_microedition_lcdui_Image_arr_a[0], r.g / 4, 5, 17);
+                graphics.fillRect(0, 15, MyGameCanvas.g, 40);
+                graphics.setClip(0, 15, MyGameCanvas.g, 40);
+                graphics.drawImage(this.var_javax_microedition_lcdui_Image_arr_a[0], MyGameCanvas.g / 4, 5, 17);
                 if (this.t == 9) {
-                    graphics.drawImage(this.var_javax_microedition_lcdui_Image_arr_a[1], r.g / 4 * 3 + (var_int_e >= 27 ? (var_int_e - 27) * 10 : 0), 5, 17);
+                    graphics.drawImage(this.var_javax_microedition_lcdui_Image_arr_a[1], MyGameCanvas.g / 4 * 3 + (var_int_e >= 27 ? (var_int_e - 27) * 10 : 0), 5, 17);
                 }
-                graphics.setClip(0, 0, r.g, r.h);
+                graphics.setClip(0, 0, MyGameCanvas.g, MyGameCanvas.h);
                 n3 += 30;
                 break;
             }
             case 8: {
-                graphics.drawImage(this.var_javax_microedition_lcdui_Image_arr_a[0], r.g, r.h, 40);
+                graphics.drawImage(this.var_javax_microedition_lcdui_Image_arr_a[0], MyGameCanvas.g, MyGameCanvas.h, 40);
             }
         }
         graphics.setColor(0xFFFFFF);
         for (int i2 = this.t; i2 < this.u; ++i2) {
-            char[] arrc = this.var_z_a.a(i2);
-            bh.int_a(graphics, r.i - bh.int_a(arrc) / 2, n3, arrc, 1);
+            char[] arrc = this.var_z_a.loadByIndex(i2);
+            bh.int_a(graphics, MyGameCanvas.i - bh.getTextWidth(arrc) / 2, n3, arrc, 1);
             n3 += 15;
         }
         if (var_int_e > 0) {
@@ -782,22 +782,22 @@ extends r {
     private final void e(Graphics graphics) {
 //        Object object;
         graphics.setColor(0);
-        graphics.fillRect(0, 0, r.g, r.h);
-        graphics.drawImage(this.var_javax_microedition_lcdui_Image_arr_a[0], 0, r.h / 2, 6);
+        graphics.fillRect(0, 0, MyGameCanvas.g, MyGameCanvas.h);
+        graphics.drawImage(this.var_javax_microedition_lcdui_Image_arr_a[0], 0, MyGameCanvas.h / 2, 6);
         if (var_int_e == 0 && this.t < this.var_z_a.numberEntry) {
-            char[] object = this.var_z_a.a(this.t);
+            char[] object = this.var_z_a.loadByIndex(this.t);
             if (object[0] == '-') {
                 var_int_e = 4;
             } else if (object[0] == '=') {
                 var_int_e = 10;
             } else {
-                Image image = Image.createImage((int)bh.int_a(object), (int)bh.int_a());
+                Image image = Image.createImage((int)bh.getTextWidth(object), (int)bh.int_a());
                 Graphics graphics2 = image.getGraphics();
                 graphics2.setColor(0);
                 graphics2.fillRect(0, 0, image.getWidth(), image.getHeight());
                 graphics2.setColor(0xFFFFFF);
                 bh.int_a(graphics2, 0, 0, object, 1);
-                this.var_java_util_Vector_a.addElement(new bc(image, r.h));
+                this.var_java_util_Vector_a.addElement(new bc(image, MyGameCanvas.h));
                 var_int_e = 5;
             }
             ++this.t;
@@ -816,7 +816,7 @@ extends r {
         }
         for (int i2 = this.var_java_util_Vector_a.size() - 1; i2 >= 0; --i2) {
             bc object = (bc)this.var_java_util_Vector_a.elementAt(i2);
-            graphics.drawImage(object.var_javax_microedition_lcdui_Image_a, r.i, object.var_int_a, 17);
+            graphics.drawImage(object.var_javax_microedition_lcdui_Image_a, MyGameCanvas.i, object.var_int_a, 17);
             object.var_int_a -= 2;
             if (object.var_int_a >= -8) continue;
             this.var_java_util_Vector_a.removeElementAt(i2);
@@ -824,14 +824,14 @@ extends r {
     }
 
     private final void f(Graphics graphics) {
-        char[] arrc = ce.var_z_g.a(33);
-        char[] arrc2 = ce.var_z_g.a(34);
-        char[] arrc3 = ce.var_z_g.a(35);
-        char[] arrc4 = ce.var_z_g.a(36);
+        char[] arrc = ce.var_z_g.loadByIndex(33);
+        char[] arrc2 = ce.var_z_g.loadByIndex(34);
+        char[] arrc3 = ce.var_z_g.loadByIndex(35);
+        char[] arrc4 = ce.var_z_g.loadByIndex(36);
         graphics.setColor(0);
-        graphics.fillRect(0, 0, r.g, r.h);
-        int n2 = r.i - 55;
-        int n3 = r.j - 36;
+        graphics.fillRect(0, 0, MyGameCanvas.g, MyGameCanvas.h);
+        int n2 = MyGameCanvas.i - 55;
+        int n3 = MyGameCanvas.j - 36;
         cb.a(graphics, n2, n3, 110, 72);
         cb.b(graphics, n2, n3, 110, 72);
         graphics.setColor(0xFFFFFF);

@@ -52,22 +52,22 @@ extends cb {
             n2 += 8;
             n3 += 25;
             graphics.setColor(0xFFFFFF);
-            bh.a(graphics, bh.m, bh.var_char_arr_e);
+            bh.a(graphics, bh.m, bh.labelTextBack);
         } else {
             graphics.setColor(0x3F1F3F);
-            graphics.fillRect(0, 0, r.g, r.h);
+            graphics.fillRect(0, 0, MyGameCanvas.g, MyGameCanvas.h);
             bf.c(graphics, n2, n3);
-            bh.a(true);
+            bh.setFontDefault(true);
             graphics.setColor(0);
             bh.void_a(graphics, n2 + 155 >> 1, n3 + 5 + 4, this.b, 1);
-            bh.a(false);
+            bh.setFontDefault(false);
             bf.b(graphics, n2, n3 + 24, 3);
             n2 += 10;
             n3 += 43;
             graphics.setColor(0x5F3F3F);
-            bh.a(graphics, null, bh.var_char_arr_e);
+            bh.a(graphics, null, bh.labelTextBack);
         }
-        r.d(graphics, n2 + 155 - 25, n3 - 8, this.var_byte_b + 1, this.var_byte_a);
+        MyGameCanvas.d(graphics, n2 + 155 - 25, n3 - 8, this.var_byte_b + 1, this.var_byte_a);
         if (this.var_byte_a > 1) {
             if (this.var_byte_b > 0) {
                 graphics.drawImage(ce.var_javax_microedition_lcdui_Image_k, n2 + 62, n3 - 6, 20);

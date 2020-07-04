@@ -15,16 +15,16 @@ extends cb {
 
     public bt(cb cb2, boolean bl2) {
         super(cb2, (byte)4);
-        if (w.boolean_a() || w.boolean_b()) {
+        if (MIDletConfig.boolean_a() || MIDletConfig.boolean_b()) {
             this.var_byte_a = (byte)(this.var_byte_a + 1);
         }
         this.c = bl2;
-        bh.var_b_a.var_boolean_b = false;
-        bh.var_b_b.var_boolean_b = false;
-        bh.var_b_c.var_boolean_b = false;
+        bh.fontSmallBlack.activeControlChar = false;
+        bh.fontSmallWhite.activeControlChar = false;
+        bh.fontSmallOrange.activeControlChar = false;
         this.a = new char[this.var_byte_a][];
         for (byte by2 = 0; by2 < this.var_byte_a; by2 = (byte)(by2 + 1)) {
-            this.a[by2] = by2 == 4 ? w.java_lang_String_a().toCharArray() : ce.var_z_e.a(by2);
+            this.a[by2] = by2 == 4 ? MIDletConfig.java_lang_String_a().toCharArray() : ce.var_z_e.loadByIndex(by2);
         }
     }
 
@@ -37,17 +37,17 @@ extends cb {
         }
         if (n3 == 53 || n2 == 8) {
             byte by2 = (byte)(this.var_byte_b + 6);
-            if (x.a && this.var_byte_b == 5) {
+            if (x.activeDemoVersion && this.var_byte_b == 5) {
                 by2 = (byte)(by2 + 1);
             }
-            char[] arrc = ce.var_z_e.a(by2);
+            char[] arrc = ce.var_z_e.loadByIndex(by2);
             if (this.var_byte_b == this.var_byte_a - 1) {
-                if (w.boolean_a()) {
+                if (MIDletConfig.boolean_a()) {
                     String string = BabbleText.instance.getTextById(3930);
                     arrc = string.toCharArray();
-                } else if (w.boolean_b()) {
+                } else if (MIDletConfig.boolean_b()) {
                     String string = BabbleText.instance.getTextById(3934);
-                    string = bh.a(string, "XXX", new String(w.java_lang_String_a()));
+                    string = bh.a(string, "XXX", new String(MIDletConfig.java_lang_String_a()));
                     arrc = string.toCharArray();
                 }
             }
@@ -56,9 +56,9 @@ extends cb {
         }
         if (n3 == -8) {
             this.var_cb_a.a((byte)-1, (byte)-1);
-            bh.var_b_a.var_boolean_b = true;
-            bh.var_b_b.var_boolean_b = true;
-            bh.var_b_c.var_boolean_b = true;
+            bh.fontSmallBlack.activeControlChar = true;
+            bh.fontSmallWhite.activeControlChar = true;
+            bh.fontSmallOrange.activeControlChar = true;
             return true;
         }
         return true;
@@ -74,25 +74,25 @@ extends cb {
             n3 += 8;
         } else {
             graphics.setColor(0x3F1F3F);
-            graphics.fillRect(0, 0, r.g, r.h);
+            graphics.fillRect(0, 0, MyGameCanvas.g, MyGameCanvas.h);
             bf.c(graphics, n2, n3);
             bf.b(graphics, n2, n3 + 24, 3);
-            bh.a(graphics, 7, r.g >> 1, n3 + 5);
+            bh.a(graphics, 7, MyGameCanvas.g >> 1, n3 + 5);
             n3 += 41;
         }
         n3 += 10;
-        bh.a(true);
+        bh.setFontDefault(true);
         for (byte by2 = 0; by2 < this.var_byte_a; by2 = (byte)(by2 + 1)) {
             if (this.var_byte_b == by2) {
                 graphics.setColor(n4);
             } else {
                 graphics.setColor(n5);
             }
-            bh.void_a(graphics, r.g >> 1, n3 + by2 * 15, this.a[by2], 1);
+            bh.void_a(graphics, MyGameCanvas.g >> 1, n3 + by2 * 15, this.a[by2], 1);
         }
-        bh.a(false);
+        bh.setFontDefault(false);
         if (!this.c) {
-            bh.a(graphics, bh.var_char_arr_d, bh.var_char_arr_e);
+            bh.a(graphics, bh.labelTextOk, bh.labelTextBack);
         }
     }
 }

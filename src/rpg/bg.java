@@ -11,8 +11,9 @@ import javax.microedition.lcdui.Graphics;
 import main.GameMIDlet;
 
 public final class bg
-extends r
+extends MyGameCanvas
 implements Runnable {
+    private final int LANG_CODE_IDX_DEFAULT = 1;
     private byte var_byte_a;
     private byte var_byte_b;
     private int var_int_a;
@@ -26,7 +27,7 @@ implements Runnable {
     public static bg var_bg_a;
 
     public bg() {
-        new Object();
+//        new Object();
         this.var_byte_b = 0;
     }
 
@@ -59,7 +60,7 @@ implements Runnable {
                 return;
             }
             case 6: {
-                GameMIDlet.var_rpg_GameMIDlet_a.destroyApp(true);
+                GameMIDlet.instance.destroyApp(true);
             }
         }
     }
@@ -69,33 +70,33 @@ implements Runnable {
             case 0: {
                 switch (this.var_byte_b) {
                     case 1: {
-                        ce.o();
-                        r.k();
+                        ce.loadGlobalImage();
+                        MyGameCanvas.k();
                         try {
-                            ad.var_z_b = new z("/itm/itmtp");
-                            r.k();
-                            t.a = new z("/itm/itmatt");
-                            r.k();
+                            ad.var_z_b = new TableDefineTextFile("/itm/itmtp");
+                            MyGameCanvas.k();
+                            t.a = new TableDefineTextFile("/itm/itmatt");
+                            MyGameCanvas.k();
                         }
                         catch (IOException iOException) {}
                         ce.w();
                         ce.y();
                         try {
-                            if (RecordStoreData.boolean_a("/c")) {
+                            if (RecordStoreData.isRecordExists("/c")) {
                                 bs.var_bs_a.j();
                             } else {
-                                if (!RecordStoreData.boolean_a("/c")) {
-                                    if (RecordStoreData.boolean_a(n.var_java_lang_String_arr_a[0])) {
-                                        RecordStoreData.void_a(n.var_java_lang_String_arr_a[0]);
+                                if (!RecordStoreData.isRecordExists("/c")) {
+                                    if (RecordStoreData.isRecordExists(n.var_java_lang_String_arr_a[0])) {
+                                        RecordStoreData.deleteRecord(n.var_java_lang_String_arr_a[0]);
                                     }
-                                    if (RecordStoreData.boolean_a(n.var_java_lang_String_arr_a[1])) {
-                                        RecordStoreData.void_a(n.var_java_lang_String_arr_a[1]);
+                                    if (RecordStoreData.isRecordExists(n.var_java_lang_String_arr_a[1])) {
+                                        RecordStoreData.deleteRecord(n.var_java_lang_String_arr_a[1]);
                                     }
-                                    if (RecordStoreData.boolean_a(n.var_java_lang_String_arr_a[2])) {
-                                        RecordStoreData.void_a(n.var_java_lang_String_arr_a[2]);
+                                    if (RecordStoreData.isRecordExists(n.var_java_lang_String_arr_a[2])) {
+                                        RecordStoreData.deleteRecord(n.var_java_lang_String_arr_a[2]);
                                     }
-                                    if (RecordStoreData.boolean_a("/o")) {
-                                        RecordStoreData.void_a("/o");
+                                    if (RecordStoreData.isRecordExists("/o")) {
+                                        RecordStoreData.deleteRecord("/o");
                                     }
                                 }
                                 bs.var_bs_a.i();
@@ -103,7 +104,7 @@ implements Runnable {
                         }
                         catch (Exception exception) {}
                         this.b();
-                        r.k();
+                        MyGameCanvas.k();
                         return;
                     }
                     case 2: {
@@ -130,14 +131,14 @@ implements Runnable {
             }
             case 10: {
                 graphics.setColor(0xFFFFFF);
-                graphics.fillRect(0, 0, r.g, r.h);
+                graphics.fillRect(0, 0, MyGameCanvas.g, MyGameCanvas.h);
                 if (this.var_byte_c > 40) {
                     this.var_short_a = (short)(this.var_short_a * 2);
                 }
-                graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_i[4], r.i, this.var_int_a - this.var_short_a, 3);
+                graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_i[4], MyGameCanvas.i, this.var_int_a - this.var_short_a, 3);
                 if (this.var_byte_c == 0) {
-                    if (this.var_int_a < r.j - 1) {
-                        this.var_int_a += (r.j - this.var_int_a) / 2;
+                    if (this.var_int_a < MyGameCanvas.j - 1) {
+                        this.var_int_a += (MyGameCanvas.j - this.var_int_a) / 2;
                     } else {
                         this.var_byte_c = 1;
                     }
@@ -145,32 +146,32 @@ implements Runnable {
                     switch (this.var_byte_c) {
                         case 1: 
                         case 3: {
-                            this.var_int_a = r.j - 1;
+                            this.var_int_a = MyGameCanvas.j - 1;
                             break;
                         }
                         case 2: 
                         case 4: {
-                            this.var_int_a = r.j;
+                            this.var_int_a = MyGameCanvas.j;
                         }
                     }
                     this.var_byte_c = (byte)(this.var_byte_c + 1);
                 }
-                if (this.var_short_a <= r.h) break;
+                if (this.var_short_a <= MyGameCanvas.h) break;
                 this.c();
                 break;
             }
             case 1: {
                 graphics.setColor(0xFFFFFF);
-                graphics.fillRect(0, 0, r.g, r.h);
-                int n2 = r.j - 68;
-                int n3 = r.i - 60;
+                graphics.fillRect(0, 0, MyGameCanvas.g, MyGameCanvas.h);
+                int n2 = MyGameCanvas.j - 68;
+                int n3 = MyGameCanvas.i - 60;
                 graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_j[2], n3 + 0, n2 + 25, 20);
                 graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_j[3], n3 + 52, n2 + 25, 20);
                 graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_j[4], n3 + 93, n2 + 2, 20);
                 boolean bl2 = false;
                 graphics.setColor(0x3F1F3F);
-                if (bh.r != null) {
-                    bh.int_a(graphics, r.g - 2 - bh.int_a(bh.r), r.h - 31, bh.r, 0);
+                if (bh.labelTextVersion != null) {
+                    bh.int_a(graphics, MyGameCanvas.g - 2 - bh.getTextWidth(bh.labelTextVersion), MyGameCanvas.h - 31, bh.labelTextVersion, 0);
                 }
                 graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_k[this.var_byte_c < 4 ? this.var_byte_c : 8 - this.var_byte_c], (int)this.var_short_a, (int)this.var_short_b, 33);
                 graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_k[(this.var_byte_d < 4 ? this.var_byte_d : 8 - this.var_byte_d) + 5], (int)this.var_short_c, (int)this.var_short_d, 33);
@@ -186,19 +187,19 @@ implements Runnable {
                 if (this.var_byte_d > 7) {
                     this.var_byte_d = 0;
                 }
-                if (this.var_short_b > r.h + 10) {
-                    this.var_short_a = (short)rpg.h.a(10, r.g / 2 - 10);
+                if (this.var_short_b > MyGameCanvas.h + 10) {
+                    this.var_short_a = (short)rpg.h.a(10, MyGameCanvas.g / 2 - 10);
                     this.var_short_b = (short)(-10 * rpg.h.a(0, 4));
                     this.var_byte_c = (byte)rpg.h.a(0, 7);
                 }
-                if (this.var_short_d > r.h + 10) {
-                    this.var_short_c = (short)rpg.h.a(r.g / 2 + 10, r.g - 10);
+                if (this.var_short_d > MyGameCanvas.h + 10) {
+                    this.var_short_c = (short)rpg.h.a(MyGameCanvas.g / 2 + 10, MyGameCanvas.g - 10);
                     this.var_short_d = (short)(-10 * rpg.h.a(3, 7));
                     this.var_byte_d = (byte)rpg.h.a(0, 7);
                 }
                 if (this.var_int_a % 4 < 2) {
                     graphics.setColor(0);
-                    bh.void_a(graphics, r.i, r.h - 45, bh.q, 1);
+                    bh.void_a(graphics, MyGameCanvas.i, MyGameCanvas.h - 45, bh.labelTextPressAnyKey, 1);
                 }
                 ++this.var_int_a;
             }
@@ -207,35 +208,35 @@ implements Runnable {
     }
 
     public final void a() {
-        r.a("- INITIALIZE", 30);
-        bh.void_a();
-        w.a(GameMIDlet.var_rpg_GameMIDlet_a);
-        int n2 = w.int_a();
-        if (n2 >= 0) {
-            System.out.println("langChoice " + n2);
-            r.m = 3;
+        MyGameCanvas.a("- INITIALIZE", 30);
+        bh.loadAllFont();
+        MIDletConfig.init(GameMIDlet.instance);
+        int langIdx = MIDletConfig.getLangIdx();
+        if (langIdx >= 0) {
+            System.out.println("langChoice " + langIdx);
+            MyGameCanvas.m = 3;
             this.var_byte_b = 1;
             this.var_byte_a = 0;
-            this.b(n2);
+            this.loadLanguage(langIdx);
             new Thread(this).start();
             return;
         }
-        r.m = 3;
+        MyGameCanvas.m = 3;
         this.var_byte_b = 1;
         this.var_byte_a = 0;
-        this.b(1);
+        this.loadLanguage(LANG_CODE_IDX_DEFAULT);// default lang idx = 1
         new Thread(this).start();
     }
 
-    private void b(int n2) {
-        BabbleText.instance.a("/lang/language", "", n2);
-        bh.a(BabbleText.instance);
-        w.void_a();
+    private void loadLanguage(int langIdx) {
+        BabbleText.instance.a("/lang/language", "", langIdx);
+        bh.loadCommonText();
+        MIDletConfig.setVersionText();
         try {
-            ce.var_z_g = new z("/sgui/com");
-            bh.p = ce.var_z_g.a(37);
-            bh.o = ce.var_z_g.a(38);
-            r.k();
+            ce.var_z_g = new TableDefineTextFile("/sgui/com");
+            bh.labelTextNowLoading = ce.var_z_g.loadByIndex(37);// NOW LOADING
+            bh.labelTextHandsOnMobile = ce.var_z_g.loadByIndex(38);// Hands-On Mobile
+            MyGameCanvas.k();// nghi 50 ms moi 6 lan goi
             this.var_byte_b = 1;
             return;
         }
@@ -264,10 +265,10 @@ implements Runnable {
         bs.var_bs_a.a(15);
         this.var_int_a = 0;
         this.var_byte_a = 1;
-        this.var_short_a = (short)rpg.h.a(0, r.g / 2 - 10);
+        this.var_short_a = (short)rpg.h.a(0, MyGameCanvas.g / 2 - 10);
         this.var_short_b = (short)(10 * rpg.h.a(0, 4));
         this.var_byte_c = (byte)rpg.h.a(0, 7);
-        this.var_short_c = (short)rpg.h.a(r.g / 2, r.g - 10);
+        this.var_short_c = (short)rpg.h.a(MyGameCanvas.g / 2, MyGameCanvas.g - 10);
         this.var_short_d = (short)(10 * rpg.h.a(3, 7));
         this.var_byte_d = (byte)rpg.h.a(0, 7);
         bw.b(22);
@@ -284,7 +285,7 @@ implements Runnable {
         }
         this.var_byte_a = 0;
         this.var_byte_b = (byte)2;
-        r.a("- STORY MODE", 52);
+        MyGameCanvas.a("- STORY MODE", 52);
         bs.var_bs_a.g();
         new Thread(this).start();
     }

@@ -36,10 +36,10 @@ extends cb {
         }
         if (n3 == 53 || n2 == 8) {
             if (this.var_short_arr_a[0] != 0 || this.var_short_arr_a[1] != 0 || this.var_short_arr_a[2] != 0 || this.var_short_arr_a[3] != 0) {
-                Object[] arrobject = new Object[]{ai.var_z_a.a(33)};
+                Object[] arrobject = new Object[]{ai.var_z_a.loadByIndex(33)};
                 this.a((byte)2, (byte)2, arrobject);
             } else {
-                Object[] arrobject = new Object[]{ai.var_z_a.a(34), ai.var_z_a.a(35)};
+                Object[] arrobject = new Object[]{ai.var_z_a.loadByIndex(34), ai.var_z_a.loadByIndex(35)};
                 this.a((byte)1, (byte)1, arrobject);
             }
             return true;
@@ -55,9 +55,9 @@ extends cb {
         ao ao2 = n.ao_a();
         cb.b(graphics, n2 += 36, n3 += 37, 101, 26, 0x3F1F3F);
         graphics.setColor(0xFFFFFF);
-        r.a(graphics, ai.var_z_a.a(36), n2 + 3, n3 + 3);
-        r.a(graphics, ai.var_z_a.a(37), n2 + 3, n3 + 10 + 4);
-        r.c(graphics, this.var_short_a, n2 + 65, n3 + 10 + 4, 8);
+        MyGameCanvas.a(graphics, ai.var_z_a.loadByIndex(36), n2 + 3, n3 + 3);
+        MyGameCanvas.a(graphics, ai.var_z_a.loadByIndex(37), n2 + 3, n3 + 10 + 4);
+        MyGameCanvas.c(graphics, this.var_short_a, n2 + 65, n3 + 10 + 4, 8);
         graphics.setColor(0x5F3F3F);
         graphics.fillRect(n2, n3 + 30, 101, 62);
         for (byte by2 = 0; by2 < 4; by2 = (byte)(by2 + 1)) {
@@ -85,9 +85,9 @@ extends cb {
                     n4 += ao2.var_short_g + ao2.p;
                 }
             }
-            bh.int_a(graphics, n2 + 10, n3 + 35 + by2 * 15, ce.var_z_a.a(9 + by2), 1);
+            bh.int_a(graphics, n2 + 10, n3 + 35 + by2 * 15, ce.var_z_a.loadByIndex(9 + by2), 1);
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_o, n2 + 45 + 25, n3 + 35 + by2 * 15, 20);
-            r.c(graphics, n4, n2 + 65 + 25, n3 + 35 + by2 * 15, 8);
+            MyGameCanvas.c(graphics, n4, n2 + 65 + 25, n3 + 35 + by2 * 15, 8);
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_d, n2 + 67 + 25, n3 + 35 + by2 * 15, 20);
         }
     }

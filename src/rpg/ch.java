@@ -30,15 +30,15 @@ extends cb {
                 if (arrby.length == 0) {
                     this.a(new Object[]{BabbleText.instance.getTextById(3935).toCharArray()});
                 } else {
-                    this.var_cb_b = new m(this, arrby, this.var_byte_b, aa.var_z_a.a(3));
+                    this.var_cb_b = new m(this, arrby, this.var_byte_b, aa.var_z_a.loadByIndex(3));
                 }
             } else if (this.var_byte_b == 1) {
                 if (this.a == null) {
-                    this.a(new Object[]{aa.var_z_a.a(3)});
+                    this.a(new Object[]{aa.var_z_a.loadByIndex(3)});
                 } else if (ao2.var_g_a.var_int_a < 100) {
-                    this.a(new Object[]{aa.var_z_a.a(8)});
+                    this.a(new Object[]{aa.var_z_a.loadByIndex(8)});
                 } else {
-                    this.a((byte)2, (byte)2, new Object[]{aa.var_z_a.a(19)});
+                    this.a((byte)2, (byte)2, new Object[]{aa.var_z_a.loadByIndex(19)});
                 }
             }
             return true;
@@ -54,7 +54,7 @@ extends cb {
             this.a.b = true;
             ao2.var_g_a.var_int_a -= 100;
             byte[] arrby = new byte[]{ao2.byte_a(this.a)};
-            this.var_cb_b = new m(this, arrby, (byte)10, aa.var_z_a.a(20));
+            this.var_cb_b = new m(this, arrby, (byte)10, aa.var_z_a.loadByIndex(20));
             this.a = null;
             return;
         }
@@ -63,7 +63,7 @@ extends cb {
             x.a(ad2 instanceof e);
             e e2 = (e)ad2;
             if (e2.b) {
-                this.a(new Object[]{aa.var_z_a.a(21)});
+                this.a(new Object[]{aa.var_z_a.loadByIndex(21)});
                 return;
             }
             this.a = e2;
@@ -75,18 +75,18 @@ extends cb {
         graphics.setColor(0x3F1F3F);
         graphics.fillRect(n2, n3, 155, 170);
         cb.c(graphics, n2 + 2, n3 + 4, 151, 162);
-        r.a(graphics, aa.var_z_a.a(13), n2 + 3, n3 - 2);
+        MyGameCanvas.a(graphics, aa.var_z_a.loadByIndex(13), n2 + 3, n3 - 2);
         cb.b(graphics, n2 + 3, n3 + 7, 149, 17, 0x9F7F7F);
         graphics.setColor(0xFFFFFF);
-        bh.int_a(graphics, n2 + 6, n3 + 10, aa.var_z_a.a(23), 1);
-        cb.a(graphics, n2 + 4, n3 + 30, this.a, (byte)1, aa.var_z_a.a(15), this.var_byte_b == 0);
+        bh.int_a(graphics, n2 + 6, n3 + 10, aa.var_z_a.loadByIndex(23), 1);
+        cb.a(graphics, n2 + 4, n3 + 30, this.a, (byte)1, aa.var_z_a.loadByIndex(15), this.var_byte_b == 0);
         cb.a(graphics, n2 + 155 - 10, n3 + 75, ao2.var_g_a.var_int_a);
         cb.b(graphics, n2 + 4, n3 + 83, 147, 20, 0x9F7F7F);
         graphics.setColor(0xFFFFFF);
-        bh.int_a(graphics, n2 + 8, n3 + 88, aa.var_z_a.a(24), 1);
+        bh.int_a(graphics, n2 + 8, n3 + 88, aa.var_z_a.loadByIndex(24), 1);
         cb.a(graphics, n2 + 155 - 8, n3 + 89, 100);
         int n4 = bh.a(155, 80);
-        cb.a(graphics, n2 + (155 - n4 >> 1), n3 + 138, n4, aa.var_z_a.a(25), this.var_byte_b == 1);
+        cb.a(graphics, n2 + (155 - n4 >> 1), n3 + 138, n4, aa.var_z_a.loadByIndex(25), this.var_byte_b == 1);
     }
 }
 

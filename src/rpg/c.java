@@ -25,7 +25,7 @@ extends cb {
         if (n3 == 53 || n2 == 8) {
             if (this.var_byte_b == 0 || this.var_byte_b == 1) {
                 if (!bs.var_bs_a.var_boolean_b) {
-                    Object[] arrobject = new Object[]{ce.var_z_g.a(6), ce.var_z_g.a(7)};
+                    Object[] arrobject = new Object[]{ce.var_z_g.loadByIndex(6), ce.var_z_g.loadByIndex(7)};
                     this.a(arrobject);
                 } else {
                     boolean bl2 = false;
@@ -55,7 +55,7 @@ extends cb {
 
     public final void a(Graphics graphics, int n2, int n3) {
         graphics.setColor(0x3F1F3F);
-        graphics.fillRect(0, 0, r.g, r.h);
+        graphics.fillRect(0, 0, MyGameCanvas.g, MyGameCanvas.h);
         bf.c(graphics, n2, n3);
         bh.a(graphics, 1, n2 + 155 >> 1, n3 + 5);
         bf.b(graphics, n2, n3 + 24, 3);
@@ -80,9 +80,9 @@ extends cb {
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_m[0], n2 + 59, n3 + 38, 20);
         }
         graphics.setColor(0);
-        bh.int_a(graphics, n2 + 11, n3 + 104, ce.var_z_g.a(12), 1);
-        bh.int_a(graphics, n2 + 11, n3 + 119, ce.var_z_g.a(13), 1);
-        bh.a(graphics, bh.var_char_arr_d, bh.var_char_arr_e);
+        bh.int_a(graphics, n2 + 11, n3 + 104, ce.var_z_g.loadByIndex(12), 1);
+        bh.int_a(graphics, n2 + 11, n3 + 119, ce.var_z_g.loadByIndex(13), 1);
+        bh.a(graphics, bh.labelTextOk, bh.labelTextBack);
     }
 }
 

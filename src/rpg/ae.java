@@ -60,7 +60,7 @@ implements u {
         this.var_java_util_Vector_b = new Vector();
         this.g = 16;
         this.var_java_util_Vector_a = new Vector();
-        if (r.g >= 240 && r.h >= 240) {
+        if (MyGameCanvas.g >= 240 && MyGameCanvas.h >= 240) {
             var_byte_c = (byte)3;
         }
     }
@@ -82,9 +82,9 @@ implements u {
         for (n2 = 24; n2 <= 31; n2 = (byte)(n2 + 1)) {
             bw.b((byte)n2);
         }
-        r.k();
+        MyGameCanvas.k();
         this.i = ce.getResourceByName("/m/" + (n.f < 10 ? "0" : "") + n.f + ".map");
-        r.k();
+        MyGameCanvas.k();
         this.var_byte_b = this.i[0];
         this.var_int_a = this.i[1];
         this.var_int_b = this.i[2];
@@ -92,10 +92,10 @@ implements u {
             this.var_boolean_c = true;
         }
         this.var_ck_arr_arr_a = new ck[this.var_int_b][this.var_int_a];
-        r.k();
+        MyGameCanvas.k();
         this.var_int_c = this.var_int_a * 16;
         this.var_int_d = this.var_int_b * 16;
-        r.k();
+        MyGameCanvas.k();
         this.void_a(this.i, 3);
         this.i = null;
         if (var_byte_d != this.var_byte_b) {
@@ -103,19 +103,19 @@ implements u {
         }
         System.gc();
         this.i = ce.getResourceByName("/m/" + n.var_byte_a + "/" + (n.f < 10 ? "0" : "") + n.f + ".evt");
-        r.k();
-        r.k();
+        MyGameCanvas.k();
+        MyGameCanvas.k();
         this.void_b(this.i, 0);
         n2 = 0 + this.var_int_a * this.var_int_b;
-        r.k();
+        MyGameCanvas.k();
         n2 += this.int_a(this.i, n2);
-        r.k();
+        MyGameCanvas.k();
         n2 += this.int_b(this.i, n2);
-        r.k();
+        MyGameCanvas.k();
         n2 += this.int_c(this.i, n2);
-        r.k();
+        MyGameCanvas.k();
         n2 += this.d(this.i, n2);
-        r.k();
+        MyGameCanvas.k();
         n2 += this.e(this.i, n2);
         this.void_c(this.i, n2);
         this.i = null;
@@ -141,16 +141,16 @@ implements u {
             }
         }
         if (ce.var_javax_microedition_lcdui_Image_arr_e == null) {
-            r.k();
+            MyGameCanvas.k();
             try {
-                br br2 = new br("/m/t/t" + (this.var_byte_b < 10 ? "0" : "") + this.var_byte_b);
+                PNGMerger br2 = new PNGMerger("/m/t/t" + (this.var_byte_b < 10 ? "0" : "") + this.var_byte_b);
                 ce.var_javax_microedition_lcdui_Image_arr_e = br2.javax_microedition_lcdui_Image_arr_a();
-                r.k();
+                MyGameCanvas.k();
             }
             catch (IOException iOException) {}
         }
         var_byte_d = this.var_byte_b;
-        this.var_char_arr_a = n.var_byte_a == 8 && this.var_byte_a == 65 ? ce.var_z_d.a(85) : ce.var_z_d.a(this.var_byte_a);
+        this.var_char_arr_a = n.var_byte_a == 8 && this.var_byte_a == 65 ? ce.var_z_d.loadByIndex(85) : ce.var_z_d.loadByIndex(this.var_byte_a);
         this.var_byte_e = this.var_char_arr_a != null && this.var_char_arr_a.length > 0 ? (byte)10 : (byte)0;
         if (this.var_byte_a == 79 || this.var_byte_a == 80 || this.var_byte_a == 81) {
             bw.a((byte)4);
@@ -170,22 +170,22 @@ implements u {
 
     private final void void_a(byte[] arrby, int n2) {
         this.var_byte_arr_arr_b = new byte[this.var_int_b][this.var_int_a];
-        r.k();
+        MyGameCanvas.k();
         for (int i2 = 0; i2 < this.var_int_b; ++i2) {
             System.arraycopy(arrby, n2, this.var_byte_arr_arr_b[i2], 0, this.var_int_a);
             n2 += this.var_int_a;
         }
-        r.k();
+        MyGameCanvas.k();
     }
 
     private final void void_b(byte[] arrby, int n2) {
         this.var_byte_arr_arr_c = new byte[this.var_int_b][this.var_int_a];
-        r.k();
+        MyGameCanvas.k();
         for (int i2 = 0; i2 < this.var_int_b; ++i2) {
             System.arraycopy(arrby, n2, this.var_byte_arr_arr_c[i2], 0, this.var_int_a);
             n2 += this.var_int_a;
         }
-        r.k();
+        MyGameCanvas.k();
     }
 
     private final int int_a(byte[] arrby, int n2) {
@@ -193,25 +193,25 @@ implements u {
         int n4;
         Image[] arrimage = null;
         if ((n4 = arrby[n2++] & 0xFF) > 0) {
-            Object object;
+            PNGMerger object;
             try {
-                object = new br("/m/t/o" + (this.var_byte_b < 10 ? "0" : "") + this.var_byte_b);
-                new br("/m/t/o" + (this.var_byte_b < 10 ? "0" : "") + this.var_byte_b).isInitResource = true;
-                r.k();
-                arrimage = ce.var_javax_microedition_lcdui_Image_arr_f = new Image[((br)object).int_a()];
-                r.k();
+                object = new PNGMerger("/m/t/o" + (this.var_byte_b < 10 ? "0" : "") + this.var_byte_b);
+                object.enableLoad = true;
+                MyGameCanvas.k();
+                arrimage = ce.var_javax_microedition_lcdui_Image_arr_f = new Image[((PNGMerger)object).int_a()];
+                MyGameCanvas.k();
                 for (n3 = 0; n3 < n4; ++n3) {
                     int s2 = arrby[n2++] & 0xFF;
-                    arrimage[s2] = ((br)object).javax_microedition_lcdui_Image_a(s2);
-                    r.k();
+                    arrimage[s2] = ((PNGMerger)object).javax_microedition_lcdui_Image_a(s2);
+                    MyGameCanvas.k();
                 }
             }
             catch (IOException iOException) {
-                object = iOException;
+//                object = iOException;
                 iOException.printStackTrace();
             }
         }
-        r.k();
+        MyGameCanvas.k();
         int n5 = arrby[n2++] & 0xFF;
         this.var_aj_arr_a = new aj[n5];
         for (n3 = 0; n3 < n5; ++n3) {
@@ -225,7 +225,7 @@ implements u {
             this.var_aq_a.c(aj2);
             this.var_aj_arr_a[n3] = aj2;
         }
-        r.k();
+        MyGameCanvas.k();
         return 1 + n4 + 1 + n5 * 5;
     }
 
@@ -233,7 +233,7 @@ implements u {
         byte by2;
         int n3;
         int n4;
-        Object object;
+        PNGMerger object;
         byte by3;
         int n5 = 0;
         Image[] arrimage = null;
@@ -247,17 +247,17 @@ implements u {
             ce.var_byte_arr_l[by3] = -1;
         }
         try {
-            object = new br("/npc/all");
-            new br("/npc/all").isInitResource = true;
-            r.k();
-            arrimage = ce.var_javax_microedition_lcdui_Image_arr_g = new Image[((br)object).int_a()];
+            object = new PNGMerger("/npc/all");
+            object.enableLoad = true;
+            MyGameCanvas.k();
+            arrimage = ce.var_javax_microedition_lcdui_Image_arr_g = new Image[((PNGMerger)object).int_a()];
             n4 = 0;
             for (n3 = 0; n3 < n6; n3 = (int)((byte)(n3 + 1))) {
                 by2 = arrby[n2++];
                 ++n5;
                 if (by2 >= 18) {
-                    arrimage[by2 - 18] = ((br)object).javax_microedition_lcdui_Image_a(by2 - 18);
-                    r.k();
+                    arrimage[by2 - 18] = ((PNGMerger)object).javax_microedition_lcdui_Image_a(by2 - 18);
+                    MyGameCanvas.k();
                     continue;
                 }
                 if (by2 == 3) {
@@ -273,17 +273,17 @@ implements u {
                     continue;
                 }
                 ce.var_byte_arr_l[n4] = by2;
-                r.k();
+                MyGameCanvas.k();
                 ce.b(by2, (byte)n4);
                 n4 = (byte)(n4 + 1);
                 String cfr_ignored_0 = "Npc Loaded - " + by2;
             }
         }
         catch (IOException iOException) {
-            object = iOException;
+//            object = iOException;
             iOException.printStackTrace();
         }
-        r.k();
+        MyGameCanvas.k();
         int n7 = arrby[n2++] & 0xFF;
         ++n5;
         this.var_ac_arr_a = new ac[n7];
@@ -309,7 +309,7 @@ implements u {
             n5 += 3;
             this.var_ac_arr_a[n4] = ac2;
         }
-        r.k();
+        MyGameCanvas.k();
         return n5;
     }
 
@@ -328,12 +328,12 @@ implements u {
         n4 = 0;
         x.a((by3 = arrby[n2++] & 0xFF) <= 5);
         ++n4;
-        r.k();
+        MyGameCanvas.k();
         byte[] arrby2 = null;
         if (by3 != 0) {
             j.a(5);
             arrby2 = ce.getResourceByName("/enm/data" + (n.g >= 2 ? 2 : (int)n.g));
-            r.k();
+            MyGameCanvas.k();
         }
         boolean by22 = false;
         while (by2 < by3) {
@@ -341,14 +341,14 @@ implements u {
             ++n4;
             ce.var_byte_arr_k[by2] = (byte)n3;
             j.a(arrby2, (byte)n3, by2);
-            r.k();
+            MyGameCanvas.k();
             ce.a((short)n3, by2, false);
             j.a(by2);
-            r.k();
+            MyGameCanvas.k();
             String cfr_ignored_0 = "Enemy Loaded - " + n3;
             by2 = (byte)(by2 + 1);
         }
-        r.k();
+        MyGameCanvas.k();
         int n5 = arrby[n2++] & 0xFF;
         ++n4;
         for (n3 = 0; n3 < n5; ++n3) {
@@ -357,7 +357,7 @@ implements u {
             byte by4 = arrby[n2++];
             n4 += 3;
             this.a((int)by4, 0, n6, n7);
-            r.k();
+            MyGameCanvas.k();
         }
         return n4;
     }
@@ -365,8 +365,8 @@ implements u {
     private final int d(byte[] arrby, int n2) {
         int n3 = arrby[n2++];
         try {
-            br br2 = new br("/m/face");
-            new br("/m/face").isInitResource = true;
+            PNGMerger br2 = new PNGMerger("/m/face");
+            br2.enableLoad = true;
             ce.var_javax_microedition_lcdui_Image_arr_h = new Image[br2.int_a()];
             for (int i2 = 0; i2 < n3; ++i2) {
                 byte by2 = arrby[n2++];
@@ -391,7 +391,7 @@ implements u {
         int n6 = arrby[n2++] & 0xFF;
         ++n5;
         this.var_java_lang_Object_arr_a = new Object[n6];
-        r.k();
+        MyGameCanvas.k();
         for (n4 = 0; n4 < n6; ++n4) {
             n3 = arrby[n2++] & 0xFF;
             ++n5;
@@ -404,7 +404,7 @@ implements u {
             }
             this.var_java_lang_Object_arr_a[n4] = arrby2;
         }
-        r.k();
+        MyGameCanvas.k();
         n4 = arrby[n2++] & 0xFF;
         ++n5;
         this.var_java_lang_Object_arr_b = new Object[n4];
@@ -420,7 +420,7 @@ implements u {
             }
             this.var_java_lang_Object_arr_b[n3] = arrby3;
         }
-        r.k();
+        MyGameCanvas.k();
         n3 = arrby[n2++] & 0xFF;
         ++n5;
         this.var_java_lang_Object_arr_c = new Object[n3];
@@ -431,7 +431,7 @@ implements u {
             n2 += n8;
             n5 += n8;
         }
-        r.k();
+        MyGameCanvas.k();
         return n5;
     }
 
@@ -584,7 +584,7 @@ implements u {
             } else if (this.var_byte_e < 3) {
                 graphics.setClip(0, n6 + 4 * (3 - this.var_byte_e), n4, 8 * this.var_byte_e);
             } else {
-                graphics.setClip(0, 0, r.g, r.h);
+                graphics.setClip(0, 0, MyGameCanvas.g, MyGameCanvas.h);
             }
             graphics.setColor(0);
             graphics.fillRect(0, n6, n4, 22);
@@ -595,7 +595,7 @@ implements u {
             bh.void_a(graphics, n4 / 2, n6 + 12 - 4, this.var_char_arr_a, 1);
             this.var_byte_e = (byte)(this.var_byte_e - 1);
         }
-        graphics.setClip(0, 0, r.g, r.h);
+        graphics.setClip(0, 0, MyGameCanvas.g, MyGameCanvas.h);
     }
 
     private final void a(Graphics graphics, int n2, int n3, int n4, int n5) {
@@ -655,8 +655,8 @@ implements u {
     public final void b(Graphics graphics) {
         int n2 = this.var_int_a * var_byte_c;
         int n3 = this.var_int_b * var_byte_c;
-        int n4 = r.i - n2 / 2;
-        int n5 = r.j - n3 / 2;
+        int n4 = MyGameCanvas.i - n2 / 2;
+        int n5 = MyGameCanvas.j - n3 / 2;
         graphics.setColor(0);
         graphics.drawRect(n4 - 1, n5 - 1, n2 + 1, n3 + 1);
         for (int n6 = 0; n6 < this.var_int_b; n6 = (int)((byte)(n6 + 1))) {
@@ -677,18 +677,18 @@ implements u {
                 n4 += var_byte_c;
             }
             n5 += var_byte_c;
-            n4 = r.i - n2 / 2;
+            n4 = MyGameCanvas.i - n2 / 2;
         }
         if (this.var_boolean_d) {
             ao ao2 = n.ao_a();
             graphics.setColor(0xFF3F3F);
-            graphics.fillRect(r.i - n2 / 2 + ao2.var_byte_a * var_byte_c, r.j - n3 / 2 + ao2.var_byte_b * var_byte_c, (int)var_byte_c, (int)var_byte_c);
+            graphics.fillRect(MyGameCanvas.i - n2 / 2 + ao2.var_byte_a * var_byte_c, MyGameCanvas.j - n3 / 2 + ao2.var_byte_b * var_byte_c, (int)var_byte_c, (int)var_byte_c);
         }
         this.var_boolean_d = !this.var_boolean_d;
         graphics.setColor(0);
-        graphics.fillRect(0, 0, r.g, 20);
+        graphics.fillRect(0, 0, MyGameCanvas.g, 20);
         graphics.setColor(0xFFFFFF);
-        bh.void_a(graphics, r.i, 8, this.var_char_arr_a, 1);
+        bh.void_a(graphics, MyGameCanvas.i, 8, this.var_char_arr_a, 1);
     }
 
     public final void b() {

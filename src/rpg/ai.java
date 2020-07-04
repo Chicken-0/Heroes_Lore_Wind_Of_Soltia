@@ -16,15 +16,15 @@ implements u {
     public static int b;
     private byte[] h = new byte[5];
     private byte c;
-    public static z var_z_a;
+    public static TableDefineTextFile var_z_a;
     private static ai var_ai_a;
 
     public static final ai ai_a() {
         if (var_ai_a == null) {
             var_ai_a = new ai();
             ai.var_ai_a.var_cb_b = new q(var_ai_a);
-            var_int_a = r.i - 77;
-            b = r.j - 85;
+            var_int_a = MyGameCanvas.i - 77;
+            b = MyGameCanvas.j - 85;
         }
         return var_ai_a;
     }
@@ -56,7 +56,7 @@ implements u {
             this.c = p2.f;
         }
         try {
-            var_z_a = new z("/sgui/gm");
+            var_z_a = new TableDefineTextFile("/sgui/gm");
         }
         catch (IOException iOException) {
             IOException iOException2 = iOException;
@@ -123,7 +123,7 @@ implements u {
     public final void a(Graphics graphics, int n2, int n3) {
         if (this.var_cb_b != null) {
             bh.a(graphics);
-            bh.a(graphics, bh.var_char_arr_d, bh.var_char_arr_e);
+            bh.a(graphics, bh.labelTextOk, bh.labelTextBack);
         }
         boolean bl2 = false;
         graphics.setColor(0x3F1F3F);

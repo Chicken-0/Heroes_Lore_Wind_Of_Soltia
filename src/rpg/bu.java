@@ -29,26 +29,26 @@ implements Runnable {
 
     public static final void void_a() {
         var_byte_a = 1;
-        r.a("- RESOURCE", 500);
+        MyGameCanvas.a("- RESOURCE", 500);
         new Thread(new bu()).start();
     }
 
     public static final void b() {
         bs.var_as_a.f();
         var_byte_a = (byte)2;
-        r.a("- MAP", 200);
+        MyGameCanvas.a("- MAP", 200);
         new Thread(new bu()).start();
     }
 
     public static final void c() {
         var_byte_a = (byte)3;
-        r.a("\uac00\ub514\uc5b8 \uc18c\ud658\uc911..", 120);
+        MyGameCanvas.a("\uac00\ub514\uc5b8 \uc18c\ud658\uc911..", 120);
         new Thread(new bu()).start();
     }
 
     public static final void d() {
         var_byte_a = (byte)5;
-        r.a("- MAIN MENU", 100);
+        MyGameCanvas.a("- MAIN MENU", 100);
         new Thread(new bu()).start();
     }
 
@@ -74,19 +74,19 @@ implements Runnable {
                     InterruptedException interruptedException2 = interruptedException;
                     interruptedException.printStackTrace();
                 }
-                r.k();
+                MyGameCanvas.k();
                 if (!var_boolean_a) {
                     this.i();
                 }
                 try {
-                    ce.var_z_f = new z("/sgui/q" + n.var_byte_a);
-                    r.k();
+                    ce.var_z_f = new TableDefineTextFile("/sgui/q" + n.var_byte_a);
+                    MyGameCanvas.k();
                 }
                 catch (Exception exception) {}
                 this.j();
                 this.k();
                 n.b(n.f, (byte)1, n.var_byte_c, n.var_byte_d);
-                r.b = true;
+                MyGameCanvas.b = true;
                 return;
             }
             case 3: {
@@ -109,7 +109,7 @@ implements Runnable {
     }
 
     private final ae ae_a() {
-        r.k();
+        MyGameCanvas.k();
         ae ae2 = n.var_ae_a;
         ao ao2 = n.ao_a();
         if (ae2 != null) {
@@ -123,22 +123,22 @@ implements Runnable {
                 p2.var_ck_b = null;
             }
         }
-        r.k();
+        MyGameCanvas.k();
         n.var_ae_a = null;
         ae2 = new ae(n.f);
         n.a(ae2);
-        r.k();
+        MyGameCanvas.k();
         ae2.a();
-        r.k();
+        MyGameCanvas.k();
         return ae2;
     }
 
     public static final void e() {
         try {
-            ce.var_z_b = new z("/grd/grd");
-            r.k();
-            ce.var_z_a = new z("/char/hero");
-            r.k();
+            ce.var_z_b = new TableDefineTextFile("/grd/grd");
+            MyGameCanvas.k();
+            ce.var_z_a = new TableDefineTextFile("/char/hero");
+            MyGameCanvas.k();
             return;
         }
         catch (IOException iOException) {
@@ -152,26 +152,26 @@ implements Runnable {
         byte by2;
         var_boolean_a = true;
         Object var1_1 = null;
-        r.k();
+        MyGameCanvas.k();
         ce.n();
-        r.k();
+        MyGameCanvas.k();
         ce.p();
-        r.k();
+        MyGameCanvas.k();
         ce.t();
-        r.k();
+        MyGameCanvas.k();
         ce.g();
-        r.k();
+        MyGameCanvas.k();
         ce.i();
-        r.k();
+        MyGameCanvas.k();
         ce.r();
-        r.k();
+        MyGameCanvas.k();
         ce.l();
-        r.k();
+        MyGameCanvas.k();
         try {
-            ce.var_z_c = new z("/grd/grdsk");
-            r.k();
-            ce.var_z_d = new z("/m/name");
-            r.k();
+            ce.var_z_c = new TableDefineTextFile("/grd/grdsk");
+            MyGameCanvas.k();
+            ce.var_z_d = new TableDefineTextFile("/m/name");
+            MyGameCanvas.k();
         }
         catch (IOException iOException) {
             IOException iOException2 = iOException;
@@ -208,22 +208,22 @@ implements Runnable {
         ao ao2 = n.ao_a();
         if (ao2.e_a() != null) {
             String cfr_ignored_0 = "HERO ARMOR " + var_byte_arr_arr_b[n.var_byte_a - 6][ao2.e_a().g];
-            r.k();
+            MyGameCanvas.k();
             bu.a(n.var_byte_a, ao2.ad_a((int)2).g);
         }
-        r.k();
+        MyGameCanvas.k();
         bu.a(n.var_byte_a, (byte)1, (byte)0, false, (byte)0);
         if (ao2.e_b() != null) {
             String cfr_ignored_1 = "HERO HEAD " + var_byte_arr_a[ao2.e_b().g];
-            r.k();
+            MyGameCanvas.k();
             bu.b(n.var_byte_a, ao2.e_b().g);
         } else {
-            r.k();
+            MyGameCanvas.k();
             bu.b(n.var_byte_a, (byte)0);
         }
         if (n.var_byte_a == 8 && ao2.t_a() != null) {
             String cfr_ignored_2 = "HERO SHIELD " + var_byte_arr_b[ao2.t_a().g];
-            r.k();
+            MyGameCanvas.k();
             bu.c(n.var_byte_a, ao2.t_a().g);
         }
     }
@@ -238,19 +238,19 @@ implements Runnable {
     private final void k() {
         ao ao2 = n.ao_a();
         p p2 = ao2.p_a();
-        r.k();
+        MyGameCanvas.k();
         Object var3_3 = null;
-        r.k();
+        MyGameCanvas.k();
         ce.f(p2.f);
-        r.k();
+        MyGameCanvas.k();
         if (ao2.ad_a(0) != null) {
             bu.a(n.var_byte_a, (l)ao2.ad_a(0), false, p2.byte_a());
         }
-        r.k();
+        MyGameCanvas.k();
         bu.d(n.var_byte_a, p2.byte_a());
-        r.k();
+        MyGameCanvas.k();
         ce.void_a(p2.byte_a());
-        r.k();
+        MyGameCanvas.k();
         switch (p2.f) {
             case 0: {
                 bw.a((byte)16);
@@ -322,13 +322,13 @@ implements Runnable {
     private static final void a(byte by2, byte by3, byte by4, boolean bl2, byte by5) {
         byte by6 = (byte)(by2 - 6);
         try {
-            br br2 = null;
+            PNGMerger br2 = null;
             Image[] arrimage = null;
             Image[] arrimage2 = null;
             int n2 = -1;
             block1 : switch (by3) {
                 case 0: {
-                    br2 = new br(var_java_lang_String_arr_b[by6] + c[by4]);
+                    br2 = new PNGMerger(var_java_lang_String_arr_b[by6] + c[by4]);
                     arrimage = new Image[br2.int_a()];
                     ce.var_javax_microedition_lcdui_Image_arr_arr_a[0] = arrimage;
                     arrimage2 = new Image[br2.int_a()];
@@ -337,7 +337,7 @@ implements Runnable {
                     break;
                 }
                 case 1: {
-                    br2 = new br(var_java_lang_String_arr_b[by6] + "b");
+                    br2 = new PNGMerger(var_java_lang_String_arr_b[by6] + "b");
                     arrimage = new Image[br2.int_a()];
                     ce.var_javax_microedition_lcdui_Image_arr_arr_a[1] = arrimage;
                     arrimage2 = new Image[br2.int_a()];
@@ -347,7 +347,7 @@ implements Runnable {
                 }
                 case 3: 
                 case 4: {
-                    br2 = new br(var_java_lang_String_arr_b[by6] + d[by4]);
+                    br2 = new PNGMerger(var_java_lang_String_arr_b[by6] + d[by4]);
                     arrimage = new Image[br2.int_a()];
                     ce.var_javax_microedition_lcdui_Image_arr_arr_a[2] = arrimage;
                     arrimage2 = new Image[br2.int_a()];
@@ -356,7 +356,7 @@ implements Runnable {
                     break;
                 }
                 case 5: {
-                    br2 = new br(var_java_lang_String_arr_b[by6] + e[by4]);
+                    br2 = new PNGMerger(var_java_lang_String_arr_b[by6] + e[by4]);
                     if (bl2) {
                         arrimage = new Image[br2.int_a()];
                         arrimage2 = new Image[br2.int_a()];
@@ -384,7 +384,7 @@ implements Runnable {
                     break;
                 }
                 case 2: {
-                    br2 = new br(var_java_lang_String_arr_b[by6] + "e");
+                    br2 = new PNGMerger(var_java_lang_String_arr_b[by6] + "e");
                     arrimage = new Image[br2.int_a()];
                     ce.var_javax_microedition_lcdui_Image_arr_arr_a[4] = arrimage;
                     arrimage2 = new Image[br2.int_a()];
@@ -408,7 +408,7 @@ implements Runnable {
                     break;
                 }
                 case 6: {
-                    br2 = new br(var_java_lang_String_arr_b[by6] + f[by4]);
+                    br2 = new PNGMerger(var_java_lang_String_arr_b[by6] + f[by4]);
                     arrimage = new Image[br2.int_a()];
                     ce.var_javax_microedition_lcdui_Image_arr_arr_a[5] = arrimage;
                     arrimage2 = new Image[br2.int_a()];
@@ -416,10 +416,10 @@ implements Runnable {
                     n2 = 5;
                 }
             }
-            r.k();
-            br2.isInitResource = true;
+            MyGameCanvas.k();
+            br2.enableLoad = true;
             byte[] arrby = ce.getResourceByName(var_java_lang_String_arr_a[by6] + g[by3]);
-            r.k();
+            MyGameCanvas.k();
             int n3 = 0;
             while (n3 < arrby.length) {
                 byte by7;
@@ -495,7 +495,7 @@ implements Runnable {
                     }
                     ce.var_java_lang_Object_arr_a[by9 * 36 + by10 * 9 + by8] = arrby2;
                 }
-                r.k();
+                MyGameCanvas.k();
             }
             br2.void_a();
             return;
@@ -547,8 +547,8 @@ implements Runnable {
         }
     }
 
-    public static final void a(br br2, byte by2, byte by3) {
-        br2.isInitResource = true;
+    public static final void a(PNGMerger br2, byte by2, byte by3) {
+        br2.enableLoad = true;
         ce.var_java_lang_Object_arr_b = new Object[3];
         byte[] arrby = ce.getResourceByName(var_java_lang_String_arr_a[2] + "ea2");
         ce.var_java_lang_Object_arr_b[0] = arrby;
@@ -565,11 +565,11 @@ implements Runnable {
         switch (var_byte_a) {
             case 1: 
             case 2: {
-                r.c(graphics);
+                MyGameCanvas.c(graphics);
                 return;
             }
             case 3: {
-                as.b(graphics, r.g - 145 >> 1, r.j - 15, 145, 30);
+                as.b(graphics, MyGameCanvas.g - 145 >> 1, MyGameCanvas.j - 15, 145, 30);
             }
         }
     }

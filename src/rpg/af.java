@@ -34,21 +34,21 @@ extends cb {
         this.var_java_lang_Object_arr_a = arrobject;
         if (by2 == 2 || by2 == 12) {
             if (arrc == null) {
-                arrc = bh.k;
+                arrc = bh.labelTextYes;
             }
             if (arrc2 == null) {
-                arrc2 = bh.l;
+                arrc2 = bh.labelTextNo;
             }
         } else if (by2 == 1 || by2 == 11) {
             if (arrc == null) {
-                arrc = bh.var_char_arr_d;
+                arrc = bh.labelTextOk;
             }
         } else if (by2 != 9) {
             if (arrc == null) {
-                arrc = bh.var_char_arr_d;
+                arrc = bh.labelTextOk;
             }
             if (arrc2 == null) {
-                arrc2 = bh.var_char_arr_e;
+                arrc2 = bh.labelTextBack;
             }
         }
         this.b = arrc;
@@ -56,12 +56,12 @@ extends cb {
         switch (by2) {
             case 2: 
             case 6: {
-                this.var_int_a = 8 + bh.a(bh.a(r.g, 80) - 10, 1, this.var_char_arr_a, 0, 0, this.var_char_arr_a.length);
+                this.var_int_a = 8 + bh.a(bh.a(MyGameCanvas.g, 80) - 10, 1, this.var_char_arr_a, 0, 0, this.var_char_arr_a.length);
                 break;
             }
             case 11: 
             case 12: {
-                this.var_int_a = 8 + bh.a(bh.a(r.g, 80) - 10, 1, this.var_char_arr_a, 0, 0, this.var_char_arr_a.length);
+                this.var_int_a = 8 + bh.a(bh.a(MyGameCanvas.g, 80) - 10, 1, this.var_char_arr_a, 0, 0, this.var_char_arr_a.length);
                 break;
             }
             case 3: 
@@ -71,12 +71,12 @@ extends cb {
                 this.var_int_a = 12;
                 for (n2 = 0; n2 < this.var_java_lang_Object_arr_a.length; ++n2) {
                     arrc3 = (char[])this.var_java_lang_Object_arr_a[n2];
-                    this.var_int_a += 3 + bh.a(bh.a(r.g, 80) - 10, 1, arrc3, 0, 0, arrc3.length);
+                    this.var_int_a += 3 + bh.a(bh.a(MyGameCanvas.g, 80) - 10, 1, arrc3, 0, 0, arrc3.length);
                 }
                 break;
             }
             default: {
-                this.var_int_a = 22 + bh.a(bh.a(r.g, 80) - 10, 1, this.var_char_arr_a, 0, 0, this.var_char_arr_a.length);
+                this.var_int_a = 22 + bh.a(bh.a(MyGameCanvas.g, 80) - 10, 1, this.var_char_arr_a, 0, 0, this.var_char_arr_a.length);
             }
         }
         if (by2 == 6) {
@@ -126,9 +126,9 @@ extends cb {
 
     public final void a(Graphics graphics, int n2, int n3) {
         bh.a(graphics);
-        int n4 = bh.a(r.g, 80);
-        n2 = r.i - (n4 >> 1);
-        n3 = r.j - (this.var_int_a >> 1);
+        int n4 = bh.a(MyGameCanvas.g, 80);
+        n2 = MyGameCanvas.i - (n4 >> 1);
+        n3 = MyGameCanvas.j - (this.var_int_a >> 1);
         cb.a(graphics, n2, n3, n4, this.var_int_a);
         cb.b(graphics, n2, n3, n4, this.var_int_a);
         switch (this.var_byte_c) {

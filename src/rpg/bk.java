@@ -20,7 +20,7 @@ extends cb {
     public bk(by by2, byte by3) {
         super(by2, (byte)3);
         this.var_byte_c = by3;
-        this.a(new Object[]{ce.var_z_g.a(16), ce.var_z_g.a(13)});
+        this.a(new Object[]{ce.var_z_g.loadByIndex(16), ce.var_z_g.loadByIndex(13)});
     }
 
     public final boolean a(int n2, int n3) {
@@ -93,7 +93,7 @@ extends cb {
 
     public final void a(Graphics graphics, int n2, int n3) {
         graphics.setColor(0x3F1F3F);
-        graphics.fillRect(0, 0, r.g, r.h);
+        graphics.fillRect(0, 0, MyGameCanvas.g, MyGameCanvas.h);
         bf.c(graphics, n2, n3);
         bh.a(graphics, 1, n2 + 155 >> 1, n3 + 5);
         bf.b(graphics, n2, n3 + 24, 3);
@@ -110,23 +110,23 @@ extends cb {
         }
         graphics.setColor(0);
         if (!this.var_boolean_c) {
-            bh.int_a(graphics, n2 + 11, n3 + 94, ce.var_z_b.a(this.var_byte_b), 1);
-            bh.a(graphics, n2 + 11, n3 + 109, 100, 1, ce.var_z_b.a(12 + this.var_byte_b));
+            bh.int_a(graphics, n2 + 11, n3 + 94, ce.var_z_b.loadByIndex(this.var_byte_b), 1);
+            bh.a(graphics, n2 + 11, n3 + 109, 100, 1, ce.var_z_b.loadByIndex(12 + this.var_byte_b));
         } else {
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_l[17], n2 + 60 + (this.var_boolean_d ? 0 : 28), n3 + 118, 20);
-            bh.int_a(graphics, n2 + 11, n3 + 104, ce.var_z_g.a(17), 1);
+            bh.int_a(graphics, n2 + 11, n3 + 104, ce.var_z_g.loadByIndex(17), 1);
             if (this.var_boolean_d) {
                 graphics.setColor(0xFFFFFF);
             } else {
                 graphics.setColor(0);
             }
-            bh.int_a(graphics, n2 + 64, n3 + 121, ce.var_z_g.a(14), 1);
+            bh.int_a(graphics, n2 + 64, n3 + 121, ce.var_z_g.loadByIndex(14), 1);
             if (this.var_boolean_d) {
                 graphics.setColor(0);
             } else {
                 graphics.setColor(0xFFFFFF);
             }
-            bh.int_a(graphics, n2 + 92, n3 + 121, ce.var_z_g.a(15), 1);
+            bh.int_a(graphics, n2 + 92, n3 + 121, ce.var_z_g.loadByIndex(15), 1);
         }
         if (this.var_byte_d == 0) {
             this.var_byte_d = (byte)(this.var_byte_d + 1);
@@ -140,7 +140,7 @@ extends cb {
         if (this.var_cb_b == null) {
             this.var_boolean_a = true;
         }
-        bh.a(graphics, bh.var_char_arr_d, bh.var_char_arr_e);
+        bh.a(graphics, bh.labelTextOk, bh.labelTextBack);
     }
 
     private void void_d() {

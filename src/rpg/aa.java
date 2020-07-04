@@ -13,14 +13,14 @@ public final class aa
 extends cb {
     public static int var_int_a;
     public static int b;
-    public static z var_z_a;
+    public static TableDefineTextFile var_z_a;
     private static aa var_aa_a;
 
     public static final aa aa_a() {
         if (var_aa_a == null) {
             var_aa_a = new aa();
-            var_int_a = r.i - 77;
-            b = r.j - 85;
+            var_int_a = MyGameCanvas.i - 77;
+            b = MyGameCanvas.j - 85;
         }
         return var_aa_a;
     }
@@ -31,10 +31,10 @@ extends cb {
 
     public final void void_d() {
         try {
-            var_z_a = new z("/sgui/blak");
+            var_z_a = new TableDefineTextFile("/sgui/blak");
         }
         catch (IOException iOException) {}
-        this.a((byte)8, (byte)2, new Object[]{var_z_a.a(0), var_z_a.a(1), var_z_a.a(2)});
+        this.a((byte)8, (byte)2, new Object[]{var_z_a.loadByIndex(0), var_z_a.loadByIndex(1), var_z_a.loadByIndex(2)});
     }
 
     public final void e() {
@@ -60,7 +60,7 @@ extends cb {
         super.a(by2, by3);
         if (by2 == 8 && by3 == 0) {
             this.var_cb_b = new at(this);
-            this.var_cb_b.a(new Object[]{var_z_a.a(30), var_z_a.a(31), var_z_a.a(32), var_z_a.a(33)});
+            this.var_cb_b.a(new Object[]{var_z_a.loadByIndex(30), var_z_a.loadByIndex(31), var_z_a.loadByIndex(32), var_z_a.loadByIndex(33)});
             return;
         }
         if (by2 == 8 && by3 == 1) {
@@ -76,7 +76,7 @@ extends cb {
 
     public final void a(Graphics graphics, int n2, int n3) {
         bh.a(graphics);
-        bh.a(graphics, bh.var_char_arr_d, bh.var_char_arr_e);
+        bh.a(graphics, bh.labelTextOk, bh.labelTextBack);
     }
 }
 

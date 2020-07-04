@@ -31,13 +31,13 @@ extends cb {
         }
         if (n3 == 53 || n2 == 8) {
             if (this.var_byte_b == 3) {
-                Object[] arrobject = new Object[]{ai.var_z_a.a(59), ai.var_z_a.a(60)};
+                Object[] arrobject = new Object[]{ai.var_z_a.loadByIndex(59), ai.var_z_a.loadByIndex(60)};
                 this.a((byte)1, (byte)0, arrobject);
             } else if (this.a.g == this.var_byte_b || this.a.var_byte_h == this.var_byte_b) {
-                Object[] arrobject = new Object[]{ai.var_z_a.a(61)};
+                Object[] arrobject = new Object[]{ai.var_z_a.loadByIndex(61)};
                 this.a((byte)1, (byte)0, arrobject);
             } else if (!this.a.a(this.c, this.var_byte_b, false)) {
-                Object[] arrobject = new Object[]{ai.var_z_a.a(62), ai.var_z_a.a(63)};
+                Object[] arrobject = new Object[]{ai.var_z_a.loadByIndex(62), ai.var_z_a.loadByIndex(63)};
                 this.a((byte)1, (byte)0, arrobject);
             }
             return true;
@@ -67,14 +67,14 @@ extends cb {
         graphics.fillRect(n4 + 1, n3 + 2, 1, 18);
         graphics.fillRect(n4 + 1, n3 + 1, 63, 1);
         int n5 = n3 + 5 + (this.c ? 0 : 2);
-        int n6 = r.a(graphics, ai.var_z_a.a(38), n2 + 6, n5);
-        r.c(graphics, 1, n6 + 3, n5, 4);
+        int n6 = MyGameCanvas.a(graphics, ai.var_z_a.loadByIndex(38), n2 + 6, n5);
+        MyGameCanvas.c(graphics, 1, n6 + 3, n5, 4);
         if (this.a.g != -1) {
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_c[this.a.f * 4 + this.a.g], n6 + 13, n5 - 2, 20);
         }
         int n7 = n3 + 5 + (this.c ? 2 : 0);
-        n6 = r.a(graphics, ai.var_z_a.a(38), n2 + 51 + 20, n7);
-        r.c(graphics, 3, n6 + 3, n7, 4);
+        n6 = MyGameCanvas.a(graphics, ai.var_z_a.loadByIndex(38), n2 + 51 + 20, n7);
+        MyGameCanvas.c(graphics, 3, n6 + 3, n7, 4);
         if (this.a.var_byte_h != -1) {
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_c[this.a.f * 4 + this.a.var_byte_h], n6 + 13, n7 - 2, 20);
         }
@@ -87,11 +87,11 @@ extends cb {
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_c[this.a.f * 4 + n5], n2 + 5, n3 + 48 + n5 * 20, 36);
         }
         graphics.setColor(0xFFFFFF);
-        bh.int_a(graphics, n2 + 34, n3 + 29, ce.var_z_c.a(this.a.f * 8 + this.var_byte_b * 2), 1);
-        n5 = r.a(graphics, bh.s, n2 + 34, n3 + 44);
-        r.c(graphics, p.var_byte_arr_h[this.var_byte_b], n5 + 3, n3 + 44, 4);
+        bh.int_a(graphics, n2 + 34, n3 + 29, ce.var_z_c.loadByIndex(this.a.f * 8 + this.var_byte_b * 2), 1);
+        n5 = MyGameCanvas.a(graphics, bh.labelTextLEVEL, n2 + 34, n3 + 44);
+        MyGameCanvas.c(graphics, p.var_byte_arr_h[this.var_byte_b], n5 + 3, n3 + 44, 4);
         graphics.setColor(14663551);
-        char[] arrc = ce.var_z_c.a(this.a.f * 8 + this.var_byte_b * 2 + 1);
+        char[] arrc = ce.var_z_c.loadByIndex(this.a.f * 8 + this.var_byte_b * 2 + 1);
         bh.a(graphics, n2 + 34, n3 + 53, 100, 1, arrc);
     }
 }

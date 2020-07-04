@@ -662,13 +662,13 @@ implements u {
     }
 
     public final void a(Graphics graphics) {
-        int n2 = (r.g - 80) / 2;
+        int n2 = (MyGameCanvas.g - 80) / 2;
         boolean bl2 = false;
         cb.a(graphics, n2, 2, 80, 25, false);
-        graphics.setClip(0, 0, r.g, r.h);
+        graphics.setClip(0, 0, MyGameCanvas.g, MyGameCanvas.h);
         graphics.translate(n2 + 2, 4);
         boolean bl3 = false;
-        cb.a(graphics, 0, 0, 80, 21, ce.var_z_c.a(this.f * 8 + this.m * 2), 0, 1, 6233919, 0xFFFFFF);
+        cb.a(graphics, 0, 0, 80, 21, ce.var_z_c.loadByIndex(this.f * 8 + this.m * 2), 0, 1, 6233919, 0xFFFFFF);
         graphics.setColor(0);
         graphics.fillRect(3, 18, 74, 2);
         graphics.translate(-(n2 + 2), -4);

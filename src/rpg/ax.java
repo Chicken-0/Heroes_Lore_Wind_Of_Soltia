@@ -13,14 +13,14 @@ public final class ax
 extends cb {
     public static int var_int_a;
     public static int b;
-    public static z var_z_a;
+    public static TableDefineTextFile var_z_a;
     private static ax var_ax_a;
 
     public static final ax ax_a() {
         if (var_ax_a == null) {
             var_ax_a = new ax();
-            var_int_a = r.i - 77;
-            b = r.j - 85;
+            var_int_a = MyGameCanvas.i - 77;
+            b = MyGameCanvas.j - 85;
         }
         return var_ax_a;
     }
@@ -32,12 +32,12 @@ extends cb {
     public final void void_d() {
         Object[] arrobject;
         try {
-            var_z_a = new z("/sgui/refi");
+            var_z_a = new TableDefineTextFile("/sgui/refi");
         }
         catch (IOException arrobject2) {
             arrobject2.printStackTrace();
         }
-        arrobject = new Object[]{var_z_a.a(0), var_z_a.a(1), var_z_a.a(2)};
+        arrobject = new Object[]{var_z_a.loadByIndex(0), var_z_a.loadByIndex(1), var_z_a.loadByIndex(2)};
         this.a((byte)8, (byte)2, arrobject);
     }
 
@@ -79,7 +79,7 @@ extends cb {
 
     public final void a(Graphics graphics, int n2, int n3) {
         bh.a(graphics);
-        bh.a(graphics, bh.var_char_arr_d, bh.var_char_arr_e);
+        bh.a(graphics, bh.labelTextOk, bh.labelTextBack);
     }
 }
 

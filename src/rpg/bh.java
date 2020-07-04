@@ -14,39 +14,39 @@ import javax.microedition.lcdui.Image;
 import main.GameMIDlet;
 
 public final class bh {
-    public static String var_java_lang_String_a;
-    public static String var_java_lang_String_b;
-    public static char[] var_char_arr_a;
-    public static char[] var_char_arr_b;
-    public static char[] var_char_arr_c;
-    public static char[] var_char_arr_d;
-    public static char[] var_char_arr_e;
-    public static char[] var_char_arr_f;
-    public static char[] var_char_arr_g;
-    public static char[] h;
-    public static char[] i;
-    public static char[] j;
-    public static char[] k;
-    public static char[] l;
-    public static char[][] var_char_arr_arr_a = new char[7][];
+    public static String labelTextGain;
+    public static String labelTextProgress;
+    public static char[] labelTextAreYouSure;
+    public static char[] labelTextAppUrl;
+    public static char[] labelTextExit;
+    public static char[] labelTextOk;
+    public static char[] labelTextBack;
+    public static char[] labelTextSkip;
+    public static char[] labelTextNext;
+    public static char[] labelTextSell;
+    public static char[] labelTextSelect;
+    public static char[] labelTextBuy;
+    public static char[] labelTextYes;
+    public static char[] labelTextNo;
+    public static char[][] arrayTitleMenuText = new char[7][];
     public static char[] m = "               ".toCharArray();
-    public static char[] n = null;
-    public static char[] o;
-    public static char[] p;
-    public static String var_java_lang_String_c;
-    public static char[] q;
-    public static char[] r;
-    public static char[] s;
-    public static char[] t;
-    public static String var_java_lang_String_d;
-    public static boolean var_boolean_a = false;
-    private static b var_b_g;
-    public static b var_b_a;
-    public static b var_b_b;
-    public static b var_b_c;
-    public static b var_b_d;
-    public static b var_b_e;
-    public static b var_b_f;
+    public static char[] labelTextPaused = null;
+    public static char[] labelTextHandsOnMobile;
+    public static char[] labelTextNowLoading;
+    public static String labelTextLV;
+    public static char[] labelTextPressAnyKey;
+    public static char[] labelTextVersion;
+    public static char[] labelTextLEVEL;
+    public static char[] labelTextNoSpace;
+    public static String labelTextG;
+    public static boolean isBigFont = false;
+    private static b fontSmallFontDefault;
+    public static b fontSmallBlack;
+    public static b fontSmallWhite;
+    public static b fontSmallOrange;
+    public static b fontBigWhiteBlack;
+    public static b fontBigBlackWhite;
+    public static b fontBigFontDefault;
     public static Vector var_java_util_Vector_a = new Vector();
     public static String var_java_lang_String_e = "";
 
@@ -55,13 +55,13 @@ public final class bh {
         int n3;
         int n4;
         char[] arrc3;
-        graphics.setClip(0, 0, rpg.r.g, rpg.r.h);
+        graphics.setClip(0, 0, rpg.MyGameCanvas.g, rpg.MyGameCanvas.h);
         int n5 = bh.int_a() + 5;
         if (arrc != null) {
             arrc3 = arrc;
-            n4 = bh.int_a(arrc) + 2;
+            n4 = bh.getTextWidth(arrc) + 2;
             n3 = 0;
-            n2 = rpg.r.h - n5 + 3;
+            n2 = rpg.MyGameCanvas.h - n5 + 3;
             graphics.setColor(0);
             graphics.fillRect(0, n2, n4, n5);
             graphics.setColor(0xFFFFFF);
@@ -69,9 +69,9 @@ public final class bh {
         }
         if (arrc2 != null) {
             arrc3 = arrc2;
-            n4 = bh.int_a(arrc2) + 2;
-            n3 = rpg.r.g - n4;
-            n2 = rpg.r.h - n5 + 3;
+            n4 = bh.getTextWidth(arrc2) + 2;
+            n3 = rpg.MyGameCanvas.g - n4;
+            n2 = rpg.MyGameCanvas.h - n5 + 3;
             graphics.setColor(0);
             graphics.fillRect(n3, n2, n4, n5);
             graphics.setColor(0xFFFFFF);
@@ -80,80 +80,80 @@ public final class bh {
     }
 
     public static final void a(Graphics graphics) {
-        graphics.setClip(0, 0, rpg.r.g, rpg.r.h);
+        graphics.setClip(0, 0, rpg.MyGameCanvas.g, rpg.MyGameCanvas.h);
         graphics.setColor(0);
-        graphics.fillRect(0, 0, rpg.r.g, rpg.r.h);
+        graphics.fillRect(0, 0, rpg.MyGameCanvas.g, rpg.MyGameCanvas.h);
     }
 
     public static final void void_a(String string) {
         try {
-            GameMIDlet.var_rpg_GameMIDlet_a.platformRequest(w.var_java_lang_String_a);
+            GameMIDlet.instance.platformRequest(MIDletConfig.urlApp);
         }
         catch (Exception exception) {
             Exception exception2 = exception;
             exception.printStackTrace();
         }
-        GameMIDlet.var_rpg_GameMIDlet_a.a();
+        GameMIDlet.instance.endApp();
     }
 
     public static final void a(Graphics graphics, int n2, int n3, int n4) {
-        n3 = rpg.r.g >> 1;
-        bh.a(true);
+        n3 = rpg.MyGameCanvas.g >> 1;
+        bh.setFontDefault(true);
         int n5 = n2 >> 1;
         if (n2 % 2 == 0) {
             graphics.setColor(0xFFFFFF);
         } else {
             graphics.setColor(0);
         }
-        bh.void_a(graphics, n3, n4 + 4, var_char_arr_arr_a[n5], 1);
-        bh.a(false);
+        bh.void_a(graphics, n3, n4 + 4, arrayTitleMenuText[n5], 1);
+        bh.setFontDefault(false);
     }
 
-    public static final void a(boolean bl2) {
-        var_boolean_a = bl2;
-        if (var_boolean_a) {
-            var_b_g = var_b_d;
+    public static final void setFontDefault(boolean enableBigFont) {
+        isBigFont = enableBigFont;
+        if (isBigFont) {
+            fontSmallFontDefault = fontBigWhiteBlack;
             return;
         }
-        var_b_g = var_b_a;
+        fontSmallFontDefault = fontSmallBlack;
     }
 
     public static final int a(int n2, int n3) {
         return n2 * n3 / 100;
     }
 
-    public static final void a(BabbleText cj2) {
-        var_java_lang_String_a = bh.java_lang_String_a(3902) + " "; // Gain
-        var_java_lang_String_b = bh.java_lang_String_a(3903); // Progress:
-        var_char_arr_a = bh.java_lang_String_a(3904).toCharArray();// Are You Sure?
-        var_char_arr_b = bh.java_lang_String_a(3906).toCharArray();// www.HandsOn.com/Heroes
-        var_char_arr_c = bh.java_lang_String_a(3907).toCharArray();// Exit
-        var_char_arr_d = bh.java_lang_String_a(3908).toCharArray();// Ok
-        var_char_arr_e = bh.java_lang_String_a(3909).toCharArray();// Back
-        var_char_arr_f = bh.java_lang_String_a(3910).toCharArray();// Skip
-        var_char_arr_g = bh.java_lang_String_a(3911).toCharArray();// Next
-        h = bh.java_lang_String_a(3912).toCharArray();// Sell
-        i = bh.java_lang_String_a(3913).toCharArray();// Select
-        j = bh.java_lang_String_a(3914).toCharArray();// Buy
-        k = bh.java_lang_String_a(3915).toCharArray();// Yes
-        l = bh.java_lang_String_a(3916).toCharArray();// No
-        bh.var_char_arr_arr_a[0] = bh.java_lang_String_a(3920).toCharArray();// New Game
-        bh.var_char_arr_arr_a[1] = bh.java_lang_String_a(3921).toCharArray();// Load game
-        bh.var_char_arr_arr_a[2] = bh.java_lang_String_a(3922).toCharArray();// Options
-        bh.var_char_arr_arr_a[3] = bh.java_lang_String_a(3923).toCharArray();// Help
-        bh.var_char_arr_arr_a[4] = bh.java_lang_String_a(3924).toCharArray();// About
-        bh.var_char_arr_arr_a[5] = bh.java_lang_String_a(3924).toCharArray();// About
-        bh.var_char_arr_arr_a[6] = bh.java_lang_String_a(3926).toCharArray();// Exit
-        s = bh.java_lang_String_a(3932).toCharArray();// LEVEL
-        n = bh.java_lang_String_a(3946).toCharArray();// Paused
-        t = bh.java_lang_String_a(3947).toCharArray();// no space
-        var_java_lang_String_d = bh.java_lang_String_a(3948);// G
-        var_java_lang_String_c = bh.java_lang_String_a(3949);// LV
-        q = bh.java_lang_String_a(3950).toCharArray(); // PRESS ANY KEY
+    public static final void loadCommonText() {
+        labelTextGain = bh.getTextById(3902) + " "; // Gain
+        labelTextProgress = bh.getTextById(3903); // Progress:
+        labelTextAreYouSure = bh.getTextById(3904).toCharArray();// Are You Sure?
+        labelTextAppUrl = bh.getTextById(3906).toCharArray();// www.HandsOn.com/Heroes
+        labelTextExit = bh.getTextById(3907).toCharArray();// Exit
+        labelTextOk = bh.getTextById(3908).toCharArray();// Ok
+        labelTextBack = bh.getTextById(3909).toCharArray();// Back
+        labelTextSkip = bh.getTextById(3910).toCharArray();// Skip
+        labelTextNext = bh.getTextById(3911).toCharArray();// Next
+        labelTextSell = bh.getTextById(3912).toCharArray();// Sell
+        labelTextSelect = bh.getTextById(3913).toCharArray();// Select
+        labelTextBuy = bh.getTextById(3914).toCharArray();// Buy
+        labelTextYes = bh.getTextById(3915).toCharArray();// Yes
+        labelTextNo = bh.getTextById(3916).toCharArray();// No
+        bh.arrayTitleMenuText[0] = bh.getTextById(3920).toCharArray();// New Game
+        bh.arrayTitleMenuText[1] = bh.getTextById(3921).toCharArray();// Load game
+        bh.arrayTitleMenuText[2] = bh.getTextById(3922).toCharArray();// Options
+        bh.arrayTitleMenuText[3] = bh.getTextById(3923).toCharArray();// Help
+        bh.arrayTitleMenuText[4] = bh.getTextById(3924).toCharArray();// About
+        bh.arrayTitleMenuText[5] = bh.getTextById(3924).toCharArray();// About
+        bh.arrayTitleMenuText[6] = bh.getTextById(3926).toCharArray();// Exit
+        labelTextLEVEL = bh.getTextById(3932).toCharArray();// LEVEL
+        labelTextPaused = bh.getTextById(3946).toCharArray();// Paused
+        labelTextNoSpace = bh.getTextById(3947).toCharArray();// no space
+        labelTextG = bh.getTextById(3948);// G
+        labelTextLV = bh.getTextById(3949);// LV
+        labelTextPressAnyKey = bh.getTextById(3950).toCharArray(); // PRESS ANY KEY
     }
 
-    public static final String java_lang_String_a(int n2) {
-        return BabbleText.instance.getTextById(n2).replace(';', '\n');
+    public static final String getTextById(int textId) {
+        return BabbleText.instance.getTextById(textId).replace(';', '\n');
     }
 
     public static final char[] char_arr_a(String string) {
@@ -165,28 +165,28 @@ public final class bh {
         }
     }
 
-    public static final void void_a() {
-        var_b_a = (b)b.a("fonts/small", 0, false);
-        var_b_b = (b)b.a("fonts/small", 0xFFFFFF, false);
-        var_b_c = (b)b.a("fonts/small", 0xFF8800, false);
-        var_b_d = (b)b.a("fonts/big", 0, 0xFFFFFF, true);
-        var_b_e = (b)b.a("fonts/big", 0xFFFFFF, 0, true);
-        var_b_f = var_b_d;
-        bh.var_b_a.var_boolean_b = true;
-        bh.var_b_b.var_boolean_b = true;
-        bh.var_b_c.var_boolean_b = true;
-        bh.var_b_d.var_boolean_b = true;
-        bh.var_b_e.var_boolean_b = true;
-        bh.var_b_f.var_boolean_b = true;
-        var_b_g = var_b_a;
+    public static final void loadAllFont() {
+        fontSmallBlack = (b)b.createMFont("fonts/small", 0, false);
+        fontSmallWhite = (b)b.createMFont("fonts/small", 0xFFFFFF, false);
+        fontSmallOrange = (b)b.createMFont("fonts/small", 0xFF8800, false);
+        fontBigWhiteBlack = (b)b.createMFont("fonts/big", 0, 0xFFFFFF, true);
+        fontBigBlackWhite = (b)b.createMFont("fonts/big", 0xFFFFFF, 0, true);
+        fontBigFontDefault = fontBigWhiteBlack;
+        bh.fontSmallBlack.activeControlChar = true;
+        bh.fontSmallWhite.activeControlChar = true;
+        bh.fontSmallOrange.activeControlChar = true;
+        bh.fontBigWhiteBlack.activeControlChar = true;
+        bh.fontBigBlackWhite.activeControlChar = true;
+        bh.fontBigFontDefault.activeControlChar = true;
+        fontSmallFontDefault = fontSmallBlack;
     }
 
     public static final int int_a() {
-        return bh.var_b_g.var_int_a;
+        return bh.fontSmallFontDefault.var_int_a;
     }
 
-    public static final int int_a(char[] arrc) {
-        return var_b_g.a(bh.java_lang_String_a(arrc));
+    public static final int getTextWidth(char[] charArray) {
+        return fontSmallFontDefault.getTextWidth(bh.toString(charArray));
     }
 
     private static final boolean a(char c2) {
@@ -212,11 +212,11 @@ public final class bh {
 
     public static final int a(char[] arrc, int n2, int n3, int n4) {
         String string = new String(arrc, n2, arrc.length - n2);
-        return var_b_g.a(string, n3, n4);
+        return fontSmallFontDefault.a(string, n3, n4);
     }
 
     public static final int a(char[] arrc, int n2) {
-        String string = bh.java_lang_String_a(arrc);
+        String string = bh.toString(arrc);
         Vector vector = bh.a(string, n2);
         return vector.size();
     }
@@ -226,74 +226,74 @@ public final class bh {
     }
 
     private static int b() {
-        return bh.var_b_g.var_int_b;
+        return bh.fontSmallFontDefault.var_int_b;
     }
 
     private static int a(String string, int n2, int n3, int n4) {
-        int n5 = var_b_g.a(bh.a(string, n4));
+        int n5 = fontSmallFontDefault.a(bh.a(string, n4));
         return n5 - bh.b();
     }
 
     private static Vector a(String string, int n2) {
         if (!string.equals(var_java_lang_String_e)) {
             var_java_util_Vector_a.setSize(0);
-            var_b_g.a(var_java_util_Vector_a, string, n2);
+            fontSmallFontDefault.a(var_java_util_Vector_a, string, n2);
         }
         return var_java_util_Vector_a;
     }
 
     public static final int int_a(Graphics graphics, int n2, int n3, char[] arrc, int n4) {
-        az az2 = bh.az_a(graphics.getColor());
+        MFont az2 = bh.getFontColor(graphics.getColor());
         return az2.a(graphics, arrc, n2, n3, 20);
     }
 
-    private static az az_a(int n2) {
-        if (var_boolean_a) {
-            if (n2 == 0) {
-                return var_b_d;
+    private static MFont getFontColor(int color) {
+        if (isBigFont) {
+            if (color == 0) {
+                return fontBigWhiteBlack;
             }
-            if (n2 == 0xFFFFFF) {
-                return var_b_e;
+            if (color == 0xFFFFFF) {
+                return fontBigBlackWhite;
             }
-            return var_b_f;
+            return fontBigFontDefault;
         }
-        if (n2 == 0) {
-            return var_b_a;
+        if (color == 0) {
+            return fontSmallBlack;
         }
-        if (n2 == 0xFFFFFF) {
-            return var_b_b;
+        if (color == 0xFFFFFF) {
+            return fontSmallWhite;
         }
-        return var_b_c;
+        return fontSmallOrange;
     }
 
     public static final void void_a(Graphics graphics, int n2, int n3, char[] arrc, int n4) {
-        az az2 = bh.az_a(graphics.getColor());
+        MFont az2 = bh.getFontColor(graphics.getColor());
         az2.a(graphics, arrc, n2, n3, 17);
     }
 
     public static final void a(Graphics graphics, int n2, int n3, int n4, int n5, char[] arrc, int n6, int n7, int n8) {
-        graphics.setClip(0, 0, rpg.r.g, rpg.r.h);
-        az az2 = bh.az_a(graphics.getColor());
+        graphics.setClip(0, 0, rpg.MyGameCanvas.g, rpg.MyGameCanvas.h);
+        MFont az2 = bh.getFontColor(graphics.getColor());
         if (n6 + n8 > arrc.length) {
             n8 = arrc.length - n6;
         }
         String string = new String(arrc, n6, n8);
-        az2.a(graphics, bh.a(string, n4), n2, n3, rpg.r.h, 20);
+        az2.a(graphics, bh.a(string, n4), n2, n3, rpg.MyGameCanvas.h, 20);
     }
 
     public static final void b(Graphics graphics, int n2, int n3, int n4, int n5, char[] arrc, int n6, int n7, int n8) {
-        graphics.setClip(0, 0, rpg.r.g, rpg.r.h);
-        az az2 = bh.az_a(graphics.getColor());
+        graphics.setClip(0, 0, rpg.MyGameCanvas.g, rpg.MyGameCanvas.h);
+        MFont az2 = bh.getFontColor(graphics.getColor());
         if (n6 + n8 > arrc.length) {
             n8 = arrc.length - n6;
         }
         String string = new String(arrc, n6, n8);
-        az2.a(graphics, bh.a(string, n4), n2, n3, rpg.r.h, 17);
+        az2.a(graphics, bh.a(string, n4), n2, n3, rpg.MyGameCanvas.h, 17);
     }
 
     public static final void c(Graphics graphics, int n2, int n3, int n4, int n5, char[] arrc, int n6, int n7, int n8) {
-        graphics.setClip(0, 0, rpg.r.g, rpg.r.h);
-        az az2 = bh.az_a(graphics.getColor());
+        graphics.setClip(0, 0, rpg.MyGameCanvas.g, rpg.MyGameCanvas.h);
+        MFont az2 = bh.getFontColor(graphics.getColor());
         Vector vector = bh.a(new String(arrc, n6, arrc.length - n6), n4);
         int n9 = Math.min(vector.size(), 3);
         for (int i2 = 0; i2 < n9; ++i2) {
@@ -304,24 +304,24 @@ public final class bh {
             }
             az2.a(graphics, string, n2, n3, 20);
             n8 -= string.length() + 1;
-            n3 += bh.var_b_g.var_int_a + 2;
+            n3 += bh.fontSmallFontDefault.var_int_a + 2;
         }
         graphics.setColor(0xFFFFFF);
     }
 
     public static final int a(Graphics graphics, int n2, int n3, int n4, int n5, char[] arrc, int n6) {
-        graphics.setClip(0, 0, rpg.r.g, rpg.r.h);
-        az az2 = bh.az_a(graphics.getColor());
-        String string = bh.java_lang_String_a(arrc);
-        return az2.a(graphics, bh.a(string, n4), n2, n3, rpg.r.h, n6);
+        graphics.setClip(0, 0, rpg.MyGameCanvas.g, rpg.MyGameCanvas.h);
+        MFont az2 = bh.getFontColor(graphics.getColor());
+        String string = bh.toString(arrc);
+        return az2.a(graphics, bh.a(string, n4), n2, n3, rpg.MyGameCanvas.h, n6);
     }
 
     public static final int a(Graphics graphics, int n2, int n3, int n4, int n5, char[] arrc) {
         return bh.a(graphics, n2, n3, n4, n5, arrc, 20);
     }
 
-    public static final String java_lang_String_a(char[] arrc) {
-        return new String(arrc);
+    public static final String toString(char[] charArray) {
+        return new String(charArray);
     }
 
     public static final String a(String string, String string2, String string3) {
@@ -335,7 +335,7 @@ public final class bh {
     }
 
     public static final Image javax_microedition_lcdui_Image_a(String string) throws IOException {
-        string = "/" + BabbleText.instance.var_java_lang_String_arr_a[BabbleText.instance.var_byte_a] + "/" + string;
+        string = "/" + BabbleText.instance.arrayLanguageCode[BabbleText.instance.idxLangCode] + "/" + string;
         return Image.createImage((String)string);
     }
 

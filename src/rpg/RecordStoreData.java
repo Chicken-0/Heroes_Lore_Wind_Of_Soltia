@@ -11,25 +11,26 @@ import java.io.ByteArrayOutputStream;
 import javax.microedition.rms.RecordStore;
 
 public final class RecordStoreData {
-    public RecordStore var_javax_microedition_rms_RecordStore_a = null;
+    public RecordStore recordStore = null;
     public boolean var_boolean_a = true;
-    public String var_java_lang_String_a;
-    public ByteArrayInputStream var_java_io_ByteArrayInputStream_a = null;
-    public ByteArrayOutputStream var_java_io_ByteArrayOutputStream_a = null;
+    public String recordStoreName;
+    public ByteArrayInputStream byteArrayInputStream = null;
+    public ByteArrayOutputStream byteArrayOutputStream = null;
 
-    public RecordStoreData(String string, int n2) throws Exception {
-        this.var_java_lang_String_a = string = string.replace('/', '_');
+    public RecordStoreData(String name, int disableCreateIfNecessary) throws Exception {
+        name = name.replace('/', '_');
+        this.recordStoreName = name;
         try {
-            System.out.println("XFile " + string);
-            this.var_javax_microedition_rms_RecordStore_a = RecordStore.openRecordStore((String)string, (n2 != 1 ? 1 : 0) != 0);
-            if (this.var_javax_microedition_rms_RecordStore_a == null) {
+            System.out.println("XFile " + name);
+            this.recordStore = RecordStore.openRecordStore(name, (disableCreateIfNecessary != 1));
+            if (this.recordStore == null) {
                 throw new Exception("");
             }
             return;
         }
         catch (Exception exception) {
             this.var_boolean_a = false;
-            if (n2 == 1) {
+            if (disableCreateIfNecessary == 1) {
                 throw exception;
             }
             return;
@@ -37,21 +38,21 @@ public final class RecordStoreData {
     }
 
     public final void commitDataStore() {
-        if (this.var_java_io_ByteArrayOutputStream_a != null) {
+        if (this.byteArrayOutputStream != null) {
             try {
-                if (this.var_javax_microedition_rms_RecordStore_a.getNumRecords() > 0) {
-                    this.var_javax_microedition_rms_RecordStore_a.closeRecordStore();
-                    RecordStore.deleteRecordStore((String)this.var_java_lang_String_a);
-                    this.var_javax_microedition_rms_RecordStore_a = RecordStore.openRecordStore((String)this.var_java_lang_String_a, (boolean)true);
+                if (this.recordStore.getNumRecords() > 0) {
+                    this.recordStore.closeRecordStore();
+                    RecordStore.deleteRecordStore((String)this.recordStoreName);
+                    this.recordStore = RecordStore.openRecordStore((String)this.recordStoreName, (boolean)true);
                 }
-                byte[] arrby = this.var_java_io_ByteArrayOutputStream_a.toByteArray();
+                byte[] arrby = this.byteArrayOutputStream.toByteArray();
                 System.out.println("close : " + arrby.length);
-                this.var_javax_microedition_rms_RecordStore_a.addRecord(arrby, 0, arrby.length);
+                this.recordStore.addRecord(arrby, 0, arrby.length);
             }
             catch (Exception exception) {}
         }
         try {
-            this.var_javax_microedition_rms_RecordStore_a.closeRecordStore();
+            this.recordStore.closeRecordStore();
             return;
         }
         catch (Exception exception) {
@@ -60,37 +61,37 @@ public final class RecordStoreData {
     }
 
     public final void writeRecordToStream(byte[] arrby, int offset, int size) throws Exception {
-        System.out.println("write " + this.var_java_lang_String_a);
-        if (this.var_java_io_ByteArrayOutputStream_a == null) {
-            this.var_java_io_ByteArrayOutputStream_a = new ByteArrayOutputStream();
+        System.out.println("write " + this.recordStoreName);
+        if (this.byteArrayOutputStream == null) {
+            this.byteArrayOutputStream = new ByteArrayOutputStream();
         }
-        this.var_java_io_ByteArrayOutputStream_a.write(arrby, offset, size);
+        this.byteArrayOutputStream.write(arrby, offset, size);
     }
 
     public final void b(byte[] arrby, int n2, int n3) throws Exception {
-        System.out.println("read " + this.var_java_lang_String_a);
-        if (this.var_java_io_ByteArrayInputStream_a == null) {
-            this.var_java_io_ByteArrayInputStream_a = new ByteArrayInputStream(this.var_javax_microedition_rms_RecordStore_a.getRecord(this.var_javax_microedition_rms_RecordStore_a.getNextRecordID() - 1));
+        System.out.println("read " + this.recordStoreName);
+        if (this.byteArrayInputStream == null) {
+            this.byteArrayInputStream = new ByteArrayInputStream(this.recordStore.getRecord(this.recordStore.getNextRecordID() - 1));
         }
-        this.var_java_io_ByteArrayInputStream_a.read(arrby, n2, n3);
+        this.byteArrayInputStream.read(arrby, n2, n3);
     }
 
-    public final int int_a() throws Exception {
-        System.out.println("available " + this.var_java_lang_String_a);
+    public final int getRecordSize() throws Exception {
+        System.out.println("available " + this.recordStoreName);
         if (this.var_boolean_a) {
-            int n2 = this.var_javax_microedition_rms_RecordStore_a.getNextRecordID() - 1;
-            int n3 = this.var_javax_microedition_rms_RecordStore_a.getRecordSize(n2);
-            return n3;
+            int id = this.recordStore.getNextRecordID() - 1;
+            int size = this.recordStore.getRecordSize(id);
+            return size;
         }
         System.out.println("available false");
         throw new Exception("");
     }
 
-    public static final boolean boolean_a(String string) {
-        string = string.replace('/', '_');
-        System.out.println("exists " + string);
+    public static final boolean isRecordExists(String recordName) {
+        recordName = recordName.replace('/', '_');
+        System.out.println("exists " + recordName);
         try {
-            RecordStore recordStore = RecordStore.openRecordStore((String)string, (boolean)false);
+            RecordStore recordStore = RecordStore.openRecordStore(recordName, false);
             recordStore.closeRecordStore();
         }
         catch (Exception exception) {
@@ -100,11 +101,11 @@ public final class RecordStoreData {
         return true;
     }
 
-    public static final void void_a(String string) {
-        string = string.replace('/', '_');
-        System.out.println("unlink " + string);
+    public static final void deleteRecord(String recordName) {
+        recordName = recordName.replace('/', '_');
+        System.out.println("unlink " + recordName);
         try {
-            RecordStore.deleteRecordStore((String)string);
+            RecordStore.deleteRecordStore((String)recordName);
             return;
         }
         catch (Exception exception) {

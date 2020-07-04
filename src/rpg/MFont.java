@@ -14,9 +14,9 @@ import java.util.Vector;
 import javax.microedition.lcdui.Graphics;
 import javax.microedition.lcdui.Image;
 
-public class az {
-    public boolean var_boolean_a;
-    public boolean var_boolean_b;
+public class MFont {
+    public boolean isBigFont;
+    public boolean activeControlChar;
     private int var_int_c;
     private Image var_javax_microedition_lcdui_Image_a;
     public int var_int_a;
@@ -28,23 +28,23 @@ public class az {
     private boolean var_boolean_c = true;
     private static final int[] var_int_arr_a = new int[256];
 
-    public az(String string, int n2, int n3, boolean bl2) {
+    public MFont(String fontPath, int color, int n3, boolean isBigFont) {
         
         for (int i2 = 0; i2 < 256; ++i2) {
             int n22 = i2;
             for (int i3 = 0; i3 < 8; ++i3) {
                 n22 = (n22 & 1) != 0 ? 0xEDB88320 ^ n22 >>> 1 : (n22 >>>= 1);
-                az.var_int_arr_a[i2] = n22;
+                MFont.var_int_arr_a[i2] = n22;
             }
         }
         
-        this.var_boolean_a = bl2;
-        InputStream inputStream = this.getClass().getResourceAsStream("/" + string + ".mf");
-        this.a(inputStream, n2, n3);
+        this.isBigFont = isBigFont;
+        InputStream inputStream = this.getClass().getResourceAsStream("/" + fontPath + ".mf");
+        this.a(inputStream, color, n3);
     }
 
-    public final void a(InputStream inputStream, int n2, int n3) {
-        this.var_int_c = n2;
+    public final void a(InputStream inputStream, int color, int n3) {
+        this.var_int_c = color;
         try {
             int n4;
             int n5;
@@ -85,7 +85,7 @@ public class az {
             dataInputStream.readFully(arrby);
             dataInputStream.close();
             if (n12 > 0) {
-                this.a(arrby, n9, n12, n2, n15, n3);
+                this.a(arrby, n9, n12, color, n15, n3);
             }
             this.var_javax_microedition_lcdui_Image_a = Image.createImage((byte[])arrby, (int)0, (int)n4);
             return;
@@ -95,25 +95,25 @@ public class az {
         }
     }
 
-    public final int a(String string) {
+    public final int getTextWidth(String string) {
         if (string == null) {
             return 0;
         }
         char[] arrc = string.toCharArray();
-        return this.a(arrc, 0, arrc.length);
+        return this.calTextWidth(arrc, 0, arrc.length);
     }
 
-    public final int a(char[] arrc, int n2, int n3) {
-        int n4 = 0;
-        int n5 = n2 + n3;
-        for (int i2 = n2; i2 < n5; ++i2) {
-            if (this.boolean_a(arrc[i2])) continue;
-            n4 += this.int_a(arrc[i2]) - this.f;
+    public final int calTextWidth(char[] arrc, int start, int end) {
+        int textWidth = 0;
+        int length = start + end;
+        for (int i = start; i < length; ++i) {
+            if (this.isControlChar(arrc[i])) continue;
+            textWidth += this.getCharWidth(arrc[i]) - this.f;
         }
-        return n4;
+        return textWidth;
     }
 
-    public final int int_a(char c2) {
+    public final int getCharWidth(char c2) {
         if (c2 == '\u0153') {
             return 7;
         }
@@ -211,7 +211,7 @@ public class az {
                 }
             }
             int n2 = this.var_short_arr_a[c2 - 33 + 1] - this.var_short_arr_a[c2 - 33];
-            if ((this.var_boolean_a || bl2) && c2 >= 'a' && c2 <= 'z') {
+            if ((this.isBigFont || bl2) && c2 >= 'a' && c2 <= 'z') {
                 c2 = (char)(c2 - 32);
                 n2 = this.var_short_arr_a[c2 - 33 + 1] - this.var_short_arr_a[c2 - 33];
             }
@@ -269,9 +269,9 @@ public class az {
         int n9 = graphics.getClipWidth();
         int n10 = graphics.getClipHeight();
         if ((n6 & 1) != 0) {
-            n4 -= this.a(arrc, n2, n3) / 2;
+            n4 -= this.calTextWidth(arrc, n2, n3) / 2;
         } else if ((n6 & 8) != 0) {
-            n4 -= this.a(arrc, n2, n3);
+            n4 -= this.calTextWidth(arrc, n2, n3);
         }
         if ((n6 & 0x20) != 0) {
             n5 -= this.b(arrc, n2, n3);
@@ -290,7 +290,7 @@ public class az {
                 return n11;
             }
             int n15 = arrc[i2];
-            if (this.boolean_a((char)n15)) continue;
+            if (this.isControlChar((char)n15)) continue;
             int n16 = -1;
             int n17 = 0;
             if (n15 == 32) {
@@ -300,7 +300,7 @@ public class az {
             }
             boolean bl4 = false;
             if (n15 == 339) {
-                n15 = this.var_boolean_a ? 139 : 140;
+                n15 = this.isBigFont ? 139 : 140;
             } else {
                 if (n15 <= 32 || n15 >= 256) continue;
                 bl4 = 192 <= n15 && 223 > n15;
@@ -464,11 +464,11 @@ public class az {
                             break;
                         }
                         case 231: {
-                            n15 = this.var_boolean_a || bl4 ? 128 : 137;
+                            n15 = this.isBigFont || bl4 ? 128 : 137;
                             break;
                         }
                         case 230: {
-                            n15 = this.var_boolean_a || bl4 ? 136 : 138;
+                            n15 = this.isBigFont || bl4 ? 136 : 138;
                             break;
                         }
                         case 176: {
@@ -479,7 +479,7 @@ public class az {
                         }
                     }
                 }
-                if ((this.var_boolean_a || bl4) && n15 >= 97 && n15 <= 122) {
+                if ((this.isBigFont || bl4) && n15 >= 97 && n15 <= 122) {
                     n15 = (char)(n15 - 32);
                 }
             }
@@ -544,7 +544,7 @@ public class az {
                 graphics.setClip(n7, n8, n9, n10);
                 n13 = n16 != 4 ? n13 : n13 + 1;
                 int n20 = 0;
-                if (this.var_boolean_a || bl4) {
+                if (this.isBigFont || bl4) {
                     n20 = 2;
                 }
                 if (n15 == 105 && n16 >= 0) {
@@ -561,8 +561,8 @@ public class az {
         return n11;
     }
 
-    private boolean boolean_a(char c2) {
-        if (this.var_boolean_b) {
+    private boolean isControlChar(char c2) {
+        if (this.activeControlChar) {
             switch (c2) {
                 case '$': 
                 case '@': 

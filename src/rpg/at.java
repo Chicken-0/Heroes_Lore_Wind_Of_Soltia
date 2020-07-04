@@ -32,7 +32,7 @@ extends cb {
             if (this.var_byte_b == 0) {
                 byte[] arrby = ao2.var_g_a.a(false, (byte)0);
                 if (arrby.length > 0) {
-                    this.var_cb_b = new m(this, arrby, this.var_byte_b, aa.var_z_a.a(3));
+                    this.var_cb_b = new m(this, arrby, this.var_byte_b, aa.var_z_a.loadByIndex(3));
                 } else {
                     this.a(new Object[]{BabbleText.instance.getTextById(3936).toCharArray()});
                 }
@@ -40,15 +40,15 @@ extends cb {
                 int n4 = ao2.var_g_a.int_a((byte)11, (byte)0);
                 byte by2 = ao2.var_g_a.byte_a((byte)11, (byte)0);
                 if (this.var_e_a == null) {
-                    this.a(new Object[]{aa.var_z_a.a(3)});
+                    this.a(new Object[]{aa.var_z_a.loadByIndex(3)});
                 } else if (this.var_e_a.e >= this.var_e_a.d) {
-                    this.a(new Object[]{aa.var_z_a.a(6), aa.var_z_a.a(7)});
+                    this.a(new Object[]{aa.var_z_a.loadByIndex(6), aa.var_z_a.loadByIndex(7)});
                 } else if (by2 < 0 || n4 < this.var_byte_c) {
-                    this.a(new Object[]{aa.var_z_a.a(5)});
+                    this.a(new Object[]{aa.var_z_a.loadByIndex(5)});
                 } else if (ao2.var_g_a.var_int_a < this.var_int_a) {
-                    this.a(new Object[]{aa.var_z_a.a(8)});
+                    this.a(new Object[]{aa.var_z_a.loadByIndex(8)});
                 } else {
-                    this.a((byte)2, (byte)2, new Object[]{aa.var_z_a.a(9)});
+                    this.a((byte)2, (byte)2, new Object[]{aa.var_z_a.loadByIndex(9)});
                 }
             }
             return true;
@@ -78,7 +78,7 @@ extends cb {
             x.a(ad2 instanceof e);
             e e2 = (e)ad2;
             if (!e2.b) {
-                this.a(new Object[]{aa.var_z_a.a(11), aa.var_z_a.a(12)});
+                this.a(new Object[]{aa.var_z_a.loadByIndex(11), aa.var_z_a.loadByIndex(12)});
                 return;
             }
             this.var_e_a = (e)ad2;
@@ -93,28 +93,28 @@ extends cb {
         graphics.setColor(0x3F1F3F);
         graphics.fillRect(n2, n3, 155, 170);
         cb.c(graphics, n2 + 2, n3 + 4, 151, 162);
-        r.a(graphics, aa.var_z_a.a(13), n2 + 3, n3 - 2);
+        MyGameCanvas.a(graphics, aa.var_z_a.loadByIndex(13), n2 + 3, n3 - 2);
         cb.b(graphics, n2 + 3, n3 + 7, 149, 17, 0x9F7F7F);
         graphics.setColor(0xFFFFFF);
-        bh.int_a(graphics, n2 + 6, n3 + 11, aa.var_z_a.a(14), 1);
-        cb.a(graphics, n2 + 4, n3 + 30, this.var_e_a, (byte)1, aa.var_z_a.a(15), this.var_byte_b == 0);
+        bh.int_a(graphics, n2 + 6, n3 + 11, aa.var_z_a.loadByIndex(14), 1);
+        cb.a(graphics, n2 + 4, n3 + 30, this.var_e_a, (byte)1, aa.var_z_a.loadByIndex(15), this.var_byte_b == 0);
         cb.a(graphics, n2 + 155 - 8, n3 + 65, ao2.var_g_a.var_int_a);
         cb.b(graphics, n2 + 4, n3 + 73, 147, 38, 0x9F7F7F);
         graphics.setColor(0xFFFFFF);
-        bh.int_a(graphics, n2 + 8, n3 + 80, aa.var_z_a.a(16), 1);
+        bh.int_a(graphics, n2 + 8, n3 + 80, aa.var_z_a.loadByIndex(16), 1);
         if (this.var_e_a != null) {
             cb.a(graphics, n2 + 155 - 8, n3 + 80, this.var_int_a);
-            char[] arrobject = h.a(aa.var_z_a.a(17), (" : " + this.var_byte_c + "\uac1c").toCharArray());
+            char[] arrobject = h.a(aa.var_z_a.loadByIndex(17), (" : " + this.var_byte_c + "\uac1c").toCharArray());
             bh.int_a(graphics, n2 + 8, n3 + 93, arrobject, 1);
         }
         if (this.d == 2) {
             this.d = 1;
-            int n4 = r.i - 55;
-            int n5 = r.j - 11;
+            int n4 = MyGameCanvas.i - 55;
+            int n5 = MyGameCanvas.j - 11;
             cb.a(graphics, n4, n5, 110, 22);
             cb.b(graphics, n4, n5, 110, 22);
             graphics.setColor(0xFFFFFF);
-            bh.int_a(graphics, n4 + 5, n5 + 5, aa.var_z_a.a(28), 1);
+            bh.int_a(graphics, n4 + 5, n5 + 5, aa.var_z_a.loadByIndex(28), 1);
             this.var_boolean_a = true;
         } else if (this.d == 1) {
             this.d = 0;
@@ -124,14 +124,14 @@ extends cb {
                     Thread.sleep(1000L);
                     this.var_e_a.e = (byte)(this.var_e_a.e + 1);
                     byte[] arrobject = new byte[]{ao2.byte_a(this.var_e_a)};
-                    this.var_cb_b = new m(this, (byte[])arrobject, (byte)10, aa.var_z_a.a(10));
+                    this.var_cb_b = new m(this, (byte[])arrobject, (byte)10, aa.var_z_a.loadByIndex(10));
                     this.var_int_a = this.var_e_a.e * 100;
                     this.var_byte_c = (byte)(this.var_e_a.e + 1);
                 } else {
                     n.ao_a().var_g_a.void_a((ad)this.var_e_a, (byte)1);
                     this.var_e_a = null;
                     n.o();
-                    this.a(new Object[]{aa.var_z_a.a(26), aa.var_z_a.a(29)});
+                    this.a(new Object[]{aa.var_z_a.loadByIndex(26), aa.var_z_a.loadByIndex(29)});
                 }
             }
             catch (Exception exception) {} catch (Throwable ex) {
@@ -139,7 +139,7 @@ extends cb {
             }
         }
         int n6 = bh.a(155, 80);
-        cb.a(graphics, n2 + (155 - n6 >> 1), n3 + 138, n6, aa.var_z_a.a(18), this.var_byte_b == 1);
+        cb.a(graphics, n2 + (155 - n6 >> 1), n3 + 138, n6, aa.var_z_a.loadByIndex(18), this.var_byte_b == 1);
     }
 }
 

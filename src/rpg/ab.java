@@ -30,13 +30,13 @@ extends cb {
         }
         if (n3 == 53 || n2 == 8) {
             if (this.var_boolean_c) {
-                Object[] arrobject = new Object[]{bp.var_z_a.a(7)};
+                Object[] arrobject = new Object[]{bp.var_z_a.loadByIndex(7)};
                 if (this.a.f == 0 && n.var_byte_a != 6 || this.a.f == 2 && n.var_byte_a != 7 || this.a.f == 1 && n.var_byte_a != 8 || this.a.f == 3 && n.var_byte_a != 8) {
-                    arrobject = new Object[]{bp.var_z_a.a(26), bp.var_z_a.a(7)};
+                    arrobject = new Object[]{bp.var_z_a.loadByIndex(26), bp.var_z_a.loadByIndex(7)};
                 }
                 this.a((byte)2, (byte)2, arrobject);
             } else {
-                this.a((byte)2, (byte)2, new Object[]{bp.var_z_a.a(23)});
+                this.a((byte)2, (byte)2, new Object[]{bp.var_z_a.loadByIndex(23)});
             }
             return true;
         }
@@ -58,18 +58,18 @@ extends cb {
                     ((e)ad2).b = true;
                 }
                 if (ao2.var_g_a.var_int_a < (n2 = ad2.var_int_a * this.var_byte_c)) {
-                    this.a(new Object[]{bp.var_z_a.a(8)});
+                    this.a(new Object[]{bp.var_z_a.loadByIndex(8)});
                 } else if (!ao2.var_g_a.a(ad2, (int)this.var_byte_c)) {
-                    this.a(new Object[]{bp.var_z_a.a(9), bp.var_z_a.a(10)});
+                    this.a(new Object[]{bp.var_z_a.loadByIndex(9), bp.var_z_a.loadByIndex(10)});
                 } else {
                     ao2.var_g_a.var_int_a -= n2;
-                    this.a(new Object[]{bp.var_z_a.a(11), bp.var_z_a.a(12)});
+                    this.a(new Object[]{bp.var_z_a.loadByIndex(11), bp.var_z_a.loadByIndex(12)});
                 }
                 return;
             }
             ao2.var_g_a.void_a(this.a, this.var_byte_c);
             ao2.var_g_a.var_int_a += this.a.var_int_a * this.var_byte_c / 5;
-            this.a(new Object[]{this.a.var_char_arr_a, bp.var_z_a.a(24)});
+            this.a(new Object[]{this.a.var_char_arr_a, bp.var_z_a.loadByIndex(24)});
             return;
         }
         if (by2 == 1) {
@@ -100,9 +100,9 @@ extends cb {
     public final void a(Graphics graphics, int n2, int n3) {
         bh.a(graphics);
         if (this.var_boolean_c) {
-            bh.a(graphics, bh.j, bh.var_char_arr_e);
+            bh.a(graphics, bh.labelTextBuy, bh.labelTextBack);
         } else {
-            bh.a(graphics, bh.h, bh.var_char_arr_e);
+            bh.a(graphics, bh.labelTextSell, bh.labelTextBack);
         }
         boolean bl2 = false;
         cb.a(graphics, n2 += 3, n3 += 20, 149, 29);
@@ -110,20 +110,20 @@ extends cb {
         cb.a(graphics, n2, n3 + 31, 149, 67);
         cb.b(graphics, n2, n3 + 31, 149, 67);
         graphics.setColor(14663551);
-        bh.int_a(graphics, (n2 += 15) + 8, n3 + 7, bp.var_z_a.a(13), 1);
+        bh.int_a(graphics, (n2 += 15) + 8, n3 + 7, bp.var_z_a.loadByIndex(13), 1);
         cb.a(graphics, n2 + 102, n3 + 11, n.ao_a().var_g_a.var_int_a);
         graphics.setColor(0xFFFFFF);
         if (this.var_boolean_c && ad.var_boolean_arr_b[this.a.f] || !this.var_boolean_c && this.a.h > 1) {
             if (this.var_boolean_c) {
-                bh.int_a(graphics, n2 + 6, n3 + 38, bp.var_z_a.a(14), 1);
+                bh.int_a(graphics, n2 + 6, n3 + 38, bp.var_z_a.loadByIndex(14), 1);
             } else {
-                bh.int_a(graphics, n2 + 6, n3 + 38, bp.var_z_a.a(25), 1);
+                bh.int_a(graphics, n2 + 6, n3 + 38, bp.var_z_a.loadByIndex(25), 1);
             }
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_o, n2 + 32, n3 + 65, 20);
-            r.c(graphics, this.var_byte_c, n2 + 68, n3 + 65, 8);
+            MyGameCanvas.c(graphics, this.var_byte_c, n2 + 68, n3 + 65, 8);
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_d, n2 + 77, n3 + 65, 20);
         } else {
-            bh.int_a(graphics, n2 + 6, n3 + 38, bp.var_z_a.a(15), 1);
+            bh.int_a(graphics, n2 + 6, n3 + 38, bp.var_z_a.loadByIndex(15), 1);
         }
         graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_d[this.a.f], n2 + 45, n3 + 57, 20);
         if (this.var_boolean_c) {

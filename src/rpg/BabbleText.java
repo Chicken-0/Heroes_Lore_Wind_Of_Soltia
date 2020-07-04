@@ -9,16 +9,16 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public final class BabbleText {
-    String[] arrstring = new String[]{"English", "Fran\u00c7ais", "Deutsch", "Italiano", "Espa\u00d1ol"};
     public static BabbleText instance = new BabbleText();
-    public byte[] var_byte_arr_a;
-    public byte var_byte_a = 0;
-    public DataInputStream var_java_io_DataInputStream_a;
-    public final String[] var_java_lang_String_arr_a = new String[]{"en-GB", "fr-FR", "de-DE", "it-IT", "es-ES"};
+    public byte[] arrayPointerText;
+    public byte idxLangCode = 0;
+    public DataInputStream textDataStream;
+    public final String[] arrayLanguageCode = new String[]{"en-GB", "fr-FR", "de-DE", "it-IT", "es-ES"};
 
     public BabbleText() {
-        String[] arrstring = new String[]{"Select", "S\u00e9lection.", "W\u00e4hlen", "Selez.", "Elegir"};
-        String[] arrstring2 = new String[]{"Exit", "Quitter", "Beenden", "Esci", "Salir"};
+//        String[] arrayLangText = new String[]{"English", "Fran\u00c7ais", "Deutsch", "Italiano", "Espa\u00d1ol"};
+//        String[] arrstring = new String[]{"Select", "S\u00e9lection.", "W\u00e4hlen", "Selez.", "Elegir"};
+//        String[] arrstring2 = new String[]{"Exit", "Quitter", "Beenden", "Esci", "Salir"};
     }
 
     private int a(String string) {
@@ -33,14 +33,14 @@ public final class BabbleText {
         }
         if (string != null) {
             int n3;
-            for (n3 = 0; n3 < this.var_java_lang_String_arr_a.length; ++n3) {
-                if (this.var_java_lang_String_arr_a[n3].toLowerCase().compareTo(string.toLowerCase()) != 0) continue;
+            for (n3 = 0; n3 < this.arrayLanguageCode.length; ++n3) {
+                if (this.arrayLanguageCode[n3].toLowerCase().compareTo(string.toLowerCase()) != 0) continue;
                 n2 = n3;
                 break;
             }
             if (n2 == -1) {
-                for (n3 = 0; n3 < this.var_java_lang_String_arr_a.length; ++n3) {
-                    if (this.var_java_lang_String_arr_a[n3].toLowerCase().substring(0, 2).compareTo(string.toLowerCase().substring(0, 2)) != 0) continue;
+                for (n3 = 0; n3 < this.arrayLanguageCode.length; ++n3) {
+                    if (this.arrayLanguageCode[n3].toLowerCase().substring(0, 2).compareTo(string.toLowerCase().substring(0, 2)) != 0) continue;
                     n2 = n3 | 0x8000;
                     break;
                 }
@@ -49,38 +49,37 @@ public final class BabbleText {
         return n2;
     }
 
-    public final void a(String string, String string2, int n2) {
+    public final void a(String filePath, String string2, int n2) {
         try {
             int n3;
-            if (n2 < 0 && (n2 = this.a(string2)) == -1) {
+            if (n2 < 0 && (n2 = this.a(string2)) == -1) { // n2 alway >= 0 ???
                 n2 = 0;
             }
-            this.var_byte_a = (byte)(n2 & 0x7FFF);
-            InputStream inputStream = Runtime.getRuntime().getClass().getResourceAsStream(string + "." + this.var_java_lang_String_arr_a[this.var_byte_a]);
+            this.idxLangCode = (byte)(n2 & 0x7FFF);
+            InputStream inputStream = Runtime.getRuntime().getClass().getResourceAsStream(filePath + "." + this.arrayLanguageCode[this.idxLangCode]);
             DataInputStream dataInputStream = new DataInputStream(inputStream);
-            int n4 = dataInputStream.readInt();
-            this.var_byte_arr_a = new byte[n4];
+            int n4 = dataInputStream.readInt();// size data (skip first 4 byte)
+            this.arrayPointerText = new byte[n4];
             int n5 = 0;
-            while ((n5 += (n3 = dataInputStream.read(this.var_byte_arr_a, n5, n4 - n5))) < n4) {
+            while ((n5 += (n3 = dataInputStream.read(this.arrayPointerText, n5, n4 - n5))) < n4) {
             }
         }
         catch (IOException iOException) {
             System.out.println("ERROR: Couldn't load babble file." + iOException);
         }
-        this.var_java_io_DataInputStream_a = new DataInputStream(new ByteArrayInputStream(this.var_byte_arr_a));
+        this.textDataStream = new DataInputStream(new ByteArrayInputStream(this.arrayPointerText));
     }
 
     public final String getTextById(int textId) {
         try {
-            boolean bl2 = false;
-            this.var_java_io_DataInputStream_a.reset();
-            this.var_java_io_DataInputStream_a.skip(textId << 2);
-            this.var_java_io_DataInputStream_a.skip(this.var_java_io_DataInputStream_a.readInt());
-            this.var_java_io_DataInputStream_a.skip(2L);
-            String string = this.var_java_io_DataInputStream_a.readUTF();
+            this.textDataStream.reset();
+            this.textDataStream.skip(textId << 2);
+            this.textDataStream.skip(this.textDataStream.readInt());
+            this.textDataStream.skip(2L);
+            String string = this.textDataStream.readUTF();
             return string;
         }
-        catch (Exception exception) {
+        catch (IOException exception) {
             return textId + "." + exception.toString();
         }
     }

@@ -11,7 +11,7 @@ import javax.microedition.lcdui.Graphics;
 public final class bb
 extends m {
     public bb(cb cb2, byte[] arrby) {
-        super(cb2, arrby, (byte)0, bp.var_z_a.a(18));
+        super(cb2, arrby, (byte)0, bp.var_z_a.loadByIndex(18));
     }
 
     public final boolean a(int n2, int n3) {
@@ -24,7 +24,7 @@ extends m {
         if (n3 == 53 || n2 == 8) {
             ad ad2 = n.ao_a().var_g_a.a((int)this.h[this.var_byte_b]);
             if (ad2.b()) {
-                this.a((byte)1, (byte)0, new Object[]{bp.var_z_a.a(19), bp.var_z_a.a(20)});
+                this.a((byte)1, (byte)0, new Object[]{bp.var_z_a.loadByIndex(19), bp.var_z_a.loadByIndex(20)});
             } else {
                 this.var_cb_b = new ab(this, ad2, false);
             }
@@ -47,13 +47,13 @@ extends m {
                 this.var_cb_a.var_cb_b = new bb(this.var_cb_a, arrby);
                 return;
             }
-            this.var_cb_a.a((byte)1, (byte)0, new Object[]{bp.var_z_a.a(21), bp.var_z_a.a(22)});
+            this.var_cb_a.a((byte)1, (byte)0, new Object[]{bp.var_z_a.loadByIndex(21), bp.var_z_a.loadByIndex(22)});
         }
     }
 
     public final void a(Graphics graphics, int n2, int n3) {
         bh.a(graphics);
-        bh.a(graphics, bh.i, bh.var_char_arr_e);
+        bh.a(graphics, bh.labelTextSelect, bh.labelTextBack);
         super.a(graphics, n2, n3);
         graphics.drawImage(ce.var_javax_microedition_lcdui_Image_b, bp.var_int_a + 155 - 38, bp.b + 170 - 22, 20);
     }

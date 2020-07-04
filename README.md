@@ -1,5 +1,5 @@
 # [Java ME] Heroes Lore Wind Of Soltia
-Using CRF Decompiler.
+Using CFR Decompiler.
 
 # TODO
 Fix bug...

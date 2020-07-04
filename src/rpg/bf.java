@@ -30,7 +30,7 @@ extends cb {
 
     private bf(boolean bl2, byte[] arrby) {
         super(null, (byte)6);
-        if (w.var_boolean_a) {
+        if (MIDletConfig.buySetupOnMenu) {
             this.var_byte_a = (byte)(this.var_byte_a + 1);
         }
         this.e = bl2;
@@ -52,10 +52,10 @@ extends cb {
     }
 
     public static final void a(boolean bl2, byte[] arrby) {
-        var_int_a = r.i - 77;
-        b = r.j - 85;
+        var_int_a = MyGameCanvas.i - 77;
+        b = MyGameCanvas.j - 85;
         var_bf_a = new bf(bl2, arrby);
-        if (w.var_boolean_a) {
+        if (MIDletConfig.buySetupOnMenu) {
             var_int_c = 6;
             var_int_d = 5;
         }
@@ -68,11 +68,11 @@ extends cb {
     public final boolean a(int n2, int n3) {
         Object[] arrobject;
         if (this.var_long_a > 0L) {
-            if (!w.c && w.b) {
+            if (!MIDletConfig.isDemoVersion && MIDletConfig.buySetupOnExit) {
                 if (n3 == 53) {
-                    bh.void_a(w.var_java_lang_String_a);
+                    bh.void_a(MIDletConfig.urlApp);
                 } else if (n3 == -8) {
-                    GameMIDlet.var_rpg_GameMIDlet_a.a();
+                    GameMIDlet.instance.endApp();
                 }
             }
             return true;
@@ -88,7 +88,7 @@ extends cb {
             return true;
         }
         if (n3 == -8) {
-            arrobject = new Object[]{bh.var_char_arr_a};
+            arrobject = new Object[]{bh.labelTextAreYouSure};
             this.a((byte)2, (byte)2, arrobject);
             this.var_byte_d = (byte)2;
         }
@@ -97,8 +97,8 @@ extends cb {
                 case 0: {
                     if (this.e) {
                         this.var_byte_d = 0;
-                        arrobject = new Object[]{bh.java_lang_String_a(3929).toCharArray()};
-                        this.a((byte)12, (byte)2, arrobject, bh.var_char_arr_d, bh.var_char_arr_e);
+                        arrobject = new Object[]{bh.getTextById(3929).toCharArray()};
+                        this.a((byte)12, (byte)2, arrobject, bh.labelTextOk, bh.labelTextBack);
                         break;
                     }
                     this.var_cb_b = new c(this);
@@ -122,13 +122,13 @@ extends cb {
                 }
                 default: {
                     if (this.var_byte_b == var_int_c) {
-                        arrobject = new Object[]{bh.var_char_arr_a};
+                        arrobject = new Object[]{bh.labelTextAreYouSure};
                         this.var_byte_d = (byte)2;
                         this.a((byte)2, (byte)2, arrobject);
                         break;
                     }
                     if (this.var_byte_b != var_int_d) break;
-                    arrobject = new Object[]{bh.java_lang_String_a(3918).toCharArray()};
+                    arrobject = new Object[]{bh.getTextById(3918).toCharArray()};
                     this.var_byte_d = (byte)3;
                     this.a((byte)12, (byte)2, arrobject);
                 }
@@ -146,10 +146,10 @@ extends cb {
                         break;
                     }
                     case 2: {
-                        if (w.c) {
-                            Object[] arrobject = new Object[]{bh.java_lang_String_a(3919).toCharArray()};
+                        if (MIDletConfig.isDemoVersion) {
+                            Object[] arrobject = new Object[]{bh.getTextById(3919).toCharArray()};
                             this.var_byte_d = (byte)4;
-                            this.a((byte)12, (byte)2, arrobject, bh.j, bh.var_char_arr_c);
+                            this.a((byte)12, (byte)2, arrobject, bh.labelTextBuy, bh.labelTextExit);
                             break;
                         }
                         ce.w();
@@ -158,7 +158,7 @@ extends cb {
                     }
                     case 3: 
                     case 4: {
-                        bh.void_a(w.var_java_lang_String_a);
+                        bh.void_a(MIDletConfig.urlApp);
                         break;
                     }
                     case 0: {
@@ -179,16 +179,16 @@ extends cb {
     public final void a(Graphics graphics) {
         if (this.var_long_a > 0L) {
             graphics.setColor(0xFFFFFF);
-            graphics.fillRect(0, 0, r.g, r.h);
-            graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_i[4], r.i, as.var_int_d, 3);
+            graphics.fillRect(0, 0, MyGameCanvas.g, MyGameCanvas.h);
+            graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_i[4], MyGameCanvas.i, as.var_int_d, 3);
             graphics.setColor(0);
-            bh.void_a(graphics, r.g >> 1, r.h - 23, bh.var_char_arr_b, 1);
-            bh.void_a(graphics, r.g >> 1, 10, BabbleText.instance.getTextById(3941).toCharArray(), 1);
-            if (!w.c && w.b) {
-                bh.a(graphics, w.java_lang_String_a().toCharArray(), bh.var_char_arr_c);
+            bh.void_a(graphics, MyGameCanvas.g >> 1, MyGameCanvas.h - 23, bh.labelTextAppUrl, 1);
+            bh.void_a(graphics, MyGameCanvas.g >> 1, 10, BabbleText.instance.getTextById(3941).toCharArray(), 1);
+            if (!MIDletConfig.isDemoVersion && MIDletConfig.buySetupOnExit) {
+                bh.a(graphics, MIDletConfig.java_lang_String_a().toCharArray(), bh.labelTextExit);
             }
             if (System.currentTimeMillis() > this.var_long_a) {
-                GameMIDlet.var_rpg_GameMIDlet_a.a();
+                GameMIDlet.instance.endApp();
             }
             return;
         }
@@ -201,7 +201,7 @@ extends cb {
 
     public final void a(Graphics graphics, int n2, int n3) {
         graphics.setColor(0x3F1F3F);
-        graphics.fillRect(0, 0, r.g, r.h);
+        graphics.fillRect(0, 0, MyGameCanvas.g, MyGameCanvas.h);
         bf.b(graphics, n2, (n3 += 13) - 12, 4);
         int n4 = 18;
         if (this.var_byte_c == 0) {
@@ -218,7 +218,7 @@ extends cb {
             }
             bh.a(graphics, n4, n2 + 155 >> 1, n5);
         }
-        bh.a(graphics, bh.var_char_arr_d, bh.var_char_arr_c);
+        bh.a(graphics, bh.labelTextOk, bh.labelTextExit);
     }
 
     public static final void c(Graphics graphics, int n2, int n3) {

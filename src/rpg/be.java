@@ -92,12 +92,12 @@ extends cb {
             n5 = 0xFFFFFF;
             n2 += 5;
             n3 += 15;
-            bh.a(graphics, bh.m, bh.var_char_arr_e);
+            bh.a(graphics, bh.m, bh.labelTextBack);
             n2 += 15;
             n3 += 10;
         } else {
             graphics.setColor(0x3F1F3F);
-            graphics.fillRect(0, 0, r.g, r.h);
+            graphics.fillRect(0, 0, MyGameCanvas.g, MyGameCanvas.h);
             bf.c(graphics, n2, n3);
             bh.a(graphics, 5, n2 + 155 >> 1, n3 + 5);
             bf.b(graphics, n2, n3 + 24, 3);
@@ -106,12 +106,12 @@ extends cb {
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_l[19], (n2 += 12) + 1, (n3 += 46) + 16, 20);
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_l[19], n2 + 1, n3 + 36, 20);
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_l[19], n2 + 1, n3 + 56, 20);
-            bh.a(graphics, null, bh.var_char_arr_e);
+            bh.a(graphics, null, bh.labelTextBack);
         }
         int n6 = n3;
         byte by2 = this.var_byte_b;
         graphics.setColor(by2 == 0 ? 0xFFFFFF : n4);
-        bh.int_a(graphics, n2, n6, ce.var_z_g.a(18), 1);
+        bh.int_a(graphics, n2, n6, ce.var_z_g.loadByIndex(18), 1);
         graphics.setColor(n5);
         if (this.a.var_int_a == 0) {
             bh.void_a(graphics, n2 + 70, n6, BabbleText.instance.getTextById(3945).toCharArray(), 0);
@@ -119,16 +119,16 @@ extends cb {
             bh.void_a(graphics, n2 + 70, n6, BabbleText.instance.getTextById(3944).toCharArray(), 0);
         }
         graphics.setColor(by2 == 1 ? 0xFFFFFF : n4);
-        bh.int_a(graphics, n2, n6 += 20, ce.var_z_g.a(19), 1);
+        bh.int_a(graphics, n2, n6 += 20, ce.var_z_g.loadByIndex(19), 1);
         graphics.setColor(n5);
-        char[] arrc = ce.var_z_g.a(60 + this.a.var_byte_a);
+        char[] arrc = ce.var_z_g.loadByIndex(60 + this.a.var_byte_a);
         bh.void_a(graphics, n2 + 70, n6, arrc, 0);
         graphics.setColor(by2 == 2 ? 0xFFFFFF : n4);
-        bh.int_a(graphics, n2, n6 += 20, ce.var_z_g.a(20), 1);
+        bh.int_a(graphics, n2, n6 += 20, ce.var_z_g.loadByIndex(20), 1);
         graphics.setColor(n5);
         bh.void_a(graphics, n2 + 70, n6, (this.a.var_boolean_c ? BabbleText.instance.getTextById(3942) : BabbleText.instance.getTextById(3943)).toCharArray(), 0);
         graphics.setColor(by2 == 3 ? 0xFFFFFF : n4);
-        bh.int_a(graphics, n2, n6 += 20, ce.var_z_g.a(21), 1);
+        bh.int_a(graphics, n2, n6 += 20, ce.var_z_g.loadByIndex(21), 1);
         graphics.setColor(n5);
         bh.void_a(graphics, n2 + 70, n6, (this.a.var_boolean_d ? BabbleText.instance.getTextById(3944) : BabbleText.instance.getTextById(3945)).toCharArray(), 0);
         for (byte by3 = 0; by3 < this.var_byte_a; by3 = (byte)(by3 + 1)) {

@@ -14,12 +14,12 @@ public final class bs
 implements Runnable {
     public static final int[] var_int_arr_a = new int[]{8, 10, 14, 18};
     private Display var_javax_microedition_lcdui_Display_a;
-    private r var_r_a;
+    private MyGameCanvas var_r_a;
     public static as var_as_a;
     private int var_int_c;
     private int var_int_d;
     public int var_int_a = bw.var_int_a;
-    public boolean var_boolean_a = !x.a;
+    public boolean var_boolean_a = !x.activeDemoVersion;
     public boolean var_boolean_b = false;
     public boolean var_boolean_c = false;
     public boolean var_boolean_d = true;
@@ -136,7 +136,7 @@ implements Runnable {
     public final byte[] byte_arr_a() {
         int n2 = 0;
         n2 = 0 | (this.var_int_a & 0xF) << 4;
-        if (x.a && this.var_boolean_a) {
+        if (x.activeDemoVersion && this.var_boolean_a) {
             n2 |= 8;
         }
         if (this.var_boolean_b) {
@@ -158,7 +158,7 @@ implements Runnable {
 
     public final void a(byte[] arrby) {
         this.var_int_a = (byte)((arrby[0] & 0xF0) >> 4);
-        if (x.a) {
+        if (x.activeDemoVersion) {
             this.var_boolean_a = (arrby[0] & 8) != 0;
         }
         this.var_boolean_b = (arrby[0] & 4) != 0;

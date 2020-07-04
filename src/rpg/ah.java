@@ -218,7 +218,7 @@ implements u {
                     }
                     var_char_arr_a = (char[])n.var_ae_a.var_java_lang_Object_arr_c[var_byte_arr_arr_b[var_int_a][1]];
                     var_int_c = 0;
-                    var_int_d = bh.a(var_char_arr_a, var_int_c, r.g - 28, 3);
+                    var_int_d = bh.a(var_char_arr_a, var_int_c, MyGameCanvas.g - 28, 3);
                     var_int_e = 0;
                     var_int_f = 0;
                     ah.b((byte)2);
@@ -491,8 +491,8 @@ implements u {
                 }
                 case 39: {
                     ah.w();
-                    n.var_int_a = -(var_byte_arr_arr_b[var_int_a][1] * 16) + r.i;
-                    n.var_int_b = -(var_byte_arr_arr_b[var_int_a][2] * 16) + r.j;
+                    n.var_int_a = -(var_byte_arr_arr_b[var_int_a][1] * 16) + MyGameCanvas.i;
+                    n.var_int_b = -(var_byte_arr_arr_b[var_int_a][2] * 16) + MyGameCanvas.j;
                     break;
                 }
                 default: {
@@ -519,7 +519,7 @@ implements u {
             ah.b((byte)0);
         } else if (var_boolean_b) {
             var_int_c += var_int_d;
-            var_int_d = bh.a(var_char_arr_a, var_int_c, r.g - 28, 3);
+            var_int_d = bh.a(var_char_arr_a, var_int_c, MyGameCanvas.g - 28, 3);
             var_int_e = 0;
             var_int_f = 0;
         }
@@ -787,27 +787,27 @@ implements u {
         switch (var_byte_a) {
             case 3: {
                 ah.c(graphics);
-                bh.a(graphics, bh.var_char_arr_d, null);
+                bh.a(graphics, bh.labelTextOk, null);
                 return;
             }
             case 2: {
                 ah.b(graphics);
                 bs.var_as_a.b();
-                bh.a(graphics, bh.var_char_arr_g, bh.var_char_arr_f);
+                bh.a(graphics, bh.labelTextNext, bh.labelTextSkip);
                 return;
             }
             case 4: {
-                ah.a(graphics, (r.g >> 1) - 60, (r.h >> 1) - 25, 120, 45, var_char_arr_b, var_char_arr_c);
-                bh.a(graphics, bh.var_char_arr_d, null);
+                ah.a(graphics, (MyGameCanvas.g >> 1) - 60, (MyGameCanvas.h >> 1) - 25, 120, 45, var_char_arr_b, var_char_arr_c);
+                bh.a(graphics, bh.labelTextOk, null);
             }
         }
     }
 
     private static final void b(Graphics graphics) {
-        int n2 = r.g - 8;
+        int n2 = MyGameCanvas.g - 8;
         boolean bl2 = false;
-        int n3 = r.i - n2 / 2;
-        int n4 = r.h - 41 - 10;
+        int n3 = MyGameCanvas.i - n2 / 2;
+        int n4 = MyGameCanvas.h - 41 - 10;
         graphics.translate(n3, n4);
         graphics.setColor(0x1F1F3F);
         graphics.drawRect(0, 0, n2 - 1, 40);
@@ -823,7 +823,7 @@ implements u {
         bh.c(graphics, 10, 5, n2 - 20, 1, var_char_arr_a, var_int_c, var_int_f, var_int_e);
         var_int_f = var_int_e;
         graphics.translate(-n3, -n4);
-        graphics.setClip(0, 0, r.g, r.h);
+        graphics.setClip(0, 0, MyGameCanvas.g, MyGameCanvas.h);
         byte by2 = var_byte_arr_arr_b[var_int_a][2];
         if (by2 > 0) {
             graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_h[by2 - 1], n3, n4, 36);
@@ -838,8 +838,8 @@ implements u {
         try {
             char[] arrc = g ? BabbleText.instance.getTextById(3940).toCharArray() : (char[])n.var_ae_a.var_java_lang_Object_arr_c[var_byte_arr_arr_b[var_int_a][1]];
             Object[] arrobject = new Object[]{arrc, BabbleText.instance.getTextById(3915).toCharArray(), BabbleText.instance.getTextById(3916).toCharArray()};
-            int n2 = bh.a(r.g, 70);
-            ah.a(graphics, r.i - (n2 >> 1), r.j - 30, n2, 60, arrobject, 6, 1, var_boolean_c ? 1 : 2);
+            int n2 = bh.a(MyGameCanvas.g, 70);
+            ah.a(graphics, MyGameCanvas.i - (n2 >> 1), MyGameCanvas.j - 30, n2, 60, arrobject, 6, 1, var_boolean_c ? 1 : 2);
             return;
         }
         catch (Exception exception) {

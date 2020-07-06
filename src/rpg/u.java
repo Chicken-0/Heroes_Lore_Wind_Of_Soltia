@@ -11,7 +11,7 @@ public interface u {
     public static final byte[] c = new byte[]{0, 6, 7, 5, 8};
     public static final byte[] d = new byte[]{0, 5, 8, 7, 6};
     public static final byte[] arr_byte_e = new byte[]{0, 4, 3, 1, 2};
-    public static final byte[] f = new byte[]{0, 3, 4, 2, 1};
+    public static final byte[] array_byte_f = new byte[]{0, 3, 4, 2, 1};
     public static final byte[] array_byte_g = new byte[]{0, 2, 1, 4, 3};
 
 //    public static {

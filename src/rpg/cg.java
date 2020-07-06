@@ -69,8 +69,8 @@ extends av {
             }
             case 12: {
                 for (int n2 = 6; n2 <= 9; n2 = (int)((byte)(n2 + 1))) {
-                    if (ae2.var_ck_arr_arr_a[this.var_byte_b + 4][n2] != this) continue;
-                    ae2.var_ck_arr_arr_a[this.var_byte_b + 4][n2] = null;
+                    if (ae2.arrayMapTileInfo[this.var_byte_b + 4][n2] != this) continue;
+                    ae2.arrayMapTileInfo[this.var_byte_b + 4][n2] = null;
                 }
                 if (ao2.var_byte_a < 6 || ao2.var_byte_a > 9 || ao2.var_byte_b < this.var_byte_b + 5 || ao2.var_byte_b > this.var_byte_b + 8) break;
                 ao2.a(this, (short)(this.var_j_a.var_short_b / 2), (byte)2);
@@ -87,18 +87,18 @@ extends av {
     private void a(ao ao2, ae ae2, byte by2) {
         int n2;
         for (n2 = 6; n2 <= 9; n2 = (int)((byte)(n2 + 1))) {
-            if (ae2.var_ck_arr_arr_a[by2][n2] != ao2) continue;
+            if (ae2.arrayMapTileInfo[by2][n2] != ao2) continue;
             ao2.void_a((byte)2, (byte)16);
             ao2.a(this, (byte)2);
             break;
         }
         for (n2 = 6; n2 <= 9; n2 = (int)((byte)(n2 + 1))) {
-            if (ae2.var_ck_arr_arr_a[by2 - 1][n2] != this) continue;
-            ae2.var_ck_arr_arr_a[by2 - 1][n2] = null;
+            if (ae2.arrayMapTileInfo[by2 - 1][n2] != this) continue;
+            ae2.arrayMapTileInfo[by2 - 1][n2] = null;
         }
         for (n2 = 6; n2 <= 9; n2 = (int)((byte)(n2 + 1))) {
-            x.a(ae2.var_ck_arr_arr_a[by2][n2] != ao2);
-            ae2.var_ck_arr_arr_a[by2][n2] = this;
+            x.a(ae2.arrayMapTileInfo[by2][n2] != ao2);
+            ae2.arrayMapTileInfo[by2][n2] = this;
         }
         this.g();
     }
@@ -108,7 +108,7 @@ extends av {
             ae ae2 = n.var_ae_a;
             for (int n2 = 6; n2 <= 9; n2 = (int)((byte)(n2 + 1))) {
                 for (byte by2 = this.var_byte_b; by2 <= this.var_byte_b + 2; by2 = (byte)(by2 + 1)) {
-                    ae2.var_byte_arr_arr_c[by2][n2] = 1;
+                    ae2.arrayByteEvtConv[by2][n2] = 1;
                 }
             }
             this.g = true;
@@ -120,8 +120,8 @@ extends av {
         ae ae2 = n.var_ae_a;
         for (int n2 = 6; n2 <= 9; n2 = (int)((byte)(n2 + 1))) {
             for (int i2 = this.var_byte_b + 1; i2 <= this.var_byte_b + 5; ++i2) {
-                if (ae2.var_ck_arr_arr_a[i2][n2] != this) continue;
-                ae2.var_ck_arr_arr_a[i2][n2] = null;
+                if (ae2.arrayMapTileInfo[i2][n2] != this) continue;
+                ae2.arrayMapTileInfo[i2][n2] = null;
             }
         }
         n.var_ae_a.a(this.var_ba_a);

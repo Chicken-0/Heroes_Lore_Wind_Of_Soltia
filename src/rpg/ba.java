@@ -14,8 +14,8 @@ extends av {
 
     public ba(ae ae2, byte by2, byte by3, byte by4, byte by5) {
         super(by2, (byte)(by3 + 5), by4, by5, (byte)2);
-        ae2.var_ck_arr_arr_a[by3 + 5][by2] = null;
-        ae2.var_ck_arr_arr_a[by3 + 5][by2 + 1] = null;
+        ae2.arrayMapTileInfo[by3 + 5][by2] = null;
+        ae2.arrayMapTileInfo[by3 + 5][by2 + 1] = null;
         this.var_j_a.h = (byte)2;
         this.v = 0;
     }

@@ -31,7 +31,7 @@ implements u {
     public static byte var_byte_c;
     public static byte var_byte_d;
     public static byte var_byte_e;
-    public static byte f;
+    public static byte mapId;
     private static byte var_byte_h = 0;
     private static byte var_byte_i = 0;
     private static byte[] k = new byte[128];
@@ -59,7 +59,7 @@ implements u {
         n.l();
         n.m();
         n.void_b(0);
-        f = j[(var_byte_a - 6) * 3];
+        mapId = j[(var_byte_a - 6) * 3];
         var_byte_c = j[(var_byte_a - 6) * 3 + 1];
         var_byte_d = j[(var_byte_a - 6) * 3 + 2];
     }
@@ -97,7 +97,7 @@ implements u {
         n.var_ao_a.var_g_a.void_c();
         n.var_ao_a.var_int_a = n.var_ao_a.var_int_d;
         n.var_ao_a.var_int_b = n.var_ao_a.var_int_e;
-        f = j[(var_byte_a - 6) * 3];
+        mapId = j[(var_byte_a - 6) * 3];
         var_byte_c = j[(var_byte_a - 6) * 3 + 1];
         var_byte_d = j[(var_byte_a - 6) * 3 + 2];
     }
@@ -256,7 +256,7 @@ implements u {
         n.a((byte)1, by3, by4, by5);
         bw.e();
         bw.f();
-        f = by2;
+        mapId = by2;
     }
 
     public static final void f() {
@@ -268,7 +268,7 @@ implements u {
         var_int_c = var_int_a;
         var_int_d = var_int_b;
         n.d();
-        f = (byte)-1;
+        mapId = (byte)-1;
         var_ao_a.void_a((byte)1);
         var_ao_a.j();
         bs.var_as_a.b();
@@ -676,7 +676,7 @@ implements u {
         arrby2 = new byte[(arrby[0] & 0xFF) << 8 | arrby[1] & 0xFF];
         au2.b(arrby2, 0, arrby2.length);
         arrby2 = bq.b(arrby2, var_byte_arr_i);
-        f = arrby2[0];
+        mapId = arrby2[0];
         var_byte_c = arrby2[1];
         var_byte_d = arrby2[2];
         au2.commitDataStore();

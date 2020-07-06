@@ -43,7 +43,7 @@ implements u {
         if (ao2.var_boolean_a || ao2.var_boolean_b) {
             return false;
         }
-        byte by2 = n.var_ae_a.var_byte_arr_arr_c[ao2.var_byte_b][ao2.var_byte_a];
+        byte by2 = n.var_ae_a.arrayByteEvtConv[ao2.var_byte_b][ao2.var_byte_a];
         if (by2 == 0) {
             return false;
         }
@@ -55,11 +55,11 @@ implements u {
         if (ao2.var_boolean_a || ao2.var_boolean_b) {
             return false;
         }
-        byte by2 = n.var_ae_a.var_byte_arr_arr_c[ao2.var_byte_b][ao2.var_byte_a];
+        byte by2 = n.var_ae_a.arrayByteEvtConv[ao2.var_byte_b][ao2.var_byte_a];
         if ((by2 = (byte)Math.abs(by2)) >= 1 && by2 <= 127 && ah.a((byte)1, by2)) {
             return true;
         }
-        by2 = n.var_ae_a.var_byte_arr_arr_c[ao2.var_byte_b + u.array_byte_b[((o)ao2).i]][ao2.var_byte_a + u.var_byte_arr_a[((o)ao2).i]];
+        by2 = n.var_ae_a.arrayByteEvtConv[ao2.var_byte_b + u.array_byte_b[((o)ao2).i]][ao2.var_byte_a + u.var_byte_arr_a[((o)ao2).i]];
         return (by2 = (byte)Math.abs(by2)) >= 1 && by2 <= 127 && ah.a((byte)2, by2);
     }
 
@@ -69,7 +69,7 @@ implements u {
             return false;
         }
         byte by2 = 0;
-        by2 = n.var_ae_a.var_byte_arr_arr_c[ao2.var_byte_b + u.array_byte_b[((o)ao2).i]][ao2.var_byte_a + u.var_byte_arr_a[((o)ao2).i]];
+        by2 = n.var_ae_a.arrayByteEvtConv[ao2.var_byte_b + u.array_byte_b[((o)ao2).i]][ao2.var_byte_a + u.var_byte_arr_a[((o)ao2).i]];
         if ((by2 = (byte)Math.abs(by2)) < 1 || by2 > 127) {
             return false;
         }
@@ -744,8 +744,8 @@ implements u {
         byte by4 = var_byte_arr_arr_b[var_int_a][1];
         byte by5 = var_byte_arr_arr_b[var_int_a][2];
         ++var_int_a;
-        ae2.var_byte_arr_arr_c[by3][by2] = by5;
-        ae2.var_byte_arr_arr_b[by3][by2] = by4;
+        ae2.arrayByteEvtConv[by3][by2] = by5;
+        ae2.arrayByteMapConv[by3][by2] = by4;
     }
 
     private static final void u() {
@@ -754,7 +754,7 @@ implements u {
         byte by3 = var_byte_arr_arr_b[var_int_a][2];
         ++var_int_a;
         aj aj2 = ae2.var_aj_arr_a[by2];
-        ae2.var_aj_arr_a[by2].var_javax_microedition_lcdui_Image_a = ce.var_javax_microedition_lcdui_Image_arr_f[by3];
+        ae2.var_aj_arr_a[by2].var_javax_microedition_lcdui_Image_a = ce.arrayImgMap[by3];
     }
 
     private static final void v() {

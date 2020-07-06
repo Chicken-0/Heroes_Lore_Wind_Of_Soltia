@@ -10,7 +10,7 @@ import java.io.InputStream;
 
 public final class BabbleText {
     public static BabbleText instance = new BabbleText();
-    public byte[] arrayPointerText;
+    public byte[] textData;
     public byte idxLangCode = 0;
     public DataInputStream textDataStream;
     public final String[] arrayLanguageCode = new String[]{"en-GB", "fr-FR", "de-DE", "it-IT", "es-ES"};
@@ -59,15 +59,15 @@ public final class BabbleText {
             InputStream inputStream = Runtime.getRuntime().getClass().getResourceAsStream(filePath + "." + this.arrayLanguageCode[this.idxLangCode]);
             DataInputStream dataInputStream = new DataInputStream(inputStream);
             int n4 = dataInputStream.readInt();// size data (skip first 4 byte)
-            this.arrayPointerText = new byte[n4];
+            this.textData = new byte[n4];
             int n5 = 0;
-            while ((n5 += (n3 = dataInputStream.read(this.arrayPointerText, n5, n4 - n5))) < n4) {
+            while ((n5 += (n3 = dataInputStream.read(this.textData, n5, n4 - n5))) < n4) {
             }
         }
         catch (IOException iOException) {
             System.out.println("ERROR: Couldn't load babble file." + iOException);
         }
-        this.textDataStream = new DataInputStream(new ByteArrayInputStream(this.arrayPointerText));
+        this.textDataStream = new DataInputStream(new ByteArrayInputStream(this.textData));
     }
 
     public final String getTextById(int textId) {

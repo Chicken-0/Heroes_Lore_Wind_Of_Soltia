@@ -47,7 +47,7 @@ extends y {
             u2 = n.var_ae_a;
             byte by2 = (byte)(this.var_byte_a + u.var_byte_arr_a[this.var_byte_f]);
             byte by3 = (byte)(this.var_byte_b + u.array_byte_b[this.var_byte_f]);
-            if (by2 >= 0 && by2 < ((ae)u2).var_int_a && by3 >= 0 && by3 < ((ae)u2).var_int_b) {
+            if (by2 >= 0 && by2 < ((ae)u2).mapTileHorizontalCount && by3 >= 0 && by3 < ((ae)u2).mapTileVerticalCount) {
                 if (this.var_o_a instanceof al) {
                     ((ae)u2).b(new i(by2, by3, ((y)this).h, this.var_o_a, this.var_byte_f, this.g, this.h));
                 } else if (this.var_o_a instanceof ao) {
@@ -56,7 +56,7 @@ extends y {
             }
         }
         if ((this.d || !this.e) && this.b == 1) {
-            u2 = n.var_ae_a.var_ck_arr_arr_a[this.var_byte_b][this.var_byte_a];
+            u2 = n.var_ae_a.arrayMapTileInfo[this.var_byte_b][this.var_byte_a];
             if (this.var_o_a instanceof al) {
                 if (u2 != null && u2 instanceof ao) {
                     ((ao)u2).a((al)this.var_o_a, this.var_byte_f);

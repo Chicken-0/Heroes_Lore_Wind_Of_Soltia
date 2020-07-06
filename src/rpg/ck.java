@@ -51,25 +51,25 @@ implements u {
                 if (this.var_byte_b - by3 < 0) {
                     return null;
                 }
-                return ae2.var_ck_arr_arr_a[this.var_byte_b - by3][this.var_byte_a];
+                return ae2.arrayMapTileInfo[this.var_byte_b - by3][this.var_byte_a];
             }
             case 2: {
-                if (this.var_byte_b + by3 >= ae2.var_int_b) {
+                if (this.var_byte_b + by3 >= ae2.mapTileVerticalCount) {
                     return null;
                 }
-                return ae2.var_ck_arr_arr_a[this.var_byte_b + by3][this.var_byte_a];
+                return ae2.arrayMapTileInfo[this.var_byte_b + by3][this.var_byte_a];
             }
             case 3: {
                 if (this.var_byte_a - by3 < 0) {
                     return null;
                 }
-                return ae2.var_ck_arr_arr_a[this.var_byte_b][this.var_byte_a - by3];
+                return ae2.arrayMapTileInfo[this.var_byte_b][this.var_byte_a - by3];
             }
             case 4: {
-                if (this.var_byte_a + by3 >= ae2.var_int_a) {
+                if (this.var_byte_a + by3 >= ae2.mapTileHorizontalCount) {
                     return null;
                 }
-                return ae2.var_ck_arr_arr_a[this.var_byte_b][this.var_byte_a + by3];
+                return ae2.arrayMapTileInfo[this.var_byte_b][this.var_byte_a + by3];
             }
         }
         return null;

@@ -437,12 +437,12 @@ implements u {
             ck ck3;
             int n3 = this.var_byte_a + u.var_byte_arr_a[this.var_byte_j] * 3 + u.var_byte_arr_a[u.arr_byte_e[this.var_byte_j]];
             int n4 = this.var_byte_b + u.array_byte_b[this.var_byte_j] * 3 + u.array_byte_b[u.arr_byte_e[this.var_byte_j]];
-            int n5 = this.var_byte_a + u.var_byte_arr_a[this.var_byte_j] * 3 + u.var_byte_arr_a[u.f[this.var_byte_j]];
-            int n6 = this.var_byte_b + u.array_byte_b[this.var_byte_j] * 3 + u.array_byte_b[u.f[this.var_byte_j]];
-            if (n3 > 0 && n3 < n.var_ae_a.var_int_a - 1 && n4 > 0 && n4 < n.var_ae_a.var_int_b - 1 && (ck3 = n.var_ae_a.var_ck_arr_arr_a[n4][n3]) != null && ck3 instanceof al) {
+            int n5 = this.var_byte_a + u.var_byte_arr_a[this.var_byte_j] * 3 + u.var_byte_arr_a[u.array_byte_f[this.var_byte_j]];
+            int n6 = this.var_byte_b + u.array_byte_b[this.var_byte_j] * 3 + u.array_byte_b[u.array_byte_f[this.var_byte_j]];
+            if (n3 > 0 && n3 < n.var_ae_a.mapTileHorizontalCount - 1 && n4 > 0 && n4 < n.var_ae_a.mapTileVerticalCount - 1 && (ck3 = n.var_ae_a.arrayMapTileInfo[n4][n3]) != null && ck3 instanceof al) {
                 ((al)ck3).a(n2, this.byte_a());
             }
-            if (n5 > 0 && n5 < n.var_ae_a.var_int_a - 1 && n6 > 0 && n6 < n.var_ae_a.var_int_b - 1 && (ck3 = n.var_ae_a.var_ck_arr_arr_a[n6][n5]) != null && ck3 instanceof al) {
+            if (n5 > 0 && n5 < n.var_ae_a.mapTileHorizontalCount - 1 && n6 > 0 && n6 < n.var_ae_a.mapTileVerticalCount - 1 && (ck3 = n.var_ae_a.arrayMapTileInfo[n6][n5]) != null && ck3 instanceof al) {
                 ((al)ck3).a(n2, this.byte_a());
             }
         }
@@ -475,12 +475,12 @@ implements u {
             ck ck2;
             int n3 = this.var_byte_a + this.var_byte_arr_j[0];
             int n4 = this.var_byte_b + this.var_byte_arr_j[1];
-            if (n3 >= 0 && n4 >= 0 && n3 < ae2.var_int_a && n4 < ae2.var_int_b && (ck2 = ae2.var_ck_arr_arr_a[n4][n3]) != null && ck2 instanceof al) {
+            if (n3 >= 0 && n4 >= 0 && n3 < ae2.mapTileHorizontalCount && n4 < ae2.mapTileVerticalCount && (ck2 = ae2.arrayMapTileInfo[n4][n3]) != null && ck2 instanceof al) {
                 ((al)ck2).a(n2, this.byte_a());
             }
             n3 = this.var_byte_a + this.var_byte_arr_j[2];
             n4 = this.var_byte_b + this.var_byte_arr_j[3];
-            if (n3 >= 0 && n4 >= 0 && n3 < ae2.var_int_a && n4 < ae2.var_int_b && (ck2 = ae2.var_ck_arr_arr_a[n4][n3]) != null && ck2 instanceof al) {
+            if (n3 >= 0 && n4 >= 0 && n3 < ae2.mapTileHorizontalCount && n4 < ae2.mapTileVerticalCount && (ck2 = ae2.arrayMapTileInfo[n4][n3]) != null && ck2 instanceof al) {
                 ((al)ck2).a(n2, this.byte_a());
             }
         }
@@ -704,7 +704,7 @@ implements u {
                 bw.a((byte)16, false);
                 p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 48), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 48), (byte)2);
                 p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 48 + u.var_byte_arr_a[u.arr_byte_e[this.var_byte_j]] * 16), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 48 + u.array_byte_b[u.arr_byte_e[this.var_byte_j]] * 16), (byte)2);
-                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 48 + u.var_byte_arr_a[u.f[this.var_byte_j]] * 16), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 48 + u.array_byte_b[u.f[this.var_byte_j]] * 16), (byte)2);
+                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 48 + u.var_byte_arr_a[u.array_byte_f[this.var_byte_j]] * 16), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 48 + u.array_byte_b[u.array_byte_f[this.var_byte_j]] * 16), (byte)2);
             }
         }
     }

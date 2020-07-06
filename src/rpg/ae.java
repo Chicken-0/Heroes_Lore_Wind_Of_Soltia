@@ -20,18 +20,18 @@ implements u {
     String[] arrstring = new String[]{"SET_TILE", "SET_COLI", "OBJ_XY  ", "OBJ_DEL ", "NPC_XY  ", "NPC_DEL ", "ENM_XY  ", "ENM_DEL ", "END     ", "OBJ_NUM ", "NPC_NUM ", "EMO_HERO", "EMO_NPC "};
     private static byte var_byte_d = (byte)-1;
     public byte var_byte_a;
-    public byte var_byte_b;
+    public byte imgContainerFileId;
     public boolean var_boolean_a;
     public boolean var_boolean_b;
     private byte var_byte_e;
     public boolean var_boolean_c;
-    public int var_int_a;
-    public int var_int_b;
-    public int var_int_c;
-    public int var_int_d;
-    public byte[][] var_byte_arr_arr_b;
-    public byte[][] var_byte_arr_arr_c;
-    public ck[][] var_ck_arr_arr_a;
+    public int mapTileHorizontalCount;
+    public int mapTileVerticalCount;
+    public int mapWidth;
+    public int mapHeight;
+    public byte[][] arrayByteMapConv;
+    public byte[][] arrayByteEvtConv;
+    public ck[][] arrayMapTileInfo;
     public ac[] var_ac_arr_a;
     public aj[] var_aj_arr_a;
     private aq var_aq_a;
@@ -44,7 +44,7 @@ implements u {
     public Object[] var_java_lang_Object_arr_b;
     public Object[] var_java_lang_Object_arr_c;
     private boolean var_boolean_d;
-    private byte[] i;
+    private byte[] resourceByteData;
     public char[] var_char_arr_a;
 
     public static final boolean a(int n2) {
@@ -66,8 +66,8 @@ implements u {
     }
 
     public final void a() {
-        int n2;
-        System.out.println("map : " + n.f);
+        int currentEvtPos;
+        System.out.println("map : " + n.mapId);
         ce.c();
         ce.d();
         ce.e();
@@ -76,49 +76,49 @@ implements u {
         this.var_java_lang_Object_arr_b = null;
         this.var_java_lang_Object_arr_c = null;
         this.l();
-        for (n2 = 0; n2 <= 4; n2 = (int)((byte)(n2 + 1))) {
-            bw.b((byte)n2);
+        for (currentEvtPos = 0; currentEvtPos <= 4; currentEvtPos = (int)((byte)(currentEvtPos + 1))) {
+            bw.b((byte)currentEvtPos);
         }
-        for (n2 = 24; n2 <= 31; n2 = (byte)(n2 + 1)) {
-            bw.b((byte)n2);
+        for (currentEvtPos = 24; currentEvtPos <= 31; currentEvtPos = (byte)(currentEvtPos + 1)) {
+            bw.b((byte)currentEvtPos);
         }
         MyGameCanvas.k();
-        this.i = ce.getResourceByName("/m/" + (n.f < 10 ? "0" : "") + n.f + ".map");
+        this.resourceByteData = ce.getResourceByName("/m/" + (n.mapId < 10 ? "0" : "") + n.mapId + ".map");
         MyGameCanvas.k();
-        this.var_byte_b = this.i[0];
-        this.var_int_a = this.i[1];
-        this.var_int_b = this.i[2];
-        if (this.var_byte_b != 1 && this.var_byte_b != 5 && this.var_byte_b != 9 && this.var_byte_b != 15) {
+        this.imgContainerFileId = this.resourceByteData[0];// image id in folder m\t\
+        this.mapTileHorizontalCount = this.resourceByteData[1];
+        this.mapTileVerticalCount = this.resourceByteData[2];
+        if (this.imgContainerFileId != 1 && this.imgContainerFileId != 5 && this.imgContainerFileId != 9 && this.imgContainerFileId != 15) {
             this.var_boolean_c = true;
         }
-        this.var_ck_arr_arr_a = new ck[this.var_int_b][this.var_int_a];
+        this.arrayMapTileInfo = new ck[this.mapTileVerticalCount][this.mapTileHorizontalCount];
         MyGameCanvas.k();
-        this.var_int_c = this.var_int_a * 16;
-        this.var_int_d = this.var_int_b * 16;
+        this.mapWidth = this.mapTileHorizontalCount * 16;
+        this.mapHeight = this.mapTileVerticalCount * 16;
         MyGameCanvas.k();
-        this.void_a(this.i, 3);
-        this.i = null;
-        if (var_byte_d != this.var_byte_b) {
-            ce.b();
+        this.convertMapArray(this.resourceByteData, 3);
+        this.resourceByteData = null;
+        if (var_byte_d != this.imgContainerFileId) {
+            ce.cleanArrayMapImg();
         }
         System.gc();
-        this.i = ce.getResourceByName("/m/" + n.var_byte_a + "/" + (n.f < 10 ? "0" : "") + n.f + ".evt");
+        this.resourceByteData = ce.getResourceByName("/m/" + n.var_byte_a + "/" + (n.mapId < 10 ? "0" : "") + n.mapId + ".evt");
         MyGameCanvas.k();
         MyGameCanvas.k();
-        this.void_b(this.i, 0);
-        n2 = 0 + this.var_int_a * this.var_int_b;
+        this.convertEvtArray(this.resourceByteData, 0);
+        currentEvtPos = 0 + this.mapTileHorizontalCount * this.mapTileVerticalCount;
         MyGameCanvas.k();
-        n2 += this.int_a(this.i, n2);
+        currentEvtPos += this.int_a(this.resourceByteData, currentEvtPos);// init img map ??
         MyGameCanvas.k();
-        n2 += this.int_b(this.i, n2);
+        currentEvtPos += this.int_b(this.resourceByteData, currentEvtPos);
         MyGameCanvas.k();
-        n2 += this.int_c(this.i, n2);
+        currentEvtPos += this.int_c(this.resourceByteData, currentEvtPos);
         MyGameCanvas.k();
-        n2 += this.d(this.i, n2);
+        currentEvtPos += this.d(this.resourceByteData, currentEvtPos);
         MyGameCanvas.k();
-        n2 += this.e(this.i, n2);
-        this.void_c(this.i, n2);
-        this.i = null;
+        currentEvtPos += this.e(this.resourceByteData, currentEvtPos);
+        this.void_c(this.resourceByteData, currentEvtPos);
+        this.resourceByteData = null;
         switch (this.var_byte_a) {
             case 11: {
                 ae.e();
@@ -143,13 +143,13 @@ implements u {
         if (ce.var_javax_microedition_lcdui_Image_arr_e == null) {
             MyGameCanvas.k();
             try {
-                PNGMerger br2 = new PNGMerger("/m/t/t" + (this.var_byte_b < 10 ? "0" : "") + this.var_byte_b);
+                PNGMerger br2 = new PNGMerger("/m/t/t" + (this.imgContainerFileId < 10 ? "0" : "") + this.imgContainerFileId);
                 ce.var_javax_microedition_lcdui_Image_arr_e = br2.javax_microedition_lcdui_Image_arr_a();
                 MyGameCanvas.k();
             }
             catch (IOException iOException) {}
         }
-        var_byte_d = this.var_byte_b;
+        var_byte_d = this.imgContainerFileId;
         this.var_char_arr_a = n.var_byte_a == 8 && this.var_byte_a == 65 ? ce.var_z_d.loadByIndex(85) : ce.var_z_d.loadByIndex(this.var_byte_a);
         this.var_byte_e = this.var_char_arr_a != null && this.var_char_arr_a.length > 0 ? (byte)10 : (byte)0;
         if (this.var_byte_a == 79 || this.var_byte_a == 80 || this.var_byte_a == 81) {
@@ -157,52 +157,52 @@ implements u {
             bw.a((byte)8);
             bw.b(4);
         } else {
-            if (this.var_byte_b == 1 || this.var_byte_b == 5 || this.var_byte_b == 9 || this.var_byte_b == 15) {
+            if (this.imgContainerFileId == 1 || this.imgContainerFileId == 5 || this.imgContainerFileId == 9 || this.imgContainerFileId == 15) {
                 bw.a((byte)8);
             }
-            if (byte_arr_h[this.var_byte_b] != -1) {
-                bw.a(byte_arr_h[this.var_byte_b]);
-                bw.b((int)byte_arr_h[this.var_byte_b]);
+            if (byte_arr_h[this.imgContainerFileId] != -1) {
+                bw.a(byte_arr_h[this.imgContainerFileId]);
+                bw.b((int)byte_arr_h[this.imgContainerFileId]);
             }
         }
         n.ao_a().void_c();
     }
 
-    private final void void_a(byte[] arrby, int n2) {
-        this.var_byte_arr_arr_b = new byte[this.var_int_b][this.var_int_a];
+    private final void convertMapArray(byte[] arrby, int pos) {// pos copy = 3
+        this.arrayByteMapConv = new byte[this.mapTileVerticalCount][this.mapTileHorizontalCount];
         MyGameCanvas.k();
-        for (int i2 = 0; i2 < this.var_int_b; ++i2) {
-            System.arraycopy(arrby, n2, this.var_byte_arr_arr_b[i2], 0, this.var_int_a);
-            n2 += this.var_int_a;
+        for (int i = 0; i < this.mapTileVerticalCount; ++i) {
+            System.arraycopy(arrby, pos, this.arrayByteMapConv[i], 0, this.mapTileHorizontalCount);
+            pos += this.mapTileHorizontalCount;
         }
         MyGameCanvas.k();
     }
 
-    private final void void_b(byte[] arrby, int n2) {
-        this.var_byte_arr_arr_c = new byte[this.var_int_b][this.var_int_a];
+    private final void convertEvtArray(byte[] arrby, int pos) {
+        this.arrayByteEvtConv = new byte[this.mapTileVerticalCount][this.mapTileHorizontalCount];
         MyGameCanvas.k();
-        for (int i2 = 0; i2 < this.var_int_b; ++i2) {
-            System.arraycopy(arrby, n2, this.var_byte_arr_arr_c[i2], 0, this.var_int_a);
-            n2 += this.var_int_a;
+        for (int i = 0; i < this.mapTileVerticalCount; ++i) {
+            System.arraycopy(arrby, pos, this.arrayByteEvtConv[i], 0, this.mapTileHorizontalCount);
+            pos += this.mapTileHorizontalCount;
         }
         MyGameCanvas.k();
     }
 
-    private final int int_a(byte[] arrby, int n2) {
+    private final int int_a(byte[] evtArray, int evtPos) {// n2 = w x h map
         int n3;
-        int n4;
-        Image[] arrimage = null;
-        if ((n4 = arrby[n2++] & 0xFF) > 0) {
-            PNGMerger object;
+        int imgCount;
+        Image[] arrayImgMap = null;
+        if ((imgCount = evtArray[evtPos++] & 0xFF) > 0) {// n4 < 0x80 => has img => size data next ??
+            PNGMerger pngMerger;
             try {
-                object = new PNGMerger("/m/t/o" + (this.var_byte_b < 10 ? "0" : "") + this.var_byte_b);
-                object.enableLoad = true;
+                pngMerger = new PNGMerger("/m/t/o" + (this.imgContainerFileId < 10 ? "0" : "") + this.imgContainerFileId);
+                pngMerger.enableLoad = true;
                 MyGameCanvas.k();
-                arrimage = ce.var_javax_microedition_lcdui_Image_arr_f = new Image[((PNGMerger)object).int_a()];
+                arrayImgMap = ce.arrayImgMap = new Image[pngMerger.getImgCount()];
                 MyGameCanvas.k();
-                for (n3 = 0; n3 < n4; ++n3) {
-                    int s2 = arrby[n2++] & 0xFF;
-                    arrimage[s2] = ((PNGMerger)object).javax_microedition_lcdui_Image_a(s2);
+                for (n3 = 0; n3 < imgCount; ++n3) {
+                    int imgId = evtArray[evtPos++] & 0xFF;
+                    arrayImgMap[imgId] = pngMerger.getImgById(imgId);
                     MyGameCanvas.k();
                 }
             }
@@ -212,21 +212,21 @@ implements u {
             }
         }
         MyGameCanvas.k();
-        int n5 = arrby[n2++] & 0xFF;
+        int n5 = evtArray[evtPos++] & 0xFF;
         this.var_aj_arr_a = new aj[n5];
         for (n3 = 0; n3 < n5; ++n3) {
-            short s2 = (short)((arrby[n2++] & 0xFF) * 16);
-            short s3 = (short)((arrby[n2++] & 0xFF) * 16);
-            byte by2 = arrby[n2++];
-            byte by3 = arrby[n2++];
-            int n6 = arrby[n2++] & 0xFF;
-            aj aj2 = new aj(s2, s3, by2, by3, arrimage[n6]);
+            short s2 = (short)((evtArray[evtPos++] & 0xFF) * 16);// block tile w
+            short s3 = (short)((evtArray[evtPos++] & 0xFF) * 16);// block tile h
+            byte by2 = evtArray[evtPos++];
+            byte by3 = evtArray[evtPos++];
+            int n6 = evtArray[evtPos++] & 0xFF;// img id
+            aj aj2 = new aj(s2, s3, by2, by3, arrayImgMap[n6]);
             this.var_aq_a.b(aj2);
             this.var_aq_a.c(aj2);
             this.var_aj_arr_a[n3] = aj2;
         }
         MyGameCanvas.k();
-        return 1 + n4 + 1 + n5 * 5;
+        return 1 + imgCount + 1 + n5 * 5;
     }
 
     private final int int_b(byte[] arrby, int n2) {
@@ -250,13 +250,13 @@ implements u {
             object = new PNGMerger("/npc/all");
             object.enableLoad = true;
             MyGameCanvas.k();
-            arrimage = ce.var_javax_microedition_lcdui_Image_arr_g = new Image[((PNGMerger)object).int_a()];
+            arrimage = ce.var_javax_microedition_lcdui_Image_arr_g = new Image[((PNGMerger)object).getImgCount()];
             n4 = 0;
             for (n3 = 0; n3 < n6; n3 = (int)((byte)(n3 + 1))) {
                 by2 = arrby[n2++];
                 ++n5;
                 if (by2 >= 18) {
-                    arrimage[by2 - 18] = ((PNGMerger)object).javax_microedition_lcdui_Image_a(by2 - 18);
+                    arrimage[by2 - 18] = ((PNGMerger)object).getImgById(by2 - 18);
                     MyGameCanvas.k();
                     continue;
                 }
@@ -367,10 +367,10 @@ implements u {
         try {
             PNGMerger br2 = new PNGMerger("/m/face");
             br2.enableLoad = true;
-            ce.var_javax_microedition_lcdui_Image_arr_h = new Image[br2.int_a()];
+            ce.var_javax_microedition_lcdui_Image_arr_h = new Image[br2.getImgCount()];
             for (int i2 = 0; i2 < n3; ++i2) {
                 byte by2 = arrby[n2++];
-                ce.var_javax_microedition_lcdui_Image_arr_h[by2] = br2.javax_microedition_lcdui_Image_a(by2);
+                ce.var_javax_microedition_lcdui_Image_arr_h[by2] = br2.getImgById(by2);
             }
         }
         catch (IOException iOException) {
@@ -468,11 +468,11 @@ implements u {
     private final void b(byte by2, byte by3, byte by4, byte by5) {
         switch (by2) {
             case 100: {
-                this.var_byte_arr_arr_b[by4][by3] = by5;
+                this.arrayByteMapConv[by4][by3] = by5;
                 return;
             }
             case 101: {
-                this.var_byte_arr_arr_c[by4][by3] = by5;
+                this.arrayByteEvtConv[by4][by3] = by5;
                 return;
             }
             case 102: {
@@ -510,7 +510,7 @@ implements u {
             }
             case 109: {
                 aj aj4 = this.var_aj_arr_a[by3 & 0xFF];
-                this.var_aj_arr_a[by3 & 0xFF].var_javax_microedition_lcdui_Image_a = ce.var_javax_microedition_lcdui_Image_arr_f[by4 & 0xFF];
+                this.var_aj_arr_a[by3 & 0xFF].var_javax_microedition_lcdui_Image_a = ce.arrayImgMap[by4 & 0xFF];
                 return;
             }
             case 110: {
@@ -546,22 +546,22 @@ implements u {
         if (n2 > 0) {
             n2 = 0;
         }
-        if (n2 < n4 - this.var_int_c) {
-            n2 = n4 - this.var_int_c;
+        if (n2 < n4 - this.mapWidth) {
+            n2 = n4 - this.mapWidth;
         }
         if (n3 > 0) {
             n3 = 0;
         }
-        if (n3 < n5 - this.var_int_d) {
-            n3 = n5 - this.var_int_d;
+        if (n3 < n5 - this.mapHeight) {
+            n3 = n5 - this.mapHeight;
         }
         if (n2 > 0) {
-            n2 = (n4 - this.var_int_c) / 2;
+            n2 = (n4 - this.mapWidth) / 2;
             graphics.setColor(0);
             graphics.fillRect(0, 0, n4, n5);
         }
         if (n3 > 0) {
-            n3 = (n5 - this.var_int_d) / 2;
+            n3 = (n5 - this.mapHeight) / 2;
             graphics.setColor(0);
             graphics.fillRect(0, 0, n4, n5);
         }
@@ -609,22 +609,22 @@ implements u {
         if (n7 < 0) {
             n7 = 0;
         }
-        if (n8 >= this.var_int_a) {
-            n8 = this.var_int_a - 1;
+        if (n8 >= this.mapTileHorizontalCount) {
+            n8 = this.mapTileHorizontalCount - 1;
         }
-        if (n9 >= this.var_int_b) {
-            n9 = this.var_int_b - 1;
+        if (n9 >= this.mapTileVerticalCount) {
+            n9 = this.mapTileVerticalCount - 1;
         }
         Image[] arrimage = ce.var_javax_microedition_lcdui_Image_arr_e;
         for (int i2 = n7; i2 <= n9; ++i2) {
             int n10 = n3 + i2 * 16;
             int n11 = n2 + n6 * 16;
             for (int i3 = n6; i3 <= n8; ++i3) {
-                Image image = arrimage[this.var_byte_arr_arr_b[i2][i3]];
+                Image image = arrimage[this.arrayByteMapConv[i2][i3]];
                 if (image == null) {
-                    if (this.var_byte_arr_arr_c[i2][i3] < 0) {
+                    if (this.arrayByteEvtConv[i2][i3] < 0) {
                         graphics.setColor(0);
-                    } else if (this.var_byte_arr_arr_c[i2][i3] >= 0) {
+                    } else if (this.arrayByteEvtConv[i2][i3] >= 0) {
                         graphics.setColor(0xFFFFFF);
                     }
                     graphics.fillRect(n11, n10, 16, 16);
@@ -653,21 +653,21 @@ implements u {
     }
 
     public final void b(Graphics graphics) {
-        int n2 = this.var_int_a * var_byte_c;
-        int n3 = this.var_int_b * var_byte_c;
+        int n2 = this.mapTileHorizontalCount * var_byte_c;
+        int n3 = this.mapTileVerticalCount * var_byte_c;
         int n4 = MyGameCanvas.i - n2 / 2;
         int n5 = MyGameCanvas.j - n3 / 2;
         graphics.setColor(0);
         graphics.drawRect(n4 - 1, n5 - 1, n2 + 1, n3 + 1);
-        for (int n6 = 0; n6 < this.var_int_b; n6 = (int)((byte)(n6 + 1))) {
-            for (int n7 = 0; n7 < this.var_int_a; n7 = (int)((byte)(n7 + 1))) {
-                if (this.var_byte_arr_arr_c[n6][n7] < 0) {
-                    graphics.setColor(var_int_arr_a[this.var_byte_b * 2 + 1]);
-                } else if (this.var_byte_arr_arr_c[n6][n7] >= 0) {
-                    graphics.setColor(var_int_arr_a[this.var_byte_b * 2]);
+        for (int n6 = 0; n6 < this.mapTileVerticalCount; n6 = (int)((byte)(n6 + 1))) {
+            for (int n7 = 0; n7 < this.mapTileHorizontalCount; n7 = (int)((byte)(n7 + 1))) {
+                if (this.arrayByteEvtConv[n6][n7] < 0) {
+                    graphics.setColor(var_int_arr_a[this.imgContainerFileId * 2 + 1]);
+                } else if (this.arrayByteEvtConv[n6][n7] >= 0) {
+                    graphics.setColor(var_int_arr_a[this.imgContainerFileId * 2]);
                 }
-                if (this.var_byte_arr_arr_c[n6][n7] != 0 && this.var_byte_arr_arr_c[n6][n7] != -128 && ah.boolean_a(this.var_byte_arr_arr_c[n6][n7] < 0 ? (byte)(-this.var_byte_arr_arr_c[n6][n7]) : this.var_byte_arr_arr_c[n6][n7])) {
-                    if (this.var_byte_b == 6) {
+                if (this.arrayByteEvtConv[n6][n7] != 0 && this.arrayByteEvtConv[n6][n7] != -128 && ah.boolean_a(this.arrayByteEvtConv[n6][n7] < 0 ? (byte)(-this.arrayByteEvtConv[n6][n7]) : this.arrayByteEvtConv[n6][n7])) {
+                    if (this.imgContainerFileId == 6) {
                         graphics.setColor(0xFF3FBF);
                     } else {
                         graphics.setColor(0x3F7FFF);
@@ -724,7 +724,7 @@ implements u {
                     by6 = by7;
                     break;
                 }
-                if (j.var_j_arr_a[by6].var_byte_a == 2 && by4 >= this.var_int_a - 1) {
+                if (j.var_j_arr_a[by6].var_byte_a == 2 && by4 >= this.mapTileHorizontalCount - 1) {
                     System.out.println("INVALID location for enemy - delayed creation.");
                     this.var_java_util_Vector_b.removeElementAt(i2);
                     this.a(arrn2[1], 0, by4 - 1, (int)by5);
@@ -828,10 +828,10 @@ implements u {
     }
 
     public final boolean a(int n2, int n3) {
-        if (n2 < 0 || n3 < 0 || n2 >= this.var_int_a || n3 >= this.var_int_b) {
+        if (n2 < 0 || n3 < 0 || n2 >= this.mapTileHorizontalCount || n3 >= this.mapTileVerticalCount) {
             return false;
         }
-        return this.var_byte_arr_arr_c[n3][n2] >= 0 && this.var_ck_arr_arr_a[n3][n2] == null;
+        return this.arrayByteEvtConv[n3][n2] >= 0 && this.arrayMapTileInfo[n3][n2] == null;
     }
 
     public final boolean a(int n2, int n3, byte n4) {
@@ -844,10 +844,10 @@ implements u {
 
     public final boolean a(o o2, int n2, int n3) {
         for (int i2 = 0; i2 < o2.e; ++i2) {
-            if (n2 + i2 < 0 || n3 < 0 || n2 + i2 >= this.var_int_a || n3 >= this.var_int_b) {
+            if (n2 + i2 < 0 || n3 < 0 || n2 + i2 >= this.mapTileHorizontalCount || n3 >= this.mapTileVerticalCount) {
                 return false;
             }
-            if (this.a(n2 + i2, n3) || this.var_ck_arr_arr_a[n3][n2 + i2] == o2) continue;
+            if (this.a(n2 + i2, n3) || this.arrayMapTileInfo[n3][n2 + i2] == o2) continue;
             return false;
         }
         return true;

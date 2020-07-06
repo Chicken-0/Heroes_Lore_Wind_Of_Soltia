@@ -10,17 +10,17 @@ import java.io.IOException;
 import javax.microedition.lcdui.Image;
 
 public final class PNGMerger {
-    private static final String[] var_java_lang_String_arr_a = new String[]{"IHDR", "cHRM", "gAMA", "iCCP", "sBIT", "sRGB", "tEXt", "zTXt", "iTXt", "pHYs", "sPLT", "tIME", "PLTE", "tRNS", "hIST", "bKGD", "IDAT", "IEND"};
+    private static final String[] pngChunkHeaderTag = new String[]{"IHDR", "cHRM", "gAMA", "iCCP", "sBIT", "sRGB", "tEXt", "zTXt", "iTXt", "pHYs", "sPLT", "tIME", "PLTE", "tRNS", "hIST", "bKGD", "IDAT", "IEND"};
     private static final byte[] var_byte_arr_a = new byte[]{-119, 80, 78, 71, 13, 10, 26, 10};
     private static final byte[] var_byte_arr_b = new byte[]{0, 0, 0, 0, 73, 69, 78, 68, -82, 66, 96, -126};
-    private String var_java_lang_String_a;
+    private String imgFilePath;
     private boolean var_boolean_b;
     private boolean var_boolean_c;
     private int var_int_a;
     private int[] var_int_arr_a;
-    private byte[] var_byte_arr_c;
-    private Object[] var_java_lang_Object_arr_a;
-    private char[] var_char_arr_a;
+    private byte[] headerFileData;
+    private Object[] arrayMpdData;
+    private short[] var_short_arr_a;
     private int var_int_b;
     private int var_int_c;
     public boolean enableLoad = true; //fix to true, default = false
@@ -30,30 +30,30 @@ public final class PNGMerger {
     public PNGMerger() {
     }
 
-    public PNGMerger(String string) throws IOException {
-        this.a(string);
+    public PNGMerger(String filePath) throws IOException {
+        this.fromImgPath(filePath);
     }
 
-    public final void a(String string) throws IOException {
+    public final void fromImgPath(String filePath) throws IOException {
         this.var_int_arr_a = null;
-        this.var_byte_arr_c = null;
-        this.var_java_lang_Object_arr_a = null;
-        this.var_char_arr_a = null;
-        this.var_java_lang_String_a = string;
-        this.b();
+        this.headerFileData = null;
+        this.arrayMpdData = null;
+        this.var_short_arr_a = null;
+        this.imgFilePath = filePath;
+        this.loadMphFile();
     }
 
-    private void b() throws IOException {
-        this.var_byte_arr_c = ce.getResourceByName(this.var_java_lang_String_a + ".mph");
+    private void loadMphFile() throws IOException {
+        this.headerFileData = ce.getResourceByName(this.imgFilePath + ".mph");
         this.c();
     }
 
-    public final void void_a(int n2) throws IOException {
-        this.var_java_lang_Object_arr_a[n2] = ce.getResourceByName(this.var_java_lang_String_a + "_" + n2 + ".mpd");
+    public final void loadMpdByPartNo(int partNo) throws IOException {
+        this.arrayMpdData[partNo] = ce.getResourceByName(this.imgFilePath + "_" + partNo + ".mpd");
     }
 
     public final void void_b(int n2) {
-        this.var_java_lang_Object_arr_a[n2] = null;
+        this.arrayMpdData[n2] = null;
     }
 
     public final void void_a() {
@@ -65,45 +65,45 @@ public final class PNGMerger {
 
     private void c() {
         int n2;
-        int n3 = PNGMerger.int_a(this.var_byte_arr_c, 0);
+        int n3 = PNGMerger.readInt(this.headerFileData, 0);
         this.var_boolean_b = (n3 >> 27) % 2 == 1;
         this.var_boolean_c = (n3 >> 26) % 2 == 1;
-        int n4 = this.int_a();
+        int imgCount = this.getImgCount();
         this.var_int_a = 0;
-        for (n2 = 0; n2 < n4; ++n2) {
-            if (this.var_int_a >= PNGMerger.char_a(this.var_byte_arr_c, 8 + 8 * n2) + '\u0001') continue;
-            this.var_int_a = PNGMerger.char_a(this.var_byte_arr_c, 8 + 8 * n2) + '\u0001';
+        for (n2 = 0; n2 < imgCount; ++n2) {
+            if (this.var_int_a >= PNGMerger.readShort(this.headerFileData, 8 + 8 * n2) + '\u0001') continue;
+            this.var_int_a = PNGMerger.readShort(this.headerFileData, 8 + 8 * n2) + '\u0001';
         }
         this.var_int_arr_a = new int[this.var_int_a];
-        for (n2 = 0; n2 < n4; ++n2) {
-            char c2 = PNGMerger.char_a(this.var_byte_arr_c, 8 + 8 * n2);
+        for (n2 = 0; n2 < imgCount; ++n2) {
+            short c2 = PNGMerger.readShort(this.headerFileData, 8 + 8 * n2);
             this.var_int_arr_a[c2] = this.var_int_arr_a[c2] + 1;
         }
-        this.var_java_lang_Object_arr_a = new Object[this.var_int_a];
-        this.var_char_arr_a = new char[n4];
-        for (n2 = 0; n2 < n4; ++n2) {
-            this.var_char_arr_a[n2] = PNGMerger.char_a(this.var_byte_arr_c, 8 + 8 * n2 + 6);
+        this.arrayMpdData = new Object[this.var_int_a];
+        this.var_short_arr_a = new short[imgCount];
+        for (n2 = 0; n2 < imgCount; ++n2) {
+            this.var_short_arr_a[n2] = PNGMerger.readShort(this.headerFileData, 8 + 8 * n2 + 6);
         }
-        this.var_int_b = PNGMerger.b(this.var_byte_arr_c, 12);
-        this.var_int_c = PNGMerger.b(this.var_byte_arr_c, 13);
+        this.var_int_b = PNGMerger.b(this.headerFileData, 12);
+        this.var_int_c = PNGMerger.b(this.headerFileData, 13);
     }
 
-    public final int int_a() {
-        return PNGMerger.int_a(this.var_byte_arr_c, 4);
+    public final int getImgCount() {
+        return PNGMerger.readInt(this.headerFileData, 4);
     }
 
-    public final Image javax_microedition_lcdui_Image_a(int n2) {
-        byte[] arrby = this.byte_arr_b(n2);
+    public final Image getImgById(int imgId) {
+        byte[] arrby = this.byte_arr_b(imgId);
         Image image = Image.createImage((byte[])arrby, (int)0, (int)arrby.length);
         return image;
     }
 
     public final Image[] javax_microedition_lcdui_Image_arr_a() {
         this.enableLoad = true;
-        int n2 = this.int_a();
+        int n2 = this.getImgCount();
         Image[] arrimage = new Image[n2];
         for (int i2 = 0; i2 < n2; ++i2) {
-            arrimage[i2] = this.javax_microedition_lcdui_Image_a(i2);
+            arrimage[i2] = this.getImgById(i2);
             MyGameCanvas.k();
         }
         this.void_a();
@@ -112,7 +112,7 @@ public final class PNGMerger {
 
     public final Image javax_microedition_lcdui_Image_b(int n2) {
         if (!this.var_boolean_c) {
-            return this.javax_microedition_lcdui_Image_a(n2);
+            return this.getImgById(n2);
         }
         byte[] arrby = this.byte_arr_b(n2);
         PNGMerger.a(arrby);
@@ -129,39 +129,41 @@ public final class PNGMerger {
         if (!this.var_boolean_b) {
             return;
         }
-        PNGMerger.b(this.var_byte_arr_c, this.var_int_b, 4, n2, n3);
+        PNGMerger.b(this.headerFileData, this.var_int_b, 4, n2, n3);
     }
 
-    private byte[] byte_arr_a(int n2) {
-        int n3 = this.int_a(n2);
-        if (this.enableLoad && this.var_java_lang_Object_arr_a[n3] == null) {
+    private byte[] getMpdDataByImgId(int imgId) {
+        int mpdPartNo = this.getPartNo(imgId);
+        if (this.enableLoad && this.arrayMpdData[mpdPartNo] == null) {
             this.void_a();
             try {
-                this.void_a(n3);
+                this.loadMpdByPartNo(mpdPartNo);// start get mpd data
             }
             catch (IOException iOException) {
-                System.out.println("[PNGMerger ERROR] cannot load mpd '" + this.var_java_lang_String_a + "' no." + n3);
+                System.out.println("[PNGMerger ERROR] cannot load mpd '" + this.imgFilePath + "' no." + mpdPartNo);
                 iOException.printStackTrace();
             }
         }
-        return (byte[])this.var_java_lang_Object_arr_a[n3];
+        return (byte[])this.arrayMpdData[mpdPartNo];
     }
 
-    private int int_a(int n2) {
-        return PNGMerger.char_a(this.var_byte_arr_c, 8 + 8 * n2);
+    private int getPartNo(int imgId) {
+        return PNGMerger.readShort(this.headerFileData, 8 + 8 * imgId);
     }
 
     private byte[] byte_arr_b(int n2) {
+        // encrypt ??
         if (this.var_boolean_b) {
             return this.d(n2);
         }
+        // not encrypt ??
         return this.byte_arr_c(n2);
     }
 
     private byte[] byte_arr_c(int n2) {
-        byte[] arrby = this.byte_arr_a(n2);
+        byte[] arrby = this.getMpdDataByImgId(n2);
         int n3 = 0;
-        int n4 = PNGMerger.int_a(this.var_byte_arr_c, 8 + n2 * 8 + 2);
+        int n4 = PNGMerger.readInt(this.headerFileData, 8 + n2 * 8 + 2);
         int n5 = this.int_b(n2);
         int n6 = 0;
         n6 = 8 + n5;
@@ -173,13 +175,13 @@ public final class PNGMerger {
         return arrby2;
     }
 
-    private byte[] d(int n2) {
-        byte[] arrby = this.byte_arr_a(n2);
+    private byte[] d(int imgId) {// n2 = img id
+        byte[] arrby = this.getMpdDataByImgId(imgId);// load mpd
         int n3 = 0;
-        int n4 = PNGMerger.int_a(this.var_byte_arr_c, 8 + n2 * 8 + 2);
-        int n5 = this.int_b(n2);
+        int n4 = PNGMerger.readInt(this.headerFileData, 8 + imgId * 8 + 2);// get img size data: mph data, pos
+        int n5 = this.int_b(imgId);
         int n6 = 0;
-        n6 = 8 + (this.var_byte_arr_c.length - (PNGMerger.int_a(this.var_byte_arr_c, 4) * 8 + 8));
+        n6 = 8 + (this.headerFileData.length - (PNGMerger.readInt(this.headerFileData, 4) * 8 + 8));
         n6 += n5;
         byte[] arrby2 = new byte[n6 += 12];
         System.arraycopy(var_byte_arr_a, 0, arrby2, 0, 8);
@@ -187,11 +189,11 @@ public final class PNGMerger {
         if (n7 == -1) {
             return null;
         }
-        int n8 = PNGMerger.int_a(arrby, n7) + 12;
+        int n8 = PNGMerger.readInt(arrby, n7) + 12;
         System.arraycopy(arrby, n7, arrby2, 8, n8);
         n3 = 8 + n8;
         block3: for (int i2 = 0; i2 < 18; ++i2) {
-            if (!this.boolean_a(n2, i2)) continue;
+            if (!this.boolean_a(imgId, i2)) continue;
             switch (i2) {
                 case 1: 
                 case 2: 
@@ -202,81 +204,81 @@ public final class PNGMerger {
                 case 10: {
                     n7 = PNGMerger.a(arrby, i2, n4, n5);
                     if (n7 == -1) continue block3;
-                    n8 = PNGMerger.int_a(arrby, n7) + 12;
+                    n8 = PNGMerger.readInt(arrby, n7) + 12;
                     System.arraycopy(arrby, n7, arrby2, n3, n8);
                     n3 += n8;
                 }
             }
         }
         n7 = this.var_int_b;
-        n8 = PNGMerger.int_a(this.var_byte_arr_c, n7) + 12;
-        System.arraycopy(this.var_byte_arr_c, n7, arrby2, n3, n8);
+        n8 = PNGMerger.readInt(this.headerFileData, n7) + 12;
+        System.arraycopy(this.headerFileData, n7, arrby2, n3, n8);
         n3 += n8;
         n7 = this.var_int_c;
         if (n7 != -1) {
-            n8 = PNGMerger.int_a(this.var_byte_arr_c, n7) + 12;
-            System.arraycopy(this.var_byte_arr_c, n7, arrby2, n3, n8);
+            n8 = PNGMerger.readInt(this.headerFileData, n7) + 12;
+            System.arraycopy(this.headerFileData, n7, arrby2, n3, n8);
             n3 += n8;
         }
-        if (this.boolean_a(n2, 14) && (n7 = PNGMerger.a(arrby, 14, n4, n5)) != -1) {
-            n8 = PNGMerger.int_a(arrby, n7) + 12;
+        if (this.boolean_a(imgId, 14) && (n7 = PNGMerger.a(arrby, 14, n4, n5)) != -1) {
+            n8 = PNGMerger.readInt(arrby, n7) + 12;
             System.arraycopy(arrby, n7, arrby2, n3, n8);
             n3 += n8;
         }
-        if (this.boolean_a(n2, 15) && (n7 = PNGMerger.a(arrby, 15, n4, n5)) != -1) {
-            n8 = PNGMerger.int_a(arrby, n7) + 12;
+        if (this.boolean_a(imgId, 15) && (n7 = PNGMerger.a(arrby, 15, n4, n5)) != -1) {
+            n8 = PNGMerger.readInt(arrby, n7) + 12;
             System.arraycopy(arrby, n7, arrby2, n3, n8);
             n3 += n8;
         }
         n7 = PNGMerger.a(arrby, 16, n4, n5);
-        n8 = PNGMerger.int_a(arrby, n7) + 12;
+        n8 = PNGMerger.readInt(arrby, n7) + 12;
         System.arraycopy(arrby, n7, arrby2, n3, n8);
         System.arraycopy(var_byte_arr_b, 0, arrby2, n3 += n8, 12);
         return arrby2;
     }
 
     private int int_b(int n2) {
-        byte[] arrby = this.byte_arr_a(n2);
+        byte[] arrby = this.getMpdDataByImgId(n2);
         int n3 = 0;
         int n4 = 0;
-        n3 = PNGMerger.int_a(this.var_byte_arr_c, 8 + n2 * 8 + 2);
-        n4 = n2 == this.int_a() - 1 || PNGMerger.char_a(this.var_byte_arr_c, 8 + n2 * 8) != PNGMerger.char_a(this.var_byte_arr_c, 8 + (n2 + 1) * 8) ? arrby.length : PNGMerger.int_a(this.var_byte_arr_c, 8 + (n2 + 1) * 8 + 2);
+        n3 = PNGMerger.readInt(this.headerFileData, 8 + n2 * 8 + 2);
+        n4 = n2 == this.getImgCount() - 1 || PNGMerger.readShort(this.headerFileData, 8 + n2 * 8) != PNGMerger.readShort(this.headerFileData, 8 + (n2 + 1) * 8) ? arrby.length : PNGMerger.readInt(this.headerFileData, 8 + (n2 + 1) * 8 + 2);
         return n4 - n3;
     }
 
     private static int a(byte[] arrby, int n2, int n3, int n4) {
-        String string = var_java_lang_String_arr_a[n2];
+        String string = pngChunkHeaderTag[n2];
         int n5 = n4 == -1 ? arrby.length : n3 + n4;
-        for (int i2 = n3; i2 < n5; i2 += PNGMerger.int_a(arrby, i2) + 12) {
+        for (int i2 = n3; i2 < n5; i2 += PNGMerger.readInt(arrby, i2) + 12) {
             if (arrby[i2 + 4] != string.charAt(0) || arrby[i2 + 5] != string.charAt(1) || arrby[i2 + 6] != string.charAt(2) || arrby[i2 + 7] != string.charAt(3)) continue;
             return i2;
         }
         return -1;
     }
 
-    private static int int_a(byte[] arrby, int n2) {
-        if (arrby.length - 4 < n2) {
+    private static int readInt(byte[] arrby, int pos) {
+        if (arrby.length - 4 < pos) {
             throw new ArrayIndexOutOfBoundsException();
         }
         int n3 = 0;
-        n3 = 0 + (arrby[n2] & 0xFF) * 0x1000000;
-        n3 += (arrby[n2 + 1] & 0xFF) * 65536;
-        n3 += (arrby[n2 + 2] & 0xFF) * 256;
-        return n3 += arrby[n2 + 3] & 0xFF;
+        n3 = 0 + (arrby[pos] & 0xFF) * 0x1000000;
+        n3 += (arrby[pos + 1] & 0xFF) * 65536;
+        n3 += (arrby[pos + 2] & 0xFF) * 256;
+        return n3 += arrby[pos + 3] & 0xFF;
     }
 
-    private static char char_a(byte[] arrby, int n2) {
-        if (arrby.length - 2 < n2) {
+    private static short readShort(byte[] arrby, int pos) {
+        if (arrby.length - 2 < pos) {
             throw new ArrayIndexOutOfBoundsException();
         }
-        char c2 = '\u0000';
-        c2 = (char)(0 + (arrby[n2] & 0xFF) * 256);
-        c2 = (char)(c2 + (arrby[n2 + 1] & 0xFF));
+        short c2 = 0;
+        c2 = (short)(0 + (arrby[pos] & 0xFF) * 256);
+        c2 = (short)(c2 + (arrby[pos + 1] & 0xFF));
         return c2;
     }
 
     private boolean boolean_a(int n2, int n3) {
-        char c2 = this.var_char_arr_a[n2];
+        short c2 = this.var_short_arr_a[n2];
         if (n3 < 1 || n3 > 16) {
             return false;
         }
@@ -284,10 +286,10 @@ public final class PNGMerger {
     }
 
     private static int b(byte[] arrby, int n2) {
-        String string = var_java_lang_String_arr_a[n2];
+        String tagName = pngChunkHeaderTag[n2];
         int n3 = arrby.length;
         for (int i2 = 0; i2 < n3 - 3; ++i2) {
-            if (arrby[i2] != string.charAt(0) || arrby[i2 + 1] != string.charAt(1) || arrby[i2 + 2] != string.charAt(2) || arrby[i2 + 3] != string.charAt(3)) continue;
+            if (arrby[i2] != tagName.charAt(0) || arrby[i2 + 1] != tagName.charAt(1) || arrby[i2 + 2] != tagName.charAt(2) || arrby[i2 + 3] != tagName.charAt(3)) continue;
             return i2 - 4;
         }
         return -1;
@@ -296,8 +298,8 @@ public final class PNGMerger {
     public static final void a(byte[] arrby) {
         int n2 = PNGMerger.a(arrby, 16, 8, arrby.length);
         int n3 = PNGMerger.a(arrby, 0, 8, arrby.length);
-        int n4 = PNGMerger.int_a(arrby, n3 + 8);
-        int n5 = PNGMerger.int_a(arrby, n3 + 12);
+        int n4 = PNGMerger.readInt(arrby, n3 + 8);
+        int n5 = PNGMerger.readInt(arrby, n3 + 12);
         byte by2 = arrby[n3 + 16];
         PNGMerger.a(arrby, n2, n4, n5, by2);
     }
@@ -356,7 +358,7 @@ public final class PNGMerger {
 
     private static void b(byte[] arrby, int n2, int n3, int n4, int n5) {
         int n6;
-        int n7 = PNGMerger.int_a(arrby, n2);
+        int n7 = PNGMerger.readInt(arrby, n2);
         int n8 = n2 + 8;
         int n9 = n8 + n7;
         block0 : switch (n3) {

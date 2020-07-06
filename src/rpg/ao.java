@@ -179,8 +179,8 @@ implements u {
 
     public final void i() {
         if (this.al_a() == null) {
-            if (this.al_a(u.f[((o)this).i]) != null) {
-                this.b(u.f[((o)this).i]);
+            if (this.al_a(u.array_byte_f[((o)this).i]) != null) {
+                this.b(u.array_byte_f[((o)this).i]);
                 return;
             }
             if (this.al_a(u.arr_byte_e[((o)this).i]) != null) {
@@ -297,14 +297,14 @@ implements u {
             }
             n2 = ((o)this).i;
             byte by3 = u.arr_byte_e[n2];
-            byte by4 = u.f[n2];
+            byte by4 = u.array_byte_f[n2];
             byte by5 = u.c[n2];
             byte by6 = u.d[n2];
-            if (ae2.var_byte_arr_arr_c[this.var_byte_b + u.array_byte_b[n2]][this.var_byte_a + u.var_byte_arr_a[n2]] == -128 && ae2.a(this.var_byte_a + u.var_byte_arr_a[by4], this.var_byte_b + u.array_byte_b[by4]) && ae2.a(this.var_byte_a + u.var_byte_arr_a[by6], this.var_byte_b + u.array_byte_b[by6])) {
+            if (ae2.arrayByteEvtConv[this.var_byte_b + u.array_byte_b[n2]][this.var_byte_a + u.var_byte_arr_a[n2]] == -128 && ae2.a(this.var_byte_a + u.var_byte_arr_a[by4], this.var_byte_b + u.array_byte_b[by4]) && ae2.a(this.var_byte_a + u.var_byte_arr_a[by6], this.var_byte_b + u.array_byte_b[by6])) {
                 this.byte_x = ((o)this).i;
                 this.void_a((byte)2);
                 this.b(by4);
-            } else if (ae2.var_byte_arr_arr_c[this.var_byte_b + u.array_byte_b[n2]][this.var_byte_a + u.var_byte_arr_a[n2]] == -128 && ae2.a(this.var_byte_a + u.var_byte_arr_a[by3], this.var_byte_b + u.array_byte_b[by3]) && ae2.a(this.var_byte_a + u.var_byte_arr_a[by5], this.var_byte_b + u.array_byte_b[by5])) {
+            } else if (ae2.arrayByteEvtConv[this.var_byte_b + u.array_byte_b[n2]][this.var_byte_a + u.var_byte_arr_a[n2]] == -128 && ae2.a(this.var_byte_a + u.var_byte_arr_a[by3], this.var_byte_b + u.array_byte_b[by3]) && ae2.a(this.var_byte_a + u.var_byte_arr_a[by5], this.var_byte_b + u.array_byte_b[by5])) {
                 this.byte_x = ((o)this).i;
                 this.void_a((byte)2);
                 this.b(by3);
@@ -488,7 +488,7 @@ implements u {
                 al2.a(this.var_int_i, false, ((o)this).i, this.j, by3, this.A, this);
                 bl2 = true;
             }
-            if (ae2.var_byte_arr_arr_c[this.var_byte_b + (by6 = u.array_byte_b[((o)this).i])][this.var_byte_a + (by5 = u.var_byte_arr_a[((o)this).i])] == 0 && ae2.a(this.var_byte_a + by5 * 2, this.var_byte_b + by6 * 2)) {
+            if (ae2.arrayByteEvtConv[this.var_byte_b + (by6 = u.array_byte_b[((o)this).i])][this.var_byte_a + (by5 = u.var_byte_arr_a[((o)this).i])] == 0 && ae2.a(this.var_byte_a + by5 * 2, this.var_byte_b + by6 * 2)) {
                 super.void_a(32);
                 this.var_boolean_i = false;
                 this.y = (byte)2;

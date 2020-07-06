@@ -20,7 +20,7 @@ public final class MIDletConfig {
 
     public static final void init(MIDlet mIDlet) {
         mIDletInstance = mIDlet;
-        x.activeDemoVersion = isDemoVersion = MIDletConfig.getVersionType();
+        x.activeDemoVersion = isDemoVersion = MIDletConfig.activeDemo();
     }
 
     public static final void setVersionText() {
@@ -47,11 +47,10 @@ public final class MIDletConfig {
         }
     }
 
-    // Check demo key in manifest
-    private static boolean getVersionType() {
+    private static boolean activeDemo() {
         String string = mIDletInstance.getAppProperty("HO-Demo");
-//        boolean bl2 = true;
-        boolean bl2 = false;
+        boolean bl2 = true;
+//        boolean bl2 = false;
 
         if (string != null && string.trim().equals("BEJ8K52N7A")) {
             bl2 = false;

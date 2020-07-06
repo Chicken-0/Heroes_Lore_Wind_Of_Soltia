@@ -85,7 +85,7 @@ implements Runnable {
                 catch (Exception exception) {}
                 this.j();
                 this.k();
-                n.b(n.f, (byte)1, n.var_byte_c, n.var_byte_d);
+                n.b(n.mapId, (byte)1, n.var_byte_c, n.var_byte_d);
                 MyGameCanvas.b = true;
                 return;
             }
@@ -125,7 +125,7 @@ implements Runnable {
         }
         MyGameCanvas.k();
         n.var_ae_a = null;
-        ae2 = new ae(n.f);
+        ae2 = new ae(n.mapId);
         n.a(ae2);
         MyGameCanvas.k();
         ae2.a();
@@ -329,18 +329,18 @@ implements Runnable {
             block1 : switch (by3) {
                 case 0: {
                     br2 = new PNGMerger(var_java_lang_String_arr_b[by6] + c[by4]);
-                    arrimage = new Image[br2.int_a()];
+                    arrimage = new Image[br2.getImgCount()];
                     ce.var_javax_microedition_lcdui_Image_arr_arr_a[0] = arrimage;
-                    arrimage2 = new Image[br2.int_a()];
+                    arrimage2 = new Image[br2.getImgCount()];
                     ce.var_javax_microedition_lcdui_Image_arr_arr_a[6] = arrimage2;
                     n2 = 0;
                     break;
                 }
                 case 1: {
                     br2 = new PNGMerger(var_java_lang_String_arr_b[by6] + "b");
-                    arrimage = new Image[br2.int_a()];
+                    arrimage = new Image[br2.getImgCount()];
                     ce.var_javax_microedition_lcdui_Image_arr_arr_a[1] = arrimage;
-                    arrimage2 = new Image[br2.int_a()];
+                    arrimage2 = new Image[br2.getImgCount()];
                     ce.var_javax_microedition_lcdui_Image_arr_arr_a[7] = arrimage2;
                     n2 = 1;
                     break;
@@ -348,9 +348,9 @@ implements Runnable {
                 case 3: 
                 case 4: {
                     br2 = new PNGMerger(var_java_lang_String_arr_b[by6] + d[by4]);
-                    arrimage = new Image[br2.int_a()];
+                    arrimage = new Image[br2.getImgCount()];
                     ce.var_javax_microedition_lcdui_Image_arr_arr_a[2] = arrimage;
-                    arrimage2 = new Image[br2.int_a()];
+                    arrimage2 = new Image[br2.getImgCount()];
                     ce.var_javax_microedition_lcdui_Image_arr_arr_a[8] = arrimage2;
                     n2 = 2;
                     break;
@@ -358,12 +358,12 @@ implements Runnable {
                 case 5: {
                     br2 = new PNGMerger(var_java_lang_String_arr_b[by6] + e[by4]);
                     if (bl2) {
-                        arrimage = new Image[br2.int_a()];
-                        arrimage2 = new Image[br2.int_a()];
+                        arrimage = new Image[br2.getImgCount()];
+                        arrimage2 = new Image[br2.getImgCount()];
                     } else {
-                        arrimage = new Image[br2.int_a()];
+                        arrimage = new Image[br2.getImgCount()];
                         ce.var_javax_microedition_lcdui_Image_arr_arr_a[3] = arrimage;
-                        arrimage2 = new Image[br2.int_a()];
+                        arrimage2 = new Image[br2.getImgCount()];
                         ce.var_javax_microedition_lcdui_Image_arr_arr_a[9] = arrimage2;
                     }
                     n2 = 3;
@@ -385,9 +385,9 @@ implements Runnable {
                 }
                 case 2: {
                     br2 = new PNGMerger(var_java_lang_String_arr_b[by6] + "e");
-                    arrimage = new Image[br2.int_a()];
+                    arrimage = new Image[br2.getImgCount()];
                     ce.var_javax_microedition_lcdui_Image_arr_arr_a[4] = arrimage;
-                    arrimage2 = new Image[br2.int_a()];
+                    arrimage2 = new Image[br2.getImgCount()];
                     ce.var_javax_microedition_lcdui_Image_arr_arr_a[10] = arrimage2;
                     n2 = 4;
                     switch (by5) {
@@ -409,9 +409,9 @@ implements Runnable {
                 }
                 case 6: {
                     br2 = new PNGMerger(var_java_lang_String_arr_b[by6] + f[by4]);
-                    arrimage = new Image[br2.int_a()];
+                    arrimage = new Image[br2.getImgCount()];
                     ce.var_javax_microedition_lcdui_Image_arr_arr_a[5] = arrimage;
-                    arrimage2 = new Image[br2.int_a()];
+                    arrimage2 = new Image[br2.getImgCount()];
                     ce.var_javax_microedition_lcdui_Image_arr_arr_a[11] = arrimage2;
                     n2 = 5;
                 }
@@ -447,7 +447,7 @@ implements Runnable {
                         by7 = by11;
                         if (by11 == -1) continue;
                         if (!bl3 && arrimage[by7] == null) {
-                            arrimage[by7] = br2.javax_microedition_lcdui_Image_a(by7);
+                            arrimage[by7] = br2.getImgById(by7);
                             continue;
                         }
                         if (!bl3 || arrimage2[by7] != null) continue;
@@ -486,7 +486,7 @@ implements Runnable {
                             arrby2[n11] = by12;
                             by7 = by12;
                             if (!bl3 && arrimage[by7] == null) {
-                                arrimage[by7] = br2.javax_microedition_lcdui_Image_a(by7);
+                                arrimage[by7] = br2.getImgById(by7);
                                 continue;
                             }
                             if (!bl3 || arrimage2[by7] != null) continue;

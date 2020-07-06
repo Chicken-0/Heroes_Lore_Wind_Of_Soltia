@@ -68,26 +68,26 @@ implements u {
     public final void f() {
         ae ae2 = n.var_ae_a;
         for (byte by2 = 0; by2 < this.e; by2 = (byte)(by2 + 1)) {
-            ae2.var_ck_arr_arr_a[this.var_byte_b][this.var_byte_a + by2] = null;
+            ae2.arrayMapTileInfo[this.var_byte_b][this.var_byte_a + by2] = null;
             if (this.var_boolean_b) {
-                ae2.var_ck_arr_arr_a[this.var_byte_b + 1][this.var_byte_a + by2] = null;
+                ae2.arrayMapTileInfo[this.var_byte_b + 1][this.var_byte_a + by2] = null;
                 continue;
             }
             if (!this.var_boolean_a) continue;
-            ae2.var_ck_arr_arr_a[this.var_byte_b][this.var_byte_a + 1 + by2] = null;
+            ae2.arrayMapTileInfo[this.var_byte_b][this.var_byte_a + 1 + by2] = null;
         }
     }
 
     public final void g() {
         ae ae2 = n.var_ae_a;
         for (byte by2 = 0; by2 < this.e; by2 = (byte)(by2 + 1)) {
-            ae2.var_ck_arr_arr_a[this.var_byte_b][this.var_byte_a + by2] = this;
+            ae2.arrayMapTileInfo[this.var_byte_b][this.var_byte_a + by2] = this;
             if (this.var_boolean_b) {
-                ae2.var_ck_arr_arr_a[this.var_byte_b + 1][this.var_byte_a + by2] = this;
+                ae2.arrayMapTileInfo[this.var_byte_b + 1][this.var_byte_a + by2] = this;
                 continue;
             }
             if (!this.var_boolean_a) continue;
-            ae2.var_ck_arr_arr_a[this.var_byte_b][this.var_byte_a + 1 + by2] = this;
+            ae2.arrayMapTileInfo[this.var_byte_b][this.var_byte_a + 1 + by2] = this;
         }
     }
 
@@ -118,7 +118,7 @@ implements u {
                 break;
             }
             case 2: {
-                x.a(this.var_short_d < n.var_ae_a.var_int_d - 16);
+                x.a(this.var_short_d < n.var_ae_a.mapHeight - 16);
                 this.var_short_d = (short)(this.var_short_d + n2);
                 if (this.var_boolean_b) {
                     this.var_boolean_b = false;
@@ -140,7 +140,7 @@ implements u {
                 break;
             }
             case 4: {
-                x.a(this.var_short_c < n.var_ae_a.var_int_c - 16);
+                x.a(this.var_short_c < n.var_ae_a.mapWidth - 16);
                 this.var_short_c = (short)(this.var_short_c + n2);
                 if (this.var_boolean_a) {
                     this.var_boolean_a = false;
@@ -220,8 +220,8 @@ implements u {
                 by3 = this.a(ck2, by9, by4 == 0);
                 if (by3 != 0) {
                     by5 = 1;
-                } else if (by4 != 0 && ae2.a(this, u.f[by9])) {
-                    by3 = u.f[by9];
+                } else if (by4 != 0 && ae2.a(this, u.array_byte_f[by9])) {
+                    by3 = u.array_byte_f[by9];
                     by5 = 1;
                 } else if (by4 == 0 && ae2.a(this, u.arr_byte_e[by9])) {
                     by3 = u.arr_byte_e[by9];
@@ -244,12 +244,12 @@ implements u {
             arrby2 = u.arr_byte_e;
             arrby = u.c;
         } else {
-            arrby2 = u.f;
+            arrby2 = u.array_byte_f;
             arrby = u.d;
         }
         byte by3 = by2 == 1 || by2 == 2 ? this.e : (byte)1;
         for (int i2 = -by3 + 1; i2 < by3; ++i2) {
-            if (!ae2.a(this, this.var_byte_a + i2 + u.var_byte_arr_a[arrby2[by2]], this.var_byte_b + u.array_byte_b[arrby2[by2]]) || !ae2.a(this, this.var_byte_a + i2 + u.var_byte_arr_a[arrby[by2]], this.var_byte_b + u.array_byte_b[arrby[by2]]) && ck2 != ae2.var_ck_arr_arr_a[this.var_byte_b + u.array_byte_b[arrby[by2]]][this.var_byte_a + i2 + u.var_byte_arr_a[arrby[by2]]]) continue;
+            if (!ae2.a(this, this.var_byte_a + i2 + u.var_byte_arr_a[arrby2[by2]], this.var_byte_b + u.array_byte_b[arrby2[by2]]) || !ae2.a(this, this.var_byte_a + i2 + u.var_byte_arr_a[arrby[by2]], this.var_byte_b + u.array_byte_b[arrby[by2]]) && ck2 != ae2.arrayMapTileInfo[this.var_byte_b + u.array_byte_b[arrby[by2]]][this.var_byte_a + i2 + u.var_byte_arr_a[arrby[by2]]]) continue;
             return arrby2[by2];
         }
         return 0;
@@ -278,10 +278,10 @@ implements u {
             int n2 = this.var_byte_a + u.var_byte_arr_a[by2] + i2;
             int n3 = this.var_byte_b + u.array_byte_b[by2];
             x.a(n2 >= 0);
-            x.a(n2 < ae2.var_int_a);
+            x.a(n2 < ae2.mapTileHorizontalCount);
             x.a(n3 >= 0);
-            x.a(n3 < ae2.var_int_b);
-            ck3 = ae2.var_ck_arr_arr_a[n3][n2];
+            x.a(n3 < ae2.mapTileVerticalCount);
+            ck3 = ae2.arrayMapTileInfo[n3][n2];
             if (ck3 == this) continue;
             if (ck2 == null && ck3 != null) {
                 return ck3;

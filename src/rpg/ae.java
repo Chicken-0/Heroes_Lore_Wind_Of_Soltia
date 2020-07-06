@@ -144,7 +144,7 @@ implements u {
             MyGameCanvas.k();
             try {
                 PNGMerger br2 = new PNGMerger("/m/t/t" + (this.imgContainerFileId < 10 ? "0" : "") + this.imgContainerFileId);
-                ce.var_javax_microedition_lcdui_Image_arr_e = br2.javax_microedition_lcdui_Image_arr_a();
+                ce.var_javax_microedition_lcdui_Image_arr_e = br2.getAllImage();
                 MyGameCanvas.k();
             }
             catch (IOException iOException) {}
@@ -202,7 +202,7 @@ implements u {
                 MyGameCanvas.k();
                 for (n3 = 0; n3 < imgCount; ++n3) {
                     int imgId = evtArray[evtPos++] & 0xFF;
-                    arrayImgMap[imgId] = pngMerger.getImgById(imgId);
+                    arrayImgMap[imgId] = pngMerger.getImageById(imgId);
                     MyGameCanvas.k();
                 }
             }
@@ -256,7 +256,7 @@ implements u {
                 by2 = arrby[n2++];
                 ++n5;
                 if (by2 >= 18) {
-                    arrimage[by2 - 18] = ((PNGMerger)object).getImgById(by2 - 18);
+                    arrimage[by2 - 18] = ((PNGMerger)object).getImageById(by2 - 18);
                     MyGameCanvas.k();
                     continue;
                 }
@@ -370,7 +370,7 @@ implements u {
             ce.var_javax_microedition_lcdui_Image_arr_h = new Image[br2.getImgCount()];
             for (int i2 = 0; i2 < n3; ++i2) {
                 byte by2 = arrby[n2++];
-                ce.var_javax_microedition_lcdui_Image_arr_h[by2] = br2.getImgById(by2);
+                ce.var_javax_microedition_lcdui_Image_arr_h[by2] = br2.getImageById(by2);
             }
         }
         catch (IOException iOException) {

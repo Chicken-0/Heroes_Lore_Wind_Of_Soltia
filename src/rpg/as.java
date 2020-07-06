@@ -447,8 +447,8 @@ extends MyGameCanvas {
                         PNGMerger br2 = new PNGMerger("/m/face");
                         br2.enableLoad = true;
                         this.var_javax_microedition_lcdui_Image_arr_a = new Image[2];
-                        this.var_javax_microedition_lcdui_Image_arr_a[0] = br2.javax_microedition_lcdui_Image_c(0);
-                        this.var_javax_microedition_lcdui_Image_arr_a[1] = br2.javax_microedition_lcdui_Image_c(8);
+                        this.var_javax_microedition_lcdui_Image_arr_a[0] = br2.getImageGrayscale(0);
+                        this.var_javax_microedition_lcdui_Image_arr_a[1] = br2.getImageGrayscale(8);
                     }
                     catch (IOException iOException) {
                         IOException iOException2 = iOException;
@@ -461,7 +461,7 @@ extends MyGameCanvas {
                         PNGMerger br3 = new PNGMerger("/m/face");
                         br3.enableLoad = true;
                         this.var_javax_microedition_lcdui_Image_arr_a = new Image[1];
-                        this.var_javax_microedition_lcdui_Image_arr_a[0] = br3.getImgById(17);
+                        this.var_javax_microedition_lcdui_Image_arr_a[0] = br3.getImageById(17);
                         break;
                     }
                     catch (IOException iOException) {
@@ -489,7 +489,7 @@ extends MyGameCanvas {
             PNGMerger br2 = new PNGMerger("/img/end");
             br2.enableLoad = true;
             this.var_javax_microedition_lcdui_Image_arr_a = new Image[1];
-            this.var_javax_microedition_lcdui_Image_arr_a[0] = br2.getImgById(rpg.n.var_byte_a - 6);
+            this.var_javax_microedition_lcdui_Image_arr_a[0] = br2.getImageById(rpg.n.var_byte_a - 6);
             return;
         }
         catch (IOException iOException) {

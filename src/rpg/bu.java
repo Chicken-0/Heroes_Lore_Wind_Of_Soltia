@@ -370,15 +370,15 @@ implements Runnable {
                     if (by5 == 0) break;
                     switch (by5) {
                         case 1: {
-                            br2.void_a(255, 0xFF7F3F);
+                            br2.convertImgColor(255, 0xFF7F3F);
                             break block1;
                         }
                         case 2: {
-                            br2.void_a(255, 6258623);
+                            br2.convertImgColor(255, 6258623);
                             break block1;
                         }
                         case 3: {
-                            br2.void_a(255, 0x7FFF7F);
+                            br2.convertImgColor(255, 0x7FFF7F);
                         }
                     }
                     break;
@@ -392,15 +392,15 @@ implements Runnable {
                     n2 = 4;
                     switch (by5) {
                         case 1: {
-                            br2.void_a(0xBFDFFF, 0xFFFFC0);
-                            br2.void_a(0x9FBFFF, 0xFFBF7F);
-                            br2.void_a(6258623, 0xFF7F3F);
+                            br2.convertImgColor(0xBFDFFF, 0xFFFFC0);
+                            br2.convertImgColor(0x9FBFFF, 0xFFBF7F);
+                            br2.convertImgColor(6258623, 0xFF7F3F);
                             break;
                         }
                         case 3: {
-                            br2.void_a(0xBFDFFF, 0xDFFFBF);
-                            br2.void_a(0x9FBFFF, 0xBFDFBF);
-                            br2.void_a(6258623, 10469247);
+                            br2.convertImgColor(0xBFDFFF, 0xDFFFBF);
+                            br2.convertImgColor(0x9FBFFF, 0xBFDFBF);
+                            br2.convertImgColor(6258623, 10469247);
                         }
                     }
                     if (by2 != 8) break;
@@ -447,11 +447,11 @@ implements Runnable {
                         by7 = by11;
                         if (by11 == -1) continue;
                         if (!bl3 && arrimage[by7] == null) {
-                            arrimage[by7] = br2.getImgById(by7);
+                            arrimage[by7] = br2.getImageById(by7);
                             continue;
                         }
                         if (!bl3 || arrimage2[by7] != null) continue;
-                        arrimage2[by7] = br2.javax_microedition_lcdui_Image_b(by7);
+                        arrimage2[by7] = br2.getFlipImageById(by7);
                     }
                     if (!bl2) {
                         ce.var_java_lang_Object_arr_a[by9 * 36 + by10 * 9 + by8] = arrby2;
@@ -486,11 +486,11 @@ implements Runnable {
                             arrby2[n11] = by12;
                             by7 = by12;
                             if (!bl3 && arrimage[by7] == null) {
-                                arrimage[by7] = br2.getImgById(by7);
+                                arrimage[by7] = br2.getImageById(by7);
                                 continue;
                             }
                             if (!bl3 || arrimage2[by7] != null) continue;
-                            arrimage2[by7] = br2.javax_microedition_lcdui_Image_b(by7);
+                            arrimage2[by7] = br2.getFlipImageById(by7);
                         }
                     }
                     ce.var_java_lang_Object_arr_a[by9 * 36 + by10 * 9 + by8] = arrby2;

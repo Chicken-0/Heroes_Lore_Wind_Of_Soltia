@@ -17,8 +17,8 @@ extends ck {
     private short b;
     private short e;
 
-    public aj(short s2, short s3, byte by2, byte by3, Image image) {
-        super(s2, s3, by2, by3);
+    public aj(short posX, short posY, byte by2, byte by3, Image image) {
+        super(posX, posY, by2, by3);
         this.var_javax_microedition_lcdui_Image_a = image;
         if (image != null) {
             this.var_short_a = (short)(-(image.getWidth() >> 1));
@@ -28,8 +28,8 @@ extends ck {
     }
 
     public final void a(Graphics graphics, int n2, int n3) {
-        int n4 = n2 + this.var_short_c + this.var_byte_c;
-        int n5 = n3 + this.var_short_d + this.var_byte_d;
+        int n4 = n2 + this.posX + this.var_byte_c;
+        int n5 = n3 + this.posY + this.var_byte_d;
         if (n4 < this.var_short_a || n4 > this.b || n5 < 0 || n5 > this.e) {
             return;
         }

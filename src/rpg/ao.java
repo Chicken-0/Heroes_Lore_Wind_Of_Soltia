@@ -195,8 +195,8 @@ implements u {
 
     public final void void_a(byte by2, byte by3) {
         this.f();
-        this.var_short_c = (short)(this.var_short_c + u.var_byte_arr_a[by2] * by3);
-        this.var_short_d = (short)(this.var_short_d + u.array_byte_b[by2] * by3);
+        this.posX = (short)(this.posX + u.var_byte_arr_a[by2] * by3);
+        this.posY = (short)(this.posY + u.array_byte_b[by2] * by3);
         this.void_b();
         this.g();
     }
@@ -435,7 +435,7 @@ implements u {
             }
         }
         if (n2 == 0) {
-            bw.a((byte)14, false);
+            SoundPlayerManager.a((byte)14, false);
         }
     }
 
@@ -623,7 +623,7 @@ implements u {
 
     private final void q() {
         n.void_a((byte)16);
-        bw.f();
+        SoundPlayerManager.f();
     }
 
     public final boolean boolean_a(boolean bl2) {
@@ -659,8 +659,8 @@ implements u {
     }
 
     public final void a(Graphics graphics, int n2, int n3) {
-        int n4 = n2 + this.var_short_c + this.var_byte_c;
-        int n5 = n3 + this.var_short_d + this.var_byte_d;
+        int n4 = n2 + this.posX + this.var_byte_c;
+        int n5 = n3 + this.posY + this.var_byte_d;
         if (this.r == 1) {
             n4 += u.var_byte_arr_a[this.s] * 2;
             n5 += u.array_byte_b[this.s] * 2;

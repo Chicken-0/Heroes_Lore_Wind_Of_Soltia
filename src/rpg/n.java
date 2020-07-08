@@ -226,8 +226,8 @@ implements u {
             }
             case 16: {
                 n.void_a(10);
-                bw.a((byte)12);
-                bw.a((byte)12, false);
+                SoundPlayerManager.setupSoundPlayer((byte)12);
+                SoundPlayerManager.a((byte)12, false);
                 as.var_int_e = 16;
                 return;
             }
@@ -241,7 +241,7 @@ implements u {
                     ai.ai_a().a(false);
                     n.void_a(1);
                     bu.d();
-                    bw.f();
+                    SoundPlayerManager.f();
                     return;
                 }
                 n.void_a(1);
@@ -254,8 +254,8 @@ implements u {
     public static final void b(byte by2, byte by3, byte by4, byte by5) {
         System.gc();
         n.a((byte)1, by3, by4, by5);
-        bw.e();
-        bw.f();
+        SoundPlayerManager.e();
+        SoundPlayerManager.f();
         mapId = by2;
     }
 
@@ -276,8 +276,8 @@ implements u {
     }
 
     public static final void g() {
-        var_int_a = as.var_int_c - n.var_ao_a.var_short_c;
-        var_int_b = as.var_int_d - n.var_ao_a.var_short_d;
+        var_int_a = as.var_int_c - n.var_ao_a.posX;
+        var_int_b = as.var_int_d - n.var_ao_a.posY;
     }
 
     public static final void void_a(int n2) {
@@ -618,7 +618,7 @@ implements u {
         byte[] arrby = ao2.byte_arr_a();
         byte[] arrby2 = ao2.var_g_a.byte_arr_c();
         byte[] arrby3 = n.byte_arr_a();
-        byte[] arrby4 = new byte[]{n.var_ae_a.var_byte_a, ao2.var_byte_a, ao2.var_byte_b};
+        byte[] arrby4 = new byte[]{n.var_ae_a.mapId, ao2.var_byte_a, ao2.var_byte_b};
         int n2 = 0;
         arrby = bq.a(arrby, var_byte_arr_i);
         arrby2 = bq.a(arrby2, var_byte_arr_i);

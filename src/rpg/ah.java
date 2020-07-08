@@ -93,6 +93,17 @@ implements u {
             return false;
         }
         ah.a((byte[][])n.var_ae_a.var_java_lang_Object_arr_b[arrby2[6]]);
+        
+        // debug
+        byte[][] arrCmdData = (byte[][])n.var_ae_a.var_java_lang_Object_arr_b[arrby2[6]];
+        System.out.println("[CMD]: " + by2);
+        for (int y = 0; y < arrCmdData.length; y++){
+            for (int x = 0; x < arrCmdData[y].length; x++){
+                System.out.print(arrCmdData[y][x] + " ");
+            }
+            System.out.println();
+        }
+        
         return true;
     }
 
@@ -158,7 +169,7 @@ implements u {
             if (arrac[i2] == null || !arrac[i2].d) continue;
             arrac[i2].g();
         }
-        bw.c();
+        SoundPlayerManager.c();
     }
 
     public static final void a(int n2, int n3) {
@@ -325,7 +336,7 @@ implements u {
                 case 47: {
                     ac ac3 = n.var_ae_a.var_ac_arr_a[var_byte_arr_arr_b[var_int_a++][1]];
                     n.var_ae_a.var_ac_arr_a[var_byte_arr_arr_b[var_int_a++][1]].d = true;
-                    ac3.a(ac3.var_short_c, ac3.var_short_d);
+                    ac3.a(ac3.posX, ac3.posY);
                     break;
                 }
                 case 49: {
@@ -375,15 +386,15 @@ implements u {
                     byte by4 = var_byte_arr_arr_b[var_int_a][1];
                     System.out.println("=====[EVENT BGM] " + by4);
                     if (by4 == 5 || by4 == 6 || by4 == 7) {
-                        bw.c(by4);
+                        SoundPlayerManager.startPlayer2(by4);
                     } else if (by4 == 8) {
-                        bw.a(by4, false);
+                        SoundPlayerManager.a(by4, false);
                     }
                     ++var_int_a;
                     break;
                 }
                 case 27: {
-                    bw.c();
+                    SoundPlayerManager.c();
                     ++var_int_a;
                     break;
                 }

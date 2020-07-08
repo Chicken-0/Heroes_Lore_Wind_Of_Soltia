@@ -107,8 +107,8 @@ implements u {
         this.f();
         switch (this.i) {
             case 1: {
-                x.a(this.var_short_d > 0);
-                this.var_short_d = (short)(this.var_short_d - n2);
+                x.a(this.posY > 0);
+                this.posY = (short)(this.posY - n2);
                 if (this.var_boolean_b) {
                     this.var_boolean_b = false;
                     break;
@@ -118,8 +118,8 @@ implements u {
                 break;
             }
             case 2: {
-                x.a(this.var_short_d < n.var_ae_a.mapHeight - 16);
-                this.var_short_d = (short)(this.var_short_d + n2);
+                x.a(this.posY < n.var_ae_a.mapHeight - 16);
+                this.posY = (short)(this.posY + n2);
                 if (this.var_boolean_b) {
                     this.var_boolean_b = false;
                     this.var_byte_b = (byte)(this.var_byte_b + 1);
@@ -129,8 +129,8 @@ implements u {
                 break;
             }
             case 3: {
-                x.a(this.var_short_c > 0);
-                this.var_short_c = (short)(this.var_short_c - n2);
+                x.a(this.posX > 0);
+                this.posX = (short)(this.posX - n2);
                 if (this.var_boolean_a) {
                     this.var_boolean_a = false;
                     break;
@@ -140,8 +140,8 @@ implements u {
                 break;
             }
             case 4: {
-                x.a(this.var_short_c < n.var_ae_a.mapWidth - 16);
-                this.var_short_c = (short)(this.var_short_c + n2);
+                x.a(this.posX < n.var_ae_a.mapWidth - 16);
+                this.posX = (short)(this.posX + n2);
                 if (this.var_boolean_a) {
                     this.var_boolean_a = false;
                     this.var_byte_a = (byte)(this.var_byte_a + 1);

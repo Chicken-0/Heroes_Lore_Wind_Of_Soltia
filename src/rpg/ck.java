@@ -15,8 +15,8 @@ implements u {
     public byte var_byte_b;
     public boolean var_boolean_a;
     public boolean var_boolean_b;
-    public short var_short_c;
-    public short var_short_d;
+    public short posX;
+    public short posY;
     public byte var_byte_c;
     public byte var_byte_d;
     public byte e = 1;
@@ -25,23 +25,23 @@ implements u {
     public ck var_ck_b;
     public boolean var_boolean_c = false;
 
-    public ck(short s2, short s3, byte by2, byte by3) {
-        this.a(s2, s3);
+    public ck(short posX, short posY, byte by2, byte by3) {
+        this.a(posX, posY);
         this.void_b();
         this.var_byte_c = by2;
         this.var_byte_d = by3;
     }
 
-    public void a(short s2, short s3) {
-        this.var_short_c = s2;
-        this.var_short_d = s3;
+    public void a(short posX, short posY) {
+        this.posX = posX;
+        this.posY = posY;
     }
 
     public final void void_b() {
-        this.var_byte_b = (byte)(this.var_short_d >> 4);
-        this.var_byte_a = (byte)(this.var_short_c >> 4);
-        this.var_boolean_b = (this.var_short_d & 0xF) != 0;
-        this.var_boolean_a = (this.var_short_c & 0xF) != 0;
+        this.var_byte_b = (byte)(this.posY >> 4);
+        this.var_byte_a = (byte)(this.posX >> 4);
+        this.var_boolean_b = (this.posY & 0xF) != 0;
+        this.var_boolean_a = (this.posX & 0xF) != 0;
     }
 
     public final ck ck_a(byte by2, byte by3) {

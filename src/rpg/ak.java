@@ -39,11 +39,11 @@ extends av {
         if (this.byte_h == 2) {
             switch (this.i) {
                 case 1: {
-                    this.var_short_d = (short)(this.var_short_d - 8);
+                    this.posY = (short)(this.posY - 8);
                     break;
                 }
                 case 2: {
-                    this.var_short_d = (short)(this.var_short_d + 8);
+                    this.posY = (short)(this.posY + 8);
                 }
             }
             this.void_b();

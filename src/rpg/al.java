@@ -56,8 +56,8 @@ extends o {
     }
 
     public void a(Graphics graphics, int n2, int n3) {
-        int n4 = n2 + this.var_short_c + this.var_byte_c + (((ck)this).e - 1) * 8;
-        int n5 = n3 + this.var_short_d + this.var_byte_d;
+        int n4 = n2 + this.posX + this.var_byte_c + (((ck)this).e - 1) * 8;
+        int n5 = n3 + this.posY + this.var_byte_d;
         if (n4 + 16 < 0 || n5 < 0 || n4 - 16 > as.var_int_a || n5 > as.b + 32) {
             this.b(graphics, n4, n5);
             this.f = false;
@@ -480,14 +480,14 @@ extends o {
             ((o)this).a.addElement(new aw((byte)2));
         }
         if (bl4) {
-            bw.a((byte)14, false);
+            SoundPlayerManager.a((byte)14, false);
             return;
         }
         if (bl3) {
-            bw.a((byte)15, false);
+            SoundPlayerManager.a((byte)15, false);
             return;
         }
-        bw.a((byte)13, false);
+        SoundPlayerManager.a((byte)13, false);
     }
 
     private final void t() {

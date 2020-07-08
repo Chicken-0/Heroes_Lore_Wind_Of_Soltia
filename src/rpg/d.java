@@ -78,13 +78,13 @@ extends cb {
                     return;
                 }
                 n.a((byte)14, (byte)1);
-                bw.f();
+                SoundPlayerManager.f();
                 bf.var_boolean_d = true;
                 return;
             }
             if (by3 == 0) {
                 n.a((byte)14, (byte)1);
-                bw.f();
+                SoundPlayerManager.f();
             }
         }
     }

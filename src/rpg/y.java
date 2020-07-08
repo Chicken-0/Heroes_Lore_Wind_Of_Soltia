@@ -48,8 +48,8 @@ extends ck {
 
     public void a(Graphics graphics, int n2, int n3) {
         n.var_ae_a.c(this);
-        int n4 = n2 + this.var_short_c + this.var_byte_c;
-        int n5 = n3 + this.var_short_d + this.var_byte_d;
+        int n4 = n2 + this.posX + this.var_byte_c;
+        int n5 = n3 + this.posY + this.var_byte_d;
         switch (this.f) {
             case 2: {
                 this.c(graphics, n4, n5);

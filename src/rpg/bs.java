@@ -18,7 +18,7 @@ implements Runnable {
     public static as var_as_a;
     private int var_int_c;
     private int var_int_d;
-    public int var_int_a = bw.var_int_a;
+    public int var_int_a = SoundPlayerManager.var_int_a;
     public boolean var_boolean_a = !x.activeDemoVersion;
     public boolean var_boolean_b = false;
     public boolean var_boolean_c = false;
@@ -52,7 +52,7 @@ implements Runnable {
             this.var_r_a = new bg();
             this.var_javax_microedition_lcdui_Display_a.setCurrent((Displayable)this.var_r_a);
             ((bg)this.var_r_a).a();
-            bw.g();
+            SoundPlayerManager.g();
             this.g();
         }
         Object object = var_java_lang_Object_a;
@@ -166,7 +166,7 @@ implements Runnable {
         this.var_boolean_d = (arrby[0] & 1) != 0;
         this.var_byte_a = (byte)((arrby[1] & 0xF0) >> 4);
         this.var_byte_b = (byte)(arrby[1] & 0xF);
-        bw.a(this.var_int_a);
+        SoundPlayerManager.a(this.var_int_a);
         this.a(this.var_byte_a);
         this.var_int_b = h.int_a(arrby, 2) ^ 0xE1F084DE;
     }

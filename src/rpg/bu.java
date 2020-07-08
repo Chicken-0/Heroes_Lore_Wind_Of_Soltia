@@ -178,10 +178,10 @@ implements Runnable {
             iOException.printStackTrace();
         }
         for (by2 = 5; by2 <= 8; by2 = (byte)((byte)(by2 + 1))) {
-            bw.a(by2);
+            SoundPlayerManager.setupSoundPlayer(by2);
         }
         for (by2 = 12; by2 <= 15; by2 = (byte)(by2 + 1)) {
-            bw.a(by2);
+            SoundPlayerManager.setupSoundPlayer(by2);
         }
     }
 
@@ -196,10 +196,10 @@ implements Runnable {
         ce.var_z_c = null;
         ce.var_z_d = null;
         for (by2 = 5; by2 <= 8; by2 = (byte)((byte)(by2 + 1))) {
-            bw.b(by2);
+            SoundPlayerManager.b(by2);
         }
         for (by2 = 12; by2 <= 15; by2 = (byte)(by2 + 1)) {
-            bw.b(by2);
+            SoundPlayerManager.b(by2);
         }
     }
 
@@ -253,30 +253,30 @@ implements Runnable {
         MyGameCanvas.k();
         switch (p2.f) {
             case 0: {
-                bw.a((byte)16);
-                bw.a((byte)21);
+                SoundPlayerManager.setupSoundPlayer((byte)16);
+                SoundPlayerManager.setupSoundPlayer((byte)21);
                 return;
             }
             case 1: {
-                bw.a((byte)20);
+                SoundPlayerManager.setupSoundPlayer((byte)20);
                 return;
             }
             case 2: {
-                bw.a((byte)17);
-                bw.a((byte)21);
+                SoundPlayerManager.setupSoundPlayer((byte)17);
+                SoundPlayerManager.setupSoundPlayer((byte)21);
                 return;
             }
             case 3: {
-                bw.a((byte)16);
+                SoundPlayerManager.setupSoundPlayer((byte)16);
                 return;
             }
             case 4: {
-                bw.a((byte)18);
-                bw.a((byte)20);
+                SoundPlayerManager.setupSoundPlayer((byte)18);
+                SoundPlayerManager.setupSoundPlayer((byte)20);
                 return;
             }
             case 5: {
-                bw.a((byte)17);
+                SoundPlayerManager.setupSoundPlayer((byte)17);
             }
         }
     }
@@ -287,7 +287,7 @@ implements Runnable {
         bu.a(4);
         ce.void_a();
         for (byte by2 = 16; by2 <= 21; by2 = (byte)(by2 + 1)) {
-            bw.b(by2);
+            SoundPlayerManager.b(by2);
         }
     }
 

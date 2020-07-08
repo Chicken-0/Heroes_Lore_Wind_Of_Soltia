@@ -57,7 +57,7 @@ public final class aq {
     }
 
     public final void c(ck ck2) {
-        if (ck2.var_ck_b != null && ck2.var_byte_d + ck2.var_short_d < ck2.var_ck_b.var_byte_d + ck2.var_ck_b.var_short_d) {
+        if (ck2.var_ck_b != null && ck2.var_byte_d + ck2.posY < ck2.var_ck_b.var_byte_d + ck2.var_ck_b.posY) {
             ck2.var_ck_b.var_ck_a = ck2.var_ck_a;
             if (ck2.var_ck_a == null) {
                 this.b = ck2.var_ck_b;
@@ -65,7 +65,7 @@ public final class aq {
                 ck2.var_ck_a.var_ck_b = ck2.var_ck_b;
             }
             ck ck3 = ck2.var_ck_b;
-            while (ck3 != null && ck2.var_byte_d + ck2.var_short_d < ck3.var_byte_d + ck3.var_short_d) {
+            while (ck3 != null && ck2.var_byte_d + ck2.posY < ck3.var_byte_d + ck3.posY) {
                 ck3 = ck3.var_ck_b;
             }
             if (ck3 == null) {
@@ -78,7 +78,7 @@ public final class aq {
             ck2.var_ck_b = ck3;
             return;
         }
-        if (ck2.var_ck_a != null && ck2.var_byte_d + ck2.var_short_d > ck2.var_ck_a.var_byte_d + ck2.var_ck_a.var_short_d) {
+        if (ck2.var_ck_a != null && ck2.var_byte_d + ck2.posY > ck2.var_ck_a.var_byte_d + ck2.var_ck_a.posY) {
             ck2.var_boolean_c = true;
             ck2.var_ck_a.var_ck_b = ck2.var_ck_b;
             if (ck2.var_ck_b == null) {
@@ -87,7 +87,7 @@ public final class aq {
                 ck2.var_ck_b.var_ck_a = ck2.var_ck_a;
             }
             ck ck4 = ck2.var_ck_a;
-            while (ck4 != null && ck2.var_byte_d + ck2.var_short_d > ck4.var_byte_d + ck4.var_short_d) {
+            while (ck4 != null && ck2.var_byte_d + ck2.posY > ck4.var_byte_d + ck4.posY) {
                 ck4 = ck4.var_ck_a;
             }
             if (ck4 == null) {

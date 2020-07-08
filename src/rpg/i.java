@@ -75,8 +75,8 @@ extends y {
     }
 
     public final void a(Graphics graphics, int n2, int n3) {
-        int n4 = n2 + this.var_short_c + this.var_byte_c;
-        int n5 = n3 + this.var_short_d + this.var_byte_d;
+        int n4 = n2 + this.posX + this.var_byte_c;
+        int n5 = n3 + this.posY + this.var_byte_d;
         if (this.var_short_a == 2 && this.b == 1) {
             n4 += u.var_byte_arr_a[this.var_byte_f] * 8;
             n5 += u.array_byte_b[this.var_byte_f] * 8;

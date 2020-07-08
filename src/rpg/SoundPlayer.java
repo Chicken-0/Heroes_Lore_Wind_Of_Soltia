@@ -17,21 +17,21 @@ import javax.microedition.media.Player;
 import javax.microedition.media.PlayerListener;
 import javax.microedition.media.control.VolumeControl;
 
-public final class ci
+public final class SoundPlayer
 implements PlayerListener {
     private Player a;
 
-    public ci(String string) {
+    public SoundPlayer(String string) {
         this.void_a(string);
     }
 
-    public final void a(int n2) {
+    public final void setLoopCount(int loopCount) {
         if (this.a != null) {
-            this.a.setLoopCount(n2);
+            this.a.setLoopCount(loopCount);
         }
     }
 
-    public final void void_a() {
+    public final void playTrack() {
         if (bs.var_bs_a.var_int_a > 0) {
             this.d();
         }
@@ -86,7 +86,7 @@ implements PlayerListener {
                         int n2 = string.indexOf(58);
                         String string2 = string.substring(n2 + 1);
                         InputStream inputStream = this.getClass().getResourceAsStream(string2);
-                        String string3 = ci.java_lang_String_a(string);
+                        String string3 = SoundPlayer.java_lang_String_a(string);
                         this.a = Manager.createPlayer((InputStream)inputStream, (String)string3);
                         this.a.realize();
                     }
@@ -102,10 +102,10 @@ implements PlayerListener {
         }
     }
 
-    public final void b(int n2) {
+    public final void setVolumeLevel(int level) {
         VolumeControl volumeControl;
         if (this.a != null && (volumeControl = (VolumeControl)this.a.getControl("VolumeControl")) != null) {
-            volumeControl.setLevel(n2);
+            volumeControl.setLevel(level);
         }
     }
 

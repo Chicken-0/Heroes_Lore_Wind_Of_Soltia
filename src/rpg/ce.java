@@ -748,7 +748,7 @@ implements u {
                 MyGameCanvas.k();
             }
             MyGameCanvas.k();
-            bw.a((byte)22);
+            SoundPlayerManager.setupSoundPlayer((byte)22);
             return;
         }
         catch (IOException iOException) {
@@ -761,7 +761,7 @@ implements u {
     public static final void z() {
         var_javax_microedition_lcdui_Image_arr_j = null;
         var_javax_microedition_lcdui_Image_arr_k = null;
-        bw.b((byte)22);
+        SoundPlayerManager.b((byte)22);
     }
 
     public static final void A() {

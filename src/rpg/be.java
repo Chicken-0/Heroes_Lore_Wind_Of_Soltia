@@ -32,11 +32,11 @@ extends cb {
                     if (n3 == 52 || n2 == 2) {
                         this.a.var_int_a = 0;
                     } else if (n3 == 54 || n2 == 5) {
-                        this.a.var_int_a = bw.var_int_a;
+                        this.a.var_int_a = SoundPlayerManager.var_int_a;
                     }
-                    bw.a(this.a.var_int_a);
+                    SoundPlayerManager.a(this.a.var_int_a);
                     if (this.a.var_int_a != 0) break;
-                    bw.d();
+                    SoundPlayerManager.d();
                     break;
                 }
                 case 1: {

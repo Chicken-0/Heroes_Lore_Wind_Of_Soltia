@@ -138,7 +138,7 @@ extends MyGameCanvas {
                     if (--var_int_e != 0) break;
                     rpg.n.void_a(1);
                     bu.d();
-                    bw.b((byte)12);
+                    SoundPlayerManager.b((byte)12);
                     break;
                 }
                 case 11: {
@@ -178,7 +178,7 @@ extends MyGameCanvas {
      * WARNING - Removed try catching itself - possible behaviour change.
      */
     public final void hideNotify() {
-        bw.a();
+        SoundPlayerManager.a();
         Object object = bs.var_java_lang_Object_a;
         synchronized (object) {
             if (rpg.n.var_int_e == 2) {
@@ -195,7 +195,7 @@ extends MyGameCanvas {
      * WARNING - Removed try catching itself - possible behaviour change.
      */
     public final void showNotify() {
-        bw.b();
+        SoundPlayerManager.b();
         Object object = bs.var_java_lang_Object_a;
         synchronized (object) {
             if (rpg.n.var_int_e == 2) {
@@ -357,7 +357,7 @@ extends MyGameCanvas {
                 return;
             }
             case 48: {
-                if (((o)rpg.n.ao_a()).byte_h != 1 || rpg.n.var_ae_a.imgContainerFileId > 14) break;
+                if (((o)rpg.n.ao_a()).byte_h != 1 || rpg.n.var_ae_a.objRefId > 14) break;
                 rpg.n.a((byte)2, (byte)11, (byte)3);
                 return;
             }
@@ -433,14 +433,14 @@ extends MyGameCanvas {
         bu.f();
         bu.g();
         bu.h();
-        bw.f();
+        SoundPlayerManager.f();
         var_int_e = -16;
         this.t = 0;
         this.u = -1;
         try {
             this.var_z_a = new TableDefineTextFile("/sgui/ed" + rpg.n.var_byte_a);
-            bw.a((byte)23);
-            bw.b(23);
+            SoundPlayerManager.setupSoundPlayer((byte)23);
+            SoundPlayerManager.startPlayer1(23);
             switch (rpg.n.var_byte_a) {
                 case 6: {
                     try {
@@ -806,8 +806,8 @@ extends MyGameCanvas {
             this.var_java_util_Vector_a = null;
             this.var_z_a = null;
             this.var_javax_microedition_lcdui_Image_arr_a = null;
-            bw.f();
-            bw.b((byte)23);
+            SoundPlayerManager.f();
+            SoundPlayerManager.b((byte)23);
             rpg.n.a((byte)21, (byte)2);
             return;
         }

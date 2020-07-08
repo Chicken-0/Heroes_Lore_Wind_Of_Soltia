@@ -138,8 +138,8 @@ implements u {
         this.var_boolean_d = false;
         this.a((short)((n2 + u.var_byte_arr_a[by2]) * 16), (short)((n3 + u.array_byte_b[by2]) * 16));
         this.var_byte_j = by2;
-        this.var_byte_b = (byte)(this.var_short_d >> 4);
-        this.var_byte_a = (byte)(this.var_short_c >> 4);
+        this.var_byte_b = (byte)(this.posY >> 4);
+        this.var_byte_a = (byte)(this.posX >> 4);
         this.var_boolean_b = false;
         this.var_boolean_a = false;
     }
@@ -215,7 +215,7 @@ implements u {
                             ao2.a(new bj((short)0, (short)8, by2, by3));
                             ao2.boolean_a((byte)5);
                             ao2.var_boolean_d = true;
-                            bw.a((byte)21, false);
+                            SoundPlayerManager.a((byte)21, false);
                             break;
                         }
                         break block0;
@@ -224,7 +224,7 @@ implements u {
                         if (this.e == 0) {
                             ao2.a(new bj((short)0, (short)160, by2, by3));
                             ao2.var_boolean_g = true;
-                            bw.a((byte)21, false);
+                            SoundPlayerManager.a((byte)21, false);
                         }
                         if (this.e == var_short_arr_d[by2 * 3 + by3]) {
                             ao2.var_boolean_g = false;
@@ -241,7 +241,7 @@ implements u {
                         if (this.e == 0) {
                             ao2.a(new bj((short)0, (short)8, by2, by3));
                             ao2.c(30);
-                            bw.a((byte)20, false);
+                            SoundPlayerManager.a((byte)20, false);
                             break;
                         }
                         break block0;
@@ -250,7 +250,7 @@ implements u {
                         if (this.e == 0) {
                             ao2.a(new bj((short)0, (short)9, by2, by3));
                             ao2.e(20);
-                            bw.a((byte)20, false);
+                            SoundPlayerManager.a((byte)20, false);
                             break;
                         }
                         break block0;
@@ -262,7 +262,7 @@ implements u {
                             ao2.a(new bj((short)24, (short)8, by2, (byte)0));
                             ao2.a(new bj((short)44, (short)8, by2, (byte)0));
                             ao2.var_boolean_h = true;
-                            bw.a((byte)20, false);
+                            SoundPlayerManager.a((byte)20, false);
                         }
                         if (this.e == var_short_arr_d[by2 * 3 + by3]) {
                             ao2.var_boolean_h = false;
@@ -285,7 +285,7 @@ implements u {
                             ao2.a(new bj((short)0, (short)8, by2, by3));
                             ao2.boolean_a((byte)6);
                             ao2.var_boolean_e = true;
-                            bw.a((byte)21, false);
+                            SoundPlayerManager.a((byte)21, false);
                             break;
                         }
                         break block0;
@@ -296,7 +296,7 @@ implements u {
                             ((o)ao2).b.removeAllElements();
                             ao2.var_boolean_d = false;
                             ao2.var_boolean_e = false;
-                            bw.a((byte)21, false);
+                            SoundPlayerManager.a((byte)21, false);
                             break;
                         }
                         break block0;
@@ -314,7 +314,7 @@ implements u {
                         this.a((byte)5, 6, 3);
                         this.a((byte)5, 12, 3);
                         if (this.e == 0 || this.e == 6 || this.e == 12) {
-                            bw.a((byte)16, false);
+                            SoundPlayerManager.a((byte)16, false);
                             break;
                         }
                         break block0;
@@ -322,9 +322,9 @@ implements u {
                     case 1: {
                         this.b(2);
                         this.a((short)80, this.var_short_a + 45 + n.ao_a().var_short_g * 3 / 2);
-                        this.a((int)this.var_short_c, (int)this.var_short_d, (short)80, (byte)6);
+                        this.a((int)this.posX, (int)this.posY, (short)80, (byte)6);
                         if (this.e % 8 == 0) {
-                            bw.a((byte)16, false);
+                            SoundPlayerManager.a((byte)16, false);
                             break;
                         }
                         break block0;
@@ -333,7 +333,7 @@ implements u {
                         if (this.e == 0) {
                             this.a((byte)7);
                             this.a((short)7);
-                            bw.a((byte)16, false);
+                            SoundPlayerManager.a((byte)16, false);
                             break;
                         }
                         break block0;
@@ -351,7 +351,7 @@ implements u {
                         this.a((byte)7, 6, 5);
                         this.a((byte)7, 12, 5);
                         if (this.e == 0 || this.e == 6 || this.e == 12 || this.e == 18 || this.e == 24) {
-                            bw.a((byte)18, false);
+                            SoundPlayerManager.a((byte)18, false);
                             break;
                         }
                         break block0;
@@ -359,9 +359,9 @@ implements u {
                     case 1: {
                         this.b(2);
                         ao2.var_boolean_f = Math.abs(this.var_byte_a - ao2.var_byte_a) + Math.abs(this.var_byte_b - ao2.var_byte_b) <= 2;
-                        this.a((int)this.var_short_c, (int)this.var_short_d, (short)80, (byte)8);
+                        this.a((int)this.posX, (int)this.posY, (short)80, (byte)8);
                         if (this.e % 8 == 0) {
-                            bw.a((byte)18, false);
+                            SoundPlayerManager.a((byte)18, false);
                         }
                         if (this.e == var_short_arr_d[by2 * 3 + by3]) {
                             ao2.var_boolean_f = false;
@@ -374,7 +374,7 @@ implements u {
                             ao2.a(new bj((short)0, (short)15, by2, by3));
                             ao2.c(20);
                             ao2.e(20);
-                            bw.a((byte)20, false);
+                            SoundPlayerManager.a((byte)20, false);
                             break;
                         }
                         break block0;
@@ -392,22 +392,22 @@ implements u {
                         this.a((byte)4, 6, 5);
                         this.a((byte)4, 12, 5);
                         if (this.e != 0 && this.e != 6 && this.e != 12 && this.e != 18 && this.e != 24) break;
-                        bw.a((byte)17, false);
+                        SoundPlayerManager.a((byte)17, false);
                         break;
                     }
                     case 1: {
                         this.b(2);
                         this.a((short)80, this.var_short_a + 45 + n.ao_a().var_short_g * 3 / 2);
-                        this.a((int)this.var_short_c, (int)this.var_short_d, (short)80, (byte)9);
+                        this.a((int)this.posX, (int)this.posY, (short)80, (byte)9);
                         if (this.e % 8 != 0) break;
-                        bw.a((byte)17, false);
+                        SoundPlayerManager.a((byte)17, false);
                         break;
                     }
                     case 2: {
                         if (this.e != 0) break;
                         this.a((byte)9);
                         this.a((short)9);
-                        bw.a((byte)17, false);
+                        SoundPlayerManager.a((byte)17, false);
                     }
                 }
                 break;
@@ -521,8 +521,8 @@ implements u {
     }
 
     public final void a(Graphics graphics, int n2, int n3) {
-        int n4 = n2 + this.var_short_c + this.var_byte_c;
-        int n5 = n3 + this.var_short_d + this.var_byte_d;
+        int n4 = n2 + this.posX + this.var_byte_c;
+        int n5 = n3 + this.posY + this.var_byte_d;
         int n6 = ce.var_javax_microedition_lcdui_Image_arr_a[0].getHeight();
         Image[] arrimage = ce.var_javax_microedition_lcdui_Image_arr_arr_a[12];
         Image image = arrimage[0];
@@ -683,28 +683,28 @@ implements u {
         ae ae2 = n.var_ae_a;
         switch (this.e) {
             case 0: {
-                bw.a((byte)16, false);
+                SoundPlayerManager.a((byte)16, false);
             }
             case 5: {
-                p.a(ae2, this.var_short_c, this.var_short_d, (byte)1);
+                p.a(ae2, this.posX, this.posY, (byte)1);
                 return;
             }
             case 1: 
             case 6: {
-                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 16), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 16), (byte)1);
+                p.a(ae2, (short)(this.posX + u.var_byte_arr_a[this.var_byte_j] * 16), (short)(this.posY + u.array_byte_b[this.var_byte_j] * 16), (byte)1);
                 return;
             }
             case 2: 
             case 7: {
-                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 32), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 32), (byte)1);
+                p.a(ae2, (short)(this.posX + u.var_byte_arr_a[this.var_byte_j] * 32), (short)(this.posY + u.array_byte_b[this.var_byte_j] * 32), (byte)1);
                 return;
             }
             case 4: 
             case 8: {
-                bw.a((byte)16, false);
-                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 48), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 48), (byte)2);
-                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 48 + u.var_byte_arr_a[u.arr_byte_e[this.var_byte_j]] * 16), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 48 + u.array_byte_b[u.arr_byte_e[this.var_byte_j]] * 16), (byte)2);
-                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 48 + u.var_byte_arr_a[u.array_byte_f[this.var_byte_j]] * 16), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 48 + u.array_byte_b[u.array_byte_f[this.var_byte_j]] * 16), (byte)2);
+                SoundPlayerManager.a((byte)16, false);
+                p.a(ae2, (short)(this.posX + u.var_byte_arr_a[this.var_byte_j] * 48), (short)(this.posY + u.array_byte_b[this.var_byte_j] * 48), (byte)2);
+                p.a(ae2, (short)(this.posX + u.var_byte_arr_a[this.var_byte_j] * 48 + u.var_byte_arr_a[u.arr_byte_e[this.var_byte_j]] * 16), (short)(this.posY + u.array_byte_b[this.var_byte_j] * 48 + u.array_byte_b[u.arr_byte_e[this.var_byte_j]] * 16), (byte)2);
+                p.a(ae2, (short)(this.posX + u.var_byte_arr_a[this.var_byte_j] * 48 + u.var_byte_arr_a[u.array_byte_f[this.var_byte_j]] * 16), (short)(this.posY + u.array_byte_b[this.var_byte_j] * 48 + u.array_byte_b[u.array_byte_f[this.var_byte_j]] * 16), (byte)2);
             }
         }
     }
@@ -716,26 +716,26 @@ implements u {
         ae ae2 = n.var_ae_a;
         switch (this.e) {
             case 0: {
-                bw.a((byte)17, false);
+                SoundPlayerManager.a((byte)17, false);
             }
             case 4: {
-                p.a(ae2, this.var_short_c, this.var_short_d, (byte)4);
+                p.a(ae2, this.posX, this.posY, (byte)4);
                 return;
             }
             case 1: 
             case 5: {
-                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 16), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 16), (byte)4);
+                p.a(ae2, (short)(this.posX + u.var_byte_arr_a[this.var_byte_j] * 16), (short)(this.posY + u.array_byte_b[this.var_byte_j] * 16), (byte)4);
                 return;
             }
             case 2: 
             case 6: {
-                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 32), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 32), (byte)4);
+                p.a(ae2, (short)(this.posX + u.var_byte_arr_a[this.var_byte_j] * 32), (short)(this.posY + u.array_byte_b[this.var_byte_j] * 32), (byte)4);
                 return;
             }
             case 3: 
             case 7: {
-                bw.a((byte)17, false);
-                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 48), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 48), (byte)4);
+                SoundPlayerManager.a((byte)17, false);
+                p.a(ae2, (short)(this.posX + u.var_byte_arr_a[this.var_byte_j] * 48), (short)(this.posY + u.array_byte_b[this.var_byte_j] * 48), (byte)4);
             }
         }
     }
@@ -766,28 +766,28 @@ implements u {
         boolean bl4 = false;
         ae ae2 = n.var_ae_a;
         if (n4 / n3 == 0) {
-            p.a(ae2, this.var_short_c, this.var_short_d, by2);
+            p.a(ae2, this.posX, this.posY, by2);
             return;
         }
         if (n4 / n3 == 1) {
-            p.a(ae2, (short)(this.var_short_c + 16), this.var_short_d, by2);
-            p.a(ae2, (short)(this.var_short_c - 16), this.var_short_d, by2);
-            p.a(ae2, this.var_short_c, (short)(this.var_short_d + 16), by2);
-            p.a(ae2, this.var_short_c, (short)(this.var_short_d - 16), by2);
+            p.a(ae2, (short)(this.posX + 16), this.posY, by2);
+            p.a(ae2, (short)(this.posX - 16), this.posY, by2);
+            p.a(ae2, this.posX, (short)(this.posY + 16), by2);
+            p.a(ae2, this.posX, (short)(this.posY - 16), by2);
             return;
         }
         if (n4 / n3 == 2) {
-            p.a(ae2, (short)(this.var_short_c + 32), this.var_short_d, by2);
-            p.a(ae2, (short)(this.var_short_c - 32), this.var_short_d, by2);
-            p.a(ae2, this.var_short_c, (short)(this.var_short_d + 32), by2);
-            p.a(ae2, this.var_short_c, (short)(this.var_short_d - 32), by2);
+            p.a(ae2, (short)(this.posX + 32), this.posY, by2);
+            p.a(ae2, (short)(this.posX - 32), this.posY, by2);
+            p.a(ae2, this.posX, (short)(this.posY + 32), by2);
+            p.a(ae2, this.posX, (short)(this.posY - 32), by2);
             return;
         }
         if (n4 / n3 == 3) {
-            p.a(ae2, (short)(this.var_short_c + 48), this.var_short_d, by2);
-            p.a(ae2, (short)(this.var_short_c - 48), this.var_short_d, by2);
-            p.a(ae2, this.var_short_c, (short)(this.var_short_d + 48), by2);
-            p.a(ae2, this.var_short_c, (short)(this.var_short_d - 48), by2);
+            p.a(ae2, (short)(this.posX + 48), this.posY, by2);
+            p.a(ae2, (short)(this.posX - 48), this.posY, by2);
+            p.a(ae2, this.posX, (short)(this.posY + 48), by2);
+            p.a(ae2, this.posX, (short)(this.posY - 48), by2);
         }
     }
 
@@ -800,7 +800,7 @@ implements u {
                     ((al)ck2).a(new bj((short)0, s2, this.f, this.m));
                     continue;
                 }
-                p.a(ae2, (short)(this.var_short_c + u.var_byte_arr_a[this.var_byte_j] * 16 * i2), (short)(this.var_short_d + u.array_byte_b[this.var_byte_j] * 16 * i2), (byte)10);
+                p.a(ae2, (short)(this.posX + u.var_byte_arr_a[this.var_byte_j] * 16 * i2), (short)(this.posY + u.array_byte_b[this.var_byte_j] * 16 * i2), (byte)10);
             }
         }
     }

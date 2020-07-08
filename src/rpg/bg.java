@@ -45,7 +45,7 @@ implements Runnable {
                 return;
             }
             case 1: {
-                bw.f();
+                SoundPlayerManager.f();
                 ce.x();
                 ce.z();
                 this.a(false, (byte)1);
@@ -254,11 +254,11 @@ implements Runnable {
     }
 
     public final void hideNotify() {
-        bw.a();
+        SoundPlayerManager.a();
     }
 
     public final void showNotify() {
-        bw.b();
+        SoundPlayerManager.b();
     }
 
     private final void c() {
@@ -271,11 +271,11 @@ implements Runnable {
         this.var_short_c = (short)rpg.h.a(MyGameCanvas.g / 2, MyGameCanvas.g - 10);
         this.var_short_d = (short)(10 * rpg.h.a(3, 7));
         this.var_byte_d = (byte)rpg.h.a(0, 7);
-        bw.b(22);
+        SoundPlayerManager.startPlayer1(22);
     }
 
     public final void a(boolean bl2, byte by2) {
-        bw.d();
+        SoundPlayerManager.d();
         if (!bl2 && (bs.var_bs_a.var_byte_b & (by2 == 1 ? 8 : 2)) != 0) {
             bl2 = true;
         }

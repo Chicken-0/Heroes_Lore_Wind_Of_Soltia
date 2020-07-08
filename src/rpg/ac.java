@@ -32,8 +32,8 @@ extends o {
 
     public final void void_a(int n2) {
         this.f();
-        this.var_short_c = (short)(this.var_short_c + n2 * u.var_byte_arr_a[this.i]);
-        this.var_short_d = (short)(this.var_short_d + n2 * u.array_byte_b[this.i]);
+        this.posX = (short)(this.posX + n2 * u.var_byte_arr_a[this.i]);
+        this.posY = (short)(this.posY + n2 * u.array_byte_b[this.i]);
         this.void_b();
         if (this.byte_h == 1) {
             this.g();
@@ -51,8 +51,8 @@ extends o {
         if (!this.d) {
             return;
         }
-        int n4 = n2 + this.var_short_c + this.var_byte_c;
-        int n5 = n3 + this.var_short_d + this.var_byte_d;
+        int n4 = n2 + this.posX + this.var_byte_c;
+        int n5 = n3 + this.posY + this.var_byte_d;
         if (n4 + 16 < 0 || n5 < 0 || n4 - 16 > as.var_int_a || n5 > as.b + 32) {
             return;
         }

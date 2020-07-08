@@ -146,7 +146,7 @@ public final class g {
         byte by2 = this.byte_b();
         if (!ad.var_boolean_arr_b[ad2.f]) {
             if (by2 != -1) {
-                x.a(ad2.h == 1);
+                x.assertValue(ad2.h == 1);
                 this.var_ad_arr_a[by2] = ad2;
                 return true;
             }
@@ -178,7 +178,7 @@ public final class g {
             this.void_a(ad2, by5);
             by4 = (byte)(by4 - by5);
         }
-        x.a(by4 == 0);
+        x.assertValue(by4 == 0);
         this.e();
     }
 
@@ -187,7 +187,7 @@ public final class g {
     }
 
     public final void void_a(ad ad2, byte by2) {
-        x.a(ad2.h >= by2);
+        x.assertValue(ad2.h >= by2);
         ad2.b(by2);
         if (ad2.h < 1) {
             this.void_a(ad2);

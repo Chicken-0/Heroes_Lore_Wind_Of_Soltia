@@ -123,8 +123,8 @@ implements u {
         int n3 = (arrby[0] & 3) << 8 | arrby[2] & 0xFF;
         boolean bl3 = ((arrby[0] & 0xFF) >> 5 & 1) == 0;
         boolean bl4 = ((arrby[0] & 0xFF) >> 4 & 1) == 0;
-        x.a(n2 != -1);
-        x.a(n3 != -1);
+        x.assertValue(n2 != -1);
+        x.assertValue(n3 != -1);
         if (bl3 && !n.boolean_a(n2)) {
             return false;
         }
@@ -197,7 +197,18 @@ implements u {
             }
         }
     }
-
+    public static void dbgTest(){
+        System.out.println("[CMD_2]: " + var_byte_arr_arr_b[var_int_a][0]);
+        System.out.println("[IDX]: " + var_int_a);
+        System.out.println("[AC_len]: " + n.var_ae_a.var_ac_arr_a.length);
+        
+        for (int y = 0; y < var_byte_arr_arr_b.length; y++){
+            for (int x = 0; x < var_byte_arr_arr_b[y].length; x++){
+                System.out.print(var_byte_arr_arr_b[y][x] + " ");
+            }
+            System.out.println();
+        }
+    }
     public static final void void_a() throws Throwable {
         if (var_byte_a != 3 && var_boolean_a) {
             var_boolean_b = true;
@@ -205,6 +216,7 @@ implements u {
         }
         ao ao2 = n.ao_a();
         if (var_byte_a == 0) {
+//            dbgTest();
             switch (var_byte_arr_arr_b[var_int_a][0]) {
                 case 3: 
                 case 4: 
@@ -329,13 +341,13 @@ implements u {
                 }
                 case 46: {
                     ac ac2 = n.var_ae_a.var_ac_arr_a[var_byte_arr_arr_b[var_int_a++][1]];
-                    n.var_ae_a.var_ac_arr_a[var_byte_arr_arr_b[var_int_a++][1]].d = false;
+                    ac2.d = false;
                     ac2.f();
                     break;
                 }
                 case 47: {
                     ac ac3 = n.var_ae_a.var_ac_arr_a[var_byte_arr_arr_b[var_int_a++][1]];
-                    n.var_ae_a.var_ac_arr_a[var_byte_arr_arr_b[var_int_a++][1]].d = true;
+                    ac3.d = true;
                     ac3.a(ac3.posX, ac3.posY);
                     break;
                 }
@@ -618,7 +630,7 @@ implements u {
 
     private static final void j() {
         int n2 = var_byte_arr_arr_b[var_int_a][1] & 0xFF;
-        n2 |= (var_byte_arr_arr_b[var_int_a][2] & 0xFF) << 2 & 0x300;
+        n2 |= ((var_byte_arr_arr_b[var_int_a][2] & 0xFF) << 2 & 0x300);
         switch (var_byte_arr_arr_b[var_int_a][2] & 3) {
             case 0: {
                 n.void_b(n2);
@@ -773,7 +785,7 @@ implements u {
         byte by2 = var_byte_arr_arr_b[var_int_a][1];
         byte by3 = var_byte_arr_arr_b[var_int_a][2];
         ++var_int_a;
-        ae2.var_ac_arr_a[by2].f = by3;
+        ae2.var_ac_arr_a[by2].imgId = by3;
     }
 
     public static final void a(Graphics graphics) {

@@ -10,13 +10,13 @@ import javax.microedition.lcdui.Graphics;
 
 public final class ac
 extends o {
-    public byte f;
+    public byte imgId;
     public byte g;
     public boolean d;
 
-    public ac(short s2, short s3, byte by2, byte by3) {
-        super(s2, s3, (byte)8, (byte)8);
-        this.f = by2;
+    public ac(short posX, short posY, byte imgId, byte by3) {
+        super(posX, posY, (byte)8, (byte)8);
+        this.imgId = imgId;
         this.d = true;
         this.g = by3;
     }
@@ -57,8 +57,8 @@ extends o {
             return;
         }
         graphics.drawImage(ce.var_javax_microedition_lcdui_Image_u, n4, n5 - 3, 17);
-        if (this.f >= 18) {
-            graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_g[this.f - 18], n4, n5, 33);
+        if (this.imgId >= 18) {
+            graphics.drawImage(ce.var_javax_microedition_lcdui_Image_arr_g[this.imgId - 18], n4, n5, 33);
         } else {
             int n6 = 0;
             n6 = this.byte_h == 2 ? this.g * 12 + 4 + (this.byte_j - 1) : this.g * 12 + 0 + (this.byte_j - 1);

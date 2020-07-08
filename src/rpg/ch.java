@@ -60,7 +60,7 @@ extends cb {
         }
         if (cb2 instanceof m && by2 == 0) {
             ad ad2 = by3 >= 100 ? n.ao_a().ad_a(by3 - 100) : n.ao_a().var_g_a.a((int)by3);
-            x.a(ad2 instanceof e);
+            x.assertValue(ad2 instanceof e);
             e e2 = (e)ad2;
             if (e2.b) {
                 this.a(new Object[]{aa.var_z_a.loadByIndex(21)});

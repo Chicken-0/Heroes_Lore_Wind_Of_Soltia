@@ -190,32 +190,37 @@ implements u {
         var_byte_arr_m = null;
     }
 
-    public static final void a(boolean bl2, byte[] arrby, int n2, byte by2, byte by3, PNGMerger br2) {
-        int n3 = arrby[n2++];
-        if (br2 != null) {
-            br2.enableLoad = true;
-            if (var_javax_microedition_lcdui_Image_arr_arr_a[by2] == null) {
-                ce.var_javax_microedition_lcdui_Image_arr_arr_a[by2] = new Image[br2.getImgCount()];
+    public static final void a(boolean bl2, byte[] sprArrayByte, int currentSprPos, byte imgIdx, byte imgFlipIdx, PNGMerger pngMerger) {
+        int n3 = sprArrayByte[currentSprPos++];
+        if (pngMerger != null) {
+            pngMerger.enableLoad = true;
+            if (var_javax_microedition_lcdui_Image_arr_arr_a[imgIdx] == null) {
+                ce.var_javax_microedition_lcdui_Image_arr_arr_a[imgIdx] = new Image[pngMerger.getImgCount()];
             }
-            if (by3 != -1 && var_javax_microedition_lcdui_Image_arr_arr_a[by3] == null) {
-                ce.var_javax_microedition_lcdui_Image_arr_arr_a[by3] = new Image[br2.getImgCount()];
+            if (imgFlipIdx != -1 && var_javax_microedition_lcdui_Image_arr_arr_a[imgFlipIdx] == null) {
+                ce.var_javax_microedition_lcdui_Image_arr_arr_a[imgFlipIdx] = new Image[pngMerger.getImgCount()];
             }
         }
         MyGameCanvas.k();
         for (int i2 = 0; i2 < n3; ++i2) {
-            int n4 = bl2 ? arrby[n2++] : 1;
+            int n4 = bl2 ? sprArrayByte[currentSprPos++] : 1;
             for (int i3 = 0; i3 < n4; ++i3) {
                 Image[] arrimage;
-                ++n2;
-                int n5 = ++n2;
-                ++n2;
-                boolean bl3 = arrby[n5] != 0;
-                byte by4 = arrby[n2++];
-                byte by5 = bl3 ? by3 : by2;
-                arrby[n2 - 2] = by5;
-                rpg.x.a(by5 > 0);
-                if (br2 == null || (arrimage = var_javax_microedition_lcdui_Image_arr_arr_a[by5])[by4] != null) continue;
-                arrimage[by4] = bl3 ? br2.getFlipImageById(by4) : br2.getImageById(by4);
+                ++currentSprPos;
+                ++currentSprPos;
+                
+                boolean isFlip = sprArrayByte[currentSprPos++] != 0;
+                
+                byte imgId = sprArrayByte[currentSprPos++];
+                byte imgCachedIdx = isFlip ? imgFlipIdx : imgIdx;
+                sprArrayByte[currentSprPos - 2] = imgCachedIdx;
+                rpg.x.assertValue(imgCachedIdx > 0);
+                
+                arrimage = var_javax_microedition_lcdui_Image_arr_arr_a[imgCachedIdx];
+                
+                if (pngMerger == null || arrimage[imgId] != null) continue;
+                
+                arrimage[imgId] = isFlip ? pngMerger.getFlipImageById(imgId) : pngMerger.getImageById(imgId);
                 MyGameCanvas.k();
             }
         }
@@ -420,26 +425,26 @@ implements u {
         }
     }
 
-    public static final void b(byte by2, byte by3) {
+    public static final void loadNpcSprImage(byte npcId, byte npcIdxInfo) {//npcImg file id
         try {
             byte by4;
-            PNGMerger br2 = new PNGMerger("/npc/" + (by2 < 10 ? "0" : "") + by2);
+            PNGMerger br2 = new PNGMerger("/npc/" + (npcId < 10 ? "0" : "") + npcId);
             br2.enableLoad = true;
             MyGameCanvas.k();
-            byte[] arrby = ce.getResourceByName("/npc/spr/" + (by2 < 10 ? "0" : "") + by2);
+            byte[] sprByteArray = ce.getResourceByName("/npc/spr/" + (npcId < 10 ? "0" : "") + npcId);
             MyGameCanvas.k();
-            for (int i2 = 0; i2 < arrby.length; i2 += by4) {
-                byte by5 = arrby[i2++];
-                byte by6 = arrby[i2++];
-                by4 = arrby[i2++];
-                ce.var_java_lang_Object_arr_j[by3 * 12 + by5 * 4 + by6] = new byte[by4];
+            for (int currentSprPos = 0; currentSprPos < sprByteArray.length; currentSprPos += by4) {
+                byte by5 = sprByteArray[currentSprPos++];//0x00
+                byte by6 = sprByteArray[currentSprPos++];// 0x01
+                by4 = sprByteArray[currentSprPos++];// 0x02
+                ce.var_java_lang_Object_arr_j[npcIdxInfo * 12 + by5 * 4 + by6] = new byte[by4];
                 if (by5 == 0) {
-                    ce.var_byte_arr_i[by3] = arrby[i2];
+                    ce.var_byte_arr_i[npcIdxInfo] = sprByteArray[currentSprPos];
                 } else if (by5 == 1) {
-                    ce.var_byte_arr_j[by3] = arrby[i2];
+                    ce.var_byte_arr_j[npcIdxInfo] = sprByteArray[currentSprPos];
                 }
-                ce.a(true, arrby, i2, (byte)(27 + by3), (byte)(27 + by3 + 5), br2);
-                System.arraycopy(arrby, i2, var_java_lang_Object_arr_j[by3 * 12 + by5 * 4 + by6], 0, by4);
+                ce.a(true, sprByteArray, currentSprPos, (byte)(27 + npcIdxInfo), (byte)(27 + npcIdxInfo + 5), br2);
+                System.arraycopy(sprByteArray, currentSprPos, var_java_lang_Object_arr_j[npcIdxInfo * 12 + by5 * 4 + by6], 0, by4);
                 MyGameCanvas.k();
             }
             return;
@@ -487,7 +492,7 @@ implements u {
                     break;
                 }
                 default: {
-                    rpg.x.a(false);
+                    rpg.x.assertValue(false);
                     by3 = -1;
                     n2 = -1;
                 }

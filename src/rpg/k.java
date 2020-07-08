@@ -124,7 +124,7 @@ extends cb {
         if (cb2 instanceof m && (n2 == 0 || n2 == 1 || n2 == 2)) {
             ao ao3 = n.ao_a();
             ad ad3 = by2 >= 100 ? n.ao_a().ad_a(by2 - 100) : n.ao_a().var_g_a.a((int)by2);
-            x.a(ad.c[ad3.f]);
+            x.assertValue(ad.c[ad3.f]);
             int n3 = 0;
             for (int i2 = 0; i2 < 3; ++i2) {
                 if (n2 == i2 || this.a[i2] == null || this.a[i2].f != ad3.f || this.a[i2].g != ad3.g) continue;

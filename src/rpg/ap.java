@@ -28,7 +28,7 @@ extends cb {
             ao ao2 = n.ao_a();
             if (this.var_byte_b == 0) {
                 byte[] arrby = ao2.a(true, (byte)1);
-                x.a(arrby.length > 0);
+                x.assertValue(arrby.length > 0);
                 this.var_cb_b = new m(this, arrby, this.var_byte_b, ax.var_z_a.loadByIndex(3));
             } else if (this.var_byte_b == 1) {
                 byte[] arrby = ao2.var_g_a.a((byte)17);
@@ -75,7 +75,7 @@ extends cb {
         if (cb2 instanceof m && (by2 == 0 || by2 == 1)) {
             ad ad2 = by3 >= 100 ? n.ao_a().ad_a(by3 - 100) : n.ao_a().var_g_a.a((int)by3);
             if (by2 == 0) {
-                x.a(ad2 instanceof t);
+                x.assertValue(ad2 instanceof t);
                 t t2 = (t)ad2;
                 if (!t2.b) {
                     Object[] arrobject = new Object[]{ax.var_z_a.loadByIndex(11), ax.var_z_a.loadByIndex(13)};
@@ -88,7 +88,7 @@ extends cb {
                 }
                 return;
             }
-            x.a(ad2.f == 17);
+            x.assertValue(ad2.f == 17);
             this.var_ad_a = ad2;
         }
     }

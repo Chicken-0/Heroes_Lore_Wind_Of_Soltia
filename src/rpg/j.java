@@ -79,20 +79,20 @@ public final class j {
     public static final void a(byte by2) {
         j j2 = var_j_arr_a[by2];
         byte[] arrby = (byte[])ce.var_java_lang_Object_arr_e[by2 * 12 + 0];
-        x.a(arrby != null);
+        x.assertValue(arrby != null);
         j2.j = arrby[0];
         arrby = (byte[])ce.var_java_lang_Object_arr_e[by2 * 12 + 4];
-        x.a(arrby != null);
+        x.assertValue(arrby != null);
         j2.k = arrby[0];
         arrby = (byte[])ce.var_java_lang_Object_arr_e[by2 * 12 + 8];
-        x.a(arrby != null);
+        x.assertValue(arrby != null);
         j2.l = arrby[0];
     }
 
     public static final void b(byte by2) {
         j j2 = var_j_arr_a[by2];
         byte[] arrby = (byte[])ce.var_java_lang_Object_arr_h[by2 * 16 + 0];
-        x.a(arrby != null);
+        x.assertValue(arrby != null);
         j2.j = arrby[0];
         arrby = (byte[])ce.var_java_lang_Object_arr_h[by2 * 16 + 4];
         j2.k = arrby != null ? arrby[0] : (byte)-1;

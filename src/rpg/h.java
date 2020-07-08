@@ -9,7 +9,7 @@ public final class h {
     public static Random a = new Random();
 
     public static final int a(int n2, int n3) {
-        x.a(n2 <= n3);
+        x.assertValue(n2 <= n3);
         int n4 = n3 - n2 + 1;
         if (n4 == 0) {
             return 0;

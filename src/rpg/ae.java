@@ -108,13 +108,13 @@ implements u {
         this.convertEvtArray(this.resourceByteData, 0);
         currentEvtPos = 0 + this.mapTileHorizontalCount * this.mapTileVerticalCount;
         MyGameCanvas.k();
-        currentEvtPos += this.int_a(this.resourceByteData, currentEvtPos);// init img map ??
+        currentEvtPos += this.loadMap(this.resourceByteData, currentEvtPos);
         MyGameCanvas.k();
-        currentEvtPos += this.int_b(this.resourceByteData, currentEvtPos);
+        currentEvtPos += this.loadNpc(this.resourceByteData, currentEvtPos);
         MyGameCanvas.k();
-        currentEvtPos += this.int_c(this.resourceByteData, currentEvtPos);
+        currentEvtPos += this.loadEnemy(this.resourceByteData, currentEvtPos);
         MyGameCanvas.k();
-        currentEvtPos += this.d(this.resourceByteData, currentEvtPos);
+        currentEvtPos += this.loadFace(this.resourceByteData, currentEvtPos);
         MyGameCanvas.k();
         currentEvtPos += this.e(this.resourceByteData, currentEvtPos);
         this.void_c(this.resourceByteData, currentEvtPos);
@@ -188,7 +188,7 @@ implements u {
         MyGameCanvas.k();
     }
 
-    private final int int_a(byte[] evtArray, int evtPos) {
+    private final int loadMap(byte[] evtArray, int evtPos) {
         int n3;
         int imgCount;
         Image[] arrayImgMap = null;
@@ -219,8 +219,8 @@ implements u {
             short posY = (short)((evtArray[evtPos++] & 0xFF) * 16);
             byte by2 = evtArray[evtPos++];
             byte by3 = evtArray[evtPos++];
-            int n6 = evtArray[evtPos++] & 0xFF;// img id
-            aj aj2 = new aj(posX, posY, by2, by3, arrayImgMap[n6]);
+            int imgId = evtArray[evtPos++] & 0xFF;// img id
+            aj aj2 = new aj(posX, posY, by2, by3, arrayImgMap[imgId]);
             this.var_aq_a.b(aj2);
             this.var_aq_a.c(aj2);
             this.var_aj_arr_a[n3] = aj2;
@@ -229,15 +229,15 @@ implements u {
         return 1 + imgCount + 1 + n5 * 5;
     }
 
-    private final int int_b(byte[] arrby, int n2) {
-        byte by2;
+    private final int loadNpc(byte[] evtData, int currentEvtPos) {
+        byte npcId;
         int n3;
-        int n4;
-        PNGMerger object;
+        int npcIdx;
+        PNGMerger pngMerger;
         byte by3;
         int n5 = 0;
         Image[] arrimage = null;
-        int n6 = arrby[n2++] & 0xFF;
+        int n6 = evtData[currentEvtPos++] & 0xFF;
         ++n5;
         for (by3 = 0; by3 < 5; by3 = (byte)(by3 + 1)) {
             ce.d(by3);
@@ -247,36 +247,36 @@ implements u {
             ce.var_byte_arr_l[by3] = -1;
         }
         try {
-            object = new PNGMerger("/npc/all");
-            object.enableLoad = true;
+            pngMerger = new PNGMerger("/npc/all");
+            pngMerger.enableLoad = true;
             MyGameCanvas.k();
-            arrimage = ce.var_javax_microedition_lcdui_Image_arr_g = new Image[((PNGMerger)object).getImgCount()];
-            n4 = 0;
+            arrimage = ce.var_javax_microedition_lcdui_Image_arr_g = new Image[pngMerger.getImgCount()];
+            npcIdx = 0;
             for (n3 = 0; n3 < n6; n3 = (int)((byte)(n3 + 1))) {
-                by2 = arrby[n2++];
+                npcId = evtData[currentEvtPos++];
                 ++n5;
-                if (by2 >= 18) {
-                    arrimage[by2 - 18] = ((PNGMerger)object).getImageById(by2 - 18);
+                if (npcId >= 18) {
+                    arrimage[npcId - 18] = pngMerger.getImageById(npcId - 18);
                     MyGameCanvas.k();
                     continue;
                 }
-                if (by2 == 3) {
-                    ce.var_byte_arr_l[n4] = by2;
-                    ce.a((short)17, (byte)n4, true);
-                    n4 = (byte)(n4 + 1);
+                if (npcId == 3) {
+                    ce.var_byte_arr_l[npcIdx] = npcId;
+                    ce.a((short)17, (byte)npcIdx, true);
+                    npcIdx = (byte)(npcIdx + 1);
                     continue;
                 }
-                if (by2 == 6) {
-                    ce.var_byte_arr_l[n4] = by2;
-                    ce.a((short)20, (byte)n4, true);
-                    n4 = (byte)(n4 + 1);
+                if (npcId == 6) {
+                    ce.var_byte_arr_l[npcIdx] = npcId;
+                    ce.a((short)20, (byte)npcIdx, true);
+                    npcIdx = (byte)(npcIdx + 1);
                     continue;
                 }
-                ce.var_byte_arr_l[n4] = by2;
+                ce.var_byte_arr_l[npcIdx] = npcId;
                 MyGameCanvas.k();
-                ce.b(by2, (byte)n4);
-                n4 = (byte)(n4 + 1);
-                String cfr_ignored_0 = "Npc Loaded - " + by2;
+                ce.loadNpcSprImage(npcId, (byte)npcIdx);
+                npcIdx = (byte)(npcIdx + 1);
+                String cfr_ignored_0 = "Npc Loaded - " + npcId;
             }
         }
         catch (IOException iOException) {
@@ -284,36 +284,36 @@ implements u {
             iOException.printStackTrace();
         }
         MyGameCanvas.k();
-        int n7 = arrby[n2++] & 0xFF;
+        int n7 = evtData[currentEvtPos++] & 0xFF;
         ++n5;
         this.var_ac_arr_a = new ac[n7];
-        for (n4 = 0; n4 < n7; ++n4) {
-            n3 = arrby[n2++];
-            by2 = arrby[n2++];
-            byte by4 = arrby[n2++];
+        for (npcIdx = 0; npcIdx < n7; ++npcIdx) {
+            short posX = evtData[currentEvtPos++];
+            short posY = evtData[currentEvtPos++];
+            byte imgId = evtData[currentEvtPos++];
             byte by5 = -1;
-            if (by4 >= 18) {
+            if (imgId >= 18) {
                 by5 = -1;
             } else {
                 for (byte by6 = 0; by6 < ce.var_byte_arr_l.length; by6 = (byte)(by6 + 1)) {
-                    if (ce.var_byte_arr_l[by6] != by4) continue;
+                    if (ce.var_byte_arr_l[by6] != imgId) continue;
                     by5 = by6;
                     break;
                 }
-                x.a(by5 != -1);
+                x.assertValue(by5 != -1);
             }
-            ac ac2 = new ac((short)(n3 * 16), (short)(by2 * 16), by4, by5);
+            ac ac2 = new ac((short)(posX * 16), (short)(posY * 16), imgId, by5);
             this.var_aq_a.b(ac2);
             this.var_aq_a.c(ac2);
             ac2.g();
             n5 += 3;
-            this.var_ac_arr_a[n4] = ac2;
+            this.var_ac_arr_a[npcIdx] = ac2;
         }
         MyGameCanvas.k();
         return n5;
     }
 
-    private final int int_c(byte[] arrby, int n2) {
+    private final int loadEnemy(byte[] arrby, int n2) {
         int n3;
         byte by2 = 0;
         int by3;
@@ -326,7 +326,7 @@ implements u {
             ce.var_byte_arr_k[n4] = -1;
         }
         n4 = 0;
-        x.a((by3 = arrby[n2++] & 0xFF) <= 5);
+        x.assertValue((by3 = arrby[n2++] & 0xFF) <= 5);
         ++n4;
         MyGameCanvas.k();
         byte[] arrby2 = null;
@@ -362,7 +362,7 @@ implements u {
         return n4;
     }
 
-    private final int d(byte[] arrby, int n2) {
+    private final int loadFace(byte[] arrby, int n2) {
         int n3 = arrby[n2++];
         try {
             PNGMerger br2 = new PNGMerger("/m/face");
@@ -498,11 +498,11 @@ implements u {
                 return;
             }
             case 106: {
-                x.a(false);
+                x.assertValue(false);
                 return;
             }
             case 107: {
-                x.a(false);
+                x.assertValue(false);
                 return;
             }
             case 108: {
@@ -515,7 +515,7 @@ implements u {
             }
             case 110: {
                 ac ac4 = this.var_ac_arr_a[by3 & 0xFF];
-                this.var_ac_arr_a[by3 & 0xFF].f = by4;
+                this.var_ac_arr_a[by3 & 0xFF].imgId = by4;
                 return;
             }
             case 111: {

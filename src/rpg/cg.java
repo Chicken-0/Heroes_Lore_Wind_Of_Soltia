@@ -97,7 +97,7 @@ extends av {
             ae2.arrayMapTileInfo[by2 - 1][n2] = null;
         }
         for (n2 = 6; n2 <= 9; n2 = (int)((byte)(n2 + 1))) {
-            x.a(ae2.arrayMapTileInfo[by2][n2] != ao2);
+            x.assertValue(ae2.arrayMapTileInfo[by2][n2] != ao2);
             ae2.arrayMapTileInfo[by2][n2] = this;
         }
         this.g();

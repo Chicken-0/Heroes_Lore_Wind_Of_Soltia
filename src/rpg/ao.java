@@ -93,8 +93,8 @@ implements u {
     }
 
     public final void c(byte by2) {
-        x.a(this.var_p_arr_a[0] != null);
-        x.a(this.var_p_arr_a[1] != null);
+        x.assertValue(this.var_p_arr_a[0] != null);
+        x.assertValue(this.var_p_arr_a[1] != null);
         this.a(this.var_p_arr_a[0]);
         switch (by2) {
             case 6: {
@@ -954,7 +954,7 @@ implements u {
         } else if (by2 == 9) {
             this.e(30);
         } else {
-            x.a(false);
+            x.assertValue(false);
         }
         this.var_g_a.void_a(ad2, (byte)1);
         bs.var_as_a.b();
@@ -999,7 +999,7 @@ implements u {
     }
 
     public final p p_a() {
-        x.a(this.var_p_a != null);
+        x.assertValue(this.var_p_a != null);
         return this.var_p_a;
     }
 
@@ -1133,14 +1133,14 @@ implements u {
             ((DataOutputStream)filterOutputStream).writeByte(this.var_p_arr_a[n2].g);
             ((DataOutputStream)filterOutputStream).writeByte(this.var_p_arr_a[n2].var_byte_h);
         }
-        x.a(this.var_p_a != null);
+        x.assertValue(this.var_p_a != null);
         n2 = -1;
         for (int n3 = 0; n3 < this.var_p_arr_a.length; n3 = (int)((byte)(n3 + 1))) {
             if (this.var_p_a != this.var_p_arr_a[n3]) continue;
             n2 = n3;
             break;
         }
-        x.a(n2 != -1);
+        x.assertValue(n2 != -1);
         ((DataOutputStream)filterOutputStream).writeByte(n2);
         ((DataOutputStream)filterOutputStream).writeInt(this.var_int_h + (int)(System.currentTimeMillis() / 1000L - (long)this.var_int_g));
         byte[] arrby = byteArrayOutputStream.toByteArray();
@@ -1216,8 +1216,8 @@ implements u {
                 ((DataInputStream)filterInputStream).read(arrby2);
                 this.var_e_arr_a[n2] = (e)ad.a(arrby2);
             }
-            x.a(this.var_p_arr_a[0] == null);
-            x.a(this.var_p_a == null);
+            x.assertValue(this.var_p_arr_a[0] == null);
+            x.assertValue(this.var_p_a == null);
             for (n2 = 0; n2 < this.var_p_arr_a.length; ++n2) {
                 if (((DataInputStream)filterInputStream).readByte() == 0) continue;
                 p p2 = this.p_a(((DataInputStream)filterInputStream).readByte());

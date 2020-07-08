@@ -20,8 +20,8 @@ implements u {
     public byte k;
     public byte l = 0;
 
-    public o(short s2, short s3, byte by2, byte by3) {
-        super(s2, s3, by2, by3);
+    public o(short posX, short posY, byte by2, byte by3) {
+        super(posX, posY, by2, by3);
         this.void_a();
     }
 
@@ -107,7 +107,7 @@ implements u {
         this.f();
         switch (this.i) {
             case 1: {
-                x.a(this.posY > 0);
+                x.assertValue(this.posY > 0);
                 this.posY = (short)(this.posY - n2);
                 if (this.var_boolean_b) {
                     this.var_boolean_b = false;
@@ -118,7 +118,7 @@ implements u {
                 break;
             }
             case 2: {
-                x.a(this.posY < n.var_ae_a.mapHeight - 16);
+                x.assertValue(this.posY < n.var_ae_a.mapHeight - 16);
                 this.posY = (short)(this.posY + n2);
                 if (this.var_boolean_b) {
                     this.var_boolean_b = false;
@@ -129,7 +129,7 @@ implements u {
                 break;
             }
             case 3: {
-                x.a(this.posX > 0);
+                x.assertValue(this.posX > 0);
                 this.posX = (short)(this.posX - n2);
                 if (this.var_boolean_a) {
                     this.var_boolean_a = false;
@@ -140,7 +140,7 @@ implements u {
                 break;
             }
             case 4: {
-                x.a(this.posX < n.var_ae_a.mapWidth - 16);
+                x.assertValue(this.posX < n.var_ae_a.mapWidth - 16);
                 this.posX = (short)(this.posX + n2);
                 if (this.var_boolean_a) {
                     this.var_boolean_a = false;
@@ -277,10 +277,10 @@ implements u {
         for (int i2 = 0; i2 < this.e; ++i2) {
             int n2 = this.var_byte_a + u.var_byte_arr_a[by2] + i2;
             int n3 = this.var_byte_b + u.array_byte_b[by2];
-            x.a(n2 >= 0);
-            x.a(n2 < ae2.mapTileHorizontalCount);
-            x.a(n3 >= 0);
-            x.a(n3 < ae2.mapTileVerticalCount);
+            x.assertValue(n2 >= 0);
+            x.assertValue(n2 < ae2.mapTileHorizontalCount);
+            x.assertValue(n3 >= 0);
+            x.assertValue(n3 < ae2.mapTileVerticalCount);
             ck3 = ae2.arrayMapTileInfo[n3][n2];
             if (ck3 == this) continue;
             if (ck2 == null && ck3 != null) {
@@ -297,7 +297,7 @@ implements u {
     }
 
     public final boolean boolean_a(byte by2) {
-        x.a(by2 >= 0 && by2 < 8);
+        x.assertValue(by2 >= 0 && by2 < 8);
         boolean bl2 = false;
         for (int i2 = 0; i2 < this.b.size(); ++i2) {
             cf cf2 = (cf)this.b.elementAt(i2);

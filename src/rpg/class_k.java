@@ -170,7 +170,7 @@ public final class class_k extends class_cb {
       class_cb.func_void_a(var1, var2 + 4, var3 + 9, this.field_array_class_ad_a[0], (byte)1, class_ax.field_class_z_a.loadByIndex(33), super.field_byte_b == 0);
       class_cb.func_void_a(var1, var2 + 4, var3 + 9 + 36, this.field_array_class_ad_a[1], (byte)2, class_ax.field_class_z_a.loadByIndex(33), super.field_byte_b == 1);
       class_cb.func_void_a(var1, var2 + 4, var3 + 9 + 72, this.field_array_class_ad_a[2], (byte)3, class_ax.field_class_z_a.loadByIndex(33), super.field_byte_b == 2);
-      int var4 = class_bh.func_int_a(155, 80);
+      int var4 = UIGeneral.func_int_a(155, 80);
       class_cb.func_void_a(var1, var2 + (155 - var4 >> 1), var3 + 138, var4, class_ax.field_class_z_a.loadByIndex(25), super.field_byte_b == 3);
    }
 }

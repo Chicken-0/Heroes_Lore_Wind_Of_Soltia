@@ -73,7 +73,7 @@ public final class class_j {
       class_j var7 = new class_j();
       ++var3;
       byte var4 = var0[var3++];
-      var7.field_array_char_a = class_bh.func_array_char_a(new String(var0, var3, var4));
+      var7.field_array_char_a = UIGeneral.func_array_char_a(new String(var0, var3, var4));
       var3 += var4;
       var4 = var0[var3++];
       var7.field_byte_a = (byte)(var4 >> 6 & 3);

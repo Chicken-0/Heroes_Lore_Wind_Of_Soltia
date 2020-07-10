@@ -41,7 +41,7 @@ public final class class_a extends class_cb {
       var1.setColor(4136767);
       var1.fillRect(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
       class_bf.func_void_c(var1, var2, var3);
-      class_bh.func_void_a(var1, 3, MyGameCanvas.canvasWidth >> 1, var3 + 5);
+      UIGeneral.func_void_a(var1, 3, MyGameCanvas.canvasWidth >> 1, var3 + 5);
       class_bf.func_void_b(var1, var2, var3 + 24, 3);
       var3 += 5;
       var2 += 10;
@@ -73,19 +73,19 @@ public final class class_a extends class_cb {
             var1.setColor(10452863);
          }
 
-         class_bh.func_int_a(var1, var2 + 21, var3 + 36 + var5 * 16, class_ce.field_class_z_a.loadByIndex(this.field_array_byte_h[var5 * 4] - 6), 1);
+         UIGeneral.func_int_a(var1, var2 + 21, var3 + 36 + var5 * 16, class_ce.field_class_z_a.loadByIndex(this.field_array_byte_h[var5 * 4] - 6), 1);
       }
 
       var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_g, var2 + 15, var3 + 104, 20);
       MyGameCanvas.func_void_c(var1, this.field_array_byte_h[super.field_byte_b * 4 + 1], var2 + 30, var3 + 104, 4);
       var1.setColor(8347487);
-      class_bh.func_int_a(var1, var2 + 15, var3 + 117, (class_bh.field_class_java_lang_String_b + this.field_array_byte_h[super.field_byte_b * 4 + 2] + "%").toCharArray(), 1);
+      UIGeneral.func_int_a(var1, var2 + 15, var3 + 117, (UIGeneral.labelTextProgress + this.field_array_byte_h[super.field_byte_b * 4 + 2] + "%").toCharArray(), 1);
       if (MyGameCanvas.canvasWidth > 128) {
          var1.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_m[this.field_array_byte_h[super.field_byte_b * 4] - 6], var2 + 61 + 22, var3 + 74 + 15, 20);
       } else {
          var1.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_m[this.field_array_byte_h[super.field_byte_b * 4] - 6], var2 + 61, var3 + 74, 20);
       }
 
-      class_bh.func_void_a(var1, class_bh.field_array_char_d, class_bh.field_array_char_e);
+      UIGeneral.func_void_a(var1, UIGeneral.labelTextOk, UIGeneral.labelTextBack);
    }
 }

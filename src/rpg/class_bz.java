@@ -106,9 +106,9 @@ public final class class_bz extends class_cb {
       } else {
          var1.setColor(16777215);
          if (super.field_byte_b == 1 && class_n.field_byte_a != 8) {
-            class_bh.func_int_a(var1, var2 + 30, var3 + 14, class_ai.field_class_z_a.loadByIndex(49), 1);
+            UIGeneral.func_int_a(var1, var2 + 30, var3 + 14, class_ai.field_class_z_a.loadByIndex(49), 1);
          } else {
-            class_bh.func_int_a(var1, var2 + 33, var3 + 14, class_ai.field_class_z_a.loadByIndex(21), 1);
+            UIGeneral.func_int_a(var1, var2 + 33, var3 + 14, class_ai.field_class_z_a.loadByIndex(21), 1);
          }
       }
    }

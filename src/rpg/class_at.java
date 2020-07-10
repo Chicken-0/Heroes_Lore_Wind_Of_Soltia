@@ -109,16 +109,16 @@ public final class class_at extends class_cb {
       MyGameCanvas.func_int_a(var1, class_aa.field_class_z_a.loadByIndex(13), var2 + 3, var3 - 2);
       class_cb.func_void_b(var1, var2 + 3, var3 + 7, 149, 17, 10452863);
       var1.setColor(16777215);
-      class_bh.func_int_a(var1, var2 + 6, var3 + 11, class_aa.field_class_z_a.loadByIndex(14), 1);
+      UIGeneral.func_int_a(var1, var2 + 6, var3 + 11, class_aa.field_class_z_a.loadByIndex(14), 1);
       class_cb.func_void_a(var1, var2 + 4, var3 + 30, this.field_class_e_a, (byte)1, class_aa.field_class_z_a.loadByIndex(15), super.field_byte_b == 0);
       class_cb.func_void_a(var1, var2 + 155 - 8, var3 + 65, var4.field_class_g_a.field_int_a);
       class_cb.func_void_b(var1, var2 + 4, var3 + 73, 147, 38, 10452863);
       var1.setColor(16777215);
-      class_bh.func_int_a(var1, var2 + 8, var3 + 80, class_aa.field_class_z_a.loadByIndex(16), 1);
+      UIGeneral.func_int_a(var1, var2 + 8, var3 + 80, class_aa.field_class_z_a.loadByIndex(16), 1);
       if (this.field_class_e_a != null) {
          class_cb.func_void_a(var1, var2 + 155 - 8, var3 + 80, this.field_int_a);
          char[] var5 = class_h.func_array_char_a(class_aa.field_class_z_a.loadByIndex(17), (" : " + this.field_byte_c + "개").toCharArray());
-         class_bh.func_int_a(var1, var2 + 8, var3 + 93, var5, 1);
+         UIGeneral.func_int_a(var1, var2 + 8, var3 + 93, var5, 1);
       }
 
       int var8;
@@ -129,7 +129,7 @@ public final class class_at extends class_cb {
          class_cb.func_void_a(var1, var8, var6, 110, 22);
          class_cb.func_void_b(var1, var8, var6, 110, 22);
          var1.setColor(16777215);
-         class_bh.func_int_a(var1, var8 + 5, var6 + 5, class_aa.field_class_z_a.loadByIndex(28), 1);
+         UIGeneral.func_int_a(var1, var8 + 5, var6 + 5, class_aa.field_class_z_a.loadByIndex(28), 1);
          super.field_boolean_a = true;
       } else if (this.field_byte_d == 1) {
          this.field_byte_d = 0;
@@ -153,7 +153,7 @@ public final class class_at extends class_cb {
          }
       }
 
-      var8 = class_bh.func_int_a(155, 80);
+      var8 = UIGeneral.func_int_a(155, 80);
       class_cb.func_void_a(var1, var2 + (155 - var8 >> 1), var3 + 138, var8, class_aa.field_class_z_a.loadByIndex(18), super.field_byte_b == 1);
    }
 }

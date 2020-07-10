@@ -350,50 +350,50 @@ public abstract class class_cb implements class_u {
       boolean var4 = false;
       if (!(var3 instanceof class_e)) {
          var0.setColor(16777215);
-         var2 = var2 + class_bh.func_int_a(var0, var1, var2, 115, 1, var3.field_array_char_a) - (class_bh.func_int_a() + 2);
+         var2 = var2 + UIGeneral.func_int_a(var0, var1, var2, 115, 1, var3.field_array_char_a) - (UIGeneral.func_int_a() + 2);
          var0.setColor(14663551);
          if (MyGameCanvas.canvasWidth > 128) {
-            class_bh.func_int_a(var0, var1, var2 + 15, 110, 1, var3.field_array_char_b);
+            UIGeneral.func_int_a(var0, var1, var2 + 15, 110, 1, var3.field_array_char_b);
          } else {
-            class_bh.func_int_a(var0, var1, var2 + 15, 75, 1, var3.field_array_char_b);
+            UIGeneral.func_int_a(var0, var1, var2 + 15, 75, 1, var3.field_array_char_b);
          }
       } else {
          class_e var5;
          if (!(var5 = (class_e)var3).field_boolean_b) {
             var0.setColor(14663551);
-            var2 = var2 + class_bh.func_int_a(var0, var1, var2, 115, 1, var5.func_array_char_a()) - (class_bh.func_int_a() + 2);
+            var2 = var2 + UIGeneral.func_int_a(var0, var1, var2, 115, 1, var5.func_array_char_a()) - (UIGeneral.func_int_a() + 2);
             var0.setColor(16777215);
-            class_bh.func_int_a(var0, var1, var2 + 16, 115, 1, class_ce.field_class_z_g.loadByIndex(5));
+            UIGeneral.func_int_a(var0, var1, var2 + 16, 115, 1, class_ce.field_class_z_g.loadByIndex(5));
          } else {
             var0.setColor(16777215);
-            var2 = var2 + class_bh.func_int_a(var0, var1, var2, 115, 1, var5.field_array_char_a) - (class_bh.func_int_a() + 2);
+            var2 = var2 + UIGeneral.func_int_a(var0, var1, var2, 115, 1, var5.field_array_char_a) - (UIGeneral.func_int_a() + 2);
             var0.setColor(14663551);
-            class_bh.func_int_a(var0, var1, var2 + 25, class_ce.field_class_z_g.loadByIndex(var5 instanceof class_l ? 4 : 46), 1);
+            UIGeneral.func_int_a(var0, var1, var2 + 25, class_ce.field_class_z_g.loadByIndex(var5 instanceof class_l ? 4 : 46), 1);
             MyGameCanvas.func_void_c(var0, var5.field_short_a, var1 + 155 - 47, var2 + 25, 8);
             class_t var6;
             if (var3 instanceof class_t && (var6 = (class_t)var3).field_byte_c != -1) {
                var0.setColor(16711680);
-               var2 = var2 + class_bh.func_int_a(var0, var1 + 55, var2 + 10, 115, 1, class_t.field_class_z_a.loadByIndex(var6.field_byte_c)) - (class_bh.func_int_a() + 2);
+               var2 = var2 + UIGeneral.func_int_a(var0, var1 + 55, var2 + 10, 115, 1, class_t.field_class_z_a.loadByIndex(var6.field_byte_c)) - (UIGeneral.func_int_a() + 2);
             }
 
             var0.setColor(14663551);
-            class_bh.func_int_a(var0, var1, var2 + 40, class_ce.field_class_z_g.loadByIndex(3), 1);
+            UIGeneral.func_int_a(var0, var1, var2 + 40, class_ce.field_class_z_g.loadByIndex(3), 1);
             MyGameCanvas.func_void_d(var0, var1 + 155 - 47, var2 + 40, var5.field_byte_e, var5.field_byte_d);
             StringBuffer var8 = new StringBuffer();
 
             for(int var7 = 0; var7 < var5.field_array_byte_j.length; ++var7) {
                if (var5.field_array_byte_j[var7] > 0) {
-                  var8.append(class_bh.func_class_java_lang_String_a(class_ce.field_class_z_a.loadByIndex(9 + var7))).append("+").append(var5.field_array_byte_j[var7]).append("  ");
+                  var8.append(UIGeneral.toString(class_ce.field_class_z_a.loadByIndex(9 + var7))).append("+").append(var5.field_array_byte_j[var7]).append("  ");
                }
             }
 
-            var8.append(class_bh.func_class_java_lang_String_a(var5.field_array_char_b));
+            var8.append(UIGeneral.toString(var5.field_array_char_b));
             Object var9 = null;
             char[] var10 = var8.toString().toCharArray();
             if (MyGameCanvas.canvasWidth > 128) {
-               class_bh.func_int_a(var0, var1, var2 + 55, 110, 1, var10);
+               UIGeneral.func_int_a(var0, var1, var2 + 55, 110, 1, var10);
             } else {
-               class_bh.func_int_a(var0, var1, var2 + 55, 75, 1, var10);
+               UIGeneral.func_int_a(var0, var1, var2 + 55, 75, 1, var10);
             }
          }
 
@@ -406,7 +406,7 @@ public abstract class class_cb implements class_u {
       int var7 = MyGameCanvas.func_int_a(var0, class_ce.field_class_z_g.loadByIndex(2), var1 + 2, var2 + 1);
       MyGameCanvas.func_void_c(var0, var4, var7 + 2, var2 + 1, 4);
       var0.setColor(16777215);
-      class_bh.func_void_a(var0, var1 + 90, var2 + 2, var5, 1);
+      UIGeneral.func_void_a(var0, var1 + 90, var2 + 2, var5, 1);
       boolean var8 = false;
       if (var6) {
          func_void_a(var0, var1 + 30, var2 + 14, 117, 19, 4136767, 10452799, 4144959);
@@ -420,11 +420,11 @@ public abstract class class_cb implements class_u {
          var0.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_d[var3.field_byte_f], var1 + 14, var2 + 19, 3);
          var0.setColor(16777215);
          if (var3 instanceof class_e && !((class_e)var3).field_boolean_b) {
-            class_bh.func_int_a(var0, var1 + 34, var2 + 20, var3.func_array_char_a(), 1);
+            UIGeneral.func_int_a(var0, var1 + 34, var2 + 20, var3.func_array_char_a(), 1);
             return;
          }
 
-         class_bh.func_int_a(var0, var1 + 34, var2 + 20, var3.field_array_char_a, 1);
+         UIGeneral.func_int_a(var0, var1 + 34, var2 + 20, var3.field_array_char_a, 1);
       }
 
    }
@@ -441,7 +441,7 @@ public abstract class class_cb implements class_u {
 
       if (var4 != null) {
          var0.setColor(16777215);
-         class_bh.func_int_a(var0, var1 + var3 / 2 - class_bh.func_int_a(var4) / 2, var2 + 5, var4, 1);
+         UIGeneral.func_int_a(var0, var1 + var3 / 2 - UIGeneral.getTextWidth(var4) / 2, var2 + 5, var4, 1);
       }
 
    }
@@ -463,9 +463,9 @@ public abstract class class_cb implements class_u {
          var3 = var3 - var6 - var6;
          var0.setColor(var9);
          if (var7 == 1) {
-            class_bh.func_void_b(var0, var1 + var6 + (var3 >> 1), var2 + 1, var3, 1, var5, 0, 0, var5.length);
+            UIGeneral.func_void_b(var0, var1 + var6 + (var3 >> 1), var2 + 1, var3, 1, var5, 0, 0, var5.length);
          } else {
-            class_bh.func_int_a(var0, var1 + var6, var2 + 1, var3, 1, var5);
+            UIGeneral.func_int_a(var0, var1 + var6, var2 + 1, var3, 1, var5);
          }
       }
    }

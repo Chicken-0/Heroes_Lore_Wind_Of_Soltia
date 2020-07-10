@@ -139,8 +139,8 @@ public final class class_ai extends class_cb implements class_u {
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int) void
    public final void func_void_a(Graphics var1, int var2, int var3) {
       if (super.field_class_cb_b != null) {
-         class_bh.func_void_a(var1);
-         class_bh.func_void_a(var1, class_bh.field_array_char_d, class_bh.field_array_char_e);
+         UIGeneral.func_void_a(var1);
+         UIGeneral.func_void_a(var1, UIGeneral.labelTextOk, UIGeneral.labelTextBack);
       }
 
       boolean var4 = false;

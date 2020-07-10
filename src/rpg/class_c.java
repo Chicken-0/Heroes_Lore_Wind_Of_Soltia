@@ -54,7 +54,7 @@ public final class class_c extends class_cb {
       var1.setColor(4136767);
       var1.fillRect(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
       class_bf.func_void_c(var1, var2, var3);
-      class_bh.func_void_a(var1, 1, var2 + 155 >> 1, var3 + 5);
+      UIGeneral.func_void_a(var1, 1, var2 + 155 >> 1, var3 + 5);
       class_bf.func_void_b(var1, var2, var3 + 24, 3);
       var2 += 15;
       var3 += 10;
@@ -83,8 +83,8 @@ public final class class_c extends class_cb {
       }
 
       var1.setColor(0);
-      class_bh.func_int_a(var1, var2 + 11, var3 + 104, class_ce.field_class_z_g.loadByIndex(12), 1);
-      class_bh.func_int_a(var1, var2 + 11, var3 + 119, class_ce.field_class_z_g.loadByIndex(13), 1);
-      class_bh.func_void_a(var1, class_bh.field_array_char_d, class_bh.field_array_char_e);
+      UIGeneral.func_int_a(var1, var2 + 11, var3 + 104, class_ce.field_class_z_g.loadByIndex(12), 1);
+      UIGeneral.func_int_a(var1, var2 + 11, var3 + 119, class_ce.field_class_z_g.loadByIndex(13), 1);
+      UIGeneral.func_void_a(var1, UIGeneral.labelTextOk, UIGeneral.labelTextBack);
    }
 }

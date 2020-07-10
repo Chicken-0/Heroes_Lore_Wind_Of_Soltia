@@ -503,7 +503,7 @@ public final class class_ae implements class_u {
       for(var11 = 0; var11 < var6; ++var11) {
          var8 = var1[var2++] & 255;
          ++var10;
-         this.field_array_class_java_lang_Object_c[var11] = class_bh.func_array_char_a(new String(var1, var2, var8));
+         this.field_array_class_java_lang_Object_c[var11] = UIGeneral.func_array_char_a(new String(var1, var2, var8));
          var2 += var8;
          var10 += var8;
       }
@@ -673,7 +673,7 @@ public final class class_ae implements class_u {
          var1.drawLine(0, var6, var4, var6);
          var1.drawLine(0, var6 + 21, var4, var6 + 21);
          var1.setColor(16777215);
-         class_bh.func_void_a(var1, var4 / 2, var6 + 12 - 4, this.field_array_char_a, 1);
+         UIGeneral.func_void_a(var1, var4 / 2, var6 + 12 - 4, this.field_array_char_a, 1);
          --this.field_byte_e;
       }
 
@@ -790,7 +790,7 @@ public final class class_ae implements class_u {
       var1.setColor(0);
       var1.fillRect(0, 0, MyGameCanvas.canvasWidth, 20);
       var1.setColor(16777215);
-      class_bh.func_void_a(var1, MyGameCanvas.canvasHalfWidth, 8, this.field_array_char_a, 1);
+      UIGeneral.func_void_a(var1, MyGameCanvas.canvasHalfWidth, 8, this.field_array_char_a, 1);
    }
 
    // $FF: renamed from: b () void

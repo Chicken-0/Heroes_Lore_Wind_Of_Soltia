@@ -333,12 +333,12 @@ public final class class_ce implements class_u {
          field_array_class_javax_microedition_lcdui_Image_r[3] = var0.getFlipImageById(8);
          MyGameCanvas.func_void_k();
          (var0 = new PNGMerger("/img/etcui")).enableLoad = true;
-         field_class_javax_microedition_lcdui_Image_s = class_bh.func_class_javax_microedition_lcdui_Image_a("_img_etcui__0.png");
-         field_class_javax_microedition_lcdui_Image_t = class_bh.func_class_javax_microedition_lcdui_Image_a("_img_etcui__1.png");
+         field_class_javax_microedition_lcdui_Image_s = UIGeneral.getImageFromLangCodeFolder("_img_etcui__0.png");
+         field_class_javax_microedition_lcdui_Image_t = UIGeneral.getImageFromLangCodeFolder("_img_etcui__1.png");
          var0.getImageById(2);
          MyGameCanvas.func_void_k();
          field_class_javax_microedition_lcdui_Image_u = var0.getImageById(3);
-         field_class_javax_microedition_lcdui_Image_v = class_bh.func_class_javax_microedition_lcdui_Image_a("_img_etcui__4.png");
+         field_class_javax_microedition_lcdui_Image_v = UIGeneral.getImageFromLangCodeFolder("_img_etcui__4.png");
          field_class_javax_microedition_lcdui_Image_w = var0.getImageById(5);
          field_class_javax_microedition_lcdui_Image_x = var0.getImageById(6);
          MyGameCanvas.func_void_k();
@@ -665,13 +665,13 @@ public final class class_ce implements class_u {
          field_class_javax_microedition_lcdui_Image_l = var0.getImageById(6);
          field_class_javax_microedition_lcdui_Image_m = var0.getImageById(7);
          field_class_javax_microedition_lcdui_Image_a = var0.getImageById(8);
-         field_class_javax_microedition_lcdui_Image_e = class_bh.func_class_javax_microedition_lcdui_Image_a("_img_glb__9.png");
-         field_class_javax_microedition_lcdui_Image_f = class_bh.func_class_javax_microedition_lcdui_Image_a("_img_glb__10.png");
-         field_class_javax_microedition_lcdui_Image_g = class_bh.func_class_javax_microedition_lcdui_Image_a("_img_glb__11.png");
-         field_class_javax_microedition_lcdui_Image_h = class_bh.func_class_javax_microedition_lcdui_Image_a("_img_glb__12.png");
-         class_bh.func_class_javax_microedition_lcdui_Image_a("_img_glb__13.png");
+         field_class_javax_microedition_lcdui_Image_e = UIGeneral.getImageFromLangCodeFolder("_img_glb__9.png");
+         field_class_javax_microedition_lcdui_Image_f = UIGeneral.getImageFromLangCodeFolder("_img_glb__10.png");
+         field_class_javax_microedition_lcdui_Image_g = UIGeneral.getImageFromLangCodeFolder("_img_glb__11.png");
+         field_class_javax_microedition_lcdui_Image_h = UIGeneral.getImageFromLangCodeFolder("_img_glb__12.png");
+         UIGeneral.getImageFromLangCodeFolder("_img_glb__13.png");
          field_class_javax_microedition_lcdui_Image_i = var0.getImageById(14);
-         field_class_javax_microedition_lcdui_Image_j = class_bh.func_class_javax_microedition_lcdui_Image_a("_img_glb__15.png");
+         field_class_javax_microedition_lcdui_Image_j = UIGeneral.getImageFromLangCodeFolder("_img_glb__15.png");
          var0.getImageById(16);
          field_class_z_e = new TableDefineTextFile("/sgui/help");
       } catch (Exception var2) {
@@ -710,8 +710,8 @@ public final class class_ce implements class_u {
          field_class_javax_microedition_lcdui_Image_q = var0.getImageById(6);
          field_class_javax_microedition_lcdui_Image_p = var0.getImageById(7);
          MyGameCanvas.func_void_k();
-         field_class_javax_microedition_lcdui_Image_b = class_bh.func_class_javax_microedition_lcdui_Image_a("_sgui_shop__8.png");
-         field_class_javax_microedition_lcdui_Image_c = class_bh.func_class_javax_microedition_lcdui_Image_a("_sgui_shop__9.png");
+         field_class_javax_microedition_lcdui_Image_b = UIGeneral.getImageFromLangCodeFolder("_sgui_shop__8.png");
+         field_class_javax_microedition_lcdui_Image_c = UIGeneral.getImageFromLangCodeFolder("_sgui_shop__9.png");
       } catch (Exception var2) {
          System.out.println(var2);
       }

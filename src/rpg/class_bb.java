@@ -53,8 +53,8 @@ public final class class_bb extends class_m {
 
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int) void
    public final void func_void_a(Graphics var1, int var2, int var3) {
-      class_bh.func_void_a(var1);
-      class_bh.func_void_a(var1, class_bh.field_array_char_i, class_bh.field_array_char_e);
+      UIGeneral.func_void_a(var1);
+      UIGeneral.func_void_a(var1, UIGeneral.labelTextSelect, UIGeneral.labelTextBack);
       super.func_void_a(var1, var2, var3);
       var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_b, class_bp.field_int_a + 155 - 38, class_bp.field_int_b + 170 - 22, 20);
    }

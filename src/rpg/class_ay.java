@@ -128,7 +128,7 @@ public final class class_ay extends class_cb {
          class_cb.func_void_a(var1, var2 + 33, var3 + 14, var5);
       } else {
          var1.setColor(16777215);
-         class_bh.func_int_a(var1, var2 + 33, var3 + 14, class_ai.field_class_z_a.loadByIndex(15), 1);
+         UIGeneral.func_int_a(var1, var2 + 33, var3 + 14, class_ai.field_class_z_a.loadByIndex(15), 1);
       }
    }
 }

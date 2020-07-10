@@ -111,11 +111,11 @@ public final class class_ab extends class_cb {
 
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int) void
    public final void func_void_a(Graphics var1, int var2, int var3) {
-      class_bh.func_void_a(var1);
+      UIGeneral.func_void_a(var1);
       if (this.field_boolean_c) {
-         class_bh.func_void_a(var1, class_bh.field_array_char_j, class_bh.field_array_char_e);
+         UIGeneral.func_void_a(var1, UIGeneral.labelTextBuy, UIGeneral.labelTextBack);
       } else {
-         class_bh.func_void_a(var1, class_bh.field_array_char_h, class_bh.field_array_char_e);
+         UIGeneral.func_void_a(var1, UIGeneral.labelTextSell, UIGeneral.labelTextBack);
       }
 
       var2 += 3;
@@ -127,16 +127,16 @@ public final class class_ab extends class_cb {
       class_cb.func_void_b(var1, var2, var3 + 31, 149, 67);
       var2 += 15;
       var1.setColor(14663551);
-      class_bh.func_int_a(var1, var2 + 8, var3 + 7, class_bp.field_class_z_a.loadByIndex(13), 1);
+      UIGeneral.func_int_a(var1, var2 + 8, var3 + 7, class_bp.field_class_z_a.loadByIndex(13), 1);
       class_cb.func_void_a(var1, var2 + 102, var3 + 11, class_n.func_class_ao_a().field_class_g_a.field_int_a);
       var1.setColor(16777215);
       if ((!this.field_boolean_c || !class_ad.field_array_boolean_b[this.field_class_ad_a.field_byte_f]) && (this.field_boolean_c || this.field_class_ad_a.field_byte_h <= 1)) {
-         class_bh.func_int_a(var1, var2 + 6, var3 + 38, class_bp.field_class_z_a.loadByIndex(15), 1);
+         UIGeneral.func_int_a(var1, var2 + 6, var3 + 38, class_bp.field_class_z_a.loadByIndex(15), 1);
       } else {
          if (this.field_boolean_c) {
-            class_bh.func_int_a(var1, var2 + 6, var3 + 38, class_bp.field_class_z_a.loadByIndex(14), 1);
+            UIGeneral.func_int_a(var1, var2 + 6, var3 + 38, class_bp.field_class_z_a.loadByIndex(14), 1);
          } else {
-            class_bh.func_int_a(var1, var2 + 6, var3 + 38, class_bp.field_class_z_a.loadByIndex(25), 1);
+            UIGeneral.func_int_a(var1, var2 + 6, var3 + 38, class_bp.field_class_z_a.loadByIndex(25), 1);
          }
 
          var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_o, var2 + 32, var3 + 65, 20);

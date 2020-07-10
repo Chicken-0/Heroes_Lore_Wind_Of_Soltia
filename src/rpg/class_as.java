@@ -158,11 +158,11 @@ public final class class_as extends MyGameCanvas {
             this.func_void_f(var1);
             break;
          case 15:
-            char[] var3 = class_bh.field_array_char_n;
-            class_bh.func_void_a(var1);
+            char[] var3 = UIGeneral.labelTextPaused;
+            UIGeneral.func_void_a(var1);
             var1.setColor(16777215);
-            class_bh.func_void_a(var1, MyGameCanvas.canvasHalfWidth, MyGameCanvas.field_int_j - 15, var3, 1);
-            class_bh.func_void_a(var1, class_bh.field_array_char_d, (char[])null);
+            UIGeneral.func_void_a(var1, MyGameCanvas.canvasHalfWidth, MyGameCanvas.field_int_j - 15, var3, 1);
+            UIGeneral.func_void_a(var1, UIGeneral.labelTextOk, (char[])null);
          }
 
          var1.setColor(16777215);
@@ -619,7 +619,7 @@ public final class class_as extends MyGameCanvas {
 
          class_cb.func_void_a(var1, 0, 0, 101, 23, this.field_class_al_a.field_class_j_a.field_array_char_a, 0, 1, 6233919, var8);
          boolean var9 = false;
-         int var12 = MyGameCanvas.func_int_a(var1, (String)class_bh.field_class_java_lang_String_c, 1, 16);
+         int var12 = MyGameCanvas.func_int_a(var1, (String)UIGeneral.labelTextLV, 1, 16);
          MyGameCanvas.func_void_c(var1, this.field_class_al_a.field_class_j_a.field_byte_f, var12, 16, 4);
          var1.translate(-(var10 + 2), -(var11 + 2));
          var1.setColor(16727855);
@@ -715,7 +715,7 @@ public final class class_as extends MyGameCanvas {
       var2 += 6;
       var3 -= 8;
       var0.setColor(16777215);
-      class_bh.func_int_a(var0, var1 + 5, var2, class_ce.field_class_z_g.loadByIndex(31), 1);
+      UIGeneral.func_int_a(var0, var1 + 5, var2, class_ce.field_class_z_g.loadByIndex(31), 1);
       var0.setColor(16723759);
       var0.drawLine(var1, var2 + 17 + 0, var1 + var3 * MyGameCanvas.field_int_k / MyGameCanvas.field_int_l, var2 + 17 + 0);
       var0.drawLine(var1, var2 + 17 + 1, var1 + var3 * MyGameCanvas.field_int_k / MyGameCanvas.field_int_l, var2 + 17 + 1);
@@ -727,12 +727,12 @@ public final class class_as extends MyGameCanvas {
       var0.fillRect(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
       class_n.func_class_ao_a().func_void_d(var0, MyGameCanvas.canvasHalfWidth, MyGameCanvas.field_int_j + 20);
       char[] var1;
-      int var2 = class_bh.func_int_a(var1 = class_ce.field_class_z_g.loadByIndex(32));
-      System.out.println(class_bh.func_class_java_lang_String_a(var1));
+      int var2 = UIGeneral.getTextWidth(var1 = class_ce.field_class_z_g.loadByIndex(32));
+      System.out.println(UIGeneral.toString(var1));
       var0.setColor(8355711);
-      class_bh.func_void_a(var0, MyGameCanvas.canvasHalfWidth - var2 / 2 + 1, MyGameCanvas.field_int_j - 20 + 1, 200, 1, var1, 0, 0, (17 - field_int_e) * 2);
+      UIGeneral.func_void_a(var0, MyGameCanvas.canvasHalfWidth - var2 / 2 + 1, MyGameCanvas.field_int_j - 20 + 1, 200, 1, var1, 0, 0, (17 - field_int_e) * 2);
       var0.setColor(16777215);
-      class_bh.func_void_a(var0, MyGameCanvas.canvasHalfWidth - var2 / 2, MyGameCanvas.field_int_j - 20, 200, 1, var1, 0, 0, (17 - field_int_e) * 2);
+      UIGeneral.func_void_a(var0, MyGameCanvas.canvasHalfWidth - var2 / 2, MyGameCanvas.field_int_j - 20, 200, 1, var1, 0, 0, (17 - field_int_e) * 2);
    }
 
    // $FF: renamed from: d (javax.microedition.lcdui.Graphics) void
@@ -789,7 +789,7 @@ public final class class_as extends MyGameCanvas {
 
             for(int var3 = this.field_int_t; var3 < this.field_int_u; ++var3) {
                char[] var4 = this.field_class_z_a.loadByIndex(var3);
-               class_bh.func_int_a(var1, MyGameCanvas.canvasHalfWidth - class_bh.func_int_a(var4) / 2, var5, var4, 1);
+               UIGeneral.func_int_a(var1, MyGameCanvas.canvasHalfWidth - UIGeneral.getTextWidth(var4) / 2, var5, var4, 1);
                var5 += 15;
             }
 
@@ -815,10 +815,10 @@ public final class class_as extends MyGameCanvas {
          } else {
             Image var3;
             Graphics var4;
-            (var4 = (var3 = Image.createImage(class_bh.func_int_a(var2), class_bh.func_int_a())).getGraphics()).setColor(0);
+            (var4 = (var3 = Image.createImage(UIGeneral.getTextWidth(var2), UIGeneral.func_int_a())).getGraphics()).setColor(0);
             var4.fillRect(0, 0, var3.getWidth(), var3.getHeight());
             var4.setColor(16777215);
-            class_bh.func_int_a(var4, 0, 0, var2, 1);
+            UIGeneral.func_int_a(var4, 0, 0, var2, 1);
             this.field_class_java_util_Vector_a.addElement(new class_bc(var3, MyGameCanvas.field_int_h));
             field_int_e = 5;
          }
@@ -863,9 +863,9 @@ public final class class_as extends MyGameCanvas {
       class_cb.func_void_a(var1, var6, var7, 110, 72);
       class_cb.func_void_b(var1, var6, var7, 110, 72);
       var1.setColor(16777215);
-      class_bh.func_int_a(var1, var6 + 5, var7 + 5, var2, 1);
-      class_bh.func_int_a(var1, var6 + 5, var7 + 21, var3, 1);
-      class_bh.func_int_a(var1, var6 + 5, var7 + 37, var4, 1);
-      class_bh.func_int_a(var1, var6 + 5, var7 + 53, var5, 1);
+      UIGeneral.func_int_a(var1, var6 + 5, var7 + 5, var2, 1);
+      UIGeneral.func_int_a(var1, var6 + 5, var7 + 21, var3, 1);
+      UIGeneral.func_int_a(var1, var6 + 5, var7 + 37, var4, 1);
+      UIGeneral.func_int_a(var1, var6 + 5, var7 + 53, var5, 1);
    }
 }

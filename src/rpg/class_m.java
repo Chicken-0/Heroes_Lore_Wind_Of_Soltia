@@ -47,7 +47,7 @@ public class class_m extends class_cb {
       boolean var5 = this.func_int_b() > 1;
       class_cb.func_void_b(var1, var2 + 3, var3 - 13 + (var5 ? 0 : 3), 145, 14, 10452863);
       var1.setColor(16777215);
-      class_bh.func_int_a(var1, var2 + 6, var3 - 10 + (var5 ? 0 : 3), this.field_array_char_a, 1);
+      UIGeneral.func_int_a(var1, var2 + 6, var3 - 10 + (var5 ? 0 : 3), this.field_array_char_a, 1);
       this.func_void_a(var1, var2, var3, var5);
 
       class_ad var6;

@@ -126,12 +126,12 @@ public final class class_b extends MFont {
    }
 
    // $FF: renamed from: a (java.lang.String, int, int, boolean) az
-   public static final MFont func_class_az_a(String var0, int var1, int var2, boolean var3) {
+   public static final MFont createMFont(String var0, int var1, int var2, boolean var3) {
       return new class_b(var0, var1, var2, var3);
    }
 
    // $FF: renamed from: a (java.lang.String, int, boolean) az
-   public static final MFont func_class_az_a(String var0, int var1, boolean var2) {
-      return func_class_az_a(var0, var1, -1, var2);
+   public static final MFont createMFont(String var0, int var1, boolean var2) {
+      return createMFont(var0, var1, -1, var2);
    }
 }

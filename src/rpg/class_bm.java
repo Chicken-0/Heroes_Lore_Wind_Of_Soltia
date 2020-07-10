@@ -75,7 +75,7 @@ public final class class_bm extends class_cb {
 
       if (var4.field_array_class_p_a[super.field_byte_b] == null) {
          var1.setColor(14663551);
-         class_bh.func_int_a(var1, var2 + 34, var3 + 18, class_ai.field_class_z_a.loadByIndex(31), 1);
+         UIGeneral.func_int_a(var1, var2 + 34, var3 + 18, class_ai.field_class_z_a.loadByIndex(31), 1);
       } else {
          class_p var6 = var4.field_array_class_p_a[super.field_byte_b];
          MyGameCanvas.func_int_a(var1, class_ai.field_class_z_a.loadByIndex(32), var2 + 89, var3 + 22);
@@ -84,9 +84,9 @@ public final class class_bm extends class_cb {
          }
 
          var1.setColor(16777215);
-         class_bh.func_int_a(var1, var2 + 34, var3 + 18, class_ce.field_class_z_b.loadByIndex(var4.field_array_class_p_a[super.field_byte_b].field_byte_f), 1);
+         UIGeneral.func_int_a(var1, var2 + 34, var3 + 18, class_ce.field_class_z_b.loadByIndex(var4.field_array_class_p_a[super.field_byte_b].field_byte_f), 1);
          var1.setColor(14663551);
-         class_bh.func_int_a(var1, var2 + 34, var3 + 35, class_ce.field_class_z_b.loadByIndex(var4.field_array_class_p_a[super.field_byte_b].field_byte_f + 6), 1);
+         UIGeneral.func_int_a(var1, var2 + 34, var3 + 35, class_ce.field_class_z_b.loadByIndex(var4.field_array_class_p_a[super.field_byte_b].field_byte_f + 6), 1);
          var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_g, var2 + 34, var3 + 53, 20);
          MyGameCanvas.func_void_c(var1, var6.field_short_a, var2 + 50, var3 + 53, 4);
          var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_e, var2 + 34, var3 + 67, 20);

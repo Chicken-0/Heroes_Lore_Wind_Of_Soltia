@@ -84,7 +84,7 @@ public final class class_bf extends class_cb {
       if (this.field_long_a > 0L) {
          if (!MIDletConfig.isDemoVersion && MIDletConfig.buySetupOnExit) {
             if (var2 == 53) {
-               class_bh.func_void_a(MIDletConfig.urlApp);
+               UIGeneral.func_void_a(MIDletConfig.urlApp);
             } else if (var2 == -8) {
                GameMIDlet.instance.endApp();
             }
@@ -107,7 +107,7 @@ public final class class_bf extends class_cb {
       } else {
          Object[] var3;
          if (var2 == -8) {
-            var3 = new Object[]{class_bh.field_array_char_a};
+            var3 = new Object[]{UIGeneral.labelTextAreYouSure};
             this.func_void_a((byte)2, (byte)2, var3);
             this.field_byte_d = 2;
          }
@@ -117,8 +117,8 @@ public final class class_bf extends class_cb {
             case 0:
                if (this.field_boolean_e) {
                   this.field_byte_d = 0;
-                  var3 = new Object[]{class_bh.getTextById(3929).toCharArray()};
-                  this.func_void_a((byte)12, (byte)2, var3, class_bh.field_array_char_d, class_bh.field_array_char_e);
+                  var3 = new Object[]{UIGeneral.getTextById(3929).toCharArray()};
+                  this.func_void_a((byte)12, (byte)2, var3, UIGeneral.labelTextOk, UIGeneral.labelTextBack);
                } else {
                   super.field_class_cb_b = new class_c(this);
                }
@@ -137,11 +137,11 @@ public final class class_bf extends class_cb {
                break;
             default:
                if (super.field_byte_b == field_int_c) {
-                  var3 = new Object[]{class_bh.field_array_char_a};
+                  var3 = new Object[]{UIGeneral.labelTextAreYouSure};
                   this.field_byte_d = 2;
                   this.func_void_a((byte)2, (byte)2, var3);
                } else if (super.field_byte_b == field_int_d) {
-                  var3 = new Object[]{class_bh.getTextById(3918).toCharArray()};
+                  var3 = new Object[]{UIGeneral.getTextById(3918).toCharArray()};
                   this.field_byte_d = 3;
                   this.func_void_a((byte)12, (byte)2, var3);
                }
@@ -165,9 +165,9 @@ public final class class_bf extends class_cb {
                break;
             case 2:
                if (MIDletConfig.isDemoVersion) {
-                  Object[] var3 = new Object[]{class_bh.getTextById(3919).toCharArray()};
+                  Object[] var3 = new Object[]{UIGeneral.getTextById(3919).toCharArray()};
                   this.field_byte_d = 4;
-                  this.func_void_a((byte)12, (byte)2, var3, class_bh.field_array_char_j, class_bh.field_array_char_c);
+                  this.func_void_a((byte)12, (byte)2, var3, UIGeneral.labelTextBuy, UIGeneral.labelTextExit);
                } else {
                   class_ce.func_void_w();
                   this.field_long_a = System.currentTimeMillis() + 5000L;
@@ -175,7 +175,7 @@ public final class class_bf extends class_cb {
                break;
             case 3:
             case 4:
-               class_bh.func_void_a(MIDletConfig.urlApp);
+               UIGeneral.func_void_a(MIDletConfig.urlApp);
             }
 
             return;
@@ -197,10 +197,10 @@ public final class class_bf extends class_cb {
          var1.fillRect(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
          var1.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_i[4], MyGameCanvas.canvasHalfWidth, class_as.field_int_d, 3);
          var1.setColor(0);
-         class_bh.func_void_a(var1, MyGameCanvas.canvasWidth >> 1, MyGameCanvas.field_int_h - 23, class_bh.field_array_char_b, 1);
-         class_bh.func_void_a(var1, MyGameCanvas.canvasWidth >> 1, 10, BabbleText.instance.getTextById(3941).toCharArray(), 1);
+         UIGeneral.func_void_a(var1, MyGameCanvas.canvasWidth >> 1, MyGameCanvas.field_int_h - 23, UIGeneral.labelTextAppUrl, 1);
+         UIGeneral.func_void_a(var1, MyGameCanvas.canvasWidth >> 1, 10, BabbleText.instance.getTextById(3941).toCharArray(), 1);
          if (!MIDletConfig.isDemoVersion && MIDletConfig.buySetupOnExit) {
-            class_bh.func_void_a(var1, MIDletConfig.func_class_java_lang_String_a().toCharArray(), class_bh.field_array_char_c);
+            UIGeneral.func_void_a(var1, MIDletConfig.func_class_java_lang_String_a().toCharArray(), UIGeneral.labelTextExit);
          }
 
          if (System.currentTimeMillis() > this.field_long_a) {
@@ -239,10 +239,10 @@ public final class class_bf extends class_cb {
             ++var7;
          }
 
-         class_bh.func_void_a(var1, var7, var2 + 155 >> 1, var6);
+         UIGeneral.func_void_a(var1, var7, var2 + 155 >> 1, var6);
       }
 
-      class_bh.func_void_a(var1, class_bh.field_array_char_d, class_bh.field_array_char_c);
+      UIGeneral.func_void_a(var1, UIGeneral.labelTextOk, UIGeneral.labelTextExit);
    }
 
    // $FF: renamed from: c (javax.microedition.lcdui.Graphics, int, int) void

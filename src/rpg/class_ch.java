@@ -85,14 +85,14 @@ public final class class_ch extends class_cb {
       MyGameCanvas.func_int_a(var1, class_aa.field_class_z_a.loadByIndex(13), var2 + 3, var3 - 2);
       class_cb.func_void_b(var1, var2 + 3, var3 + 7, 149, 17, 10452863);
       var1.setColor(16777215);
-      class_bh.func_int_a(var1, var2 + 6, var3 + 10, class_aa.field_class_z_a.loadByIndex(23), 1);
+      UIGeneral.func_int_a(var1, var2 + 6, var3 + 10, class_aa.field_class_z_a.loadByIndex(23), 1);
       class_cb.func_void_a(var1, var2 + 4, var3 + 30, this.field_class_e_a, (byte)1, class_aa.field_class_z_a.loadByIndex(15), super.field_byte_b == 0);
       class_cb.func_void_a(var1, var2 + 155 - 10, var3 + 75, var4.field_class_g_a.field_int_a);
       class_cb.func_void_b(var1, var2 + 4, var3 + 83, 147, 20, 10452863);
       var1.setColor(16777215);
-      class_bh.func_int_a(var1, var2 + 8, var3 + 88, class_aa.field_class_z_a.loadByIndex(24), 1);
+      UIGeneral.func_int_a(var1, var2 + 8, var3 + 88, class_aa.field_class_z_a.loadByIndex(24), 1);
       class_cb.func_void_a(var1, var2 + 155 - 8, var3 + 89, 100);
-      int var5 = class_bh.func_int_a(155, 80);
+      int var5 = UIGeneral.func_int_a(155, 80);
       class_cb.func_void_a(var1, var2 + (155 - var5 >> 1), var3 + 138, var5, class_aa.field_class_z_a.loadByIndex(25), super.field_byte_b == 1);
    }
 }

@@ -148,12 +148,12 @@ public abstract class MyGameCanvas extends Canvas {
 
     // $FF: renamed from: a (javax.microedition.lcdui.Graphics, char[], int, int) int
     public static final int func_int_a(Graphics var0, char[] var1, int var2, int var3) {
-        int var4 = class_bh.func_int_a(var1) + 2;
-        int var5 = class_bh.func_int_a() + 2;
+        int var4 = UIGeneral.getTextWidth(var1) + 2;
+        int var5 = UIGeneral.func_int_a() + 2;
         var0.setColor(0);
         var0.fillRect(var2 - 1, var3 - 1, var4, var5);
         var0.setColor(16777215);
-        class_bh.func_int_a(var0, var2, var3, var1, 1);
+        UIGeneral.func_int_a(var0, var2, var3, var1, 1);
         return var2 + var4;
     }
 
@@ -163,7 +163,7 @@ public abstract class MyGameCanvas extends Canvas {
             var0.setColor(0);
             var0.fillRect(0, 0, canvasWidth, field_int_h);
             var0.setColor(14663551);
-            class_bh.func_int_a(var0, canvasHalfWidth - 48, field_int_j - 12, class_bh.field_array_char_p, 0);
+            UIGeneral.func_int_a(var0, canvasHalfWidth - 48, field_int_j - 12, UIGeneral.labelTextNowLoading, 0);
             var0.drawLine(canvasHalfWidth - 50, field_int_j, canvasHalfWidth + 48, field_int_j);
             var0.fillRect(canvasHalfWidth - 51, field_int_j + 1, 2, 2);
             var0.fillRect(canvasHalfWidth + 48, field_int_j + 1, 2, 2);
@@ -171,15 +171,15 @@ public abstract class MyGameCanvas extends Canvas {
             var0.drawLine(canvasHalfWidth - 50, field_int_j + 5, canvasHalfWidth + 48, field_int_j + 5);
             var0.fillRect(canvasHalfWidth - 51, field_int_j + 3, 2, 2);
             var0.fillRect(canvasHalfWidth + 48, field_int_j + 3, 2, 2);
-            char[] var1 = class_bh.field_array_char_o;
-            class_bh.func_int_a(var0, canvasHalfWidth - class_bh.func_int_a(var1) / 2, field_int_j + 50, var1, 0);
+            char[] var1 = UIGeneral.labelTextHandsOnMobile;
+            UIGeneral.func_int_a(var0, canvasHalfWidth - UIGeneral.getTextWidth(var1) / 2, field_int_j + 50, var1, 0);
         }
 
         if (field_int_m > 3) {
             var0.setColor(0);
             var0.fillRect(canvasHalfWidth + 20, field_int_j - 12, 18, 10);
             var0.setColor(14663551);
-            class_bh.func_int_a(var0, canvasHalfWidth + 20, field_int_j - 12, "...".substring(0, field_int_m % 4).toCharArray(), 0);
+            UIGeneral.func_int_a(var0, canvasHalfWidth + 20, field_int_j - 12, "...".substring(0, field_int_m % 4).toCharArray(), 0);
             var0.setColor(14655295);
             var0.fillRect(canvasHalfWidth - 48, field_int_j + 2, 95 * (field_int_k < field_int_l ? field_int_k : field_int_l) / field_int_l, 1);
             var0.setColor(16777087);

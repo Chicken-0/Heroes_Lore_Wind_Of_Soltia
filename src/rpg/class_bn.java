@@ -98,11 +98,11 @@ public final class class_bn extends class_cb {
       }
 
       var1.setColor(16777215);
-      class_bh.func_int_a(var1, var2 + 34, var3 + 29, class_ce.field_class_z_c.loadByIndex(this.field_class_p_a.field_byte_f * 8 + super.field_byte_b * 2), 1);
-      var5 = MyGameCanvas.func_int_a(var1, class_bh.field_array_char_s, var2 + 34, var3 + 44);
+      UIGeneral.func_int_a(var1, var2 + 34, var3 + 29, class_ce.field_class_z_c.loadByIndex(this.field_class_p_a.field_byte_f * 8 + super.field_byte_b * 2), 1);
+      var5 = MyGameCanvas.func_int_a(var1, UIGeneral.labelTextLEVEL, var2 + 34, var3 + 44);
       MyGameCanvas.func_void_c(var1, class_p.field_array_byte_h[super.field_byte_b], var5 + 3, var3 + 44, 4);
       var1.setColor(14663551);
       char[] var8 = class_ce.field_class_z_c.loadByIndex(this.field_class_p_a.field_byte_f * 8 + super.field_byte_b * 2 + 1);
-      class_bh.func_int_a(var1, var2 + 34, var3 + 53, 100, 1, var8);
+      UIGeneral.func_int_a(var1, var2 + 34, var3 + 53, 100, 1, var8);
    }
 }

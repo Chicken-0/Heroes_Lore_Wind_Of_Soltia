@@ -88,7 +88,7 @@ public final class class_bi extends class_cb {
             var6 += var4.field_short_g + var4.field_byte_p;
          }
 
-         class_bh.func_int_a(var1, var2 + 10, var3 + 35 + var5 * 15, class_ce.field_class_z_a.loadByIndex(9 + var5), 1);
+         UIGeneral.func_int_a(var1, var2 + 10, var3 + 35 + var5 * 15, class_ce.field_class_z_a.loadByIndex(9 + var5), 1);
          var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_o, var2 + 45 + 25, var3 + 35 + var5 * 15, 20);
          MyGameCanvas.func_void_c(var1, var6, var2 + 65 + 25, var3 + 35 + var5 * 15, 8);
          var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_d, var2 + 67 + 25, var3 + 35 + var5 * 15, 20);

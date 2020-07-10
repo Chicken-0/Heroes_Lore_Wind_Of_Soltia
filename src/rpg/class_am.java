@@ -19,8 +19,8 @@ public final class class_am extends class_cb {
       this.field_array_char_b = var3;
       this.field_byte_c = var4;
       this.field_byte_d = 0;
-      this.field_byte_d = (byte)(this.field_byte_d + class_bh.func_int_a(var2, 135));
-      this.field_byte_d = (byte)(this.field_byte_d + class_bh.func_int_a(var3, 135));
+      this.field_byte_d = (byte)(this.field_byte_d + UIGeneral.func_int_a(var2, 135));
+      this.field_byte_d = (byte)(this.field_byte_d + UIGeneral.func_int_a(var3, 135));
    }
 
    // $FF: renamed from: a (int, int) boolean
@@ -49,9 +49,9 @@ public final class class_am extends class_cb {
       class_cb.func_void_b(var1, var2, var3, 145, var4);
       int var5 = var3 + 5;
       var1.setColor(14663551);
-      class_bh.func_int_a(var1, var2 + 5, var5, 135, 1, this.field_array_char_a);
-      var5 += 15 * class_bh.func_int_a(this.field_array_char_a, 135);
+      UIGeneral.func_int_a(var1, var2 + 5, var5, 135, 1, this.field_array_char_a);
+      var5 += 15 * UIGeneral.func_int_a(this.field_array_char_a, 135);
       var1.setColor(16777215);
-      class_bh.func_int_a(var1, var2 + 5, var5, 135, 1, this.field_array_char_b);
+      UIGeneral.func_int_a(var1, var2 + 5, var5, 135, 1, this.field_array_char_b);
    }
 }

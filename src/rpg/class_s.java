@@ -92,7 +92,7 @@ public final class class_s extends class_cb {
          class_cb.func_void_a(var1, var2 + 4, var3 + 10, 143, 137, 4136767, 10452799, 4144959);
          class_cb.func_void_a(var1, var2 + 4, var3 + 10, 143, 137, 6242111);
          var1.setColor(16777215);
-         class_bh.func_int_a(var1, var2 + 10, var3 + 15, 96, 1, class_ai.field_class_z_a.loadByIndex(58));
+         UIGeneral.func_int_a(var1, var2 + 10, var3 + 15, 96, 1, class_ai.field_class_z_a.loadByIndex(58));
       } else {
          this.func_void_a(var1, var2, var3, true);
 
@@ -103,22 +103,22 @@ public final class class_s extends class_cb {
 
          var4 = var3 + 14;
          var1.setColor(16777215);
-         class_bh.func_int_a(var1, var2 + 33, var4, 105, 1, this.field_array_char_a);
-         var4 += class_bh.func_int_a(this.field_array_char_a, 105) * 15;
+         UIGeneral.func_int_a(var1, var2 + 33, var4, 105, 1, this.field_array_char_a);
+         var4 += UIGeneral.func_int_a(this.field_array_char_a, 105) * 15;
          var1.setColor(14663551);
-         class_bh.func_int_a(var1, var2 + 33, var4, class_n.field_array_array_boolean_a[class_n.field_byte_a - 6][this.field_byte_c] ? class_ai.field_class_z_a.loadByIndex(55) : class_ai.field_class_z_a.loadByIndex(56), 1);
+         UIGeneral.func_int_a(var1, var2 + 33, var4, class_n.field_array_array_boolean_a[class_n.field_byte_a - 6][this.field_byte_c] ? class_ai.field_class_z_a.loadByIndex(55) : class_ai.field_class_z_a.loadByIndex(56), 1);
          var4 += 15;
-         class_bh.func_int_a(var1, var2 + 33, var4, class_ai.field_class_z_a.loadByIndex(57), 1);
+         UIGeneral.func_int_a(var1, var2 + 33, var4, class_ai.field_class_z_a.loadByIndex(57), 1);
          var4 += 15;
          if (class_ce.field_class_z_f.loadByIndex(this.field_byte_c * 7 + 4).length > 0) {
             var1.setColor(16777215);
-            class_bh.func_int_a(var1, var2 + 33, var4, class_ce.field_class_z_f.loadByIndex(this.field_byte_c * 7 + 4), 1);
+            UIGeneral.func_int_a(var1, var2 + 33, var4, class_ce.field_class_z_f.loadByIndex(this.field_byte_c * 7 + 4), 1);
             var4 += 15;
          }
 
          if (class_ce.field_class_z_f.loadByIndex(this.field_byte_c * 7 + 5).length > 0) {
             var1.setColor(16777215);
-            class_bh.func_int_a(var1, var2 + 33, var4, class_ce.field_class_z_f.loadByIndex(this.field_byte_c * 7 + 5), 1);
+            UIGeneral.func_int_a(var1, var2 + 33, var4, class_ce.field_class_z_f.loadByIndex(this.field_byte_c * 7 + 5), 1);
          }
 
       }

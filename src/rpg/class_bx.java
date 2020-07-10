@@ -22,7 +22,7 @@ public final class class_bx extends class_cb {
       int var6 = 0;
 
       int var7;
-      for(var7 = 0; var6 < var2.length; var6 += class_bh.func_int_a((char[])var2, var6, 130, 11)) {
+      for(var7 = 0; var6 < var2.length; var6 += UIGeneral.func_int_a((char[])var2, var6, 130, 11)) {
          var5[var7++] = (short)var6;
       }
 
@@ -55,20 +55,20 @@ public final class class_bx extends class_cb {
          var2 += 8;
          var3 += 25;
          var1.setColor(16777215);
-         class_bh.func_void_a(var1, class_bh.field_array_char_m, class_bh.field_array_char_e);
+         UIGeneral.func_void_a(var1, UIGeneral.field_array_char_m, UIGeneral.labelTextBack);
       } else {
          var1.setColor(4136767);
          var1.fillRect(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
          class_bf.func_void_c(var1, var2, var3);
-         class_bh.func_void_a(true);
+         UIGeneral.setFontDefault(true);
          var1.setColor(0);
-         class_bh.func_void_a(var1, var2 + 155 >> 1, var3 + 5 + 4, this.field_array_char_b, 1);
-         class_bh.func_void_a(false);
+         UIGeneral.func_void_a(var1, var2 + 155 >> 1, var3 + 5 + 4, this.field_array_char_b, 1);
+         UIGeneral.setFontDefault(false);
          class_bf.func_void_b(var1, var2, var3 + 24, 3);
          var2 += 10;
          var3 += 43;
          var1.setColor(6242111);
-         class_bh.func_void_a(var1, (char[])null, class_bh.field_array_char_e);
+         UIGeneral.func_void_a(var1, (char[])null, UIGeneral.labelTextBack);
       }
 
       MyGameCanvas.func_void_d(var1, var2 + 155 - 25, var3 - 8, super.field_byte_b + 1, super.field_byte_a);
@@ -94,6 +94,6 @@ public final class class_bx extends class_cb {
          var1.setColor(0);
       }
 
-      class_bh.func_void_a(var1, var2, var3 + 3, 130, 1, this.field_array_char_a, var5, 0, var6 - var5);
+      UIGeneral.func_void_a(var1, var2, var3 + 3, 130, 1, this.field_array_char_a, var5, 0, var6 - var5);
    }
 }

@@ -39,23 +39,23 @@ public final class class_af extends class_cb {
          if (var2 != 1 && var2 != 11) {
             if (var2 != 9) {
                if (var5 == null) {
-                  var5 = class_bh.field_array_char_d;
+                  var5 = UIGeneral.labelTextOk;
                }
 
                if (var6 == null) {
-                  var6 = class_bh.field_array_char_e;
+                  var6 = UIGeneral.labelTextBack;
                }
             }
          } else if (var5 == null) {
-            var5 = class_bh.field_array_char_d;
+            var5 = UIGeneral.labelTextOk;
          }
       } else {
          if (var5 == null) {
-            var5 = class_bh.field_array_char_k;
+            var5 = UIGeneral.labelTextYes;
          }
 
          if (var6 == null) {
-            var6 = class_bh.field_array_char_l;
+            var6 = UIGeneral.labelTextNo;
          }
       }
 
@@ -65,7 +65,7 @@ public final class class_af extends class_cb {
       switch(var2) {
       case 2:
       case 6:
-         this.field_int_a = 8 + class_bh.func_int_a(class_bh.func_int_a(MyGameCanvas.canvasWidth, 80) - 10, 1, this.field_array_char_a, 0, 0, this.field_array_char_a.length);
+         this.field_int_a = 8 + UIGeneral.func_int_a(UIGeneral.func_int_a(MyGameCanvas.canvasWidth, 80) - 10, 1, this.field_array_char_a, 0, 0, this.field_array_char_a.length);
          break;
       case 3:
       case 4:
@@ -80,18 +80,18 @@ public final class class_af extends class_cb {
             }
 
             var9 = (char[])((char[])this.field_array_class_java_lang_Object_a[var8]);
-            this.field_int_a += 3 + class_bh.func_int_a(class_bh.func_int_a(MyGameCanvas.canvasWidth, 80) - 10, 1, var9, 0, 0, var9.length);
+            this.field_int_a += 3 + UIGeneral.func_int_a(UIGeneral.func_int_a(MyGameCanvas.canvasWidth, 80) - 10, 1, var9, 0, 0, var9.length);
             ++var8;
          }
       case 7:
       case 9:
       case 10:
       default:
-         this.field_int_a = 22 + class_bh.func_int_a(class_bh.func_int_a(MyGameCanvas.canvasWidth, 80) - 10, 1, this.field_array_char_a, 0, 0, this.field_array_char_a.length);
+         this.field_int_a = 22 + UIGeneral.func_int_a(UIGeneral.func_int_a(MyGameCanvas.canvasWidth, 80) - 10, 1, this.field_array_char_a, 0, 0, this.field_array_char_a.length);
          break;
       case 11:
       case 12:
-         this.field_int_a = 8 + class_bh.func_int_a(class_bh.func_int_a(MyGameCanvas.canvasWidth, 80) - 10, 1, this.field_array_char_a, 0, 0, this.field_array_char_a.length);
+         this.field_int_a = 8 + UIGeneral.func_int_a(UIGeneral.func_int_a(MyGameCanvas.canvasWidth, 80) - 10, 1, this.field_array_char_a, 0, 0, this.field_array_char_a.length);
       }
 
       if (var2 == 6) {
@@ -153,8 +153,8 @@ public final class class_af extends class_cb {
 
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int) void
    public final void func_void_a(Graphics var1, int var2, int var3) {
-      class_bh.func_void_a(var1);
-      int var4 = class_bh.func_int_a(MyGameCanvas.canvasWidth, 80);
+      UIGeneral.func_void_a(var1);
+      int var4 = UIGeneral.func_int_a(MyGameCanvas.canvasWidth, 80);
       var2 = MyGameCanvas.canvasHalfWidth - (var4 >> 1);
       var3 = MyGameCanvas.field_int_j - (this.field_int_a >> 1);
       class_cb.func_void_a(var1, var2, var3, var4, this.field_int_a);
@@ -167,16 +167,16 @@ public final class class_af extends class_cb {
       case 9:
          var1.setColor(16777215);
          var5 = var3 + 5;
-         class_bh.func_int_a(var1, var2 + 5, var5, var4 - 10, 1, this.field_array_char_a);
+         UIGeneral.func_int_a(var1, var2 + 5, var5, var4 - 10, 1, this.field_array_char_a);
          if (this.field_byte_c != 9) {
-            class_bh.func_void_a(var1, this.field_array_char_b, (char[])null);
+            UIGeneral.func_void_a(var1, this.field_array_char_b, (char[])null);
          }
          break;
       case 2:
       case 6:
          var5 = var3 + 5;
          var1.setColor(16777215);
-         class_bh.func_int_a(var1, var2 + 5, var5, var4 - 10, 1, this.field_array_char_a);
+         UIGeneral.func_int_a(var1, var2 + 5, var5, var4 - 10, 1, this.field_array_char_a);
          break;
       case 3:
       case 4:
@@ -189,7 +189,7 @@ public final class class_af extends class_cb {
                var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_d, var2 + 5, var3, 20);
             }
 
-            var3 += 3 + class_bh.func_int_a(var1, var2 + 12, var3, var4 - 10, 1, (char[])((char[])this.field_array_class_java_lang_Object_a[var6]));
+            var3 += 3 + UIGeneral.func_int_a(var1, var2 + 12, var3, var4 - 10, 1, (char[])((char[])this.field_array_class_java_lang_Object_a[var6]));
          }
       case 7:
       case 10:
@@ -198,7 +198,7 @@ public final class class_af extends class_cb {
       case 8:
          var1.setColor(16777215);
          var3 += 5;
-         var3 += 3 + class_bh.func_int_a(var1, var2 + 5, var3, var4 - 10, 1, (char[])((char[])this.field_array_class_java_lang_Object_a[0]));
+         var3 += 3 + UIGeneral.func_int_a(var1, var2 + 5, var3, var4 - 10, 1, (char[])((char[])this.field_array_class_java_lang_Object_a[0]));
          var6 = 1;
 
          while(true) {
@@ -210,18 +210,18 @@ public final class class_af extends class_cb {
                var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_d, var2 + 5, var3, 20);
             }
 
-            var3 += 3 + class_bh.func_int_a(var1, var2 + 12, var3, var4 - 10, 1, (char[])((char[])this.field_array_class_java_lang_Object_a[var6]));
+            var3 += 3 + UIGeneral.func_int_a(var1, var2 + 12, var3, var4 - 10, 1, (char[])((char[])this.field_array_class_java_lang_Object_a[var6]));
             ++var6;
          }
       case 11:
          var5 = var3 + 5;
-         class_bh.func_int_a(var1, var2 + 5, var5, var4 - 10, 1, this.field_array_char_a);
+         UIGeneral.func_int_a(var1, var2 + 5, var5, var4 - 10, 1, this.field_array_char_a);
          break;
       case 12:
          var5 = var3 + 5;
-         class_bh.func_int_a(var1, var2 + 5, var5, var4 - 10, 1, this.field_array_char_a);
+         UIGeneral.func_int_a(var1, var2 + 5, var5, var4 - 10, 1, this.field_array_char_a);
       }
 
-      class_bh.func_void_a(var1, this.field_array_char_b, this.field_array_char_c);
+      UIGeneral.func_void_a(var1, this.field_array_char_b, this.field_array_char_c);
    }
 }

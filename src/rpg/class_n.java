@@ -432,10 +432,10 @@ public final class class_n implements class_u {
             }
 
             field_class_ao_a.func_void_g(var1);
-            class_bs.field_class_as_a.func_void_a((class_bh.field_class_java_lang_String_a + var1 + class_bh.field_class_java_lang_String_d).toCharArray(), 16);
+            class_bs.field_class_as_a.func_void_a((UIGeneral.labelTextGain + var1 + UIGeneral.labelTextG).toCharArray(), 16);
          } else if (var0[2] == 22) {
             field_class_ao_a.field_class_g_b.func_boolean_a(class_ad.func_class_ad_a(var0[2], var0[3], true, true), var0[4]);
-            char[] var3 = class_h.func_array_char_a(class_bh.field_class_java_lang_String_a.toCharArray(), class_ad.field_class_z_b.loadByIndex(var0[2]));
+            char[] var3 = class_h.func_array_char_a(UIGeneral.labelTextGain.toCharArray(), class_ad.field_class_z_b.loadByIndex(var0[2]));
             class_bs.field_class_as_a.func_void_a(var3, 16);
          } else {
             class_ad var4;
@@ -444,14 +444,14 @@ public final class class_n implements class_u {
             }
 
             field_class_ao_a.field_class_g_a.func_boolean_a(var4, var0[4]);
-            char[] var2 = class_h.func_array_char_a(class_bh.field_class_java_lang_String_a.toCharArray(), class_ad.field_class_z_b.loadByIndex(var0[2]));
+            char[] var2 = class_h.func_array_char_a(UIGeneral.labelTextGain.toCharArray(), class_ad.field_class_z_b.loadByIndex(var0[2]));
             class_bs.field_class_as_a.func_void_a(var2, 16);
          }
 
          return true;
       } else {
          if (field_class_ae_a.func_boolean_a(field_class_ao_a.field_byte_a, field_class_ao_a.field_byte_b)) {
-            class_bs.field_class_as_a.func_void_a(class_bh.field_array_char_t, 16);
+            class_bs.field_class_as_a.func_void_a(UIGeneral.labelTextNoSpace, 16);
          }
 
          return false;

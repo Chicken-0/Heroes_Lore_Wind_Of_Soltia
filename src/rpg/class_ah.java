@@ -241,7 +241,7 @@ public final class class_ah implements class_u {
             } else {
                field_array_char_a = (char[])((char[])class_n.field_class_ae_a.field_array_class_java_lang_Object_c[field_array_array_byte_b[field_int_a][1]]);
                field_int_c = 0;
-               field_int_d = class_bh.func_int_a((char[])field_array_char_a, field_int_c, MyGameCanvas.canvasWidth - 28, 3);
+               field_int_d = UIGeneral.func_int_a((char[])field_array_char_a, field_int_c, MyGameCanvas.canvasWidth - 28, 3);
                field_int_e = 0;
                field_int_f = 0;
                func_void_b((byte)2);
@@ -589,7 +589,7 @@ public final class class_ah implements class_u {
    private static final void func_void_e() {
       if (field_int_e < field_int_d) {
          if (!field_boolean_b && !class_bs.field_class_bs_a.field_boolean_c) {
-            field_int_e = class_bh.func_int_a(field_array_char_a, field_int_c, field_int_e);
+            field_int_e = UIGeneral.func_int_a(field_array_char_a, field_int_c, field_int_e);
             if (field_int_e + 1 >= field_int_d) {
                field_int_e = field_int_d;
             }
@@ -602,7 +602,7 @@ public final class class_ah implements class_u {
          func_void_b((byte)0);
       } else if (field_boolean_b) {
          field_int_c += field_int_d;
-         field_int_d = class_bh.func_int_a((char[])field_array_char_a, field_int_c, MyGameCanvas.canvasWidth - 28, 3);
+         field_int_d = UIGeneral.func_int_a((char[])field_array_char_a, field_int_c, MyGameCanvas.canvasWidth - 28, 3);
          field_int_e = 0;
          field_int_f = 0;
       }
@@ -893,15 +893,15 @@ public final class class_ah implements class_u {
             case 2:
                func_void_b(var0);
                class_bs.field_class_as_a.func_void_b();
-               class_bh.func_void_a(var0, class_bh.field_array_char_g, class_bh.field_array_char_f);
+               UIGeneral.func_void_a(var0, UIGeneral.labelTextNext, UIGeneral.labelTextSkip);
                return;
             case 3:
                func_void_c(var0);
-               class_bh.func_void_a(var0, class_bh.field_array_char_d, (char[])null);
+               UIGeneral.func_void_a(var0, UIGeneral.labelTextOk, (char[])null);
                return;
             case 4:
                func_void_a(var0, (MyGameCanvas.canvasWidth >> 1) - 60, (MyGameCanvas.field_int_h >> 1) - 25, 120, 45, field_array_char_b, field_array_char_c);
-               class_bh.func_void_a(var0, class_bh.field_array_char_d, (char[])null);
+               UIGeneral.func_void_a(var0, UIGeneral.labelTextOk, (char[])null);
             default:
             }
          }
@@ -926,7 +926,7 @@ public final class class_ah implements class_u {
       var0.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_r[2], 2, 39, 36);
       var0.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_r[3], 0 + var1 - 2, 39, 40);
       var0.setColor(16777215);
-      class_bh.func_void_c(var0, 10, 5, var1 - 20, 1, field_array_char_a, field_int_c, field_int_f, field_int_e);
+      UIGeneral.func_void_c(var0, 10, 5, var1 - 20, 1, field_array_char_a, field_int_c, field_int_f, field_int_e);
       field_int_f = field_int_e;
       var0.translate(-var3, -var4);
       var0.setClip(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
@@ -946,7 +946,7 @@ public final class class_ah implements class_u {
       try {
          char[] var1 = field_boolean_g ? BabbleText.instance.getTextById(3940).toCharArray() : (char[])((char[])class_n.field_class_ae_a.field_array_class_java_lang_Object_c[field_array_array_byte_b[field_int_a][1]]);
          Object[] var2 = new Object[]{var1, BabbleText.instance.getTextById(3915).toCharArray(), BabbleText.instance.getTextById(3916).toCharArray()};
-         int var3 = class_bh.func_int_a(MyGameCanvas.canvasWidth, 70);
+         int var3 = UIGeneral.func_int_a(MyGameCanvas.canvasWidth, 70);
          func_void_a(var0, MyGameCanvas.canvasHalfWidth - (var3 >> 1), MyGameCanvas.field_int_j - 30, var3, 60, var2, 6, 1, field_boolean_c ? 1 : 2);
       } catch (Exception var4) {
       }
@@ -961,14 +961,14 @@ public final class class_ah implements class_u {
 
       for(int var9 = 0; var9 < var5.length; ++var9) {
          if (var9 >= var7 && var7 != -1) {
-            class_bh.func_int_a(var0, var1 + var6 + 9, var2, (char[])((char[])var5[var9]), 1);
+            UIGeneral.func_int_a(var0, var1 + var6 + 9, var2, (char[])((char[])var5[var9]), 1);
             if (var9 == var8) {
                var0.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_d, var1 + var6, var2, 20);
             }
 
-            var2 += class_bh.func_int_a() + 3;
+            var2 += UIGeneral.func_int_a() + 3;
          } else {
-            var2 += class_bh.func_int_a(var0, var1 + var6, var2, var3 - var6 - var6, 1, (char[])((char[])var5[var9]));
+            var2 += UIGeneral.func_int_a(var0, var1 + var6, var2, var3 - var6 - var6, 1, (char[])((char[])var5[var9]));
             var2 += 5;
          }
       }
@@ -980,8 +980,8 @@ public final class class_ah implements class_u {
       class_cb.func_void_a(var0, var1, var2, var3, var4);
       class_cb.func_void_b(var0, var1, var2, var3, var4);
       var0.setColor(255, 255, 255);
-      class_bh.func_int_a(var0, var1 + 6, var2 + 7, var5, 1);
-      class_bh.func_int_a(var0, var1 + 6, var2 + 23, var6, 1);
+      UIGeneral.func_int_a(var0, var1 + 6, var2 + 7, var5, 1);
+      UIGeneral.func_int_a(var0, var1 + 6, var2 + 23, var6, 1);
    }
 
    // $FF: renamed from: w () void

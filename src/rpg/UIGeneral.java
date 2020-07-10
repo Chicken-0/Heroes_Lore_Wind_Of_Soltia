@@ -7,73 +7,73 @@ import javax.microedition.lcdui.Image;
 import main.GameMIDlet;
 
 // $FF: renamed from: bh
-public final class class_bh {
+public final class UIGeneral {
    // $FF: renamed from: a java.lang.String
-   public static String field_class_java_lang_String_a;
+   public static String labelTextGain;
    // $FF: renamed from: b java.lang.String
-   public static String field_class_java_lang_String_b;
+   public static String labelTextProgress;
    // $FF: renamed from: a char[]
-   public static char[] field_array_char_a;
+   public static char[] labelTextAreYouSure;
    // $FF: renamed from: b char[]
-   public static char[] field_array_char_b;
+   public static char[] labelTextAppUrl;
    // $FF: renamed from: c char[]
-   public static char[] field_array_char_c;
+   public static char[] labelTextExit;
    // $FF: renamed from: d char[]
-   public static char[] field_array_char_d;
+   public static char[] labelTextOk;
    // $FF: renamed from: e char[]
-   public static char[] field_array_char_e;
+   public static char[] labelTextBack;
    // $FF: renamed from: f char[]
-   public static char[] field_array_char_f;
+   public static char[] labelTextSkip;
    // $FF: renamed from: g char[]
-   public static char[] field_array_char_g;
+   public static char[] labelTextNext;
    // $FF: renamed from: h char[]
-   public static char[] field_array_char_h;
+   public static char[] labelTextSell;
    // $FF: renamed from: i char[]
-   public static char[] field_array_char_i;
+   public static char[] labelTextSelect;
    // $FF: renamed from: j char[]
-   public static char[] field_array_char_j;
+   public static char[] labelTextBuy;
    // $FF: renamed from: k char[]
-   public static char[] field_array_char_k;
+   public static char[] labelTextYes;
    // $FF: renamed from: l char[]
-   public static char[] field_array_char_l;
+   public static char[] labelTextNo;
    // $FF: renamed from: a char[][]
    public static char[][] arrayTitleMenuText = new char[7][];
    // $FF: renamed from: m char[]
    public static char[] field_array_char_m = "               ".toCharArray();
    // $FF: renamed from: n char[]
-   public static char[] field_array_char_n = null;
+   public static char[] labelTextPaused = null;
    // $FF: renamed from: o char[]
-   public static char[] field_array_char_o = null;
+   public static char[] labelTextHandsOnMobile = null;
    // $FF: renamed from: p char[]
-   public static char[] field_array_char_p = null;
+   public static char[] labelTextNowLoading = null;
    // $FF: renamed from: c java.lang.String
-   public static String field_class_java_lang_String_c = null;
+   public static String labelTextLV = null;
    // $FF: renamed from: q char[]
-   public static char[] field_array_char_q = null;
+   public static char[] labelTextPressAnyKey = null;
    // $FF: renamed from: r char[]
    public static char[] labelTextVersion = null;
    // $FF: renamed from: s char[]
-   public static char[] field_array_char_s;
+   public static char[] labelTextLEVEL;
    // $FF: renamed from: t char[]
-   public static char[] field_array_char_t = null;
+   public static char[] labelTextNoSpace = null;
    // $FF: renamed from: d java.lang.String
-   public static String field_class_java_lang_String_d = null;
+   public static String labelTextG = null;
    // $FF: renamed from: a boolean
-   public static boolean field_boolean_a = false;
+   public static boolean isBigFont = false;
    // $FF: renamed from: g b
-   private static class_b field_class_b_g;
+   private static class_b fontSmallFontDefault;
    // $FF: renamed from: a b
-   public static class_b field_class_b_a;
+   public static class_b fontSmallBlack;
    // $FF: renamed from: b b
-   public static class_b field_class_b_b;
+   public static class_b fontSmallWhite;
    // $FF: renamed from: c b
-   public static class_b field_class_b_c;
+   public static class_b fontSmallOrange;
    // $FF: renamed from: d b
-   public static class_b field_class_b_d;
+   public static class_b fontBigWhiteBlack;
    // $FF: renamed from: e b
-   public static class_b field_class_b_e;
+   public static class_b fontBigBlackWhite;
    // $FF: renamed from: f b
-   public static class_b field_class_b_f;
+   public static class_b fontBigFontDefault;
    // $FF: renamed from: a java.util.Vector
    public static Vector field_class_java_util_Vector_a = new Vector();
    // $FF: renamed from: e java.lang.String
@@ -86,7 +86,7 @@ public final class class_bh {
       int var5;
       int var7;
       if (var1 != null) {
-         var5 = func_int_a(var1) + 2;
+         var5 = getTextWidth(var1) + 2;
          boolean var6 = false;
          var7 = MyGameCanvas.field_int_h - var3 + 3;
          var0.setColor(0);
@@ -96,7 +96,7 @@ public final class class_bh {
       }
 
       if (var2 != null) {
-         var5 = func_int_a(var2) + 2;
+         var5 = getTextWidth(var2) + 2;
          int var8 = MyGameCanvas.canvasWidth - var5;
          var7 = MyGameCanvas.field_int_h - var3 + 3;
          var0.setColor(0);
@@ -128,7 +128,7 @@ public final class class_bh {
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int, int) void
    public static final void func_void_a(Graphics var0, int var1, int var2, int var3) {
       var2 = MyGameCanvas.canvasWidth >> 1;
-      func_void_a(true);
+      setFontDefault(true);
       int var4 = var1 >> 1;
       if (var1 % 2 == 0) {
          var0.setColor(16777215);
@@ -137,16 +137,16 @@ public final class class_bh {
       }
 
       func_void_a(var0, var2, var3 + 4, arrayTitleMenuText[var4], 1);
-      func_void_a(false);
+      setFontDefault(false);
    }
 
    // $FF: renamed from: a (boolean) void
-   public static final void func_void_a(boolean var0) {
-      field_boolean_a = var0;
-      if (field_boolean_a) {
-         field_class_b_g = field_class_b_d;
+   public static final void setFontDefault(boolean enableBigFont) {
+      isBigFont = enableBigFont;
+      if (isBigFont) {
+         fontSmallFontDefault = fontBigWhiteBlack;
       } else {
-         field_class_b_g = field_class_b_a;
+         fontSmallFontDefault = fontSmallBlack;
       }
    }
 
@@ -156,39 +156,39 @@ public final class class_bh {
    }
 
    // $FF: renamed from: a (cj) void
-   public static final void func_void_a(BabbleText var0) {
-      field_class_java_lang_String_a = getTextById(3902) + " ";
-      field_class_java_lang_String_b = getTextById(3903);
-      field_array_char_a = getTextById(3904).toCharArray();
-      field_array_char_b = getTextById(3906).toCharArray();
-      field_array_char_c = getTextById(3907).toCharArray();
-      field_array_char_d = getTextById(3908).toCharArray();
-      field_array_char_e = getTextById(3909).toCharArray();
-      field_array_char_f = getTextById(3910).toCharArray();
-      field_array_char_g = getTextById(3911).toCharArray();
-      field_array_char_h = getTextById(3912).toCharArray();
-      field_array_char_i = getTextById(3913).toCharArray();
-      field_array_char_j = getTextById(3914).toCharArray();
-      field_array_char_k = getTextById(3915).toCharArray();
-      field_array_char_l = getTextById(3916).toCharArray();
-      arrayTitleMenuText[0] = getTextById(3920).toCharArray();
-      arrayTitleMenuText[1] = getTextById(3921).toCharArray();
-      arrayTitleMenuText[2] = getTextById(3922).toCharArray();
-      arrayTitleMenuText[3] = getTextById(3923).toCharArray();
-      arrayTitleMenuText[4] = getTextById(3924).toCharArray();
-      arrayTitleMenuText[5] = getTextById(3924).toCharArray();
-      arrayTitleMenuText[6] = getTextById(3926).toCharArray();
-      field_array_char_s = getTextById(3932).toCharArray();
-      field_array_char_n = getTextById(3946).toCharArray();
-      field_array_char_t = getTextById(3947).toCharArray();
-      field_class_java_lang_String_d = getTextById(3948);
-      field_class_java_lang_String_c = getTextById(3949);
-      field_array_char_q = getTextById(3950).toCharArray();
+   public static final void loadCommonText(BabbleText babbleText) {
+      labelTextGain = getTextById(3902) + " "; // Gain
+      labelTextProgress = getTextById(3903); // Progress:
+      labelTextAreYouSure = getTextById(3904).toCharArray(); // Are You Sure?
+      labelTextAppUrl = getTextById(3906).toCharArray(); // www.HandsOn.com/Heroes
+      labelTextExit = getTextById(3907).toCharArray(); // Exit
+      labelTextOk = getTextById(3908).toCharArray(); // Ok
+      labelTextBack = getTextById(3909).toCharArray(); // Back
+      labelTextSkip = getTextById(3910).toCharArray(); // Skip
+      labelTextNext = getTextById(3911).toCharArray(); // Next
+      labelTextSell = getTextById(3912).toCharArray(); // Sell
+      labelTextSelect = getTextById(3913).toCharArray(); // Select
+      labelTextBuy = getTextById(3914).toCharArray(); // Buy
+      labelTextYes = getTextById(3915).toCharArray(); // Yes
+      labelTextNo = getTextById(3916).toCharArray(); // No
+      arrayTitleMenuText[0] = getTextById(3920).toCharArray(); // New Game
+      arrayTitleMenuText[1] = getTextById(3921).toCharArray(); // Load game
+      arrayTitleMenuText[2] = getTextById(3922).toCharArray(); // Options
+      arrayTitleMenuText[3] = getTextById(3923).toCharArray(); // Help
+      arrayTitleMenuText[4] = getTextById(3924).toCharArray(); // About
+      arrayTitleMenuText[5] = getTextById(3924).toCharArray(); // About
+      arrayTitleMenuText[6] = getTextById(3926).toCharArray(); // Exit
+      labelTextLEVEL = getTextById(3932).toCharArray(); // LEVEL
+      labelTextPaused = getTextById(3946).toCharArray(); // Paused
+      labelTextNoSpace = getTextById(3947).toCharArray(); // no space
+      labelTextG = getTextById(3948); // G
+      labelTextLV = getTextById(3949); // LV
+      labelTextPressAnyKey = getTextById(3950).toCharArray(); // PRESS ANY KEY
    }
 
    // $FF: renamed from: a (int) java.lang.String
-   public static final String getTextById(int var0) {
-      return BabbleText.instance.getTextById(var0).replace(';', '\n');
+   public static final String getTextById(int textId) {
+      return BabbleText.instance.getTextById(textId).replace(';', '\n');
    }
 
    // $FF: renamed from: a (java.lang.String) char[]
@@ -201,30 +201,30 @@ public final class class_bh {
    }
 
    // $FF: renamed from: a () void
-   public static final void func_void_a() {
-      field_class_b_a = (class_b)class_b.func_class_az_a("fonts/small", 0, false);
-      field_class_b_b = (class_b)class_b.func_class_az_a("fonts/small", 16777215, false);
-      field_class_b_c = (class_b)class_b.func_class_az_a("fonts/small", 16746496, false);
-      field_class_b_d = (class_b)class_b.func_class_az_a("fonts/big", 0, 16777215, true);
-      field_class_b_e = (class_b)class_b.func_class_az_a("fonts/big", 16777215, 0, true);
-      field_class_b_f = field_class_b_d;
-      field_class_b_a.activeControlChar = true;
-      field_class_b_b.activeControlChar = true;
-      field_class_b_c.activeControlChar = true;
-      field_class_b_d.activeControlChar = true;
-      field_class_b_e.activeControlChar = true;
-      field_class_b_f.activeControlChar = true;
-      field_class_b_g = field_class_b_a;
+   public static final void loadAllFont() {
+      fontSmallBlack = (class_b)class_b.createMFont("fonts/small", 0, false);
+      fontSmallWhite = (class_b)class_b.createMFont("fonts/small", 16777215, false);
+      fontSmallOrange = (class_b)class_b.createMFont("fonts/small", 16746496, false);
+      fontBigWhiteBlack = (class_b)class_b.createMFont("fonts/big", 0, 16777215, true);
+      fontBigBlackWhite = (class_b)class_b.createMFont("fonts/big", 16777215, 0, true);
+      fontBigFontDefault = fontBigWhiteBlack;
+      fontSmallBlack.activeControlChar = true;
+      fontSmallWhite.activeControlChar = true;
+      fontSmallOrange.activeControlChar = true;
+      fontBigWhiteBlack.activeControlChar = true;
+      fontBigBlackWhite.activeControlChar = true;
+      fontBigFontDefault.activeControlChar = true;
+      fontSmallFontDefault = fontSmallBlack;
    }
 
    // $FF: renamed from: a () int
    public static final int func_int_a() {
-      return field_class_b_g.field_int_a;
+      return fontSmallFontDefault.field_int_a;
    }
 
    // $FF: renamed from: a (char[]) int
-   public static final int func_int_a(char[] var0) {
-      return field_class_b_g.getTextWidth(func_class_java_lang_String_a(var0));
+   public static final int getTextWidth(char[] charArray) {
+      return fontSmallFontDefault.getTextWidth(toString(charArray));
    }
 
    // $FF: renamed from: a (char) boolean
@@ -256,12 +256,12 @@ public final class class_bh {
    // $FF: renamed from: a (char[], int, int, int) int
    public static final int func_int_a(char[] var0, int var1, int var2, int var3) {
       String var4 = new String(var0, var1, var0.length - var1);
-      return field_class_b_g.func_int_a(var4, var2, var3);
+      return fontSmallFontDefault.func_int_a(var4, var2, var3);
    }
 
    // $FF: renamed from: a (char[], int) int
    public static final int func_int_a(char[] var0, int var1) {
-      return func_class_java_util_Vector_a(func_class_java_lang_String_a(var0), var1).size();
+      return func_class_java_util_Vector_a(toString(var0), var1).size();
    }
 
    // $FF: renamed from: a (int, int, char[], int, int, int) int
@@ -271,19 +271,19 @@ public final class class_bh {
 
    // $FF: renamed from: b () int
    private static int func_int_b() {
-      return field_class_b_g.field_int_b;
+      return fontSmallFontDefault.field_int_b;
    }
 
    // $FF: renamed from: a (java.lang.String, int, int, int) int
    private static int func_int_a(String var0, int var1, int var2, int var3) {
-      return field_class_b_g.func_int_a(func_class_java_util_Vector_a(var0, var3)) - func_int_b();
+      return fontSmallFontDefault.func_int_a(func_class_java_util_Vector_a(var0, var3)) - func_int_b();
    }
 
    // $FF: renamed from: a (java.lang.String, int) java.util.Vector
    private static Vector func_class_java_util_Vector_a(String var0, int var1) {
       if (!var0.equals(field_class_java_lang_String_e)) {
          field_class_java_util_Vector_a.setSize(0);
-         field_class_b_g.func_class_java_util_Vector_a(field_class_java_util_Vector_a, var0, var1);
+         fontSmallFontDefault.func_class_java_util_Vector_a(field_class_java_util_Vector_a, var0, var1);
       }
 
       return field_class_java_util_Vector_a;
@@ -291,33 +291,33 @@ public final class class_bh {
 
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int, char[], int) int
    public static final int func_int_a(Graphics var0, int var1, int var2, char[] var3, int var4) {
-      return func_class_az_a(var0.getColor()).func_int_a(var0, (char[])var3, var1, var2, 20);
+      return getFontByColor(var0.getColor()).func_int_a(var0, (char[])var3, var1, var2, 20);
    }
 
    // $FF: renamed from: a (int) az
-   private static MFont func_class_az_a(int var0) {
-      if (field_boolean_a) {
-         if (var0 == 0) {
-            return field_class_b_d;
+   private static MFont getFontByColor(int color) {
+      if (isBigFont) {
+         if (color == 0) {
+            return fontBigWhiteBlack;
          } else {
-            return var0 == 16777215 ? field_class_b_e : field_class_b_f;
+            return color == 16777215 ? fontBigBlackWhite : fontBigFontDefault;
          }
-      } else if (var0 == 0) {
-         return field_class_b_a;
+      } else if (color == 0) {
+         return fontSmallBlack;
       } else {
-         return var0 == 16777215 ? field_class_b_b : field_class_b_c;
+         return color == 16777215 ? fontSmallWhite : fontSmallOrange;
       }
    }
 
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int, char[], int) void
    public static final void func_void_a(Graphics var0, int var1, int var2, char[] var3, int var4) {
-      func_class_az_a(var0.getColor()).func_int_a(var0, (char[])var3, var1, var2, 17);
+      getFontByColor(var0.getColor()).func_int_a(var0, (char[])var3, var1, var2, 17);
    }
 
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int, int, int, char[], int, int, int) void
    public static final void func_void_a(Graphics var0, int var1, int var2, int var3, int var4, char[] var5, int var6, int var7, int var8) {
       var0.setClip(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
-      MFont var9 = func_class_az_a(var0.getColor());
+      MFont var9 = getFontByColor(var0.getColor());
       if (var6 + var8 > var5.length) {
          var8 = var5.length - var6;
       }
@@ -329,7 +329,7 @@ public final class class_bh {
    // $FF: renamed from: b (javax.microedition.lcdui.Graphics, int, int, int, int, char[], int, int, int) void
    public static final void func_void_b(Graphics var0, int var1, int var2, int var3, int var4, char[] var5, int var6, int var7, int var8) {
       var0.setClip(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
-      MFont var9 = func_class_az_a(var0.getColor());
+      MFont var9 = getFontByColor(var0.getColor());
       if (var6 + var8 > var5.length) {
          var8 = var5.length - var6;
       }
@@ -341,7 +341,7 @@ public final class class_bh {
    // $FF: renamed from: c (javax.microedition.lcdui.Graphics, int, int, int, int, char[], int, int, int) void
    public static final void func_void_c(Graphics var0, int var1, int var2, int var3, int var4, char[] var5, int var6, int var7, int var8) {
       var0.setClip(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
-      MFont var9 = func_class_az_a(var0.getColor());
+      MFont var9 = getFontByColor(var0.getColor());
       Vector var10;
       int var11 = Math.min((var10 = func_class_java_util_Vector_a(new String(var5, var6, var5.length - var6), var3)).size(), 3);
 
@@ -354,7 +354,7 @@ public final class class_bh {
 
          var9.func_int_a(var0, (String)var13, var1, var2, 20);
          var8 -= var13.length() + 1;
-         var2 += field_class_b_g.field_int_a + 2;
+         var2 += fontSmallFontDefault.field_int_a + 2;
       }
 
       var0.setColor(16777215);
@@ -363,8 +363,8 @@ public final class class_bh {
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int, int, int, char[], int) int
    public static final int func_int_a(Graphics var0, int var1, int var2, int var3, int var4, char[] var5, int var6) {
       var0.setClip(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
-      MFont var7 = func_class_az_a(var0.getColor());
-      String var8 = func_class_java_lang_String_a(var5);
+      MFont var7 = getFontByColor(var0.getColor());
+      String var8 = toString(var5);
       return var7.func_int_a(var0, func_class_java_util_Vector_a(var8, var3), var1, var2, MyGameCanvas.field_int_h, var6);
    }
 
@@ -374,7 +374,7 @@ public final class class_bh {
    }
 
    // $FF: renamed from: a (char[]) java.lang.String
-   public static final String func_class_java_lang_String_a(char[] var0) {
+   public static final String toString(char[] var0) {
       return new String(var0);
    }
 
@@ -391,7 +391,7 @@ public final class class_bh {
    }
 
    // $FF: renamed from: a (java.lang.String) javax.microedition.lcdui.Image
-   public static final Image func_class_javax_microedition_lcdui_Image_a(String var0) throws IOException {
-      return Image.createImage("/" + BabbleText.instance.arrayLanguageCode[BabbleText.instance.idxLangCode] + "/" + var0);
+   public static final Image getImageFromLangCodeFolder(String imgFilename) throws IOException {
+      return Image.createImage("/" + BabbleText.instance.arrayLanguageCode[BabbleText.instance.idxLangCode] + "/" + imgFilename);
    }
 }

@@ -44,14 +44,14 @@ public class class_ad {
    // $FF: renamed from: a (byte[], int) int
    public final int func_int_a(byte[] var1, int var2) {
       byte var3 = var1[var2++];
-      this.field_array_char_a = class_bh.func_array_char_a(new String(var1, var2, var3));
+      this.field_array_char_a = UIGeneral.func_array_char_a(new String(var1, var2, var3));
       return 1 + var3;
    }
 
    // $FF: renamed from: b (byte[], int) int
    public final int func_int_b(byte[] var1, int var2) {
       byte var3 = var1[var2++];
-      this.field_array_char_b = class_bh.func_array_char_a(new String(var1, var2, var3));
+      this.field_array_char_b = UIGeneral.func_array_char_a(new String(var1, var2, var3));
       return 1 + var3;
    }
 

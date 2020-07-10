@@ -51,10 +51,10 @@ public final class class_d extends class_cb {
    public final void func_void_d() {
       Object[] var1;
       if (MIDletConfig.isDemoVersion) {
-         var1 = new Object[]{class_bh.getTextById(3919).toCharArray()};
-         this.func_void_a((byte)12, (byte)2, var1, class_bh.field_array_char_j, class_bh.field_array_char_c);
+         var1 = new Object[]{UIGeneral.getTextById(3919).toCharArray()};
+         this.func_void_a((byte)12, (byte)2, var1, UIGeneral.labelTextBuy, UIGeneral.labelTextExit);
       } else {
-         var1 = new Object[]{class_bh.field_array_char_a};
+         var1 = new Object[]{UIGeneral.labelTextAreYouSure};
          this.func_void_a((byte)2, (byte)2, var1);
       }
    }
@@ -65,7 +65,7 @@ public final class class_d extends class_cb {
       if (var1 == 12 || var1 == 2) {
          if (MIDletConfig.isDemoVersion) {
             if (var2 == 0) {
-               class_bh.func_void_a(MIDletConfig.urlApp);
+               UIGeneral.func_void_a(MIDletConfig.urlApp);
                return;
             }
 
@@ -100,7 +100,7 @@ public final class class_d extends class_cb {
          class_cb.func_void_a(var1, var5, var6, 110, 22);
          class_cb.func_void_b(var1, var5, var6, 110, 22);
          var1.setColor(16777215);
-         class_bh.func_int_a(var1, var5 + 5, var6 + 5, class_ai.field_class_z_a.loadByIndex(53), 1);
+         UIGeneral.func_int_a(var1, var5 + 5, var6 + 5, class_ai.field_class_z_a.loadByIndex(53), 1);
          this.func_void_b();
       } else {
          if (this.field_byte_c == 1) {

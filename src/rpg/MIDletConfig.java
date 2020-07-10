@@ -39,9 +39,9 @@ public final class MIDletConfig {
         }
 
         if (buySetupOnMenu) {
-            class_bh.arrayTitleMenuText[5] = func_class_java_lang_String_a().toCharArray();
+            UIGeneral.arrayTitleMenuText[5] = func_class_java_lang_String_a().toCharArray();
         } else {
-            class_bh.arrayTitleMenuText[5] = class_bh.arrayTitleMenuText[6];
+            UIGeneral.arrayTitleMenuText[5] = UIGeneral.arrayTitleMenuText[6];
         }
 
         urlApp = getUrlApp();
@@ -50,10 +50,10 @@ public final class MIDletConfig {
             String versionText;
             if ((versionText = GameMIDlet.instance.getAppProperty("MIDlet-Version")) != null) {
                 if (isDemoVersion) {
-                    versionText = versionText + " " + class_bh.getTextById(3917);
+                    versionText = versionText + " " + UIGeneral.getTextById(3917);
                 }
 
-                class_bh.labelTextVersion = versionText.toCharArray();
+                UIGeneral.labelTextVersion = versionText.toCharArray();
             }
 
         } catch (Exception ex) {
@@ -134,7 +134,7 @@ public final class MIDletConfig {
                 do {
                     if (var2.charAt(var3++) == '\\' && var2.charAt(var3) == 'u') {
                         var2.getChars(var3 + 1, var3 + 5, var4, 0);
-                        var2.setCharAt(var3 - 1, (char) Integer.parseInt(class_bh.func_class_java_lang_String_a(var4), 16));
+                        var2.setCharAt(var3 - 1, (char) Integer.parseInt(UIGeneral.toString(var4), 16));
                         var2.delete(var3, var3 + 5);
                     }
                 } while (var3 < var2.length());

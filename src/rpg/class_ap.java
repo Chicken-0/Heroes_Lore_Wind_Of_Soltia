@@ -114,13 +114,13 @@ public final class class_ap extends class_cb {
       int var4;
       if (this.field_class_t_a != null && this.field_class_ad_a != null) {
          var1.setColor(16777215);
-         var4 = (var4 = (var4 = var2 + 6) + 2 + class_bh.func_int_a(var1, var4, var3 + 9 + 72 + 4, class_t.field_class_z_a.loadByIndex(this.field_class_ad_a.field_byte_g), 1)) + 2 + class_bh.func_int_a(var1, var4, var3 + 9 + 72 + 4, class_ax.field_class_z_a.loadByIndex(17), 1);
-         class_bh.func_int_a(var1, var4, var3 + 9 + 72 + 4, class_ax.field_class_z_a.loadByIndex(18), 1);
+         var4 = (var4 = (var4 = var2 + 6) + 2 + UIGeneral.func_int_a(var1, var4, var3 + 9 + 72 + 4, class_t.field_class_z_a.loadByIndex(this.field_class_ad_a.field_byte_g), 1)) + 2 + UIGeneral.func_int_a(var1, var4, var3 + 9 + 72 + 4, class_ax.field_class_z_a.loadByIndex(17), 1);
+         UIGeneral.func_int_a(var1, var4, var3 + 9 + 72 + 4, class_ax.field_class_z_a.loadByIndex(18), 1);
          class_cb.func_void_a(var1, var2 + 155 - 10, var3 + 9 + 72 + 5, 500);
          class_cb.func_void_a(var1, var2 + 155 - 10, var3 + 9 + 72 + 20, class_n.func_class_ao_a().field_class_g_a.field_int_a);
       }
 
-      var4 = class_bh.func_int_a(155, 80);
+      var4 = UIGeneral.func_int_a(155, 80);
       class_cb.func_void_a(var1, var2 + (155 - var4 >> 1), var3 + 138, var4, class_ax.field_class_z_a.loadByIndex(19), super.field_byte_b == 2);
    }
 }

@@ -16,9 +16,9 @@ public final class class_bt extends class_cb {
       }
 
       this.field_boolean_c = var2;
-      class_bh.field_class_b_a.activeControlChar = false;
-      class_bh.field_class_b_b.activeControlChar = false;
-      class_bh.field_class_b_c.activeControlChar = false;
+      UIGeneral.fontSmallBlack.activeControlChar = false;
+      UIGeneral.fontSmallWhite.activeControlChar = false;
+      UIGeneral.fontSmallOrange.activeControlChar = false;
       this.field_array_array_char_a = new char[super.field_byte_a][];
 
       for(byte var3 = 0; var3 < super.field_byte_a; ++var3) {
@@ -40,9 +40,9 @@ public final class class_bt extends class_cb {
       } else if (var2 != 53 && var1 != 8) {
          if (var2 == -8) {
             super.field_class_cb_a.func_void_a((byte)-1, (byte)-1);
-            class_bh.field_class_b_a.activeControlChar = true;
-            class_bh.field_class_b_b.activeControlChar = true;
-            class_bh.field_class_b_c.activeControlChar = true;
+            UIGeneral.fontSmallBlack.activeControlChar = true;
+            UIGeneral.fontSmallWhite.activeControlChar = true;
+            UIGeneral.fontSmallOrange.activeControlChar = true;
             return true;
          } else {
             return true;
@@ -58,7 +58,7 @@ public final class class_bt extends class_cb {
             if (MIDletConfig.func_boolean_a()) {
                var4 = BabbleText.instance.getTextById(3930).toCharArray();
             } else if (MIDletConfig.func_boolean_b()) {
-               var4 = class_bh.func_class_java_lang_String_a(BabbleText.instance.getTextById(3934), "XXX", new String(MIDletConfig.func_class_java_lang_String_a())).toCharArray();
+               var4 = UIGeneral.func_class_java_lang_String_a(BabbleText.instance.getTextById(3934), "XXX", new String(MIDletConfig.func_class_java_lang_String_a())).toCharArray();
             }
          }
 
@@ -83,12 +83,12 @@ public final class class_bt extends class_cb {
          var1.fillRect(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
          class_bf.func_void_c(var1, var2, var3);
          class_bf.func_void_b(var1, var2, var3 + 24, 3);
-         class_bh.func_void_a(var1, 7, MyGameCanvas.canvasWidth >> 1, var3 + 5);
+         UIGeneral.func_void_a(var1, 7, MyGameCanvas.canvasWidth >> 1, var3 + 5);
          var3 += 41;
       }
 
       var3 += 10;
-      class_bh.func_void_a(true);
+      UIGeneral.setFontDefault(true);
 
       for(byte var6 = 0; var6 < super.field_byte_a; ++var6) {
          if (super.field_byte_b == var6) {
@@ -97,12 +97,12 @@ public final class class_bt extends class_cb {
             var1.setColor(var5);
          }
 
-         class_bh.func_void_a(var1, MyGameCanvas.canvasWidth >> 1, var3 + var6 * 15, this.field_array_array_char_a[var6], 1);
+         UIGeneral.func_void_a(var1, MyGameCanvas.canvasWidth >> 1, var3 + var6 * 15, this.field_array_array_char_a[var6], 1);
       }
 
-      class_bh.func_void_a(false);
+      UIGeneral.setFontDefault(false);
       if (!this.field_boolean_c) {
-         class_bh.func_void_a(var1, class_bh.field_array_char_d, class_bh.field_array_char_e);
+         UIGeneral.func_void_a(var1, UIGeneral.labelTextOk, UIGeneral.labelTextBack);
       }
 
    }

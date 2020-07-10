@@ -49,7 +49,7 @@ public final class class_v extends class_cb {
 
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int) void
    public final void func_void_a(Graphics var1, int var2, int var3) {
-      class_bh.func_void_a(var1, class_bh.field_array_char_i, class_bh.field_array_char_e);
+      UIGeneral.func_void_a(var1, UIGeneral.labelTextSelect, UIGeneral.labelTextBack);
       var2 += 2;
       var3 += 15;
       this.func_void_a(var1, var2, var3, true);

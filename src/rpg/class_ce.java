@@ -848,7 +848,7 @@ public final class class_ce implements class_u {
          }
 
          MyGameCanvas.func_void_k();
-         class_bw.func_void_a((byte)22);
+         SoundPlayerManager.setupSoundPlayer((byte)22);
       } catch (IOException var2) {
          var2.printStackTrace();
       }
@@ -858,7 +858,7 @@ public final class class_ce implements class_u {
    public static final void func_void_z() {
       field_array_class_javax_microedition_lcdui_Image_j = null;
       field_array_class_javax_microedition_lcdui_Image_k = null;
-      class_bw.func_void_b((byte)22);
+      SoundPlayerManager.stopTrack((byte)22);
    }
 
    // $FF: renamed from: A () void

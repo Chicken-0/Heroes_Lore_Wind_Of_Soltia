@@ -141,7 +141,7 @@ public final class class_as extends MyGameCanvas {
             if (field_int_e == 0) {
                class_n.func_void_a((int)1);
                class_bu.func_void_d();
-               class_bw.func_void_b((byte)12);
+               SoundPlayerManager.stopTrack((byte)12);
             }
             break;
          case 11:
@@ -183,7 +183,7 @@ public final class class_as extends MyGameCanvas {
    }
 
    public final void hideNotify() {
-      class_bw.func_void_a();
+      SoundPlayerManager.stop();
       synchronized(class_bs.field_class_java_lang_Object_a) {
          if (class_n.field_int_e == 2) {
             this.keyReleased(-8);
@@ -196,7 +196,7 @@ public final class class_as extends MyGameCanvas {
    }
 
    public final void showNotify() {
-      class_bw.func_void_b();
+      SoundPlayerManager.play();
       synchronized(class_bs.field_class_java_lang_Object_a) {
          if (class_n.field_int_e == 2) {
             class_n.func_void_a((byte)13);
@@ -427,15 +427,15 @@ public final class class_as extends MyGameCanvas {
       class_bu.func_void_f();
       class_bu.func_void_g();
       class_bu.func_void_h();
-      class_bw.func_void_f();
+      SoundPlayerManager.close();
       field_int_e = -16;
       this.field_int_t = 0;
       this.field_int_u = -1;
 
       try {
          this.field_class_z_a = new class_z("/sgui/ed" + class_n.field_byte_a);
-         class_bw.func_void_a((byte)23);
-         class_bw.func_void_b((int)23);
+         SoundPlayerManager.setupSoundPlayer((byte)23);
+         SoundPlayerManager.startPlayer1((int)23);
          PNGMerger var1;
          switch(class_n.field_byte_a) {
          case 6:
@@ -830,8 +830,8 @@ public final class class_as extends MyGameCanvas {
          this.field_class_java_util_Vector_a = null;
          this.field_class_z_a = null;
          this.field_array_class_javax_microedition_lcdui_Image_a = null;
-         class_bw.func_void_f();
-         class_bw.func_void_b((byte)23);
+         SoundPlayerManager.close();
+         SoundPlayerManager.stopTrack((byte)23);
          class_n.func_void_a((byte)21, (byte)2);
       } else {
          if (field_int_e > 0) {

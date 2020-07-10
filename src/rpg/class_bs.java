@@ -17,7 +17,7 @@ public final class class_bs implements Runnable {
    // $FF: renamed from: d int
    private int field_int_d;
    // $FF: renamed from: a int
-   public int field_int_a;
+   public int soundVolumeLevel;
    // $FF: renamed from: a boolean
    public boolean field_boolean_a;
    // $FF: renamed from: b boolean
@@ -49,7 +49,7 @@ public final class class_bs implements Runnable {
    }
 
    private class_bs(Display var1) {
-      this.field_int_a = class_bw.field_int_a;
+      this.soundVolumeLevel = SoundPlayerManager.maxVolumeLevel;
       this.field_boolean_a = !class_x.activeDemoVersion;
       this.field_boolean_b = false;
       this.field_boolean_c = false;
@@ -70,7 +70,7 @@ public final class class_bs implements Runnable {
          this.field_class_r_a = new class_bg();
          this.field_class_javax_microedition_lcdui_Display_a.setCurrent(this.field_class_r_a);
          ((class_bg)this.field_class_r_a).func_void_a();
-         class_bw.func_void_g();
+         SoundPlayerManager.readySound();
          this.func_void_g();
       }
 
@@ -162,7 +162,7 @@ public final class class_bs implements Runnable {
    // $FF: renamed from: a () byte[]
    public final byte[] func_array_byte_a() {
       boolean var1 = false;
-      int var3 = 0 | (this.field_int_a & 15) << 4;
+      int var3 = 0 | (this.soundVolumeLevel & 15) << 4;
       if (class_x.activeDemoVersion && this.field_boolean_a) {
          var3 |= 8;
       }
@@ -188,7 +188,7 @@ public final class class_bs implements Runnable {
 
    // $FF: renamed from: a (byte[]) void
    public final void func_void_a(byte[] var1) {
-      this.field_int_a = (byte)((var1[0] & 240) >> 4);
+      this.soundVolumeLevel = (byte)((var1[0] & 240) >> 4);
       if (class_x.activeDemoVersion) {
          this.field_boolean_a = (var1[0] & 8) != 0;
       }
@@ -198,7 +198,7 @@ public final class class_bs implements Runnable {
       this.field_boolean_d = (var1[0] & 1) != 0;
       this.field_byte_a = (byte)((var1[1] & 240) >> 4);
       this.field_byte_b = (byte)(var1[1] & 15);
-      class_bw.func_void_a(this.field_int_a);
+      SoundPlayerManager.startSound(this.soundVolumeLevel);
       this.func_void_a(this.field_byte_a);
       this.field_int_b = class_h.func_int_a(var1, 2) ^ -504331042;
    }

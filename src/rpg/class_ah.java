@@ -187,7 +187,7 @@ public final class class_ah implements class_u {
          }
       }
 
-      class_bw.func_void_c();
+      SoundPlayerManager.stopPlayer2();
    }
 
    // $FF: renamed from: a (int, int) void
@@ -384,16 +384,16 @@ public final class class_ah implements class_u {
             System.out.println("=====[EVENT BGM] " + var4);
             if (var4 != 5 && var4 != 6 && var4 != 7) {
                if (var4 == 8) {
-                  class_bw.func_void_a(var4, false);
+                  SoundPlayerManager.startPlayer3(var4, false);
                }
             } else {
-               class_bw.func_void_c(var4);
+               SoundPlayerManager.startPlayer2(var4);
             }
 
             ++field_int_a;
             break;
          case 27:
-            class_bw.func_void_c();
+            SoundPlayerManager.stopPlayer2();
             ++field_int_a;
             break;
          case 30:

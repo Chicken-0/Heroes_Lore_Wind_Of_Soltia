@@ -183,11 +183,11 @@ public final class class_bu implements Runnable {
 
       byte var2;
       for(var2 = 5; var2 <= 8; ++var2) {
-         class_bw.func_void_a(var2);
+         SoundPlayerManager.setupSoundPlayer(var2);
       }
 
       for(var2 = 12; var2 <= 15; ++var2) {
-         class_bw.func_void_a(var2);
+         SoundPlayerManager.setupSoundPlayer(var2);
       }
 
    }
@@ -205,11 +205,11 @@ public final class class_bu implements Runnable {
 
       byte var0;
       for(var0 = 5; var0 <= 8; ++var0) {
-         class_bw.func_void_b(var0);
+         SoundPlayerManager.stopTrack(var0);
       }
 
       for(var0 = 12; var0 <= 15; ++var0) {
-         class_bw.func_void_b(var0);
+         SoundPlayerManager.stopTrack(var0);
       }
 
    }
@@ -271,25 +271,25 @@ public final class class_bu implements Runnable {
       MyGameCanvas.func_void_k();
       switch(var2.field_byte_f) {
       case 0:
-         class_bw.func_void_a((byte)16);
-         class_bw.func_void_a((byte)21);
+         SoundPlayerManager.setupSoundPlayer((byte)16);
+         SoundPlayerManager.setupSoundPlayer((byte)21);
          return;
       case 1:
-         class_bw.func_void_a((byte)20);
+         SoundPlayerManager.setupSoundPlayer((byte)20);
          return;
       case 2:
-         class_bw.func_void_a((byte)17);
-         class_bw.func_void_a((byte)21);
+         SoundPlayerManager.setupSoundPlayer((byte)17);
+         SoundPlayerManager.setupSoundPlayer((byte)21);
          return;
       case 3:
-         class_bw.func_void_a((byte)16);
+         SoundPlayerManager.setupSoundPlayer((byte)16);
          return;
       case 4:
-         class_bw.func_void_a((byte)18);
-         class_bw.func_void_a((byte)20);
+         SoundPlayerManager.setupSoundPlayer((byte)18);
+         SoundPlayerManager.setupSoundPlayer((byte)20);
          return;
       case 5:
-         class_bw.func_void_a((byte)17);
+         SoundPlayerManager.setupSoundPlayer((byte)17);
       default:
       }
    }
@@ -302,7 +302,7 @@ public final class class_bu implements Runnable {
       class_ce.func_void_a();
 
       for(byte var0 = 16; var0 <= 21; ++var0) {
-         class_bw.func_void_b(var0);
+         SoundPlayerManager.stopTrack(var0);
       }
 
    }

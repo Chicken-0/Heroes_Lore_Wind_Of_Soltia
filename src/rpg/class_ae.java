@@ -104,11 +104,11 @@ public final class class_ae implements class_u {
 
       byte var1;
       for(var1 = 0; var1 <= 4; ++var1) {
-         class_bw.func_void_b(var1);
+         SoundPlayerManager.stopTrack(var1);
       }
 
       for(var1 = 24; var1 <= 31; ++var1) {
-         class_bw.func_void_b(var1);
+         SoundPlayerManager.stopTrack(var1);
       }
 
       MyGameCanvas.func_void_k();
@@ -193,17 +193,17 @@ public final class class_ae implements class_u {
 
       if (this.field_byte_a != 79 && this.field_byte_a != 80 && this.field_byte_a != 81) {
          if (this.field_byte_b == 1 || this.field_byte_b == 5 || this.field_byte_b == 9 || this.field_byte_b == 15) {
-            class_bw.func_void_a((byte)8);
+            SoundPlayerManager.setupSoundPlayer((byte)8);
          }
 
          if (field_array_byte_h[this.field_byte_b] != -1) {
-            class_bw.func_void_a(field_array_byte_h[this.field_byte_b]);
-            class_bw.func_void_b((int)field_array_byte_h[this.field_byte_b]);
+            SoundPlayerManager.setupSoundPlayer(field_array_byte_h[this.field_byte_b]);
+            SoundPlayerManager.startPlayer1((int)field_array_byte_h[this.field_byte_b]);
          }
       } else {
-         class_bw.func_void_a((byte)4);
-         class_bw.func_void_a((byte)8);
-         class_bw.func_void_b((int)4);
+         SoundPlayerManager.setupSoundPlayer((byte)4);
+         SoundPlayerManager.setupSoundPlayer((byte)8);
+         SoundPlayerManager.startPlayer1((int)4);
       }
 
       class_n.func_class_ao_a().func_void_c();

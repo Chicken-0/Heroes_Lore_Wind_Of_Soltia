@@ -560,11 +560,11 @@ public class class_al extends class_o {
          }
 
          if (var11) {
-            class_bw.func_void_a((byte)14, false);
+            SoundPlayerManager.startPlayer3((byte)14, false);
          } else if (var4) {
-            class_bw.func_void_a((byte)15, false);
+            SoundPlayerManager.startPlayer3((byte)15, false);
          } else {
-            class_bw.func_void_a((byte)13, false);
+            SoundPlayerManager.startPlayer3((byte)13, false);
          }
       }
    }

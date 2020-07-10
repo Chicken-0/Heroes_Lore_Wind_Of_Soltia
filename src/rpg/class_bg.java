@@ -41,7 +41,7 @@ public final class class_bg extends MyGameCanvas implements Runnable {
          case 0:
             return;
          case 1:
-            class_bw.func_void_f();
+            SoundPlayerManager.close();
             class_ce.func_void_x();
             class_ce.func_void_z();
             this.func_void_a(false, (byte)1);
@@ -268,11 +268,11 @@ public final class class_bg extends MyGameCanvas implements Runnable {
    }
 
    public final void hideNotify() {
-      class_bw.func_void_a();
+      SoundPlayerManager.stop();
    }
 
    public final void showNotify() {
-      class_bw.func_void_b();
+      SoundPlayerManager.play();
    }
 
    // $FF: renamed from: c () void
@@ -286,12 +286,12 @@ public final class class_bg extends MyGameCanvas implements Runnable {
       this.field_short_c = (short)class_h.func_int_a(MyGameCanvas.canvasWidth / 2, MyGameCanvas.canvasWidth - 10);
       this.field_short_d = (short)(10 * class_h.func_int_a(3, 7));
       this.field_byte_d = (byte)class_h.func_int_a(0, 7);
-      class_bw.func_void_b((int)22);
+      SoundPlayerManager.startPlayer1((int)22);
    }
 
    // $FF: renamed from: a (boolean, byte) void
    public final void func_void_a(boolean var1, byte var2) {
-      class_bw.func_void_d();
+      SoundPlayerManager.stopPlayer3();
       if (!var1 && (class_bs.field_class_bs_a.field_byte_b & (var2 == 1 ? 8 : 2)) != 0) {
          var1 = true;
       }

@@ -27,15 +27,15 @@ public final class class_be extends class_cb {
             case 0:
                if (var2 != 52 && var1 != 2) {
                   if (var2 == 54 || var1 == 5) {
-                     this.field_class_bs_a.field_int_a = class_bw.field_int_a;
+                     this.field_class_bs_a.soundVolumeLevel = SoundPlayerManager.maxVolumeLevel;
                   }
                } else {
-                  this.field_class_bs_a.field_int_a = 0;
+                  this.field_class_bs_a.soundVolumeLevel = 0;
                }
 
-               class_bw.func_void_a(this.field_class_bs_a.field_int_a);
-               if (this.field_class_bs_a.field_int_a == 0) {
-                  class_bw.func_void_d();
+               SoundPlayerManager.startSound(this.field_class_bs_a.soundVolumeLevel);
+               if (this.field_class_bs_a.soundVolumeLevel == 0) {
+                  SoundPlayerManager.stopPlayer3();
                }
                break;
             case 1:
@@ -119,7 +119,7 @@ public final class class_be extends class_cb {
       var1.setColor(var7 == 0 ? 16777215 : var4);
       class_bh.func_int_a(var1, var2, var3, class_ce.field_class_z_g.func_array_char_a(18), 1);
       var1.setColor(var5);
-      if (this.field_class_bs_a.field_int_a == 0) {
+      if (this.field_class_bs_a.soundVolumeLevel == 0) {
          class_bh.func_void_a(var1, var2 + 70, var3, BabbleText.instance.getTextById(3945).toCharArray(), 0);
       } else {
          class_bh.func_void_a(var1, var2 + 70, var3, BabbleText.instance.getTextById(3944).toCharArray(), 0);

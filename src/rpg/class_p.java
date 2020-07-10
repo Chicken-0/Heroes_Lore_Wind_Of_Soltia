@@ -248,14 +248,14 @@ public final class class_p extends class_ck implements class_u {
                var3.func_void_a(new class_bj((short)0, (short)8, var1, var2));
                var3.func_boolean_a((byte)5);
                var3.field_boolean_d = true;
-               class_bw.func_void_a((byte)21, false);
+               SoundPlayerManager.startPlayer3((byte)21, false);
             }
             break label132;
          case 2:
             if (this.field_short_e == 0) {
                var3.func_void_a(new class_bj((short)0, (short)160, var1, var2));
                var3.field_boolean_g = true;
-               class_bw.func_void_a((byte)21, false);
+               SoundPlayerManager.startPlayer3((byte)21, false);
             }
 
             if (this.field_short_e == field_array_short_d[var1 * 3 + var2]) {
@@ -270,14 +270,14 @@ public final class class_p extends class_ck implements class_u {
             if (this.field_short_e == 0) {
                var3.func_void_a(new class_bj((short)0, (short)8, var1, var2));
                var3.func_void_c((int)30);
-               class_bw.func_void_a((byte)20, false);
+               SoundPlayerManager.startPlayer3((byte)20, false);
             }
             break label132;
          case 1:
             if (this.field_short_e == 0) {
                var3.func_void_a(new class_bj((short)0, (short)9, var1, var2));
                var3.func_void_e((int)20);
-               class_bw.func_void_a((byte)20, false);
+               SoundPlayerManager.startPlayer3((byte)20, false);
             }
             break label132;
          case 2:
@@ -287,7 +287,7 @@ public final class class_p extends class_ck implements class_u {
                var3.func_void_a(new class_bj((short)24, (short)8, var1, (byte)0));
                var3.func_void_a(new class_bj((short)44, (short)8, var1, (byte)0));
                var3.field_boolean_h = true;
-               class_bw.func_void_a((byte)20, false);
+               SoundPlayerManager.startPlayer3((byte)20, false);
             }
 
             if (this.field_short_e == field_array_short_d[var1 * 3 + var2]) {
@@ -307,7 +307,7 @@ public final class class_p extends class_ck implements class_u {
                var3.func_void_a(new class_bj((short)0, (short)8, var1, var2));
                var3.func_boolean_a((byte)6);
                var3.field_boolean_e = true;
-               class_bw.func_void_a((byte)21, false);
+               SoundPlayerManager.startPlayer3((byte)21, false);
             }
             break label132;
          case 2:
@@ -316,7 +316,7 @@ public final class class_p extends class_ck implements class_u {
                var3.field_class_java_util_Vector_b.removeAllElements();
                var3.field_boolean_d = false;
                var3.field_boolean_e = false;
-               class_bw.func_void_a((byte)21, false);
+               SoundPlayerManager.startPlayer3((byte)21, false);
             }
          default:
             break label132;
@@ -331,7 +331,7 @@ public final class class_p extends class_ck implements class_u {
             this.func_void_a((byte)5, 6, 3);
             this.func_void_a((byte)5, 12, 3);
             if (this.field_short_e == 0 || this.field_short_e == 6 || this.field_short_e == 12) {
-               class_bw.func_void_a((byte)16, false);
+               SoundPlayerManager.startPlayer3((byte)16, false);
             }
             break label132;
          case 1:
@@ -339,14 +339,14 @@ public final class class_p extends class_ck implements class_u {
             this.func_void_a((short)80, (int)(this.field_short_a + 45 + class_n.func_class_ao_a().field_short_g * 3 / 2));
             this.func_void_a(super.field_short_c, super.field_short_d, (short)80, (byte)6);
             if (this.field_short_e % 8 == 0) {
-               class_bw.func_void_a((byte)16, false);
+               SoundPlayerManager.startPlayer3((byte)16, false);
             }
             break label132;
          case 2:
             if (this.field_short_e == 0) {
                this.func_void_a((byte)7);
                this.func_void_a((short)7);
-               class_bw.func_void_a((byte)16, false);
+               SoundPlayerManager.startPlayer3((byte)16, false);
             }
          default:
             break label132;
@@ -361,7 +361,7 @@ public final class class_p extends class_ck implements class_u {
             this.func_void_a((byte)7, 6, 5);
             this.func_void_a((byte)7, 12, 5);
             if (this.field_short_e == 0 || this.field_short_e == 6 || this.field_short_e == 12 || this.field_short_e == 18 || this.field_short_e == 24) {
-               class_bw.func_void_a((byte)18, false);
+               SoundPlayerManager.startPlayer3((byte)18, false);
             }
             break label132;
          case 1:
@@ -374,7 +374,7 @@ public final class class_p extends class_ck implements class_u {
 
             this.func_void_a(super.field_short_c, super.field_short_d, (short)80, (byte)8);
             if (this.field_short_e % 8 == 0) {
-               class_bw.func_void_a((byte)18, false);
+               SoundPlayerManager.startPlayer3((byte)18, false);
             }
 
             if (this.field_short_e == field_array_short_d[var1 * 3 + var2]) {
@@ -386,7 +386,7 @@ public final class class_p extends class_ck implements class_u {
                var3.func_void_a(new class_bj((short)0, (short)15, var1, var2));
                var3.func_void_c((int)20);
                var3.func_void_e((int)20);
-               class_bw.func_void_a((byte)20, false);
+               SoundPlayerManager.startPlayer3((byte)20, false);
             }
          default:
             break label132;
@@ -401,7 +401,7 @@ public final class class_p extends class_ck implements class_u {
             this.func_void_a((byte)4, 6, 5);
             this.func_void_a((byte)4, 12, 5);
             if (this.field_short_e == 0 || this.field_short_e == 6 || this.field_short_e == 12 || this.field_short_e == 18 || this.field_short_e == 24) {
-               class_bw.func_void_a((byte)17, false);
+               SoundPlayerManager.startPlayer3((byte)17, false);
             }
             break;
          case 1:
@@ -409,14 +409,14 @@ public final class class_p extends class_ck implements class_u {
             this.func_void_a((short)80, (int)(this.field_short_a + 45 + class_n.func_class_ao_a().field_short_g * 3 / 2));
             this.func_void_a(super.field_short_c, super.field_short_d, (short)80, (byte)9);
             if (this.field_short_e % 8 == 0) {
-               class_bw.func_void_a((byte)17, false);
+               SoundPlayerManager.startPlayer3((byte)17, false);
             }
             break;
          case 2:
             if (this.field_short_e == 0) {
                this.func_void_a((byte)9);
                this.func_void_a((short)9);
-               class_bw.func_void_a((byte)17, false);
+               SoundPlayerManager.startPlayer3((byte)17, false);
             }
          }
       }
@@ -697,7 +697,7 @@ public final class class_p extends class_ck implements class_u {
       class_ae var4 = class_n.field_class_ae_a;
       switch(this.field_short_e) {
       case 0:
-         class_bw.func_void_a((byte)16, false);
+         SoundPlayerManager.startPlayer3((byte)16, false);
       case 5:
          func_void_a(var4, super.field_short_c, super.field_short_d, (byte)1);
          return;
@@ -711,7 +711,7 @@ public final class class_p extends class_ck implements class_u {
          return;
       case 4:
       case 8:
-         class_bw.func_void_a((byte)16, false);
+         SoundPlayerManager.startPlayer3((byte)16, false);
          func_void_a(var4, (short)(super.field_short_c + class_u.field_array_byte_a[this.field_byte_j] * 48), (short)(super.field_short_d + class_u.field_array_byte_b[this.field_byte_j] * 48), (byte)2);
          func_void_a(var4, (short)(super.field_short_c + class_u.field_array_byte_a[this.field_byte_j] * 48 + class_u.field_array_byte_a[class_u.field_array_byte_e[this.field_byte_j]] * 16), (short)(super.field_short_d + class_u.field_array_byte_b[this.field_byte_j] * 48 + class_u.field_array_byte_b[class_u.field_array_byte_e[this.field_byte_j]] * 16), (byte)2);
          func_void_a(var4, (short)(super.field_short_c + class_u.field_array_byte_a[this.field_byte_j] * 48 + class_u.field_array_byte_a[class_u.field_array_byte_f[this.field_byte_j]] * 16), (short)(super.field_short_d + class_u.field_array_byte_b[this.field_byte_j] * 48 + class_u.field_array_byte_b[class_u.field_array_byte_f[this.field_byte_j]] * 16), (byte)2);
@@ -728,7 +728,7 @@ public final class class_p extends class_ck implements class_u {
       class_ae var4 = class_n.field_class_ae_a;
       switch(this.field_short_e) {
       case 0:
-         class_bw.func_void_a((byte)17, false);
+         SoundPlayerManager.startPlayer3((byte)17, false);
       case 4:
          func_void_a(var4, super.field_short_c, super.field_short_d, (byte)4);
          return;
@@ -742,7 +742,7 @@ public final class class_p extends class_ck implements class_u {
          return;
       case 3:
       case 7:
-         class_bw.func_void_a((byte)17, false);
+         SoundPlayerManager.startPlayer3((byte)17, false);
          func_void_a(var4, (short)(super.field_short_c + class_u.field_array_byte_a[this.field_byte_j] * 48), (short)(super.field_short_d + class_u.field_array_byte_b[this.field_byte_j] * 48), (byte)4);
       default:
       }

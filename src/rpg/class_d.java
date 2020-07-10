@@ -70,14 +70,14 @@ public final class class_d extends class_cb {
             }
 
             class_n.func_void_a((byte)14, (byte)1);
-            class_bw.func_void_f();
+            SoundPlayerManager.close();
             class_bf.field_boolean_d = true;
             return;
          }
 
          if (var2 == 0) {
             class_n.func_void_a((byte)14, (byte)1);
-            class_bw.func_void_f();
+            SoundPlayerManager.close();
          }
       }
 

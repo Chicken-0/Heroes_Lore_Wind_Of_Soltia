@@ -263,8 +263,8 @@ public final class class_n implements class_u {
             return;
          case 16:
             func_void_a((int)10);
-            class_bw.func_void_a((byte)12);
-            class_bw.func_void_a((byte)12, false);
+            SoundPlayerManager.setupSoundPlayer((byte)12);
+            SoundPlayerManager.startPlayer3((byte)12, false);
             class_as.field_int_e = 16;
             return;
          case 21:
@@ -277,7 +277,7 @@ public final class class_n implements class_u {
                class_ai.func_class_ai_a().func_void_a(false);
                func_void_a((int)1);
                class_bu.func_void_d();
-               class_bw.func_void_f();
+               SoundPlayerManager.close();
                return;
             }
 
@@ -293,8 +293,8 @@ public final class class_n implements class_u {
    public static final void func_void_b(byte var0, byte var1, byte var2, byte var3) {
       System.gc();
       func_void_a((byte)1, var1, var2, var3);
-      class_bw.func_void_e();
-      class_bw.func_void_f();
+      SoundPlayerManager.stopPlayer1();
+      SoundPlayerManager.close();
       field_byte_f = var0;
    }
 

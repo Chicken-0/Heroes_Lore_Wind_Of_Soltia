@@ -515,7 +515,7 @@ public final class class_ao extends class_o implements class_u {
       }
 
       if (!var2) {
-         class_bw.func_void_a((byte)14, false);
+         SoundPlayerManager.startPlayer3((byte)14, false);
       }
 
    }
@@ -726,7 +726,7 @@ public final class class_ao extends class_o implements class_u {
    // $FF: renamed from: q () void
    private final void func_void_q() {
       class_n.func_void_a((byte)16);
-      class_bw.func_void_f();
+      SoundPlayerManager.close();
    }
 
    // $FF: renamed from: a (boolean) boolean

@@ -117,11 +117,11 @@ public abstract class class_av extends class_al {
          }
 
          if (var10) {
-            class_bw.func_void_a((byte)14, false);
+            SoundPlayerManager.startPlayer3((byte)14, false);
          } else if (var4) {
-            class_bw.func_void_a((byte)15, false);
+            SoundPlayerManager.startPlayer3((byte)15, false);
          } else {
-            class_bw.func_void_a((byte)13, false);
+            SoundPlayerManager.startPlayer3((byte)13, false);
          }
       }
    }

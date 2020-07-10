@@ -89,24 +89,24 @@ public final class class_bg extends MyGameCanvas implements Runnable {
             class_ce.func_void_y();
 
             try {
-               if (class_au.func_boolean_a("/c")) {
+               if (XFile.exists("/c")) {
                   class_bs.field_class_bs_a.func_void_j();
                } else {
-                  if (!class_au.func_boolean_a("/c")) {
-                     if (class_au.func_boolean_a(class_n.field_array_class_java_lang_String_a[0])) {
-                        class_au.func_void_a(class_n.field_array_class_java_lang_String_a[0]);
+                  if (!XFile.exists("/c")) {
+                     if (XFile.exists(class_n.field_array_class_java_lang_String_a[0])) {
+                        XFile.delete(class_n.field_array_class_java_lang_String_a[0]);
                      }
 
-                     if (class_au.func_boolean_a(class_n.field_array_class_java_lang_String_a[1])) {
-                        class_au.func_void_a(class_n.field_array_class_java_lang_String_a[1]);
+                     if (XFile.exists(class_n.field_array_class_java_lang_String_a[1])) {
+                        XFile.delete(class_n.field_array_class_java_lang_String_a[1]);
                      }
 
-                     if (class_au.func_boolean_a(class_n.field_array_class_java_lang_String_a[2])) {
-                        class_au.func_void_a(class_n.field_array_class_java_lang_String_a[2]);
+                     if (XFile.exists(class_n.field_array_class_java_lang_String_a[2])) {
+                        XFile.delete(class_n.field_array_class_java_lang_String_a[2]);
                      }
 
-                     if (class_au.func_boolean_a("/o")) {
-                        class_au.func_void_a("/o");
+                     if (XFile.exists("/o")) {
+                        XFile.delete("/o");
                      }
                   }
 

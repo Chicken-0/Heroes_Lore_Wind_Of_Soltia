@@ -206,17 +206,17 @@ public final class class_bs implements Runnable {
    // $FF: renamed from: i () void
    public final void func_void_i() throws Exception {
       byte[] var1 = this.func_array_byte_a();
-      class_au var2;
-      (var2 = new class_au("/c", 0)).func_void_a(var1, 0, var1.length);
-      var2.func_void_a();
+      XFile var2;
+      (var2 = new XFile("/c", 0)).write(var1, 0, var1.length);
+      var2.close();
    }
 
    // $FF: renamed from: j () void
    public final void func_void_j() throws Exception {
       byte[] var1 = new byte[6];
-      class_au var2;
-      (var2 = new class_au("/c", 1)).func_void_b(var1, 0, var1.length);
-      var2.func_void_a();
+      XFile var2;
+      (var2 = new XFile("/c", 1)).read(var1, 0, var1.length);
+      var2.close();
       this.func_void_a(var1);
    }
 }

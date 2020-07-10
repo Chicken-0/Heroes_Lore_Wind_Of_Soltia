@@ -65,13 +65,13 @@ public final class class_n implements class_u {
 
       try {
          byte[] var0 = new byte[2];
-         class_au var2;
-         (var2 = new class_au("/o", 1)).func_void_b(var0, 0, var0.length);
+         XFile var2;
+         (var2 = new XFile("/o", 1)).read(var0, 0, var0.length);
          byte[] var1 = new byte[(var0[0] & 255) << 8 | var0[1] & 255];
-         var2.func_void_b(var1, 0, var1.length);
+         var2.read(var1, 0, var1.length);
          var1 = class_bq.func_array_byte_b(var1, field_array_byte_i);
          field_class_ao_a.field_class_g_b.func_void_a(var1);
-         var2.func_void_a();
+         var2.close();
       } catch (Exception var3) {
       }
 
@@ -721,48 +721,48 @@ public final class class_n implements class_u {
       var5[var9++] = (byte)((var4.length & '\uff00') >> 8);
       var5[var9++] = (byte)(var4.length & 255);
       System.arraycopy(var4, 0, var5, var9, var4.length);
-      class_au var7;
-      (var7 = new class_au(field_array_class_java_lang_String_a[field_byte_a - 6], 0)).func_void_a(var5, 0, var5.length);
-      var7.func_void_a();
+      XFile var7;
+      (var7 = new XFile(field_array_class_java_lang_String_a[field_byte_a - 6], 0)).write(var5, 0, var5.length);
+      var7.close();
       byte[] var10 = class_bq.func_array_byte_a(var0.field_class_g_b.func_array_byte_c(), field_array_byte_i);
-      class_au var8 = new class_au("/o", 0);
+      XFile var8 = new XFile("/o", 0);
       var5 = new byte[]{(byte)((var10.length & '\uff00') >> 8), (byte)(var10.length & 255)};
-      var8.func_void_a(var5, 0, var5.length);
-      var8.func_void_a(var10, 0, var10.length);
-      var8.func_void_a();
+      var8.write(var5, 0, var5.length);
+      var8.write(var10, 0, var10.length);
+      var8.close();
    }
 
    // $FF: renamed from: r () void
    private static final void func_void_r() throws Exception {
       byte[] var0 = new byte[2];
-      class_au var2;
-      (var2 = new class_au(field_array_class_java_lang_String_a[field_byte_a - 6], 1)).func_void_b(var0, 0, var0.length);
+      XFile var2;
+      (var2 = new XFile(field_array_class_java_lang_String_a[field_byte_a - 6], 1)).read(var0, 0, var0.length);
       byte[] var1 = new byte[(var0[0] & 255) << 8 | var0[1] & 255];
-      var2.func_void_b(var1, 0, var1.length);
+      var2.read(var1, 0, var1.length);
       var1 = class_bq.func_array_byte_b(var1, field_array_byte_i);
       field_class_ao_a.func_void_a(var1);
-      var2.func_void_b(var0, 0, var0.length);
+      var2.read(var0, 0, var0.length);
       var1 = new byte[(var0[0] & 255) << 8 | var0[1] & 255];
-      var2.func_void_b(var1, 0, var1.length);
+      var2.read(var1, 0, var1.length);
       var1 = class_bq.func_array_byte_b(var1, field_array_byte_i);
       field_class_ao_a.field_class_g_a.func_void_a(var1);
-      var2.func_void_b(var0, 0, var0.length);
+      var2.read(var0, 0, var0.length);
       var1 = new byte[(var0[0] & 255) << 8 | var0[1] & 255];
-      var2.func_void_b(var1, 0, var1.length);
+      var2.read(var1, 0, var1.length);
       func_void_a(class_bq.func_array_byte_b(var1, field_array_byte_i));
-      var2.func_void_b(var0, 0, var0.length);
+      var2.read(var0, 0, var0.length);
       var1 = new byte[(var0[0] & 255) << 8 | var0[1] & 255];
-      var2.func_void_b(var1, 0, var1.length);
+      var2.read(var1, 0, var1.length);
       field_byte_f = (var1 = class_bq.func_array_byte_b(var1, field_array_byte_i))[0];
       field_byte_c = var1[1];
       field_byte_d = var1[2];
-      var2.func_void_a();
-      (var2 = new class_au("/o", 1)).func_void_b(var0, 0, var0.length);
+      var2.close();
+      (var2 = new XFile("/o", 1)).read(var0, 0, var0.length);
       var1 = new byte[(var0[0] & 255) << 8 | var0[1] & 255];
-      var2.func_void_b(var1, 0, var1.length);
+      var2.read(var1, 0, var1.length);
       var1 = class_bq.func_array_byte_b(var1, field_array_byte_i);
       field_class_ao_a.field_class_g_b.func_void_a(var1);
-      var2.func_void_a();
+      var2.close();
    }
 
    // $FF: renamed from: a (byte) byte[]
@@ -771,12 +771,12 @@ public final class class_n implements class_u {
       byte[] var1 = null;
 
       try {
-         if (class_au.func_boolean_a(field_array_class_java_lang_String_a[var0 - 6])) {
-            class_au var2;
-            var1 = new byte[(var2 = new class_au(field_array_class_java_lang_String_a[var0 - 6], 1)).func_int_a()];
-            System.out.println("::::" + var2.func_int_a());
-            var2.func_void_b(var1, 0, var1.length);
-            var2.func_void_a();
+         if (XFile.exists(field_array_class_java_lang_String_a[var0 - 6])) {
+            XFile var2;
+            var1 = new byte[(var2 = new XFile(field_array_class_java_lang_String_a[var0 - 6], 1)).getSize()];
+            System.out.println("::::" + var2.getSize());
+            var2.read(var1, 0, var1.length);
+            var2.close();
          }
       } catch (Exception var3) {
       }

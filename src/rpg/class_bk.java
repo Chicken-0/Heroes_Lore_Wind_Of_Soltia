@@ -20,7 +20,7 @@ public final class class_bk extends class_cb {
    public class_bk(class_by var1, byte var2) {
       super(var1, (byte)3);
       this.field_byte_c = var2;
-      this.func_void_a(new Object[]{class_ce.field_class_z_g.func_array_char_a(16), class_ce.field_class_z_g.func_array_char_a(13)});
+      this.func_void_a(new Object[]{class_ce.field_class_z_g.loadByIndex(16), class_ce.field_class_z_g.loadByIndex(13)});
    }
 
    // $FF: renamed from: a (int, int) boolean
@@ -118,25 +118,25 @@ public final class class_bk extends class_cb {
 
       var1.setColor(0);
       if (!this.field_boolean_c) {
-         class_bh.func_int_a(var1, var2 + 11, var3 + 94, class_ce.field_class_z_b.func_array_char_a(super.field_byte_b), 1);
-         class_bh.func_int_a(var1, var2 + 11, var3 + 109, 100, 1, class_ce.field_class_z_b.func_array_char_a(12 + super.field_byte_b));
+         class_bh.func_int_a(var1, var2 + 11, var3 + 94, class_ce.field_class_z_b.loadByIndex(super.field_byte_b), 1);
+         class_bh.func_int_a(var1, var2 + 11, var3 + 109, 100, 1, class_ce.field_class_z_b.loadByIndex(12 + super.field_byte_b));
       } else {
          var1.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_l[17], var2 + 60 + (this.field_boolean_d ? 0 : 28), var3 + 118, 20);
-         class_bh.func_int_a(var1, var2 + 11, var3 + 104, class_ce.field_class_z_g.func_array_char_a(17), 1);
+         class_bh.func_int_a(var1, var2 + 11, var3 + 104, class_ce.field_class_z_g.loadByIndex(17), 1);
          if (this.field_boolean_d) {
             var1.setColor(16777215);
          } else {
             var1.setColor(0);
          }
 
-         class_bh.func_int_a(var1, var2 + 64, var3 + 121, class_ce.field_class_z_g.func_array_char_a(14), 1);
+         class_bh.func_int_a(var1, var2 + 64, var3 + 121, class_ce.field_class_z_g.loadByIndex(14), 1);
          if (this.field_boolean_d) {
             var1.setColor(0);
          } else {
             var1.setColor(16777215);
          }
 
-         class_bh.func_int_a(var1, var2 + 92, var3 + 121, class_ce.field_class_z_g.func_array_char_a(15), 1);
+         class_bh.func_int_a(var1, var2 + 92, var3 + 121, class_ce.field_class_z_g.loadByIndex(15), 1);
       }
 
       if (this.field_byte_d == 0) {

@@ -40,7 +40,7 @@ public final class class_ce implements class_u {
    // $FF: renamed from: a javax.microedition.lcdui.Image[][]
    public static Image[][] field_array_array_class_javax_microedition_lcdui_Image_a = new Image[38][];
    // $FF: renamed from: a z
-   public static class_z field_class_z_a;
+   public static TableDefineTextFile field_class_z_a;
    // $FF: renamed from: a javax.microedition.lcdui.Image[]
    public static Image[] field_array_class_javax_microedition_lcdui_Image_a;
    // $FF: renamed from: b javax.microedition.lcdui.Image[]
@@ -48,9 +48,9 @@ public final class class_ce implements class_u {
    // $FF: renamed from: c javax.microedition.lcdui.Image[]
    public static Image[] field_array_class_javax_microedition_lcdui_Image_c;
    // $FF: renamed from: b z
-   public static class_z field_class_z_b;
+   public static TableDefineTextFile field_class_z_b;
    // $FF: renamed from: c z
-   public static class_z field_class_z_c;
+   public static TableDefineTextFile field_class_z_c;
    // $FF: renamed from: d javax.microedition.lcdui.Image[]
    public static Image[] field_array_class_javax_microedition_lcdui_Image_d;
    // $FF: renamed from: e javax.microedition.lcdui.Image[]
@@ -62,7 +62,7 @@ public final class class_ce implements class_u {
    // $FF: renamed from: h javax.microedition.lcdui.Image[]
    public static Image[] field_array_class_javax_microedition_lcdui_Image_h;
    // $FF: renamed from: d z
-   public static class_z field_class_z_d;
+   public static TableDefineTextFile field_class_z_d;
    // $FF: renamed from: i javax.microedition.lcdui.Image[]
    public static Image[] field_array_class_javax_microedition_lcdui_Image_i;
    // $FF: renamed from: j javax.microedition.lcdui.Image[]
@@ -116,7 +116,7 @@ public final class class_ce implements class_u {
    // $FF: renamed from: q javax.microedition.lcdui.Image
    public static Image field_class_javax_microedition_lcdui_Image_q;
    // $FF: renamed from: e z
-   public static class_z field_class_z_e;
+   public static TableDefineTextFile field_class_z_e;
    // $FF: renamed from: q javax.microedition.lcdui.Image[]
    public static Image[] field_array_class_javax_microedition_lcdui_Image_q;
    // $FF: renamed from: r javax.microedition.lcdui.Image
@@ -124,7 +124,7 @@ public final class class_ce implements class_u {
    // $FF: renamed from: r javax.microedition.lcdui.Image[]
    public static Image[] field_array_class_javax_microedition_lcdui_Image_r;
    // $FF: renamed from: f z
-   public static class_z field_class_z_f;
+   public static TableDefineTextFile field_class_z_f;
    // $FF: renamed from: m byte[]
    public static byte[] field_array_byte_m;
    // $FF: renamed from: s javax.microedition.lcdui.Image[]
@@ -162,7 +162,7 @@ public final class class_ce implements class_u {
    // $FF: renamed from: w javax.microedition.lcdui.Image[]
    public static Image[] field_array_class_javax_microedition_lcdui_Image_w;
    // $FF: renamed from: g z
-   public static class_z field_class_z_g;
+   public static TableDefineTextFile field_class_z_g;
    // $FF: renamed from: n byte[]
    public static byte[] field_array_byte_n = new byte[512];
 
@@ -673,7 +673,7 @@ public final class class_ce implements class_u {
          field_class_javax_microedition_lcdui_Image_i = var0.getImageById(14);
          field_class_javax_microedition_lcdui_Image_j = class_bh.func_class_javax_microedition_lcdui_Image_a("_img_glb__15.png");
          var0.getImageById(16);
-         field_class_z_e = new class_z("/sgui/help");
+         field_class_z_e = new TableDefineTextFile("/sgui/help");
       } catch (Exception var2) {
          System.out.println(var2);
       }

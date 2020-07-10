@@ -78,9 +78,9 @@ public final class class_bg extends MyGameCanvas implements Runnable {
             MyGameCanvas.func_void_k();
 
             try {
-               class_ad.field_class_z_b = new class_z("/itm/itmtp");
+               class_ad.field_class_z_b = new TableDefineTextFile("/itm/itmtp");
                MyGameCanvas.func_void_k();
-               class_t.field_class_z_a = new class_z("/itm/itmatt");
+               class_t.field_class_z_a = new TableDefineTextFile("/itm/itmatt");
                MyGameCanvas.func_void_k();
             } catch (IOException var3) {
             }
@@ -249,9 +249,9 @@ public final class class_bg extends MyGameCanvas implements Runnable {
       MIDletConfig.setVersionTextLabel();
 
       try {
-         class_ce.field_class_z_g = new class_z("/sgui/com");
-         class_bh.field_array_char_p = class_ce.field_class_z_g.func_array_char_a(37);
-         class_bh.field_array_char_o = class_ce.field_class_z_g.func_array_char_a(38);
+         class_ce.field_class_z_g = new TableDefineTextFile("/sgui/com");
+         class_bh.field_array_char_p = class_ce.field_class_z_g.loadByIndex(37);
+         class_bh.field_array_char_o = class_ce.field_class_z_g.loadByIndex(38);
          MyGameCanvas.func_void_k();
          this.field_byte_b = 1;
       } catch (IOException var3) {

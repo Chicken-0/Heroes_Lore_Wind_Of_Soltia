@@ -5,7 +5,7 @@ public class class_t extends class_e implements class_u {
    // $FF: renamed from: h byte[]
    public static final byte[] field_array_byte_h = new byte[]{0, 1, -1, -1, -1, 4, 3, 2, -1};
    // $FF: renamed from: a z
-   public static class_z field_class_z_a;
+   public static TableDefineTextFile field_class_z_a;
    // $FF: renamed from: i byte[]
    public static final byte[] field_array_byte_i = new byte[]{20, 16, 6, 13, 13, 10, 10, 10, 10};
    // $FF: renamed from: c byte

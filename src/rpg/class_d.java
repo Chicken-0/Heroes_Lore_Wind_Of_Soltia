@@ -27,7 +27,7 @@ public final class class_d extends class_cb {
             if (MIDletConfig.isDemoVersion) {
                this.func_void_d();
             } else if (class_n.field_class_ae_a.field_boolean_a) {
-               this.func_void_a(new Object[]{class_ai.field_class_z_a.func_array_char_a(51), class_ai.field_class_z_a.func_array_char_a(52)});
+               this.func_void_a(new Object[]{class_ai.field_class_z_a.loadByIndex(51), class_ai.field_class_z_a.loadByIndex(52)});
             } else {
                this.field_byte_c = 2;
                this.func_void_b();
@@ -86,13 +86,13 @@ public final class class_d extends class_cb {
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int) void
    public final void func_void_a(Graphics var1, int var2, int var3) {
       var3 += 15;
-      MyGameCanvas.func_int_a(var1, class_ai.field_class_z_a.func_array_char_a(41), var2 + 5, var3);
+      MyGameCanvas.func_int_a(var1, class_ai.field_class_z_a.loadByIndex(41), var2 + 5, var3);
       boolean var4 = false;
       var2 = MyGameCanvas.canvasWidth - 108 >> 1;
-      class_cb.func_void_a(var1, var2, var3 + 15, 108, class_ai.field_class_z_a.func_array_char_a(42), super.field_byte_b == 0);
-      class_cb.func_void_a(var1, var2, var3 + 37, 108, class_ai.field_class_z_a.func_array_char_a(43), super.field_byte_b == 1);
-      class_cb.func_void_a(var1, var2, var3 + 59, 108, class_ai.field_class_z_a.func_array_char_a(44), super.field_byte_b == 2);
-      class_cb.func_void_a(var1, var2, var3 + 81, 108, class_ai.field_class_z_a.func_array_char_a(45), super.field_byte_b == 3);
+      class_cb.func_void_a(var1, var2, var3 + 15, 108, class_ai.field_class_z_a.loadByIndex(42), super.field_byte_b == 0);
+      class_cb.func_void_a(var1, var2, var3 + 37, 108, class_ai.field_class_z_a.loadByIndex(43), super.field_byte_b == 1);
+      class_cb.func_void_a(var1, var2, var3 + 59, 108, class_ai.field_class_z_a.loadByIndex(44), super.field_byte_b == 2);
+      class_cb.func_void_a(var1, var2, var3 + 81, 108, class_ai.field_class_z_a.loadByIndex(45), super.field_byte_b == 3);
       if (this.field_byte_c == 2) {
          this.field_byte_c = 1;
          int var5 = MyGameCanvas.canvasHalfWidth - 55;
@@ -100,7 +100,7 @@ public final class class_d extends class_cb {
          class_cb.func_void_a(var1, var5, var6, 110, 22);
          class_cb.func_void_b(var1, var5, var6, 110, 22);
          var1.setColor(16777215);
-         class_bh.func_int_a(var1, var5 + 5, var6 + 5, class_ai.field_class_z_a.func_array_char_a(53), 1);
+         class_bh.func_int_a(var1, var5 + 5, var6 + 5, class_ai.field_class_z_a.loadByIndex(53), 1);
          this.func_void_b();
       } else {
          if (this.field_byte_c == 1) {
@@ -108,10 +108,10 @@ public final class class_d extends class_cb {
 
             try {
                class_n.func_void_o();
-               this.func_void_a(new Object[]{class_ai.field_class_z_a.func_array_char_a(46)});
+               this.func_void_a(new Object[]{class_ai.field_class_z_a.loadByIndex(46)});
                return;
             } catch (Exception var7) {
-               this.func_void_a(new Object[]{class_ai.field_class_z_a.func_array_char_a(47), class_ai.field_class_z_a.func_array_char_a(48)});
+               this.func_void_a(new Object[]{class_ai.field_class_z_a.loadByIndex(47), class_ai.field_class_z_a.loadByIndex(48)});
             }
          }
 

@@ -24,11 +24,11 @@ public final class class_s extends class_cb {
       for(byte var4 = 0; var4 < var2; ++var4) {
          if (!class_n.func_boolean_b(1 + var4 * 3 + 1)) {
             if (class_n.func_boolean_b(1 + var4 * 3 + 2)) {
-               if (class_n.func_boolean_b(1 + var4 * 3) && class_ce.field_class_z_f.func_array_char_a(var4 * 7 + 2).length > 0) {
+               if (class_n.func_boolean_b(1 + var4 * 3) && class_ce.field_class_z_f.loadByIndex(var4 * 7 + 2).length > 0) {
                   this.field_array_byte_h[var3++] = var4;
                   this.field_array_byte_h[var3++] = 2;
                }
-            } else if (class_n.func_boolean_b(1 + var4 * 3) && class_ce.field_class_z_f.func_array_char_a(var4 * 7).length > 0) {
+            } else if (class_n.func_boolean_b(1 + var4 * 3) && class_ce.field_class_z_f.loadByIndex(var4 * 7).length > 0) {
                this.field_array_byte_h[var3++] = var4;
                this.field_array_byte_h[var3++] = 0;
             }
@@ -62,7 +62,7 @@ public final class class_s extends class_cb {
    public final void func_void_a(byte var1, byte var2) {
       super.func_void_a(var1, var2);
       if (var1 == 0 && var2 == 1) {
-         super.field_class_cb_b = new class_am(this, class_ai.field_class_z_a.func_array_char_a(54), class_ce.field_class_z_f.func_array_char_a(this.field_byte_c * 7 + 6), (byte)1);
+         super.field_class_cb_b = new class_am(this, class_ai.field_class_z_a.loadByIndex(54), class_ce.field_class_z_f.loadByIndex(this.field_byte_c * 7 + 6), (byte)1);
       }
 
    }
@@ -74,12 +74,12 @@ public final class class_s extends class_cb {
       int var1;
       if (this.field_byte_d == 2) {
          var1 = this.field_byte_c * 7 + 2;
-         this.field_array_char_a = class_ce.field_class_z_f.func_array_char_a(var1);
-         this.field_array_char_b = class_ce.field_class_z_f.func_array_char_a(var1 + 1);
+         this.field_array_char_a = class_ce.field_class_z_f.loadByIndex(var1);
+         this.field_array_char_b = class_ce.field_class_z_f.loadByIndex(var1 + 1);
       } else {
          var1 = this.field_byte_c * 7 + 0;
-         this.field_array_char_a = class_ce.field_class_z_f.func_array_char_a(var1);
-         this.field_array_char_b = class_ce.field_class_z_f.func_array_char_a(var1 + 1);
+         this.field_array_char_a = class_ce.field_class_z_f.loadByIndex(var1);
+         this.field_array_char_b = class_ce.field_class_z_f.loadByIndex(var1 + 1);
       }
    }
 
@@ -87,12 +87,12 @@ public final class class_s extends class_cb {
    public final void func_void_a(Graphics var1, int var2, int var3) {
       var2 += 2;
       var3 += 15;
-      MyGameCanvas.func_int_a(var1, class_ai.field_class_z_a.func_array_char_a(39), var2 + 5, var3);
+      MyGameCanvas.func_int_a(var1, class_ai.field_class_z_a.loadByIndex(39), var2 + 5, var3);
       if (super.field_byte_a <= 0) {
          class_cb.func_void_a(var1, var2 + 4, var3 + 10, 143, 137, 4136767, 10452799, 4144959);
          class_cb.func_void_a(var1, var2 + 4, var3 + 10, 143, 137, 6242111);
          var1.setColor(16777215);
-         class_bh.func_int_a(var1, var2 + 10, var3 + 15, 96, 1, class_ai.field_class_z_a.func_array_char_a(58));
+         class_bh.func_int_a(var1, var2 + 10, var3 + 15, 96, 1, class_ai.field_class_z_a.loadByIndex(58));
       } else {
          this.func_void_a(var1, var2, var3, true);
 
@@ -106,19 +106,19 @@ public final class class_s extends class_cb {
          class_bh.func_int_a(var1, var2 + 33, var4, 105, 1, this.field_array_char_a);
          var4 += class_bh.func_int_a(this.field_array_char_a, 105) * 15;
          var1.setColor(14663551);
-         class_bh.func_int_a(var1, var2 + 33, var4, class_n.field_array_array_boolean_a[class_n.field_byte_a - 6][this.field_byte_c] ? class_ai.field_class_z_a.func_array_char_a(55) : class_ai.field_class_z_a.func_array_char_a(56), 1);
+         class_bh.func_int_a(var1, var2 + 33, var4, class_n.field_array_array_boolean_a[class_n.field_byte_a - 6][this.field_byte_c] ? class_ai.field_class_z_a.loadByIndex(55) : class_ai.field_class_z_a.loadByIndex(56), 1);
          var4 += 15;
-         class_bh.func_int_a(var1, var2 + 33, var4, class_ai.field_class_z_a.func_array_char_a(57), 1);
+         class_bh.func_int_a(var1, var2 + 33, var4, class_ai.field_class_z_a.loadByIndex(57), 1);
          var4 += 15;
-         if (class_ce.field_class_z_f.func_array_char_a(this.field_byte_c * 7 + 4).length > 0) {
+         if (class_ce.field_class_z_f.loadByIndex(this.field_byte_c * 7 + 4).length > 0) {
             var1.setColor(16777215);
-            class_bh.func_int_a(var1, var2 + 33, var4, class_ce.field_class_z_f.func_array_char_a(this.field_byte_c * 7 + 4), 1);
+            class_bh.func_int_a(var1, var2 + 33, var4, class_ce.field_class_z_f.loadByIndex(this.field_byte_c * 7 + 4), 1);
             var4 += 15;
          }
 
-         if (class_ce.field_class_z_f.func_array_char_a(this.field_byte_c * 7 + 5).length > 0) {
+         if (class_ce.field_class_z_f.loadByIndex(this.field_byte_c * 7 + 5).length > 0) {
             var1.setColor(16777215);
-            class_bh.func_int_a(var1, var2 + 33, var4, class_ce.field_class_z_f.func_array_char_a(this.field_byte_c * 7 + 5), 1);
+            class_bh.func_int_a(var1, var2 + 33, var4, class_ce.field_class_z_f.loadByIndex(this.field_byte_c * 7 + 5), 1);
          }
 
       }

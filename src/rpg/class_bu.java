@@ -83,7 +83,7 @@ public final class class_bu implements Runnable {
          }
 
          try {
-            class_ce.field_class_z_f = new class_z("/sgui/q" + class_n.field_byte_a);
+            class_ce.field_class_z_f = new TableDefineTextFile("/sgui/q" + class_n.field_byte_a);
             MyGameCanvas.func_void_k();
          } catch (Exception var2) {
          }
@@ -143,9 +143,9 @@ public final class class_bu implements Runnable {
    // $FF: renamed from: e () void
    public static final void func_void_e() {
       try {
-         class_ce.field_class_z_b = new class_z("/grd/grd");
+         class_ce.field_class_z_b = new TableDefineTextFile("/grd/grd");
          MyGameCanvas.func_void_k();
-         class_ce.field_class_z_a = new class_z("/char/hero");
+         class_ce.field_class_z_a = new TableDefineTextFile("/char/hero");
          MyGameCanvas.func_void_k();
       } catch (IOException var1) {
          var1.printStackTrace();
@@ -173,9 +173,9 @@ public final class class_bu implements Runnable {
       MyGameCanvas.func_void_k();
 
       try {
-         class_ce.field_class_z_c = new class_z("/grd/grdsk");
+         class_ce.field_class_z_c = new TableDefineTextFile("/grd/grdsk");
          MyGameCanvas.func_void_k();
-         class_ce.field_class_z_d = new class_z("/m/name");
+         class_ce.field_class_z_d = new TableDefineTextFile("/m/name");
          MyGameCanvas.func_void_k();
       } catch (IOException var3) {
          var3.printStackTrace();

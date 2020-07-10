@@ -5,7 +5,7 @@ import javax.microedition.lcdui.Graphics;
 // $FF: renamed from: bb
 public final class class_bb extends class_m {
    public class_bb(class_cb var1, byte[] var2) {
-      super(var1, var2, (byte)0, class_bp.field_class_z_a.func_array_char_a(18));
+      super(var1, var2, (byte)0, class_bp.field_class_z_a.loadByIndex(18));
    }
 
    // $FF: renamed from: a (int, int) boolean
@@ -25,7 +25,7 @@ public final class class_bb extends class_m {
          byte var10001 = super.field_array_byte_h[super.field_byte_b];
          class_ad var3;
          if ((var3 = class_n.func_class_ao_a().field_class_g_a.func_class_ad_a(var10001)).func_boolean_b()) {
-            this.func_void_a((byte)1, (byte)0, new Object[]{class_bp.field_class_z_a.func_array_char_a(19), class_bp.field_class_z_a.func_array_char_a(20)});
+            this.func_void_a((byte)1, (byte)0, new Object[]{class_bp.field_class_z_a.loadByIndex(19), class_bp.field_class_z_a.loadByIndex(20)});
          } else {
             super.field_class_cb_b = new class_ab(this, var3, false);
          }
@@ -46,7 +46,7 @@ public final class class_bb extends class_m {
             return;
          }
 
-         super.field_class_cb_a.func_void_a((byte)1, (byte)0, new Object[]{class_bp.field_class_z_a.func_array_char_a(21), class_bp.field_class_z_a.func_array_char_a(22)});
+         super.field_class_cb_a.func_void_a((byte)1, (byte)0, new Object[]{class_bp.field_class_z_a.loadByIndex(21), class_bp.field_class_z_a.loadByIndex(22)});
       }
 
    }

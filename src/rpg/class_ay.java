@@ -28,40 +28,40 @@ public final class class_ay extends class_cb {
                      if ((class_n.field_byte_a != 6 || var4.field_byte_f != 0) && (class_n.field_byte_a != 7 || var4.field_byte_f != 2) && (class_n.field_byte_a != 8 || var4.field_byte_f != 1)) {
                         var5 = new Object[2];
                         if (var4.field_byte_f == 0) {
-                           var5[0] = class_ai.field_class_z_a.func_array_char_a(8);
+                           var5[0] = class_ai.field_class_z_a.loadByIndex(8);
                         } else if (var4.field_byte_f == 2) {
-                           var5[0] = class_ai.field_class_z_a.func_array_char_a(9);
+                           var5[0] = class_ai.field_class_z_a.loadByIndex(9);
                         } else if (var4.field_byte_f == 1) {
-                           var5[0] = class_ai.field_class_z_a.func_array_char_a(50);
+                           var5[0] = class_ai.field_class_z_a.loadByIndex(50);
                         }
 
-                        var5[1] = class_ai.field_class_z_a.func_array_char_a(12);
+                        var5[1] = class_ai.field_class_z_a.loadByIndex(12);
                         this.func_void_a((byte)6, (byte)2, var5);
                      } else {
-                        var5 = new Object[]{class_ai.field_class_z_a.func_array_char_a(11), class_ai.field_class_z_a.func_array_char_a(10)};
+                        var5 = new Object[]{class_ai.field_class_z_a.loadByIndex(11), class_ai.field_class_z_a.loadByIndex(10)};
                         this.func_void_a((byte)4, (byte)2, var5);
                      }
                   } else if (var4.field_byte_f == 3 && class_n.field_byte_a != 8) {
-                     var5 = new Object[]{class_ai.field_class_z_a.func_array_char_a(12)};
+                     var5 = new Object[]{class_ai.field_class_z_a.loadByIndex(12)};
                      this.func_void_a((byte)6, (byte)2, var5);
                   } else {
-                     var5 = new Object[]{class_ai.field_class_z_a.func_array_char_a(11), class_ai.field_class_z_a.func_array_char_a(10)};
+                     var5 = new Object[]{class_ai.field_class_z_a.loadByIndex(11), class_ai.field_class_z_a.loadByIndex(10)};
                      this.func_void_a((byte)4, (byte)2, var5);
                   }
                } else {
-                  var5 = new Object[]{class_ai.field_class_z_a.func_array_char_a(12)};
+                  var5 = new Object[]{class_ai.field_class_z_a.loadByIndex(12)};
                   this.func_void_a((byte)6, (byte)2, var5);
                }
             } else {
                Object[] var6;
                if (var3.func_boolean_a()) {
-                  var6 = new Object[]{class_ai.field_class_z_a.func_array_char_a(13), class_ai.field_class_z_a.func_array_char_a(10)};
+                  var6 = new Object[]{class_ai.field_class_z_a.loadByIndex(13), class_ai.field_class_z_a.loadByIndex(10)};
                   this.func_void_a((byte)5, (byte)2, var6);
                } else if (var3.func_boolean_b()) {
-                  var6 = new Object[]{class_ai.field_class_z_a.func_array_char_a(14)};
+                  var6 = new Object[]{class_ai.field_class_z_a.loadByIndex(14)};
                   this.func_void_a(var6);
                } else {
-                  var6 = new Object[]{class_ai.field_class_z_a.func_array_char_a(12)};
+                  var6 = new Object[]{class_ai.field_class_z_a.loadByIndex(12)};
                   this.func_void_a((byte)6, (byte)2, var6);
                }
             }
@@ -104,7 +104,7 @@ public final class class_ay extends class_cb {
          }
 
       } else {
-         Object[] var5 = new Object[]{class_ai.field_class_z_a.func_array_char_a(12)};
+         Object[] var5 = new Object[]{class_ai.field_class_z_a.loadByIndex(12)};
          this.func_void_a((byte)6, (byte)2, var5);
       }
    }
@@ -114,7 +114,7 @@ public final class class_ay extends class_cb {
       var2 += 2;
       var3 += 15;
       class_g var4 = class_n.func_class_ao_a().field_class_g_a;
-      MyGameCanvas.func_int_a(var1, class_ce.field_class_z_g.func_array_char_a(2), var2 + 5, var3);
+      MyGameCanvas.func_int_a(var1, class_ce.field_class_z_g.loadByIndex(2), var2 + 5, var3);
       this.func_void_a(var1, var2, var3, true);
 
       class_ad var5;
@@ -128,7 +128,7 @@ public final class class_ay extends class_cb {
          class_cb.func_void_a(var1, var2 + 33, var3 + 14, var5);
       } else {
          var1.setColor(16777215);
-         class_bh.func_int_a(var1, var2 + 33, var3 + 14, class_ai.field_class_z_a.func_array_char_a(15), 1);
+         class_bh.func_int_a(var1, var2 + 33, var3 + 14, class_ai.field_class_z_a.loadByIndex(15), 1);
       }
    }
 }

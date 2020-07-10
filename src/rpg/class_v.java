@@ -34,7 +34,7 @@ public final class class_v extends class_cb {
             if ((var3 = class_n.func_class_ao_a().field_class_g_a.func_array_byte_a()).length > 0) {
                super.field_class_cb_b = new class_bb(this, var3);
             } else {
-               this.func_void_a((byte)1, (byte)0, new Object[]{class_bp.field_class_z_a.func_array_char_a(16), class_bp.field_class_z_a.func_array_char_a(17)});
+               this.func_void_a((byte)1, (byte)0, new Object[]{class_bp.field_class_z_a.loadByIndex(16), class_bp.field_class_z_a.loadByIndex(17)});
             }
 
             return true;

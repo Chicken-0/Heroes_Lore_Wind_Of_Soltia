@@ -73,7 +73,7 @@ public final class class_a extends class_cb {
             var1.setColor(10452863);
          }
 
-         class_bh.func_int_a(var1, var2 + 21, var3 + 36 + var5 * 16, class_ce.field_class_z_a.func_array_char_a(this.field_array_byte_h[var5 * 4] - 6), 1);
+         class_bh.func_int_a(var1, var2 + 21, var3 + 36 + var5 * 16, class_ce.field_class_z_a.loadByIndex(this.field_array_byte_h[var5 * 4] - 6), 1);
       }
 
       var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_g, var2 + 15, var3 + 104, 20);

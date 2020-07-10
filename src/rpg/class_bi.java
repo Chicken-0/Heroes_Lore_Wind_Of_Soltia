@@ -33,10 +33,10 @@ public final class class_bi extends class_cb {
             } else {
                Object[] var3;
                if (this.field_array_short_a[0] == 0 && this.field_array_short_a[1] == 0 && this.field_array_short_a[2] == 0 && this.field_array_short_a[3] == 0) {
-                  var3 = new Object[]{class_ai.field_class_z_a.func_array_char_a(34), class_ai.field_class_z_a.func_array_char_a(35)};
+                  var3 = new Object[]{class_ai.field_class_z_a.loadByIndex(34), class_ai.field_class_z_a.loadByIndex(35)};
                   this.func_void_a((byte)1, (byte)1, var3);
                } else {
-                  var3 = new Object[]{class_ai.field_class_z_a.func_array_char_a(33)};
+                  var3 = new Object[]{class_ai.field_class_z_a.loadByIndex(33)};
                   this.func_void_a((byte)2, (byte)2, var3);
                }
 
@@ -59,8 +59,8 @@ public final class class_bi extends class_cb {
       class_ao var4 = class_n.func_class_ao_a();
       class_cb.func_void_b(var1, var2, var3, 101, 26, 4136767);
       var1.setColor(16777215);
-      MyGameCanvas.func_int_a(var1, class_ai.field_class_z_a.func_array_char_a(36), var2 + 3, var3 + 3);
-      MyGameCanvas.func_int_a(var1, class_ai.field_class_z_a.func_array_char_a(37), var2 + 3, var3 + 10 + 4);
+      MyGameCanvas.func_int_a(var1, class_ai.field_class_z_a.loadByIndex(36), var2 + 3, var3 + 3);
+      MyGameCanvas.func_int_a(var1, class_ai.field_class_z_a.loadByIndex(37), var2 + 3, var3 + 10 + 4);
       MyGameCanvas.func_void_c(var1, this.field_short_a, var2 + 65, var3 + 10 + 4, 8);
       var1.setColor(6242111);
       var1.fillRect(var2, var3 + 30, 101, 62);
@@ -88,7 +88,7 @@ public final class class_bi extends class_cb {
             var6 += var4.field_short_g + var4.field_byte_p;
          }
 
-         class_bh.func_int_a(var1, var2 + 10, var3 + 35 + var5 * 15, class_ce.field_class_z_a.func_array_char_a(9 + var5), 1);
+         class_bh.func_int_a(var1, var2 + 10, var3 + 35 + var5 * 15, class_ce.field_class_z_a.loadByIndex(9 + var5), 1);
          var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_o, var2 + 45 + 25, var3 + 35 + var5 * 15, 20);
          MyGameCanvas.func_void_c(var1, var6, var2 + 65 + 25, var3 + 35 + var5 * 15, 8);
          var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_d, var2 + 67 + 25, var3 + 35 + var5 * 15, 20);

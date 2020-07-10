@@ -27,10 +27,10 @@ public final class class_k extends class_cb {
          if (super.field_byte_b < 3) {
             byte[] var4;
             if ((var4 = var3.field_class_g_a.func_array_byte_b()).length < 1) {
-               var5 = new Object[]{class_ax.field_class_z_a.func_array_char_a(20)};
+               var5 = new Object[]{class_ax.field_class_z_a.loadByIndex(20)};
                this.func_void_a(var5);
             } else {
-               super.field_class_cb_b = new class_m(this, var4, super.field_byte_b, class_ax.field_class_z_a.func_array_char_a(21));
+               super.field_class_cb_b = new class_m(this, var4, super.field_byte_b, class_ax.field_class_z_a.loadByIndex(21));
             }
          } else {
             byte var7 = 0;
@@ -50,13 +50,13 @@ public final class class_k extends class_cb {
 
             Object[] var6;
             if (var7 < 2) {
-               var6 = new Object[]{class_ax.field_class_z_a.func_array_char_a(22), class_ax.field_class_z_a.func_array_char_a(23)};
+               var6 = new Object[]{class_ax.field_class_z_a.loadByIndex(22), class_ax.field_class_z_a.loadByIndex(23)};
                this.func_void_a(var6);
             } else if (500 > var3.field_class_g_a.field_int_a) {
-               var6 = new Object[]{class_ax.field_class_z_a.func_array_char_a(24)};
+               var6 = new Object[]{class_ax.field_class_z_a.loadByIndex(24)};
                this.func_void_a(var6);
             } else {
-               super.field_class_cb_b = new class_bo(this, class_ax.field_class_z_a.func_array_char_a(25), var5, class_ax.field_class_z_a.func_array_char_a(26), 500, (byte)20);
+               super.field_class_cb_b = new class_bo(this, class_ax.field_class_z_a.loadByIndex(25), var5, class_ax.field_class_z_a.loadByIndex(26), 500, (byte)20);
             }
          }
 
@@ -88,7 +88,7 @@ public final class class_k extends class_cb {
 
             if (var4.field_class_g_a.func_boolean_a(var5, 1)) {
                byte[] var9 = new byte[]{var4.field_class_g_a.func_byte_a(var5.field_byte_f, var5.field_byte_g)};
-               super.field_class_cb_b = new class_m(this, var9, (byte)10, class_ax.field_class_z_a.func_array_char_a(27));
+               super.field_class_cb_b = new class_m(this, var9, (byte)10, class_ax.field_class_z_a.loadByIndex(27));
                this.field_array_class_ad_a[0] = null;
                this.field_array_class_ad_a[1] = null;
                this.field_array_class_ad_a[2] = null;
@@ -105,7 +105,7 @@ public final class class_k extends class_cb {
                   var4.field_class_g_a.func_boolean_a(this.field_array_class_ad_a[2], 1);
                }
 
-               var10 = new Object[]{class_ax.field_class_z_a.func_array_char_a(28), class_ax.field_class_z_a.func_array_char_a(29)};
+               var10 = new Object[]{class_ax.field_class_z_a.loadByIndex(28), class_ax.field_class_z_a.loadByIndex(29)};
                this.func_void_a(var10);
             }
          } else {
@@ -124,13 +124,13 @@ public final class class_k extends class_cb {
             this.field_array_class_ad_a[0] = null;
             this.field_array_class_ad_a[1] = null;
             this.field_array_class_ad_a[2] = null;
-            var10 = new Object[]{class_ax.field_class_z_a.func_array_char_a(30)};
+            var10 = new Object[]{class_ax.field_class_z_a.loadByIndex(30)};
             this.func_void_a(var10);
          }
 
       } else if (!(var3 instanceof class_m) || var1 != 0 && var1 != 1 && var1 != 2) {
          if (var3 instanceof class_bo && var1 == 20) {
-            Object[] var8 = new Object[]{class_ax.field_class_z_a.func_array_char_a(32)};
+            Object[] var8 = new Object[]{class_ax.field_class_z_a.loadByIndex(32)};
             this.func_void_a((byte)2, (byte)2, var8);
          }
 
@@ -152,7 +152,7 @@ public final class class_k extends class_cb {
          }
 
          if (var4.field_class_g_a.func_int_a(var5.field_byte_f, var5.field_byte_g) <= var6) {
-            Object[] var11 = new Object[]{class_ax.field_class_z_a.func_array_char_a(31)};
+            Object[] var11 = new Object[]{class_ax.field_class_z_a.loadByIndex(31)};
             this.func_void_a(var11);
          } else {
             this.field_array_class_ad_a[var1] = var5;
@@ -166,11 +166,11 @@ public final class class_k extends class_cb {
       var1.setColor(4136767);
       var1.fillRect(var2, var3, 155, 170);
       class_cb.func_void_c(var1, var2 + 2, var3 + 4, 151, 162);
-      MyGameCanvas.func_int_a(var1, class_ax.field_class_z_a.func_array_char_a(14), var2 + 3, var3 - 2);
-      class_cb.func_void_a(var1, var2 + 4, var3 + 9, this.field_array_class_ad_a[0], (byte)1, class_ax.field_class_z_a.func_array_char_a(33), super.field_byte_b == 0);
-      class_cb.func_void_a(var1, var2 + 4, var3 + 9 + 36, this.field_array_class_ad_a[1], (byte)2, class_ax.field_class_z_a.func_array_char_a(33), super.field_byte_b == 1);
-      class_cb.func_void_a(var1, var2 + 4, var3 + 9 + 72, this.field_array_class_ad_a[2], (byte)3, class_ax.field_class_z_a.func_array_char_a(33), super.field_byte_b == 2);
+      MyGameCanvas.func_int_a(var1, class_ax.field_class_z_a.loadByIndex(14), var2 + 3, var3 - 2);
+      class_cb.func_void_a(var1, var2 + 4, var3 + 9, this.field_array_class_ad_a[0], (byte)1, class_ax.field_class_z_a.loadByIndex(33), super.field_byte_b == 0);
+      class_cb.func_void_a(var1, var2 + 4, var3 + 9 + 36, this.field_array_class_ad_a[1], (byte)2, class_ax.field_class_z_a.loadByIndex(33), super.field_byte_b == 1);
+      class_cb.func_void_a(var1, var2 + 4, var3 + 9 + 72, this.field_array_class_ad_a[2], (byte)3, class_ax.field_class_z_a.loadByIndex(33), super.field_byte_b == 2);
       int var4 = class_bh.func_int_a(155, 80);
-      class_cb.func_void_a(var1, var2 + (155 - var4 >> 1), var3 + 138, var4, class_ax.field_class_z_a.func_array_char_a(25), super.field_byte_b == 3);
+      class_cb.func_void_a(var1, var2 + (155 - var4 >> 1), var3 + 138, var4, class_ax.field_class_z_a.loadByIndex(25), super.field_byte_b == 3);
    }
 }

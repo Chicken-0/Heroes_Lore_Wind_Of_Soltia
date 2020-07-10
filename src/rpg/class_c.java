@@ -26,7 +26,7 @@ public final class class_c extends class_cb {
          if (super.field_byte_b != 0 && super.field_byte_b != 1) {
             super.field_class_cb_b = new class_by(this, (byte)(6 + (2 - super.field_byte_b)));
          } else if (!class_bs.field_class_bs_a.field_boolean_b) {
-            Object[] var3 = new Object[]{class_ce.field_class_z_g.func_array_char_a(6), class_ce.field_class_z_g.func_array_char_a(7)};
+            Object[] var3 = new Object[]{class_ce.field_class_z_g.loadByIndex(6), class_ce.field_class_z_g.loadByIndex(7)};
             this.func_void_a(var3);
          } else {
             boolean var5 = false;
@@ -83,8 +83,8 @@ public final class class_c extends class_cb {
       }
 
       var1.setColor(0);
-      class_bh.func_int_a(var1, var2 + 11, var3 + 104, class_ce.field_class_z_g.func_array_char_a(12), 1);
-      class_bh.func_int_a(var1, var2 + 11, var3 + 119, class_ce.field_class_z_g.func_array_char_a(13), 1);
+      class_bh.func_int_a(var1, var2 + 11, var3 + 104, class_ce.field_class_z_g.loadByIndex(12), 1);
+      class_bh.func_int_a(var1, var2 + 11, var3 + 119, class_ce.field_class_z_g.loadByIndex(13), 1);
       class_bh.func_void_a(var1, class_bh.field_array_char_d, class_bh.field_array_char_e);
    }
 }

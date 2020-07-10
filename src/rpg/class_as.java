@@ -44,7 +44,7 @@ public final class class_as extends MyGameCanvas {
    // $FF: renamed from: e int
    public static int field_int_e;
    // $FF: renamed from: a z
-   private class_z field_class_z_a;
+   private TableDefineTextFile field_class_z_a;
    // $FF: renamed from: t int
    private int field_int_t;
    // $FF: renamed from: u int
@@ -433,7 +433,7 @@ public final class class_as extends MyGameCanvas {
       this.field_int_u = -1;
 
       try {
-         this.field_class_z_a = new class_z("/sgui/ed" + class_n.field_byte_a);
+         this.field_class_z_a = new TableDefineTextFile("/sgui/ed" + class_n.field_byte_a);
          SoundPlayerManager.setupSoundPlayer((byte)23);
          SoundPlayerManager.startPlayer1((int)23);
          PNGMerger var1;
@@ -471,7 +471,7 @@ public final class class_as extends MyGameCanvas {
       this.field_class_java_util_Vector_a = new Vector();
 
       try {
-         this.field_class_z_a = new class_z("/sgui/edsr");
+         this.field_class_z_a = new TableDefineTextFile("/sgui/edsr");
          PNGMerger var1;
          (var1 = new PNGMerger("/img/end")).enableLoad = true;
          this.field_array_class_javax_microedition_lcdui_Image_a = new Image[1];
@@ -715,7 +715,7 @@ public final class class_as extends MyGameCanvas {
       var2 += 6;
       var3 -= 8;
       var0.setColor(16777215);
-      class_bh.func_int_a(var0, var1 + 5, var2, class_ce.field_class_z_g.func_array_char_a(31), 1);
+      class_bh.func_int_a(var0, var1 + 5, var2, class_ce.field_class_z_g.loadByIndex(31), 1);
       var0.setColor(16723759);
       var0.drawLine(var1, var2 + 17 + 0, var1 + var3 * MyGameCanvas.field_int_k / MyGameCanvas.field_int_l, var2 + 17 + 0);
       var0.drawLine(var1, var2 + 17 + 1, var1 + var3 * MyGameCanvas.field_int_k / MyGameCanvas.field_int_l, var2 + 17 + 1);
@@ -727,7 +727,7 @@ public final class class_as extends MyGameCanvas {
       var0.fillRect(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
       class_n.func_class_ao_a().func_void_d(var0, MyGameCanvas.canvasHalfWidth, MyGameCanvas.field_int_j + 20);
       char[] var1;
-      int var2 = class_bh.func_int_a(var1 = class_ce.field_class_z_g.func_array_char_a(32));
+      int var2 = class_bh.func_int_a(var1 = class_ce.field_class_z_g.loadByIndex(32));
       System.out.println(class_bh.func_class_java_lang_String_a(var1));
       var0.setColor(8355711);
       class_bh.func_void_a(var0, MyGameCanvas.canvasHalfWidth - var2 / 2 + 1, MyGameCanvas.field_int_j - 20 + 1, 200, 1, var1, 0, 0, (17 - field_int_e) * 2);
@@ -750,16 +750,16 @@ public final class class_as extends MyGameCanvas {
             this.field_boolean_i = false;
             ++this.field_int_u;
 
-            for(this.field_int_t = this.field_int_u; this.field_int_u < this.field_class_z_a.field_short_a; ++this.field_int_u) {
+            for(this.field_int_t = this.field_int_u; this.field_int_u < this.field_class_z_a.numberEntry; ++this.field_int_u) {
                char[] var2;
-               if ((var2 = this.field_class_z_a.func_array_char_a(this.field_int_u))[0] == '_') {
+               if ((var2 = this.field_class_z_a.loadByIndex(this.field_int_u))[0] == '_') {
                   field_int_e = Integer.parseInt(new String(var2, 1, var2.length - 1));
                   break;
                }
             }
          }
 
-         if (this.field_int_u >= this.field_class_z_a.field_short_a) {
+         if (this.field_int_u >= this.field_class_z_a.numberEntry) {
             this.field_class_z_a = null;
             this.field_array_class_javax_microedition_lcdui_Image_a = null;
             this.func_void_h();
@@ -788,7 +788,7 @@ public final class class_as extends MyGameCanvas {
             var1.setColor(16777215);
 
             for(int var3 = this.field_int_t; var3 < this.field_int_u; ++var3) {
-               char[] var4 = this.field_class_z_a.func_array_char_a(var3);
+               char[] var4 = this.field_class_z_a.loadByIndex(var3);
                class_bh.func_int_a(var1, MyGameCanvas.canvasHalfWidth - class_bh.func_int_a(var4) / 2, var5, var4, 1);
                var5 += 15;
             }
@@ -806,9 +806,9 @@ public final class class_as extends MyGameCanvas {
       var1.setColor(0);
       var1.fillRect(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
       var1.drawImage(this.field_array_class_javax_microedition_lcdui_Image_a[0], 0, MyGameCanvas.field_int_h / 2, 6);
-      if (field_int_e == 0 && this.field_int_t < this.field_class_z_a.field_short_a) {
+      if (field_int_e == 0 && this.field_int_t < this.field_class_z_a.numberEntry) {
          char[] var2;
-         if ((var2 = this.field_class_z_a.func_array_char_a(this.field_int_t))[0] == '-') {
+         if ((var2 = this.field_class_z_a.loadByIndex(this.field_int_t))[0] == '-') {
             field_int_e = 4;
          } else if (var2[0] == '=') {
             field_int_e = 10;
@@ -826,7 +826,7 @@ public final class class_as extends MyGameCanvas {
          ++this.field_int_t;
       }
 
-      if (this.field_int_t >= this.field_class_z_a.field_short_a && this.field_class_java_util_Vector_a.size() == 0) {
+      if (this.field_int_t >= this.field_class_z_a.numberEntry && this.field_class_java_util_Vector_a.size() == 0) {
          this.field_class_java_util_Vector_a = null;
          this.field_class_z_a = null;
          this.field_array_class_javax_microedition_lcdui_Image_a = null;
@@ -852,10 +852,10 @@ public final class class_as extends MyGameCanvas {
 
    // $FF: renamed from: f (javax.microedition.lcdui.Graphics) void
    private final void func_void_f(Graphics var1) {
-      char[] var2 = class_ce.field_class_z_g.func_array_char_a(33);
-      char[] var3 = class_ce.field_class_z_g.func_array_char_a(34);
-      char[] var4 = class_ce.field_class_z_g.func_array_char_a(35);
-      char[] var5 = class_ce.field_class_z_g.func_array_char_a(36);
+      char[] var2 = class_ce.field_class_z_g.loadByIndex(33);
+      char[] var3 = class_ce.field_class_z_g.loadByIndex(34);
+      char[] var4 = class_ce.field_class_z_g.loadByIndex(35);
+      char[] var5 = class_ce.field_class_z_g.loadByIndex(36);
       var1.setColor(0);
       var1.fillRect(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
       int var6 = MyGameCanvas.canvasHalfWidth - 55;

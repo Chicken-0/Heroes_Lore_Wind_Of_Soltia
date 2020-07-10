@@ -33,14 +33,14 @@ public final class class_ab extends class_cb {
          }
       } else {
          if (this.field_boolean_c) {
-            Object[] var3 = new Object[]{class_bp.field_class_z_a.func_array_char_a(7)};
+            Object[] var3 = new Object[]{class_bp.field_class_z_a.loadByIndex(7)};
             if (this.field_class_ad_a.field_byte_f == 0 && class_n.field_byte_a != 6 || this.field_class_ad_a.field_byte_f == 2 && class_n.field_byte_a != 7 || this.field_class_ad_a.field_byte_f == 1 && class_n.field_byte_a != 8 || this.field_class_ad_a.field_byte_f == 3 && class_n.field_byte_a != 8) {
-               var3 = new Object[]{class_bp.field_class_z_a.func_array_char_a(26), class_bp.field_class_z_a.func_array_char_a(7)};
+               var3 = new Object[]{class_bp.field_class_z_a.loadByIndex(26), class_bp.field_class_z_a.loadByIndex(7)};
             }
 
             this.func_void_a((byte)2, (byte)2, var3);
          } else {
-            this.func_void_a((byte)2, (byte)2, new Object[]{class_bp.field_class_z_a.func_array_char_a(23)});
+            this.func_void_a((byte)2, (byte)2, new Object[]{class_bp.field_class_z_a.loadByIndex(23)});
          }
 
          return true;
@@ -61,20 +61,20 @@ public final class class_ab extends class_cb {
 
             int var5 = var4.field_int_a * this.field_byte_c;
             if (var3.field_class_g_a.field_int_a < var5) {
-               this.func_void_a(new Object[]{class_bp.field_class_z_a.func_array_char_a(8)});
+               this.func_void_a(new Object[]{class_bp.field_class_z_a.loadByIndex(8)});
             } else if (!var3.field_class_g_a.func_boolean_a(var4, this.field_byte_c)) {
-               this.func_void_a(new Object[]{class_bp.field_class_z_a.func_array_char_a(9), class_bp.field_class_z_a.func_array_char_a(10)});
+               this.func_void_a(new Object[]{class_bp.field_class_z_a.loadByIndex(9), class_bp.field_class_z_a.loadByIndex(10)});
             } else {
                var10000 = var3.field_class_g_a;
                var10000.field_int_a -= var5;
-               this.func_void_a(new Object[]{class_bp.field_class_z_a.func_array_char_a(11), class_bp.field_class_z_a.func_array_char_a(12)});
+               this.func_void_a(new Object[]{class_bp.field_class_z_a.loadByIndex(11), class_bp.field_class_z_a.loadByIndex(12)});
             }
 
          } else {
             var3.field_class_g_a.func_void_a(this.field_class_ad_a, this.field_byte_c);
             var10000 = var3.field_class_g_a;
             var10000.field_int_a += this.field_class_ad_a.field_int_a * this.field_byte_c / 5;
-            this.func_void_a(new Object[]{this.field_class_ad_a.field_array_char_a, class_bp.field_class_z_a.func_array_char_a(24)});
+            this.func_void_a(new Object[]{this.field_class_ad_a.field_array_char_a, class_bp.field_class_z_a.loadByIndex(24)});
          }
       } else {
          if (var1 == 1) {
@@ -127,16 +127,16 @@ public final class class_ab extends class_cb {
       class_cb.func_void_b(var1, var2, var3 + 31, 149, 67);
       var2 += 15;
       var1.setColor(14663551);
-      class_bh.func_int_a(var1, var2 + 8, var3 + 7, class_bp.field_class_z_a.func_array_char_a(13), 1);
+      class_bh.func_int_a(var1, var2 + 8, var3 + 7, class_bp.field_class_z_a.loadByIndex(13), 1);
       class_cb.func_void_a(var1, var2 + 102, var3 + 11, class_n.func_class_ao_a().field_class_g_a.field_int_a);
       var1.setColor(16777215);
       if ((!this.field_boolean_c || !class_ad.field_array_boolean_b[this.field_class_ad_a.field_byte_f]) && (this.field_boolean_c || this.field_class_ad_a.field_byte_h <= 1)) {
-         class_bh.func_int_a(var1, var2 + 6, var3 + 38, class_bp.field_class_z_a.func_array_char_a(15), 1);
+         class_bh.func_int_a(var1, var2 + 6, var3 + 38, class_bp.field_class_z_a.loadByIndex(15), 1);
       } else {
          if (this.field_boolean_c) {
-            class_bh.func_int_a(var1, var2 + 6, var3 + 38, class_bp.field_class_z_a.func_array_char_a(14), 1);
+            class_bh.func_int_a(var1, var2 + 6, var3 + 38, class_bp.field_class_z_a.loadByIndex(14), 1);
          } else {
-            class_bh.func_int_a(var1, var2 + 6, var3 + 38, class_bp.field_class_z_a.func_array_char_a(25), 1);
+            class_bh.func_int_a(var1, var2 + 6, var3 + 38, class_bp.field_class_z_a.loadByIndex(25), 1);
          }
 
          var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_o, var2 + 32, var3 + 65, 20);

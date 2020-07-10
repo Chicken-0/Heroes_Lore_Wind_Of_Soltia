@@ -5,7 +5,7 @@ import java.util.Vector;
 // $FF: renamed from: ad
 public class class_ad {
    // $FF: renamed from: b z
-   public static class_z field_class_z_b;
+   public static TableDefineTextFile field_class_z_b;
    // $FF: renamed from: b boolean[]
    public static final boolean[] field_array_boolean_b = new boolean[]{false, false, false, false, false, false, false, true, true, true, true, true, true, true, true, true, true, true, false, false, false, false, true, true};
    // $FF: renamed from: c boolean[]
@@ -85,7 +85,7 @@ public class class_ad {
 
    // $FF: renamed from: a () char[]
    public final char[] func_array_char_a() {
-      return field_class_z_b.func_array_char_a(this.field_byte_f);
+      return field_class_z_b.loadByIndex(this.field_byte_f);
    }
 
    // $FF: renamed from: a () boolean

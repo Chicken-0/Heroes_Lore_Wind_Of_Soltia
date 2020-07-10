@@ -14,7 +14,7 @@ public final class class_ai extends class_cb implements class_u {
    // $FF: renamed from: c byte
    private byte field_byte_c;
    // $FF: renamed from: a z
-   public static class_z field_class_z_a;
+   public static TableDefineTextFile field_class_z_a;
    // $FF: renamed from: a ai
    private static class_ai field_class_ai_a;
 
@@ -65,7 +65,7 @@ public final class class_ai extends class_cb implements class_u {
       }
 
       try {
-         field_class_z_a = new class_z("/sgui/gm");
+         field_class_z_a = new TableDefineTextFile("/sgui/gm");
       } catch (IOException var4) {
          var4.printStackTrace();
       }

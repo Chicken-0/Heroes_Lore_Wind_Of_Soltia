@@ -681,7 +681,7 @@ public final class class_p extends class_ck implements class_u {
       var1.setClip(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
       var1.translate(var2 + 2, 4);
       boolean var4 = false;
-      class_cb.func_void_a(var1, 0, 0, 80, 21, class_ce.field_class_z_c.func_array_char_a(this.field_byte_f * 8 + this.field_byte_m * 2), 0, 1, 6233919, 16777215);
+      class_cb.func_void_a(var1, 0, 0, 80, 21, class_ce.field_class_z_c.loadByIndex(this.field_byte_f * 8 + this.field_byte_m * 2), 0, 1, 6233919, 16777215);
       var1.setColor(0);
       var1.fillRect(3, 18, 74, 2);
       var1.translate(-(var2 + 2), -4);

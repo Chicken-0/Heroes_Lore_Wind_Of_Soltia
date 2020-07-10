@@ -56,9 +56,9 @@ public final class class_by extends class_cb {
       var3 += 5;
       var2 += 10;
       var1.setColor(0);
-      class_bh.func_int_a(var1, var2 + 11, var3 + 34, 133, 1, class_ce.field_class_z_a.func_array_char_a(15 + this.field_byte_c - 6));
+      class_bh.func_int_a(var1, var2 + 11, var3 + 34, 133, 1, class_ce.field_class_z_a.loadByIndex(15 + this.field_byte_c - 6));
       var1.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_l[19], var2 + 7, var3 + 80, 20);
-      class_bh.func_int_a(var1, var2 + 11, var3 + 84, class_ce.field_class_z_a.func_array_char_a(this.field_byte_c - 6), 1);
+      class_bh.func_int_a(var1, var2 + 11, var3 + 84, class_ce.field_class_z_a.loadByIndex(this.field_byte_c - 6), 1);
       var1.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_m[this.field_byte_c - 6], var2 + 125, var3 + 137, 40);
       var1.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_l[17], var2 + 5 + (super.field_byte_b == 0 ? 0 : 28), var3 + 118, 20);
       if (super.field_byte_b == 0) {
@@ -67,14 +67,14 @@ public final class class_by extends class_cb {
          var1.setColor(0);
       }
 
-      class_bh.func_int_a(var1, var2 + 9, var3 + 121, class_ce.field_class_z_g.func_array_char_a(14), 1);
+      class_bh.func_int_a(var1, var2 + 9, var3 + 121, class_ce.field_class_z_g.loadByIndex(14), 1);
       if (super.field_byte_b == 1) {
          var1.setColor(16777215);
       } else {
          var1.setColor(0);
       }
 
-      class_bh.func_int_a(var1, var2 + 37, var3 + 121, class_ce.field_class_z_g.func_array_char_a(15), 1);
+      class_bh.func_int_a(var1, var2 + 37, var3 + 121, class_ce.field_class_z_g.loadByIndex(15), 1);
       class_bh.func_void_a(var1, class_bh.field_array_char_d, class_bh.field_array_char_e);
    }
 }

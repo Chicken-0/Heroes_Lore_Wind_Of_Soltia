@@ -25,7 +25,7 @@ public final class class_bt extends class_cb {
          if (var3 == 4) {
             this.field_array_array_char_a[var3] = MIDletConfig.func_class_java_lang_String_a().toCharArray();
          } else {
-            this.field_array_array_char_a[var3] = class_ce.field_class_z_e.func_array_char_a(var3);
+            this.field_array_array_char_a[var3] = class_ce.field_class_z_e.loadByIndex(var3);
          }
       }
 
@@ -53,7 +53,7 @@ public final class class_bt extends class_cb {
             ++var3;
          }
 
-         char[] var4 = class_ce.field_class_z_e.func_array_char_a(var3);
+         char[] var4 = class_ce.field_class_z_e.loadByIndex(var3);
          if (super.field_byte_b == super.field_byte_a - 1) {
             if (MIDletConfig.func_boolean_a()) {
                var4 = BabbleText.instance.getTextById(3930).toCharArray();

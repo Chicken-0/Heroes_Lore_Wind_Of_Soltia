@@ -180,9 +180,9 @@ public final class class_ae implements class_u {
 
       field_byte_d = this.field_byte_b;
       if (class_n.field_byte_a == 8 && this.field_byte_a == 65) {
-         this.field_array_char_a = class_ce.field_class_z_d.func_array_char_a(85);
+         this.field_array_char_a = class_ce.field_class_z_d.loadByIndex(85);
       } else {
-         this.field_array_char_a = class_ce.field_class_z_d.func_array_char_a(this.field_byte_a);
+         this.field_array_char_a = class_ce.field_class_z_d.loadByIndex(this.field_byte_a);
       }
 
       if (this.field_array_char_a != null && this.field_array_char_a.length > 0) {

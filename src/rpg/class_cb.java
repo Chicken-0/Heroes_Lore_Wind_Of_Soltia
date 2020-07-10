@@ -363,27 +363,27 @@ public abstract class class_cb implements class_u {
             var0.setColor(14663551);
             var2 = var2 + class_bh.func_int_a(var0, var1, var2, 115, 1, var5.func_array_char_a()) - (class_bh.func_int_a() + 2);
             var0.setColor(16777215);
-            class_bh.func_int_a(var0, var1, var2 + 16, 115, 1, class_ce.field_class_z_g.func_array_char_a(5));
+            class_bh.func_int_a(var0, var1, var2 + 16, 115, 1, class_ce.field_class_z_g.loadByIndex(5));
          } else {
             var0.setColor(16777215);
             var2 = var2 + class_bh.func_int_a(var0, var1, var2, 115, 1, var5.field_array_char_a) - (class_bh.func_int_a() + 2);
             var0.setColor(14663551);
-            class_bh.func_int_a(var0, var1, var2 + 25, class_ce.field_class_z_g.func_array_char_a(var5 instanceof class_l ? 4 : 46), 1);
+            class_bh.func_int_a(var0, var1, var2 + 25, class_ce.field_class_z_g.loadByIndex(var5 instanceof class_l ? 4 : 46), 1);
             MyGameCanvas.func_void_c(var0, var5.field_short_a, var1 + 155 - 47, var2 + 25, 8);
             class_t var6;
             if (var3 instanceof class_t && (var6 = (class_t)var3).field_byte_c != -1) {
                var0.setColor(16711680);
-               var2 = var2 + class_bh.func_int_a(var0, var1 + 55, var2 + 10, 115, 1, class_t.field_class_z_a.func_array_char_a(var6.field_byte_c)) - (class_bh.func_int_a() + 2);
+               var2 = var2 + class_bh.func_int_a(var0, var1 + 55, var2 + 10, 115, 1, class_t.field_class_z_a.loadByIndex(var6.field_byte_c)) - (class_bh.func_int_a() + 2);
             }
 
             var0.setColor(14663551);
-            class_bh.func_int_a(var0, var1, var2 + 40, class_ce.field_class_z_g.func_array_char_a(3), 1);
+            class_bh.func_int_a(var0, var1, var2 + 40, class_ce.field_class_z_g.loadByIndex(3), 1);
             MyGameCanvas.func_void_d(var0, var1 + 155 - 47, var2 + 40, var5.field_byte_e, var5.field_byte_d);
             StringBuffer var8 = new StringBuffer();
 
             for(int var7 = 0; var7 < var5.field_array_byte_j.length; ++var7) {
                if (var5.field_array_byte_j[var7] > 0) {
-                  var8.append(class_bh.func_class_java_lang_String_a(class_ce.field_class_z_a.func_array_char_a(9 + var7))).append("+").append(var5.field_array_byte_j[var7]).append("  ");
+                  var8.append(class_bh.func_class_java_lang_String_a(class_ce.field_class_z_a.loadByIndex(9 + var7))).append("+").append(var5.field_array_byte_j[var7]).append("  ");
                }
             }
 
@@ -403,7 +403,7 @@ public abstract class class_cb implements class_u {
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int, ad, byte, char[], boolean) void
    public static final void func_void_a(Graphics var0, int var1, int var2, class_ad var3, byte var4, char[] var5, boolean var6) {
       func_void_b(var0, var1, var2 + 1, 28, 31, 12558207);
-      int var7 = MyGameCanvas.func_int_a(var0, class_ce.field_class_z_g.func_array_char_a(2), var1 + 2, var2 + 1);
+      int var7 = MyGameCanvas.func_int_a(var0, class_ce.field_class_z_g.loadByIndex(2), var1 + 2, var2 + 1);
       MyGameCanvas.func_void_c(var0, var4, var7 + 2, var2 + 1, 4);
       var0.setColor(16777215);
       class_bh.func_void_a(var0, var1 + 90, var2 + 2, var5, 1);

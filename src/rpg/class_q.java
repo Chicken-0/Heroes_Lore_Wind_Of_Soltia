@@ -11,7 +11,7 @@ public final class class_q extends class_cb {
 
    public class_q(class_cb var1) {
       super(var1, (byte)4);
-      this.field_array_char_a = class_ce.field_class_z_a.func_array_char_a(class_n.field_byte_a - 6);
+      this.field_array_char_a = class_ce.field_class_z_a.loadByIndex(class_n.field_byte_a - 6);
       int var2 = 3 + class_n.field_byte_a - 6;
       if (class_n.field_byte_g == 1) {
          var2 += 15;
@@ -19,7 +19,7 @@ public final class class_q extends class_cb {
          var2 += 18;
       }
 
-      this.field_array_char_b = class_ce.field_class_z_a.func_array_char_a(var2);
+      this.field_array_char_b = class_ce.field_class_z_a.loadByIndex(var2);
    }
 
    // $FF: renamed from: a (int, int) boolean
@@ -34,7 +34,7 @@ public final class class_q extends class_cb {
          if (class_n.func_class_ao_a().field_short_a > 0) {
             super.field_class_cb_b = new class_bi(this);
          } else {
-            Object[] var3 = new Object[]{class_ai.field_class_z_a.func_array_char_a(0), class_ai.field_class_z_a.func_array_char_a(1)};
+            Object[] var3 = new Object[]{class_ai.field_class_z_a.loadByIndex(0), class_ai.field_class_z_a.loadByIndex(1)};
             this.func_void_a(var3);
          }
 
@@ -47,7 +47,7 @@ public final class class_q extends class_cb {
       var2 += 2;
       var3 += 15;
       class_ao var4 = class_n.func_class_ao_a();
-      char[] var5 = class_ai.field_class_z_a.func_array_char_a(2);
+      char[] var5 = class_ai.field_class_z_a.loadByIndex(2);
       MyGameCanvas.func_int_a(var1, var5, var2 + 5, var3);
       class_cb.func_void_a(var1, var2 + 110, var3 + 2, var4.field_class_g_a.field_int_a);
       this.func_void_a(var1, var2, var3, false);
@@ -84,7 +84,7 @@ public final class class_q extends class_cb {
          var1.setColor(14663551);
 
          for(int var7 = 0; var7 < 6; ++var7) {
-            class_bh.func_int_a(var1, var2 + 38, var3 + 21 + var7 * 15, class_ce.field_class_z_a.func_array_char_a(9 + var7), 1);
+            class_bh.func_int_a(var1, var2 + 38, var3 + 21 + var7 * 15, class_ce.field_class_z_a.loadByIndex(9 + var7), 1);
          }
 
          MyGameCanvas.func_void_c(var1, var4.field_short_b + var4.field_byte_m, var2 + 100, var3 + 22, 8);
@@ -98,7 +98,7 @@ public final class class_q extends class_cb {
          var1.setColor(14663551);
          class_bh.func_int_a(var1, var2 + 34, var3 + 18, this.field_array_char_a, 1);
          var1.setColor(16777215);
-         char[] var6 = class_ce.field_class_z_a.func_array_char_a(class_n.field_byte_a);
+         char[] var6 = class_ce.field_class_z_a.loadByIndex(class_n.field_byte_a);
          if (MyGameCanvas.canvasWidth > 128) {
             class_bh.func_int_a(var1, var2 + 34, var3 + 30, 110, 1, var6);
             return;
@@ -109,15 +109,15 @@ public final class class_q extends class_cb {
       case 3:
          class_cb.func_void_b(var1, var2 + 34, var3 + 22, 100, 26, 4136767);
          var1.setColor(16777215);
-         MyGameCanvas.func_int_a(var1, class_ai.field_class_z_a.func_array_char_a(3), var2 + 37, var3 + 25);
-         MyGameCanvas.func_int_a(var1, class_ai.field_class_z_a.func_array_char_a(4), var2 + 37, var3 + 32 + 4);
+         MyGameCanvas.func_int_a(var1, class_ai.field_class_z_a.loadByIndex(3), var2 + 37, var3 + 25);
+         MyGameCanvas.func_int_a(var1, class_ai.field_class_z_a.loadByIndex(4), var2 + 37, var3 + 32 + 4);
          MyGameCanvas.func_void_c(var1, class_n.func_class_ao_a().field_short_a, var2 + 99, var3 + 32 + 4, 8);
          class_cb.func_void_b(var1, var2 + 34, var3 + 62, 100, 33, 4136767);
          var1.setColor(16777215);
-         class_bh.func_int_a(var1, var2 + 40, var3 + 72, class_ai.field_class_z_a.func_array_char_a(5), 1);
+         class_bh.func_int_a(var1, var2 + 40, var3 + 72, class_ai.field_class_z_a.loadByIndex(5), 1);
          var1.setColor(14663551);
-         class_bh.func_int_a(var1, var2 + 60, var3 + 67, class_ai.field_class_z_a.func_array_char_a(6), 1);
-         class_bh.func_int_a(var1, var2 + 60, var3 + 80, class_ai.field_class_z_a.func_array_char_a(7), 1);
+         class_bh.func_int_a(var1, var2 + 60, var3 + 67, class_ai.field_class_z_a.loadByIndex(6), 1);
+         class_bh.func_int_a(var1, var2 + 60, var3 + 80, class_ai.field_class_z_a.loadByIndex(7), 1);
       default:
       }
    }

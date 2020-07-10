@@ -117,7 +117,7 @@ public final class class_be extends class_cb {
 
       byte var7 = super.field_byte_b;
       var1.setColor(var7 == 0 ? 16777215 : var4);
-      class_bh.func_int_a(var1, var2, var3, class_ce.field_class_z_g.func_array_char_a(18), 1);
+      class_bh.func_int_a(var1, var2, var3, class_ce.field_class_z_g.loadByIndex(18), 1);
       var1.setColor(var5);
       if (this.field_class_bs_a.soundVolumeLevel == 0) {
          class_bh.func_void_a(var1, var2 + 70, var3, BabbleText.instance.getTextById(3945).toCharArray(), 0);
@@ -127,18 +127,18 @@ public final class class_be extends class_cb {
 
       int var6 = var3 + 20;
       var1.setColor(var7 == 1 ? 16777215 : var4);
-      class_bh.func_int_a(var1, var2, var6, class_ce.field_class_z_g.func_array_char_a(19), 1);
+      class_bh.func_int_a(var1, var2, var6, class_ce.field_class_z_g.loadByIndex(19), 1);
       var1.setColor(var5);
-      char[] var8 = class_ce.field_class_z_g.func_array_char_a(60 + this.field_class_bs_a.field_byte_a);
+      char[] var8 = class_ce.field_class_z_g.loadByIndex(60 + this.field_class_bs_a.field_byte_a);
       class_bh.func_void_a(var1, var2 + 70, var6, var8, 0);
       var6 += 20;
       var1.setColor(var7 == 2 ? 16777215 : var4);
-      class_bh.func_int_a(var1, var2, var6, class_ce.field_class_z_g.func_array_char_a(20), 1);
+      class_bh.func_int_a(var1, var2, var6, class_ce.field_class_z_g.loadByIndex(20), 1);
       var1.setColor(var5);
       class_bh.func_void_a(var1, var2 + 70, var6, (this.field_class_bs_a.field_boolean_c ? BabbleText.instance.getTextById(3942) : BabbleText.instance.getTextById(3943)).toCharArray(), 0);
       var6 += 20;
       var1.setColor(var7 == 3 ? 16777215 : var4);
-      class_bh.func_int_a(var1, var2, var6, class_ce.field_class_z_g.func_array_char_a(21), 1);
+      class_bh.func_int_a(var1, var2, var6, class_ce.field_class_z_g.loadByIndex(21), 1);
       var1.setColor(var5);
       class_bh.func_void_a(var1, var2 + 70, var6, (this.field_class_bs_a.field_boolean_d ? BabbleText.instance.getTextById(3944) : BabbleText.instance.getTextById(3945)).toCharArray(), 0);
 

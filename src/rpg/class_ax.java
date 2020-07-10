@@ -10,7 +10,7 @@ public final class class_ax extends class_cb {
    // $FF: renamed from: b int
    public static int field_int_b;
    // $FF: renamed from: a z
-   public static class_z field_class_z_a;
+   public static TableDefineTextFile field_class_z_a;
    // $FF: renamed from: a ax
    private static class_ax field_class_ax_a;
 
@@ -32,12 +32,12 @@ public final class class_ax extends class_cb {
    // $FF: renamed from: d () void
    public final void func_void_d() {
       try {
-         field_class_z_a = new class_z("/sgui/refi");
+         field_class_z_a = new TableDefineTextFile("/sgui/refi");
       } catch (IOException var2) {
          var2.printStackTrace();
       }
 
-      Object[] var1 = new Object[]{field_class_z_a.func_array_char_a(0), field_class_z_a.func_array_char_a(1), field_class_z_a.func_array_char_a(2)};
+      Object[] var1 = new Object[]{field_class_z_a.loadByIndex(0), field_class_z_a.loadByIndex(1), field_class_z_a.loadByIndex(2)};
       this.func_void_a((byte)8, (byte)2, var1);
    }
 

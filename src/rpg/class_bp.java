@@ -13,7 +13,7 @@ public final class class_bp extends class_cb {
    // $FF: renamed from: b int
    public static int field_int_b;
    // $FF: renamed from: a z
-   public static class_z field_class_z_a;
+   public static TableDefineTextFile field_class_z_a;
    // $FF: renamed from: a bp
    private static class_bp field_class_bp_a;
 
@@ -36,7 +36,7 @@ public final class class_bp extends class_cb {
    // $FF: renamed from: d () void
    public final void func_void_d() {
       try {
-         field_class_z_a = new class_z("/sgui/shop");
+         field_class_z_a = new TableDefineTextFile("/sgui/shop");
       } catch (IOException var2) {
          var2.printStackTrace();
       }
@@ -97,7 +97,7 @@ public final class class_bp extends class_cb {
          var1.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_p[var4], var2 + 13 + var4 * 16, var3 + 1, 20);
       }
 
-      MyGameCanvas.func_int_a(var1, field_class_z_a.func_array_char_a(super.field_byte_b + 1), var2 + 3, var3 + 15);
+      MyGameCanvas.func_int_a(var1, field_class_z_a.loadByIndex(super.field_byte_b + 1), var2 + 3, var3 + 15);
       var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_o, var2 + 4, var3 + 4, 20);
       var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_d, var2 + 109, var3 + 4, 20);
    }

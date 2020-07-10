@@ -10,7 +10,7 @@ public final class class_aa extends class_cb {
    // $FF: renamed from: b int
    public static int field_int_b;
    // $FF: renamed from: a z
-   public static class_z field_class_z_a;
+   public static TableDefineTextFile field_class_z_a;
    // $FF: renamed from: a aa
    private static class_aa field_class_aa_a;
 
@@ -32,11 +32,11 @@ public final class class_aa extends class_cb {
    // $FF: renamed from: d () void
    public final void func_void_d() {
       try {
-         field_class_z_a = new class_z("/sgui/blak");
+         field_class_z_a = new TableDefineTextFile("/sgui/blak");
       } catch (IOException var2) {
       }
 
-      this.func_void_a((byte)8, (byte)2, new Object[]{field_class_z_a.func_array_char_a(0), field_class_z_a.func_array_char_a(1), field_class_z_a.func_array_char_a(2)});
+      this.func_void_a((byte)8, (byte)2, new Object[]{field_class_z_a.loadByIndex(0), field_class_z_a.loadByIndex(1), field_class_z_a.loadByIndex(2)});
    }
 
    // $FF: renamed from: e () void
@@ -67,7 +67,7 @@ public final class class_aa extends class_cb {
       super.func_void_a(var1, var2);
       if (var1 == 8 && var2 == 0) {
          super.field_class_cb_b = new class_at(this);
-         super.field_class_cb_b.func_void_a(new Object[]{field_class_z_a.func_array_char_a(30), field_class_z_a.func_array_char_a(31), field_class_z_a.func_array_char_a(32), field_class_z_a.func_array_char_a(33)});
+         super.field_class_cb_b.func_void_a(new Object[]{field_class_z_a.loadByIndex(30), field_class_z_a.loadByIndex(31), field_class_z_a.loadByIndex(32), field_class_z_a.loadByIndex(33)});
       } else if (var1 == 8 && var2 == 1) {
          super.field_class_cb_b = new class_ch(this);
       } else {

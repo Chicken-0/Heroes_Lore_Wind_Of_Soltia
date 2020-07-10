@@ -675,10 +675,10 @@ public final class class_p extends class_ck implements class_u {
 
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics) void
    public final void func_void_a(Graphics var1) {
-      int var2 = (class_r.field_int_g - 80) / 2;
+      int var2 = (MyGameCanvas.canvasWidth - 80) / 2;
       boolean var3 = false;
       class_cb.func_void_a(var1, var2, 2, 80, 25, false);
-      var1.setClip(0, 0, class_r.field_int_g, class_r.field_int_h);
+      var1.setClip(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
       var1.translate(var2 + 2, 4);
       boolean var4 = false;
       class_cb.func_void_a(var1, 0, 0, 80, 21, class_ce.field_class_z_c.func_array_char_a(this.field_byte_f * 8 + this.field_byte_m * 2), 0, 1, 6233919, 16777215);

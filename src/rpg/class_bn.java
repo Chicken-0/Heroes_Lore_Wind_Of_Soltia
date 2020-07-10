@@ -74,15 +74,15 @@ public final class class_bn extends class_cb {
       var1.fillRect(var4 + 1, var3 + 2, 1, 18);
       var1.fillRect(var4 + 1, var3 + 1, 63, 1);
       int var5 = var3 + 5 + (this.field_boolean_c ? 0 : 2);
-      int var6 = class_r.func_int_a(var1, class_ai.field_class_z_a.func_array_char_a(38), var2 + 6, var5);
-      class_r.func_void_c(var1, 1, var6 + 3, var5, 4);
+      int var6 = MyGameCanvas.func_int_a(var1, class_ai.field_class_z_a.func_array_char_a(38), var2 + 6, var5);
+      MyGameCanvas.func_void_c(var1, 1, var6 + 3, var5, 4);
       if (this.field_class_p_a.field_byte_g != -1) {
          var1.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_c[this.field_class_p_a.field_byte_f * 4 + this.field_class_p_a.field_byte_g], var6 + 13, var5 - 2, 20);
       }
 
       int var7 = var3 + 5 + (this.field_boolean_c ? 2 : 0);
-      var6 = class_r.func_int_a(var1, class_ai.field_class_z_a.func_array_char_a(38), var2 + 51 + 20, var7);
-      class_r.func_void_c(var1, 3, var6 + 3, var7, 4);
+      var6 = MyGameCanvas.func_int_a(var1, class_ai.field_class_z_a.func_array_char_a(38), var2 + 51 + 20, var7);
+      MyGameCanvas.func_void_c(var1, 3, var6 + 3, var7, 4);
       if (this.field_class_p_a.field_byte_h != -1) {
          var1.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_c[this.field_class_p_a.field_byte_f * 4 + this.field_class_p_a.field_byte_h], var6 + 13, var7 - 2, 20);
       }
@@ -99,8 +99,8 @@ public final class class_bn extends class_cb {
 
       var1.setColor(16777215);
       class_bh.func_int_a(var1, var2 + 34, var3 + 29, class_ce.field_class_z_c.func_array_char_a(this.field_class_p_a.field_byte_f * 8 + super.field_byte_b * 2), 1);
-      var5 = class_r.func_int_a(var1, class_bh.field_array_char_s, var2 + 34, var3 + 44);
-      class_r.func_void_c(var1, class_p.field_array_byte_h[super.field_byte_b], var5 + 3, var3 + 44, 4);
+      var5 = MyGameCanvas.func_int_a(var1, class_bh.field_array_char_s, var2 + 34, var3 + 44);
+      MyGameCanvas.func_void_c(var1, class_p.field_array_byte_h[super.field_byte_b], var5 + 3, var3 + 44, 4);
       var1.setColor(14663551);
       char[] var8 = class_ce.field_class_z_c.func_array_char_a(this.field_class_p_a.field_byte_f * 8 + super.field_byte_b * 2 + 1);
       class_bh.func_int_a(var1, var2 + 34, var3 + 53, 100, 1, var8);

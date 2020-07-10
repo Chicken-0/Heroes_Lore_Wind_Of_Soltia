@@ -43,7 +43,7 @@ public final class class_bm extends class_cb {
          switch(var2) {
          case 0:
             if (var4.func_boolean_a(var4.field_array_class_p_a[super.field_byte_b])) {
-               char[] var7 = (class_cj.field_class_cj_a.func_class_java_lang_String_a(3933) + " " + new String(class_ce.field_class_z_b.func_array_char_a(var4.field_array_class_p_a[super.field_byte_b].field_byte_f))).toCharArray();
+               char[] var7 = (BabbleText.instance.getTextById(3933) + " " + new String(class_ce.field_class_z_b.func_array_char_a(var4.field_array_class_p_a[super.field_byte_b].field_byte_f))).toCharArray();
                Object[] var6 = new Object[]{var7};
                this.func_void_a(var6);
                return;
@@ -64,7 +64,7 @@ public final class class_bm extends class_cb {
       var2 += 2;
       var3 += 15;
       class_ao var4 = class_n.func_class_ao_a();
-      class_r.func_int_a(var1, class_ai.field_class_z_a.func_array_char_a(30), var2 + 5, var3);
+      MyGameCanvas.func_int_a(var1, class_ai.field_class_z_a.func_array_char_a(30), var2 + 5, var3);
       this.func_void_a(var1, var2, var3, false);
 
       for(int var5 = 0; var5 < 5; ++var5) {
@@ -78,7 +78,7 @@ public final class class_bm extends class_cb {
          class_bh.func_int_a(var1, var2 + 34, var3 + 18, class_ai.field_class_z_a.func_array_char_a(31), 1);
       } else {
          class_p var6 = var4.field_array_class_p_a[super.field_byte_b];
-         class_r.func_int_a(var1, class_ai.field_class_z_a.func_array_char_a(32), var2 + 89, var3 + 22);
+         MyGameCanvas.func_int_a(var1, class_ai.field_class_z_a.func_array_char_a(32), var2 + 89, var3 + 22);
          if (var6 == var4.func_class_p_a()) {
             var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_l, var2 + 100, var3 + 26, 36);
          }
@@ -88,15 +88,15 @@ public final class class_bm extends class_cb {
          var1.setColor(14663551);
          class_bh.func_int_a(var1, var2 + 34, var3 + 35, class_ce.field_class_z_b.func_array_char_a(var4.field_array_class_p_a[super.field_byte_b].field_byte_f + 6), 1);
          var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_g, var2 + 34, var3 + 53, 20);
-         class_r.func_void_c(var1, var6.field_short_a, var2 + 50, var3 + 53, 4);
+         MyGameCanvas.func_void_c(var1, var6.field_short_a, var2 + 50, var3 + 53, 4);
          var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_e, var2 + 34, var3 + 67, 20);
-         class_r.func_void_c(var1, var6.field_int_a, var2 + 102, var3 + 67, 8);
+         MyGameCanvas.func_void_c(var1, var6.field_int_a, var2 + 102, var3 + 67, 8);
          var1.setColor(4136767);
          var1.fillRect(var2 + 34, var3 + 76, 72, 3);
          var1.setColor(16777215);
          var1.fillRect(var2 + 35, var3 + 77, var6.field_int_a * 70 / var6.field_int_b, 1);
          var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_h, var2 + 38, var3 + 81, 20);
-         class_r.func_void_c(var1, var6.field_int_b, var2 + 102, var3 + 81, 8);
+         MyGameCanvas.func_void_c(var1, var6.field_int_b, var2 + 102, var3 + 81, 8);
       }
    }
 }

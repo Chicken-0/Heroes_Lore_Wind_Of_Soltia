@@ -58,7 +58,7 @@ public final class class_bx extends class_cb {
          class_bh.func_void_a(var1, class_bh.field_array_char_m, class_bh.field_array_char_e);
       } else {
          var1.setColor(4136767);
-         var1.fillRect(0, 0, class_r.field_int_g, class_r.field_int_h);
+         var1.fillRect(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
          class_bf.func_void_c(var1, var2, var3);
          class_bh.func_void_a(true);
          var1.setColor(0);
@@ -71,7 +71,7 @@ public final class class_bx extends class_cb {
          class_bh.func_void_a(var1, (char[])null, class_bh.field_array_char_e);
       }
 
-      class_r.func_void_d(var1, var2 + 155 - 25, var3 - 8, super.field_byte_b + 1, super.field_byte_a);
+      MyGameCanvas.func_void_d(var1, var2 + 155 - 25, var3 - 8, super.field_byte_b + 1, super.field_byte_a);
       if (super.field_byte_a > 1) {
          if (super.field_byte_b > 0) {
             var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_k, var2 + 62, var3 - 6, 20);

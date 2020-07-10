@@ -21,8 +21,8 @@ public final class class_bp extends class_cb {
    public static final class_bp func_class_bp_a() {
       if (field_class_bp_a == null) {
          field_class_bp_a = new class_bp();
-         field_int_a = class_r.field_int_i - 77;
-         field_int_b = class_r.field_int_j - 85;
+         field_int_a = MyGameCanvas.canvasHalfWidth - 77;
+         field_int_b = MyGameCanvas.field_int_j - 85;
       }
 
       return field_class_bp_a;
@@ -97,7 +97,7 @@ public final class class_bp extends class_cb {
          var1.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_p[var4], var2 + 13 + var4 * 16, var3 + 1, 20);
       }
 
-      class_r.func_int_a(var1, field_class_z_a.func_array_char_a(super.field_byte_b + 1), var2 + 3, var3 + 15);
+      MyGameCanvas.func_int_a(var1, field_class_z_a.func_array_char_a(super.field_byte_b + 1), var2 + 3, var3 + 15);
       var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_o, var2 + 4, var3 + 4, 20);
       var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_d, var2 + 109, var3 + 4, 20);
    }

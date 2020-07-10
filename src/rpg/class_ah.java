@@ -241,7 +241,7 @@ public final class class_ah implements class_u {
             } else {
                field_array_char_a = (char[])((char[])class_n.field_class_ae_a.field_array_class_java_lang_Object_c[field_array_array_byte_b[field_int_a][1]]);
                field_int_c = 0;
-               field_int_d = class_bh.func_int_a((char[])field_array_char_a, field_int_c, class_r.field_int_g - 28, 3);
+               field_int_d = class_bh.func_int_a((char[])field_array_char_a, field_int_c, MyGameCanvas.canvasWidth - 28, 3);
                field_int_e = 0;
                field_int_f = 0;
                func_void_b((byte)2);
@@ -570,8 +570,8 @@ public final class class_ah implements class_u {
                break;
             case 39:
                func_void_w();
-               class_n.field_int_a = -(field_array_array_byte_b[field_int_a][1] * 16) + class_r.field_int_i;
-               class_n.field_int_b = -(field_array_array_byte_b[field_int_a][2] * 16) + class_r.field_int_j;
+               class_n.field_int_a = -(field_array_array_byte_b[field_int_a][1] * 16) + MyGameCanvas.canvasHalfWidth;
+               class_n.field_int_b = -(field_array_array_byte_b[field_int_a][2] * 16) + MyGameCanvas.field_int_j;
             }
          }
 
@@ -602,7 +602,7 @@ public final class class_ah implements class_u {
          func_void_b((byte)0);
       } else if (field_boolean_b) {
          field_int_c += field_int_d;
-         field_int_d = class_bh.func_int_a((char[])field_array_char_a, field_int_c, class_r.field_int_g - 28, 3);
+         field_int_d = class_bh.func_int_a((char[])field_array_char_a, field_int_c, MyGameCanvas.canvasWidth - 28, 3);
          field_int_e = 0;
          field_int_f = 0;
       }
@@ -788,7 +788,7 @@ public final class class_ah implements class_u {
             }
 
             if (!var2.field_class_g_a.func_boolean_a(var4, var3)) {
-               func_void_a(class_cj.field_class_cj_a.func_class_java_lang_String_a(3938).toCharArray(), "".toCharArray());
+               func_void_a(BabbleText.instance.getTextById(3938).toCharArray(), "".toCharArray());
             }
 
          } else {
@@ -799,7 +799,7 @@ public final class class_ah implements class_u {
                   return;
                }
 
-               func_void_a(class_cj.field_class_cj_a.func_class_java_lang_String_a(3939).toCharArray(), "".toCharArray());
+               func_void_a(BabbleText.instance.getTextById(3939).toCharArray(), "".toCharArray());
             }
 
          }
@@ -900,7 +900,7 @@ public final class class_ah implements class_u {
                class_bh.func_void_a(var0, class_bh.field_array_char_d, (char[])null);
                return;
             case 4:
-               func_void_a(var0, (class_r.field_int_g >> 1) - 60, (class_r.field_int_h >> 1) - 25, 120, 45, field_array_char_b, field_array_char_c);
+               func_void_a(var0, (MyGameCanvas.canvasWidth >> 1) - 60, (MyGameCanvas.field_int_h >> 1) - 25, 120, 45, field_array_char_b, field_array_char_c);
                class_bh.func_void_a(var0, class_bh.field_array_char_d, (char[])null);
             default:
             }
@@ -910,10 +910,10 @@ public final class class_ah implements class_u {
 
    // $FF: renamed from: b (javax.microedition.lcdui.Graphics) void
    private static final void func_void_b(Graphics var0) {
-      int var1 = class_r.field_int_g - 8;
+      int var1 = MyGameCanvas.canvasWidth - 8;
       boolean var2 = false;
-      int var3 = class_r.field_int_i - var1 / 2;
-      int var4 = class_r.field_int_h - 41 - 10;
+      int var3 = MyGameCanvas.canvasHalfWidth - var1 / 2;
+      int var4 = MyGameCanvas.field_int_h - 41 - 10;
       var0.translate(var3, var4);
       var0.setColor(2039615);
       var0.drawRect(0, 0, var1 - 1, 40);
@@ -929,7 +929,7 @@ public final class class_ah implements class_u {
       class_bh.func_void_c(var0, 10, 5, var1 - 20, 1, field_array_char_a, field_int_c, field_int_f, field_int_e);
       field_int_f = field_int_e;
       var0.translate(-var3, -var4);
-      var0.setClip(0, 0, class_r.field_int_g, class_r.field_int_h);
+      var0.setClip(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
       byte var5;
       if ((var5 = field_array_array_byte_b[field_int_a][2]) > 0) {
          var0.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_h[var5 - 1], var3, var4, 36);
@@ -944,10 +944,10 @@ public final class class_ah implements class_u {
    // $FF: renamed from: c (javax.microedition.lcdui.Graphics) void
    private static final void func_void_c(Graphics var0) {
       try {
-         char[] var1 = field_boolean_g ? class_cj.field_class_cj_a.func_class_java_lang_String_a(3940).toCharArray() : (char[])((char[])class_n.field_class_ae_a.field_array_class_java_lang_Object_c[field_array_array_byte_b[field_int_a][1]]);
-         Object[] var2 = new Object[]{var1, class_cj.field_class_cj_a.func_class_java_lang_String_a(3915).toCharArray(), class_cj.field_class_cj_a.func_class_java_lang_String_a(3916).toCharArray()};
-         int var3 = class_bh.func_int_a(class_r.field_int_g, 70);
-         func_void_a(var0, class_r.field_int_i - (var3 >> 1), class_r.field_int_j - 30, var3, 60, var2, 6, 1, field_boolean_c ? 1 : 2);
+         char[] var1 = field_boolean_g ? BabbleText.instance.getTextById(3940).toCharArray() : (char[])((char[])class_n.field_class_ae_a.field_array_class_java_lang_Object_c[field_array_array_byte_b[field_int_a][1]]);
+         Object[] var2 = new Object[]{var1, BabbleText.instance.getTextById(3915).toCharArray(), BabbleText.instance.getTextById(3916).toCharArray()};
+         int var3 = class_bh.func_int_a(MyGameCanvas.canvasWidth, 70);
+         func_void_a(var0, MyGameCanvas.canvasHalfWidth - (var3 >> 1), MyGameCanvas.field_int_j - 30, var3, 60, var2, 6, 1, field_boolean_c ? 1 : 2);
       } catch (Exception var4) {
       }
    }

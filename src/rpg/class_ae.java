@@ -84,7 +84,7 @@ public final class class_ae implements class_u {
       this.field_class_java_util_Vector_b = new Vector();
       this.field_int_g = 16;
       this.field_class_java_util_Vector_a = new Vector();
-      if (class_r.field_int_g >= 240 && class_r.field_int_h >= 240) {
+      if (MyGameCanvas.canvasWidth >= 240 && MyGameCanvas.field_int_h >= 240) {
          field_byte_c = 3;
       }
 
@@ -111,9 +111,9 @@ public final class class_ae implements class_u {
          class_bw.func_void_b(var1);
       }
 
-      class_r.func_void_k();
-      this.field_array_byte_i = class_ce.func_array_byte_a("/m/" + (class_n.field_byte_f < 10 ? "0" : "") + class_n.field_byte_f + ".map");
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
+      this.field_array_byte_i = class_ce.getResourceByName("/m/" + (class_n.field_byte_f < 10 ? "0" : "") + class_n.field_byte_f + ".map");
+      MyGameCanvas.func_void_k();
       this.field_byte_b = this.field_array_byte_i[0];
       this.field_int_a = this.field_array_byte_i[1];
       this.field_int_b = this.field_array_byte_i[2];
@@ -122,10 +122,10 @@ public final class class_ae implements class_u {
       }
 
       this.field_array_array_class_ck_a = new class_ck[this.field_int_b][this.field_int_a];
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
       this.field_int_c = this.field_int_a * 16;
       this.field_int_d = this.field_int_b * 16;
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
       this.func_void_a(this.field_array_byte_i, 3);
       this.field_array_byte_i = null;
       if (field_byte_d != this.field_byte_b) {
@@ -133,20 +133,20 @@ public final class class_ae implements class_u {
       }
 
       System.gc();
-      this.field_array_byte_i = class_ce.func_array_byte_a("/m/" + class_n.field_byte_a + "/" + (class_n.field_byte_f < 10 ? "0" : "") + class_n.field_byte_f + ".evt");
-      class_r.func_void_k();
-      class_r.func_void_k();
+      this.field_array_byte_i = class_ce.getResourceByName("/m/" + class_n.field_byte_a + "/" + (class_n.field_byte_f < 10 ? "0" : "") + class_n.field_byte_f + ".evt");
+      MyGameCanvas.func_void_k();
+      MyGameCanvas.func_void_k();
       this.func_void_b(this.field_array_byte_i, 0);
       int var4 = 0 + this.field_int_a * this.field_int_b;
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
       var4 += this.func_int_a(this.field_array_byte_i, var4);
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
       var4 += this.func_int_b(this.field_array_byte_i, var4);
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
       var4 += this.func_int_c(this.field_array_byte_i, var4);
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
       var4 += this.func_int_d(this.field_array_byte_i, var4);
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
       var4 += this.func_int_e(this.field_array_byte_i, var4);
       this.func_void_c(this.field_array_byte_i, var4);
       this.field_array_byte_i = null;
@@ -169,11 +169,11 @@ public final class class_ae implements class_u {
       }
 
       if (class_ce.field_array_class_javax_microedition_lcdui_Image_e == null) {
-         class_r.func_void_k();
+         MyGameCanvas.func_void_k();
 
          try {
-            class_ce.field_array_class_javax_microedition_lcdui_Image_e = (new class_br("/m/t/t" + (this.field_byte_b < 10 ? "0" : "") + this.field_byte_b)).func_array_class_javax_microedition_lcdui_Image_a();
-            class_r.func_void_k();
+            class_ce.field_array_class_javax_microedition_lcdui_Image_e = (new PNGMerger("/m/t/t" + (this.field_byte_b < 10 ? "0" : "") + this.field_byte_b)).getAllImage();
+            MyGameCanvas.func_void_k();
          } catch (IOException var3) {
          }
       }
@@ -212,27 +212,27 @@ public final class class_ae implements class_u {
    // $FF: renamed from: a (byte[], int) void
    private final void func_void_a(byte[] var1, int var2) {
       this.field_array_array_byte_b = new byte[this.field_int_b][this.field_int_a];
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
 
       for(int var3 = 0; var3 < this.field_int_b; ++var3) {
          System.arraycopy(var1, var2, this.field_array_array_byte_b[var3], 0, this.field_int_a);
          var2 += this.field_int_a;
       }
 
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
    }
 
    // $FF: renamed from: b (byte[], int) void
    private final void func_void_b(byte[] var1, int var2) {
       this.field_array_array_byte_c = new byte[this.field_int_b][this.field_int_a];
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
 
       for(int var3 = 0; var3 < this.field_int_b; ++var3) {
          System.arraycopy(var1, var2, this.field_array_array_byte_c[var3], 0, this.field_int_a);
          var2 += this.field_int_a;
       }
 
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
    }
 
    // $FF: renamed from: a (byte[], int) int
@@ -242,24 +242,24 @@ public final class class_ae implements class_u {
       int var6;
       if ((var4 = var1[var2++] & 255) > 0) {
          try {
-            class_br var5;
-            (var5 = new class_br("/m/t/o" + (this.field_byte_b < 10 ? "0" : "") + this.field_byte_b)).field_boolean_a = true;
-            class_r.func_void_k();
-            class_ce.field_array_class_javax_microedition_lcdui_Image_f = new Image[var5.func_int_a()];
+            PNGMerger var5;
+            (var5 = new PNGMerger("/m/t/o" + (this.field_byte_b < 10 ? "0" : "") + this.field_byte_b)).enableLoad = true;
+            MyGameCanvas.func_void_k();
+            class_ce.field_array_class_javax_microedition_lcdui_Image_f = new Image[var5.getImgCount()];
             var3 = class_ce.field_array_class_javax_microedition_lcdui_Image_f;
-            class_r.func_void_k();
+            MyGameCanvas.func_void_k();
 
             for(var6 = 0; var6 < var4; ++var6) {
                int var7 = var1[var2++] & 255;
-               var3[var7] = var5.func_class_javax_microedition_lcdui_Image_a(var7);
-               class_r.func_void_k();
+               var3[var7] = var5.getImageById(var7);
+               MyGameCanvas.func_void_k();
             }
          } catch (IOException var13) {
             var13.printStackTrace();
          }
       }
 
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
       int var14 = var1[var2++] & 255;
       this.field_array_class_aj_a = new class_aj[var14];
 
@@ -275,7 +275,7 @@ public final class class_ae implements class_u {
          this.field_array_class_aj_a[var6] = var12;
       }
 
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
       return 1 + var4 + 1 + var14 * 5;
    }
 
@@ -300,10 +300,10 @@ public final class class_ae implements class_u {
       byte var8;
       byte var9;
       try {
-         class_br var15;
-         (var15 = new class_br("/npc/all")).field_boolean_a = true;
-         class_r.func_void_k();
-         class_ce.field_array_class_javax_microedition_lcdui_Image_g = new Image[var15.func_int_a()];
+         PNGMerger var15;
+         (var15 = new PNGMerger("/npc/all")).enableLoad = true;
+         MyGameCanvas.func_void_k();
+         class_ce.field_array_class_javax_microedition_lcdui_Image_g = new Image[var15.getImgCount()];
          var4 = class_ce.field_array_class_javax_microedition_lcdui_Image_g;
          byte var7 = 0;
 
@@ -311,8 +311,8 @@ public final class class_ae implements class_u {
             var9 = var1[var2++];
             ++var14;
             if (var9 >= 18) {
-               var4[var9 - 18] = var15.func_class_javax_microedition_lcdui_Image_a(var9 - 18);
-               class_r.func_void_k();
+               var4[var9 - 18] = var15.getImageById(var9 - 18);
+               MyGameCanvas.func_void_k();
             } else if (var9 == 3) {
                class_ce.field_array_byte_l[var7] = var9;
                class_ce.func_void_a((short)17, var7, true);
@@ -323,7 +323,7 @@ public final class class_ae implements class_u {
                ++var7;
             } else {
                class_ce.field_array_byte_l[var7] = var9;
-               class_r.func_void_k();
+               MyGameCanvas.func_void_k();
                class_ce.func_void_b(var9, var7);
                ++var7;
                (new StringBuffer()).append("Npc Loaded - ").append(var9).toString();
@@ -333,7 +333,7 @@ public final class class_ae implements class_u {
          var13.printStackTrace();
       }
 
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
       int var16 = var1[var2++] & 255;
       ++var14;
       this.field_array_class_ac_a = new class_ac[var16];
@@ -364,7 +364,7 @@ public final class class_ae implements class_u {
          this.field_array_class_ac_a[var17] = var18;
       }
 
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
       return var14;
    }
 
@@ -385,12 +385,12 @@ public final class class_ae implements class_u {
       int var4;
       class_x.func_void_a((var4 = var1[var2++] & 255) <= 5);
       int var12 = var11 + 1;
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
       byte[] var5 = null;
       if (var4 != 0) {
          class_j.func_void_a((int)5);
-         var5 = class_ce.func_array_byte_a("/enm/data" + (class_n.field_byte_g >= 2 ? 2 : class_n.field_byte_g));
-         class_r.func_void_k();
+         var5 = class_ce.getResourceByName("/enm/data" + (class_n.field_byte_g >= 2 ? 2 : class_n.field_byte_g));
+         MyGameCanvas.func_void_k();
       }
 
       for(byte var6 = 0; var6 < var4; ++var6) {
@@ -398,14 +398,14 @@ public final class class_ae implements class_u {
          ++var12;
          class_ce.field_array_byte_k[var6] = var7;
          class_j.func_void_a(var5, var7, var6);
-         class_r.func_void_k();
+         MyGameCanvas.func_void_k();
          class_ce.func_void_a((short)var7, var6, false);
          class_j.func_void_a(var6);
-         class_r.func_void_k();
+         MyGameCanvas.func_void_k();
          (new StringBuffer()).append("Enemy Loaded - ").append(var7).toString();
       }
 
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
       int var13 = var1[var2++] & 255;
       ++var12;
 
@@ -415,7 +415,7 @@ public final class class_ae implements class_u {
          byte var10 = var1[var2++];
          var12 += 3;
          this.func_void_a((int)var10, (int)0, (int)var8, (int)var9);
-         class_r.func_void_k();
+         MyGameCanvas.func_void_k();
       }
 
       return var12;
@@ -426,13 +426,13 @@ public final class class_ae implements class_u {
       byte var3 = var1[var2++];
 
       try {
-         class_br var4;
-         (var4 = new class_br("/m/face")).field_boolean_a = true;
-         class_ce.field_array_class_javax_microedition_lcdui_Image_h = new Image[var4.func_int_a()];
+         PNGMerger var4;
+         (var4 = new PNGMerger("/m/face")).enableLoad = true;
+         class_ce.field_array_class_javax_microedition_lcdui_Image_h = new Image[var4.getImgCount()];
 
          for(int var5 = 0; var5 < var3; ++var5) {
             byte var6 = var1[var2++];
-            class_ce.field_array_class_javax_microedition_lcdui_Image_h[var6] = var4.func_class_javax_microedition_lcdui_Image_a(var6);
+            class_ce.field_array_class_javax_microedition_lcdui_Image_h[var6] = var4.getImageById(var6);
          }
       } catch (IOException var7) {
          var7.printStackTrace();
@@ -452,7 +452,7 @@ public final class class_ae implements class_u {
       int var4 = var1[var2++] & 255;
       int var10 = var3 + 1;
       this.field_array_class_java_lang_Object_a = new Object[var4];
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
 
       int var5;
       int var6;
@@ -473,7 +473,7 @@ public final class class_ae implements class_u {
          }
       }
 
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
       var5 = var1[var2++] & 255;
       ++var10;
       this.field_array_class_java_lang_Object_b = new Object[var5];
@@ -495,7 +495,7 @@ public final class class_ae implements class_u {
          }
       }
 
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
       var6 = var1[var2++] & 255;
       ++var10;
       this.field_array_class_java_lang_Object_c = new Object[var6];
@@ -508,7 +508,7 @@ public final class class_ae implements class_u {
          var10 += var8;
       }
 
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
       return var10;
    }
 
@@ -664,7 +664,7 @@ public final class class_ae implements class_u {
          } else if (this.field_byte_e < 3) {
             var1.setClip(0, var6 + 4 * (3 - this.field_byte_e), var4, 8 * this.field_byte_e);
          } else {
-            var1.setClip(0, 0, class_r.field_int_g, class_r.field_int_h);
+            var1.setClip(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
          }
 
          var1.setColor(0);
@@ -677,7 +677,7 @@ public final class class_ae implements class_u {
          --this.field_byte_e;
       }
 
-      var1.setClip(0, 0, class_r.field_int_g, class_r.field_int_h);
+      var1.setClip(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
    }
 
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int, int, int) void
@@ -751,8 +751,8 @@ public final class class_ae implements class_u {
    public final void func_void_b(Graphics var1) {
       int var2 = this.field_int_a * field_byte_c;
       int var3 = this.field_int_b * field_byte_c;
-      int var4 = class_r.field_int_i - var2 / 2;
-      int var5 = class_r.field_int_j - var3 / 2;
+      int var4 = MyGameCanvas.canvasHalfWidth - var2 / 2;
+      int var5 = MyGameCanvas.field_int_j - var3 / 2;
       var1.setColor(0);
       var1.drawRect(var4 - 1, var5 - 1, var2 + 1, var3 + 1);
 
@@ -777,20 +777,20 @@ public final class class_ae implements class_u {
          }
 
          var5 += field_byte_c;
-         var4 = class_r.field_int_i - var2 / 2;
+         var4 = MyGameCanvas.canvasHalfWidth - var2 / 2;
       }
 
       if (this.field_boolean_d) {
          class_ao var8 = class_n.func_class_ao_a();
          var1.setColor(16727871);
-         var1.fillRect(class_r.field_int_i - var2 / 2 + var8.field_byte_a * field_byte_c, class_r.field_int_j - var3 / 2 + var8.field_byte_b * field_byte_c, field_byte_c, field_byte_c);
+         var1.fillRect(MyGameCanvas.canvasHalfWidth - var2 / 2 + var8.field_byte_a * field_byte_c, MyGameCanvas.field_int_j - var3 / 2 + var8.field_byte_b * field_byte_c, field_byte_c, field_byte_c);
       }
 
       this.field_boolean_d = !this.field_boolean_d;
       var1.setColor(0);
-      var1.fillRect(0, 0, class_r.field_int_g, 20);
+      var1.fillRect(0, 0, MyGameCanvas.canvasWidth, 20);
       var1.setColor(16777215);
-      class_bh.func_void_a(var1, class_r.field_int_i, 8, this.field_array_char_a, 1);
+      class_bh.func_void_a(var1, MyGameCanvas.canvasHalfWidth, 8, this.field_array_char_a, 1);
    }
 
    // $FF: renamed from: b () void
@@ -1082,7 +1082,7 @@ public final class class_ae implements class_u {
    // $FF: renamed from: e () void
    public static final void func_void_e() {
       class_j.func_void_a((int)5);
-      byte[] var0 = class_ce.func_array_byte_a("/enm/data" + (class_n.field_byte_g >= 2 ? 2 : class_n.field_byte_g));
+      byte[] var0 = class_ce.getResourceByName("/enm/data" + (class_n.field_byte_g >= 2 ? 2 : class_n.field_byte_g));
       class_ce.field_array_byte_k[0] = 32;
       class_j.func_void_a(var0, (byte)32, (byte)0);
       class_ce.func_void_e((byte)1);
@@ -1100,7 +1100,7 @@ public final class class_ae implements class_u {
    // $FF: renamed from: g () void
    public static final void func_void_g() {
       class_j.func_void_a((int)5);
-      byte[] var0 = class_ce.func_array_byte_a("/enm/data" + (class_n.field_byte_g >= 2 ? 2 : class_n.field_byte_g));
+      byte[] var0 = class_ce.getResourceByName("/enm/data" + (class_n.field_byte_g >= 2 ? 2 : class_n.field_byte_g));
       class_ce.field_array_byte_k[0] = 35;
       class_ce.field_array_byte_k[1] = 36;
       class_ce.field_array_byte_k[2] = 37;
@@ -1148,7 +1148,7 @@ public final class class_ae implements class_u {
    // $FF: renamed from: h () void
    public static final void func_void_h() {
       class_j.func_void_a((int)5);
-      byte[] var0 = class_ce.func_array_byte_a("/enm/data" + (class_n.field_byte_g >= 2 ? 2 : class_n.field_byte_g));
+      byte[] var0 = class_ce.getResourceByName("/enm/data" + (class_n.field_byte_g >= 2 ? 2 : class_n.field_byte_g));
       class_ce.field_array_byte_k[0] = 39;
       class_ce.field_array_byte_k[1] = 40;
       class_ce.field_array_byte_k[2] = 41;
@@ -1179,7 +1179,7 @@ public final class class_ae implements class_u {
 
    // $FF: renamed from: j () void
    public static final void func_void_j() {
-      byte[] var0 = class_ce.func_array_byte_a("/enm/data" + (class_n.field_byte_g >= 2 ? 2 : class_n.field_byte_g));
+      byte[] var0 = class_ce.getResourceByName("/enm/data" + (class_n.field_byte_g >= 2 ? 2 : class_n.field_byte_g));
       class_ce.field_array_byte_k[1] = 42;
       class_j.func_void_a(var0, (byte)42, (byte)1);
       class_ce.func_void_e((byte)4);

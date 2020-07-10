@@ -23,8 +23,8 @@ public final class class_ai extends class_cb implements class_u {
       if (field_class_ai_a == null) {
          field_class_ai_a = new class_ai();
          field_class_ai_a.field_class_cb_b = new class_q(field_class_ai_a);
-         field_int_a = class_r.field_int_i - 77;
-         field_int_b = class_r.field_int_j - 85;
+         field_int_a = MyGameCanvas.canvasHalfWidth - 77;
+         field_int_b = MyGameCanvas.field_int_j - 85;
       }
 
       return field_class_ai_a;

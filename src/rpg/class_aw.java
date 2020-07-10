@@ -105,7 +105,7 @@ public final class class_aw extends class_f {
             var4 = this.field_short_c < 0 ? 2 : 1;
          }
 
-         class_r.func_void_a(var1, this.field_short_c < 0 ? -this.field_short_c : this.field_short_c, var2 + 1, var3 - 30 - super.field_short_b * 4, 1, var4);
+         MyGameCanvas.func_void_a(var1, this.field_short_c < 0 ? -this.field_short_c : this.field_short_c, var2 + 1, var3 - 30 - super.field_short_b * 4, 1, var4);
          break;
       case 8:
       default:

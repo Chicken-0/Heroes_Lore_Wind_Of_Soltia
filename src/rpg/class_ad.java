@@ -242,7 +242,7 @@ public class class_ad {
          ++var3;
       }
 
-      byte[] var4 = class_ce.func_array_byte_a("/itm/mixtbl");
+      byte[] var4 = class_ce.getResourceByName("/itm/mixtbl");
       int var5 = 0;
 
       boolean var8;

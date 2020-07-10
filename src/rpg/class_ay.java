@@ -114,7 +114,7 @@ public final class class_ay extends class_cb {
       var2 += 2;
       var3 += 15;
       class_g var4 = class_n.func_class_ao_a().field_class_g_a;
-      class_r.func_int_a(var1, class_ce.field_class_z_g.func_array_char_a(2), var2 + 5, var3);
+      MyGameCanvas.func_int_a(var1, class_ce.field_class_z_g.func_array_char_a(2), var2 + 5, var3);
       this.func_void_a(var1, var2, var3, true);
 
       class_ad var5;

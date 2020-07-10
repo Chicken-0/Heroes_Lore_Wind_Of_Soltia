@@ -107,7 +107,7 @@ public final class class_ap extends class_cb {
       var1.setColor(4136767);
       var1.fillRect(var2, var3, 155, 170);
       class_cb.func_void_c(var1, var2 + 2, var3 + 4, 151, 162);
-      class_r.func_int_a(var1, class_ax.field_class_z_a.func_array_char_a(14), var2 + 3, var3 - 2);
+      MyGameCanvas.func_int_a(var1, class_ax.field_class_z_a.func_array_char_a(14), var2 + 3, var3 - 2);
       class_cb.func_void_a(var1, var2 + 4, var3 + 9, this.field_class_t_a, (byte)1, class_ax.field_class_z_a.func_array_char_a(15), super.field_byte_b == 0);
       class_cb.func_void_a(var1, var2 + 4, var3 + 9 + 36, this.field_class_ad_a, (byte)2, class_ax.field_class_z_a.func_array_char_a(16), super.field_byte_b == 1);
       class_cb.func_void_b(var1, var2 + 4, var3 + 9 + 72, 147, 31, 12558207);

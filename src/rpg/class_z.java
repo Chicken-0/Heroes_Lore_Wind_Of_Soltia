@@ -10,7 +10,7 @@ public final class class_z {
    public short field_short_a;
 
    public class_z(String var1) throws IOException {
-      byte[] var2 = class_ce.func_array_byte_a(var1 + ".tdf");
+      byte[] var2 = class_ce.getResourceByName(var1 + ".tdf");
       byte var3 = 0;
       int var7 = var3 + 1;
       this.field_short_a = (short)(var2[0] & 255);
@@ -27,6 +27,6 @@ public final class class_z {
 
    // $FF: renamed from: a (int) char[]
    public final char[] func_array_char_a(int var1) {
-      return class_cj.field_class_cj_a.func_class_java_lang_String_a(this.field_array_int_a[var1]).replace(';', '\n').toCharArray();
+      return BabbleText.instance.getTextById(this.field_array_int_a[var1]).replace(';', '\n').toCharArray();
    }
 }

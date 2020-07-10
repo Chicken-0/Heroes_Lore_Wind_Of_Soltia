@@ -37,7 +37,7 @@ public final class class_bh {
    // $FF: renamed from: l char[]
    public static char[] field_array_char_l;
    // $FF: renamed from: a char[][]
-   public static char[][] field_array_array_char_a = new char[7][];
+   public static char[][] arrayTitleMenuText = new char[7][];
    // $FF: renamed from: m char[]
    public static char[] field_array_char_m = "               ".toCharArray();
    // $FF: renamed from: n char[]
@@ -51,7 +51,7 @@ public final class class_bh {
    // $FF: renamed from: q char[]
    public static char[] field_array_char_q = null;
    // $FF: renamed from: r char[]
-   public static char[] field_array_char_r = null;
+   public static char[] labelTextVersion = null;
    // $FF: renamed from: s char[]
    public static char[] field_array_char_s;
    // $FF: renamed from: t char[]
@@ -81,14 +81,14 @@ public final class class_bh {
 
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, char[], char[]) void
    public static final void func_void_a(Graphics var0, char[] var1, char[] var2) {
-      var0.setClip(0, 0, class_r.field_int_g, class_r.field_int_h);
+      var0.setClip(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
       int var3 = func_int_a() + 5;
       int var5;
       int var7;
       if (var1 != null) {
          var5 = func_int_a(var1) + 2;
          boolean var6 = false;
-         var7 = class_r.field_int_h - var3 + 3;
+         var7 = MyGameCanvas.field_int_h - var3 + 3;
          var0.setColor(0);
          var0.fillRect(0, var7, var5, var3);
          var0.setColor(16777215);
@@ -97,8 +97,8 @@ public final class class_bh {
 
       if (var2 != null) {
          var5 = func_int_a(var2) + 2;
-         int var8 = class_r.field_int_g - var5;
-         var7 = class_r.field_int_h - var3 + 3;
+         int var8 = MyGameCanvas.canvasWidth - var5;
+         var7 = MyGameCanvas.field_int_h - var3 + 3;
          var0.setColor(0);
          var0.fillRect(var8, var7, var5, var3);
          var0.setColor(16777215);
@@ -109,25 +109,25 @@ public final class class_bh {
 
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics) void
    public static final void func_void_a(Graphics var0) {
-      var0.setClip(0, 0, class_r.field_int_g, class_r.field_int_h);
+      var0.setClip(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
       var0.setColor(0);
-      var0.fillRect(0, 0, class_r.field_int_g, class_r.field_int_h);
+      var0.fillRect(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
    }
 
    // $FF: renamed from: a (java.lang.String) void
    public static final void func_void_a(String var0) {
       try {
-         GameMIDlet.field_class_rpg_GameMIDlet_a.platformRequest(class_w.field_class_java_lang_String_a);
+         GameMIDlet.instance.platformRequest(MIDletConfig.urlApp);
       } catch (Exception var2) {
          var2.printStackTrace();
       }
 
-      GameMIDlet.field_class_rpg_GameMIDlet_a.func_void_a();
+      GameMIDlet.instance.endApp();
    }
 
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int, int) void
    public static final void func_void_a(Graphics var0, int var1, int var2, int var3) {
-      var2 = class_r.field_int_g >> 1;
+      var2 = MyGameCanvas.canvasWidth >> 1;
       func_void_a(true);
       int var4 = var1 >> 1;
       if (var1 % 2 == 0) {
@@ -136,7 +136,7 @@ public final class class_bh {
          var0.setColor(0);
       }
 
-      func_void_a(var0, var2, var3 + 4, field_array_array_char_a[var4], 1);
+      func_void_a(var0, var2, var3 + 4, arrayTitleMenuText[var4], 1);
       func_void_a(false);
    }
 
@@ -156,45 +156,45 @@ public final class class_bh {
    }
 
    // $FF: renamed from: a (cj) void
-   public static final void func_void_a(class_cj var0) {
-      field_class_java_lang_String_a = func_class_java_lang_String_a(3902) + " ";
-      field_class_java_lang_String_b = func_class_java_lang_String_a(3903);
-      field_array_char_a = func_class_java_lang_String_a(3904).toCharArray();
-      field_array_char_b = func_class_java_lang_String_a(3906).toCharArray();
-      field_array_char_c = func_class_java_lang_String_a(3907).toCharArray();
-      field_array_char_d = func_class_java_lang_String_a(3908).toCharArray();
-      field_array_char_e = func_class_java_lang_String_a(3909).toCharArray();
-      field_array_char_f = func_class_java_lang_String_a(3910).toCharArray();
-      field_array_char_g = func_class_java_lang_String_a(3911).toCharArray();
-      field_array_char_h = func_class_java_lang_String_a(3912).toCharArray();
-      field_array_char_i = func_class_java_lang_String_a(3913).toCharArray();
-      field_array_char_j = func_class_java_lang_String_a(3914).toCharArray();
-      field_array_char_k = func_class_java_lang_String_a(3915).toCharArray();
-      field_array_char_l = func_class_java_lang_String_a(3916).toCharArray();
-      field_array_array_char_a[0] = func_class_java_lang_String_a(3920).toCharArray();
-      field_array_array_char_a[1] = func_class_java_lang_String_a(3921).toCharArray();
-      field_array_array_char_a[2] = func_class_java_lang_String_a(3922).toCharArray();
-      field_array_array_char_a[3] = func_class_java_lang_String_a(3923).toCharArray();
-      field_array_array_char_a[4] = func_class_java_lang_String_a(3924).toCharArray();
-      field_array_array_char_a[5] = func_class_java_lang_String_a(3924).toCharArray();
-      field_array_array_char_a[6] = func_class_java_lang_String_a(3926).toCharArray();
-      field_array_char_s = func_class_java_lang_String_a(3932).toCharArray();
-      field_array_char_n = func_class_java_lang_String_a(3946).toCharArray();
-      field_array_char_t = func_class_java_lang_String_a(3947).toCharArray();
-      field_class_java_lang_String_d = func_class_java_lang_String_a(3948);
-      field_class_java_lang_String_c = func_class_java_lang_String_a(3949);
-      field_array_char_q = func_class_java_lang_String_a(3950).toCharArray();
+   public static final void func_void_a(BabbleText var0) {
+      field_class_java_lang_String_a = getTextById(3902) + " ";
+      field_class_java_lang_String_b = getTextById(3903);
+      field_array_char_a = getTextById(3904).toCharArray();
+      field_array_char_b = getTextById(3906).toCharArray();
+      field_array_char_c = getTextById(3907).toCharArray();
+      field_array_char_d = getTextById(3908).toCharArray();
+      field_array_char_e = getTextById(3909).toCharArray();
+      field_array_char_f = getTextById(3910).toCharArray();
+      field_array_char_g = getTextById(3911).toCharArray();
+      field_array_char_h = getTextById(3912).toCharArray();
+      field_array_char_i = getTextById(3913).toCharArray();
+      field_array_char_j = getTextById(3914).toCharArray();
+      field_array_char_k = getTextById(3915).toCharArray();
+      field_array_char_l = getTextById(3916).toCharArray();
+      arrayTitleMenuText[0] = getTextById(3920).toCharArray();
+      arrayTitleMenuText[1] = getTextById(3921).toCharArray();
+      arrayTitleMenuText[2] = getTextById(3922).toCharArray();
+      arrayTitleMenuText[3] = getTextById(3923).toCharArray();
+      arrayTitleMenuText[4] = getTextById(3924).toCharArray();
+      arrayTitleMenuText[5] = getTextById(3924).toCharArray();
+      arrayTitleMenuText[6] = getTextById(3926).toCharArray();
+      field_array_char_s = getTextById(3932).toCharArray();
+      field_array_char_n = getTextById(3946).toCharArray();
+      field_array_char_t = getTextById(3947).toCharArray();
+      field_class_java_lang_String_d = getTextById(3948);
+      field_class_java_lang_String_c = getTextById(3949);
+      field_array_char_q = getTextById(3950).toCharArray();
    }
 
    // $FF: renamed from: a (int) java.lang.String
-   public static final String func_class_java_lang_String_a(int var0) {
-      return class_cj.field_class_cj_a.func_class_java_lang_String_a(var0).replace(';', '\n');
+   public static final String getTextById(int var0) {
+      return BabbleText.instance.getTextById(var0).replace(';', '\n');
    }
 
    // $FF: renamed from: a (java.lang.String) char[]
    public static final char[] func_array_char_a(String var0) {
       try {
-         return class_cj.field_class_cj_a.func_class_java_lang_String_a(Integer.parseInt(var0.trim())).replace(';', '\n').toCharArray();
+         return BabbleText.instance.getTextById(Integer.parseInt(var0.trim())).replace(';', '\n').toCharArray();
       } catch (Exception var2) {
          return ("2." + var2.toString()).toCharArray();
       }
@@ -208,12 +208,12 @@ public final class class_bh {
       field_class_b_d = (class_b)class_b.func_class_az_a("fonts/big", 0, 16777215, true);
       field_class_b_e = (class_b)class_b.func_class_az_a("fonts/big", 16777215, 0, true);
       field_class_b_f = field_class_b_d;
-      field_class_b_a.field_boolean_b = true;
-      field_class_b_b.field_boolean_b = true;
-      field_class_b_c.field_boolean_b = true;
-      field_class_b_d.field_boolean_b = true;
-      field_class_b_e.field_boolean_b = true;
-      field_class_b_f.field_boolean_b = true;
+      field_class_b_a.activeControlChar = true;
+      field_class_b_b.activeControlChar = true;
+      field_class_b_c.activeControlChar = true;
+      field_class_b_d.activeControlChar = true;
+      field_class_b_e.activeControlChar = true;
+      field_class_b_f.activeControlChar = true;
       field_class_b_g = field_class_b_a;
    }
 
@@ -224,7 +224,7 @@ public final class class_bh {
 
    // $FF: renamed from: a (char[]) int
    public static final int func_int_a(char[] var0) {
-      return field_class_b_g.func_int_a(func_class_java_lang_String_a(var0));
+      return field_class_b_g.getTextWidth(func_class_java_lang_String_a(var0));
    }
 
    // $FF: renamed from: a (char) boolean
@@ -295,7 +295,7 @@ public final class class_bh {
    }
 
    // $FF: renamed from: a (int) az
-   private static class_az func_class_az_a(int var0) {
+   private static MFont func_class_az_a(int var0) {
       if (field_boolean_a) {
          if (var0 == 0) {
             return field_class_b_d;
@@ -316,32 +316,32 @@ public final class class_bh {
 
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int, int, int, char[], int, int, int) void
    public static final void func_void_a(Graphics var0, int var1, int var2, int var3, int var4, char[] var5, int var6, int var7, int var8) {
-      var0.setClip(0, 0, class_r.field_int_g, class_r.field_int_h);
-      class_az var9 = func_class_az_a(var0.getColor());
+      var0.setClip(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
+      MFont var9 = func_class_az_a(var0.getColor());
       if (var6 + var8 > var5.length) {
          var8 = var5.length - var6;
       }
 
       String var10 = new String(var5, var6, var8);
-      var9.func_int_a(var0, func_class_java_util_Vector_a(var10, var3), var1, var2, class_r.field_int_h, 20);
+      var9.func_int_a(var0, func_class_java_util_Vector_a(var10, var3), var1, var2, MyGameCanvas.field_int_h, 20);
    }
 
    // $FF: renamed from: b (javax.microedition.lcdui.Graphics, int, int, int, int, char[], int, int, int) void
    public static final void func_void_b(Graphics var0, int var1, int var2, int var3, int var4, char[] var5, int var6, int var7, int var8) {
-      var0.setClip(0, 0, class_r.field_int_g, class_r.field_int_h);
-      class_az var9 = func_class_az_a(var0.getColor());
+      var0.setClip(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
+      MFont var9 = func_class_az_a(var0.getColor());
       if (var6 + var8 > var5.length) {
          var8 = var5.length - var6;
       }
 
       String var10 = new String(var5, var6, var8);
-      var9.func_int_a(var0, func_class_java_util_Vector_a(var10, var3), var1, var2, class_r.field_int_h, 17);
+      var9.func_int_a(var0, func_class_java_util_Vector_a(var10, var3), var1, var2, MyGameCanvas.field_int_h, 17);
    }
 
    // $FF: renamed from: c (javax.microedition.lcdui.Graphics, int, int, int, int, char[], int, int, int) void
    public static final void func_void_c(Graphics var0, int var1, int var2, int var3, int var4, char[] var5, int var6, int var7, int var8) {
-      var0.setClip(0, 0, class_r.field_int_g, class_r.field_int_h);
-      class_az var9 = func_class_az_a(var0.getColor());
+      var0.setClip(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
+      MFont var9 = func_class_az_a(var0.getColor());
       Vector var10;
       int var11 = Math.min((var10 = func_class_java_util_Vector_a(new String(var5, var6, var5.length - var6), var3)).size(), 3);
 
@@ -362,10 +362,10 @@ public final class class_bh {
 
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int, int, int, char[], int) int
    public static final int func_int_a(Graphics var0, int var1, int var2, int var3, int var4, char[] var5, int var6) {
-      var0.setClip(0, 0, class_r.field_int_g, class_r.field_int_h);
-      class_az var7 = func_class_az_a(var0.getColor());
+      var0.setClip(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
+      MFont var7 = func_class_az_a(var0.getColor());
       String var8 = func_class_java_lang_String_a(var5);
-      return var7.func_int_a(var0, func_class_java_util_Vector_a(var8, var3), var1, var2, class_r.field_int_h, var6);
+      return var7.func_int_a(var0, func_class_java_util_Vector_a(var8, var3), var1, var2, MyGameCanvas.field_int_h, var6);
    }
 
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int, int, int, char[]) int
@@ -392,6 +392,6 @@ public final class class_bh {
 
    // $FF: renamed from: a (java.lang.String) javax.microedition.lcdui.Image
    public static final Image func_class_javax_microedition_lcdui_Image_a(String var0) throws IOException {
-      return Image.createImage("/" + class_cj.field_class_cj_a.field_array_class_java_lang_String_a[class_cj.field_class_cj_a.field_byte_a] + "/" + var0);
+      return Image.createImage("/" + BabbleText.instance.arrayLanguageCode[BabbleText.instance.idxLangCode] + "/" + var0);
    }
 }

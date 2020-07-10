@@ -140,7 +140,7 @@ public final class class_ab extends class_cb {
          }
 
          var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_o, var2 + 32, var3 + 65, 20);
-         class_r.func_void_c(var1, this.field_byte_c, var2 + 68, var3 + 65, 8);
+         MyGameCanvas.func_void_c(var1, this.field_byte_c, var2 + 68, var3 + 65, 8);
          var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_d, var2 + 77, var3 + 65, 20);
       }
 

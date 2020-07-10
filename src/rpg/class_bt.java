@@ -11,19 +11,19 @@ public final class class_bt extends class_cb {
 
    public class_bt(class_cb var1, boolean var2) {
       super(var1, (byte)4);
-      if (class_w.func_boolean_a() || class_w.func_boolean_b()) {
+      if (MIDletConfig.func_boolean_a() || MIDletConfig.func_boolean_b()) {
          ++super.field_byte_a;
       }
 
       this.field_boolean_c = var2;
-      class_bh.field_class_b_a.field_boolean_b = false;
-      class_bh.field_class_b_b.field_boolean_b = false;
-      class_bh.field_class_b_c.field_boolean_b = false;
+      class_bh.field_class_b_a.activeControlChar = false;
+      class_bh.field_class_b_b.activeControlChar = false;
+      class_bh.field_class_b_c.activeControlChar = false;
       this.field_array_array_char_a = new char[super.field_byte_a][];
 
       for(byte var3 = 0; var3 < super.field_byte_a; ++var3) {
          if (var3 == 4) {
-            this.field_array_array_char_a[var3] = class_w.func_class_java_lang_String_a().toCharArray();
+            this.field_array_array_char_a[var3] = MIDletConfig.func_class_java_lang_String_a().toCharArray();
          } else {
             this.field_array_array_char_a[var3] = class_ce.field_class_z_e.func_array_char_a(var3);
          }
@@ -40,25 +40,25 @@ public final class class_bt extends class_cb {
       } else if (var2 != 53 && var1 != 8) {
          if (var2 == -8) {
             super.field_class_cb_a.func_void_a((byte)-1, (byte)-1);
-            class_bh.field_class_b_a.field_boolean_b = true;
-            class_bh.field_class_b_b.field_boolean_b = true;
-            class_bh.field_class_b_c.field_boolean_b = true;
+            class_bh.field_class_b_a.activeControlChar = true;
+            class_bh.field_class_b_b.activeControlChar = true;
+            class_bh.field_class_b_c.activeControlChar = true;
             return true;
          } else {
             return true;
          }
       } else {
          byte var3 = (byte)(super.field_byte_b + 6);
-         if (class_x.field_boolean_a && super.field_byte_b == 5) {
+         if (class_x.activeDemoVersion && super.field_byte_b == 5) {
             ++var3;
          }
 
          char[] var4 = class_ce.field_class_z_e.func_array_char_a(var3);
          if (super.field_byte_b == super.field_byte_a - 1) {
-            if (class_w.func_boolean_a()) {
-               var4 = class_cj.field_class_cj_a.func_class_java_lang_String_a(3930).toCharArray();
-            } else if (class_w.func_boolean_b()) {
-               var4 = class_bh.func_class_java_lang_String_a(class_cj.field_class_cj_a.func_class_java_lang_String_a(3934), "XXX", new String(class_w.func_class_java_lang_String_a())).toCharArray();
+            if (MIDletConfig.func_boolean_a()) {
+               var4 = BabbleText.instance.getTextById(3930).toCharArray();
+            } else if (MIDletConfig.func_boolean_b()) {
+               var4 = class_bh.func_class_java_lang_String_a(BabbleText.instance.getTextById(3934), "XXX", new String(MIDletConfig.func_class_java_lang_String_a())).toCharArray();
             }
          }
 
@@ -80,10 +80,10 @@ public final class class_bt extends class_cb {
          var3 += 8;
       } else {
          var1.setColor(4136767);
-         var1.fillRect(0, 0, class_r.field_int_g, class_r.field_int_h);
+         var1.fillRect(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
          class_bf.func_void_c(var1, var2, var3);
          class_bf.func_void_b(var1, var2, var3 + 24, 3);
-         class_bh.func_void_a(var1, 7, class_r.field_int_g >> 1, var3 + 5);
+         class_bh.func_void_a(var1, 7, MyGameCanvas.canvasWidth >> 1, var3 + 5);
          var3 += 41;
       }
 
@@ -97,7 +97,7 @@ public final class class_bt extends class_cb {
             var1.setColor(var5);
          }
 
-         class_bh.func_void_a(var1, class_r.field_int_g >> 1, var3 + var6 * 15, this.field_array_array_char_a[var6], 1);
+         class_bh.func_void_a(var1, MyGameCanvas.canvasWidth >> 1, var3 + var6 * 15, this.field_array_array_char_a[var6], 1);
       }
 
       class_bh.func_void_a(false);

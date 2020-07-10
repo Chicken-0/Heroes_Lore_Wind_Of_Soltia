@@ -9,7 +9,7 @@ public final class class_bs implements Runnable {
    // $FF: renamed from: a javax.microedition.lcdui.Display
    private Display field_class_javax_microedition_lcdui_Display_a;
    // $FF: renamed from: a r
-   private class_r field_class_r_a;
+   private MyGameCanvas field_class_r_a;
    // $FF: renamed from: a as
    public static class_as field_class_as_a;
    // $FF: renamed from: c int
@@ -50,7 +50,7 @@ public final class class_bs implements Runnable {
 
    private class_bs(Display var1) {
       this.field_int_a = class_bw.field_int_a;
-      this.field_boolean_a = !class_x.field_boolean_a;
+      this.field_boolean_a = !class_x.activeDemoVersion;
       this.field_boolean_b = false;
       this.field_boolean_c = false;
       this.field_boolean_d = true;
@@ -163,7 +163,7 @@ public final class class_bs implements Runnable {
    public final byte[] func_array_byte_a() {
       boolean var1 = false;
       int var3 = 0 | (this.field_int_a & 15) << 4;
-      if (class_x.field_boolean_a && this.field_boolean_a) {
+      if (class_x.activeDemoVersion && this.field_boolean_a) {
          var3 |= 8;
       }
 
@@ -189,7 +189,7 @@ public final class class_bs implements Runnable {
    // $FF: renamed from: a (byte[]) void
    public final void func_void_a(byte[] var1) {
       this.field_int_a = (byte)((var1[0] & 240) >> 4);
-      if (class_x.field_boolean_a) {
+      if (class_x.activeDemoVersion) {
          this.field_boolean_a = (var1[0] & 8) != 0;
       }
 

@@ -34,7 +34,7 @@ public final class class_at extends class_cb {
             if ((var4 = var3.field_class_g_a.func_array_byte_a(false, (byte)0)).length > 0) {
                super.field_class_cb_b = new class_m(this, var4, super.field_byte_b, class_aa.field_class_z_a.func_array_char_a(3));
             } else {
-               this.func_void_a(new Object[]{class_cj.field_class_cj_a.func_class_java_lang_String_a(3936).toCharArray()});
+               this.func_void_a(new Object[]{BabbleText.instance.getTextById(3936).toCharArray()});
             }
          } else if (super.field_byte_b == 1) {
             int var6 = var3.field_class_g_a.func_int_a((byte)11, (byte)0);
@@ -106,7 +106,7 @@ public final class class_at extends class_cb {
       var1.setColor(4136767);
       var1.fillRect(var2, var3, 155, 170);
       class_cb.func_void_c(var1, var2 + 2, var3 + 4, 151, 162);
-      class_r.func_int_a(var1, class_aa.field_class_z_a.func_array_char_a(13), var2 + 3, var3 - 2);
+      MyGameCanvas.func_int_a(var1, class_aa.field_class_z_a.func_array_char_a(13), var2 + 3, var3 - 2);
       class_cb.func_void_b(var1, var2 + 3, var3 + 7, 149, 17, 10452863);
       var1.setColor(16777215);
       class_bh.func_int_a(var1, var2 + 6, var3 + 11, class_aa.field_class_z_a.func_array_char_a(14), 1);
@@ -124,8 +124,8 @@ public final class class_at extends class_cb {
       int var8;
       if (this.field_byte_d == 2) {
          this.field_byte_d = 1;
-         var8 = class_r.field_int_i - 55;
-         int var6 = class_r.field_int_j - 11;
+         var8 = MyGameCanvas.canvasHalfWidth - 55;
+         int var6 = MyGameCanvas.field_int_j - 11;
          class_cb.func_void_a(var1, var8, var6, 110, 22);
          class_cb.func_void_b(var1, var8, var6, 110, 22);
          var1.setColor(16777215);

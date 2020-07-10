@@ -52,7 +52,7 @@ public final class class_c extends class_cb {
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int) void
    public final void func_void_a(Graphics var1, int var2, int var3) {
       var1.setColor(4136767);
-      var1.fillRect(0, 0, class_r.field_int_g, class_r.field_int_h);
+      var1.fillRect(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
       class_bf.func_void_c(var1, var2, var3);
       class_bh.func_void_a(var1, 1, var2 + 155 >> 1, var3 + 5);
       class_bf.func_void_b(var1, var2, var3 + 24, 3);

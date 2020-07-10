@@ -65,7 +65,7 @@ public final class class_af extends class_cb {
       switch(var2) {
       case 2:
       case 6:
-         this.field_int_a = 8 + class_bh.func_int_a(class_bh.func_int_a(class_r.field_int_g, 80) - 10, 1, this.field_array_char_a, 0, 0, this.field_array_char_a.length);
+         this.field_int_a = 8 + class_bh.func_int_a(class_bh.func_int_a(MyGameCanvas.canvasWidth, 80) - 10, 1, this.field_array_char_a, 0, 0, this.field_array_char_a.length);
          break;
       case 3:
       case 4:
@@ -80,18 +80,18 @@ public final class class_af extends class_cb {
             }
 
             var9 = (char[])((char[])this.field_array_class_java_lang_Object_a[var8]);
-            this.field_int_a += 3 + class_bh.func_int_a(class_bh.func_int_a(class_r.field_int_g, 80) - 10, 1, var9, 0, 0, var9.length);
+            this.field_int_a += 3 + class_bh.func_int_a(class_bh.func_int_a(MyGameCanvas.canvasWidth, 80) - 10, 1, var9, 0, 0, var9.length);
             ++var8;
          }
       case 7:
       case 9:
       case 10:
       default:
-         this.field_int_a = 22 + class_bh.func_int_a(class_bh.func_int_a(class_r.field_int_g, 80) - 10, 1, this.field_array_char_a, 0, 0, this.field_array_char_a.length);
+         this.field_int_a = 22 + class_bh.func_int_a(class_bh.func_int_a(MyGameCanvas.canvasWidth, 80) - 10, 1, this.field_array_char_a, 0, 0, this.field_array_char_a.length);
          break;
       case 11:
       case 12:
-         this.field_int_a = 8 + class_bh.func_int_a(class_bh.func_int_a(class_r.field_int_g, 80) - 10, 1, this.field_array_char_a, 0, 0, this.field_array_char_a.length);
+         this.field_int_a = 8 + class_bh.func_int_a(class_bh.func_int_a(MyGameCanvas.canvasWidth, 80) - 10, 1, this.field_array_char_a, 0, 0, this.field_array_char_a.length);
       }
 
       if (var2 == 6) {
@@ -154,9 +154,9 @@ public final class class_af extends class_cb {
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int) void
    public final void func_void_a(Graphics var1, int var2, int var3) {
       class_bh.func_void_a(var1);
-      int var4 = class_bh.func_int_a(class_r.field_int_g, 80);
-      var2 = class_r.field_int_i - (var4 >> 1);
-      var3 = class_r.field_int_j - (this.field_int_a >> 1);
+      int var4 = class_bh.func_int_a(MyGameCanvas.canvasWidth, 80);
+      var2 = MyGameCanvas.canvasHalfWidth - (var4 >> 1);
+      var3 = MyGameCanvas.field_int_j - (this.field_int_a >> 1);
       class_cb.func_void_a(var1, var2, var3, var4, this.field_int_a);
       class_cb.func_void_b(var1, var2, var3, var4, this.field_int_a);
       int var5;

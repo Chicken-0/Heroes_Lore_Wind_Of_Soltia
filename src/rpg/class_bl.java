@@ -12,14 +12,14 @@ public final class class_bl extends class_cb {
 
    public class_bl(class_cb var1, boolean var2) {
       super(var1, (byte)1);
-      GameMIDlet var3 = GameMIDlet.field_class_rpg_GameMIDlet_a;
-      String var4 = class_bh.func_class_java_lang_String_a(3927);
-      String var5 = class_bh.func_class_java_lang_String_a(3928);
+      GameMIDlet var3 = GameMIDlet.instance;
+      String var4 = class_bh.getTextById(3927);
+      String var5 = class_bh.getTextById(3928);
       String var6 = var3.getAppProperty("MIDlet-Name").toUpperCase();
-      String var7 = class_bh.func_class_java_lang_String_a(class_bh.field_array_char_r);
+      String var7 = class_bh.func_class_java_lang_String_a(class_bh.labelTextVersion);
       String var8 = var3.getAppProperty("MIDlet-Vendor");
       String var9 = class_bh.func_class_java_lang_String_a(class_bh.field_array_char_b);
-      String var10 = class_bh.func_class_java_lang_String_a(3905);
+      String var10 = class_bh.getTextById(3905);
       String var11 = var6 + "\n\n" + var10 + "\n\n" + var4 + '\n' + var8 + '\n' + var9 + "\n\n" + var5 + "\nv." + var7;
       this.field_array_char_a = var11.toCharArray();
       short[] var12 = new short[20];
@@ -33,9 +33,9 @@ public final class class_bl extends class_cb {
       this.field_array_short_a = new short[var14];
       System.arraycopy(var12, 0, this.field_array_short_a, 0, this.field_array_short_a.length);
       super.field_byte_a = (byte)this.field_array_short_a.length;
-      class_bh.field_class_b_a.field_boolean_b = false;
-      class_bh.field_class_b_b.field_boolean_b = false;
-      class_bh.field_class_b_c.field_boolean_b = false;
+      class_bh.field_class_b_a.activeControlChar = false;
+      class_bh.field_class_b_b.activeControlChar = false;
+      class_bh.field_class_b_c.activeControlChar = false;
    }
 
    // $FF: renamed from: a (int, int) boolean
@@ -46,9 +46,9 @@ public final class class_bl extends class_cb {
          return true;
       } else if (var2 == -8) {
          super.field_class_cb_a.func_void_a();
-         class_bh.field_class_b_a.field_boolean_b = true;
-         class_bh.field_class_b_b.field_boolean_b = true;
-         class_bh.field_class_b_c.field_boolean_b = true;
+         class_bh.field_class_b_a.activeControlChar = true;
+         class_bh.field_class_b_b.activeControlChar = true;
+         class_bh.field_class_b_c.activeControlChar = true;
          return true;
       } else {
          return true;
@@ -60,7 +60,7 @@ public final class class_bl extends class_cb {
       boolean var4 = false;
       boolean var5 = false;
       var1.setColor(4136767);
-      var1.fillRect(0, 0, class_r.field_int_g, class_r.field_int_h);
+      var1.fillRect(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
       class_bf.func_void_c(var1, var2, var3);
       class_bh.func_void_a(var1, 9, var2 + 155 >> 1, var3 + 5);
       class_bf.func_void_b(var1, var2, var3 + 24, 3);
@@ -76,7 +76,7 @@ public final class class_bl extends class_cb {
          }
       }
 
-      class_r.func_void_d(var1, var2 + 155 - 25, var3 - 8, super.field_byte_b + 1, super.field_byte_a);
+      MyGameCanvas.func_void_d(var1, var2 + 155 - 25, var3 - 8, super.field_byte_b + 1, super.field_byte_a);
       short var6 = this.field_array_short_a[super.field_byte_b];
       short var7 = super.field_byte_b == super.field_byte_a - 1 ? (short)this.field_array_char_a.length : this.field_array_short_a[super.field_byte_b + 1];
       if (this.field_array_char_a[0] == '!' && var6 == 0) {

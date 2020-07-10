@@ -5,7 +5,7 @@ import javax.microedition.lcdui.Graphics;
 import main.GameMIDlet;
 
 // $FF: renamed from: bg
-public final class class_bg extends class_r implements Runnable {
+public final class class_bg extends MyGameCanvas implements Runnable {
    // $FF: renamed from: a byte
    private byte field_byte_a;
    // $FF: renamed from: b byte
@@ -54,7 +54,7 @@ public final class class_bg extends class_r implements Runnable {
             (new Thread(field_class_bg_a)).start();
             return;
          case 6:
-            GameMIDlet.field_class_rpg_GameMIDlet_a.destroyApp(true);
+            GameMIDlet.instance.destroyApp(true);
          case 3:
          case 4:
          case 5:
@@ -75,13 +75,13 @@ public final class class_bg extends class_r implements Runnable {
          switch(this.field_byte_b) {
          case 1:
             class_ce.func_void_o();
-            class_r.func_void_k();
+            MyGameCanvas.func_void_k();
 
             try {
                class_ad.field_class_z_b = new class_z("/itm/itmtp");
-               class_r.func_void_k();
+               MyGameCanvas.func_void_k();
                class_t.field_class_z_a = new class_z("/itm/itmatt");
-               class_r.func_void_k();
+               MyGameCanvas.func_void_k();
             } catch (IOException var3) {
             }
 
@@ -116,7 +116,7 @@ public final class class_bg extends class_r implements Runnable {
             }
 
             this.func_void_b();
-            class_r.func_void_k();
+            MyGameCanvas.func_void_k();
             return;
          case 2:
             class_bu.func_void_e();
@@ -137,16 +137,16 @@ public final class class_bg extends class_r implements Runnable {
          break;
       case 1:
          var1.setColor(16777215);
-         var1.fillRect(0, 0, class_r.field_int_g, class_r.field_int_h);
-         int var3 = class_r.field_int_j - 68;
-         int var4 = class_r.field_int_i - 60;
+         var1.fillRect(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
+         int var3 = MyGameCanvas.field_int_j - 68;
+         int var4 = MyGameCanvas.canvasHalfWidth - 60;
          var1.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_j[2], var4 + 0, var3 + 25, 20);
          var1.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_j[3], var4 + 52, var3 + 25, 20);
          var1.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_j[4], var4 + 93, var3 + 2, 20);
          boolean var5 = false;
          var1.setColor(4136767);
-         if (class_bh.field_array_char_r != null) {
-            class_bh.func_int_a(var1, class_r.field_int_g - 2 - class_bh.func_int_a(class_bh.field_array_char_r), class_r.field_int_h - 31, class_bh.field_array_char_r, 0);
+         if (class_bh.labelTextVersion != null) {
+            class_bh.func_int_a(var1, MyGameCanvas.canvasWidth - 2 - class_bh.func_int_a(class_bh.labelTextVersion), MyGameCanvas.field_int_h - 31, class_bh.labelTextVersion, 0);
          }
 
          var1.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_k[this.field_byte_c < 4 ? this.field_byte_c : 8 - this.field_byte_c], this.field_short_a, this.field_short_b, 33);
@@ -165,36 +165,36 @@ public final class class_bg extends class_r implements Runnable {
             this.field_byte_d = 0;
          }
 
-         if (this.field_short_b > class_r.field_int_h + 10) {
-            this.field_short_a = (short)class_h.func_int_a(10, class_r.field_int_g / 2 - 10);
+         if (this.field_short_b > MyGameCanvas.field_int_h + 10) {
+            this.field_short_a = (short)class_h.func_int_a(10, MyGameCanvas.canvasWidth / 2 - 10);
             this.field_short_b = (short)(-10 * class_h.func_int_a(0, 4));
             this.field_byte_c = (byte)class_h.func_int_a(0, 7);
          }
 
-         if (this.field_short_d > class_r.field_int_h + 10) {
-            this.field_short_c = (short)class_h.func_int_a(class_r.field_int_g / 2 + 10, class_r.field_int_g - 10);
+         if (this.field_short_d > MyGameCanvas.field_int_h + 10) {
+            this.field_short_c = (short)class_h.func_int_a(MyGameCanvas.canvasWidth / 2 + 10, MyGameCanvas.canvasWidth - 10);
             this.field_short_d = (short)(-10 * class_h.func_int_a(3, 7));
             this.field_byte_d = (byte)class_h.func_int_a(0, 7);
          }
 
          if (this.field_int_a % 4 < 2) {
             var1.setColor(0);
-            class_bh.func_void_a(var1, class_r.field_int_i, class_r.field_int_h - 45, class_bh.field_array_char_q, 1);
+            class_bh.func_void_a(var1, MyGameCanvas.canvasHalfWidth, MyGameCanvas.field_int_h - 45, class_bh.field_array_char_q, 1);
          }
 
          ++this.field_int_a;
          break;
       case 10:
          var1.setColor(16777215);
-         var1.fillRect(0, 0, class_r.field_int_g, class_r.field_int_h);
+         var1.fillRect(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
          if (this.field_byte_c > 40) {
             this.field_short_a = (short)(this.field_short_a * 2);
          }
 
-         var1.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_i[4], class_r.field_int_i, this.field_int_a - this.field_short_a, 3);
+         var1.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_i[4], MyGameCanvas.canvasHalfWidth, this.field_int_a - this.field_short_a, 3);
          if (this.field_byte_c == 0) {
-            if (this.field_int_a < class_r.field_int_j - 1) {
-               this.field_int_a += (class_r.field_int_j - this.field_int_a) / 2;
+            if (this.field_int_a < MyGameCanvas.field_int_j - 1) {
+               this.field_int_a += (MyGameCanvas.field_int_j - this.field_int_a) / 2;
             } else {
                this.field_byte_c = 1;
             }
@@ -202,17 +202,17 @@ public final class class_bg extends class_r implements Runnable {
             switch(this.field_byte_c) {
             case 1:
             case 3:
-               this.field_int_a = class_r.field_int_j - 1;
+               this.field_int_a = MyGameCanvas.field_int_j - 1;
                break;
             case 2:
             case 4:
-               this.field_int_a = class_r.field_int_j;
+               this.field_int_a = MyGameCanvas.field_int_j;
             }
 
             ++this.field_byte_c;
          }
 
-         if (this.field_short_a > class_r.field_int_h) {
+         if (this.field_short_a > MyGameCanvas.field_int_h) {
             this.func_void_c();
          }
       }
@@ -222,19 +222,19 @@ public final class class_bg extends class_r implements Runnable {
 
    // $FF: renamed from: a () void
    public final void func_void_a() {
-      class_r.func_void_a("- INITIALIZE", 30);
+      MyGameCanvas.func_void_a("- INITIALIZE", 30);
       class_bh.func_void_a();
-      class_w.func_void_a(GameMIDlet.field_class_rpg_GameMIDlet_a);
+      MIDletConfig.init(GameMIDlet.instance);
       int var1;
-      if ((var1 = class_w.func_int_a()) >= 0) {
+      if ((var1 = MIDletConfig.getLangIdx()) >= 0) {
          System.out.println("langChoice " + var1);
-         class_r.field_int_m = 3;
+         MyGameCanvas.field_int_m = 3;
          this.field_byte_b = 1;
          this.field_byte_a = 0;
          this.func_void_b(var1);
          (new Thread(this)).start();
       } else {
-         class_r.field_int_m = 3;
+         MyGameCanvas.field_int_m = 3;
          this.field_byte_b = 1;
          this.field_byte_a = 0;
          this.func_void_b(1);
@@ -244,15 +244,15 @@ public final class class_bg extends class_r implements Runnable {
 
    // $FF: renamed from: b (int) void
    private void func_void_b(int var1) {
-      class_cj.field_class_cj_a.func_void_a("/lang/language", "", var1);
-      class_bh.func_void_a(class_cj.field_class_cj_a);
-      class_w.func_void_a();
+      BabbleText.instance.func_void_a("/lang/language", "", var1);
+      class_bh.func_void_a(BabbleText.instance);
+      MIDletConfig.setVersionTextLabel();
 
       try {
          class_ce.field_class_z_g = new class_z("/sgui/com");
          class_bh.field_array_char_p = class_ce.field_class_z_g.func_array_char_a(37);
          class_bh.field_array_char_o = class_ce.field_class_z_g.func_array_char_a(38);
-         class_r.func_void_k();
+         MyGameCanvas.func_void_k();
          this.field_byte_b = 1;
       } catch (IOException var3) {
       }
@@ -280,10 +280,10 @@ public final class class_bg extends class_r implements Runnable {
       class_bs.field_class_bs_a.func_void_a((int)15);
       this.field_int_a = 0;
       this.field_byte_a = 1;
-      this.field_short_a = (short)class_h.func_int_a(0, class_r.field_int_g / 2 - 10);
+      this.field_short_a = (short)class_h.func_int_a(0, MyGameCanvas.canvasWidth / 2 - 10);
       this.field_short_b = (short)(10 * class_h.func_int_a(0, 4));
       this.field_byte_c = (byte)class_h.func_int_a(0, 7);
-      this.field_short_c = (short)class_h.func_int_a(class_r.field_int_g / 2, class_r.field_int_g - 10);
+      this.field_short_c = (short)class_h.func_int_a(MyGameCanvas.canvasWidth / 2, MyGameCanvas.canvasWidth - 10);
       this.field_short_d = (short)(10 * class_h.func_int_a(3, 7));
       this.field_byte_d = (byte)class_h.func_int_a(0, 7);
       class_bw.func_void_b((int)22);
@@ -299,7 +299,7 @@ public final class class_bg extends class_r implements Runnable {
       if (var1 && !this.field_boolean_c) {
          this.field_byte_a = 0;
          this.field_byte_b = 2;
-         class_r.func_void_a("- STORY MODE", 52);
+         MyGameCanvas.func_void_a("- STORY MODE", 52);
          class_bs.field_class_bs_a.func_void_g();
          (new Thread(this)).start();
       } else {

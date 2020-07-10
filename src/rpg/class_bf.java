@@ -38,7 +38,7 @@ public final class class_bf extends class_cb {
 
    private class_bf(boolean var1, byte[] var2) {
       super((class_cb)null, (byte)6);
-      if (class_w.field_boolean_a) {
+      if (MIDletConfig.buySetupOnMenu) {
          ++super.field_byte_a;
       }
 
@@ -64,10 +64,10 @@ public final class class_bf extends class_cb {
 
    // $FF: renamed from: a (boolean, byte[]) void
    public static final void func_void_a(boolean var0, byte[] var1) {
-      field_int_a = class_r.field_int_i - 77;
-      field_int_b = class_r.field_int_j - 85;
+      field_int_a = MyGameCanvas.canvasHalfWidth - 77;
+      field_int_b = MyGameCanvas.field_int_j - 85;
       field_class_bf_a = new class_bf(var0, var1);
-      if (class_w.field_boolean_a) {
+      if (MIDletConfig.buySetupOnMenu) {
          field_int_c = 6;
          field_int_d = 5;
       }
@@ -82,11 +82,11 @@ public final class class_bf extends class_cb {
    // $FF: renamed from: a (int, int) boolean
    public final boolean func_boolean_a(int var1, int var2) {
       if (this.field_long_a > 0L) {
-         if (!class_w.field_boolean_c && class_w.field_boolean_b) {
+         if (!MIDletConfig.isDemoVersion && MIDletConfig.buySetupOnExit) {
             if (var2 == 53) {
-               class_bh.func_void_a(class_w.field_class_java_lang_String_a);
+               class_bh.func_void_a(MIDletConfig.urlApp);
             } else if (var2 == -8) {
-               GameMIDlet.field_class_rpg_GameMIDlet_a.func_void_a();
+               GameMIDlet.instance.endApp();
             }
          }
 
@@ -117,7 +117,7 @@ public final class class_bf extends class_cb {
             case 0:
                if (this.field_boolean_e) {
                   this.field_byte_d = 0;
-                  var3 = new Object[]{class_bh.func_class_java_lang_String_a(3929).toCharArray()};
+                  var3 = new Object[]{class_bh.getTextById(3929).toCharArray()};
                   this.func_void_a((byte)12, (byte)2, var3, class_bh.field_array_char_d, class_bh.field_array_char_e);
                } else {
                   super.field_class_cb_b = new class_c(this);
@@ -141,7 +141,7 @@ public final class class_bf extends class_cb {
                   this.field_byte_d = 2;
                   this.func_void_a((byte)2, (byte)2, var3);
                } else if (super.field_byte_b == field_int_d) {
-                  var3 = new Object[]{class_bh.func_class_java_lang_String_a(3918).toCharArray()};
+                  var3 = new Object[]{class_bh.getTextById(3918).toCharArray()};
                   this.field_byte_d = 3;
                   this.func_void_a((byte)12, (byte)2, var3);
                }
@@ -164,8 +164,8 @@ public final class class_bf extends class_cb {
             default:
                break;
             case 2:
-               if (class_w.field_boolean_c) {
-                  Object[] var3 = new Object[]{class_bh.func_class_java_lang_String_a(3919).toCharArray()};
+               if (MIDletConfig.isDemoVersion) {
+                  Object[] var3 = new Object[]{class_bh.getTextById(3919).toCharArray()};
                   this.field_byte_d = 4;
                   this.func_void_a((byte)12, (byte)2, var3, class_bh.field_array_char_j, class_bh.field_array_char_c);
                } else {
@@ -175,7 +175,7 @@ public final class class_bf extends class_cb {
                break;
             case 3:
             case 4:
-               class_bh.func_void_a(class_w.field_class_java_lang_String_a);
+               class_bh.func_void_a(MIDletConfig.urlApp);
             }
 
             return;
@@ -194,17 +194,17 @@ public final class class_bf extends class_cb {
    public final void func_void_a(Graphics var1) {
       if (this.field_long_a > 0L) {
          var1.setColor(16777215);
-         var1.fillRect(0, 0, class_r.field_int_g, class_r.field_int_h);
-         var1.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_i[4], class_r.field_int_i, class_as.field_int_d, 3);
+         var1.fillRect(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
+         var1.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_i[4], MyGameCanvas.canvasHalfWidth, class_as.field_int_d, 3);
          var1.setColor(0);
-         class_bh.func_void_a(var1, class_r.field_int_g >> 1, class_r.field_int_h - 23, class_bh.field_array_char_b, 1);
-         class_bh.func_void_a(var1, class_r.field_int_g >> 1, 10, class_cj.field_class_cj_a.func_class_java_lang_String_a(3941).toCharArray(), 1);
-         if (!class_w.field_boolean_c && class_w.field_boolean_b) {
-            class_bh.func_void_a(var1, class_w.func_class_java_lang_String_a().toCharArray(), class_bh.field_array_char_c);
+         class_bh.func_void_a(var1, MyGameCanvas.canvasWidth >> 1, MyGameCanvas.field_int_h - 23, class_bh.field_array_char_b, 1);
+         class_bh.func_void_a(var1, MyGameCanvas.canvasWidth >> 1, 10, BabbleText.instance.getTextById(3941).toCharArray(), 1);
+         if (!MIDletConfig.isDemoVersion && MIDletConfig.buySetupOnExit) {
+            class_bh.func_void_a(var1, MIDletConfig.func_class_java_lang_String_a().toCharArray(), class_bh.field_array_char_c);
          }
 
          if (System.currentTimeMillis() > this.field_long_a) {
-            GameMIDlet.field_class_rpg_GameMIDlet_a.func_void_a();
+            GameMIDlet.instance.endApp();
          }
 
       } else {
@@ -221,7 +221,7 @@ public final class class_bf extends class_cb {
    public final void func_void_a(Graphics var1, int var2, int var3) {
       var3 += 13;
       var1.setColor(4136767);
-      var1.fillRect(0, 0, class_r.field_int_g, class_r.field_int_h);
+      var1.fillRect(0, 0, MyGameCanvas.canvasWidth, MyGameCanvas.field_int_h);
       func_void_b(var1, var2, var3 - 12, 4);
       byte var4 = 18;
       if (this.field_byte_c == 0) {

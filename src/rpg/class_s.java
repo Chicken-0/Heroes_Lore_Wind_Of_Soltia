@@ -87,7 +87,7 @@ public final class class_s extends class_cb {
    public final void func_void_a(Graphics var1, int var2, int var3) {
       var2 += 2;
       var3 += 15;
-      class_r.func_int_a(var1, class_ai.field_class_z_a.func_array_char_a(39), var2 + 5, var3);
+      MyGameCanvas.func_int_a(var1, class_ai.field_class_z_a.func_array_char_a(39), var2 + 5, var3);
       if (super.field_byte_a <= 0) {
          class_cb.func_void_a(var1, var2 + 4, var3 + 10, 143, 137, 4136767, 10452799, 4144959);
          class_cb.func_void_a(var1, var2 + 4, var3 + 10, 143, 137, 6242111);

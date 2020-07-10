@@ -243,7 +243,7 @@ public final class class_n implements class_u {
          case 13:
             func_void_a((int)5);
             class_ai.func_class_ai_a().func_void_d();
-            if (class_x.field_boolean_a && field_byte_c == 1 || class_w.field_boolean_c && field_class_ao_a.field_byte_g >= 8) {
+            if (class_x.activeDemoVersion && field_byte_c == 1 || MIDletConfig.isDemoVersion && field_class_ao_a.field_byte_g >= 8) {
                class_ai.func_class_ai_a().func_void_e();
                return;
             }

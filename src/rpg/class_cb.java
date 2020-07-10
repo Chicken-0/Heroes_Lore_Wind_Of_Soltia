@@ -331,8 +331,8 @@ public abstract class class_cb implements class_u {
 
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int, int) void
    public static final void func_void_a(Graphics var0, int var1, int var2, int var3) {
-      class_r.func_void_c(var0, var3, var1, var2, 8);
-      int var4 = class_r.func_int_a(var3);
+      MyGameCanvas.func_void_c(var0, var3, var1, var2, 8);
+      int var4 = MyGameCanvas.func_int_a(var3);
       var0.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_m, var1 - var4, var2, 24);
    }
 
@@ -340,7 +340,7 @@ public abstract class class_cb implements class_u {
    public static final void func_void_a(Graphics var0, int var1, int var2, class_ad var3, boolean var4) {
       var0.drawImage(class_ce.field_array_class_javax_microedition_lcdui_Image_d[var3.field_byte_f], var1, var2 + 1, 3);
       if (var4 && var3.field_byte_h > 1) {
-         class_r.func_void_c(var0, var3.field_byte_h, var1 + 11, var2 + 2, 8);
+         MyGameCanvas.func_void_c(var0, var3.field_byte_h, var1 + 11, var2 + 2, 8);
       }
 
    }
@@ -352,7 +352,7 @@ public abstract class class_cb implements class_u {
          var0.setColor(16777215);
          var2 = var2 + class_bh.func_int_a(var0, var1, var2, 115, 1, var3.field_array_char_a) - (class_bh.func_int_a() + 2);
          var0.setColor(14663551);
-         if (class_r.field_int_g > 128) {
+         if (MyGameCanvas.canvasWidth > 128) {
             class_bh.func_int_a(var0, var1, var2 + 15, 110, 1, var3.field_array_char_b);
          } else {
             class_bh.func_int_a(var0, var1, var2 + 15, 75, 1, var3.field_array_char_b);
@@ -369,7 +369,7 @@ public abstract class class_cb implements class_u {
             var2 = var2 + class_bh.func_int_a(var0, var1, var2, 115, 1, var5.field_array_char_a) - (class_bh.func_int_a() + 2);
             var0.setColor(14663551);
             class_bh.func_int_a(var0, var1, var2 + 25, class_ce.field_class_z_g.func_array_char_a(var5 instanceof class_l ? 4 : 46), 1);
-            class_r.func_void_c(var0, var5.field_short_a, var1 + 155 - 47, var2 + 25, 8);
+            MyGameCanvas.func_void_c(var0, var5.field_short_a, var1 + 155 - 47, var2 + 25, 8);
             class_t var6;
             if (var3 instanceof class_t && (var6 = (class_t)var3).field_byte_c != -1) {
                var0.setColor(16711680);
@@ -378,7 +378,7 @@ public abstract class class_cb implements class_u {
 
             var0.setColor(14663551);
             class_bh.func_int_a(var0, var1, var2 + 40, class_ce.field_class_z_g.func_array_char_a(3), 1);
-            class_r.func_void_d(var0, var1 + 155 - 47, var2 + 40, var5.field_byte_e, var5.field_byte_d);
+            MyGameCanvas.func_void_d(var0, var1 + 155 - 47, var2 + 40, var5.field_byte_e, var5.field_byte_d);
             StringBuffer var8 = new StringBuffer();
 
             for(int var7 = 0; var7 < var5.field_array_byte_j.length; ++var7) {
@@ -390,7 +390,7 @@ public abstract class class_cb implements class_u {
             var8.append(class_bh.func_class_java_lang_String_a(var5.field_array_char_b));
             Object var9 = null;
             char[] var10 = var8.toString().toCharArray();
-            if (class_r.field_int_g > 128) {
+            if (MyGameCanvas.canvasWidth > 128) {
                class_bh.func_int_a(var0, var1, var2 + 55, 110, 1, var10);
             } else {
                class_bh.func_int_a(var0, var1, var2 + 55, 75, 1, var10);
@@ -403,8 +403,8 @@ public abstract class class_cb implements class_u {
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int, ad, byte, char[], boolean) void
    public static final void func_void_a(Graphics var0, int var1, int var2, class_ad var3, byte var4, char[] var5, boolean var6) {
       func_void_b(var0, var1, var2 + 1, 28, 31, 12558207);
-      int var7 = class_r.func_int_a(var0, class_ce.field_class_z_g.func_array_char_a(2), var1 + 2, var2 + 1);
-      class_r.func_void_c(var0, var4, var7 + 2, var2 + 1, 4);
+      int var7 = MyGameCanvas.func_int_a(var0, class_ce.field_class_z_g.func_array_char_a(2), var1 + 2, var2 + 1);
+      MyGameCanvas.func_void_c(var0, var4, var7 + 2, var2 + 1, 4);
       var0.setColor(16777215);
       class_bh.func_void_a(var0, var1 + 90, var2 + 2, var5, 1);
       boolean var8 = false;

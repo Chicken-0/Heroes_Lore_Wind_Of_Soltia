@@ -18,8 +18,8 @@ public final class class_aa extends class_cb {
    public static final class_aa func_class_aa_a() {
       if (field_class_aa_a == null) {
          field_class_aa_a = new class_aa();
-         field_int_a = class_r.field_int_i - 77;
-         field_int_b = class_r.field_int_j - 85;
+         field_int_a = MyGameCanvas.canvasHalfWidth - 77;
+         field_int_b = MyGameCanvas.field_int_j - 85;
       }
 
       return field_class_aa_a;

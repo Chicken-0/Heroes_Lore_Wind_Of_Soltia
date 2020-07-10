@@ -172,27 +172,27 @@ public final class class_ce implements class_u {
    // $FF: renamed from: a (byte) void
    public static final void func_void_a(byte var0) {
       try {
-         class_br var1;
-         (var1 = new class_br("/img/atteff1")).field_boolean_a = true;
+         PNGMerger var1;
+         (var1 = new PNGMerger("/img/atteff1")).enableLoad = true;
          func_void_a(var1, var0);
          field_array_class_javax_microedition_lcdui_Image_s = new Image[3];
-         field_array_class_javax_microedition_lcdui_Image_s[0] = var1.func_class_javax_microedition_lcdui_Image_a(0);
-         field_array_class_javax_microedition_lcdui_Image_s[1] = var1.func_class_javax_microedition_lcdui_Image_a(1);
-         field_array_class_javax_microedition_lcdui_Image_s[2] = var1.func_class_javax_microedition_lcdui_Image_a(2);
-         class_r.func_void_k();
-         var1.func_void_a("/img/atteff2");
+         field_array_class_javax_microedition_lcdui_Image_s[0] = var1.getImageById(0);
+         field_array_class_javax_microedition_lcdui_Image_s[1] = var1.getImageById(1);
+         field_array_class_javax_microedition_lcdui_Image_s[2] = var1.getImageById(2);
+         MyGameCanvas.func_void_k();
+         var1.fromImgPath("/img/atteff2");
          func_void_a(var1, var0);
          field_array_class_javax_microedition_lcdui_Image_t = new Image[3];
-         field_array_class_javax_microedition_lcdui_Image_t[0] = var1.func_class_javax_microedition_lcdui_Image_a(0);
-         field_array_class_javax_microedition_lcdui_Image_t[1] = var1.func_class_javax_microedition_lcdui_Image_a(1);
-         field_array_class_javax_microedition_lcdui_Image_t[2] = var1.func_class_javax_microedition_lcdui_Image_a(2);
-         class_r.func_void_k();
-         var1.func_void_a("/img/atteff3");
+         field_array_class_javax_microedition_lcdui_Image_t[0] = var1.getImageById(0);
+         field_array_class_javax_microedition_lcdui_Image_t[1] = var1.getImageById(1);
+         field_array_class_javax_microedition_lcdui_Image_t[2] = var1.getImageById(2);
+         MyGameCanvas.func_void_k();
+         var1.fromImgPath("/img/atteff3");
          field_array_class_javax_microedition_lcdui_Image_u = new Image[3];
-         field_array_class_javax_microedition_lcdui_Image_u[0] = var1.func_class_javax_microedition_lcdui_Image_a(0);
-         field_array_class_javax_microedition_lcdui_Image_u[1] = var1.func_class_javax_microedition_lcdui_Image_a(1);
-         field_array_class_javax_microedition_lcdui_Image_u[2] = var1.func_class_javax_microedition_lcdui_Image_a(2);
-         class_r.func_void_k();
+         field_array_class_javax_microedition_lcdui_Image_u[0] = var1.getImageById(0);
+         field_array_class_javax_microedition_lcdui_Image_u[1] = var1.getImageById(1);
+         field_array_class_javax_microedition_lcdui_Image_u[2] = var1.getImageById(2);
+         MyGameCanvas.func_void_k();
       } catch (IOException var2) {
          var2.printStackTrace();
       }
@@ -206,17 +206,17 @@ public final class class_ce implements class_u {
    }
 
    // $FF: renamed from: a (br, byte) void
-   private static final void func_void_a(class_br var0, byte var1) {
+   private static final void func_void_a(PNGMerger var0, byte var1) {
       switch(var1) {
       case 1:
-         var0.func_void_a(12574719, 16777152);
-         var0.func_void_a(10469375, 16760703);
-         var0.func_void_a(6258623, 16744255);
+         var0.convertImgColor(12574719, 16777152);
+         var0.convertImgColor(10469375, 16760703);
+         var0.convertImgColor(6258623, 16744255);
          return;
       case 3:
-         var0.func_void_a(12574719, 14679999);
-         var0.func_void_a(10469375, 12574655);
-         var0.func_void_a(6258623, 10469247);
+         var0.convertImgColor(12574719, 14679999);
+         var0.convertImgColor(10469375, 12574655);
+         var0.convertImgColor(6258623, 10469247);
       default:
       }
    }
@@ -251,14 +251,14 @@ public final class class_ce implements class_u {
    // $FF: renamed from: a (byte, byte) void
    public static final void func_void_a(byte var0, byte var1) {
       if (var0 == 0 && var1 == 0) {
-         field_array_class_java_lang_Object_d[var1] = func_array_byte_a("/grd/spr/0_01.eif");
-         func_void_a(true, (byte[])((byte[])field_array_class_java_lang_Object_d[var1]), 0, (byte)12, (byte)-1, (class_br)null);
-         field_array_byte_m = func_array_byte_a("/grd/spr/0_02.eif");
-         func_void_a(true, field_array_byte_m, 0, (byte)12, (byte)-1, (class_br)null);
+         field_array_class_java_lang_Object_d[var1] = getResourceByName("/grd/spr/0_01.eif");
+         func_void_a(true, (byte[])((byte[])field_array_class_java_lang_Object_d[var1]), 0, (byte)12, (byte)-1, (PNGMerger)null);
+         field_array_byte_m = getResourceByName("/grd/spr/0_02.eif");
+         func_void_a(true, field_array_byte_m, 0, (byte)12, (byte)-1, (PNGMerger)null);
       } else {
          String var2 = "/grd/spr/" + var0 + "_" + var1 + ".eif";
-         field_array_class_java_lang_Object_d[var1] = func_array_byte_a(var2);
-         func_void_a(true, (byte[])((byte[])field_array_class_java_lang_Object_d[var1]), 0, (byte)12, (byte)-1, (class_br)null);
+         field_array_class_java_lang_Object_d[var1] = getResourceByName(var2);
+         func_void_a(true, (byte[])((byte[])field_array_class_java_lang_Object_d[var1]), 0, (byte)12, (byte)-1, (PNGMerger)null);
       }
 
       (new StringBuffer()).append("GuardianSprite : ").append(var0).append(", ").append(var1).toString();
@@ -271,20 +271,20 @@ public final class class_ce implements class_u {
    }
 
    // $FF: renamed from: a (boolean, byte[], int, byte, byte, br) void
-   public static final void func_void_a(boolean var0, byte[] var1, int var2, byte var3, byte var4, class_br var5) {
+   public static final void func_void_a(boolean var0, byte[] var1, int var2, byte var3, byte var4, PNGMerger var5) {
       byte var6 = var1[var2++];
       if (var5 != null) {
-         var5.field_boolean_a = true;
+         var5.enableLoad = true;
          if (field_array_array_class_javax_microedition_lcdui_Image_a[var3] == null) {
-            field_array_array_class_javax_microedition_lcdui_Image_a[var3] = new Image[var5.func_int_a()];
+            field_array_array_class_javax_microedition_lcdui_Image_a[var3] = new Image[var5.getImgCount()];
          }
 
          if (var4 != -1 && field_array_array_class_javax_microedition_lcdui_Image_a[var4] == null) {
-            field_array_array_class_javax_microedition_lcdui_Image_a[var4] = new Image[var5.func_int_a()];
+            field_array_array_class_javax_microedition_lcdui_Image_a[var4] = new Image[var5.getImgCount()];
          }
       }
 
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
 
       for(int var11 = 0; var11 < var6; ++var11) {
          byte var7;
@@ -304,8 +304,8 @@ public final class class_ce implements class_u {
             class_x.func_void_a(var9 > 0);
             Image[] var10;
             if (var5 != null && (var10 = (Image[])field_array_array_class_javax_microedition_lcdui_Image_a[var9])[var13] == null) {
-               var10[var13] = var8 ? var5.func_class_javax_microedition_lcdui_Image_b(var13) : var5.func_class_javax_microedition_lcdui_Image_a(var13);
-               class_r.func_void_k();
+               var10[var13] = var8 ? var5.getFlipImageById(var13) : var5.getImageById(var13);
+               MyGameCanvas.func_void_k();
             }
          }
       }
@@ -314,43 +314,43 @@ public final class class_ce implements class_u {
 
    // $FF: renamed from: g () void
    public static final void func_void_g() {
-      class_br var0 = null;
+      PNGMerger var0 = null;
 
       try {
-         (var0 = new class_br("/img/uifrm")).field_boolean_a = true;
+         (var0 = new PNGMerger("/img/uifrm")).enableLoad = true;
          field_array_class_javax_microedition_lcdui_Image_q = new Image[7];
 
          for(int var1 = 0; var1 < 7; ++var1) {
-            field_array_class_javax_microedition_lcdui_Image_q[var1] = var0.func_class_javax_microedition_lcdui_Image_a(var1);
-            class_r.func_void_k();
+            field_array_class_javax_microedition_lcdui_Image_q[var1] = var0.getImageById(var1);
+            MyGameCanvas.func_void_k();
          }
 
          field_array_class_javax_microedition_lcdui_Image_r = new Image[4];
-         field_array_class_javax_microedition_lcdui_Image_r[0] = var0.func_class_javax_microedition_lcdui_Image_a(7);
-         field_array_class_javax_microedition_lcdui_Image_r[1] = var0.func_class_javax_microedition_lcdui_Image_b(7);
-         class_r.func_void_k();
-         field_array_class_javax_microedition_lcdui_Image_r[2] = var0.func_class_javax_microedition_lcdui_Image_a(8);
-         field_array_class_javax_microedition_lcdui_Image_r[3] = var0.func_class_javax_microedition_lcdui_Image_b(8);
-         class_r.func_void_k();
-         (var0 = new class_br("/img/etcui")).field_boolean_a = true;
+         field_array_class_javax_microedition_lcdui_Image_r[0] = var0.getImageById(7);
+         field_array_class_javax_microedition_lcdui_Image_r[1] = var0.getFlipImageById(7);
+         MyGameCanvas.func_void_k();
+         field_array_class_javax_microedition_lcdui_Image_r[2] = var0.getImageById(8);
+         field_array_class_javax_microedition_lcdui_Image_r[3] = var0.getFlipImageById(8);
+         MyGameCanvas.func_void_k();
+         (var0 = new PNGMerger("/img/etcui")).enableLoad = true;
          field_class_javax_microedition_lcdui_Image_s = class_bh.func_class_javax_microedition_lcdui_Image_a("_img_etcui__0.png");
          field_class_javax_microedition_lcdui_Image_t = class_bh.func_class_javax_microedition_lcdui_Image_a("_img_etcui__1.png");
-         var0.func_class_javax_microedition_lcdui_Image_a(2);
-         class_r.func_void_k();
-         field_class_javax_microedition_lcdui_Image_u = var0.func_class_javax_microedition_lcdui_Image_a(3);
+         var0.getImageById(2);
+         MyGameCanvas.func_void_k();
+         field_class_javax_microedition_lcdui_Image_u = var0.getImageById(3);
          field_class_javax_microedition_lcdui_Image_v = class_bh.func_class_javax_microedition_lcdui_Image_a("_img_etcui__4.png");
-         field_class_javax_microedition_lcdui_Image_w = var0.func_class_javax_microedition_lcdui_Image_a(5);
-         field_class_javax_microedition_lcdui_Image_x = var0.func_class_javax_microedition_lcdui_Image_a(6);
-         class_r.func_void_k();
-         field_class_javax_microedition_lcdui_Image_y = var0.func_class_javax_microedition_lcdui_Image_a(7);
-         field_class_javax_microedition_lcdui_Image_z = var0.func_class_javax_microedition_lcdui_Image_a(8);
-         field_class_javax_microedition_lcdui_Image_A = var0.func_class_javax_microedition_lcdui_Image_a(9);
-         field_class_javax_microedition_lcdui_Image_B = var0.func_class_javax_microedition_lcdui_Image_a(10);
-         field_class_javax_microedition_lcdui_Image_C = var0.func_class_javax_microedition_lcdui_Image_a(11);
-         class_r.func_void_k();
-         var0 = new class_br("/char/lvup");
-         field_array_byte_h = func_array_byte_a("/char/lvup.eif");
-         class_r.func_void_k();
+         field_class_javax_microedition_lcdui_Image_w = var0.getImageById(5);
+         field_class_javax_microedition_lcdui_Image_x = var0.getImageById(6);
+         MyGameCanvas.func_void_k();
+         field_class_javax_microedition_lcdui_Image_y = var0.getImageById(7);
+         field_class_javax_microedition_lcdui_Image_z = var0.getImageById(8);
+         field_class_javax_microedition_lcdui_Image_A = var0.getImageById(9);
+         field_class_javax_microedition_lcdui_Image_B = var0.getImageById(10);
+         field_class_javax_microedition_lcdui_Image_C = var0.getImageById(11);
+         MyGameCanvas.func_void_k();
+         var0 = new PNGMerger("/char/lvup");
+         field_array_byte_h = getResourceByName("/char/lvup.eif");
+         MyGameCanvas.func_void_k();
          func_void_a(true, field_array_byte_h, 0, (byte)13, (byte)-1, var0);
       } catch (Exception var2) {
          System.out.println(var2);
@@ -378,21 +378,21 @@ public final class class_ce implements class_u {
 
    // $FF: renamed from: i () void
    public static final void func_void_i() {
-      class_br var0 = null;
+      PNGMerger var0 = null;
 
       try {
-         (var0 = new class_br("/img/keepst")).field_boolean_a = true;
-         field_class_javax_microedition_lcdui_Image_D = var0.func_class_javax_microedition_lcdui_Image_a(0);
-         class_r.func_void_k();
+         (var0 = new PNGMerger("/img/keepst")).enableLoad = true;
+         field_class_javax_microedition_lcdui_Image_D = var0.getImageById(0);
+         MyGameCanvas.func_void_k();
          field_array_class_javax_microedition_lcdui_Image_v = new Image[8];
 
          for(int var1 = 0; var1 < 8; ++var1) {
-            field_array_class_javax_microedition_lcdui_Image_v[var1] = var0.func_class_javax_microedition_lcdui_Image_a(var1 + 1);
+            field_array_class_javax_microedition_lcdui_Image_v[var1] = var0.getImageById(var1 + 1);
          }
 
-         class_r.func_void_k();
-         field_array_class_javax_microedition_lcdui_Image_w = (new class_br("/img/emoti")).func_array_class_javax_microedition_lcdui_Image_a();
-         class_r.func_void_k();
+         MyGameCanvas.func_void_k();
+         field_array_class_javax_microedition_lcdui_Image_w = (new PNGMerger("/img/emoti")).getAllImage();
+         MyGameCanvas.func_void_k();
       } catch (Exception var2) {
          System.out.println(var2);
       }
@@ -408,27 +408,27 @@ public final class class_ce implements class_u {
    // $FF: renamed from: b (byte) void
    public static final void func_void_b(byte var0) {
       field_array_class_javax_microedition_lcdui_Image_a = new Image[2];
-      class_br var1 = null;
+      PNGMerger var1 = null;
 
       try {
          switch(var0) {
          case 0:
          case 3:
-            var1 = new class_br("/grd/fi");
+            var1 = new PNGMerger("/grd/fi");
             break;
          case 1:
          case 4:
-            var1 = new class_br("/grd/wa");
+            var1 = new PNGMerger("/grd/wa");
             break;
          case 2:
          case 5:
-            var1 = new class_br("/grd/gr");
+            var1 = new PNGMerger("/grd/gr");
          }
 
-         field_array_array_class_javax_microedition_lcdui_Image_a[12] = var1.func_array_class_javax_microedition_lcdui_Image_a();
-         (var1 = new class_br("/grd/" + var0)).field_boolean_a = true;
-         field_array_class_javax_microedition_lcdui_Image_a[0] = var1.func_class_javax_microedition_lcdui_Image_a(0);
-         field_array_class_javax_microedition_lcdui_Image_a[1] = var1.func_class_javax_microedition_lcdui_Image_a(1);
+         field_array_array_class_javax_microedition_lcdui_Image_a[12] = var1.getAllImage();
+         (var1 = new PNGMerger("/grd/" + var0)).enableLoad = true;
+         field_array_class_javax_microedition_lcdui_Image_a[0] = var1.getImageById(0);
+         field_array_class_javax_microedition_lcdui_Image_a[1] = var1.getImageById(1);
       } catch (IOException var3) {
          var3.printStackTrace();
       }
@@ -443,11 +443,11 @@ public final class class_ce implements class_u {
    // $FF: renamed from: a (short, byte, boolean) void
    public static final void func_void_a(short var0, byte var1, boolean var2) {
       try {
-         class_br var3;
-         (var3 = new class_br("/enm/" + (var0 < 10 ? "0" : "") + var0)).field_boolean_a = true;
-         class_r.func_void_k();
-         byte[] var4 = func_array_byte_a("/enm/spr/" + (var0 < 10 ? "0" : "") + var0);
-         class_r.func_void_k();
+         PNGMerger var3;
+         (var3 = new PNGMerger("/enm/" + (var0 < 10 ? "0" : "") + var0)).enableLoad = true;
+         MyGameCanvas.func_void_k();
+         byte[] var4 = getResourceByName("/enm/spr/" + (var0 < 10 ? "0" : "") + var0);
+         MyGameCanvas.func_void_k();
          int var5 = 0;
 
          while(var5 < var4.length) {
@@ -471,16 +471,16 @@ public final class class_ce implements class_u {
             }
 
             var5 += var8;
-            class_r.func_void_k();
+            MyGameCanvas.func_void_k();
          }
 
          if (!var2 && class_j.field_array_class_j_a[var1].field_byte_d >= 2) {
-            var4 = func_array_byte_a("/enm/atef/" + (var0 < 10 ? "0" : "") + var0);
+            var4 = getResourceByName("/enm/atef/" + (var0 < 10 ? "0" : "") + var0);
             func_void_a(true, var4, 0, (byte)(15 + var1), (byte)(15 + var1 + 5), var3);
             field_array_class_java_lang_Object_f[var1] = var4;
          }
 
-         class_r.func_void_k();
+         MyGameCanvas.func_void_k();
       } catch (IOException var9) {
          var9.printStackTrace();
       }
@@ -500,11 +500,11 @@ public final class class_ce implements class_u {
    // $FF: renamed from: l () void
    public static final void func_void_l() {
       try {
-         class_br var0;
-         (var0 = new class_br("/enm/die/bang")).field_boolean_a = true;
+         PNGMerger var0;
+         (var0 = new PNGMerger("/enm/die/bang")).enableLoad = true;
 
          for(int var1 = 0; var1 < 3; ++var1) {
-            byte[] var2 = func_array_byte_a("/enm/die/" + var1);
+            byte[] var2 = getResourceByName("/enm/die/" + var1);
             func_void_a(true, var2, 0, (byte)37, (byte)-1, var0);
             field_array_class_java_lang_Object_g[var1] = var2;
          }
@@ -516,11 +516,11 @@ public final class class_ce implements class_u {
    // $FF: renamed from: b (byte, byte) void
    public static final void func_void_b(byte var0, byte var1) {
       try {
-         class_br var2;
-         (var2 = new class_br("/npc/" + (var0 < 10 ? "0" : "") + var0)).field_boolean_a = true;
-         class_r.func_void_k();
-         byte[] var3 = func_array_byte_a("/npc/spr/" + (var0 < 10 ? "0" : "") + var0);
-         class_r.func_void_k();
+         PNGMerger var2;
+         (var2 = new PNGMerger("/npc/" + (var0 < 10 ? "0" : "") + var0)).enableLoad = true;
+         MyGameCanvas.func_void_k();
+         byte[] var3 = getResourceByName("/npc/spr/" + (var0 < 10 ? "0" : "") + var0);
+         MyGameCanvas.func_void_k();
          int var4 = 0;
 
          while(var4 < var3.length) {
@@ -537,7 +537,7 @@ public final class class_ce implements class_u {
             func_void_a(true, var3, var4, (byte)(27 + var1), (byte)(27 + var1 + 5), var2);
             System.arraycopy(var3, var4, field_array_class_java_lang_Object_j[var1 * 12 + var5 * 4 + var6], 0, var7);
             var4 += var7;
-            class_r.func_void_k();
+            MyGameCanvas.func_void_k();
          }
 
       } catch (IOException var8) {
@@ -559,8 +559,8 @@ public final class class_ce implements class_u {
    // $FF: renamed from: e (byte) void
    public static final void func_void_e(byte var0) {
       try {
-         class_br var1;
-         (var1 = new class_br("/boss/" + var0)).field_boolean_a = true;
+         PNGMerger var1;
+         (var1 = new PNGMerger("/boss/" + var0)).enableLoad = true;
          byte var2;
          byte var3;
          switch(var0) {
@@ -587,7 +587,7 @@ public final class class_ce implements class_u {
          }
 
          for(byte var4 = var2; var4 <= var3; ++var4) {
-            byte[] var5 = func_array_byte_a("/boss/spr/" + var0 + "_" + var4);
+            byte[] var5 = getResourceByName("/boss/spr/" + var0 + "_" + var4);
             int var6 = 0;
 
             while(var6 < var5.length) {
@@ -610,7 +610,7 @@ public final class class_ce implements class_u {
                }
             }
 
-            if ((var5 = func_array_byte_a("/boss/atef/" + (var4 < 10 ? "0" : "") + var4)) != null) {
+            if ((var5 = getResourceByName("/boss/atef/" + (var4 < 10 ? "0" : "") + var4)) != null) {
                func_void_a(true, var5, 0, (byte)25, (byte)26, var1);
                field_array_class_java_lang_Object_f[func_byte_a(var4)] = var5;
             }
@@ -630,20 +630,20 @@ public final class class_ce implements class_u {
 
    // $FF: renamed from: n () void
    public static final void func_void_n() {
-      class_br var0 = null;
+      PNGMerger var0 = null;
       field_array_class_javax_microedition_lcdui_Image_n = new Image[6];
       field_array_class_javax_microedition_lcdui_Image_o = new Image[5];
 
       try {
-         (var0 = new class_br("/sgui/gmico")).field_boolean_a = true;
+         (var0 = new PNGMerger("/sgui/gmico")).enableLoad = true;
 
          byte var1;
          for(var1 = 0; var1 < 6; ++var1) {
-            field_array_class_javax_microedition_lcdui_Image_n[var1] = var0.func_class_javax_microedition_lcdui_Image_a(var1 == 5 ? 6 : var1);
+            field_array_class_javax_microedition_lcdui_Image_n[var1] = var0.getImageById(var1 == 5 ? 6 : var1);
          }
 
          for(var1 = 0; var1 < 5; ++var1) {
-            field_array_class_javax_microedition_lcdui_Image_o[var1] = var0.func_class_javax_microedition_lcdui_Image_a(var1 + 7);
+            field_array_class_javax_microedition_lcdui_Image_o[var1] = var0.getImageById(var1 + 7);
          }
 
       } catch (Exception var2) {
@@ -653,26 +653,26 @@ public final class class_ce implements class_u {
 
    // $FF: renamed from: o () void
    public static final void func_void_o() {
-      class_br var0 = null;
+      PNGMerger var0 = null;
 
       try {
-         (var0 = new class_br("/img/glb")).field_boolean_a = true;
-         field_class_javax_microedition_lcdui_Image_k = var0.func_class_javax_microedition_lcdui_Image_a(0);
-         field_class_javax_microedition_lcdui_Image_n = var0.func_class_javax_microedition_lcdui_Image_a(1);
-         field_class_javax_microedition_lcdui_Image_o = var0.func_class_javax_microedition_lcdui_Image_a(2);
-         field_class_javax_microedition_lcdui_Image_d = var0.func_class_javax_microedition_lcdui_Image_a(3);
-         field_class_javax_microedition_lcdui_Image_r = var0.func_class_javax_microedition_lcdui_Image_a(5);
-         field_class_javax_microedition_lcdui_Image_l = var0.func_class_javax_microedition_lcdui_Image_a(6);
-         field_class_javax_microedition_lcdui_Image_m = var0.func_class_javax_microedition_lcdui_Image_a(7);
-         field_class_javax_microedition_lcdui_Image_a = var0.func_class_javax_microedition_lcdui_Image_a(8);
+         (var0 = new PNGMerger("/img/glb")).enableLoad = true;
+         field_class_javax_microedition_lcdui_Image_k = var0.getImageById(0);
+         field_class_javax_microedition_lcdui_Image_n = var0.getImageById(1);
+         field_class_javax_microedition_lcdui_Image_o = var0.getImageById(2);
+         field_class_javax_microedition_lcdui_Image_d = var0.getImageById(3);
+         field_class_javax_microedition_lcdui_Image_r = var0.getImageById(5);
+         field_class_javax_microedition_lcdui_Image_l = var0.getImageById(6);
+         field_class_javax_microedition_lcdui_Image_m = var0.getImageById(7);
+         field_class_javax_microedition_lcdui_Image_a = var0.getImageById(8);
          field_class_javax_microedition_lcdui_Image_e = class_bh.func_class_javax_microedition_lcdui_Image_a("_img_glb__9.png");
          field_class_javax_microedition_lcdui_Image_f = class_bh.func_class_javax_microedition_lcdui_Image_a("_img_glb__10.png");
          field_class_javax_microedition_lcdui_Image_g = class_bh.func_class_javax_microedition_lcdui_Image_a("_img_glb__11.png");
          field_class_javax_microedition_lcdui_Image_h = class_bh.func_class_javax_microedition_lcdui_Image_a("_img_glb__12.png");
          class_bh.func_class_javax_microedition_lcdui_Image_a("_img_glb__13.png");
-         field_class_javax_microedition_lcdui_Image_i = var0.func_class_javax_microedition_lcdui_Image_a(14);
+         field_class_javax_microedition_lcdui_Image_i = var0.getImageById(14);
          field_class_javax_microedition_lcdui_Image_j = class_bh.func_class_javax_microedition_lcdui_Image_a("_img_glb__15.png");
-         var0.func_class_javax_microedition_lcdui_Image_a(16);
+         var0.getImageById(16);
          field_class_z_e = new class_z("/sgui/help");
       } catch (Exception var2) {
          System.out.println(var2);
@@ -682,7 +682,7 @@ public final class class_ce implements class_u {
    // $FF: renamed from: p () void
    public static final void func_void_p() {
       try {
-         field_array_class_javax_microedition_lcdui_Image_d = (new class_br("/img/icoitm")).func_array_class_javax_microedition_lcdui_Image_a();
+         field_array_class_javax_microedition_lcdui_Image_d = (new PNGMerger("/img/icoitm")).getAllImage();
       } catch (Exception var1) {
          var1.printStackTrace();
       }
@@ -695,21 +695,21 @@ public final class class_ce implements class_u {
 
    // $FF: renamed from: r () void
    public static final void func_void_r() {
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
       field_array_class_javax_microedition_lcdui_Image_p = new Image[6];
-      class_br var0 = null;
+      PNGMerger var0 = null;
 
       try {
-         (var0 = new class_br("/sgui/shop")).field_boolean_a = true;
-         class_r.func_void_k();
+         (var0 = new PNGMerger("/sgui/shop")).enableLoad = true;
+         MyGameCanvas.func_void_k();
 
          for(byte var1 = 0; var1 < 6; ++var1) {
-            field_array_class_javax_microedition_lcdui_Image_p[var1] = var0.func_class_javax_microedition_lcdui_Image_a(var1);
+            field_array_class_javax_microedition_lcdui_Image_p[var1] = var0.getImageById(var1);
          }
 
-         field_class_javax_microedition_lcdui_Image_q = var0.func_class_javax_microedition_lcdui_Image_a(6);
-         field_class_javax_microedition_lcdui_Image_p = var0.func_class_javax_microedition_lcdui_Image_a(7);
-         class_r.func_void_k();
+         field_class_javax_microedition_lcdui_Image_q = var0.getImageById(6);
+         field_class_javax_microedition_lcdui_Image_p = var0.getImageById(7);
+         MyGameCanvas.func_void_k();
          field_class_javax_microedition_lcdui_Image_b = class_bh.func_class_javax_microedition_lcdui_Image_a("_sgui_shop__8.png");
          field_class_javax_microedition_lcdui_Image_c = class_bh.func_class_javax_microedition_lcdui_Image_a("_sgui_shop__9.png");
       } catch (Exception var2) {
@@ -730,19 +730,19 @@ public final class class_ce implements class_u {
    public static final void func_void_t() {
       field_array_class_javax_microedition_lcdui_Image_b = new Image[6];
       field_array_class_javax_microedition_lcdui_Image_c = new Image[24];
-      class_br var0 = null;
+      PNGMerger var0 = null;
 
       try {
-         (var0 = new class_br("/grd/grdico")).field_boolean_a = true;
+         (var0 = new PNGMerger("/grd/grdico")).enableLoad = true;
 
          for(byte var1 = 0; var1 < 6; ++var1) {
-            field_array_class_javax_microedition_lcdui_Image_b[var1] = var0.func_class_javax_microedition_lcdui_Image_a(var1);
+            field_array_class_javax_microedition_lcdui_Image_b[var1] = var0.getImageById(var1);
 
             for(byte var2 = 0; var2 < 4; ++var2) {
-               field_array_class_javax_microedition_lcdui_Image_c[var1 * 4 + var2] = var0.func_class_javax_microedition_lcdui_Image_a(6 + var1 * 4 + var2);
+               field_array_class_javax_microedition_lcdui_Image_c[var1 * 4 + var2] = var0.getImageById(6 + var1 * 4 + var2);
             }
 
-            class_r.func_void_k();
+            MyGameCanvas.func_void_k();
          }
 
       } catch (Exception var3) {
@@ -786,12 +786,12 @@ public final class class_ce implements class_u {
 
    // $FF: renamed from: a () byte[]
    public static final byte[] func_array_byte_a() {
-      return func_array_byte_a("/itm/forshop");
+      return getResourceByName("/itm/forshop");
    }
 
    // $FF: renamed from: f (byte) void
    public static final void func_void_f(byte var0) {
-      class_r.func_void_k();
+      MyGameCanvas.func_void_k();
       func_void_b(var0);
       switch(var0) {
       case 0:
@@ -822,7 +822,7 @@ public final class class_ce implements class_u {
    // $FF: renamed from: w () void
    public static final void func_void_w() {
       try {
-         field_array_class_javax_microedition_lcdui_Image_i = (new class_br("/img/logo")).func_array_class_javax_microedition_lcdui_Image_a();
+         field_array_class_javax_microedition_lcdui_Image_i = (new PNGMerger("/img/logo")).getAllImage();
       } catch (IOException var2) {
       }
    }
@@ -835,19 +835,19 @@ public final class class_ce implements class_u {
    // $FF: renamed from: y () void
    public static final void func_void_y() {
       try {
-         field_array_class_javax_microedition_lcdui_Image_j = (new class_br("/img/title1")).func_array_class_javax_microedition_lcdui_Image_a();
-         class_r.func_void_k();
-         class_br var0;
-         (var0 = new class_br("/img/title2")).field_boolean_a = true;
+         field_array_class_javax_microedition_lcdui_Image_j = (new PNGMerger("/img/title1")).getAllImage();
+         MyGameCanvas.func_void_k();
+         PNGMerger var0;
+         (var0 = new PNGMerger("/img/title2")).enableLoad = true;
          field_array_class_javax_microedition_lcdui_Image_k = new Image[10];
 
          for(int var1 = 0; var1 < 5; ++var1) {
-            field_array_class_javax_microedition_lcdui_Image_k[var1] = var0.func_class_javax_microedition_lcdui_Image_a(var1);
-            field_array_class_javax_microedition_lcdui_Image_k[var1 + 5] = var0.func_class_javax_microedition_lcdui_Image_b(var1);
-            class_r.func_void_k();
+            field_array_class_javax_microedition_lcdui_Image_k[var1] = var0.getImageById(var1);
+            field_array_class_javax_microedition_lcdui_Image_k[var1 + 5] = var0.getFlipImageById(var1);
+            MyGameCanvas.func_void_k();
          }
 
-         class_r.func_void_k();
+         MyGameCanvas.func_void_k();
          class_bw.func_void_a((byte)22);
       } catch (IOException var2) {
          var2.printStackTrace();
@@ -864,25 +864,25 @@ public final class class_ce implements class_u {
    // $FF: renamed from: A () void
    public static final void func_void_A() {
       try {
-         class_br var0;
-         (var0 = new class_br("/sgui/mm/face")).field_boolean_a = true;
+         PNGMerger var0;
+         (var0 = new PNGMerger("/sgui/mm/face")).enableLoad = true;
          field_array_class_javax_microedition_lcdui_Image_m = new Image[6];
-         field_array_class_javax_microedition_lcdui_Image_m[0] = var0.func_class_javax_microedition_lcdui_Image_a(0);
-         field_array_class_javax_microedition_lcdui_Image_m[1] = var0.func_class_javax_microedition_lcdui_Image_a(1);
-         field_array_class_javax_microedition_lcdui_Image_m[2] = var0.func_class_javax_microedition_lcdui_Image_a(2);
-         class_r.func_void_k();
-         field_array_class_javax_microedition_lcdui_Image_m[3] = var0.func_class_javax_microedition_lcdui_Image_c(0);
-         field_array_class_javax_microedition_lcdui_Image_m[4] = var0.func_class_javax_microedition_lcdui_Image_c(1);
-         field_array_class_javax_microedition_lcdui_Image_m[5] = var0.func_class_javax_microedition_lcdui_Image_c(2);
-         class_r.func_void_k();
-         field_array_class_javax_microedition_lcdui_Image_l = (new class_br("/sgui/mm/etc")).func_array_class_javax_microedition_lcdui_Image_a();
+         field_array_class_javax_microedition_lcdui_Image_m[0] = var0.getImageById(0);
+         field_array_class_javax_microedition_lcdui_Image_m[1] = var0.getImageById(1);
+         field_array_class_javax_microedition_lcdui_Image_m[2] = var0.getImageById(2);
+         MyGameCanvas.func_void_k();
+         field_array_class_javax_microedition_lcdui_Image_m[3] = var0.getImageGrayscale(0);
+         field_array_class_javax_microedition_lcdui_Image_m[4] = var0.getImageGrayscale(1);
+         field_array_class_javax_microedition_lcdui_Image_m[5] = var0.getImageGrayscale(2);
+         MyGameCanvas.func_void_k();
+         field_array_class_javax_microedition_lcdui_Image_l = (new PNGMerger("/sgui/mm/etc")).getAllImage();
          field_array_array_class_javax_microedition_lcdui_Image_b = new Image[3][2];
 
          for(int var1 = 0; var1 < 3; ++var1) {
-            (var0 = new class_br("/grd/" + var1)).field_boolean_a = true;
-            field_array_array_class_javax_microedition_lcdui_Image_b[var1][0] = var0.func_class_javax_microedition_lcdui_Image_a(0);
-            field_array_array_class_javax_microedition_lcdui_Image_b[var1][1] = var0.func_class_javax_microedition_lcdui_Image_a(1);
-            class_r.func_void_k();
+            (var0 = new PNGMerger("/grd/" + var1)).enableLoad = true;
+            field_array_array_class_javax_microedition_lcdui_Image_b[var1][0] = var0.getImageById(0);
+            field_array_array_class_javax_microedition_lcdui_Image_b[var1][1] = var0.getImageById(1);
+            MyGameCanvas.func_void_k();
          }
 
       } catch (IOException var2) {
@@ -898,7 +898,7 @@ public final class class_ce implements class_u {
    }
 
    // $FF: renamed from: a (java.lang.String) byte[]
-   public static final byte[] func_array_byte_a(String var0) {
+   public static final byte[] getResourceByName(String var0) {
       System.gc();
       InputStream var2 = null;
       byte[] var3 = null;

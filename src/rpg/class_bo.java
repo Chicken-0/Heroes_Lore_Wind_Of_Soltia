@@ -42,8 +42,8 @@ public final class class_bo extends class_cb {
    // $FF: renamed from: a (javax.microedition.lcdui.Graphics, int, int) void
    public final void func_void_a(Graphics var1, int var2, int var3) {
       boolean var4 = false;
-      var2 = class_r.field_int_i - 67;
-      var3 = class_r.field_int_j - 60;
+      var2 = MyGameCanvas.canvasHalfWidth - 67;
+      var3 = MyGameCanvas.field_int_j - 60;
       class_ao var5 = class_n.func_class_ao_a();
       class_cb.func_void_c(var1, var2, var3, 135, 120);
       class_cb.func_void_b(var1, var2 + 3, var3 + 3, 129, 17, 10452863);

@@ -3,7 +3,7 @@ package rpg;
 import java.util.Vector;
 
 // $FF: renamed from: b
-public final class class_b extends class_az {
+public final class class_b extends MFont {
    private class_b(String var1, int var2, int var3, boolean var4) {
       super(var1, var2, var3, var4);
    }
@@ -16,7 +16,7 @@ public final class class_b extends class_az {
          return 0;
       } else {
          char[] var5 = var1.toCharArray();
-         if (var4 < 64 && var1.indexOf(10) == -1 && this.func_int_a((char[])var5, 0, var4) <= var2) {
+         if (var4 < 64 && var1.indexOf(10) == -1 && this.calTextWidth((char[])var5, 0, var4) <= var2) {
             return var1.length();
          } else {
             int var7 = 0;
@@ -33,7 +33,7 @@ public final class class_b extends class_az {
                      }
 
                      char var11 = var5[var9];
-                     var10 += this.func_int_a(var11);
+                     var10 += this.getCharWidth(var11);
                      if (var11 == '\n') {
                         for(var7 = var9 + 1; var7 < var4 && var5[var7] == ' '; ++var7) {
                         }
@@ -74,7 +74,7 @@ public final class class_b extends class_az {
          return var1;
       } else {
          char[] var5 = var2.toCharArray();
-         if (var4 < 64 && var2.indexOf(10) == -1 && this.func_int_a((char[])var5, 0, var4) <= var3) {
+         if (var4 < 64 && var2.indexOf(10) == -1 && this.calTextWidth((char[])var5, 0, var4) <= var3) {
             var1.addElement(var2);
             return var1;
          } else {
@@ -89,7 +89,7 @@ public final class class_b extends class_az {
                   int var10;
                   for(int var8 = 1; (var10 = var6 + var8 - 1) < var4; ++var8) {
                      char var11 = var5[var10];
-                     var9 += this.func_int_a(var11);
+                     var9 += this.getCharWidth(var11);
                      if (var11 == '\n') {
                         for(var7 = var10 + 1; var7 < var4 && var5[var7] == ' '; ++var7) {
                         }
@@ -126,12 +126,12 @@ public final class class_b extends class_az {
    }
 
    // $FF: renamed from: a (java.lang.String, int, int, boolean) az
-   public static final class_az func_class_az_a(String var0, int var1, int var2, boolean var3) {
+   public static final MFont func_class_az_a(String var0, int var1, int var2, boolean var3) {
       return new class_b(var0, var1, var2, var3);
    }
 
    // $FF: renamed from: a (java.lang.String, int, boolean) az
-   public static final class_az func_class_az_a(String var0, int var1, boolean var2) {
+   public static final MFont func_class_az_a(String var0, int var1, boolean var2) {
       return func_class_az_a(var0, var1, -1, var2);
    }
 }

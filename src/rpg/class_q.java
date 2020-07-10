@@ -48,12 +48,12 @@ public final class class_q extends class_cb {
       var3 += 15;
       class_ao var4 = class_n.func_class_ao_a();
       char[] var5 = class_ai.field_class_z_a.func_array_char_a(2);
-      class_r.func_int_a(var1, var5, var2 + 5, var3);
+      MyGameCanvas.func_int_a(var1, var5, var2 + 5, var3);
       class_cb.func_void_a(var1, var2 + 110, var3 + 2, var4.field_class_g_a.field_int_a);
       this.func_void_a(var1, var2, var3, false);
-      class_r.func_void_c(var1, 1, var2 + 12, var3 + 16, 4);
-      class_r.func_void_c(var1, 2, var2 + 12, var3 + 16 + 23, 4);
-      class_r.func_void_c(var1, 3, var2 + 12, var3 + 16 + 46, 4);
+      MyGameCanvas.func_void_c(var1, 1, var2 + 12, var3 + 16, 4);
+      MyGameCanvas.func_void_c(var1, 2, var2 + 12, var3 + 16 + 23, 4);
+      MyGameCanvas.func_void_c(var1, 3, var2 + 12, var3 + 16 + 46, 4);
       var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_a, var2 + 10, var3 + 14 + 69, 20);
       if (var4.field_short_a > 0) {
          var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_l, var2 + 3, var3 + 18 + 69, 36);
@@ -66,19 +66,19 @@ public final class class_q extends class_cb {
          var1.setColor(14663551);
          class_bh.func_int_a(var1, var2 + 33, var3 + 35, this.field_array_char_b, 1);
          var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_g, var2 + 35, var3 + 52, 20);
-         class_r.func_void_c(var1, var4.field_byte_g, var2 + 52, var3 + 52, 4);
+         MyGameCanvas.func_void_c(var1, var4.field_byte_g, var2 + 52, var3 + 52, 4);
          var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_e, var2 + 34, var3 + 70, 20);
-         class_r.func_void_c(var1, var4.field_int_c, var2 + 102, var3 + 70, 8);
+         MyGameCanvas.func_void_c(var1, var4.field_int_c, var2 + 102, var3 + 70, 8);
          var1.setColor(4136767);
          var1.fillRect(var2 + 34, var3 + 79, 72, 3);
          var1.setColor(16777215);
          var1.fillRect(var2 + 34 + 1, var3 + 79 + 1, var4.field_int_c * 70 / var4.field_int_f, 1);
          var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_h, var2 + 38, var3 + 84, 20);
-         class_r.func_void_c(var1, var4.field_int_f, var2 + 102, var3 + 84, 8);
+         MyGameCanvas.func_void_c(var1, var4.field_int_f, var2 + 102, var3 + 84, 8);
          var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_f, var2 + 34, var3 + 97, 20);
-         class_r.func_void_d(var1, var2 + 102, var3 + 96, var4.field_int_a, var4.field_int_d);
+         MyGameCanvas.func_void_d(var1, var2 + 102, var3 + 96, var4.field_int_a, var4.field_int_d);
          var1.drawImage(class_ce.field_class_javax_microedition_lcdui_Image_j, var2 + 34, var3 + 106, 20);
-         class_r.func_void_d(var1, var2 + 102, var3 + 105, var4.field_int_b, var4.field_int_e);
+         MyGameCanvas.func_void_d(var1, var2 + 102, var3 + 105, var4.field_int_b, var4.field_int_e);
          return;
       case 1:
          var1.setColor(14663551);
@@ -87,19 +87,19 @@ public final class class_q extends class_cb {
             class_bh.func_int_a(var1, var2 + 38, var3 + 21 + var7 * 15, class_ce.field_class_z_a.func_array_char_a(9 + var7), 1);
          }
 
-         class_r.func_void_c(var1, var4.field_short_b + var4.field_byte_m, var2 + 100, var3 + 22, 8);
-         class_r.func_void_c(var1, var4.field_short_e + var4.field_byte_n, var2 + 100, var3 + 22 + 15, 8);
-         class_r.func_void_c(var1, var4.field_short_f + var4.field_byte_o, var2 + 100, var3 + 22 + 30, 8);
-         class_r.func_void_c(var1, var4.field_short_g + var4.field_byte_p, var2 + 100, var3 + 22 + 45, 8);
-         class_r.func_void_c(var1, var4.field_short_h, var2 + 100, var3 + 22 + 60, 8);
-         class_r.func_void_c(var1, var4.field_short_i, var2 + 100, var3 + 22 + 75, 8);
+         MyGameCanvas.func_void_c(var1, var4.field_short_b + var4.field_byte_m, var2 + 100, var3 + 22, 8);
+         MyGameCanvas.func_void_c(var1, var4.field_short_e + var4.field_byte_n, var2 + 100, var3 + 22 + 15, 8);
+         MyGameCanvas.func_void_c(var1, var4.field_short_f + var4.field_byte_o, var2 + 100, var3 + 22 + 30, 8);
+         MyGameCanvas.func_void_c(var1, var4.field_short_g + var4.field_byte_p, var2 + 100, var3 + 22 + 45, 8);
+         MyGameCanvas.func_void_c(var1, var4.field_short_h, var2 + 100, var3 + 22 + 60, 8);
+         MyGameCanvas.func_void_c(var1, var4.field_short_i, var2 + 100, var3 + 22 + 75, 8);
          return;
       case 2:
          var1.setColor(14663551);
          class_bh.func_int_a(var1, var2 + 34, var3 + 18, this.field_array_char_a, 1);
          var1.setColor(16777215);
          char[] var6 = class_ce.field_class_z_a.func_array_char_a(class_n.field_byte_a);
-         if (class_r.field_int_g > 128) {
+         if (MyGameCanvas.canvasWidth > 128) {
             class_bh.func_int_a(var1, var2 + 34, var3 + 30, 110, 1, var6);
             return;
          }
@@ -109,9 +109,9 @@ public final class class_q extends class_cb {
       case 3:
          class_cb.func_void_b(var1, var2 + 34, var3 + 22, 100, 26, 4136767);
          var1.setColor(16777215);
-         class_r.func_int_a(var1, class_ai.field_class_z_a.func_array_char_a(3), var2 + 37, var3 + 25);
-         class_r.func_int_a(var1, class_ai.field_class_z_a.func_array_char_a(4), var2 + 37, var3 + 32 + 4);
-         class_r.func_void_c(var1, class_n.func_class_ao_a().field_short_a, var2 + 99, var3 + 32 + 4, 8);
+         MyGameCanvas.func_int_a(var1, class_ai.field_class_z_a.func_array_char_a(3), var2 + 37, var3 + 25);
+         MyGameCanvas.func_int_a(var1, class_ai.field_class_z_a.func_array_char_a(4), var2 + 37, var3 + 32 + 4);
+         MyGameCanvas.func_void_c(var1, class_n.func_class_ao_a().field_short_a, var2 + 99, var3 + 32 + 4, 8);
          class_cb.func_void_b(var1, var2 + 34, var3 + 62, 100, 33, 4136767);
          var1.setColor(16777215);
          class_bh.func_int_a(var1, var2 + 40, var3 + 72, class_ai.field_class_z_a.func_array_char_a(5), 1);

@@ -996,7 +996,7 @@ public final class class_ao extends class_o implements class_u {
 
       this.func_void_c((int)100);
       this.func_void_e((int)100);
-      if (class_w.field_boolean_c && this.field_byte_g >= 8) {
+      if (MIDletConfig.isDemoVersion && this.field_byte_g >= 8) {
          class_n.func_void_a((byte)13);
       }
 

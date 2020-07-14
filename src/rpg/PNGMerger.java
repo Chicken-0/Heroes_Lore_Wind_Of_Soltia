@@ -109,8 +109,8 @@ public final class PNGMerger {
             this.arrayFlagExtra[var3] = readShort(this.mphFileData, 8 + 8 * var3 + 6);
         }
 
-        this.PLTEMphPos = getPosChunkDataWithExtraByte(this.mphFileData, 12);
-        this.tRNSMphPos = getPosChunkDataWithExtraByte(this.mphFileData, 13);
+        this.PLTEMphPos = getPosChunkData(this.mphFileData, 12);
+        this.tRNSMphPos = getPosChunkData(this.mphFileData, 13);
     }
 
     // $FF: renamed from: a () int
@@ -358,7 +358,7 @@ public final class PNGMerger {
     }
 
     // $FF: renamed from: b (byte[], int) int
-    private static int getPosChunkDataWithExtraByte(byte[] arrayByte, int tagIdx) {
+    private static int getPosChunkData(byte[] arrayByte, int tagIdx) {
         String var2 = pngChunkHeaderTag[tagIdx];
         int var3 = arrayByte.length;
 
